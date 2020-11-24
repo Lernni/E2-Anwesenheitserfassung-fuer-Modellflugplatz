@@ -1,0 +1,60 @@
+Mitschriften Meeting
+
+Rollenzuweisungen:
+
+Projektmanagement: Simon
+Analyse: Jakob, Richard, Tsatsra
+Entwurf: Technisch: Max, Dirk, Lenny; Webdesign: Alexander
+Implementierung: Max, Dirk, Lenny
+Test: Alexander
+
+
+Kenntnisse:
+
+Lenny: Raspi, Datenbank
+Max: Raspi
+Dirk: Etwas Raspi
+
+
+KW 48: Kontaktaufnahme (Simon)
+
+
+Zyklus 1 (KW 49-50):
+Analyse: Erste Vision/Überlegungen erstellen aus PDF
+Analyse: Absprechen mit Herr Zirkelbach
+Analyse: Gespräch mit Kunde (Jakob, Richard, Simon) (vorzugsweise Do nachmittags (alternativ Fr))
+Analyse: Erstellung Dokumentation mit notwendigen Inhalten
+Analyse: Risikoanalyse anfangen
+Analyse: Grafische Zusammenstellung der Analyse
+An Essence entlanghangeln
+
+Andere Gruppen: Fragen herausarbeiten für Erstgespräch (falls vorhanden)
+Andere Gruppen: In eigenen Bereichen einarbeiten (OpenUP, Methoden,... )
+Andere Gruppen: Kontrolle/Feedback zu Analysegruppe
+
+Meilenstein: Fertigstellung Vision/Analyse
+
+Zyklus 2 (KW 51-53)
+    Weitere Bearbeitung Analyse, Entwurf
+
+
+Zyklus 3 (KW 1-2)
+
+    Meilenstein: Fertigstellung Entwurf
+
+
+Fragen für erstes Kundengespräch:
+Wie sieht das bestehende System aus?
+Was ist mit der Erweiterung bzgl. der Zugangskontrolle gemeint?
+Was für ein Scanner wird verwendet? Ist dieser am Raspi direkt angeschlossen? Funktioniert der Scanner schon oder muss dieser eingerichtet werden?
+Existiert durch die Wetterstation schon ein Webserver? Läuft dieser und die Datenbank über den Raspi?
+
+Zeitlicher Überblick:
+Deadline: 31.01.2021 (Analyse, Entwurf)
+Ziel: 14.01.2021
+
+ToDo:
+Professoren Zugangslink zusenden (bzw. öffentlich machen)
+
+
+
