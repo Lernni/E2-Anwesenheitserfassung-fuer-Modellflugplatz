@@ -1,18 +1,20 @@
 = Vision: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Jakob  Laufer  <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des <Projektname-Systems> zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie das <Projektname-System> diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der "Anwesenheitserfassung des Modellflugplatzes" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie die "Anwesenheitserfassung" diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das <Projektthema-System>, das von <Team> entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung für Piloten", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die Anwesenheitserfassung zu nutzen, um damit einen sicheren und zuverlässigen Praxisbetrieb des Vereinsflugplatzes zu erreichen. 
+
+->zwang vom Gesetzgeber -- einige Bürokratische Maßnahmen erleichtern
 
 === Definitionen, Akronyme und Abkürzungen
 siehe Glossar (Verweis hier einfügen).
@@ -24,29 +26,28 @@ siehe Glossar (Verweis hier einfügen).
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
+Im Rahmen einer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, einen aktuellen Vorgang sicher/erweitern etc............
+
+Um einen sicheren Betrieb des Vereinsflugplatzes zu gewährleisten gibt es einige gesetzliche festgelegte bürokratische Maßnahmen zu beachten. 
+Eines davon ist die erfassung/protokollierung der anwesenden Piloten/Mitarbeiter. Aktuell findet die erfassung durch ein zentrales Flugbuch von statten, in welches sich Piloten eintragen.  
+
+Um das aktuell notwendige System ........zu- automatisieren/erleichtern/zuverlässiger/komfortabler zu machen........, soll nicht mehr über ein händisches/manuelles eintragen durch ein Flugbuch die Anwesenheit protokoliert werden, sondern lokal über einen RFID-Tag digital erfasst und gesichert werden.  
+
+
+
+
+
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 
 [cols="1,3"]
 |===
-|Das Problem |	[beschreiben Sie das Problem]
-|betrifft |	[die Stakeholder, die vom Problem betroffen sind]
-|die Auswirkung davon ist |	[welche Auswirkungen hat das Problem?]
-|eine erfolgreiche Lösung wäre |	[Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
+|Das Problem |	DONNERSTAG klären 
+|betrifft |	Piloten bzw. Mitarbeiter des Flugplatzes (vll. Gesetzgeber) 
+|die Auswirkung davon ist |	unsicher, unzerflässig ....DONERSTAG
+|eine erfolgreiche Lösung wäre |	Ein System für die anwesenheitserfassung bzw. protokollierung der Piloten über einen Raspberry Pi, der die Daten ausliest und verarbeitet.
 |===
-
-////
-Beispiel
-
-[cols="1,3"]
-|===
-|Das Problem | aktuelle Informationen zum Stundenplan und Noten einfach zu erhalten
-|betrifft |	Studierende der HTW Dresden
-|die Auswirkung davon ist |	umständliche und aufwändige Suche nach Noten, Zeiten und Räumen
-|eine erfolgreiche Lösung wäre |	die Zusammenführung und benutzer-individuelle Darstellung auf einem mobilen Endgerät
-|===
-////
 
 === Positionierung des Produkts
 //Ein Positionierung des Produkts beschreibt das Einsatzziel der Anwendung und die Bedeutung das Projekts an alle beteiligten Mitarbeiter.
@@ -55,24 +56,13 @@ Beispiel
 
 [cols="1,3"]
 |===
-|Für|	[Zielkunde / Nutzer]
-|der / die|	[Angabe des Bedarfs oder Chance]
-|Das Produkt / die Lösung ist ein | [Produktkategorie]
-|Die / Das	|[Aussage zum Hauptvorteil / Alleinstellungsmerkmal]
-|Im Gegensatz zu	|[wesentliche Lösungsalternative]
-|Unser Produkt|	[Aussage zum Hauptunterschied]
+|Für|	Piloten/Mitarbeiter
+|die| die den Flugplatz betreten und fliegen wollen.	
+|Das Produkt| ??
+|welches| den sicheren Betrieb des Flugplatzes gewährleistet
+|Im Gegensatz zu| dem aktuellen System (Flugbuch)
+|Unser Produkt|	gewährleistet die sichere An/Abmeldung, Verarbeitung, verwaltung und Synchronisation der Daten auf dem Webserver.
 |===
-
-
-//Beispiel Produkt:
-//|===
-//|Für|	Studierende der HTW
-//|die|	die ihren Studienalltag effizienter organisieren möchten
-//|Das Produkt ist eine | mobile App für Smartphones
-//|Die 	| für den Nutzer Informationen zum Stundenplan und Noten darstellt
-//|Im Gegensatz zu	| Stundenplänen der Website und HIS-Noteneinsicht
-//|Unser Produkt| zeigt nur die für den Nutzer relevanten Informationen komfortabel auf dem Smartphone an.
-//|===
 
 ==	Stakeholder Beschreibungen
 ===	Zusammenfassung der Stakeholder
@@ -81,13 +71,38 @@ Beispiel
 |===
 |Name|	Beschreibung	| Verantwortlichkeiten
 |[Benennung des Stakeholder-Typs.]	|[Kurze Beschreibung des Stakeholders.]	|[Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+
+|Piloten
+|Mitglieder des Vereins welche den Flugplatz aktiv nutzen
+|für den Flugplatz und dessen sichere Nutung (An/Abmelden, Regeln einhalten et.)
+
+|Mitarbeiter
+|
+|
+
+|Besucher
+|
+|
+
+|Gesetzgeber 
+|gibt rechtliche/bürokratische Rahmenbedingungen vor (sicherheit)
+|überwacht Gesetze und Regelungen hinsichtlich Sicherheit
+
+|Entwickler 
+|arbeiten an Projekt und setzten es um
+|analysieren, entwerfen, implementieren und Testen das zu entwickelnde Projekt
+
+|Wartungspersonal
+|
+|
+
 |===
 
 === Benutzerumgebung
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
+. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das? -> Anzahl der Nutzer
 . Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
 . Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
