@@ -1,5 +1,5 @@
 = Vision: {project-name}
-Jakob  Laufer  <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Jakob  Laufer  <email@domain.org>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -72,16 +72,20 @@ Um das aktuell notwendige System ........zu- automatisieren/erleichtern/zuverlä
 |Name|	Beschreibung	| Verantwortlichkeiten
 |[Benennung des Stakeholder-Typs.]	|[Kurze Beschreibung des Stakeholders.]	|[Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
 
+|Kunde
+|Auftraggeber vom  Mfc-Rossendorf
+|Einblick in die derzeitige Lage der Anwesenheitserfassung, Ansprechpartner
+
 |Piloten
 |Mitglieder des Vereins welche den Flugplatz aktiv nutzen
 |für den Flugplatz und dessen sichere Nutung (An/Abmelden, Regeln einhalten et.)
 
 |Mitarbeiter
-|
-|
+|Personen die bei dem MFC-Rossendorf angestellt sind und auf dem Flugplatz arbeiten
+|geregelten Ablauf auf dem Flugplatz, Ordnung, Erfassung der Daten
 
 |Besucher
-|
+|Die Belgleitung von den Piloten oder auch unbeteiligte Zuschauer
 |
 
 |Gesetzgeber 
