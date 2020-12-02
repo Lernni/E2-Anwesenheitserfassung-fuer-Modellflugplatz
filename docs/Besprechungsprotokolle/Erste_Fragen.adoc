@@ -1,0 +1,68 @@
+= Fragen für den Themensteller
+1.0, 02.12.2020
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Fragen für das Meeting vom 03.12.2020
+
+[%header, cols="1,1"]
+|===
+
+|Frage |Antwort
+
+|Wie sieht das bestehende System aus?
+|
+
+|Was sind sie bestehenden Schwierigkeiten?
+|
+
+|Wo genau liegt beim aktuellen System das Problem? 
+|
+
+|Was sind die Hauptziele des neuen Systems?
+|
+
+|Was genau sind Bürokratische Maßnahmen, ist die Protokollführung die einzige Maßnahme, bzw. gibt es weitere gesetzliche Regeln bzgl. des Modellflugplatzes?
+|
+
+|Wie viele Flieger dürfen maximal auf dem Platz genutzt werden?
+|
+
+|Gibt es Mitarbeiter, bzw. welche Tätigkeiten haben diese?
+|
+
+|Gibt es Zuschauer, und wenn ja, müssen diese auch erfasst werden?
+|
+
+|Wieviele Piloten gibt es in etwa?
+|
+
+|Was ist mit der Erweiterung bzgl. der Zugangskontrolle gemeint?
+|
+
+|Was sind notwendige Daten?
+|
+
+|Wie groß ist der Umfang der "Flugdaten", die verwaltet werden sollen bzw. was genau wird unter "Flugdaten" verstanden?
+|
+
+|Was für ein Scanner wird verwendet? Ist dieser am Raspi direkt angeschlossen?
+|
+
+|Funktioniert der Scanner schon oder muss dieser eingerichtet werden?
+|
+
+|Arbeitet das Team aus dem letzten Jahr noch parallel zu uns an der Wetterstation?
+|
+
+|Existiert durch die Wetterstation schon ein Webserver? Läuft dieser und die Datenbank über den Raspi?
+|
+
+|Inwieweit gleichen sich die Informationen des Webservers und die Anzeige vor Ort? (bzw. welche Informationen sind exklusiv für die
+Betreiber, welche für die Piloten einsehbar?)
+|
+
+|Wie stabil ist das System um den Raspberry Pi? (Stromausfall, Keine Internetverbindung)
+|
+
+|===
