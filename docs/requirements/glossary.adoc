@@ -6,14 +6,21 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der <Projektthema-Systems> definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
+In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der "Anwesenheitserfassung des Modellflugplatzes" definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
 
 == Begriffe
 [%header]
 |===
 |Begriff|	Definition und Erläuterung|	Synonyme
 //|Kommissionierung|Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags|(keine))|
+|Flugleiter/ Startleiter |xx|xx
+|Webserver|xx|xx|
+|Anwesenheitserfassung|xx|xx|
+|Zeiterfassung|xx|xx|
 |xx|xx|xx|
+|xx|xx|xx|
+|xx|xx|xx|
+
 |===
 
 
@@ -22,7 +29,14 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 |Abkürzung|	Bedeutung|	Erläuterung
 //|UP|Unified Process|Vorgehensmodell für die Softwareentwicklung|
+|RFID-Tags|xx|xx|
+|Raspi|xx|xx|
 |xx|xx|xx|
+|xx|xx|xx|
+|xx|xx|xx|
+|xx|xx|xx|
+|xx|xx|xx|
+
 |===
 
 == Verzeichnis der Datenstrukturen
