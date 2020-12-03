@@ -12,7 +12,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung für Piloten", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die Anwesenheitserfassung zu nutzen, um damit einen sicheren und zuverlässigen Praxisbetrieb des Vereinsflugplatzes zu erreichen. 
+Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die Anwesenheitserfassung zu nutzen, um damit einen sicheren und zuverlässigen Praxisbetrieb des Vereinsflugplatzes zu erreichen. 
 
 ->zwang vom Gesetzgeber -- einige Bürokratische Maßnahmen erleichtern
 
@@ -26,15 +26,13 @@ siehe Glossar (Verweis hier einfügen).
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
-Im Rahmen einer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, einen aktuellen Vorgang sicher/erweitern etc............
-
-Um einen sicheren Betrieb des Vereinsflugplatzes zu gewährleisten gibt es einige gesetzliche festgelegte bürokratische Maßnahmen zu beachten. 
-Eines davon ist die erfassung/protokollierung der anwesenden Piloten/Mitarbeiter. Aktuell findet die erfassung durch ein zentrales Flugbuch von statten, in welches sich Piloten eintragen.  
-
-Um das aktuell notwendige System ........zu- automatisieren/erleichtern/zuverlässiger/komfortabler zu machen........, soll nicht mehr über ein händisches/manuelles eintragen durch ein Flugbuch die Anwesenheit protokoliert werden, sondern lokal über einen RFID-Tag digital erfasst und gesichert werden.  
-
-
-
+Um einen sicheren Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzliche festgelegte bürokratische Maßnahmen zu beachten. 
+Eine davon ist die erfassung/protokollierung der anwesenden Piloten. Aktuell wird der analoge Vorgang über ein zentrales Flugbuch
+geregelt, in welches sich eintragen werden muss. 
+Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. 
+In Zukunft sollen sich die Piloten lokal mittels RFID-Ausweises auf einem autarken Raspberry Pi An-Abmelden können. 
+Die Anmeldedaten sollen erfasst, gesichert und über einen Webserver leicht einsehbar und verwaltbar werden. 
+So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und bürokratischen Aufwand ist.
 
 
 === Problem Statement
@@ -43,10 +41,14 @@ Um das aktuell notwendige System ........zu- automatisieren/erleichtern/zuverlä
 
 [cols="1,3"]
 |===
-|Das Problem |	DONNERSTAG klären 
+|Das Problem |	DONNERSTAG klären (unsicher, bürokratischer Aufwand)
 |betrifft |	Piloten bzw. Mitarbeiter des Flugplatzes (vll. Gesetzgeber) 
-|die Auswirkung davon ist |	unsicher, unzerflässig ....DONERSTAG
-|eine erfolgreiche Lösung wäre |	Ein System für die anwesenheitserfassung bzw. protokollierung der Piloten über einen Raspberry Pi, der die Daten ausliest und verarbeitet.
+|die Auswirkung davon ist |	- ein bürokratischer Aufwand durch das manuelle eintragen in das Flugbuch 
+-unsicherheit durch ein mögliches abhantenkommen des Flugbuches (verlieren der Daten)
+-ein mögliches Fehleintragen vonseiten der Piloten
+-mögliche unleserlichkeit der An-Abmeldung 
+-ein zeitverlust 
+|eine erfolgreiche Lösung wäre |Ein digitales System für die anwesenheitserfassung bzw. protokollierung der Piloten über einen Raspberry Pi, der die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
 |===
 
 === Positionierung des Produkts
@@ -56,12 +58,12 @@ Um das aktuell notwendige System ........zu- automatisieren/erleichtern/zuverlä
 
 [cols="1,3"]
 |===
-|Für|	Piloten/Mitarbeiter
-|die| die den Flugplatz betreten und fliegen wollen.	
-|Das Produkt| ??
-|welches| den sicheren Betrieb des Flugplatzes gewährleistet
-|Im Gegensatz zu| dem aktuellen System (Flugbuch)
-|Unser Produkt|	gewährleistet die sichere An/Abmeldung, Verarbeitung, verwaltung und Synchronisation der Daten auf dem Webserver.
+|Für|   Piloten/Mitglieder
+|die| die den Flugplatz betreten und fliegen wollen.    
+|Das Produkt| ist eine Anwesenheitserfassung der Piloten
+|welches| eine sichere erfasung und dadurch einen sicheren Betrieb des Flugplatzes gewährleistet
+|Im Gegensatz zu| dem manuellen eintragen in ein Flugbuch
+|Unser Produkt| gewährleistet die sichere An/Abmeldung, Verarbeitung, verwaltung und Synchronisation der Daten vom Piloten
 |===
 
 ==	Stakeholder Beschreibungen
