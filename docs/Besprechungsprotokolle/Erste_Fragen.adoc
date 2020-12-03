@@ -10,59 +10,58 @@
 
 |Frage |Antwort
 
-|Wie sieht das bestehende System aus?
-|
+|Wie sieht das bestehende System aus? (Wetterstation)
+|Das Sytem ist noch nicht am Einsatzort installiert. Die Technik soll im Boden vergraben werden. Die Wetterstation wird mit Überwachungskameras ausgestattet, die an einem Kameramast befestigt sein sollen. Darüber sollen sich die Solarzellen befinden. 
 
 |Was sind sie bestehenden Schwierigkeiten?
-|
-
-|Wo genau liegt beim aktuellen System das Problem? 
-|
+|Bisher existiet ein physisches Flugbuch am Modellflugplatz. Es gibt keine Möglichekeit dies unter verschluss zu halten, um  es nur autorisierten Mitgliedern zugänglich zu machen. Der Platz ist nur gepachtet und es düfen keine Gebäude errichtet werden. Durch Vandalismus wurde das Buch in der Vergangenheit des öfteren gestohlen oder beschädigt. Es fehlte auch etwas die Disziplin der Mitglieder, dann ein neues Flugbuch zu besorgen, um sich wieder eintragen zu können.
 
 |Was sind die Hauptziele des neuen Systems?
-|
+|Zeiterfassung (kommen und gehen), Name des Piloten und Anmerkung wer Flugleiter ist.
 
 |Was genau sind Bürokratische Maßnahmen, ist die Protokollführung die einzige Maßnahme, bzw. gibt es weitere gesetzliche Regeln bzgl. des Modellflugplatzes?
-|
+|Der Gesetzgeber fordert eine Anwesenheitserfassung. Piloten müssen verischert sein und eine Versichertenkarte besitzen. Ab 3 Piloten muss ein Startleiter bestimmt werden. 
 
-|Wie viele Flieger dürfen maximal auf dem Platz genutzt werden?
-|
+|Wie viele Flugzeuge dürfen maximal auf dem Platz genutzt werden?
+|Es gibt keine gesetzlichen Vorgaben. Die maximiale Anzahl wird durch den Flugleiter bestimmt. Diese ist stark von der Größe der Flugzeuge abhängig (bis 5 Meter spannweite). Die maximale Kapazität beträgt maximal 10, eher 5 Modellflugzeuge. 
 
 |Gibt es Mitarbeiter, bzw. welche Tätigkeiten haben diese?
-|
+|Es gibt keine Mitarbeiter. Vereinsmitglieder übernehmen Aufgaben.
 
 |Gibt es Zuschauer, und wenn ja, müssen diese auch erfasst werden?
-|
+|Es gibt Zuschauer, diese müssen jedoch nicht erfasst werden.
 
 |Wieviele Piloten gibt es in etwa?
-|
+|Der Verein hat circa 100 Mitglieder. Davon sind circa ein drittel aktiv. 
 
 |Was ist mit der Erweiterung bzgl. der Zugangskontrolle gemeint?
-|
+|Es gibt zwei Standorte. Flugplatz (Wiese, ohne Gebäude) und ein Werkstattgebäude. Bisher sind einige Schlüssel hierfür im Umlauf. Es soll sich bei Anwesenheit in der Werkstatt auch in eine Liste eingetragen werden, jedoch ist der Zugnang zum Gabäude nichtmehr nachvollziebar, da sehr viele Schlüssel im Umlauf sind und diese auch oft undokumentiert weitergegeben werden. Die erweiterung ist als Zusatz zu sehen. Vorher soll das eigentliche Projekt vollendet sein. 
 
-|Was sind notwendige Daten?
-|
-
-|Wie groß ist der Umfang der "Flugdaten", die verwaltet werden sollen bzw. was genau wird unter "Flugdaten" verstanden?
-|
+|Was sind notwendige Daten? Wie groß ist der Umfang der Flugdaten?
+|Name des Vereinsmitglied, An- und Abmeldezeiten und Infomation darüber, ob das Mitglied während seiner Anwesenheit Flugleiter ist oder nicht.
 
 |Was für ein Scanner wird verwendet? Ist dieser am Raspi direkt angeschlossen?
-|
+|Hardware wird komplett zur Verfügung gestellt. Der RFID Scanner wurde noch nicht bestellt. 
 
 |Funktioniert der Scanner schon oder muss dieser eingerichtet werden?
-|
+|Hardware wird dem Projektteam bereitgestellt. So können  die Funktionen getest werden. 
 
 |Arbeitet das Team aus dem letzten Jahr noch parallel zu uns an der Wetterstation?
-|
+|Das Wetterstastion Projekt ist von Studentenseite abgeschlossen. Der Aufbau ist jedoch nicht am Einsatzort. Studenten stehen weiterhin mit dem Auftraggeber in Kontakt. 
 
 |Existiert durch die Wetterstation schon ein Webserver? Läuft dieser und die Datenbank über den Raspi?
-|
+|Es existiert ein Cloud Webserver/ Datenbankserver. Der Raspi soll die Daten jedoch vorhalten/ zwischenspeichern, um Eingaben bei Verbindungsabbrüchen und folgendem Wiederaufbau der Verbindung an den Webserver zu senden. 
 
 |Inwieweit gleichen sich die Informationen des Webservers und die Anzeige vor Ort? (bzw. welche Informationen sind exklusiv für die
 Betreiber, welche für die Piloten einsehbar?)
-|
-
+|Vorort soll es kein Monitor geben (Grund: Vandalismus). Ein kleines Diplay wäre möglich, ist jedoch nicht vorgesehen. Durch eine Meldeleuchte könnte der Pilot eine Rückmeldung erhalten, ob die An- bzw. Abmeldung funktioniert hat. 
+Auf der Vereinswebsite soll es mindestens zwei Ansichten geben:
+ Vereinsmitglied:   -Wer ist gerade auf dem Platz.
+                    -Eigene Daten einsehen
+                    
+Adminikstrator:     -Ansicht aller Daten mit Änderungsmöglichkeit
+                    
 |Wie stabil ist das System um den Raspberry Pi? (Stromausfall, Keine Internetverbindung)
-|
+|Es besteht eine stabile Energieversorgung (Solarzelle mit ausreichend dimensionierter Batterie) Durch die Headunit wird bei drohendem Stromausfall kontrolliert herunter- und wieder hochgefahren. Mobilfunkverbindung (umts, vpn) könnte unterbrochen werden. Infomationen müssen daher lokal vorgehalten (zwischengespeichert)  werden. 
 
 |===
