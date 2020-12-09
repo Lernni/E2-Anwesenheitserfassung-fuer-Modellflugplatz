@@ -1,0 +1,19 @@
+= Protokoll vom 09.12.2020
+1.0, 09.12.2020
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Nächste Besprechung mit Kunden
+* Weitere Teile des Teams zeigen
+* Wissensstände aufzeigen
+* Use-Cases präsentieren (grob)
+
+== Teaminterne Konferenzen:
+* Meeting Analyse-Team: Sonntag 18 Uhr
+* Meeting Entwurfs-Team: Freitag 15 Uhr
+
+== Pläne:
+* RiskPlan erstellen (Tsatsra & Analyse)
+* Iteration und Project Plan erstellen (Alex)
+* Pläne weiterentwickeln (Alle)
+* Essence weiterentwickeln
