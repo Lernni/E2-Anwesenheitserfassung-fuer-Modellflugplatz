@@ -1,5 +1,5 @@
-= Iteration Plan 01: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+= Iteration Plan 01: E2 Anwesenheitserfassung Modellflugplatz
+Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -35,10 +35,13 @@ Die in dieser Iteration geplanten Aufgaben sind in vereinfachter Form in der Wor
 _Hinweis: Priorität 1 = hoch_
 
 Diese Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="3,1,1,1,2,1,1,1,1"]
+[%header, cols="1,3,1,1,1,2,1,1,1,1"]
 |===
+|WID
 | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
-| Kontakaufnahme Kunde | 1 | 1 | 100% | x | 1 | Simon | 1 | 0
+
+
+| 2 | Kontakaufnahme Kunde | 1 | 1 | 100% | x | 1 | Simon | 1 | 0
 | Einarbeitung in verschienden fachliche Bereiche | 2 | 24 | 50% | x | 1-2 | Alle | x | x
 |===
 

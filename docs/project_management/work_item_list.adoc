@@ -1,0 +1,36 @@
+= Work Item List
+Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+
+== Einführung
+In diesem Dokument werden alle Aufgaben in vereinfachter Form aufgelistet und nach können nach Prioritäten in die Iterationspläne hinzugefügt und ausformuliert werden
+
+== Aktuelle Work Items
+[%header, cols="3"]
+|===
+
+|WID
+|Inhalt
+|Zuständige Person
+
+|2
+|...
+|...
+
+|===
+
+== Erledigte Work Items
+
+[%header, cols="3"]
+|===
+
+|WID
+|Inhalt
+|Zuständige Person
+
+|1
+|...
+|...
+
+|===
