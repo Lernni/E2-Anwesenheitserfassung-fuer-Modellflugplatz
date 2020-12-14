@@ -91,6 +91,11 @@ So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und
 |gibt rechtliche/bürokratische Rahmenbedingungen vor (sicherheit)
 |überwacht Gesetze und Regelungen hinsichtlich Sicherheit
 
+|Verwaltung
+|Vereinsmitglieder, welche die Rechte besitzen die Daten zu verwalten (anlegen, modifizieren, löschen) 
+|sind verantwortlich für die Vereinsmitgliederdaten und deren Verwaltung
+
+
 |Entwickler 
 |arbeiten an Projekt und setzten es um
 |analysieren, entwerfen, implementieren und Testen das zu entwickelnde Projekt

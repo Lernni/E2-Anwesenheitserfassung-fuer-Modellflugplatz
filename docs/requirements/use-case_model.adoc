@@ -5,21 +5,73 @@ include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-== Allgemeine Informationen
-// ...
+== Use-Cases: Allgemeine Informationen
+
+//Vorschlag zur Kennzeichnung der Instanzen Akteur, System, Datenspeicher -> sollten in allen Use-Cases Konsistent sein 
+
+.Legende zur Konsistenz
+|===
+|Bezeichnung |Formatierung 
+
+|Akteur
+|*Akteur*
+
+|System
+|_System_
+
+|Datenspeicher
+|`Datenspeicher`
+
+|===
+
+=== Use-Cases
+
+* Vereinsmitglieder anmelden (include: 'Flugleiter bestimmen'-> Taste für Flugleiter bestimmen
+                              include:  'Vereinsmitglieder existiert'
+                             )
+* Vereinsmitglieder abmelden (include: 'Abmeldung vergessen') -> Reset-Taste
+* RFID-Ausweise zuorden
+* Pilotendaten verwalten (include: 
+                                    Vereinsmitglieder anlegen, 
+                                    Vereinsmitglieder modifizieren,
+                                    Vereinsmitglieder löschen
+                         )
+
+//oder
+
+* Vereinsmitglieder anlegen (include: 'RFID-Ausweise zuorden')
+* Vereinsmitglieder modifizieren (include: 'Manuell anmelden') -> Systemausfall
+* Vereinsmitglieder löschen
+
+//Wie oft müssen Vereinsmitglieder neu angelegt/entfernt werden?
+//Manuelles Flugbuch als Alternative für Systemausfall?
+
+=== Use-Cases: Priorisierung 
+
+. UC01: Piloten anmelden 
+. UC02: Piloten abmelden 
+. UC03: RFID-Ausweise zuorden
+. UC03: Pilotendaten anlegen 
+. UC04: Pilotendaten löschen
+. UC05: Pilotendaten modifizieren 
+
+
+=== Use-Cases: Diagramm
+
+Diagramm einfügen -> Nur Übersicht
 
 //Fügen Sie nachfolgend eine Liste aller Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem usecase_spec.adoc Template basiert.
 <<<
 include::use_case_01.inc.adoc[]
-//<<<
-//include::use_case_02.inc.adoc[]
-//<<<
-//include::use_case_03.inc.adoc[]
-//<<<
-//include::use_case_04.inc.adoc[]
-//<<<
-//include::use_case_05.inc.adoc[]
+<<<
+include::use_case_02.inc.adoc[]
+<<<
+include::use_case_03.inc.adoc[]
+<<<
+include::use_case_04.inc.adoc[]
+<<<
+include::use_case_05.inc.adoc[]
 //<<<
 //include::use_case_06.inc.adoc[]
 //<<<

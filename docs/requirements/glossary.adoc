@@ -14,13 +14,23 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |Begriff|	Definition und Erläuterung|	Synonyme
 //|Kommissionierung|Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags|(keine))|
 |Flugleiter/ Startleiter |xx|xx
-|Webserver|xx|xx|
-|Anwesenheitserfassung|xx|xx|
-|Zeiterfassung|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
-
+|Besucher|xx|xx
+|Webserver|xx|xx
+|Weboberfläche|xx|xx
+|Anwesenheitserfassung|xx|xx
+|Zeiterfassung|xx|xx
+|Vandalismus|xx|xx
+|Gesetzgeber|xx|x
+|Vereinsmitglied|xx|xx
+|Flugbuch|xx|xx
+|Vereinsmitglied|xx|xx
+|Pilot|xx|xx
+|"Größere" Flugzeuge|xx|xx
+|Sicherheit|xx|xx
+|Datenbanken|xx|xx
+|Lokaler Cache|xx|xx
+|Sicherheit|xx|xx
+|Reset-Taste|xx|xx
 |===
 
 
@@ -29,13 +39,13 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 |Abkürzung|	Bedeutung|	Erläuterung
 //|UP|Unified Process|Vorgehensmodell für die Softwareentwicklung|
-|RFID-Tags|xx|xx|
-|Raspi|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
-|xx|xx|xx|
+|RFID-Tags/RFID-Ausweis|xx|xx
+|Raspi|xx|xx
+|xx|xx|xx
+|xx|xx|xx
+|xx|xx|xx
+|xx|xx|xx
+|xx|xx|xx
 
 |===
 
@@ -43,8 +53,10 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 |Bezeichnung|	Definition |	Format | Gültigkeitsregeln | Aliase
-|Anmeldedaten|Zusammensetzung von Benutzername und Passwort.|String|Emailadresse muss @-Zeichen und Punkt enthalten.|Login
-|xx|xx|xx|xx|xx|
+|Anmeldedaten|x|x|x|Login
+|Zeiterfassung|xx|xx|xx|Zeit
+|Besondere Vorkommnisse|xx|xx|xx|
+
 |===
 
 
