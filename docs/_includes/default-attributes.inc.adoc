@@ -1,5 +1,5 @@
 // Meta
-:project-name: <Projektname (T00)>
+:project-name: Anwesenheitserfassung der Piloten auf dem Vereinsflugplatz des Mfc-Rossendorf (E2)
 // Settings:
 :toc:
 :toc-title: Inhaltsverzeichnis
