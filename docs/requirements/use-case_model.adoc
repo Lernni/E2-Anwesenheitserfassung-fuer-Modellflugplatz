@@ -26,10 +26,12 @@ include::../_includes/default-attributes.inc.adoc[]
 
 === Use-Cases
 
-* Vereinsmitglieder anmelden (include: 'Flugleiter bestimmen'-> Taste für Flugleiter bestimmen
+//
+* Vereinsmitglieder anmelden (include: 'Flugleiter bestimmen'-> Taste für Flugleiter bestimmen/ über Nutzerinterface?
                               include:  'Vereinsmitglieder existiert'
                              )
 * Vereinsmitglieder abmelden (include: 'Abmeldung vergessen') -> Reset-Taste
+
 * RFID-Ausweise zuorden
 * Pilotendaten verwalten (include: 
                                     Vereinsmitglieder anlegen, 

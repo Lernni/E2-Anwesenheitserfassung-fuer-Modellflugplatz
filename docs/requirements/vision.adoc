@@ -1,38 +1,38 @@
 = Vision: {project-name}
-Jakob  Laufer  <email@domain.org>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Vorname3 Nachname3 <email3@domain.org>
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der "Anwesenheitserfassung des Modellflugplatzes" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie die "Anwesenheitserfassung" diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der "Anwesenheitserfassung des Modellflugplatzes" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie die "Anwesenheitserfassung des Modellflugplatzes" diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die Anwesenheitserfassung zu nutzen, um damit einen sicheren und zuverlässigen Praxisbetrieb des Vereinsflugplatzes zu erreichen. 
+Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die digitalisierte Anwesenheitserfassung/Protokollierung zu nutzen, um damit einen sicheren, zuverlässigen und kontrollierten Praxisbetrieb des Vereinsflugplatzes zu gewährleisten. 
 
-->zwang vom Gesetzgeber -- einige Bürokratische Maßnahmen erleichtern
+//Definition und Referenzen werden später noch hinzugefügt
 
-=== Definitionen, Akronyme und Abkürzungen
-siehe Glossar (Verweis hier einfügen).
+//=== Definitionen, Akronyme und Abkürzungen
+//siehe Glossar (später Verweis)
 
-=== Referenzen
-(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
+//=== Referenzen
+//(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
 
 == Positionierung
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
-Um einen sicheren Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzliche festgelegte bürokratische Maßnahmen zu beachten. 
-Eine davon ist die erfassung/protokollierung der anwesenden Piloten. Aktuell wird der analoge Vorgang über ein zentrales Flugbuch
-geregelt, in welches sich eintragen werden muss. 
+Um einen sicheren und kontrollierten Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzliche festgelegte bürokratische Maßnahmen zu beachten. 
+Eine davon ist die Erfassung/Protokollierung der anwesenden Piloten. Aktuell wird der  Vorgang analog über ein zentrales Flugbuch
+geregelt, in welches sich beim betreten eingetragen und beim verlassen ausgetragen werden muss. 
 Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. 
-In Zukunft sollen sich die Piloten lokal mittels RFID-Ausweises auf einem autarken Raspberry Pi An-Abmelden können. 
-Die Anmeldedaten sollen erfasst, gesichert und über einen Webserver leicht einsehbar und verwaltbar werden. 
-So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und bürokratischen Aufwand ist.
+In Zukunft sollen sich die Piloten lokal mittels eines RFID-Ausweises auf einem autarken Raspberry Pi anmelden bzw. abmelden können. 
+Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden, und über einen Webserver leicht einsehbar und verwaltbar sein.
+So soll ein digitales System entstehen, welches frei von unsicherheiten und bürokratischen Aufwand ist.
 
 
 === Problem Statement
@@ -41,16 +41,10 @@ So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und
 
 [cols="1,3"]
 |===
-|Das Problem | einer unvollständigen und inkorrekten Erfassung im analogen Flugbuch, welches der Gesetzgeber vorschreibt
-|betrifft |	Vereinsmitglieder des Vereinsflugplatz Mfc-Rossendorf
-|die Auswirkung davon ist/sind |	
--unsicherheit durch ein mögliches abhantenkommen des Flugbuches (verlieren der Daten)
--ein mögliches Fehleintragen vonseiten der Vereinsmitgliedern
--mögliche unleserlichkeit der An-Abmeldung 
--ein zeitverlust 
--ein bürokratischer Aufwand durch das manuelle eintragen in das Flugbuch 
--konflikte mit dem Gestzgeber
-|eine erfolgreiche Lösung wäre |ein digitales System für die anwesenheitserfassung bzw. protokollierung der Piloten über einen Raspberry Pi, der die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
+|Das Problem | einer, vom Gesetzgeber vorgeschriebenen Erfassung der Vereinsmitglieder im physischen Flugbuch
+|betrifft |	die Vereinsmitglieder des Vereinsflugplatz Mfc-Rossendorf
+|die Auswirkung davon ist| das die An-/Abmeldedaten unvollständig, teilweise unleserlich oder gar vergessen werden einzutragen. Neben dem bürokratischer Aufwand, kann ein Abhantenkommen des physischen Flubuches nicht ausgeschlossen werden.
+|eine erfolgreiche Lösung wäre |ein digitales System für die Anwesenheitserfassung bzw. Protokollierung der Vereinsmitglieder über einen Raspberry Pi, der die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
 |===
 
 === Positionierung des Produkts
@@ -60,12 +54,12 @@ So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und
 
 [cols="1,3"]
 |===
-|Für|  Vereinsmitgliedern
-|die| den Flugplatz betreten und Modellflugzeuge fliegen wollen.    
-|Das Produkt| ist eine Anwesenheitserfassung/Protokollierung der Piloten
-|welches| eine sichere erfasung und dadurch einen sicheren Betrieb des Flugplatzes gewährleistet
-|Im Gegensatz zu| dem manuellen eintragen in ein Flugbuch
-|Unser Produkt| gewährleistet die sichere An/Abmeldung, Verarbeitung, verwaltung und Synchronisation der Daten vom Piloten
+|Für|  Vereinsmitglieder
+|die| den Vereinsflugplatz betreten oder verlassen wollen.   
+|Das Produkt| ist eine digitalisierte Anwesenheitserfassung/Protokollierung der Vereinsmitglieder
+|welches| eine sichere Erfassung und dadurch einen sicheren und kontrollierten Betrieb des Vereinsflugplatz gewährleistet.
+|Im Gegensatz zu| dem manuellen eintragen in das Flugbuch.
+|Unser Produkt| gewährleistet eine zuverlässige An-/Abmeldung, Verarbeitung, Verwaltung und Synchronisation der Daten von Vereinsmitgliedern.
 |===
 
 ==	Stakeholder Beschreibungen
@@ -75,30 +69,29 @@ So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und
 |===
 |Name|	Beschreibung	| Verantwortlichkeiten
 
-|Kunde
-|Auftraggeber vom  Mfc-Rossendorf
-|Einblick in die derzeitige Lage der Anwesenheitserfassung, Ansprechpartner
+|Herr Thomas Brenner
+|Auftraggeber und Vorsitzender des Vereins Mfc-Rossendorf
+|Ansprechpartner, liefert uns neben Informationen zum aktuellen System auch die benötigte Hard-/Software, setzt Ziele und thematische Schwerpunkte und überwacht den Projektfortschritt, wird das System in Zukunft verwalten
+
+|Professor Heino Iwe
+|Auftraggeber und langjähriges Mitglied des Vereins Mfc-Rossendorf
+|Ansprechpartner, gibt uns einen Einblick in das aktuellen System und deren Nachteile, überwacht den Projektfortschritt
 
 |Vereinsmitglieder
-|Mitglieder des Vereins welche den Flugplatz aktiv nutzen
-|für den Flugplatz und dessen sichere Nutung (An/Abmelden, Regeln einhalten et.)
+|Mitglieder des Vereins Mfc-Rossendorf welche den Flugplatz aktiv nutzen
+|werden das neue System der Anwessenheitserfassung nutzen
 
 |Vandalisten/Störende
-|inkorrektes Eintragen, beschädigen, klauen von Eigentum des Vereinsflugplatzes
-|sorgt für Konflikte, welche bei der Bearbeitung berücksichtigt werden müssen
+|unzuverlässiges Eintragen, beschädigen bzw. klauen von Eigentum des Vereinsflugplatzes
+|sorgten in Vergangenheit für Konflikte, welche bei der Bearbeitung berücksichtigt werden müssen
 
 |Gesetzgeber 
-|gibt rechtliche/bürokratische Rahmenbedingungen vor (sicherheit)
+|gibt rechtliche/bürokratische Rahmenbedingungen vor 
 |überwacht Gesetze und Regelungen hinsichtlich Sicherheit
 
-|Verwaltung
-|Vereinsmitglieder, welche die Rechte besitzen die Daten zu verwalten (anlegen, modifizieren, löschen) 
-|sind verantwortlich für die Vereinsmitgliederdaten und deren Verwaltung
-
-
-|Entwickler 
-|arbeiten an Projekt und setzten es um
-|analysieren, entwerfen, implementieren und Testen das zu entwickelnde Projekt
+|Verwaltung (Administratoren)
+|Vereinsmitglieder des Mfc-Rossendorf, welche die Rechte besitzen die Daten zu verwalten (anlegen, modifizieren, löschen) 
+|verwalten Vereinsmitgliederdaten 
 
 |===
 
@@ -106,43 +99,67 @@ So soll ein zuverlässiges System entstehen, welches frei von unsicherheiten und
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das? -> Die Anzahl des Vereins beträgt ca. 100 Mitglieder. Davon sind ungefähr 30 regelmäßig auf dem Flugplatz und würden das System nutzen. 
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die Bearbeitungszeit beträgt im Rahmen der Projektarbeit 1 Jahr (2 Semester). Zeit für Arbeitsschritte variiert.
-. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> Das System befindet sich -> FRAGEN  
-. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig? -> In der Vergangenheit wurde die Anwesenheit über ein Fugbuch erfasst. In Zukunft über ein Raspberry Pi, der die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
-. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden? -> Ja, die Daten einer örtlichen Wetterstation werden auch über den Webserver laufen
+//. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das? 
+
+//. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? 
+
+* Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+
+[NOTE]
+====
+
+====
+
+* Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig? 
+
+[NOTE]
+====
+.Aktuelle Systemplattform: 
+- ein zentrales Flugbuch, in welches sich manuell eingetragen wird
+
+.Zukunftige Systemplattform:
+- ein digitales System, welches über einen Raspberry Pi, die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht
+====
+
+*  Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden? 
+
+[NOTE]
+====
+.durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte: 
+- autarker Raspberry Pi mit Internetanbindung
+- montierte Solarzelle 
+
+====
+
+//Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
+
+// == Produkt-/Lösungsüberblick
+// === Bedarfe und Hauptfunktionen
+// //Vermeiden Sie Angaben zum Entwurf. Nennen wesentliche Features (Produktmerkmale) auf allgemeiner Ebene. Fokussieren Sie sich auf die benötigten Fähigkeiten des Systems und warum (nicht wie!) diese realisiert werden sollen. Geben Sie die von den Stakeholdern vorgegebenen Prioritäten und das geplante Release für die Veröffentlichung der Features an.
 
 
-Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
-
-== Produkt-/Lösungsüberblick
-=== Bedarfe und Hauptfunktionen
-//Vermeiden Sie Angaben zum Entwurf. Nennen wesentliche Features (Produktmerkmale) auf allgemeiner Ebene. Fokussieren Sie sich auf die benötigten Fähigkeiten des Systems und warum (nicht wie!) diese realisiert werden sollen. Geben Sie die von den Stakeholdern vorgegebenen Prioritäten und das geplante Release für die Veröffentlichung der Features an.
-
-
-[%header, cols="4,1,4,1"]
-|===
-|Bedarf|Priorität|	Features|	Geplantes Release
-|Anwesenheitserfassung|Hoch| |xx
-|Zeiterfassung|Hoch|xx|xx
-|Protokollierung der Daten |Hoch|xx|xx
-|Einsicht/Verwaltung|Hoch|xx|xx
-|Flugleiter bestimmung|Mittel|xx|xx
-|Erweiterung der Werkstatt|niedrig|||
-|===
+// [%header, cols="4,1,4,1"]
+// |===
+// |Bedarf|Priorität|	Features|	Geplantes Release
+// |Anwesenheitserfassung/ Protokollierung|Hoch| |?.06/07.2021
+// |Zeiterfassung|Hoch|xx|?.06/07.2021
+// |Verwaltung der Daten |Hoch|Das Verwalten(Anlegen, modifizieren, löschen) von Vereinsmitgliedern & Zuordnung von RFID-Ausweisen |?.06/07.2021
+// |Flugleiter bestimmung|Mittel|xx|?.06/07.21
+// |Erweiterung der Werkstatt|niedrig||?.06/07.2021
+// |===
 
 
-== Zusätzliche Produktanforderungen
-//Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
+// == Zusätzliche Produktanforderungen
+// //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 
-. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
-. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
-. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
-. Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
+// . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
+// . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+// . Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
+// . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
+// . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 
-[%header, cols="4,1,1"]
-|===
-|Anforderung|	Priorität|	Geplantes Release
-|xx|xx|xx|
-|===
+// [%header, cols="4,1,1"]
+// |===
+// |Anforderung|	Priorität|	Geplantes Release
+// |xx|xx|xx|
+// |===

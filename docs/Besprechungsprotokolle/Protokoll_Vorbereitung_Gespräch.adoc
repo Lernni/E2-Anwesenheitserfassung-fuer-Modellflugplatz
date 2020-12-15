@@ -1,0 +1,27 @@
+= Protokoll vom 15.12.2020
+1.0, 15.12.2020
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Nächste Besprechung mit Kunden am 17.12.2020 (15 Uhr)
+
+* Vorstellung vom Team Entwicklung
+* Vorstellung der Vision
+* Letzte Frage vom Team Analyse zur Vision: 
+.. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden? (Ausser Raspberry Pi mit Internetanbindung & montierte Solarzelle) ->generell etwas zur Infrastruktur sagen
+.. Fragen für Produkt-/Lösungsüberblick & Zusätzliche Produktanforderungen
+
+* Fragen vom Auftraggeber ggf. beantworten 
+* Use-Cases allgemeine Vorstellung
+* Use-Cases spezifisch
+* Fragen bzgl. Use-Cases klären:
+.. Wie sieht das "Display" aus? -> enthält vll Infos zum Datum, "Anmeldung erfolgreich" etc.
+.. Signallämpchen bzw. Meldeleuchte? -> vll mehrere Farben?  (Grün=erfolgreich, Rot=Fehlgeschlagen)
+.. Flugleiter nachträglich im System einfügen oder Flugleiter Knopf bei anmeldung?
+.. Performance -> maximale Dauer des Scanvorgangs bei An/Abmeldung?
+.. Wie oft müssen Vereinsmitglieder neu angelegt/entfernt werden?
+.. Alternative für Systemausfall? -> Anmeldung über manuelles Flugbuch & später Daten manuell übertragen?
+.. Entwicklung: Entwurf bzw. Aufbau des Webservers
+.. spezielle Schemata gewünscht? (vll. Datenbank-Schema)
+
+* nächste Iterationen vorstellen (Grob-Design, ggf. Korrektur der Vision, zukünftige Schemata von der Entwicklung)
