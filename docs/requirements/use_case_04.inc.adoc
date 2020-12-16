@@ -1,50 +1,59 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-== Use-Case: <use-case name>
+== Use-Case: UC04: Pilotendaten löschen
 ===	Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+In diesem Use-Case wird der komplette Vorgang zum Löschen eines `Vereinsmitglieds (Pilot)` durch den *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== <Akteur 1 Name>
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte nicht mehr auf dem Modellflugplatz fliegen.
+
+==== Administrator
+Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet alle Daten.
 
 === Vorbedingungen
-//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-<Vorbedingung 1>
+. Das *Vereinsmitglied* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 is hier die Vorraussetzung.
+. Der *Administrator* hat Kenntnis über die `Kennung` des zu löschenden Piloten. 
+. Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 
 === Standardablauf (Basic Flow)
-//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. 	…
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ die Funktion _Bestehendes Vereinsmitglied löschen_ auswählt.
+. Der *Administrator* gibt in einem _Formular_ die `Kennung` des zu löschenden *Vereinsmitglieds* ein.
+. Der *Administrator* bestätigt das _Formular_.
+. Der _Webserver_ prüft , ob die `Kennung` vorhanden ist
+.. IF `Kennung` vorhanden:
+... Der dem *Vereinsmitglied* zugewiesene _RFID-Ausweis_ wird als `deaktiviert` markiert.
+... `Vereinsmitglied` und alle zugehörigen `Pilotendaten` werden aus der Datenbank gelöscht.
+... Der _Webserver_ wechselt zur _Admin-Seite_.
+.. SONST:
+... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
+... Der _Webserver_ bricht den Vorgang ab.
+... Der *Administrator* korrigiert den Fehler im _Formular_.
+... Weiter in Schritt 2
+. Das (nun ehemalige) *Vereinsmitglied* übergibt dem *Administrator* seinen _RFID-Ausweis_.
+. Der Use Case ist abgeschlossen, das ehemalige *Vereinsmitglied* muss den Flugplatz nun verlassen und kann diesen nicht mehr nutzen.
 
 === Alternative Abläufe
-//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+//hier nicht nötig, da alle Ausnahmen bereits in UC03 behandelt wurden
+==== Systemausfall
+Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn die *Verwaltung* sich nicht einloggen kann.
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+// Frage an TS
 
 === Wesentliche Szenarios
-//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. 	…
-. <Szenario 1, Schritt n>
+
+==== Erfolgreiches Löschen der Pilotendaten
+. Sc1: Die *Verwaltung* löscht ein `Vereinsmitglied` über den _Webserver_ und das *Vereinsmitglied* übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an den *Administrator*.
 
 ===	Nachbedingungen
-//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+* Das (ehemalige) *Vereinsmitglied* besitzt keinen _RFID-Ausweis_, mehr um sich am Flugplatz an- und abmelden zu können
+* Alle `Pilotendaten` des (ehemaligen) *Vereinsmitglieds* befinden sich nicht mehr in der Datenbank.
 
 === Besondere Anforderungen
-//Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-==== <Besondere Anforderung 1>
+==== Usability
+
+Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er das Aus- und Eintreten in den Modellflugverein ermöglicht. 
+
+* Um das versehentliche Löschen eines *Vereinsmitglieds* zu verhinden, sollten regelmäßig backups gemacht werden.
+* Eventuell sollte man eine Funktion implementieren, welche deas zuletzt gelöschte *Vereinsmitglied* in einem Pufferspeicher bereit hält, was die Wiederherstellung, erleichtern würden, für den Fall, dass ein Löschvorgang unabsichtlich eintritt.
