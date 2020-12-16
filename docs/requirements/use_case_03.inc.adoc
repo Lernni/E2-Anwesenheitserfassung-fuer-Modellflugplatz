@@ -1,30 +1,69 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-== Use-Case: <use-case name>
+== Use-Case: UC03: Pilotendaten anlegen
 ===	Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+In diesem Use-Case wird der komplette Vorgang zum Anlegen eines `Vereinsmitglieds (Pilot)` durch die *Verwaltung* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== <Akteur 1 Name>
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+
+==== Verwaltung
+Der Akteur "Verwaltung" hat vollen Zugriff auf das _System_ und verwaltet die entstehenden Daten.
 
 === Vorbedingungen
-//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-<Vorbedingung 1>
+. Die *Verwaltung* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
+. Es existiert mindestens ein nicht aktivierter, aber registrierter _RFID-Ausweis_.
+. Die *Verwaltung* hat sich auf dem _Webserver_ eingeloggt.
+// Frage: weiterer Use-Case: Verwaltung loggt sich ein?
+// Frage: weiterer Use-Case: Hinzufügen von RFID-Ausweisen?
+
+// Frage: Gibt es Vereinsmitglieder, welche keinen RFID-Ausweis zugeordnet haben?
+
 
 === Standardablauf (Basic Flow)
-//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. 	…
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt, wenn die *Verwaltung* auf der _Admin-Seite_ des _Webservers_ die Funktion _Neues Vereinsmitglied_ auswählt.
+. Die *Verwaltung* gibt in einem _Formular_ die `Pilotendaten` des *Vereinsmitglieds* ein.
+. Die *Verwaltung* gibt die `Kennung` des _RFID-Ausweises_, der dem *Vereinsmitglied* zugewiesen werden soll, mit in das _Formular_ ein.
+. Die *Verwaltung* bestätigt das _Formular_.
+. Der _Webserver_ prüft die Richtigkeit der eingegeben `Daten`:
+.. WENN `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) UND `Kennung` des _RFID-Ausweises_ vorhanden UND _RFID-Ausweis_ nicht aktiviert:
+... Der _Webserver_ erstellt ein neues `Vereinsmitglied`
+... Der _Webserver_ weist den _RFID-Ausweis_ dem neuen `Vereinsmitglied` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
+... Der _Webserver_ wechselt zur _Admin-Seite_.
+.. SONST
+... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
+... Der _Webserver_ bricht den Vorgang ab.
+... Die *Verwaltung* korrigiert den Fehler im _Formular_.
+... Weiter in Schritt 4
+. Die *Verwaltung* übergibt dem *Vereinsmitglied* den zugeordneten _RFID-Ausweis_.
+. Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz jetzt nutzen.
+
 
 === Alternative Abläufe
-//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+
+==== RFID-Ausweis nicht registriert
+Wenn die *Verwaltung* im Schritt 3 eine `Kennung` eingibt, die auf einen nicht existierenden _RFID-Ausweis_ zeigt, dann:
+
+. Die *Verwaltung* hat Schritt 4 erfolgreich durchlaufen.
+. Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ nicht gefunden wurde.
+. Die Korrektur in Schritt 5b.iii besteht in der Ausführung von (UCxx - Hinzufügen eines RFID-Ausweises)
+. Der Use-Case wird in Schritt 4 fortgesetzt.
+
+==== RFID-Ausweis bereits aktiviert
+Wenn die *Verwaltung* im Schritt 3 eine `Kennung` eingibt, die auf einen bereits aktivierten _RFID-Ausweis_ zeigt, dann:
+
+. Die *Verwaltung* hat Schritt 4 erfolgreich durchlaufen.
+. Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ bereits aktiviert wurde.
+. Die *Verwaltung* entscheidet, ob in Schritt 5b.iii entweder
+.. ein nicht aktivierter, anderer _RFID-Ausweis_ ausgewählt wird, oder
+.. ein aktivierter _RFID-Ausweis_ deaktiviert wird (UC04 - Pilotendaten löschen))
+. Der Use-Case wird in Schritt 4 fortgesetzt.
+
+==== Systemausfall
+Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn die *Verwaltung* sich nicht einloggen kann.
+
+// Frage an TS
+
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
@@ -35,16 +74,24 @@ Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
 . <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
-//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. 	…
-. <Szenario 1, Schritt n>
+
+==== Erfolgreiches Anlegen der Pilotendaten
+. Sc1: Die *Verwaltung* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das *Vereinsmitglied*.
+
+==== Fehlgeschlagenes Anlegen der Pilotendaten
+. Sc1: Die *Verwaltung* kann kein neues `Vereinsmitglied` anlegen, da kein _RFID-Ausweis_ nicht aktiviert, aber registriert ist. Die *Verwaltung* muss einen neuen _RFID-Ausweis_ hinzufügen (UCxx) oder einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren - und damit auch das entsprechende `Vereinsmitglied` entferen (UC04). (siehe alternative Abläufe)
 
 ===	Nachbedingungen
-//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+* Das *Vereinsmitglied* besitzt den entsprechenden _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
 
 === Besondere Anforderungen
-//Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-==== <Besondere Anforderung 1>
+==== Usability
+
+Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere (alle?) Use Cases ist. Die *Verwaltung* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
+
+* nur bestimmte Zeichen im Formular zulassen
+* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren -> Abfrage an die _Datenbank_ und eventuelle Auflistung in einer Dropdown-Liste)
+
+Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webservers_ stark beeinträchtigen.
