@@ -1,30 +1,70 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-== Use-Case: <use-case name>
+== Use-Case: Vereinsmitglieder abmelden
 ===	Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
+In diesem Use-Case wird der komplette Vorgang der Abmeldung eines *Vereinsmitgliedes* beim Verlassen des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== <Akteur 1 Name>
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte sich abmelden und den Flugplatz verlassen.
+
+==== Administrator
+Der Akteur "Administrator" verwaltet die entstandenen Daten.
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-<Vorbedingung 1>
+. Dem *Vereinsmitglied* wurde bereits ein RFID-Ausweis zugeordnet und übergeben
+. Das *Vereinsmitglied* ist angemeldet
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. 	…
-. <Standardablauf Schritt n>
+. Der Use Case beginnt, wenn das *Vereinsmitglied* gehen möchte
+. *Vereinsmitglied* hält seinen RFID-Ausweis an den RFID-Reader
+. RFID-Reader prüft, ob *Vereinsmitglied* bereits angemeldet ist
+. IF *Vereinsmitglied* ist angemeldet
+.. Daten werden erfolgreich erfasst und protokolliert
+.. Abmeldung erfolgreich
+.. Signallämpchen leuchtet auf
+.. Vereinsflugplatz kann verlassen werden
+. ELSE *Vereinsmitglied* war nicht angemeldet
+.. Daten können nicht protokolliert werden
+.. Abmeldung fehlgeschlagen
+.. Signallämpchen leuchtet nicht auf
+.. *Vereinsmitglied* muss sich beim *Administrator* melden
 . Der Use Case ist abgeschlossen.
+// Frage: Was passiert wenn man vergessen hat sich an zu melden? Beim Administrator melden? Händisch nachtragen?
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+==== Flugleiter
+Wenn *Vereinsmitglied* welcher Flugleiter ist, im Schritt 1 des Standardablauf bemerkt, dass noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz sind, dann
+
+. Flugleiter muss ein, noch angemeldetes *Vereinsmitglied* finden, welcher die Flugleiter-Rolle übernimmt
+. Neuer Flugleiter muss den Flugleiter-Knopf drücken
+. Der Use Case wird im Schritt 2 fortgesetzt.
+// Frage: Wie wird die Flugleiter-Rolle weitergegeben? Muss sich der neue Flugleiter abmelden und nochmal neu als Flugleiter anmelden?
+
+==== Systemausfall
+Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht abzumelden, die Abmeldung aufgrund einer anhaltenden technischen Störung fehlschlägt, dann
+
+. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück
+. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein
+. *Vereinsmitglied* muss die technische Störung an den *Administrator* weiterleiten
+. Der Use Case wird im Schritt 4d fortgesetzt.
+// Frage: Wird es weiterhin ein manuelles Flugbuch geben? 
+
+==== Reset-Taste
+Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzumelden, dann
+
+. *Vereinsmitglied*, der als letztes den Flugplatz verlässt, kontrolliert ob sich alle *Vereinsmitglieder* abgemeldet haben
+. IF nicht alle *Vereinsmitglieder* haben sich abgemeldet
+.. Das letzte *Vereinsmitglied* betätigt die Reset-Taste
+.. Der Use Case wird im Schritt 2 fortgesetzt.
+. ELSE *Vereinsmitglieder* haben sich alle abgemeldet
+.. Der Use Case wird im Schritt 2 fortgesetzt.
+// Frage: Wie genau soll es mit der Reset-Taste ablaufen. Drückt der letzte Pilot immer? Soll man sehen ob noch Piloten angemeldet sind?
+
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
@@ -36,15 +76,38 @@ Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. 	…
-. <Szenario 1, Schritt n>
+==== Erfolgreiche Abmeldung
+. Sc1: *Vereinsmitglied* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und meldet sich erfolgreich ab. Das Signallämpchen leuchtet auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* A. kann den Flugplatz verlassen.
+
+==== Fehlgeschlagene Abmeldung
+. Sc2.1: *Vereinsmitglied* B. möchte den Flugplatz verlassen. Er/Sie war nicht angemeldet, dadurch können die Daten nicht erfolgreich ermittelt werden und die Abmeldung ist dadurch fehlgeschlagen.
+
+. Sc2.2: *Vereinsmitglied* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren RFID-Tag an den RFID-Reader und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz verlassen.
+
+==== Flugleiter
+. Sc3: *Vereinsmitglied* D. ist der aktuelle Flugleiter und möchte den Flugplatz verlassen. Da sich nach seiner Abmeldung noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz befinden muss ein neuer Flugleiter bestimmt werden. *Vereinsmitglied* D. sucht ein *Vereinsmitglied* E. welcher als neuer Flugleiter bestimmt wird. *Vereinsmitglied* D. meldet sich erfolgreich ab und *Vereinsmitglied* E. meldet sich als neuer Flugleiter an.
+
+==== Reset-Taste
+
+. Sc4: *Vereinsmitglied* F. möchte als letzter Pilot den Flugplatz verlassen. Auf dem Monitor werden noch angemeldete *Vereinsmitglieder* angezeigt, welche vergessen haben sich abzumelden. *Vereinsmitglied* F. betätigt die Reset-Taste, danach hält er/sie seinen/ihren RFID-Tag an den RFID-Reader und meldet sich erfolgreich ab. Das Signallämpchen leuchtet auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* F. kann den Flugplatz verlassen.
+
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Cases müssen folgende Nachbedingungen erfüllt sein:
+
+==== Signallämpchen
+Das Signallämpchen sollte sich bei jeder Abmeldung (erfolgreich oder nicht erfolgreich) zurücksetzten.
+
+==== Technische Störung
+Falls es zu einer anhaltenden technischen Störung kommt, muss sich der *Administrator* um das Problem kümmern, und die manuell eingetragenen Anmeldedaten in die Datenbank übertragen.
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-==== <Besondere Anforderung 1>
+==== Usability
+Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jedes Vereinsmitglied einfach und verständlich sein.
+
+==== Performance
+* Das lesen des RFID-Readers sollte nicht länger als...
+* Die Anmelde-Bestätigung des Signallämpchens sollte nicht länger als...
+
