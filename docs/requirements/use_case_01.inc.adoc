@@ -1,38 +1,39 @@
 == Use-Case: UC01: Vereinsmitglieder anmelden
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird der komplette Vorgang der Anmeldung eines Vereinsmitgliedes beim betreten des Flugplatzes beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Anmeldung eines Vereinsmitgliedes beim Betreten des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglieder
-Der Akteur Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
 ==== Verwaltung
-Der Akteur "Verwaltung" verwaltet die enstehenden Daten Daten.
+Der Akteur "Verwaltung" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
 
-. Vereinsmitgliedern wurde einen RFID-Ausweis zugeordent
+// . UC03 ist erfüllt
+. Vereinsmitgliedern wurde ein RFID-Ausweis zugeordnet
 . Jedem Vereinsmitglied wurde dieser RFID-Ausweis übergeben
-. Vereinsmitdlied hat beim antreffen auf den Flugplatz den RFID-Ausweis dabei
+. Vereinsmitglied hat beim Antreffen auf den Flugplatz den RFID-Ausweis dabei
 
 === Standardablauf (Basic Flow)
 //Akteure und System kenntlich machen (Fett)
 . Der Use Case beginnt, wenn das Vereinsmitglied am Flugplatz eintrifft 
-. Vereinsmitglied hällt seinen RFID-Ausweis an den RFID-Reader
+. Vereinsmitglied hält seinen RFID-Ausweis an den RFID-Reader
 . RFID-Reader prüft, ob Vereinsmitglied existiert
-. IF Vereinmitglied existiert
+. IF Vereinsmitglied existiert
 .. Signallämpchen leuchtet auf
 .. Anmeldung erfolgreich
 .. Daten werden erfolgreich erfasst und protokolliert
-.. Vereinsflugplatz darf betreten und genutz werden
-. ESLE Vereinmitglied existiert nicht
+.. Vereinsflugplatz darf betreten und genutzt werden
+. ESLE Vereinsmitglied existiert nicht
 .. Signallämpchen leuchtet nicht auf
-.. Anmelung fehlgeschagen 
-.. Daten können nicht protoklliert werden
+.. Anmeldung fehlgeschlagen 
+.. Daten können nicht protokolliert werden
 .. Vereinsflugplatz darf nicht betreten werden
 .. Sich bei Verwaltung melden 
-. Der Use Case wäre bei einer erfolgreichen anmeldung abgeschlossen.
+. Der Use Case wäre bei einer erfolgreichen Anmeldung abgeschlossen.
 //Frage: Display mit Information zum Datum, erfolgreiche anmeldung etc.
 //Frage: Signallämpchen leuchtet Grün/Rot
 
@@ -41,9 +42,9 @@ Der Akteur "Verwaltung" verwaltet die enstehenden Daten Daten.
 //Frage: Flugleiter nachträglich eintragen? 
 //Frage: Was muss er machen? -- Knopf drücken?
 ==== Flugleiter
-Wenn Vereinsmitglied im Schritt 1 des Standardablauf feststellt, das mehr als 2 Vereinmitglieder am Platz sind:
+Wenn Vereinsmitglied im Schritt 1 des Standardablaufs feststellt, dass mehr als 2 Vereinsmitglieder am Platz sind:
 
-. Vereinsmitglied hat Schritt 4 des Standartdablaufes erfolgreich durchlaufen
+. Vereinsmitglied hat Schritt 4 des Standardablaufes erfolgreich durchlaufen
 . Vereinsmitglied muss sich zum Flugleiter ernennen, indem er auf den Flugleiter-Knopf drückt
 . Der Use Case wird im Schritt 4d fortgesetzt.
 //Frage: genauer Ablauf
@@ -68,18 +69,18 @@ Wenn Vereinsmitglied im Schritt 2 des Standardablauf sich versucht anzumelden, d
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 ==== Erfolgreiche Anmeldung
-. Sc1: Vereinsmitglied A. trifft am Flugplatz ein. Er/Sie hällt sein/ihr RFID-Tag an den den RFID-Reader und meldet sich erfolgreich an. Das Signallämpchen leuchtet auf. Vereinsmitglied A. darf den Flugplatz betreten.
+. Sc1: Vereinsmitglied A. trifft am Flugplatz ein. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und meldet sich erfolgreich an. Das Signallämpchen leuchtet auf. Vereinsmitglied A. darf den Flugplatz betreten.
 
 ==== Fehlgeschlagene Anmeldung
-. Sc2.1: Person B. trifft am Flugplatz ein. Er/Sie hällt einen fremden RFID-Tag an den den RFID-Reader und verwucht sich anzumelden. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. Das Signallämpchen leuchtet nicht auf, und Person B. darf den Flugplatz nicht betreten.
+. Sc2.1: Person B. trifft am Flugplatz ein. Er/Sie hält einen fremden RFID-Tag an den RFID-Reader und versucht sich anzumelden. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. Das Signallämpchen leuchtet nicht auf, und Person B. darf den Flugplatz nicht betreten.
 
-. Sc2.2: Vereinsmitglied C. trifft am Flugplatz ein. Er/Sie hällt sein/ihr RFID-Tag an den den RFID-Reader und versucht sich anzumelden. Da es wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte der Verwaltung bescheid gegeben werden, in Hinblick auf die Technische Störung. Vereinsmitglied C. darf den Flugplatz betreten.
+. Sc2.2: Vereinsmitglied C. trifft am Flugplatz ein. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und versucht sich anzumelden. Da wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte der Verwaltung Bescheid gegeben werden, in Hinblick auf die technische Störung. Vereinsmitglied C. darf den Flugplatz betreten.
 
 ==== Flugleiter 
 
-. Sc3.1: Vereinsmitglied D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als Flugleiter kennzeichnen, indem er dem er den Flugleiter-Knopf betätigt. Vereinsmitglied D. darf den Flugplatz betreten.
+. Sc3.1: Vereinsmitglied D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als Flugleiter kennzeichnen, indem er den Flugleiter-Knopf betätigt. Vereinsmitglied D. darf den Flugplatz betreten.
 
-. Sc3.2: Vereinsmitglieder E, F und G treffen am Flugplatz ein. Die Gruppe muss sich für einen  entscheiden, der sich bei der Anmeldung als Flugleiter kennzeichnet. Vereinsmitglieder E, F und G dürfen den Flugplatz betreten. 
+. Sc3.2: Vereinsmitglieder E, F und G treffen am Flugplatz ein. Die Gruppe muss sich untereinander entscheiden, wer sich bei der Anmeldung als Flugleiter kennzeichnet. Vereinsmitglieder E, F und G dürfen den Flugplatz betreten. 
 
 ===	Nachbedingungen
 
