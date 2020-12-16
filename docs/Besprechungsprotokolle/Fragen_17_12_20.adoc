@@ -1,0 +1,22 @@
+= Fragen für den Themensteller
+1.0, 16.12.20
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Fragen für das Meeting vom 17.12.2020
+
+[%header, cols="1,1"]
+|===
+
+|Frage |Antwort
+|Wird es ein kleines Display geben mit Informationen am RFID Reader (Datum, erfolgreiche Anmeldung...)?|
+|Bei der Ankunft eines 3. Vereinsmitgliedes am Flugplatz, wie ist danach der genaue Ablauf? Müssen sich alle absprechen, wer der Flugleiter wird oder wird einfach die 3. Person Flugleiter?|
+|Soll es ein alternatives Flugbuch geben für den Fall eines Systemausfalles?|
+|Wie lange soll der Prozess des Auslesens dauern bei dem die Mitglieder ihren Chip an das Lesegerät halten?|
+|Sollte es ein weiteres Use-Case "Verwaltung loggt sich ein", "HInzufügen von RFID-Ausweisen" geben?|
+|Wird es Vereinsmmitglieder geben, die keinen RFID-Ausweis bekommen?|
+|_Frage an TS_ ?|
+|Wie oft müssen Vereinsmitglieder neu angelegt bzw. gelöscht werden?|
+|Welche Standards und Hardware soll genutzt werden?|
+|Gibt es Einschränkungen (Externe, für den Entwurf)
+===
