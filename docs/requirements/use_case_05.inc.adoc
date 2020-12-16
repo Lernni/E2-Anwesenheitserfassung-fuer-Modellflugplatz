@@ -1,50 +1,42 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 == Use-Case: <use-case name>
 ===	Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+
+Dieser Use-Case beschreibt das Modifizierens der Benutzerdaten eines Vereinsmitgliedes durch einen *Administrator*.
 
 ===	Kurzbeschreibung der Akteure
-==== <Akteur 1 Name>
+==== Administrator
+Der Akteur *Administrator* möchte die Daten eines Vereinsmitgliedes verändern.
 
 === Vorbedingungen
-//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-<Vorbedingung 1>
+
+. Das Vereinsmitglied, dessen Daten modifiziert werden sollen, muss in der `Datenbank` vorhanden sein.
 
 === Standardablauf (Basic Flow)
-//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. 	…
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
-
-=== Alternative Abläufe
-//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
-
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die Daten eines Vereinsmitgliedes zu verändern auf der Webseite anmeldet.
+. *Administrator* wählt aus einer Übersicht das Vereinsmitglied aus, dessen Daten modifiziert werden sollen.
+. *Administrator* verändert die Daten des Vereinsmitgliedes.
+. IF *Administrator* bestätigt Änderungen
+.. Änderungen werden in die `Datenbank` übernommen
+. ELSE *Administrator* bricht Modifikation ab
+.. Änderungen werden nicht in die `Datenbank` übernommen
+. Der Use Case ist bei erfolgreicher Modifikation abgeschlossen.
 
 === Wesentliche Szenarios
-//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. 	…
-. <Szenario 1, Schritt n>
+
+==== Erfolgreiche Modifikation
+. Sc1: Die Daten von Vereinsmitgliedes A haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der Webseite an, verändert die Daten von Vereinsmitglied A und bestätigt die Änderungen. Die Daten von Vereinsmitglied A sind nun in der `Datenbank` aktualisiert.
+
+==== Abgebrochene Modifikation
+. Sc2: Die Daten von Vereinsmitgliedes C haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der Webseite an, verändert die Daten von Vereinsmitgliedes B und schließt versehentlich die Webseite. Die Veränderung der Daten wird nicht in der `Datenbank` gespeichert.
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-==== <Nachbedingung 1>
+==== Datenbank
+Die Daten des Vereinsmitgliedes müssen korrekt in der `Datenbank` aktualisiert werden.
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-==== <Besondere Anforderung 1>
+==== Berechtigung
+Nicht jedes Vereinsmitglied ist gleichzeitig auch *Administrator*. Daher darf die Übersicht der Vereinsmitglieder nur denjenigen *angemeldeten Benutzern* angezeigt werden, die auch die Berechtigung dazu haben.
