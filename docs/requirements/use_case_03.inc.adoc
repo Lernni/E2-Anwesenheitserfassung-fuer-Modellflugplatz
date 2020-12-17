@@ -1,18 +1,18 @@
 == Use-Case: UC03: Pilotendaten anlegen
 ===	Kurzbeschreibung
-In diesem Use-Case wird der komplette Vorgang zum Anlegen eines `Vereinsmitglieds (Pilot)` durch die *Verwaltung* beschrieben.
+In diesem Use-Case wird der komplette Vorgang zum Anlegen eines `Vereinsmitglieds (Pilot)` durch einen *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
 Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
-==== Verwaltung
-Der Akteur "Verwaltung" hat vollen Zugriff auf das _System_ und verwaltet die entstehenden Daten.
+==== Administrator
+Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet die entstehenden Daten.
 
 === Vorbedingungen
-. Die *Verwaltung* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
+. Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
 . Es existiert mindestens ein nicht aktivierter, aber registrierter _RFID-Ausweis_.
-. Die *Verwaltung* hat sich auf dem _Webserver_ eingeloggt.
+. Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 // Frage: weiterer Use-Case: Verwaltung loggt sich ein?
 // Frage: weiterer Use-Case: Hinzufügen von RFID-Ausweisen?
 
@@ -21,46 +21,46 @@ Der Akteur "Verwaltung" hat vollen Zugriff auf das _System_ und verwaltet die en
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn die *Verwaltung* auf der _Admin-Seite_ des _Webservers_ die Funktion _Neues Vereinsmitglied_ auswählt.
-. Die *Verwaltung* gibt in einem _Formular_ die `Pilotendaten` des *Vereinsmitglieds* ein.
-. Die *Verwaltung* gibt die `Kennung` des _RFID-Ausweises_, der dem *Vereinsmitglied* zugewiesen werden soll, mit in das _Formular_ ein.
-. Die *Verwaltung* bestätigt das _Formular_.
+. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ die Funktion _Neues Vereinsmitglied_ auswählt.
+. Der *Administrator* gibt in einem _Formular_ die `Pilotendaten` des *Vereinsmitglieds* ein.
+. Der *Administrator* gibt die `Kennung` des _RFID-Ausweises_, der dem *Vereinsmitglied* zugewiesen werden soll, mit in das _Formular_ ein.
+. Der *Administrator* bestätigt das _Formular_.
 . Der _Webserver_ prüft die Richtigkeit der eingegeben `Daten`:
-.. WENN `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) UND `Kennung` des _RFID-Ausweises_ vorhanden UND _RFID-Ausweis_ nicht aktiviert:
+.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ vorhanden AND _RFID-Ausweis_ nicht aktiviert:
 ... Der _Webserver_ erstellt ein neues `Vereinsmitglied`
 ... Der _Webserver_ weist den _RFID-Ausweis_ dem neuen `Vereinsmitglied` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
 ... Der _Webserver_ wechselt zur _Admin-Seite_.
-.. SONST
+.. ELSE
 ... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
 ... Der _Webserver_ bricht den Vorgang ab.
-... Die *Verwaltung* korrigiert den Fehler im _Formular_.
+... Der *Administrator* korrigiert den Fehler im _Formular_.
 ... Weiter in Schritt 4
-. Die *Verwaltung* übergibt dem *Vereinsmitglied* den zugeordneten _RFID-Ausweis_.
+. Der *Administrator* übergibt dem *Vereinsmitglied* den zugeordneten _RFID-Ausweis_.
 . Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz jetzt nutzen.
 
 
 === Alternative Abläufe
 
 ==== RFID-Ausweis nicht registriert
-Wenn die *Verwaltung* im Schritt 3 eine `Kennung` eingibt, die auf einen nicht existierenden _RFID-Ausweis_ zeigt, dann:
+Wenn der *Administrator* im Schritt 3 eine `Kennung` eingibt, die auf einen nicht existierenden _RFID-Ausweis_ zeigt, dann:
 
-. Die *Verwaltung* hat Schritt 4 erfolgreich durchlaufen.
+. Der *Administrator* hat Schritt 4 erfolgreich durchlaufen.
 . Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ nicht gefunden wurde.
 . Die Korrektur in Schritt 5b.iii besteht in der Ausführung von (UCxx - Hinzufügen eines RFID-Ausweises)
 . Der Use-Case wird in Schritt 4 fortgesetzt.
 
 ==== RFID-Ausweis bereits aktiviert
-Wenn die *Verwaltung* im Schritt 3 eine `Kennung` eingibt, die auf einen bereits aktivierten _RFID-Ausweis_ zeigt, dann:
+Wenn der *Administrator* im Schritt 3 eine `Kennung` eingibt, die auf einen bereits aktivierten _RFID-Ausweis_ zeigt, dann:
 
-. Die *Verwaltung* hat Schritt 4 erfolgreich durchlaufen.
+. Der *Administrator* hat Schritt 4 erfolgreich durchlaufen.
 . Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ bereits aktiviert wurde.
-. Die *Verwaltung* entscheidet, ob in Schritt 5b.iii entweder
+. Der *Administrator* entscheidet, ob in Schritt 5b.iii entweder
 .. ein nicht aktivierter, anderer _RFID-Ausweis_ ausgewählt wird, oder
 .. ein aktivierter _RFID-Ausweis_ deaktiviert wird (UC04 - Pilotendaten löschen))
 . Der Use-Case wird in Schritt 4 fortgesetzt.
 
 ==== Systemausfall
-Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn die *Verwaltung* sich nicht einloggen kann.
+Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn der *Administrator* sich nicht einloggen kann.
 
 // Frage an TS
 
@@ -76,10 +76,10 @@ Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn die *Verwaltung*
 === Wesentliche Szenarios
 
 ==== Erfolgreiches Anlegen der Pilotendaten
-. Sc1: Die *Verwaltung* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das *Vereinsmitglied*.
+. Sc1: Der *Administrator* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das *Vereinsmitglied*.
 
 ==== Fehlgeschlagenes Anlegen der Pilotendaten
-. Sc1: Die *Verwaltung* kann kein neues `Vereinsmitglied` anlegen, da kein _RFID-Ausweis_ nicht aktiviert, aber registriert ist. Die *Verwaltung* muss einen neuen _RFID-Ausweis_ hinzufügen (UCxx) oder einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren - und damit auch das entsprechende `Vereinsmitglied` entferen (UC04). (siehe alternative Abläufe)
+. Sc1: Der *Administrator* kann kein neues `Vereinsmitglied` anlegen, da es keinen _RFID-Ausweis_ gibt, welcher nicht aktiviert, aber registriert ist. Der *Administrator* muss einen neuen _RFID-Ausweis_ hinzufügen (UCxx) oder einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren - und damit auch das entsprechende `Vereinsmitglied` entferen (UC04). (siehe alternative Abläufe)
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
@@ -89,9 +89,9 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 === Besondere Anforderungen
 ==== Usability
 
-Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere (alle?) Use Cases ist. Die *Verwaltung* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
+Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere (alle?) Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
 
 * nur bestimmte Zeichen im Formular zulassen
-* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren -> Abfrage an die _Datenbank_ und eventuelle Auflistung in einer Dropdown-Liste)
+* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste)
 
 Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webservers_ stark beeinträchtigen.
