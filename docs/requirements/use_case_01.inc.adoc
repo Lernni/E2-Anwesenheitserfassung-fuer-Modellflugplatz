@@ -1,38 +1,38 @@
 == Use-Case: UC01: Vereinsmitglieder anmelden
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird der komplette Vorgang der Anmeldung eines Vereinsmitgliedes beim Betreten des Flugplatzes beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Anmeldung eines *Vereinsmitgliedes* beim Betreten des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
 Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
-==== Verwaltung
-Der Akteur "Verwaltung" verwaltet die entstehenden Daten.
+==== Administrator
+Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
 
 // . UC03 ist erfüllt
-. Vereinsmitgliedern wurde ein RFID-Ausweis zugeordnet
-. Jedem Vereinsmitglied wurde dieser RFID-Ausweis übergeben
-. Vereinsmitglied hat beim Antreffen auf den Flugplatz den RFID-Ausweis dabei
+. *Vereinsmitgliedern* wurde ein _RFID-Ausweis_ zugeordnet
+. Jedem *Vereinsmitglied* wurde dieser _RFID-Ausweis_ übergeben
+. *Vereinsmitglied* hat beim Antreffen auf den Flugplatz den _RFID-Ausweis_ dabei
 
 === Standardablauf (Basic Flow)
 //Akteure und System kenntlich machen (Fett)
-. Der Use Case beginnt, wenn das Vereinsmitglied am Flugplatz eintrifft 
-. Vereinsmitglied hält seinen RFID-Ausweis an den RFID-Reader
-. RFID-Reader prüft, ob Vereinsmitglied existiert
-. IF Vereinsmitglied existiert
-.. Signallämpchen leuchtet auf
+. Der Use Case beginnt, wenn das *Vereinsmitglied* am Flugplatz eintrifft 
+. *Vereinsmitglied* hält seinen _RFID-Ausweis_ an den _RFID-Reader_
+. _RFID-Reader_ prüft, ob *Vereinsmitglied* existiert
+. IF *Vereinsmitglied* existiert
+.. _Signallämpchen_ leuchtet auf
 .. Anmeldung erfolgreich
-.. Daten werden erfolgreich erfasst und protokolliert
+.. `Daten` werden erfolgreich erfasst und protokolliert
 .. Vereinsflugplatz darf betreten und genutzt werden
-. ESLE Vereinsmitglied existiert nicht
-.. Signallämpchen leuchtet nicht auf
+. ESLE *Vereinsmitglied* existiert nicht
+.. _Signallämpchen_ leuchtet nicht auf
 .. Anmeldung fehlgeschlagen 
-.. Daten können nicht protokolliert werden
+.. `Daten` können nicht protokolliert werden
 .. Vereinsflugplatz darf nicht betreten werden
-.. Sich bei Verwaltung melden 
+.. Sich bei *Administrator* melden 
 . Der Use Case wäre bei einer erfolgreichen Anmeldung abgeschlossen.
 //Frage: Display mit Information zum Datum, erfolgreiche anmeldung etc.
 //Frage: Signallämpchen leuchtet Grün/Rot
@@ -42,20 +42,20 @@ Der Akteur "Verwaltung" verwaltet die entstehenden Daten.
 //Frage: Flugleiter nachträglich eintragen? 
 //Frage: Was muss er machen? -- Knopf drücken?
 ==== Flugleiter
-Wenn Vereinsmitglied im Schritt 1 des Standardablaufs feststellt, dass mehr als 2 Vereinsmitglieder am Platz sind:
+Wenn *Vereinsmitglied* im Schritt 1 des Standardablaufs feststellt, dass mehr als 2 *Vereinsmitglieder* am Platz sind:
 
-. Vereinsmitglied hat Schritt 4 des Standardablaufes erfolgreich durchlaufen
-. Vereinsmitglied muss sich zum Flugleiter ernennen, indem er auf den Flugleiter-Knopf drückt
+. *Vereinsmitglied* hat Schritt 4 des Standardablaufes erfolgreich durchlaufen
+. *Vereinsmitglied* muss sich zum *Flugleiter* ernennen, indem er auf den _Flugleiter-Knopf_ drückt
 . Der Use Case wird im Schritt 4d fortgesetzt.
 //Frage: genauer Ablauf
 
 ==== Systemausfall
-Wenn Vereinsmitglied im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
+Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
 
 //Frage: Bei Systemausfall-->allternatives Flugbuch?
-. Vereinsmitglied greift zum ursprünglichen manuellen System zurück 
-. Vereinsmitglied trägt alle geforderten Daten händisch in das Flugbuch ein 
-. Vereinsmitglied muss die technische Störung an Verwaltung weiterleiten
+. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück 
+. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein 
+. *Vereinsmitglied* muss die technische Störung an *Administrator* weiterleiten
 . Der Use Case wird im Schritt 4d fortgesetzt.
 
 === Unterabläufe (subflows)
@@ -69,39 +69,39 @@ Wenn Vereinsmitglied im Schritt 2 des Standardablauf sich versucht anzumelden, d
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 ==== Erfolgreiche Anmeldung
-. Sc1: Vereinsmitglied A. trifft am Flugplatz ein. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und meldet sich erfolgreich an. Das Signallämpchen leuchtet auf. Vereinsmitglied A. darf den Flugplatz betreten.
+. Sc1: *Vereinsmitglied* A. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ an den _RFID-Reader_ und meldet sich erfolgreich an. Das _Signallämpchen_ leuchtet auf. *Vereinsmitglied* A. darf den Flugplatz betreten.
 
 ==== Fehlgeschlagene Anmeldung
-. Sc2.1: Person B. trifft am Flugplatz ein. Er/Sie hält einen fremden RFID-Tag an den RFID-Reader und versucht sich anzumelden. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. Das Signallämpchen leuchtet nicht auf, und Person B. darf den Flugplatz nicht betreten.
+. Sc2.1: *Person* B. trifft am Flugplatz ein. Er/Sie hält einen fremden _RFID-Ausweis_ an den _RFID-Reader_ und versucht sich anzumelden. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. Das _Signallämpchen_ leuchtet nicht auf, und *Person* B. darf den Flugplatz nicht betreten.
 
-. Sc2.2: Vereinsmitglied C. trifft am Flugplatz ein. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und versucht sich anzumelden. Da wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte der Verwaltung Bescheid gegeben werden, in Hinblick auf die technische Störung. Vereinsmitglied C. darf den Flugplatz betreten.
+. Sc2.2: *Vereinsmitglied* C. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ an den _RFID-Reader_ und versucht sich anzumelden. Da wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte dem *Administrator* Bescheid gegeben werden, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz betreten.
 
 ==== Flugleiter 
 
-. Sc3.1: Vereinsmitglied D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als Flugleiter kennzeichnen, indem er den Flugleiter-Knopf betätigt. Vereinsmitglied D. darf den Flugplatz betreten.
+. Sc3.1: *Vereinsmitglied* D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als *Flugleiter* kennzeichnen, indem er den _Flugleiter-Knopf_ betätigt. *Vereinsmitglied* D. darf den Flugplatz betreten.
 
-. Sc3.2: Vereinsmitglieder E, F und G treffen am Flugplatz ein. Die Gruppe muss sich untereinander entscheiden, wer sich bei der Anmeldung als Flugleiter kennzeichnet. Vereinsmitglieder E, F und G dürfen den Flugplatz betreten. 
+. Sc3.2: *Vereinsmitglieder* E, F und G treffen am Flugplatz ein. Die Gruppe muss sich untereinander entscheiden, wer sich bei der Anmeldung als *Flugleiter* kennzeichnet. *Vereinsmitglieder* E, F und G dürfen den Flugplatz betreten. 
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Signallämpchen: Das Signallämpchen sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich) zurücksetzen. 
+* _Signallämpchen_: Das _Signallämpchen_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich) zurücksetzen. 
 
-* Technische Störung: Falls es zu einer anhaltenden technischen Störung kommt, muss sich die Verwaltung um das Problem kümmern, und die manuell eingetragenen Anmeldedaten in die Datenbank übertragen. 
+* Technische Störung: Falls es zu einer anhaltenden technischen Störung kommt, muss sich der *Administrator* um das Problem kümmern, und die manuell eingetragenen `Anmeldedaten` in die `Datenbank` übertragen. 
 
 === Besondere Anforderungen
 
 ==== Usability
 
-* Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jedes Vereinsmitglied einfach und verständlich sein.
+* Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_ und muss daher für jedes *Vereinsmitglied* einfach und verständlich sein.
 
 ==== Performance
 
 //Frage: Wie lange maximal möglich
-* Das lesen des RFID-Readers sollte nicht länger als...
+* Das lesen des _RFID-Readers_ sollte nicht länger als...
 
-* Die Anmelde-Bestätigung des Signallämpchens sollte nicht länger als.... 
+* Die Anmelde-Bestätigung des _Signallämpchens_ sollte nicht länger als.... 
 
 ==== <Besondere Anforderung 1>
 
