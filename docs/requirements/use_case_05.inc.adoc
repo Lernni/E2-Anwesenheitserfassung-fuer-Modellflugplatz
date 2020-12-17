@@ -9,44 +9,44 @@ In diesem Use-Case wird das Modifizierens der Benutzerdaten eines Vereinsmitglie
 Der Akteur *Administrator* möchte die `Daten` eines Vereinsmitgliedes verändern.
 
 ==== Vereinsmitglied
-Das **Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Vereins, dessen Daten modifiziert werden sollen.
+Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Vereins, dessen Daten modifiziert werden sollen.
 
 === Vorbedingungen
 
-. Das *Vereinsmitglied*, dessen Daten modifiziert werden sollen, muss in der `Datenbank` vorhanden sein.
+. Das *Vereinsmitglied*, dessen Daten modifiziert werden sollen, muss in der _Datenbank_ vorhanden sein.
 
 === Standardablauf (Basic Flow)
 
 . Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Daten` eines *Vereinsmitgliedes* zu verändern auf der Webseite anmeldet.
-. *Administrator* wählt aus einer Übersicht das *Vereinsmitglied* aus, dessen Daten modifiziert werden sollen.
+. *Administrator* wählt aus einer Übersicht auf der _Admin-Seite_ das *Vereinsmitglied* aus, dessen Daten modifiziert werden sollen.
 . *Administrator* verändert die `Daten` des *Vereinsmitgliedes* in einem Formular.
 . IF *Administrator* bestätigt Änderungen
 .. Der _Webserver_ prüft die eingegeben `Daten` auf semantische Korrektheit
 .. IF `Daten` semantisch korrekt
-... Änderungen werden in die `Datenbank` übernommen
+... Änderungen werden in die _Datenbank_ übernommen
 .. ELSE `Daten` semantisch inkorrekt
 ... _Webserver_ gibt eine deskriptive Fehlermeldung aus
 ... Änderung der `Daten` wird abgewiesen
 ... *Administrator* korrigiert eingegebene `Daten`
 ... Weiter in Schritt 4
 . ELSE *Administrator* bricht Modifikation ab
-.. `Änderungen` werden nicht in die `Datenbank` übernommen
+.. `Änderungen` werden nicht in die _Datenbank_ übernommen
 . Der Use Case ist bei erfolgreicher Modifikation abgeschlossen.
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Modifikation
-. Sc1.1: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der Webseite an, verändert die `Daten` von *Vereinsmitglied A* und bestätigt die Änderungen. Die Daten von *Vereinsmitglied A* sind nun in der `Datenbank` aktualisiert.
+. Sc1.1: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der Webseite an, verändert die `Daten` von *Vereinsmitglied A* und bestätigt die Änderungen. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
 
 . Sc1.2: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der Webseite an, wählt *Vereinsmitglied A* aus der Übersicht aus und gibt semantisch inkorrekte `Daten` ein. Der _Webserver_ weist die Änderung ab und *Administrator B* korrigiert die Eingabe. *Administrator B* bestätigt die Änderung erneut, diesmal erfolgreich. 
 
 ==== Abgebrochene Modifikation
-. Sc2: Die Daten von *Vereinsmitgliedes C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der Webseite an, verändert die Daten von *Vereinsmitgliedes B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der `Datenbank` gespeichert. Die Daten von *Vereinsmitglied A* sind nun in der `Datenbank` aktualisiert.
+. Sc2: Die Daten von *Vereinsmitgliedes C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der Webseite an, verändert die Daten von *Vereinsmitgliedes B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der _Datenbank_ gespeichert. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 ==== Datenbank
-Die Daten des *Vereinsmitgliedes* müssen korrekt in der `Datenbank` aktualisiert werden.
+Die Daten des *Vereinsmitgliedes* müssen korrekt in der _Datenbank_ aktualisiert werden.
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
