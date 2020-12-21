@@ -41,12 +41,12 @@ Der Akteur "Administrator" verwaltet die entstandenen Daten.
 Wenn *Vereinsmitglied* welcher Flugleiter ist, im Schritt 1 des Standardablauf bemerkt, dass noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz sind, dann
 
 . Flugleiter muss ein, noch angemeldetes *Vereinsmitglied* finden, welcher die Flugleiter-Rolle übernimmt
-. Neuer Flugleiter muss den Flugleiter-Knopf drücken
+. Neuer Flugleiter muss sein RFID-Ausweis nochmal an den RFID-Reader halten, und unmittelbar die Flugleiter-Taste drücken
 . Der Use Case wird im Schritt 2 fortgesetzt.
-// Frage: Wie wird die Flugleiter-Rolle weitergegeben? Muss sich der neue Flugleiter abmelden und nochmal neu als Flugleiter anmelden?
+
 
 ==== Systemausfall
-Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht abzumelden, die Abmeldung aufgrund einer anhaltenden technischen Störung fehlschlägt, dann
+Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht abzumelden, die Abmeldung aufgrund eines Komplettausfall des Systems fehlschlägt, dann
 
 . *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück
 . *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein
@@ -54,6 +54,7 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht abzumelden,
 . Der Use Case wird im Schritt 4d fortgesetzt.
 // Frage: Wird es weiterhin ein manuelles Flugbuch geben? 
 
+////
 ==== Reset-Taste
 Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzumelden, dann
 
@@ -64,6 +65,7 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzume
 . ELSE *Vereinsmitglieder* haben sich alle abgemeldet
 .. Der Use Case wird im Schritt 2 fortgesetzt.
 // Frage: Wie genau soll es mit der Reset-Taste ablaufen. Drückt der letzte Pilot immer? Soll man sehen ob noch Piloten angemeldet sind?
+////
 
 
 === Unterabläufe (subflows)
@@ -85,12 +87,13 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzume
 . Sc2.2: *Vereinsmitglied* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren RFID-Tag an den RFID-Reader und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz verlassen.
 
 ==== Flugleiter
-. Sc3: *Vereinsmitglied* D. ist der aktuelle Flugleiter und möchte den Flugplatz verlassen. Da sich nach seiner Abmeldung noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz befinden muss ein neuer Flugleiter bestimmt werden. *Vereinsmitglied* D. sucht ein *Vereinsmitglied* E. welcher als neuer Flugleiter bestimmt wird. *Vereinsmitglied* D. meldet sich erfolgreich ab und *Vereinsmitglied* E. meldet sich als neuer Flugleiter an.
+. Sc3: *Vereinsmitglied* D. ist der aktuelle Flugleiter und möchte den Flugplatz verlassen. Da sich nach seiner Abmeldung noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz befinden muss ein neuer Flugleiter bestimmt werden. *Vereinsmitglied* D. sucht ein *Vereinsmitglied* E. welcher als neuer Flugleiter bestimmt wird. *Vereinsmitglied* D. meldet sich erfolgreich ab, *Vereinsmitglied* E. hält seinen RFID-Ausweis nochmal an den RFID-Reader und muss schnellstmöglich die Flugleiter-Taste betätigen.
 
+////
 ==== Reset-Taste
 
 . Sc4: *Vereinsmitglied* F. möchte als letzter Pilot den Flugplatz verlassen. Auf dem Monitor werden noch angemeldete *Vereinsmitglieder* angezeigt, welche vergessen haben sich abzumelden. *Vereinsmitglied* F. betätigt die Reset-Taste, danach hält er/sie seinen/ihren RFID-Tag an den RFID-Reader und meldet sich erfolgreich ab. Das Signallämpchen leuchtet auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* F. kann den Flugplatz verlassen.
-
+////
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
@@ -110,4 +113,5 @@ Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss d
 ==== Performance
 * Das lesen des RFID-Readers sollte nicht länger als...
 * Die Anmelde-Bestätigung des Signallämpchens sollte nicht länger als...
+* Das Zeitfenster in dem man nach dem Anmelden die Flugleiter-Taste (Reset-Taste) drücken kann beträgt ...
 
