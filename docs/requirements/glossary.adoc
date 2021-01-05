@@ -8,44 +8,148 @@ include::../_includes/default-attributes.inc.adoc[]
 == Einführung
 In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der "Anwesenheitserfassung des Modellflugplatzes" definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
 
+== Oberbegriffe zur Klassifizierung
+[%header]
+|===
+|Begriff|	Definition und Erläuterung
+
+|Akteur
+|eine Person, die (meist in einer bestimmten Rolle) mit dem System interagiert.
+
+|System
+|eine Zusammenfassung aller Bestandteile (Hardware und Software), die miteinander kommunizieren können und Eingabe-, Verarbeitungs- und Ausgabefunktionen haben können.
+
+|Datenobjekt/Daten
+|alle Art von Informationen, die zwischen den Bestandteilen des Systems erzeugt, ausgetauscht und gesichert werden.
+
+|===
+
 == Begriffe
 [%header]
 |===
 |Begriff|	Definition und Erläuterung|	Synonyme
-//|Kommissionierung|Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags|(keine))|
-|Flugleiter/ Startleiter |xx|xx
-|Besucher|xx|xx
-|Webserver|xx|xx
-|Weboberfläche|xx|xx
-|Anwesenheitserfassung|xx|xx
-|Zeiterfassung|xx|xx
-|Vandalismus|xx|xx
-|Gesetzgeber|xx|x
-|Vereinsmitglied|xx|xx
-|Flugbuch|xx|xx
-|Vereinsmitglied|xx|xx
-|Pilot|xx|xx
-|"Größere" Flugzeuge|xx|xx
-|Sicherheit|xx|xx
-|Datenbanken|xx|xx
-|Lokaler Cache|xx|xx
-|Sicherheit|xx|xx
-|Reset-Taste|xx|xx
+
+|Vereinsmitglied
+|ein Akteur, der Mitglied des Vereins ist und im System hinterlegt ist, aber nicht zwangsweise auch Pilot ist
+|Mitglied
+
+|Administrator
+|ein Akteur, (ein Mitglied?), welches Zugriff auf die Verwaltung des Systems hat und das Anwesenheitsprotokoll einsehen kann
+|Admin, (Verwaltung)
+
+|Pilot
+|ein Akteur, ein Mitglied, welches den Flugplatz nutzen darf und über einen RFID-Tag verfügt
+|-
+
+|Flugleiter
+a|
+* ein Akteur, ein Mitglied, das bestimmt werden muss, wenn die Anzahl der Mitglieder auf dem Flugplatz größer als 3 ist.
+* kontrolliert die Flüge auf dem Platz (?)
+|Startleiter
+
+|Besucher|eine Person, die kein Vereinsmitglied ist und kein Flugzeug fliegt|-
+
+|Gast|ein Akteur, welcher kein Vereinsmitglied ist, aber den Flugplatz nutzt|-
+
+|Flugplatz
+|Ort an dem die Piloten ihre Modellflugzeuge nutzen können
+|Platz
+
+|Modellflugzeug
+|wird von den Piloten auf dem Flugplatz geflogen
+|Flugzeug
+
+|Webserver
+a|
+* ein Systembestandteil, mit zwei Sichten für Admin und Mitglieder
+* für den Admin werden Verwaltungs- und Ausgabefunktionen des Systems bereitgestellt
+* für das Vereinsmitglied sind nur Ausgabefunktionen des Systems verfügbar
+|-
+
+|Weboberfläche
+|ein Systembestandteil, Oberfläche des Webservers, die sich unterscheidet, je nachdem, ob sich ein Admin oder ein Mitglied einloggt
+|Sicht
+
+|Anwesenheitserfassung
+a|
+* eine Hauptfunktion, die das System erfüllt
+* durch An- und Abmelden der Piloten auf dem Flugplatz ergibt die Anwesenheitserfassung das Anwesenheitsprotokoll
+* nur durch einen Admin einsehbar
+|Anwesenheitsprotokollierung
+
+|Anwesenheitsprotokoll
+|ein Datenobjekt, eine fortlaufende Liste, die die Aktivitäten auf dem Flugplatz wiederspiegelt
+|Protokoll
+
+|Zeiterfassung|??|-
+
+|Flugbuch
+|umfasst die bisherige Lösung der Anwesenheitserfassung
+|-
+
+|Vandalismus
+a|
+* in der Vergangenheit wurde bereits das Flugbuch entwendet
+* es besteht das Risiko, dass das System nicht ordnungsgemäß genutzt wird -> robuste Gestaltung der physischen Bestandteile vor Ort
+|-
+
+|Gesetzgeber
+|ein Stakeholder, der die Betreiber des Vereins dazu verfplichtet ein Flugbuch über die Aktivitäten auf dem Flugplatz zu führen 
+|-
+
+|"Größere" Flugzeuge|??|-
+
+|Sicherheit|??|-
+
+|Datenbanksystem
+|ein Systembestanteil, der die Datenbank verwaltet und Anfragen bearbeitet
+|DBS
+
+|Lokaler Cache
+a|
+* ein Datenobjekt, welches sich auf dem Raspi befindet und periodisch mit der Datenbank synchronisiert wird
+* sichert die Anwesenheitserfassung, wenn der Webserver nicht erreichbar ist
+|Cache
+
+|Taster
+|ein Systembestandteil zur Eingabe, der den Piloten beim An- und Abmelden verschiedene Funktionen erfüllt (Flugleiter bestimmen, alle Mitglieder abmelden, ...)
+|Knopf, Reset-Taste, Flugleiter-Knopf
+
+|RGB-LED
+|ein Systembestandteil zur Ausgabe, das den Piloten beim An- und Abmelden verschiedene Rekationen/Zustände des Systems durch verschiedene Farben, Signale verdeutlicht
+|LED, Meldeleuchte, Signallämpchen
+
+|RFID-Ausweis
+|ein Systembestandteil, das einem Piloten zugeordnet ist und es ihm ermöglicht, sich am Flugplatz zu authentifizieren und sich bspw. an- und abzumelden.
+|RFID-Tag, Ausweis
+
+|RFID-Scanner
+|ein Systembestanteil zur Eingabe, das dem System zur Authentifizierung eines Piloten am Flugplatz dient
+|Scanner, RFID-Reader
+
+|Raspberry Pi
+|ein Systembestandteil, Mini-Computer, der am Flugplatz installiert ist und die Anwesenheitserfassung vor Ort verwaltet
+|Raspberry, Raspi
+
 |===
 
 
 == Abkürzungen und Akronyme
 [%header]
 |===
-|Abkürzung|	Bedeutung|	Erläuterung
-//|UP|Unified Process|Vorgehensmodell für die Softwareentwicklung|
-|RFID-Tags/RFID-Ausweis|xx|xx
-|Raspi|xx|xx
-|xx|xx|xx
-|xx|xx|xx
-|xx|xx|xx
-|xx|xx|xx
-|xx|xx|xx
+|Abkürzung|Bedeutung|Erläuterung
+
+|RFID
+|engl.: "radio-frequency idenfication"; Identifikation mittels elektromagnetischer Wellen
+|Kommunikationsart zwischen Ausweis und Scanner
+
+|Raspi
+|Raspberry Pi
+|siehe Begriffsdefinition
+
+|DB|Datenbank|Datenobjekt, siehe Begriffsdefinition
+|DBS|Datenbanksystem|Systembestandteil, siehe Begriffsdefinition
+|RGB-LED|engl.: RGB - "red, green, blue", LED - "light-emitting diode";|siehe Begriffsdefinition
 
 |===
 
