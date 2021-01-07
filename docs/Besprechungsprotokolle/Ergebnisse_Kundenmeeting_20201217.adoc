@@ -1,0 +1,59 @@
+= Kundenmeeting vom 17.12.2020
+1.0, 05.01.2021
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Ergebnisse des Meetings
+
+[%header, cols="1,1"]
+|===
+
+|Frage/Schwerpunkt |Antwort
+
+|Motivation (u.a)
+a|
+* Zur Absicherung und Nachvollziehbarkeit im Schadensfall
+- Versicherung
+- Naheliegende Flugverbotszone
+- Nachbarschaft
+
+|Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
+|Keine andere Anwendung, bzw keine Rücksicht auf andere Systeme
+// soweit ich es verstanden habe, muss keine Rücksicht auf andere Systeme genommen werden
+
+|Wie sieht das "Display" aus?
+a| 
+* so einfach wie möglich (bestehend aus minimal einem Taster und einer RGB LED) -> durch verschiedene Farbcodes und Tastdauer kann verschiedene Funktionalität realisiert werden
+* falls gewünscht ist auch der Einsatz eines Displays möglich, dieses muss dann aber softwaretechnisch abschaltbar sein (Stromverbrauch und Randalefälle)
+
+|Performance -> maximale Dauer des Scanvorgangs bei An/Abmeldung?
+|soll konfigurierbar sein, frei zu entscheiden, verschiedene Längen evtl. nötig für verschiedene Funktionen (Flugleiter bestimmen oder abmelden)
+
+
+|Alternative für Systemausfall? -> Anmeldung über manuelles Flugbuch & später Daten manuell übertragen?
+|ja, es soll eine Möglichkeit zum manuellen Nachtragen zur Verfügung stehen
+
+|Synchronisation zwischen Webserver und Raspi
+a|
+* soll periodisch und nicht aktionsgesteuert stattfinden (außer bei Neu anlegen eines Mitglieds)
+* Raspi kann durch Cache eine Anmeldung durchführen, auch ohne sich mit dem Webserver abstimmen zu müssen
+
+|Anlegen eines Mitglieds/Zuweisen eines RFID-Tags
+|Wird ein Mitglied neu angelegt, ist auch damit zu rechnen, dass das neue Mitglied auch kurz darauf fliegen wird. Die Zuweisung des RFID-Tags zu dem neuen Mitglied könnte daher direkt am Raspberry erfolgen. Das System ist sich also bewusst, dass nach Anlegen eines Mitglieds, der nächste nicht belegte RFID-Tag diesem Mitglied zugewiesen wird.
+
+|Bestimmung des Flugleisters
+a|
+* Über eine Kombination aus Taster drücken und RFID-Tag anhalten
+* Problem: Flugleiter verlässt den Platz, während noch mehr als 3 Mitglieder auf dem Platz sind:
+- Lösung: Dem System über eine Kombination von Taster drücken und RFID-Tag anhalten nur mitteilen, dass die Flugleiterrolle weitergegeben wird.
+
+|Verwaltung der RFID-Tags
+|Nicht jedes Mitglied bekommt einen RFID-Tag. Tags und Mitglieder werden separat hinterlegt.
+
+|Gastflüge
+|An- und Abmelden von Gästen erfolgt möglicherweise über Gastmitglieder, die einen RFID-Tag zugewiesen bekommen, der jeweils von den Gästen benutzt werden kann.
+
+|Vergessenes Abmelden
+|Vergisst sich das letzte Mitglied abzumelden, kann dies nicht verhindert werden. Jedoch sollte das System eine zeitgesteuerte automatische Abmeldung in diesem Fall vornehmen (bspw.: Uu Mitternacht, nach Sonnenuntergang)
+
+|===

@@ -48,14 +48,26 @@ include::../_includes/default-attributes.inc.adoc[]
 //Wie oft müssen Vereinsmitglieder neu angelegt/entfernt werden?
 //Manuelles Flugbuch als Alternative für Systemausfall?
 
-=== Use-Cases: Priorisierung 
+=== Use-Cases: Priorisierung
 
-. UC01: Piloten anmelden 
-. UC02: Piloten abmelden 
-. UC03: RFID-Ausweise zuorden
+==== Raspi
+
+. UC01: Piloten anmelden (optional Flugleiter bestimmen)
+// Flugleiter bestimmen als extra Use Case?
+. UC02: Piloten abmelden
+. UCxx: Reset Flugplatz (durch Knopf)
+
+==== Webserver
+
 . UC03: Pilotendaten anlegen 
 . UC04: Pilotendaten löschen
-. UC05: Pilotendaten modifizieren 
+. UC05: Pilotendaten modifizieren
+. UCxx: Reset Flugplatz (automatisch, nach gewisser Zeit (o.ä Faktoren))
+. UCxx: Protokoll einsehen (Suchfunktion, Zeitraum filtern)
+. UCxx: Protokolldaten nachträglich einfügen
+. UCxx: Handhabung Gastflüge
+// Handhabung Gastflüge -> noch viel zu klären
+
 
 
 === Use-Cases: Diagramm
