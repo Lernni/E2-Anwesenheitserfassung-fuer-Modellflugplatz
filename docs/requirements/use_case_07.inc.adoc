@@ -1,0 +1,49 @@
+== Use-Case: UC07: Flugleiter bestimmen
+===	Kurzbeschreibung
+
+
+
+===	Kurzbeschreibung der Akteure
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+
+==== Administrator
+Der Akteur "Administrator" verwaltet die entstehenden Daten.
+
+=== Vorbedingungen
+
+
+=== Standardablauf (Basic Flow)
+
+
+
+=== Alternative Abläufe
+
+
+=== Unterabläufe (subflows)
+//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
+
+==== <Unterablauf 1>
+. <Unterablauf 1, Schritt 1>
+. …
+. <Unterablauf 1, Schritt n>
+
+=== Wesentliche Szenarios
+
+
+===	Nachbedingungen
+
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+
+=== Besondere Anforderungen
+
+==== Usability
+
+
+==== Performance
+
+
+==== <Besondere Anforderung 1>
+
+==== <Besondere Anforderung 1>

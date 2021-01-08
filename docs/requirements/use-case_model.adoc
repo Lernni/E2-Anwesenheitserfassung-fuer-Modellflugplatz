@@ -9,7 +9,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 //Vorschlag zur Kennzeichnung der Instanzen Akteur, System, Datenspeicher -> sollten in allen Use-Cases Konsistent sein 
 
-.Legende zur Konsistenz
+.Formatierung der Oberbegriffe
 |===
 |Bezeichnung |Formatierung 
 
@@ -48,24 +48,50 @@ include::../_includes/default-attributes.inc.adoc[]
 //Wie oft müssen Vereinsmitglieder neu angelegt/entfernt werden?
 //Manuelles Flugbuch als Alternative für Systemausfall?
 
-=== Use-Cases: Priorisierung
+=== Use-Cases: nach Priorisierung
 
-==== Raspi
+==== Höchste Priorität
+Diese Use-Cases sind Hauptfunktionen. Ohne diese kann die Grundfunktionalität des Systems nicht gewährleistet werden.
 
-. UC01: Piloten anmelden (optional Flugleiter bestimmen)
-// Flugleiter bestimmen als extra Use Case?
-. UC02: Piloten abmelden
-. UCxx: Reset Flugplatz (durch Knopf)
+- UC01: Piloten anmelden
+- UC02: Piloten abmelden
+- UC03: Pilotendaten anlegen 
+- UC05: Pilotendaten modifizieren
+- UC07: Flugleiter bestimmen
+- UC08: Protokoll einsehen 
+
+==== Mittlere Priorität
+Diese Use-Cases sind Nebenfunktionen, die die Grundfunktionalität des Systems nicht beeinträchtigen, aber erheblich verbessern, bzw. vom Auftraggeber verlangt sind.
+
+- UC04: Pilotendaten löschen
+- UC09: Protokolldaten nachträglich einfügen
+- UC06: Alle Piloten abmelden
+
+==== Niedrige Priorität
+Diese Use-Cases sind optionale Zusatzfunktionen.
+
+- UC10: Handhabung Gastflüge
+
+=== Use-Cases: nach Lokalität
+
+==== Raspberry Pi (Flugplatz)
+
+- UC01: Piloten anmelden
+- UC02: Piloten abmelden
+- UC06: Alle Piloten abmelden (am Flugplatz)
+- UC07: Flugleiter bestimmen
 
 ==== Webserver
 
-. UC03: Pilotendaten anlegen 
-. UC04: Pilotendaten löschen
-. UC05: Pilotendaten modifizieren
-. UCxx: Reset Flugplatz (automatisch, nach gewisser Zeit (o.ä Faktoren))
-. UCxx: Protokoll einsehen (Suchfunktion, Zeitraum filtern)
-. UCxx: Protokolldaten nachträglich einfügen
-. UCxx: Handhabung Gastflüge
+- UC03: Pilotendaten anlegen 
+- UC04: Pilotendaten löschen
+- UC05: Pilotendaten modifizieren
+- UC06: Alle Piloten abmelden (durch Webserver)
+// automatisch, nach gewisser Zeit (o.ä Faktoren))
+- UC08: Protokoll einsehen 
+// (Suchfunktion, Zeitraum filtern)
+- UC09: Protokolldaten nachträglich einfügen
+- UC10: Handhabung Gastflüge
 // Handhabung Gastflüge -> noch viel zu klären
 
 
