@@ -1,4 +1,18 @@
 ﻿ID;Datum;Name;Beschreibung;Typ;IMP;PRB;MAG;Owner;Gegenmaßnahme
-1;01.12.2019;Teammitglied fällt aus;Mitglied des Teams kann (dauerhaft oder zeitweise) nicht mehr am Projekt teilnehmen; z.B. wegen Krankheit oder Studiengangswechsel;4;20%;0,8;Max Müller;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
-2;-;-;-;-;-;-;-;-;-
-3;-;-;-;-;-;-;-;-;-
+1;01.12.2020;Teammitglied fällt aus;Mitglied des Teams kann (dauerhaft oder zeitweise) nicht mehr am Projekt teilnehmen z.B. wegen Krankheit oder Studiengangswechsel;Ressource;3;20%;0,6;Simon Herbstrith;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
+
+2;01.12.2020;Kommunikation;Missverständliche Kommunikation intern;geschäftlich;3;40%;1,2;Simon Herbstrith;Dokumentation, Team Besprechungen
+
+3;01.12.2020;Fehlende Managementtechniken;Keine klare und strukturierte vorgehensweise in der Projektplaung und Projektdurchführung;geschäftlich;4;30%;1,2;Simon Herbstrith;Anwendung der, in den Vorlesung gelernten Methoden, Einteilung der Teammitglieder nach Verantwortungsbereich (Analyse, Test  usw.)
+
+4;01.12.2020;Änderungen des Anforderungsprofils;Fehlende zeitliche Ressourcen;geschäftlich und zeitlich;3;30%;0,9;Simon Herbstrith;Besprechung mit den Themenstellern im 2 Wochen Rythmus
+
+5;01.12.2020;Fehlende zeitliche Ressourcen;Die zeitliche Kapazität der Teammitglieder wird durch dass Studium und anderweitige Verpflichtungen unvorhersehbar beschränkt;geschäftlich und zeitlich;3;20%;0,6;Simon Herbstrith;Orientierung am Workload, Umfrage zur Terminfindung von Besprechungen
+
+6;01.12.2020;Einsatz unbekannnter Tools;Es werden neue Tools für die Projektarbeit eingesetzt;technisch;2;50%;1;Simon Herbstrith;Aufarbeitung der in der Vorlesung vorgestellten Methoden
+
+7;01.12.2020;Fehlende Beteiligung von Stakeholdern;Stakeholder ignorieren die Projektkommunikation;geschäftlich;4;10%;0,4;Simon Herbstrith;Bisher keine Gegenmaßnahme erforderlich, Stakeholder sind gut per E-Mail erreichbar
+
+8;03.12.2020;Dokumentenstruktur;Keine einheitliche, klare Struktur in Dokumenten;technisch;3;60;1,8;Simon Herbstrith;Orientierung an der Github Vorlage;
+
+
