@@ -27,7 +27,7 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 .. Anmeldung erfolgreich
 .. `Daten` werden erfolgreich erfasst und protokolliert
 .. Vereinsflugplatz darf betreten und genutzt werden
-. ESLE *Vereinsmitglied* existiert nicht
+. ELSE *Vereinsmitglied* existiert nicht
 .. _Signallämpchen_ leuchtet nicht auf
 .. Anmeldung fehlgeschlagen 
 .. `Daten` können nicht protokolliert werden

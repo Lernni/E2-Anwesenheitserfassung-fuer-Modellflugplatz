@@ -11,39 +11,29 @@ Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
-
+. Die `Protokolldaten` müssen vom _Raspi_ an den _Webserver_ übertragen worden sein.
 
 === Standardablauf (Basic Flow)
-
-
+. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
+. *Administrator* wählt auf der _Admin-Seite_ die Protokollansicht aus
+. *Administrator* sieht sich die aktuellen `Protokolldaten` an
 
 === Alternative Abläufe
+==== Störung der Internetverbindung seitens des Raspi
+Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` nicht an den _Webserver_ übermittelt werden können.
 
-
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+. *Administrator* hat Schritt 2 des Standardablaufes erfolgreich ausgeführt
+. *Administrator* stellt fest, dass das `Protokoll` nicht auf dem aktuellen Stand ist
+. *Administrator* wiederholt den Standardablauf zu einem späteren Zeitpunkt
 
 === Wesentliche Szenarios
+==== Erfolgreiche Einsicht
+. Sc1: *Administrator A* möchte die aktuellen Protokolldaten einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Administrator A* kann das aktuelle `Protokoll` einsehen.
 
-
-===	Nachbedingungen
-
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
-
+==== Temporärer Ausfall der Internetanbindung des Raspi
+. Sc2: *Administrator B* möchte die aktuellen Protokolldaten einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Administrator B* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Administrator B* das aktuelle `Protokoll` einsehen.
 
 === Besondere Anforderungen
 
-==== Usability
-
-
-==== Performance
-
-
-==== <Besondere Anforderung 1>
-
-==== <Besondere Anforderung 1>
+==== Berechtigung
+Nicht jedes *Vereinsmitglied* ist gleichzeitig auch *Administrator*. Daher darf die Protokollansicht nur denjenigen *angemeldeten Benutzern* angezeigt werden, die auch die Berechtigung dazu haben.

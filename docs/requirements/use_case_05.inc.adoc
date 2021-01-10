@@ -17,7 +17,7 @@ Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Verei
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Daten` eines *Vereinsmitgliedes* zu verändern auf der Webseite anmeldet.
+. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Daten` eines *Vereinsmitgliedes* zu verändern auf der _Webseite_ anmeldet.
 . *Administrator* wählt aus einer Übersicht auf der _Admin-Seite_ das *Vereinsmitglied* aus, dessen Daten modifiziert werden sollen.
 . *Administrator* verändert die `Daten` des *Vereinsmitgliedes* in einem Formular.
 . IF *Administrator* bestätigt Änderungen
@@ -36,12 +36,12 @@ Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Verei
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Modifikation
-. Sc1.1: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der Webseite an, verändert die `Daten` von *Vereinsmitglied A* und bestätigt die Änderungen. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
+. Sc1.1: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, verändert die `Daten` von *Vereinsmitglied A* und bestätigt die Änderungen. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
 
-. Sc1.2: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der Webseite an, wählt *Vereinsmitglied A* aus der Übersicht aus und gibt semantisch inkorrekte `Daten` ein. Der _Webserver_ weist die Änderung ab und *Administrator B* korrigiert die Eingabe. *Administrator B* bestätigt die Änderung erneut, diesmal erfolgreich. 
+. Sc1.2: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, wählt *Vereinsmitglied A* aus der Übersicht aus und gibt semantisch inkorrekte `Daten` ein. Der _Webserver_ weist die Änderung ab und *Administrator B* korrigiert die Eingabe. *Administrator B* bestätigt die Änderung erneut, diesmal erfolgreich. 
 
 ==== Abgebrochene Modifikation
-. Sc2: Die Daten von *Vereinsmitgliedes C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der Webseite an, verändert die Daten von *Vereinsmitgliedes B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der _Datenbank_ gespeichert. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
+. Sc2: Die Daten von *Vereinsmitgliedes C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der _Webseite_ an, verändert die Daten von *Vereinsmitgliedes B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der _Datenbank_ gespeichert. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
