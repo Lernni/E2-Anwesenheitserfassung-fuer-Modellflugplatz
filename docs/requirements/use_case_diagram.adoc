@@ -1,0 +1,67 @@
+.Use-Case Diagram 
+[#use_case_diagram] 
+[plantuml, "{diagramsdir}/use_case_diagram", svg]
+
+
+....
+
+@startuml use_case_diagram
+
+left to right direction
+
+actor Vereinsmitglied
+
+actor Administrator
+
+rectangle "Anwesenheitserfassung des Modellflugplatzes" {
+  
+  rectangle "Raspberry Pi (Flugplatz)"{
+
+  (UC1: Piloten anmelden)
+  (UC2: Piloten abmelden)
+  (UC6: Alle Piloten abmelden)
+  (UC7: Flugleiter bestimmen)
+
+  }
+  
+  rectangle "Webserver"{
+
+  [Verwaltung]
+  [Protokoll]
+  (UC3: Pilotendaten anlegen)
+  (UC4: Pilotendaten löschen)
+  (UC5: Pilotendaten modifizieren)
+  (UC8: Protokoll einsehen)
+  (UC9: Protokolldaten nachträglich einfügen)
+  (UC10: Handhabung Gastflüge)
+  
+  }
+}
+
+
+Vereinsmitglied -- (UC1: Piloten anmelden)
+
+(UC1: Piloten anmelden) .down.> (UC7: Flugleiter bestimmen) : include
+
+Vereinsmitglied -- (UC2: Piloten abmelden)
+
+(UC2: Piloten abmelden) .down.> (UC6: Alle Piloten abmelden) : include
+
+
+Administrator -- (Verwaltung)
+
+(Verwaltung) .down.> (UC3: Pilotendaten anlegen) : include
+(Verwaltung) .down.> (UC4: Pilotendaten löschen) : include
+(Verwaltung) .down.> (UC5: Pilotendaten modifizieren) : include
+
+Administrator -- (Protokoll) 
+
+(Protokoll) .down.> (UC8: Protokoll einsehen) : include
+(Protokoll) .down.> (UC9: Protokolldaten nachträglich einfügen) : include
+
+Administrator --  (UC10: Handhabung Gastflüge)
+
+
+
+@enduml
+....
