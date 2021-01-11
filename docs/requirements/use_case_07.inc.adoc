@@ -1,39 +1,82 @@
 == Use-Case: UC07: Flugleiter bestimmen
 ===	Kurzbeschreibung
 
-
+In diesem Use-Case wird der Vorgang der Bestimmung eines *Flugleiters* beschrieben, wenn mehr als 2 *Vereinsmitglieder* auf dem Flugplatz sind.
 
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+Der Akteur "Vereinsmitglied" nutzt den Flugplatz bzw. möchte den Flugplatz nutzen.
 
-==== Administrator
-Der Akteur "Administrator" verwaltet die entstehenden Daten.
+==== Flugleiter
+Der Akteur "Flugleiter" ist ein Vereinsmitglied, das den Flugplatz ebenfalls nutzen möchte und die Verantwortung über die Flugaktivitäten der anderen Mitglieder auf dem Platz hat.
 
 === Vorbedingungen
+
+. Es sind mindestens 2 *Vereinsmitglieder* angemeldet.
+
+. Es gibt keinen *Flugleiter*.
 
 
 === Standardablauf (Basic Flow)
 
+. Der Use Case beginnt, wenn ein drittes *Vereinsmitglied* sich anmelden will.
 
+. Das _System_ erkennt, dass mindestens 2 *Vereinsmitglieder* bereits angemeldet sind und sperrt nach Anmeldung des dritten *Mitglieds* die An- und Abmeldefunktion, bis ein *Flugleiter* bestimmt wurde.
+
+. Die *Vereinsmitglieder* klären untereinander, wer sich als *Flugleiter*  einträgt.
+
+. Das *Vereinsmitglied*, welches sich als *Flugleiter* eintragen lassen will, hält den _Taster_ gedrückt und hält dabei gleichzeitig seinen _RFID-Ausweis_ an den _Scanner_.
+
+. Das _System_ prüft, ob das *Vereinsmitglied* bereits angemeldet ist, um sich als *Flugleiter* eintragen lassen zu können.
+
+. Ist das *Vereinsmitglied* angemeldet, wird das Bestimmen des *Flugleiters* vom _System_ erfasst und die `Daten` werden protokolliert.
+
+. Das _System_ gibt die An- und Abmeldefunktion wieder frei.
+
+. Der Use Case ist beendet.
 
 === Alternative Abläufe
 
+==== Ummelden des Flugleiters
+Es sind mindestens 3 *Vereinsmitglieder* angemeldet (inklusive *Flugleiter*) und der *Flugleiter* verlässt den Platz:
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
+. Der Use Case beginnt, wenn der *Flugleiter* den Platz verlassen möchte und noch mindestens 3 andere *Vereinsmitglieder* anwesend sind, die am Flugplatz bleiben möchten. Dadurch wird die Bestimmung eines neuen *Flugleiters* notwendig.
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+. Die *Vereinsmitglieder* klären untereinander, wer sich als neuer *Flugleiter* einträgt.
+
+. Das *Vereinsmitglied*, welches sich als neuer *Flugleiter* eintragen lassen will, hält den _Taster_ gedrückt und hält dabei gleichzeitig seinen _RFID-Ausweis_ an den _Scanner_.
+
+. Das _System_ prüft, ob das *Vereinsmitglied* bereits angemeldet ist, um sich als *Flugleiter* eintragen lassen zu können.
+
+. Ist das *Vereinsmitglied* angemeldet, wird die Rolle des *Flugleiters* an dieses *Mitglied* abgegeben und die entsprechenden `Daten` werden vom _System_ protokolliert.
+
+. Der Use Case ist beendet und der ehemalige *Flugleiter* kann sich abmelden.
+
 
 === Wesentliche Szenarios
+
+==== Erfolgreiche Bestimmung des Flugleiters
+. Sc1.1: *Vereinsmitglied* A. trifft am Flugplatz ein. Da bereits *Vereinsmitglieder* B. und C. auf dem Platz sind, bekommt A. nach erfolgreicher Anmeldung die Nachricht, dass ein *Flugleiter* bestimmt werden soll. Nach Besprechung mit B. und C. wird sich darauf geeinigt, dass C. sich als *Flugleiter* einträgt. Alle *Vereinsmitglieder* können den Flugplatz danach weiter nutzen.
+
+. Sc1.2: *Vereinsmitglieder* E, F und G treffen am Flugplatz ein. Die Gruppe muss sich untereinander entscheiden, wer sich nach der Anmeldung als *Flugleiter* kennzeichnet. Da der *Flugleiter* auch unter 3 angemeldeten *Mitgliedern* bestimmt werden kann, ist die Anmeldereihenfolge egal. *Vereinsmitglieder* E, F und G dürfen den Flugplatz betreten. 
+
+==== Fehlgeschlagene Abmeldung des Flugleiters
+. Sc2: Der *Flugleiter* versucht sich abzumelden, obwohl noch mehr als 2 *Vereinsmitglieder* auf dem Platz sind. Das _System_ verweigert die Abmeldung, mit dem Verweis darauf, dass zunächst ein anderer *Flugleiter* bestimmt werden muss. Es folgt die Ummeldung des *Flugleiters*. Der ehemalige *Flugleiter* kann sich danach abmelden.
+
+==== Flugleiter verlässt den Platz ohne Abmeldung
+. Sc3: Der *Flugleiter* verlässt den Platz ohne sich abzumelden. Nach einiger Zeit bemerken die anderen *Vereinsmitglieder*, dass es keinen *Flugleiter* gibt. Der *Flugleiter* kann trotzdem umgemeldet werden, da dazu der aktuell eingetragene *Flugleiter* nicht unbedingt benötigt wird.
+
+==== Nicht angemeldetes Vereinsmitglied löst Flugleiter ab
+. Sc4: Das *Mitglied* meldet sich an und meldet sich gleich im Anschluss zum *Flugleiter* um. Der ehemalige *Flugleiter* kann sich abmelden und den Platz verlassen.
 
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+. Es existiert ein *Flugleiter*, der vom _System_ eingetragen wurde.
+
+. Das _System_ ist nicht für An- und Abmeldefunktion gesperrt.
 
 
 === Besondere Anforderungen

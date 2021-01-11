@@ -44,7 +44,7 @@ a|
 |Bestimmung des Flugleisters
 a|
 * Über eine Kombination aus Taster drücken und RFID-Tag anhalten
-* Problem: Flugleiter verlässt den Platz, während noch mehr als 3 Mitglieder auf dem Platz sind:
+* Problem: Flugleiter verlässt den Platz, während noch mehr als 2 Mitglieder auf dem Platz sind:
 - Lösung: Dem System über eine Kombination von Taster drücken und RFID-Tag anhalten nur mitteilen, dass die Flugleiterrolle weitergegeben wird.
 
 |Verwaltung der RFID-Tags

@@ -39,15 +39,6 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 
 === Alternative Abläufe
-//Frage: Flugleiter nachträglich eintragen? 
-//Frage: Was muss er machen? -- Knopf drücken?
-==== Flugleiter
-Wenn *Vereinsmitglied* im Schritt 1 des Standardablaufs feststellt, dass mehr als 2 *Vereinsmitglieder* am Platz sind:
-
-. *Vereinsmitglied* hat Schritt 4 des Standardablaufes erfolgreich durchlaufen
-. *Vereinsmitglied* muss sich zum *Flugleiter* ernennen, indem er auf den _Flugleiter-Knopf_ drückt
-. Der Use Case wird im Schritt 4d fortgesetzt.
-//Frage: genauer Ablauf
 
 ==== Systemausfall
 Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
@@ -78,9 +69,7 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden,
 
 ==== Flugleiter 
 
-. Sc3.1: *Vereinsmitglied* D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als *Flugleiter* kennzeichnen, indem er den _Flugleiter-Knopf_ betätigt. *Vereinsmitglied* D. darf den Flugplatz betreten.
-
-. Sc3.2: *Vereinsmitglieder* E, F und G treffen am Flugplatz ein. Die Gruppe muss sich untereinander entscheiden, wer sich bei der Anmeldung als *Flugleiter* kennzeichnet. *Vereinsmitglieder* E, F und G dürfen den Flugplatz betreten. 
+. Sc3.1: *Vereinsmitglied* D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als *Flugleiter* kennzeichnen (UC07 Bestimmung des Flugleiters)
 
 ===	Nachbedingungen
 
