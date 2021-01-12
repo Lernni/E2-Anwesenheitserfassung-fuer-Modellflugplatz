@@ -16,7 +16,11 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 === Standardablauf (Basic Flow)
 . Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
 . *Administrator* wählt auf der _Admin-Seite_ die Protokollansicht aus
-. *Administrator* sieht sich die aktuellen `Protokolldaten` an
+. IF *Administrator* benötigt einen bestimmten Protokolleintrag
+.. *Administrator* gibt in einer Suchleiste einen Suchbegriff ein
+.. Die Protokollansicht wird eingeschränkt auf die Einträge, die den Suchbegriff enthalten
+. ELSE
+.. *Administrator* sieht sich die gesamten aktuellen `Protokolldaten` an
 
 === Alternative Abläufe
 ==== Störung der Internetverbindung seitens des Raspi
@@ -26,12 +30,22 @@ Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` 
 . *Administrator* stellt fest, dass das `Protokoll` nicht auf dem aktuellen Stand ist
 . *Administrator* wiederholt den Standardablauf zu einem späteren Zeitpunkt
 
+=== Keine Einträge zu Suchbegriff
+. *Administrator* hat Schritt 3.a des Standardablaufes erfolgreich ausgeführt
+. Auf der Protokolleinsicht wird eine Fehlermeldung ausgegeben
+
 === Wesentliche Szenarios
 ==== Erfolgreiche Einsicht
-. Sc1: *Administrator A* möchte die aktuellen Protokolldaten einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Administrator A* kann das aktuelle `Protokoll` einsehen.
+. Sc1.1: *Administrator A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Administrator A* kann das gesamte aktuelle `Protokoll` einsehen.
+
+. Sc1.2: *Administrator B* möchte die aktuellen `Protokolldaten` zu *Vereinsmitglied C* einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Nun gibt er den Namen von *Vereinsmitglied B* in der Suchleiste ein. Es existieren Einträge zu diesem Mitglied und es werden nur noch diese angezeigt. *Administrator A* kann die gewünschten Protokolleinträge einsehen.
 
 ==== Temporärer Ausfall der Internetanbindung des Raspi
-. Sc2: *Administrator B* möchte die aktuellen Protokolldaten einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Administrator B* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Administrator B* das aktuelle `Protokoll` einsehen.
+. Sc2: *Administrator D* möchte die aktuellen `Protokolldaten` einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Administrator D* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Administrator D* das aktuelle `Protokoll` einsehen.
+
+==== Tippfehler bei der Suche
+
+. Sc1.2: *Administrator E* möchte die aktuellen `Protokolldaten` zu *Vereinsmitglied F* einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Nun gibt er den Namen von *Vereinsmitglied F* in der Suchleiste ein und macht dabei einen Fehler bei der Eingabe. Es existieren keine Einträge und es wird eine Fehlermeldung ausgegeben. *Administrator E* wiederholt die Suche mit der richtigen Eingabe.
 
 === Besondere Anforderungen
 
