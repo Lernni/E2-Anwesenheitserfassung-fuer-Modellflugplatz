@@ -18,7 +18,7 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 . *Vereinsmitglied* hat beim Antreffen auf den Flugplatz den _RFID-Ausweis_ dabei
 
 === Standardablauf (Basic Flow)
-//Akteure und System kenntlich machen (Fett)
+
 . Der Use Case beginnt, wenn das *Vereinsmitglied* am Flugplatz eintrifft 
 . *Vereinsmitglied* hält seinen _RFID-Ausweis_ an den _RFID-Reader_
 . _RFID-Reader_ prüft, ob *Vereinsmitglied* existiert
@@ -37,7 +37,6 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 //Frage: Display mit Information zum Datum, erfolgreiche anmeldung etc.
 //Frage: Signallämpchen leuchtet Grün/Rot
 
-
 === Alternative Abläufe
 
 ==== Systemausfall
@@ -49,16 +48,9 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden,
 . *Vereinsmitglied* muss die technische Störung an *Administrator* weiterleiten
 . Der Use Case wird im Schritt 4d fortgesetzt.
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
-//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
 ==== Erfolgreiche Anmeldung
 . Sc1: *Vereinsmitglied* A. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ an den _RFID-Reader_ und meldet sich erfolgreich an. Das _Signallämpchen_ leuchtet auf. *Vereinsmitglied* A. darf den Flugplatz betreten.
 
@@ -88,9 +80,9 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 ==== Performance
 
 //Frage: Wie lange maximal möglich
-* Das lesen des _RFID-Readers_ sollte nicht länger als...
+* Das lesen des _RFID-Readers_ sollte "schnell" gehen
 
-* Die Anmelde-Bestätigung des _Signallämpchens_ sollte nicht länger als.... 
+* Die Anmelde-Bestätigung des _Signallämpchens_ sollte nicht länger als ...Minuten leuchten.
 
 ==== <Besondere Anforderung 1>
 
