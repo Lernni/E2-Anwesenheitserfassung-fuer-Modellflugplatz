@@ -1,49 +1,69 @@
 == Use-Case: UC06: Alle Piloten abmelden
 ===	Kurzbeschreibung
 
-
+In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Vereinsmitglieder* beim Verlassen des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+==== Vereinsmitglieder
+Der Akteur "Vereinsmitglied" möchte sich und alle anderen "Vereinsmitglieder" abmelden und den Flugplatz verlassen.
 
 ==== Administrator
 Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
-
+. Den *Vereinsmitgliedern* wurde bereits ein RFID-Ausweis zugeordnet und übergeben
+. Die *Vereinsmitglieder* sind angemeldet
 
 === Standardablauf (Basic Flow)
 
-
+. Der Use-Case beginnt, wenn ein *Vereinsmitglied* gehen möchte und alle anderen *Vereinsmitglieder* abmelden möchte.
+//sicher?
+. Das *Vereinsmitglied* drückt lange auf den _Flugleiterknopf_
+. Alle *Vereinsmitglieder* werden abgemeldet.
+//oder wie auch immer es aussehen soll, wenn niemand mehr angemeldet ist
+. Das Signallämpchen hört auf zu leuchten       
+. Der Vereinsflugplatz kann verlassen werden
+. Der Use-Case ist abgeschlossen
 
 === Alternative Abläufe
+//sinnvoll?
+//Zeit einfügen, wann alle abgemeldet werden sollen
+==== Deadline
+Es ist xx:xx Uhr und es sind noch *Mitglieder* angemeldet
 
+. Alle Mitglieder werden automatisch vom _System_ abgemeldet
+//oder wie auch immer
+. Die LED hört auf zu leuchten.
+. Der Use Case wird im Schritt 5 fortgesetzt.
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
+//erfragen, was passieren soll
+//vor allem auch bzgl. LED
+==== Systemausfall
+Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf versucht, alle abzumelden, die Abmeldung aufgrund eines Komplettausfalls des Systems fehlschlägt, dann
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück
+. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein
+. *Vereinsmitglied* muss die technische Störung an den *Administrator* weiterleiten
+. Der Use Case wird im Schritt 5 fortgesetzt.
 
 === Wesentliche Szenarios
 
+==== Erfolgreiche Abmeldung
+
+. Sc1: Alle werden abgemeldet
+
+==== Fehlgeschlagene Abmeldung
+
+. Sc2: Die Anmeldung schlägt fehl und ein *Administrator* wird über den Systemausfall informiert.
 
 ===	Nachbedingungen
-
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+//s.o.
+==== Signallämpchen
+Das Signallämpchen sollte nicht mehr leuchten
 
 
 === Besondere Anforderungen
 
 ==== Usability
 
-
-==== Performance
-
-
-==== <Besondere Anforderung 1>
-
-==== <Besondere Anforderung 1>
+Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jedes Vereinsmitglied einfach und verständlich sein.
