@@ -1,4 +1,5 @@
 == Use-Case: UC08: Protokoll einsehen
+:imagesdir: images/Protokoll
 ===	Kurzbeschreibung
 
 
@@ -51,3 +52,7 @@ Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` 
 
 ==== Berechtigung
 Nicht jedes *Vereinsmitglied* ist gleichzeitig auch *Administrator*. Daher darf die Protokollansicht nur denjenigen *angemeldeten Benutzern* angezeigt werden, die auch die Berechtigung dazu haben.
+
+=== Wireframe
+
+image::Protokolldaten.png[Protokolldaten, 300, 300]
