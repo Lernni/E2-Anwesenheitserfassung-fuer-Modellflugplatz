@@ -10,25 +10,29 @@ Der Akteur "Vereinsmitglied" möchte nicht mehr auf dem Modellflugplatz fliegen.
 Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet alle Daten.
 
 === Vorbedingungen
-. Das *Vereinsmitglied* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 is hier die Vorraussetzung.
-. Der *Administrator* hat Kenntnis über die `Kennung` des zu löschenden Piloten. 
+. Das *Vereinsmitglied* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 ist hier die Vorraussetzung.
+. Der *Administrator* hat Kenntnis über den `Namen` und die `RFID-Nr` des zu löschenden Piloten. 
 . Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ die Funktion _Bestehendes Vereinsmitglied löschen_ auswählt.
-. Der *Administrator* gibt in einem _Formular_ die `Kennung` des zu löschenden *Vereinsmitglieds* ein.
-. Der *Administrator* bestätigt das _Formular_.
-. Der _Webserver_ prüft , ob die `Kennung` vorhanden ist
-.. IF `Kennung` vorhanden:
-... Der dem *Vereinsmitglied* zugewiesene _RFID-Ausweis_ wird als `deaktiviert` markiert.
-... `Vereinsmitglied` und alle zugehörigen `Pilotendaten` werden aus der Datenbank gelöscht.
-... Der _Webserver_ wechselt zur _Admin-Seite_.
-.. SONST:
-... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
-... Der _Webserver_ bricht den Vorgang ab.
-... Der *Administrator* korrigiert den Fehler im _Formular_.
-... Weiter in Schritt 2
+. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ das zu löschende *Vereinsmitglied* und klickt auf _Löschen_.
+. Der *Administrator* bestätigt die Aktion.
+
+//Hier kann eigentlich nix schief gehen, aber ich lasse das trotzdem mal auskommentiert.
+
+// . Der _Webserver_ prüft , ob die `Kennung` vorhanden ist
+// .. IF `Kennung` vorhanden:
+// ... Der dem *Vereinsmitglied* zugewiesene _RFID-Ausweis_ wird als `deaktiviert` markiert.
+// ... `Vereinsmitglied` und alle zugehörigen `Pilotendaten` werden aus der Datenbank gelöscht.
+// ... Der _Webserver_ wechselt zur _Admin-Seite_.
+// .. SONST:
+// ... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
+// ... Der _Webserver_ bricht den Vorgang ab.
+// ... Der *Administrator* korrigiert den Fehler im _Formular_.
+// ... Weiter in Schritt 2
+
 . Das (nun ehemalige) *Vereinsmitglied* übergibt dem *Administrator* seinen _RFID-Ausweis_.
 . Der Use Case ist abgeschlossen, das ehemalige *Vereinsmitglied* muss den Flugplatz nun verlassen und kann diesen nicht mehr nutzen.
 
@@ -56,4 +60,4 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er das Aus- und Eintreten in den Modellflugverein ermöglicht. 
 
 * Um das versehentliche Löschen eines *Vereinsmitglieds* zu verhinden, sollten regelmäßig backups gemacht werden.
-* Eventuell sollte man eine Funktion implementieren, welche deas zuletzt gelöschte *Vereinsmitglied* in einem Pufferspeicher bereit hält, was die Wiederherstellung, erleichtern würden, für den Fall, dass ein Löschvorgang unabsichtlich eintritt.
+* Eventuell sollte man eine Funktion implementieren, welche das zuletzt gelöschte *Vereinsmitglied* in einem Pufferspeicher bereit hält, was die Wiederherstellung erleichtern würden, für den Fall, dass ein Löschvorgang unabsichtlich eintritt.
