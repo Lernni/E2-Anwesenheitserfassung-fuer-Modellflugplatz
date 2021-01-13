@@ -1,4 +1,5 @@
 == Use-Case: UC03: Pilotendaten anlegen
+:imagesdir: images/Verwaltung
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Anlegen eines `Vereinsmitglieds (Pilot)` durch einen *Administrator* beschrieben.
 
@@ -95,3 +96,8 @@ Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er V
 * nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste)
 
 Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webservers_ stark beeinträchtigen.
+
+
+=== Wireframe
+
+image::Pilotendaten_anlegen.png[Pilotendaten anlegen, width=60%]

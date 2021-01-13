@@ -1,5 +1,6 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 == Use-Case: Pilotendaten modifizieren
+:imagesdir: images/Verwaltung
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das Modifizierens der Benutzerdaten eines Vereinsmitgliedes durch einen *Administrator* beschrieben.
@@ -52,3 +53,7 @@ Die Daten des *Vereinsmitgliedes* müssen korrekt in der _Datenbank_ aktualisier
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 ==== Berechtigung
 Nicht jedes *Vereinsmitglied* ist gleichzeitig auch *Administrator*. Daher darf die Übersicht der *Vereinsmitglieder* nur denjenigen *angemeldeten Benutzern* angezeigt werden, die auch die Berechtigung dazu haben.
+
+=== Wireframe
+
+image::Pilotendaten_modifizieren.png[Pilotendaten modifizieren, width=60%]

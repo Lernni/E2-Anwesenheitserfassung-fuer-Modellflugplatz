@@ -55,4 +55,4 @@ Nicht jedes *Vereinsmitglied* ist gleichzeitig auch *Administrator*. Daher darf 
 
 === Wireframe
 
-image::Protokolldaten.png[Protokolldaten, 300, 300]
+image::Protokolldaten.png[Protokolldaten, width="70%"]
