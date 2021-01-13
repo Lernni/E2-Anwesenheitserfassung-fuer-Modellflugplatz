@@ -1,0 +1,35 @@
+= Meetingplan für den 14.01.2021
+1.0, 14.01.2021
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Ablauf
+
+* Use-Cases mit Wireframes vorstellen
+** Lenny zeigt Use-Case-Übersicht & Wireframes per Bildschirmübertragung
+** Beginn: Login, Startseite, Startseite-Admin von Alex vorgestellt 
+** Jeder stellt seinen eigenen Use-Case vor (nur sprachlich während Übersicht gezeigt wird) und stellt evtl. vorhandene Fragen
+
+* Tastenkombinationen vorstellen (Lenny)
+
+* Erweiterete Systemübersicht zeigen (Lenny)
+
+== Fragen:
+* Wie wird das System übergeben? Implemtieren wir das auf einem laufenden Server?
+** Wenn ja: Wird der Server aktuell verwendet oder kann als Testserver fungieren?
+** Welches Betriebssystem läuft auf dem Server?
+* Besteht schon eine Domain für die Website?
+* Welcher Raspi wird verwendet?
+* Wird uns der Raspi übergeben? Direkt zum Start des 2. Semesters
+* Welche RGB-Lampe? Wie viele Farben möglich?
+
+
+
+== Pläne bzw. Fragen an Herrn Zirkelbach:
+
+* (Testfälle entwerfen)
+* "Grundkonzept der Architektur"
+** Domänenmodell?
+** Datenbankmodell?
+
+
