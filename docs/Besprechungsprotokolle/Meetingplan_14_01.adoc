@@ -22,6 +22,7 @@
 * Welcher Raspi wird verwendet?
 * Wird uns der Raspi übergeben? Direkt zum Start des 2. Semesters
 * Welche RGB-Lampe? Wie viele Farben möglich?
+* Können Admins eine Aktualisierung des Systems anfordern? (aktuelles Protokoll wird synchronisiert)
 
 
 

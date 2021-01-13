@@ -17,20 +17,44 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
 
+Die Architektur der Anwesenheitserfassung soll auf das Mindeste beschränkt die Anforderungen erfüllen. Dabei steht vor allem die exakte Erfassung der Aktivitäten auf dem Flugplatz zu jeder Zeit im Vordergrund. Das erfordert eine *aktuelle Uhrzeit* auf dem Raspberry Pi am Flugplatz und die Möglichkeit der *Offline-Nutzung*, da nicht immer gewährleistet werden kann, dass eine Verbindung zum Webserver und damit zur Datenbank besteht.
+
+Da ein Teil des Systems (Raspberry Pi + Komponenten) im Freien steht, wird auf eine *robuste Installation* gesetzt, um Wettereinwirkungen und möglicher physischer Gewalt standzuhalten. Konkret heißt das, dass der Raspberry Pi im Boden verbaut wird und die Komponenten zur An- und Abmeldung in einem Kasten eingebettet an einem Mast befestigt sind.
+
+Darüber hinaus soll sich die Anlage sich die meiste Zeit über *nicht bemerkbar machen*, d.h. solange niemand mit der Anlage interagiert oder Piloten auf dem Platz sind, gibt die Anlage auch kein visuelles Feedback.
+
+Der Webserver soll durch eine *moderne Oberfläche* eine einfache Übersicht und Verwaltung für die Administratoren bieten und für die Mitglieder eine beschränkte Übersicht zur Einsicht der aktuellen Aktivität auf dem Flugplatz. Der Zugang für Admins und Mitglieder wird seperat *durch ein Login gesichert*.
+
+Das System muss *skalierbar* sein, sodass eine Anwesenheitserfassung der Piloten und eine Anwesenheitserfassung in der Werkstatt zukünftig gleichzeitig existieren kann.
+
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
+Es müssen aktuelle Informationen über vorhandene Mitglieder und RFID-Ausweise vor Ort zur Verfügung stehen. Außerdem muss der Webserver die Protokolldaten vom Raspberry Pi erhalten. Es besteht daher eine gegenseiteige Abhängigkeit zwischen Raspberry Pi und Webserver, *beide Komponenten müssen miteinander kommunizieren*. Außerdem muss der Raspberry einen *Zwischenspeicher* halten, um den Offline-Betrieb zu gewährleisten.
+
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
+
+. Ein lokaler Zwischenspeicher (Cache) muss auf dem Raspberry Pi gehalten werden
+** Nutzung von *MariaDB* als lokale Datenbank
+
+. Kommunikation zwischen Webserver und Raspberry Pi
+** Via *REST API*
+
+. Rasperry Pi
+** Programmierung mit *Python*
+
+. Moderne Umsetzung des Webservers, Kommunikation mit der Datenbank
+** Via *Angular* und *Django*
 
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Entscheidung oder Einschränkung oder Begründung 1
+. Nutzung von MariaDB durch persönliche Erfahrung
 
-. Entscheidung oder Einschränkung oder Begründung 2
+. Nutzung von Angualar/Django da beim Projekt Wetterstation verwendet und keine persönliche Erfahrung mit anderen Frameworks vorhanden
 
 
 == Architekturmechanismen
