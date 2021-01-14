@@ -99,4 +99,4 @@ Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webserver
 
 === Wireframe
 
-image::Pilotendaten_anlegen.png[Pilotendaten anlegen, width=60%]
+image::Pilotendaten_anlegen2.png[Pilotendaten anlegen, width=60%]
