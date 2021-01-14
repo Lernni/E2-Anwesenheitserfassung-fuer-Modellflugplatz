@@ -12,7 +12,7 @@ Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet die
 
 === Vorbedingungen
 . Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
-. Es existiert mindestens ein nicht aktivierter, aber registrierter _RFID-Ausweis_.
+. Es existiert mindestens ein nicht aktivierter _RFID-Ausweis_.
 . Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 // Frage: weiterer Use-Case: Verwaltung loggt sich ein?
 // Frage: weiterer Use-Case: Hinzufügen von RFID-Ausweisen?
@@ -27,7 +27,7 @@ Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet die
 . Der *Administrator* gibt die `Kennung` des _RFID-Ausweises_, der dem *Vereinsmitglied* zugewiesen werden soll, mit in das _Formular_ ein.
 . Der *Administrator* bestätigt das _Formular_.
 . Der _Webserver_ prüft die Richtigkeit der eingegeben `Daten`:
-.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ vorhanden AND _RFID-Ausweis_ nicht aktiviert:
+.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ vorhanden OR neuer _RFID-Ausweis_ angegeben:
 ... Der _Webserver_ erstellt ein neues `Vereinsmitglied`
 ... Der _Webserver_ weist den _RFID-Ausweis_ dem neuen `Vereinsmitglied` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
 ... Der _Webserver_ wechselt zur _Admin-Seite_.
@@ -43,11 +43,10 @@ Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet die
 === Alternative Abläufe
 
 ==== RFID-Ausweis nicht registriert
-Wenn der *Administrator* im Schritt 3 eine `Kennung` eingibt, die auf einen nicht existierenden _RFID-Ausweis_ zeigt, dann:
+Wenn der *Administrator* im Schritt 3 angibt, dass der _RFID-Ausweis_ noch nicht zugewiesen ist, dann:
 
 . Der *Administrator* hat Schritt 4 erfolgreich durchlaufen.
-. Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ nicht gefunden wurde.
-. Die Korrektur in Schritt 5b.iii besteht in der Ausführung von (UCxx - Hinzufügen eines RFID-Ausweises)
+. Das _System_ hinterlegt eine Information, dass das neue *Mitglied* das nächste *Mitglied* sein wird, welches sich am Flugplatz anmeldet.
 . Der Use-Case wird in Schritt 4 fortgesetzt.
 
 ==== RFID-Ausweis bereits aktiviert
@@ -57,7 +56,7 @@ Wenn der *Administrator* im Schritt 3 eine `Kennung` eingibt, die auf einen bere
 . Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ bereits aktiviert wurde.
 . Der *Administrator* entscheidet, ob in Schritt 5b.iii entweder
 .. ein nicht aktivierter, anderer _RFID-Ausweis_ ausgewählt wird, oder
-.. ein aktivierter _RFID-Ausweis_ deaktiviert wird (UC04 - Pilotendaten löschen))
+.. ein aktivierter _RFID-Ausweis_ deaktiviert wird
 . Der Use-Case wird in Schritt 4 fortgesetzt.
 
 ==== Systemausfall
@@ -80,7 +79,7 @@ Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn der *Administrat
 . Sc1: Der *Administrator* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das *Vereinsmitglied*.
 
 ==== Fehlgeschlagenes Anlegen der Pilotendaten
-. Sc1: Der *Administrator* kann kein neues `Vereinsmitglied` anlegen, da es keinen _RFID-Ausweis_ gibt, welcher nicht aktiviert, aber registriert ist. Der *Administrator* muss einen neuen _RFID-Ausweis_ hinzufügen (UCxx) oder einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren - und damit auch das entsprechende `Vereinsmitglied` entferen (UC04). (siehe alternative Abläufe)
+. Sc1: Der *Administrator* kann kein neues `Vereinsmitglied` anlegen, da es keinen _RFID-Ausweis_ gibt, welcher nicht aktiviert ist. Der *Administrator* muss auswählen, dass ein neuer _RFID-Ausweis_ benutzt wird oder er muss einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren.
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
@@ -93,7 +92,7 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere (alle?) Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
 
 * nur bestimmte Zeichen im Formular zulassen
-* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste)
+* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren, aber nicht aktiviert sind -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste)
 
 Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webservers_ stark beeinträchtigen.
 
