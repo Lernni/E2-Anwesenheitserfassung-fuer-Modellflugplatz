@@ -37,46 +37,58 @@
 === Vorschläge
 Der Akteur ist lediglich derjenige, der sich mit dem Usecase beschäftigt (siehe Usecasemodell)
 
-Usecasemodell: Include Beziehung UC02-UC06 und UC01->UC07 entfernen. Vereinsmitglied -> UC06
-Extend UC07->UC01 und Vereinsmitglied ->UC07
+UseCase-Modell:
 
-Aus Usecasemodell Verwaltung und Protokoll entfernen
+* Include Beziehung UC02->UC06 und UC01->UC07 entfernen
+* Vereinsmitglied, Admin, Zeit-Trigger -> UC06
+* Vereinsmitglied -> UC07
+* Vereinsmitglied, Admin -> UC08
+* Extends UC07->UC01
+* Verwaltung & Protokoll entfernen
 
 
 == Erkenntnisse
 ==== Usecases
-UC1: Vorbedingung: Vereinsmitglied ist nicht angemeldet
+* UC01:
+** Vorbedingung: Vereinsmitglied ist nicht angemeldet
+** Versehentliche Anmeldung -> Dann direkt Abmeldung danach, wird nicht vom System erfasst (zeitlich festgelegt: < 30s, genaue Zeitdauer noch offen, bzw. konfigurierbar)
 
-UC04: Nutzer können lediglich deaktiviert werden. Möglichkeit der Reaktivierung soll gegeben sein. Hier muss erneut ein RFID Tag vergeben werden
+* UC04:
+** Umbennen bzw. neu anlegen zu: "Piloten deaktivieren/reaktivieren"
+** Nutzer können lediglich deaktiviert werden. Bei der Deaktivierung wird der zuvor verwendete RFID-Tag freigegeben. Möglichkeit der Reaktivierung soll gegeben sein. Hier muss erneut ein RFID Tag vergeben werden.
 
-UC06: 
+* UC05:
+** Bestimmte Daten des Mitglieds bleiben fix beim Anlegen eines neuen Mitglieds
 
--Automatisches Abmelden um 24 Uhr (Abmeldezeit nicht 00:00 sondern Kenntlichmachung „Automatische Abmeldung“) Es darf nicht im dunkeln geflogen werden. (Akteur: Zeitlicher Trigger)
+* UC06: 
+** Automatisches Abmelden um 24 Uhr (Abmeldezeit nicht 00:00 sondern Kenntlichmachung „Automatische Abmeldung, Null-Value“) Es darf nicht im dunkeln geflogen werden. (Akteur: Zeitlicher Trigger)
+** Abmeldung über die Website im Adminbereich
+** Abmeldung manuell über Taster
 
--Abmeldung über die Website im Adminbereich
+* UC07:
+** Bestimmung des Flugleiters ist nicht verpflichtend, sondern auf freiwilliger Basis -> Keine Blockierung des Systems
 
--Abmeldung manuell über Taster
+* UC08:
+** Info auf Website: Letzter Datenabgleich: xx:xx Uhr
+** Bei Fehlerfall Info an Admin: „Seit 30 min keine Verbindung mehr!“
+** Suche und Filtern nach Datumsbereich einbinden
 
-Der Usecase soll einfach modifiziert werden können (Über Adminbereich) Beispielsweise Änderung der Zeit der automatischen Abmeldung.
-
-UC08: Info auf Website: Letzter Datenabgleich: xx:xx 
-Bei Fehlerfall Info an Admin: „Seit 30 min keine Verbindung mehr!“
-Suche und Filtern nach Datumsbereich einbinden
-
-==== Allgemeine Änderungen bzgl. Glossary: 
-Begrifflichkeiten (Flugzeiten, Zeiten, Anmeldedaten…) einheitlich machen. Der Gesetzgerber gibt die Begrifflichkeit „Flugbuch“ vor.
+==== Allgemeine Änderungen:
+* UseCases:
+** reduzieren, nicht zu allem was schreiben (es gibt nicht überall Alternative Abläufe)
+** nur auf das spezielle Thema des UseCases beschränken, keine äußeren vom System unabhängigen Sachen einbringen
+** nur die Akteure spielen eine Rolle, die auch den UseCase direkt ausführen (siehe UseCase-Diagramm)
+* Glossary: Begrifflichkeiten (Flugzeiten, Zeiten, Anmeldedaten…) einheitlich machen. Der Gesetzgeber gibt die Begrifflichkeit „Flugbuch“ vor.
 
 
 ==== Ergänzungen zu nicht funktionalen Anforderungen: 
--Anfallende Daten werden bei bestehender Internetverbindung synchronisiert. 
-
--Bei Störungen Administrator benachrichtigen: „Seit 30 min keine Verbindung mehr!“
-
--Berechtigung der Protokolleinsicht: Jedes Vereinsmitglied darf Protokolldaten sehen
+* Anfallende Daten werden bei bestehender Internetverbindung synchronisiert. 
+* Bei Störungen Administrator benachrichtigen: „Seit 30 min keine Verbindung mehr!“
+* Berechtigung der Protokolleinsicht: Jedes Vereinsmitglied darf Protokolldaten sehen
+* Konfiguration der Dauer von Anmeldung (3s) und Alle Piloten abmelden (10s), etc. in einem Einstellungsbereich (Admin-Zugriff)
 
 
 == Offene Fragen
-
-Umgang mit Gastflügen wird noch mit den Themenstellern geklärt.
+* Umgang mit Gastflügen wird noch mit den Themenstellern geklärt.
 
 
