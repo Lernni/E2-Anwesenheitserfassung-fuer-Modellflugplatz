@@ -3,7 +3,6 @@
 ===	Kurzbeschreibung
 
 
-
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
 Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
@@ -13,41 +12,46 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
 
+. Das *Vereinsmitglied* hat aus Gründen alle `Daten` vollständig in ein manuelles Flugbuch eingetragen. 
+. Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
+. Der *Administrator* hat Zugang zur _Webseite_.
+
 
 === Standardablauf (Basic Flow)
 
-
+. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Pilotendaten` nachzutragen auf der _Webseite_ anmeldet
+. *Administrator* wählt auf der _Admin-Seite_ die Protokollansicht aus.
+. *Administrator* wählt "Flugzeiten nachtragen".
+. *Administrator* überträgt `Daten` aus dem Flugbuch in die vorgegeben Felder.
+. *Administrator* bestätigt den übertragenen `Datensatz` mit speichern.  
+. Der Use Case ist mit dem erfolgreichen speichern abgeschlossen.
 
 === Alternative Abläufe
 
+==== Daten unvollständig /nicht leserlich
+Wenn der *Administrator* im Schritt 4 des Standardablauf feststellt, das `Pilotendaten` unvollständig /nicht leserlich sind
+. *Administrator* erkundigt sich nach fehlenden `Pilotendaten` beim betroffenden *Vereinsmitglied*
+. Der Use Case wird im Schritt 4 fortgesetzt.
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
+==== Erfolgreiches nachträgliches einfügen
+. Sc1: Wegen einer technischen Störung musste sich *Vereinsmitglied* A in ein manuelles Flugbuch eintragen. *Administrator* A liegen die `Daten` vollständig & in sauberer Form vor. Um die `Daten` nachträglich einzufügen meldet er sich auf der _Webseite_ an und wählt auf der _Admin-Seite_ die Protollansicht aus. Dort manövriert er auf "Flugzeiten nachtragen" und trägt die `Daten` aus dem Flugbuch in die vorgegeben Felder. Er bestätigt diese mit speichern.
 
+==== Probleme bei unvollständigen Daten
+. Sc2: Wegen einer technischen Störung musste sich *Vereinsmitglied* B in ein manuelles Flugbuch eintragen. Als *Administrator* B die `Daten` übertragen will, merkt er, dass die Tinte verlaufen ist und das Datum nicht richtig zu erkennen ist. Er kontaktiert *Vereinsmitglied* B und fragt wegen dem Datum nach. Er vervollständigt darauf hin die `Daten` und trägt diese in die vorgegeben Felder. Er bestätigt diese mit speichern.
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
+* Die Pilotendaten müssen korrekt und vollständig in den `Protokolldaten` zu finden sein
 
 === Besondere Anforderungen
 
-==== Usability
+==== Berechtigung
+Es dürfen nur *Administratoren* /von *Administratoren* berechtigte *Vereinsmitglieder* Zugang zu der Protokoll Einsicht haben (schließt "Flugzeiten nachtragen" ein).
 
-
-==== Performance
-
-
-==== <Besondere Anforderung 1>
-
-==== <Besondere Anforderung 1>
 
 === Wireframe
 

@@ -1,7 +1,9 @@
 == Use-Case: UC10: Handhabung Gastflüge
 ===	Kurzbeschreibung
 
+Gäste des Flugplatzes können einen Gastflug starten. Gastflüge müssen ebenso wie normale Flüge protokolliert werden. Dazu nutzen die betreffenden Personen den RFID-Ausweis eines Gastaccounts.
 
+Dies kann über einen oder mehrere künstliche Gastmitglieder realisiert werden, die nur existieren, um von den Gästen genutzt zu werden.
 
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
