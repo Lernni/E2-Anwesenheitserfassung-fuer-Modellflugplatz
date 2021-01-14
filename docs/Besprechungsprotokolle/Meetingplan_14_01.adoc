@@ -33,4 +33,49 @@
 ** Domänenmodell?
 ** Datenbankmodell?
 
+=== Vorschläge
+Der Akteur ist lediglich derjenige, der sich mit dem Usecase beschäftigt (siehe Usecasemodell)
+
+Usecasemodell: Include Beziehung UC02-UC06 und UC01->UC07 entfernen. Vereinsmitglied -> UC06
+Extend UC07->UC01 und Vereinsmitglied ->UC07
+
+Aus Usecasemodell Verwaltung und Protokoll entfernen
+
+
+== Erkenntnisse
+==== Usecases
+UC1: Vorbedingung: Vereinsmitglied ist nicht angemeldet
+
+UC04: Nutzer können lediglich deaktiviert werden. Möglichkeit der Reaktivierung soll gegeben sein. Hier muss erneut ein RFID Tag vergeben werden
+
+UC06: 
+
+-Automatisches Abmelden um 24 Uhr (Abmeldezeit nicht 00:00 sondern Kenntlichmachung „Automatische Abmeldung“) Es darf nicht im dunkeln geflogen werden. (Akteur: Zeitlicher Trigger)
+
+-Abmeldung über die Website im Adminbereich
+
+-Abmeldung manuell über Taster
+
+Der Usecase soll einfach modifiziert werden können (Über Adminbereich) Beispielsweise Änderung der Zeit der automatischen Abmeldung.
+
+UC08: Info auf Website: Letzter Datenabgleich: xx:xx 
+Bei Fehlerfall Info an Admin: „Seit 30 min keine Verbindung mehr!“
+Suche und Filtern nach Datumsbereich einbinden
+
+==== Allgemeine Änderungen bzgl. Glossary: 
+Begrifflichkeiten (Flugzeiten, Zeiten, Anmeldedaten…) einheitlich machen. Der Gesetzgerber gibt die Begrifflichkeit „Flugbuch“ vor.
+
+
+==== Ergänzungen zu nicht funktionalen Anforderungen: 
+-Anfallende Daten werden bei bestehender Internetverbindung synchronisiert. 
+
+-Bei Störungen Administrator benachrichtigen: „Seit 30 min keine Verbindung mehr!“
+
+-Berechtigung der Protokolleinsicht: Jedes Vereinsmitglied darf Protokolldaten sehen
+
+
+== Offene Fragen
+
+Umgang mit Gastflügen wird noch mit den Themenstellern geklärt.
+
 
