@@ -3,7 +3,6 @@
 ===	Kurzbeschreibung
 
 
-
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglied
 Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
@@ -15,6 +14,7 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 . Das *Vereinsmitglied* hat aus Gründen alle `Daten` vollständig in ein manuelles Flugbuch eingetragen. 
 . Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
+. Der *Administrator* hat Zugang zur _Webseite_.
 
 
 === Standardablauf (Basic Flow)
@@ -32,8 +32,6 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 Wenn der *Administrator* im Schritt 4 des Standardablauf feststellt, das `Pilotendaten` unvollständig /nicht leserlich sind
 . *Administrator* erkundigt sich nach fehlenden `Pilotendaten` beim betroffenden *Vereinsmitglied*
 . Der Use Case wird im Schritt 4 fortgesetzt.
-
-
 
 
 === Wesentliche Szenarios
