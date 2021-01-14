@@ -5,8 +5,6 @@
 
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
 ==== Administrator
 Der Akteur "Administrator" verwaltet die entstehenden Daten.
