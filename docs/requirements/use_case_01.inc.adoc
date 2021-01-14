@@ -20,22 +20,20 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 === Standardablauf (Basic Flow)
 
 . Der Use Case beginnt, wenn das *Vereinsmitglied* am Flugplatz eintrifft 
-. *Vereinsmitglied* hält seinen _RFID-Ausweis_ an den _RFID-Reader_
+. *Vereinsmitglied* hält seinen _RFID-Ausweis_ 3 Sekunden lang an den _RFID-Reader_
 . _RFID-Reader_ prüft, ob *Vereinsmitglied* existiert
 . IF *Vereinsmitglied* existiert
-.. _Signallämpchen_ leuchtet auf
+.. _Signallämpchen_ leuchtet in Grün auf. 
 .. Anmeldung erfolgreich
 .. `Daten` werden erfolgreich erfasst und protokolliert
-.. Vereinsflugplatz darf betreten und genutzt werden
+.. Vereinsflugplatz darf betreten und genutzt werden. *Vereinsmitglied* hat [.underline]#S1# durchlaufen.
 . ELSE *Vereinsmitglied* existiert nicht
-.. _Signallämpchen_ leuchtet nicht auf
+.. _Signallämpchen_ blinkt Rot auf.
 .. Anmeldung fehlgeschlagen 
 .. `Daten` können nicht protokolliert werden
-.. Vereinsflugplatz darf nicht betreten werden
+.. Vereinsflugplatz darf nicht betreten werden. *Vereinsmitglied* hat [.underline]#S3# durchlaufen.
 .. Sich bei *Administrator* melden 
-. Der Use Case wäre bei einer erfolgreichen Anmeldung abgeschlossen.
-//Frage: Display mit Information zum Datum, erfolgreiche anmeldung etc.
-//Frage: Signallämpchen leuchtet Grün/Rot
+. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 
@@ -52,22 +50,26 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden,
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Anmeldung
-. Sc1: *Vereinsmitglied* A. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ an den _RFID-Reader_ und meldet sich erfolgreich an. Das _Signallämpchen_ leuchtet auf. *Vereinsmitglied* A. darf den Flugplatz betreten.
+. Sc1: *Vereinsmitglied* A. trifft am Flugplatz ein. Er durchläuft [.underline]#S1#. *Vereinsmitglied* A. darf den Flugplatz betreten.
 
 ==== Fehlgeschlagene Anmeldung
-. Sc2.1: *Person* B. trifft am Flugplatz ein. Er/Sie hält einen fremden _RFID-Ausweis_ an den _RFID-Reader_ und versucht sich anzumelden. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. Das _Signallämpchen_ leuchtet nicht auf, und *Person* B. darf den Flugplatz nicht betreten.
+. Sc2.1: *Person* B. trifft am Flugplatz ein. Er/Sie hält einen fremden _RFID-Ausweis_ an den _RFID-Reader_ und durchläuft [.underline]#S3#. Da B. kein Mitglied des Vereines ist, schlägt die Anmeldung fehl. *Person* B. darf den Flugplatz nicht betreten.
 
-. Sc2.2: *Vereinsmitglied* C. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ an den _RFID-Reader_ und versucht sich anzumelden. Da wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte dem *Administrator* Bescheid gegeben werden, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz betreten.
+
+. Sc2.2: *Vereinsmitglied* C. trifft am Flugplatz ein. Er/Sie hält sein/ihr _RFID-Ausweis_ 3 Sekunden an den _RFID-Reader_ und versucht sich anzumelden. Da wegen einer anhaltenden technischen Störung die Anmeldung fehlschlägt und das _Signallämpchen_ gar nicht aufleuchtet, muss sich händisch in das Flugbuch eingetragen werden. Außerdem sollte dem *Administrator* Bescheid gegeben werden, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz betreten.
 
 ==== Flugleiter 
 
-. Sc3.1: *Vereinsmitglied* D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, muss sich D. nach der erfolgreichen Anmeldung als *Flugleiter* kennzeichnen (UC07 Bestimmung des Flugleiters)
+. Sc3.1: *Vereinsmitglied* D. trifft am Flugplatz ein. Da sich schon 2 Mitglieder auf dem Flugplatz befinden, wird [.underline]#S5# ausgeführt. Verweis auf (UC07: Flugleiter bestimmen)
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* _Signallämpchen_: Das _Signallämpchen_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich) zurücksetzen. 
+* _Signallämpchen_: Das _Signallämpchen_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich):
+
+. davor und danach für eine Sekunde ausshalten. 
+. auf ihren korrekten Zustand zurücksetzten.  
 
 * Technische Störung: Falls es zu einer anhaltenden technischen Störung kommt, muss sich der *Administrator* um das Problem kümmern, und die manuell eingetragenen `Anmeldedaten` in die `Datenbank` übertragen. 
 
@@ -79,11 +81,5 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 ==== Performance
 
-//Frage: Wie lange maximal möglich
-* Das lesen des _RFID-Readers_ sollte "schnell" gehen
+* Das lesen des _RFID-Readers_ sollte "schnell" gehen.
 
-* Die Anmelde-Bestätigung des _Signallämpchens_ sollte nicht länger als ...Minuten leuchten.
-
-==== <Besondere Anforderung 1>
-
-==== <Besondere Anforderung 1>
