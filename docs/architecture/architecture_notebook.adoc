@@ -1,4 +1,4 @@
-= Architecture Notebook: {project-name}
+= Architecture Notebook: E2 Anwesenheitserfassung für Modellflugplat
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -19,9 +19,11 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 Die Architektur der Anwesenheitserfassung soll auf das Mindeste beschränkt die Anforderungen erfüllen. Dabei steht vor allem die exakte Erfassung der Aktivitäten auf dem Flugplatz zu jeder Zeit im Vordergrund. Das erfordert eine *aktuelle Uhrzeit* auf dem Raspberry Pi am Flugplatz und die Möglichkeit der *Offline-Nutzung*, da nicht immer gewährleistet werden kann, dass eine Verbindung zum Webserver und damit zur Datenbank besteht.
 
-Da ein Teil des Systems (Raspberry Pi + Komponenten) im Freien steht, wird auf eine *robuste Installation* gesetzt, um Wettereinwirkungen und möglicher physischer Gewalt standzuhalten. Konkret heißt das, dass der Raspberry Pi im Boden verbaut wird und die Komponenten zur An- und Abmeldung in einem Kasten eingebettet an einem Mast befestigt sind.
+Da ein Teil des Systems (Raspberry Pi + Komponenten) im Freien steht, wird auf eine *robuste Installation* gesetzt, um Wettereinwirkungen und möglicher physischer Gewalt standzuhalten. Konkret bedeutet das, dass der Raspberry Pi im Boden verbaut wird und die Komponenten zur An- und Abmeldung in einem Kasten eingebettet an einem Mast befestigt sind.
 
-Darüber hinaus soll sich die Anlage sich die meiste Zeit über *nicht bemerkbar machen*, d.h. solange niemand mit der Anlage interagiert oder Piloten auf dem Platz sind, gibt die Anlage auch kein visuelles Feedback.
+Darüber hinaus soll sich die Anlage die meiste Zeit über *nicht bemerkbar machen*, d.h. solange niemand mit der Anlage interagiert oder Piloten auf dem Platz sind, gibt die Anlage auch kein visuelles Feedback.
+
+'Um die oberen Aspekte, insbesondere die der Widerstandsfähigkeit gegenüber Vandalismus, zu erfüllen, wird auf eine minimalisitische Ausgabe als Feedback für den Benutzer der Anlage vor Ort gesetzt (Einfache RGB-Leuchte). Da viele der Benutzer keine umfangreichen Kentnisse bezüglich der Funktionsweise der Anlage haben, stellt eine einfache und verständliche Lichtrückmeldung eine zentrale Umsetzungsrolle dar. Dasselbe gilt bezüglich der Verwendung des RFID-Scanners und der Benutzung des Flugleiter-Knopfes.'
 
 Der Webserver soll durch eine *moderne Oberfläche* eine einfache Übersicht und Verwaltung für die Administratoren bieten und für die Mitglieder eine beschränkte Übersicht zur Einsicht der aktuellen Aktivität auf dem Flugplatz. Der Zugang für Admins und Mitglieder wird seperat *durch ein Login gesichert*.
 
@@ -48,13 +50,17 @@ Es müssen aktuelle Informationen über vorhandene Mitglieder und RFID-Ausweise 
 . Moderne Umsetzung des Webservers, Kommunikation mit der Datenbank
 ** Via *Angular* und *Django*
 
+. 'Speicherung der Piloten- sowie Protokolldaten'
+** 'Via MySQL-Datenbank'
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
 . Nutzung von MariaDB durch persönliche Erfahrung
 
-. Nutzung von Angualar/Django da beim Projekt Wetterstation verwendet und keine persönliche Erfahrung mit anderen Frameworks vorhanden
+. Nutzung von Angular/Django da beim Projekt Wetterstation verwendet und keine persönliche Erfahrung mit anderen Frameworks vorhanden
+
+. 'Nutzung von MySQL durch persönliche Erfahrungen sowie zahlreiche Informationsquellen durch weite Verbreitung'
 
 
 == Architekturmechanismen
