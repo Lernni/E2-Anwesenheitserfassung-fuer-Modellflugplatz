@@ -53,6 +53,10 @@ UseCase-Modell:
 ** Vorbedingung: Vereinsmitglied ist nicht angemeldet
 ** Versehentliche Anmeldung -> Dann direkt Abmeldung danach, wird nicht vom System erfasst (zeitlich festgelegt: < 30s, genaue Zeitdauer noch offen, bzw. konfigurierbar)
 
+* UC03:
+** Mögichkeit einen "unbekannten RFID-Chip" auszuwählen, entfernen
+** Es soll die Kennung des Ausweises angegeben werden, um ihn eindeutig mit dem entsprechenden Mitglied zu verknüpfen. -> Informieren inwiefern das möglich ist
+
 * UC04:
 ** Umbennen bzw. neu anlegen zu: "Piloten deaktivieren/reaktivieren"
 ** Nutzer können lediglich deaktiviert werden. Bei der Deaktivierung wird der zuvor verwendete RFID-Tag freigegeben. Möglichkeit der Reaktivierung soll gegeben sein. Hier muss erneut ein RFID Tag vergeben werden.

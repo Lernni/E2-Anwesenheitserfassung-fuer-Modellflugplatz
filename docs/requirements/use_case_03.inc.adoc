@@ -1,102 +1,69 @@
-== Use-Case: UC03: Pilotendaten anlegen
 :imagesdir: images/Verwaltung
+== Use-Case: UC03: Pilotendaten anlegen
+
 ===	Kurzbeschreibung
-In diesem Use-Case wird der komplette Vorgang zum Anlegen eines `Vereinsmitglieds (Pilot)` durch einen *Administrator* beschrieben.
+In diesem Use-Case wird der Vorgang zum Anlegen eines `Vereinsmitglieds` durch einen *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
 ==== Administrator
-Der Akteur "Administrator" hat vollen Zugriff auf das _System_ und verwaltet die entstehenden Daten.
+Der "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf den _Admin-Bereich_ des _Webservers_.
 
 === Vorbedingungen
-. Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten` des *Vereinsmitglieds*.
-. Es existiert mindestens ein nicht aktivierter _RFID-Ausweis_.
-. Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
-// Frage: weiterer Use-Case: Verwaltung loggt sich ein?
-// Frage: weiterer Use-Case: Hinzufügen von RFID-Ausweisen?
+. Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten`.
 
-// Frage: Gibt es Vereinsmitglieder, welche keinen RFID-Ausweis zugeordnet haben?
+. Es existiert mindestens ein nicht aktivierter _RFID-Ausweis_.
+
+. Der *Administrator* hat sich auf dem _Admin-Bereich_ des _Webservers_ eingeloggt.
 
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ die Funktion _Neues Vereinsmitglied_ auswählt.
-. Der *Administrator* gibt in einem _Formular_ die `Pilotendaten` des *Vereinsmitglieds* ein.
-. Der *Administrator* gibt die `Kennung` des _RFID-Ausweises_, der dem *Vereinsmitglied* zugewiesen werden soll, mit in das _Formular_ ein.
+. Der *Administrator* wählt im _Admin-Bereich_ des _Webservers_ die Funktion _Neues Vereinsmitglied_ aus.
+
+. Der *Administrator* gibt in einem _Formular_ die `Pilotendaten` ein.
+
+. Der *Administrator* gibt die `Kennung` des _RFID-Ausweises_, der dem `Vereinsmitglied` zugewiesen werden soll, mit in das _Formular_ ein.
+
 . Der *Administrator* bestätigt das _Formular_.
-. Der _Webserver_ prüft die Richtigkeit der eingegeben `Daten`:
-.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ vorhanden OR neuer _RFID-Ausweis_ angegeben:
+. Der _Webserver_ prüft die Richtigkeit der eingegeben `Pilotendaten`:
+
+.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ noch nicht vergeben:
+
 ... Der _Webserver_ erstellt ein neues `Vereinsmitglied`
-... Der _Webserver_ weist den _RFID-Ausweis_ dem neuen `Vereinsmitglied` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
+
+... Der _Webserver_ weist die `Kennung` des _RFID-Ausweises_ dem neuen `Vereinsmitglied` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
+
 ... Der _Webserver_ wechselt zur _Admin-Seite_.
+
 .. ELSE
+
 ... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
+
 ... Der _Webserver_ bricht den Vorgang ab.
-... Der *Administrator* korrigiert den Fehler im _Formular_.
-... Weiter in Schritt 4
-. Der *Administrator* übergibt dem *Vereinsmitglied* den zugeordneten _RFID-Ausweis_.
-. Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz jetzt nutzen.
 
-
-=== Alternative Abläufe
-
-==== RFID-Ausweis nicht registriert
-Wenn der *Administrator* im Schritt 3 angibt, dass der _RFID-Ausweis_ noch nicht zugewiesen ist, dann:
-
-. Der *Administrator* hat Schritt 4 erfolgreich durchlaufen.
-. Das _System_ hinterlegt eine Information, dass das neue *Mitglied* das nächste *Mitglied* sein wird, welches sich am Flugplatz anmeldet.
-. Der Use-Case wird in Schritt 4 fortgesetzt.
-
-==== RFID-Ausweis bereits aktiviert
-Wenn der *Administrator* im Schritt 3 eine `Kennung` eingibt, die auf einen bereits aktivierten _RFID-Ausweis_ zeigt, dann:
-
-. Der *Administrator* hat Schritt 4 erfolgreich durchlaufen.
-. Die Bedingung in Schritt 5a ist nicht erfüllt, da der entsprechende _RFID-Ausweis_ bereits aktiviert wurde.
-. Der *Administrator* entscheidet, ob in Schritt 5b.iii entweder
-.. ein nicht aktivierter, anderer _RFID-Ausweis_ ausgewählt wird, oder
-.. ein aktivierter _RFID-Ausweis_ deaktiviert wird
-. Der Use-Case wird in Schritt 4 fortgesetzt.
-
-==== Systemausfall
-Wenn der _Webserver_ während des Use-Cases ausfällt bzw. wenn der *Administrator* sich nicht einloggen kann.
-
-// Frage an TS
-
-
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiches Anlegen der Pilotendaten
-. Sc1: Der *Administrator* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das *Vereinsmitglied*.
-
-==== Fehlgeschlagenes Anlegen der Pilotendaten
-. Sc1: Der *Administrator* kann kein neues `Vereinsmitglied` anlegen, da es keinen _RFID-Ausweis_ gibt, welcher nicht aktiviert ist. Der *Administrator* muss auswählen, dass ein neuer _RFID-Ausweis_ benutzt wird oder er muss einen bereits aktivierten _RFID-Ausweis_ wieder deaktivieren.
+. Sc1: Der *Administrator* legt ein neues `Vereinsmitglied` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an das entsprechende *Vereinsmitglied*.
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Das *Vereinsmitglied* besitzt den entsprechenden _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
+* Das *Vereinsmitglied* besitzt den entsprechenden _RFID-Ausweis_, um sich damit eindeutig am Flugplatz an- und abmelden zu können.
 
 === Besondere Anforderungen
 ==== Usability
 
-Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere (alle?) Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
+Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
 
 * nur bestimmte Zeichen im Formular zulassen
-* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren, aber nicht aktiviert sind -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste)
+* nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren, aber nicht aktiviert sind -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste
 
 Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webservers_ stark beeinträchtigen.
 
 
 === Wireframe
 
-image::Pilotendaten_anlegen2.png[Pilotendaten anlegen, width=60%]
+image::Pilotendaten_anlegen.png[Pilotendaten anlegen, width=60%, align="center"]
