@@ -15,6 +15,7 @@ Der Akteur "Vereinsmitglied" möchte die Protokolldaten einsehen.
 === Standardablauf (Basic Flow)
 . Der Use Case beginnt, wenn sich ein *Vereinsmitglied* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
 . *Vereinsmitglied* wählt die Protokollansicht aus
+. Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` weniger als 30 min her ist
 . IF *Vereinsmitglied* benötigt einen bestimmten Protokolleintrag
 .. *Vereinsmitglied* gibt in einer Suchleiste einen Suchbegriff ein und/oder wählt einen bestimmten Tag aus
 .. Die Protokollansicht wird eingeschränkt auf die Einträge, die den Suchbegriff enthalten
@@ -26,7 +27,7 @@ Der Akteur "Vereinsmitglied" möchte die Protokolldaten einsehen.
 Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` nicht an den _Webserver_ übermittelt werden können.
 
 . *Vereinsmitglied* hat Schritt 2 des Standardablaufes erfolgreich ausgeführt
-. *Vereinsmitglied* stellt fest, dass das `Protokoll` nicht auf dem aktuellen Stand ist
+. Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` länger als 30 min her ist
 . *Vereinsmitglied* wiederholt den Standardablauf zu einem späteren Zeitpunkt
 
 ==== Keine Einträge zu Suchbegriff
@@ -41,11 +42,6 @@ Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` 
 
 ==== Temporärer Ausfall der Internetanbindung des Raspi
 . Sc2: *Vereinsmitglied D* möchte die aktuellen `Protokolldaten` einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Vereinsmitglied D* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Vereinsmitglied D* das aktuelle `Protokoll` einsehen.
-
-=== Besondere Anforderungen
-
-==== Berechtigung
-Nicht jeder *Besucher der Webseite* soll das Prokoll einsehen können, sondern nur angemeldete *Vereinsmitglieder*.
 
 === Wireframe
 

@@ -49,11 +49,6 @@ Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Verei
 ==== Datenbank
 Die Daten des *Vereinsmitgliedes* müssen korrekt in der _Datenbank_ aktualisiert werden.
 
-=== Besondere Anforderungen
-//Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-==== Berechtigung
-Nicht jedes *Vereinsmitglied* ist gleichzeitig auch *Administrator*. Daher darf die Übersicht der *Vereinsmitglieder* nur denjenigen *angemeldeten Benutzern* angezeigt werden, die auch die Berechtigung dazu haben.
-
 === Wireframe
 
 image::Pilotendaten_modifizieren.png[Pilotendaten modifizieren, width=60%]

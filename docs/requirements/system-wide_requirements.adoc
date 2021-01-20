@@ -17,9 +17,11 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 * Zeitsteuerung: Aktualisierung des Flugprotokolls in bestimmten zeitlichen Abständen durch den Raspberry Pi
-* Sicherheit: Schutz der Datenbank durch Admin-Rechte
+* Sicherheit: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Vereinsmitglieder 
 * Online-Hilfe: Bedeutung der Status-LED
 * Authentifizierung: Anmeldung der Vereinsmitglieder auf dem Modellflugplatz
+* Zeitsteuerung: Flugprotokoll wird alle 30 min bei bestehender Internetverbindung durch den Raspberry Pi aktualisiert
+* Auditierung: Sollte das Flugprotokoll länger als 30 min nicht aktualisiert werden, erhält der Administrator eine Benachrichtigung
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -34,7 +36,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
-* Antwortzeiten: An- und Abmeldung innerhalb von wenigen Sekunden und kofigurierbar
+* Antwortzeiten: An- und Abmeldung innerhalb 3s, abmelden aller Piloten in 10s und kofigurierbar
 
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
