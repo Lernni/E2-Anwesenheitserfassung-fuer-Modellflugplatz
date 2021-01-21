@@ -26,8 +26,6 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   
   rectangle "Webserver"{
 
-  [Verwaltung]
-  [Protokoll]
   (UC3: Pilotendaten anlegen)
   (UC4: Pilotendaten löschen)
   (UC5: Pilotendaten modifizieren)
@@ -39,27 +37,28 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
 }
 
 
-Vereinsmitglied -- (UC1: Piloten anmelden)
+Vereinsmitglied --> (UC1: Piloten anmelden)
+(UC1: Piloten anmelden) <.down. (UC7: Flugleiter bestimmen) : extend
 
-(UC1: Piloten anmelden) .down.> (UC7: Flugleiter bestimmen) : include
+Vereinsmitglied --> (UC2: Piloten abmelden)
 
-Vereinsmitglied -- (UC2: Piloten abmelden)
-
-(UC2: Piloten abmelden) .down.> (UC6: Alle Piloten abmelden) : include
+Vereinsmitglied --> (UC6: Alle Piloten abmelden)
 
 
-Administrator -- (Verwaltung)
+Administrator --> (UC3: Pilotendaten anlegen) 
 
-(Verwaltung) .down.> (UC3: Pilotendaten anlegen) : include
-(Verwaltung) .down.> (UC4: Pilotendaten löschen) : include
-(Verwaltung) .down.> (UC5: Pilotendaten modifizieren) : include
+Administrator --> (UC4: Pilotendaten löschen) 
 
-Administrator -- (Protokoll) 
+Administrator --> (UC5: Pilotendaten modifizieren) 
 
-(Protokoll) .down.> (UC8: Protokoll einsehen) : include
-(Protokoll) .down.> (UC9: Protokolldaten nachträglich einfügen) : include
 
-Administrator --  (UC10: Handhabung Gastflüge)
+Administrator --> (UC8: Protokoll einsehen) 
+
+Administrator --> (UC9: Protokolldaten nachträglich einfügen) 
+
+Administrator -->  (UC10: Handhabung Gastflüge)
+
+Administrator --> (UC6: Alle Piloten abmelden)
 
 
 
