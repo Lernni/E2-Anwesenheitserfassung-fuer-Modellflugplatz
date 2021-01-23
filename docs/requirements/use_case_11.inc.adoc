@@ -1,0 +1,34 @@
+== Use-Case: UC11: Piloten reaktivieren
+===	Kurzbeschreibung
+In diesem Use-Case wird der komplette Vorgang zum Reaktiveren eines `Vereinsmitglieds (Pilot)` durch den *Administrator* beschrieben.
+
+===	Kurzbeschreibung der Akteure
+==== Vereinsmitglied
+Der Akteur "Vereinsmitglied" möchte wieder auf dem Modellflugplatz fliegen.
+
+=== Vorbedingungen
+. Das Vereinsmitglied ist in der Datenbank vorhanden, aber deaktiviert. Use-Case UC04 ist hier die Vorraussetzung.
+
+=== Standardablauf (Basic Flow)
+
+. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ das zu aktivierende *Vereinsmitglied* und klickt auf _Reaktivieren_.
+. Der *Administrator* bestätigt die Aktion.
+. Ein _RFID-Ausweis_ wird dem *Vereinsmitglied* übergeben und aktiviert.
+. Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz nun betreten.
+
+=== Wesentliche Szenarios
+
+==== Erfolgreiches Reaktivieren der Pilotendaten
+. Sc1: Die *Verwaltung* reaktiviert ein `Vereinsmitglied` über den _Webserver_ und das *Vereinsmitglied* bekommt im Anschluss einen aktivierten _RFID-Ausweis_ vom *Administrator*.
+
+===	Nachbedingungen
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+* Das *Vereinsmitglied* besitzt einen aktivierten _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
+* Die `Pilotendaten` des (ehemaligen) *Vereinsmitglieds* befinden sich in der Datenbank, das Mitglied ist nicht mehr "ausgegraut".
+
+=== Besondere Anforderungen
+==== Usability
+
+* Um das versehentliche Reaktivieren eines *Vereinsmitglieds* zu verhinden, sollte es ein Popup (o.ä.) geben, wo der Vorgang bestätigt werden muss.
