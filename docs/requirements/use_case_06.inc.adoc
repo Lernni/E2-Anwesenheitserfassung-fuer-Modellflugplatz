@@ -1,69 +1,54 @@
 == Use-Case: UC06: Alle Piloten abmelden
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Vereinsmitglieder* beim Verlassen des Flugplatzes beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Vereinsmitglieder* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 ==== Vereinsmitglieder
-Der Akteur "Vereinsmitglied" möchte sich und alle anderen "Vereinsmitglieder" abmelden und den Flugplatz verlassen.
+Der Akteur Vereinsmitglied möchte sich und alle anderen *Vereinsmitglieder* abmelden und den Flugplatz verlassen.
 
 ==== Administrator
-Der Akteur "Administrator" verwaltet die entstehenden Daten.
+Der Akteur Administrator möchte alle *Vereinsmitglieder* auf einmal abmelden.
 
 === Vorbedingungen
-. Den *Vereinsmitgliedern* wurde bereits ein RFID-Ausweis zugeordnet und übergeben
-. Die *Vereinsmitglieder* sind angemeldet
+. Die *Vereinsmitglieder* sind angemeldet.
 
 === Standardablauf (Basic Flow)
 
 . Der Use-Case beginnt, wenn ein *Vereinsmitglied* gehen möchte und alle anderen *Vereinsmitglieder* abmelden möchte.
 //sicher?
-. Das *Vereinsmitglied* drückt lange auf den _Flugleiterknopf_
+. Das *Vereinsmitglied* drückt (z.B.) lange auf den _Flugleiterknopf_.
 . Alle *Vereinsmitglieder* werden abgemeldet.
 //oder wie auch immer es aussehen soll, wenn niemand mehr angemeldet ist
-. Das Signallämpchen hört auf zu leuchten       
-. Der Vereinsflugplatz kann verlassen werden
-. Der Use-Case ist abgeschlossen
+. Die LED hört auf zu leuchten und alle Mitglieder sind abgemeldet.
+. Der Vereinsflugplatz kann verlassen werden.
+. Der Use-Case ist abgeschlossen.
 
 === Alternative Abläufe
-//sinnvoll?
-//Zeit einfügen, wann alle abgemeldet werden sollen
 ==== Deadline
-Es ist xx:xx Uhr und es sind noch *Mitglieder* angemeldet
+Es ist 24:00 Uhr und es sind noch *Mitglieder* angemeldet.
 
-. Alle Mitglieder werden automatisch vom _System_ abgemeldet
-//oder wie auch immer
-. Die LED hört auf zu leuchten.
-. Der Use Case wird im Schritt 5 fortgesetzt.
+. Alle Mitglieder werden automatisch vom _System_ abgemeldet.
+. Die LED hört auf zu leuchten und alle Mitglieder sind abgemeldet.
 
-//erfragen, was passieren soll
-//vor allem auch bzgl. LED
-==== Systemausfall
-Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf versucht, alle abzumelden, die Abmeldung aufgrund eines Komplettausfalls des Systems fehlschlägt, dann
+==== Admin
+Der *Administrator* möchte alle *Vereinsmitglieder* abmelden.
 
-. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück
-. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein
-. *Vereinsmitglied* muss die technische Störung an den *Administrator* weiterleiten
-. Der Use Case wird im Schritt 5 fortgesetzt.
+. Der *Administrator* klickt auf der _Adminpage_ auf die Schaltfläche _Alle Mitglieder Abmelden_.
+. Die LED hört auf zu leuchten und alle Mitglieder sind abgemeldet.
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Abmeldung
 
-. Sc1: Alle werden abgemeldet
-
-==== Fehlgeschlagene Abmeldung
-
-. Sc2: Die Anmeldung schlägt fehl und ein *Administrator* wird über den Systemausfall informiert.
+. Sc1: Alle *Vereinsmitglieder* werden abgemeldet.
 
 ===	Nachbedingungen
-//s.o.
-==== Signallämpchen
-Das Signallämpchen sollte nicht mehr leuchten
+Das Signallämpchen sollte nicht mehr leuchten und alle *Vereinsmitglieder* sollten abgemeldet sein.
 
 
 === Besondere Anforderungen
 
 ==== Usability
 
-Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jedes Vereinsmitglied einfach und verständlich sein.
+Der Use Case gehört zu der erweiterten Funktionalität des Systems und muss daher für die meisten Vereinsmitglieder einfach und verständlich sein.
