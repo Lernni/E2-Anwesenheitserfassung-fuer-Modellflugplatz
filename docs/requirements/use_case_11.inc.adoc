@@ -14,7 +14,7 @@ Der Akteur "Vereinsmitglied" möchte wieder auf dem Modellflugplatz fliegen.
 . Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
 . Der *Administrator* sucht in der _Mitgliederübersicht_ der deaktivierten Piloten das zu aktivierende *Vereinsmitglied* und klickt auf _Reaktivieren_.
 . Der *Administrator* bestätigt die Aktion.
-. Ein _RFID-Ausweis_ wird dem *Vereinsmitglied* zugeordnet und evtl. in der Zwischenzeit aufgetretene Namenänderungen angegeben.
+. Ein _RFID-Ausweis_ wird dem *Vereinsmitglied* zugeordnet und evtl. in der Zwischenzeit aufgetretene Namensänderungen angegeben.
 . Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz nun betreten.
 
 === Wesentliche Szenarios
@@ -32,3 +32,11 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 // ==== Usability
 
 // * Um das versehentliche Reaktivieren eines *Vereinsmitglieds* zu verhinden, sollte es ein Popup (o.ä.) geben, wo der Vorgang bestätigt werden muss.
+
+=== Wireframe
+
+image::Pilotenübersicht_deaktiv.png[Flugzeiten nachtragen, width=60%]
+
+image::Pilot_reaktivieren.png[Flugzeiten nachtragen, width=60%]
+
+
