@@ -55,4 +55,4 @@ Es dürfen nur *Administratoren* /von *Administratoren* berechtigte *Vereinsmitg
 
 === Wireframe
 
-image::Flugzeiten_nachtragen.png[Flugzeiten nachtragen, width=60%]
+image::Flugzeiten_nachtragen_neu.png[Flugzeiten nachtragen, width=60%]
