@@ -51,4 +51,4 @@ Die Daten des *Vereinsmitgliedes* müssen korrekt in der _Datenbank_ aktualisier
 
 === Wireframe
 
-image::Pilotendaten_modifizieren.png[Pilotendaten modifizieren, width=60%]
+image::Pilotendaten_modifizieren_neu.png[Pilotendaten modifizieren, width=60%]
