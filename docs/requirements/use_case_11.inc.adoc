@@ -12,9 +12,9 @@ Der Akteur "Vereinsmitglied" möchte wieder auf dem Modellflugplatz fliegen.
 === Standardablauf (Basic Flow)
 
 . Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
-. Der *Administrator* sucht in der _Mitgliederübersicht_ das zu aktivierende *Vereinsmitglied* und klickt auf _Reaktivieren_.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ der deaktivierten Piloten das zu aktivierende *Vereinsmitglied* und klickt auf _Reaktivieren_.
 . Der *Administrator* bestätigt die Aktion.
-. Ein _RFID-Ausweis_ wird dem *Vereinsmitglied* übergeben und aktiviert.
+. Ein _RFID-Ausweis_ wird dem *Vereinsmitglied* zugeordnet und evtl. in der Zwischenzeit aufgetretene Namenänderungen angegeben.
 . Der Use Case ist abgeschlossen, das *Vereinsmitglied* kann den Flugplatz nun betreten.
 
 === Wesentliche Szenarios
@@ -26,9 +26,9 @@ Der Akteur "Vereinsmitglied" möchte wieder auf dem Modellflugplatz fliegen.
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
 * Das *Vereinsmitglied* besitzt einen aktivierten _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
-* Die `Pilotendaten` des (ehemaligen) *Vereinsmitglieds* befinden sich in der Datenbank, das Mitglied ist nicht mehr "ausgegraut".
+* Die `Pilotendaten` des (ehemaligen) *Vereinsmitglieds* befinden sich in der Datenbank, das Mitglied ist nun in der Mitgliederübersicht unter "aktiv".
 
-=== Besondere Anforderungen
-==== Usability
+// === Besondere Anforderungen
+// ==== Usability
 
-* Um das versehentliche Reaktivieren eines *Vereinsmitglieds* zu verhinden, sollte es ein Popup (o.ä.) geben, wo der Vorgang bestätigt werden muss.
+// * Um das versehentliche Reaktivieren eines *Vereinsmitglieds* zu verhinden, sollte es ein Popup (o.ä.) geben, wo der Vorgang bestätigt werden muss.
