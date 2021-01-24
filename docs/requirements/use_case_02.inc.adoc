@@ -20,20 +20,21 @@ Der Akteur "Administrator" verwaltet die entstandenen Daten.
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 . Der Use Case beginnt, wenn das *Vereinsmitglied* gehen möchte
-. *Vereinsmitglied* hält seinen RFID-Ausweis an den RFID-Reader
+. *Vereinsmitglied* hält seinen RFID-Ausweis 3 Sekunden an den RFID-Reader
 . RFID-Reader prüft, ob *Vereinsmitglied* bereits angemeldet ist
 . IF *Vereinsmitglied* ist angemeldet
 .. Daten werden erfolgreich erfasst und protokolliert
 .. Abmeldung erfolgreich
-.. Signallämpchen leuchtet auf
-.. Vereinsflugplatz kann verlassen werden
+.. Signallämpchen leuchtet zweimal in Grün auf
+//.. Vereinsflugplatz kann verlassen werden
 . ELSE *Vereinsmitglied* war nicht angemeldet
-.. Daten können nicht protokolliert werden
-.. Abmeldung fehlgeschlagen
-.. Signallämpchen leuchtet nicht auf
-.. *Vereinsmitglied* muss sich beim *Administrator* melden
+.. Signallämpchen leuchtet einmal in Grün auf
+.. *Vereinsmitglied* muss erneut seinen RFID-Ausweis 3 Sekunden an den RFID-Reader halten
+.. Daten werden erfolgreich erfasst und protokolliert
+.. Abmeldung erfolgreich
+.. Signallämpchen leuchtet zweimal in Grün auf
 . Der Use Case ist abgeschlossen.
-// Frage: Was passiert wenn man vergessen hat sich an zu melden? Beim Administrator melden? Händisch nachtragen?
+
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
@@ -79,12 +80,12 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzume
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 ==== Erfolgreiche Abmeldung
-. Sc1: *Vereinsmitglied* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr RFID-Tag an den RFID-Reader und meldet sich erfolgreich ab. Das Signallämpchen leuchtet auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* A. kann den Flugplatz verlassen.
+. Sc1: *Vereinsmitglied* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr RFID-Tag 3 Sekunden an den RFID-Reader und meldet sich erfolgreich ab. Das Signallämpchen leuchtet zweimal grün auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* A. kann den Flugplatz verlassen.
 
 ==== Fehlgeschlagene Abmeldung
-. Sc2.1: *Vereinsmitglied* B. möchte den Flugplatz verlassen. Er/Sie war nicht angemeldet, dadurch können die Daten nicht erfolgreich ermittelt werden und die Abmeldung ist dadurch fehlgeschlagen.
+. Sc2.1: *Vereinsmitglied* B. möchte den Flugplatz verlassen. Er/Sie war nicht angemeldet und hält sein/ihren RFID-Tag 3 Sekunden an den RFID-Reader. Das Signallämpchen leuchtet einmal in Grün auf. *Vereinsmitglied* B. hält erneut sein/ihren RFID-Tag 3 Sekunden an den RFID-Reader. Das Signallämpchen leuchtet zweimal in Grün auf, die Daten werden erfolgreich übertragen und *Vereinsmitglied* B. kann den Flugplatz verlassen.
 
-. Sc2.2: *Vereinsmitglied* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren RFID-Tag an den RFID-Reader und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz verlassen.
+. Sc2.2: *Vereinsmitglied* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren RFID-Tag 3 Sekunden an den RFID-Reader und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz verlassen.
 
 ==== Flugleiter
 . Sc3: *Vereinsmitglied* D. ist der aktuelle Flugleiter und möchte den Flugplatz verlassen. Da sich nach seiner Abmeldung noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz befinden muss ein neuer Flugleiter bestimmt werden. *Vereinsmitglied* D. sucht ein *Vereinsmitglied* E. welcher als neuer Flugleiter bestimmt wird. *Vereinsmitglied* D. meldet sich erfolgreich ab, *Vereinsmitglied* E. hält seinen RFID-Ausweis nochmal an den RFID-Reader und muss schnellstmöglich die Flugleiter-Taste betätigen.
@@ -100,7 +101,10 @@ Wenn *Vereinsmitglied* im Schritt 2 des Standartablauf vergessen hat sich abzume
 Bei erfolgreicher Durchführung des Use Cases müssen folgende Nachbedingungen erfüllt sein:
 
 ==== Signallämpchen
-Das Signallämpchen sollte sich bei jeder Abmeldung (erfolgreich oder nicht erfolgreich) zurücksetzten.
+Das Signallämpchen sollte sich bei jeder Abmeldung (erfolgreich oder nicht erfolgreich):
+
+.. davor und danach für eine Sekunde ausschalten.
+.. auf ihren korrekten Zustand zurücksetzen.
 
 ==== Technische Störung
 Falls es zu einer anhaltenden technischen Störung kommt, muss sich der *Administrator* um das Problem kümmern, und die manuell eingetragenen Anmeldedaten in die Datenbank übertragen.
