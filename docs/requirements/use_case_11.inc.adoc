@@ -1,4 +1,5 @@
 == Use-Case: UC11: Piloten reaktivieren
+:imagesdir: images/Verwaltung
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Reaktiveren eines `Vereinsmitglieds (Pilot)` durch den *Administrator* beschrieben.
 
