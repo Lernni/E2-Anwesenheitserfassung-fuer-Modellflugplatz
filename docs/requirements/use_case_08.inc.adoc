@@ -45,4 +45,4 @@ Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` 
 
 === Wireframe
 
-image::Protokolldaten.png[Protokolldaten, width="70%"]
+image::Protokolldaten_neu.png[Protokolldaten, width="70%"]
