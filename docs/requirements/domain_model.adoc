@@ -7,4 +7,29 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Allgemeine Informationen
 
-== ...
+== Begriffe
+
+* Pilot
+** Name
+
+* Administrator
+
+* RFID Chip
+** Kennung
+** aktiviert
+
+* Flugplatz
+
+* Terminal
+** anmelden()
+** abmelden()
+
+* Flugsession
+
+* Flugleiter
+
+* Webserver
+
+* Webseite
+
+* Admin-Seite
