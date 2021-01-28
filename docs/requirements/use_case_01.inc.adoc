@@ -7,9 +7,6 @@ In diesem Use-Case wird der komplette Vorgang der Anmeldung eines *Vereinsmitgli
 ==== Vereinsmitglied
 Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
-==== Administrator //kein Akteur
-Der Akteur "Administrator" verwaltet die entstehenden Daten.
-
 === Vorbedingungen
 
 . UC03 ist erfüllt

@@ -32,6 +32,7 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   (UC8: Protokoll einsehen)
   (UC9: Protokolldaten nachträglich einfügen)
   (UC10: Handhabung Gastflüge)
+  (UC11: Piloten reaktivieren)
   
   }
 }
@@ -51,7 +52,6 @@ Administrator --> (UC4: Pilotendaten löschen)
 
 Administrator --> (UC5: Pilotendaten modifizieren) 
 
-
 Administrator --> (UC8: Protokoll einsehen) 
 
 Administrator --> (UC9: Protokolldaten nachträglich einfügen) 
@@ -60,6 +60,7 @@ Administrator -->  (UC10: Handhabung Gastflüge)
 
 Administrator --> (UC6: Alle Piloten abmelden)
 
+Administrator --> (UC11: Piloten reaktivieren)
 
 
 @enduml
