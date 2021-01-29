@@ -6,4 +6,4 @@ include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-image::domain_modell.png[Domainmodell]
+image::domain_model.png[Domainmodell]
