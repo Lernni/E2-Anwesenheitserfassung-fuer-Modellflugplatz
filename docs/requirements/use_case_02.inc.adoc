@@ -1,32 +1,32 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-== Use-Case: Vereinsmitglieder abmelden
+== Use-Case: Piloten abmelden
 ===	Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
-In diesem Use-Case wird der komplette Vorgang der Abmeldung eines *Vereinsmitgliedes* beim Verlassen des Flugplatzes beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Abmeldung eines *Piloten* beim Verlassen des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte sich abmelden und den Flugplatz verlassen.
+==== Pilot
+Der Akteur "Pilot" möchte sich abmelden und den Flugplatz verlassen.
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-. Dem *Vereinsmitglied* wurde bereits ein _RFID-Ausweis_ zugeordnet und übergeben
-. Das *Vereinsmitglied* ist angemeldet
+. Dem *Piloten* wurde bereits ein _RFID-Ausweis_ zugeordnet und übergeben
+. Der *Pilot* ist angemeldet
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn das *Vereinsmitglied* gehen möchte
-. *Vereinsmitglied* hält seinen _RFID-Ausweis_ 3 Sekunden an den _RFID-Reader_
-. RFID-Reader prüft, ob *Vereinsmitglied* bereits angemeldet ist
-. IF *Vereinsmitglied* ist angemeldet
+. Der Use Case beginnt, wenn der *Pilot* gehen möchte
+. *Pilot* hält seinen _RFID-Ausweis_ 3 Sekunden an den _RFID-Reader_
+. RFID-Reader prüft, ob *Pilot* bereits angemeldet ist
+. IF *Pilot* ist angemeldet
 .. `Abmeldedaten` werden erfolgreich erfasst und protokolliert
 .. Abmeldung erfolgreich
 .. _Signallämpchen_ leuchtet zweimal in Grün auf
 //.. Vereinsflugplatz kann verlassen werden
-. ELSE *Vereinsmitglied* war nicht angemeldet
+. ELSE *Pilot* war nicht angemeldet
 .. _Signallämpchen_ leuchtet einmal in Grün auf
-.. *Vereinsmitglied* muss erneut seinen _RFID-Ausweis_ 3 Sekunden an den _RFID-Reader_ halten
+.. *Pilot* muss erneut seinen _RFID-Ausweis_ 3 Sekunden an den _RFID-Reader_ halten
 .. Daten werden erfolgreich erfasst und protokolliert
 .. Abmeldung erfolgreich
 .. _Signallämpchen_ leuchtet zweimal in Grün auf
@@ -37,31 +37,31 @@ Der Akteur "Vereinsmitglied" möchte sich abmelden und den Flugplatz verlassen.
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 ////
 ==== Flugleiter
-Wenn *Vereinsmitglied* welcher Flugleiter ist, im Schritt 1 des Standardablauf bemerkt, dass noch mehr als 2 *Vereinsmitglieder* auf dem Flugplatz sind, dann
+Wenn der *Pilot* welcher Flugleiter ist, im Schritt 1 des Standardablauf bemerkt, dass noch mehr als 2 *Piloten* auf dem Flugplatz sind, dann
 
-. Flugleiter muss ein, noch angemeldetes *Vereinsmitglied* finden, welcher die Flugleiter-Rolle übernimmt
+. Flugleiter muss ein, noch angemeldetes *Pilot* finden, welcher die Flugleiter-Rolle übernimmt
 . Neuer Flugleiter muss sein RFID-Ausweis nochmal an den RFID-Reader halten, und unmittelbar die Flugleiter-Taste drücken
 . Der Use Case wird im Schritt 2 fortgesetzt.
 ////
 
 ==== Systemausfall
-Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht abzumelden, die Abmeldung aufgrund eines Komplettausfall des Systems fehlschlägt, dann
+Wenn der *Pilot* im Schritt 2 des Standardablauf sich versucht abzumelden, die Abmeldung aufgrund eines Komplettausfall des Systems fehlschlägt, dann
 
-. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück
-. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein
-. *Vereinsmitglied* muss die technische Störung an den *Administrator* weiterleiten
+. *Pilot* greift zum ursprünglichen manuellen System zurück
+. *Pilot* trägt alle geforderten Daten händisch in das Flugbuch ein
+. *Pilot* muss die technische Störung an den *Administrator* weiterleiten
 . Der Use Case wird im Schritt 6 fortgesetzt.
 
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 ==== Erfolgreiche Abmeldung
-. Sc1: *Vereinsmitglied* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und meldet sich erfolgreich ab. Das _Signallämpchen_ leuchtet zweimal grün auf, die `Abmeldedaten` werden erfolgreich übertragen und *Vereinsmitglied* A. kann den Flugplatz verlassen.
+. Sc1: *Pilot* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und meldet sich erfolgreich ab. Das _Signallämpchen_ leuchtet zweimal grün auf, die `Abmeldedaten` werden erfolgreich übertragen und *Pilot* A. kann den Flugplatz verlassen.
 
 ==== Fehlgeschlagene Abmeldung
-. Sc2.1: *Vereinsmitglied* B. möchte den Flugplatz verlassen. Er/Sie war nicht angemeldet und hält sein/ihren _RFID-Tag_ 3 Sekunden an den RFID-Reader. Das _Signallämpchen_ leuchtet einmal in Grün auf. *Vereinsmitglied* B. hält erneut sein/ihren _RFID-Tag_ 3 Sekunden an den _RFID-Reader_. Das _Signallämpchen_ leuchtet zweimal in Grün auf, die `Abmeldedaten` werden erfolgreich übertragen und *Vereinsmitglied* B. kann den Flugplatz verlassen.
+. Sc2.1: *Pilot* B. möchte den Flugplatz verlassen. Er/Sie war nicht angemeldet und hält sein/ihren _RFID-Tag_ 3 Sekunden an den RFID-Reader. Das _Signallämpchen_ leuchtet einmal in Grün auf. *Pilot* B. hält erneut sein/ihren _RFID-Tag_ 3 Sekunden an den _RFID-Reader_. Das _Signallämpchen_ leuchtet zweimal in Grün auf, die `Abmeldedaten` werden erfolgreich übertragen und *Pilot* B. kann den Flugplatz verlassen.
 
-. Sc2.2: *Vereinsmitglied* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Vereinsmitglied* C. darf den Flugplatz verlassen.
+. Sc2.2: *Pilot* C. möchte den Flugplatz verlassen. Er/Sie hält sein/ihren _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und versucht sich abzumelden. Da wegen einer anhaltenden technischen Störung die Abmeldung fehlschägt, muss sich händisch in das Flugbuch ausgetragen werden. Außerdem sollte er dem *Administrator* Bescheid geben, in Hinblick auf die technische Störung. *Pilot* C. darf den Flugplatz verlassen.
 
 
 ===	Nachbedingungen
@@ -80,7 +80,7 @@ Falls es zu einer anhaltenden technischen Störung kommt, muss sich der *Adminis
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 ==== Usability
-Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jedes *Vereinsmitglied* einfach und verständlich sein.
+Der Use Case gehört zu der grundlegenden Funktionalität des Systems und muss daher für jeden *Piloten* einfach und verständlich sein.
 
 ==== Performance
 * Das lesen des _RFID-Readers_ sollte nicht länger als...

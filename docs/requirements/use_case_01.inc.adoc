@@ -1,26 +1,26 @@
-== Use-Case: UC01: Vereinsmitglieder anmelden
+== Use-Case: UC01 Piloten anmelden
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird der komplette Vorgang der Anmeldung eines *Vereinsmitgliedes* beim Betreten des Flugplatzes beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Anmeldung eines *Piloten* beim Betreten des Flugplatzes beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
+==== Pilot
+Der Akteur "Pilot" möchte den Flugplatz betreten und nutzen.
 
 === Vorbedingungen
 
 . UC03 ist erfüllt
-. *Vereinsmitglied* hat beim Antreffen auf den Flugplatz den _RFID-Ausweis_ dabei
-. *Vereinsmitglied* ist noch nicht angemeldet
+. *Pilot* hat beim Antreffen auf den Flugplatz den _RFID-Ausweis_ dabei
+. *Pilot* ist noch nicht angemeldet
 
 === Standardablauf (Basic Flow) 
 
-. Der Use Case beginnt, wenn das *Vereinsmitglied* seinen _RFID-Ausweis_ an den _RFID-Reader_ hält
-. _RFID-Reader_ prüft, ob *Vereinsmitglied* existiert
-. IF *Vereinsmitglied* existiert
+. Der Use Case beginnt, wenn der *Pilot* seinen _RFID-Ausweis_ an den _RFID-Reader_ hält
+. _RFID-Reader_ prüft, ob *Pilot* existiert
+. IF *Pilot* existiert
 .. `Anmeldedaten` werden erfolgreich gespeichert.
 .. _Signallämpchen_ leuchtet in Grün auf. 
-. ELSE *Vereinsmitglied* existiert nicht
+. ELSE *Pilot* existiert nicht
 .. _Signallämpchen_ blinkt Rot auf. 
 . Der Use Case ist abgeschlossen.
 
@@ -29,24 +29,24 @@ Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 //Systemausfall -> ist für uns nicht relevant (Aussage vom Verein)  
 
 ==== keine Internetverbindung
-Wenn sich *Vereinsmitglied* im Schritt 3 des Standardablauf erfolgreich anmeldet, und die Daten entgegengenommen werden. In diesem Fall können aber die `Anmeldedaten` noch nicht zu den Webserver synchronisiert werden. 
+Wenn sich der *Pilot* im Schritt 3 des Standardablauf erfolgreich anmeldet, und die Daten entgegengenommen werden. In diesem Fall können aber die `Anmeldedaten` noch nicht zu den Webserver synchronisiert werden. 
 
 //Nichtfunktionale Anforderung -> Anmeldedaten müssen lokal vorbehalten werden und werden beim späteren Versuch synchronisiert
 
 
 ==== Systemausfall
-Wenn *Vereinsmitglied* im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
+Wenn der *Pilot* im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
 
-. *Vereinsmitglied* greift zum ursprünglichen manuellen System zurück 
-. *Vereinsmitglied* trägt alle geforderten Daten händisch in das Flugbuch ein 
-. *Vereinsmitglied* muss die technische Störung an *Administrator* weiterleiten
+. *Pilot* greift zum ursprünglichen manuellen System zurück 
+. *Pilot* trägt alle geforderten Daten händisch in das Flugbuch ein 
+. *Pilot* muss die technische Störung an *Administrator* weiterleiten
 . Der Use Case wird im Schritt 4d fortgesetzt.
 
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Anmeldung
-. Sc1: *Vereinsmitglied* A. trifft am Flugplatz ein. A. hällt seinen _RFID-Ausweis_ an den _RFID-Reader_. Die `Anmeldedaten` werden erfolgreich gespeichert und das _Signallämpchen_ leuchtet in Grün auf. A. darf den Flugplatz betreten.
+. Sc1: *Pilot* A. trifft am Flugplatz ein. A. hällt seinen _RFID-Ausweis_ an den _RFID-Reader_. Die `Anmeldedaten` werden erfolgreich gespeichert und das _Signallämpchen_ leuchtet in Grün auf. A. darf den Flugplatz betreten.
 
 ===	Nachbedingungen
 
