@@ -4,37 +4,37 @@
 In diesem Use-Case wird der Vorgang der freiwilligen Bestimmung eines *Flugleiters* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" nutzt den Flugplatz bzw. möchte den Flugplatz nutzen.
+==== Pilot
+Der Akteur "Pilot" nutzt den Flugplatz bzw. möchte den Flugplatz nutzen.
 
 ==== Flugleiter
-Der Akteur "Flugleiter" ist ein Vereinsmitglied, das den Flugplatz ebenfalls nutzen möchte und die Verantwortung über die Flugaktivitäten der anderen Mitglieder auf dem Platz hat.
+Der Akteur "Flugleiter" ist ein Pilot, das den Flugplatz ebenfalls nutzen möchte und die Verantwortung über die Flugaktivitäten der anderen Piloten auf dem Platz hat.
 
 === Vorbedingungen
 
-. Es existiert mindestens ein *Vereinsmitglied*.
+. Es existiert mindestens ein *Pilot*.
 
-. Das *Vereinsmitglied* besitzt einen aktivierten _RFID-Ausweis_.
+. Der *Pilot* besitzt einen aktivierten _RFID-Ausweis_.
 
 
 === Standardablauf (Basic Flow)
 
-. Ein bereits angemeldetes *Vereinsmitglied* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
+. Ein bereits angemeldeter *Pilot* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
 
-. Das _System_ gibt die Rolle des *Flugleiters* an das *Vereinsmitglied* ab, oder weist die Rolle erstmals zu, falls zuvor kein anderes *Vereinsmitglied* als *Flugleiter* eingetragen war.
+. Das _System_ gibt die Rolle des *Flugleiters* an den *Piloten* ab, oder weist die Rolle erstmals zu, falls zuvor kein anderer *Pilot* als *Flugleiter* eingetragen war.
 
 . Das _System_ speichert die Änderung im `Protokoll`
 
-. Das _System_ gibt dem *Vereinsmitglied* eine Rückmeldung (Aufleuchten der _LED_) (siehe [.underline]#S4#)
+. Das _System_ gibt dem *Piloten* eine Rückmeldung (Aufleuchten der _LED_) (siehe [.underline]#S4#)
 
 === Alternative Abläufe
 
-==== Vereinsmitglied noch nicht angemeldet
-Vorbedingung: Das *Vereinsmitglied* ist noch nicht angemeldet.
+==== Pilot noch nicht angemeldet
+Vorbedingung: Der *Pilot* ist noch nicht angemeldet.
 
-. Das *Vereinsmitglied* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
+. Das *Pilot* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
 
-. Das _System_ erkennt, dass das *Vereinsmitglied* noch nicht angemeldet ist und führt so zunächst [.underline]#UC01# aus, um das *Mitglied* anzumelden.
+. Das _System_ erkennt, dass der *Pilot* noch nicht angemeldet ist und führt so zunächst [.underline]#UC01# aus, um den *Piloten* anzumelden.
 
 . Weiter siehe Standardablauf Schritt 2
 
@@ -47,4 +47,4 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 ==== Usability
 
-Die Bestimmung eines *Flugleiters* ist prinzipiell ab dem dritten *Vereinsmitglied* auf dem Flugplatz notwendig. Um jedoch keinen Zwang und somit eine mögliche Ablehnung der *Mitglieder* gegenüber der Anwesenheitserfassung zu vermeiden, wird die Bestimmung des *Flugleiters* auf freiwilliger Basis bevorzugt.
+Die Bestimmung eines *Flugleiters* ist prinzipiell ab dem dritten *Piloten* auf dem Flugplatz notwendig. Um jedoch keinen Zwang und somit eine mögliche Ablehnung der *Piloten* gegenüber der Anwesenheitserfassung zu vermeiden, wird die Bestimmung des *Flugleiters* auf freiwilliger Basis bevorzugt.

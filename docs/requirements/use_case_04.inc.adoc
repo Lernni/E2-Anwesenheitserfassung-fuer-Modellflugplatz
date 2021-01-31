@@ -1,36 +1,36 @@
 == Use-Case: UC04: Piloten deaktivieren
 ===	Kurzbeschreibung
-In diesem Use-Case wird der komplette Vorgang zum Deaktivieren eines `Vereinsmitglieds (Pilot)` durch den *Administrator* beschrieben.
+In diesem Use-Case wird der komplette Vorgang zum Deaktivieren eines `Piloten` durch den *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte nicht mehr auf dem Modellflugplatz fliegen.
+==== Pilot
+Der Akteur "Pilot" möchte nicht mehr auf dem Modellflugplatz fliegen.
 
 === Vorbedingungen
-. Das *Vereinsmitglied* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 ist hier die Vorraussetzung.
+. Der *Pilot* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 ist hier die Vorraussetzung.
 . Der *Administrator* hat Kenntnis über den `Namen` und die `RFID-Nr` des zu deaktivierenden Piloten.
 . Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 
 === Standardablauf (Basic Flow)
 
 . Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
-. Der *Administrator* sucht in der _Mitgliederübersicht_ das zu deaktivierende *Vereinsmitglied* und klickt auf _Deaktivieren_.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ den zu deaktivierenden *Piloten* und klickt auf _Deaktivieren_.
 . Der *Administrator* bestätigt die Aktion.
 . Der _RFID-Ausweis_ wird dem *Administrator* übergeben und deaktiviert.
-. Der Use Case ist abgeschlossen, das ehemalige *Vereinsmitglied* muss den Flugplatz nun verlassen und kann diesen bis zur Reaktivierung nicht mehr nutzen.
+. Der Use Case ist abgeschlossen, der ehemalige *Pilot* muss den Flugplatz nun verlassen und kann diesen bis zur Reaktivierung nicht mehr nutzen.
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiches Deaktivieren der Pilotendaten
-. Sc1: Die *Verwaltung* deaktiviert ein `Vereinsmitglied` über den _Webserver_ und das *Vereinsmitglied* übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an den *Administrator*.
+. Sc1: Die *Verwaltung* deaktiviert einen `Piloten` über den _Webserver_ und der *Pilot* übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an den *Administrator*.
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Das (ehemalige) *Vereinsmitglied* besitzt keinen _RFID-Ausweis_, mehr um sich am Flugplatz an- und abmelden zu können
-* Die `Pilotendaten` des (ehemaligen) *Vereinsmitglieds* befinden sich noch in der Datenbank, jedoch ist das Mitglied "ausgegraut".
+* Der (ehemalige) *Pilot* besitzt keinen _RFID-Ausweis_ mehr, um sich am Flugplatz an- und abmelden zu können
+* Die `Pilotendaten` des (ehemaligen) *Piloten* befinden sich noch in der Datenbank, jedoch ist das Mitglied "ausgegraut".
 
 === Besondere Anforderungen
 ==== Usability
 
-* Um das versehentliche Deaktivieren eines *Vereinsmitglieds* zu verhinden, sollte es ein Popup (o.ä.) geben, wo der Vorgang bestätigt werden muss.
+* Um das versehentliche Deaktivieren eines *Piloten* zu verhinden, sollte es ein Popup (o.ä.) geben, bei dem der Vorgang nochmals bestätigt werden muss.

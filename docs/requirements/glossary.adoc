@@ -43,7 +43,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 
 |Flugleiter
 a|
-* ein Akteur, ein Mitglied, das bestimmt werden muss, wenn die Anzahl der Mitglieder auf dem Flugplatz größer als 3 ist.
+* ein Akteur, ein Mitglied, das bestimmt werden sollte, wenn die Anzahl der Piloten auf dem Flugplatz größer als 3 ist.
 * kontrolliert die Flüge auf dem Platz (?)
 |Startleiter
 

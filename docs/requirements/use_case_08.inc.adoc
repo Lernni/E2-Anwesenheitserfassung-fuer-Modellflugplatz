@@ -6,29 +6,29 @@
 
 ===	Kurzbeschreibung der Akteure
 
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte die Protokolldaten einsehen.
+==== Pilot
+Der Akteur "Pilot" möchte die Protokolldaten einsehen.
 
 === Vorbedingungen
 . Die `Protokolldaten` müssen vom _Raspi_ an den _Webserver_ übertragen worden sein.
 
 === Standardablauf (Basic Flow)
-. Der Use Case beginnt, wenn sich ein *Vereinsmitglied* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
-. *Vereinsmitglied* wählt die Protokollansicht aus
+. Der Use Case beginnt, wenn sich ein *Pilot* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
+. *Pilot* wählt die Protokollansicht aus
 . Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` weniger als 30 min her ist
-. IF *Vereinsmitglied* benötigt einen bestimmten Protokolleintrag
-.. *Vereinsmitglied* gibt in einer Suchleiste einen Suchbegriff ein und/oder wählt einen bestimmten Tag aus
+. IF *Pilot* benötigt einen bestimmten Protokolleintrag
+.. *Pilot* gibt in einer Suchleiste einen Suchbegriff ein und/oder wählt einen bestimmten Tag aus
 .. Die Protokollansicht wird eingeschränkt auf die Einträge, die den Suchbegriff enthalten
 . ELSE
-.. *Vereinsmitglied* sieht sich die gesamten aktuellen `Protokolldaten` an
+.. *Pilot* sieht sich die gesamten aktuellen `Protokolldaten` an
 
 === Alternative Abläufe
 ==== Störung der Internetverbindung seitens des Raspi
 Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` nicht an den _Webserver_ übermittelt werden können.
 
-. *Vereinsmitglied* hat Schritt 2 des Standardablaufes erfolgreich ausgeführt
+. *Pilot* hat Schritt 2 des Standardablaufes erfolgreich ausgeführt
 . Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` länger als 30 min her ist
-. *Vereinsmitglied* wiederholt den Standardablauf zu einem späteren Zeitpunkt
+. *Pilot* wiederholt den Standardablauf zu einem späteren Zeitpunkt
 
 ==== Keine Einträge zu Suchbegriff
 . *Administrator* hat Schritt 3.a des Standardablaufes erfolgreich ausgeführt
@@ -36,12 +36,12 @@ Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` 
 
 === Wesentliche Szenarios
 ==== Erfolgreiche Einsicht
-. Sc1.1: *Vereinsmitglied A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Vereinsmitglied A* kann das gesamte aktuelle `Protokoll` einsehen.
+. Sc1.1: *Pilot A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Pilot A* kann das gesamte aktuelle `Protokoll` einsehen.
 
-. Sc1.2: *Vereinsmitglied B* möchte die aktuellen `Protokolldaten` zu *Vereinsmitglied C* einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Nun gibt er den Namen von *Vereinsmitglied B* in der Suchleiste ein. Es existieren Einträge zu diesem Mitglied und es werden nur noch diese angezeigt. *Vereinsmitglied A* kann die gewünschten Protokolleinträge einsehen.
+. Sc1.2: *Pilot B* möchte die aktuellen `Protokolldaten` zu *Pilot C* einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Nun gibt er den Namen von *Pilot B* in der Suchleiste ein. Es existieren Einträge zu diesem Mitglied und es werden nur noch diese angezeigt. *Pilot A* kann die gewünschten Protokolleinträge einsehen.
 
 ==== Temporärer Ausfall der Internetanbindung des Raspi
-. Sc2: *Vereinsmitglied D* möchte die aktuellen `Protokolldaten` einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Vereinsmitglied D* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Vereinsmitglied D* das aktuelle `Protokoll` einsehen.
+. Sc2: *Pilot D* möchte die aktuellen `Protokolldaten` einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Pilot D* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Pilot D* das aktuelle `Protokoll` einsehen.
 
 === Wireframe
 

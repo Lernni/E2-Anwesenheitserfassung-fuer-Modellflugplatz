@@ -3,24 +3,24 @@
 :imagesdir: images/Verwaltung
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird das Modifizierens der Benutzerdaten eines Vereinsmitgliedes durch einen *Administrator* beschrieben.
+In diesem Use-Case wird das Modifizierens der Benutzerdaten eines Piloten durch einen *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 ==== Administrator
-Der Akteur *Administrator* möchte die `Daten` eines Vereinsmitgliedes verändern.
+Der Akteur *Administrator* möchte die `Daten` eines Piloten verändern.
 
-==== Vereinsmitglied
-Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Vereins, dessen Daten modifiziert werden sollen.
+==== Pilot
+Der *Pilot* ist ein in der `Datenbank` hinterlegtes Mitglied des Vereins, dessen Daten modifiziert werden sollen.
 
 === Vorbedingungen
 
-. Das *Vereinsmitglied*, dessen Daten modifiziert werden sollen, muss in der _Datenbank_ vorhanden sein.
+. Der *Pilot*, dessen Daten modifiziert werden sollen, muss in der _Datenbank_ vorhanden sein.
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Daten` eines *Vereinsmitgliedes* zu verändern auf der _Webseite_ anmeldet.
-. *Administrator* wählt aus einer Übersicht auf der _Admin-Seite_ das *Vereinsmitglied* aus, dessen Daten modifiziert werden sollen.
-. *Administrator* verändert die `Daten` des *Vereinsmitgliedes* in einem Formular.
+. Der Use Case beginnt, wenn sich ein *Administrator* mit der Absicht die `Daten` eines *Piloten* zu verändern auf der _Webseite_ anmeldet.
+. *Administrator* wählt aus einer Übersicht auf der _Admin-Seite_ den *Piloten* aus, dessen Daten modifiziert werden sollen.
+. *Administrator* verändert die `Daten` des *Piloten* in einem Formular.
 . IF *Administrator* bestätigt Änderungen
 .. Der _Webserver_ prüft die eingegeben `Daten` auf semantische Korrektheit
 .. IF `Daten` semantisch korrekt
@@ -37,17 +37,17 @@ Das *Vereinsmitglied* ist ein in der `Datenbank` hinterlegtes Mitglied des Verei
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Modifikation
-. Sc1.1: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, verändert die `Daten` von *Vereinsmitglied A* und bestätigt die Änderungen. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
+. Sc1.1: Die Daten von *Pilot A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, verändert die `Daten` von *Pilot A* und bestätigt die Änderungen. Die Daten von *Pilot A* sind nun in der _Datenbank_ aktualisiert.
 
-. Sc1.2: Die Daten von *Vereinsmitgliedes A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, wählt *Vereinsmitglied A* aus der Übersicht aus und gibt semantisch inkorrekte `Daten` ein. Der _Webserver_ weist die Änderung ab und *Administrator B* korrigiert die Eingabe. *Administrator B* bestätigt die Änderung erneut, diesmal erfolgreich. 
+. Sc1.2: Die Daten von *Pilot A* haben sich verändert und dieses teilt die Änderungen *Administrator B* mit. *Administrator B* meldet sich erfolgreich auf der _Webseite_ an, wählt *Pilot A* aus der Übersicht aus und gibt semantisch inkorrekte `Daten` ein. Der _Webserver_ weist die Änderung ab und *Administrator B* korrigiert die Eingabe. *Administrator B* bestätigt die Änderung erneut, diesmal erfolgreich. 
 
 ==== Abgebrochene Modifikation
-. Sc2: Die Daten von *Vereinsmitgliedes C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der _Webseite_ an, verändert die Daten von *Vereinsmitgliedes B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der _Datenbank_ gespeichert. Die Daten von *Vereinsmitglied A* sind nun in der _Datenbank_ aktualisiert.
+. Sc2: Die Daten von *Pilot C* haben sich verändert und dieses teilt die Änderungen *Administrator* B mit. *Administrator* B meldet sich erfolgreich auf der _Webseite_ an, verändert die Daten von *Pilot B* und schließt versehentlich die Webseite. Die Veränderung der `Daten` wird nicht in der _Datenbank_ gespeichert. Die Daten von *Pilot A* sind nun in der _Datenbank_ aktualisiert.
 
 ===	Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 ==== Datenbank
-Die Daten des *Vereinsmitgliedes* müssen korrekt in der _Datenbank_ aktualisiert werden.
+Die Daten des *Piloten* müssen korrekt in der _Datenbank_ aktualisiert werden.
 
 === Wireframe
 
