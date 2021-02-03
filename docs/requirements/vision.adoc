@@ -27,8 +27,8 @@ Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugpl
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
 Um einen sicheren und kontrollierten Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzlich festgelegte bürokratische Maßnahmen zu beachten. 
-Eine davon ist die Erfassung/Protokollierung der anwesenden Piloten. Aktuell wird der Vorgang analog über ein zentrales Flugbuch
-geregelt, in welches sich beim Betreten eingetragen und beim Verlassen ausgetragen werden muss. 
+Eine davon ist die Erfassung/ Protokollierung der anwesenden Piloten. Aktuell wird der Vorgang analog über ein zentrales Flugbuch
+geregelt, in welches sich beim Betreten eingetragen und beim Verlassen ausgetragen werden muss. Diese Protokollierung ist notwendig um abgesichert zu sein und die Nachvollziehbarkeit im Fall eines Schadens oder bei möglichen Beschwerden über Lärm oder Sachschädigung zu gewährleisten.
 Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. 
 In Zukunft sollen sich die Piloten lokal mittels eines RFID-Ausweises auf einem autarken Raspberry Pi anmelden bzw. abmelden können. 
 Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden, und über einen Webserver leicht einsehbar und verwaltbar sein.
