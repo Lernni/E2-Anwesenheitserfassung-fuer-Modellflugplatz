@@ -41,7 +41,7 @@ a|
 |Anlegen eines Mitglieds/Zuweisen eines RFID-Tags
 |Wird ein Mitglied neu angelegt, ist auch damit zu rechnen, dass das neue Mitglied auch kurz darauf fliegen wird. Die Zuweisung des RFID-Tags zu dem neuen Mitglied könnte daher direkt am Raspberry erfolgen. Das System ist sich also bewusst, dass nach Anlegen eines Mitglieds, der nächste nicht belegte RFID-Tag diesem Mitglied zugewiesen wird.
 
-|Bestimmung des Flugleisters
+|Bestimmung des Flugleiters
 a|
 * Über eine Kombination aus Taster drücken und RFID-Tag anhalten
 * Problem: Flugleiter verlässt den Platz, während noch mehr als 2 Mitglieder auf dem Platz sind:

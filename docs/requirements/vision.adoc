@@ -54,9 +54,9 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 [cols="1,3"]
 |===
-|Für|  Vereinsmitglieder
+|Für|  Piloten
 |die| den Vereinsflugplatz betreten oder verlassen wollen.   
-|Das Produkt| ist eine digitalisierte Anwesenheitserfassung/Protokollierung der Vereinsmitglieder
+|Das Produkt| ist eine digitalisierte Anwesenheitserfassung/Protokollierung der Piloten
 |welches| eine sichere Erfassung und dadurch einen sicheren und kontrollierten Betrieb des Vereinsflugplatz gewährleistet.
 |Im Gegensatz zu| dem manuellen Eintragen in das Flugbuch.
 |Unser Produkt| gewährleistet eine zuverlässige An-/Abmeldung, Verarbeitung, Verwaltung und Synchronisation der Daten von Vereinsmitgliedern.
