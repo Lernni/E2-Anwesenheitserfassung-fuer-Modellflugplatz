@@ -13,19 +13,18 @@ include::../_includes/default-attributes.inc.adoc[]
 | Meilenstein
 | Datum
 
-| Beginn der Iteration | KW 49
-| Ende der Iteration | KW 50
+| Beginn der Iteration | KW 1
+| Ende der Iteration | KW 2
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* Start der Analyse
-* Kontaktaufnahme Themensteller, Coach
-* Fachliche Fortbildung in den eigenen Bereichen
-* Erstellen der Dokumentationen
-
+* Erstellung Wireframes
+* Use-Case-Diagramm und Use Cases weiterentwickeln
+* System-Wide-Requirements bearbeiten
+* Bedienungs- & Zustandsplan des Terminals vor Ort erstellen
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -46,41 +45,44 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 1 | Kontakaufnahme Kunde & Tutor | 2 | 1 | 100% | x | 1 | Simon | 1 | 0 | 
+| 1 | Wireframes erstellen | 2 | 24 | 90% | x | 3-4 | Alex | 9 | 2 | 
 
-2 | Einarbeitung in verschiendene fachliche Bereiche | 7 | 120 | 90% | x | 1-2 | Alle | 20 (?) | x |
+2 | Weiterentwicklung Use-Cases | 7 | 120 | 100% | x | 2-3 | Analyse (+Hilfe Entwurf) | 22 | 0 |
 
-3 | Entwicklung Projektplan | 3 | 6 | 80% | x | 1 | Alex | 4 | 1 |
+3 | Erstellung Test-Cases | 3 | 6 | 40% | x | 3-4 | Alex | 4 | 1 |
 
-4 | Rollenzuweisungen | 1 | 1 | 100% | x | 1 | Alle | 1 | 0 |
+4 | Glossar weiterentwickeln | 1 | 2 | 100% | x | 1-3 | Analyse | 3 | 0 |
 
-5 | Recherche zu TS & Projekt | 6 | 24 | 100% | x | 1-2 | Analyse (Rest) | 8 | 0 |
+5 | Weiterentwicklung Risikoanalyse | 6 | 2 | 80% | x | 1-4 | Analyse (Rest) | 8 | 0 |
 
-6 | Bearbeitung Vision | 9 | 120 | 60% | x | 1-2 | Analyse | 20 | 15 |
+6 | Systemkonzept erstellen (C4) | 9 | 6 | 100% | x | 3 | Entwurf | 20 | 15 |
 
-7 | Bearbeitung Risikoanalyse | 11 | 24 | 40% | x | 1-4 | Analyse, Simon | 5 | 8 |
+7 | Bearbeitung Risikoanalyse | 11 | 24 | 80% | x | 1-4 | Analyse, Simon | 9 | 4 |
 
-8 | Zusammenstellung Analyseerkenntnisse für AM | 13! | 2 | 100% | x | 1 | Analyse | 3 | 0 |
+8 | Zusammenstellung Wireframes, Use-Cases für AM | 13! | 2 | 100% | x | 1 | Analyse, Entwurf, Alex | 3 | 0 |
 
-9 | Essence-Struktur in Projektvorgehen implementieren | 8 | 2 | 100% | x | 1 | Alle | 5 | 0 |
+9 | System-Wide-Requirementes erstellen | 8 | 2-4 | 30% | x | 1 | Analyse, Entwurf | 4 | 14 |
 
-10 | GitHub Repository erstellen | 4 | 1 | 100% | x | 1 | Simon | 1 | 0 |
+10 | Bearbeitung Architecture Notebook | 4 | 24 | 40% | x | 3-4 | Entwurf | 4 | 7 |
 
-11 | Konfiguration Repository (Lizenz, README) | 5 | 2 | 100% | x | 1-2 | Lenny | 2 | 0 |
+11 | Bedienungsplan für Terminal erstellen | 5 | 6 | 100% | x | 1-2 | Lenny, Alex | 5 | 0 |
 
-12 | Bearbeitung Glossary | 10 | 24 | 60% | x | 1-x | Analyse | 8 | 3 |
+12 | Use-Case-Diagramm (vorläufig) finalisieren | 10 | 6 | 100% | x | 3 | Jakob | 3 | 0 |
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
-* Vorstellung Analyseteam/Leiter  
-* Kennenlernen der TS
-* "Betreuungswünsche" und dem TS wichtige Eckpunkte der Software herausfinden
-* Erste aufgetretene Fragen stellen
-* Vision aus PDF mit Realvision vergleichen 
+* Use-Case-Diagramm Vorstellung
+* Use-Cases-Vorstellen
+* Aufgetretene Fragen stellen
+* Bedienungsplan vorstellen
 
-//== Probleme (optional)
+== Aufgetretene Probleme
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
+* Es wurden zu viele UseCases zu detailliert beschrieben. Auch müssen nicht Software-relevante Elemente entfernt werden
+* Die Bedienung des Terminals wurde zu kompliziert geplant. Für die Akzeptanz der Nutzer müssen einige Prozesse, trotz erhöhter Fehleranfälligkeit, vereinfacht werden.
+* Das AM wurde zu ausführlich und lang gestaltet. Im nächsten AM müssen die Themengebiete eingeschränkt werden
+
 
 //[%header, cols="2,1,3"]
 //|===
@@ -111,8 +113,10 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Assessment Ziel | Iteration 1
 | Assessment Datum | 03.12.2020
 | Teilnehmer | Analyse, Leiter, TS
-| Projektstatus	ggü. TS | Grün
+| Projektstatus	| Grün-Gelb (siehe Probleme)
 |===
+
+
 
 === Teammeeting
 
@@ -121,16 +125,16 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Assessment Ziel | Iteration 1
 | Assessment Datum | 09.12.2020
 | Teilnehmer | Gesamtes Team
-| Projektstatus im Team	| Grün
+| Projektstatus	| Grün-Gelb (siehe Probleme)
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
-Insbesondere das Ziel des Kundenkontaktes mit der Beantwortung unserer Fragen war erfolgreich. Auch wurde das Ziel der Schaffung einer guten Team-Arbeitsatmosphäre mit fairer Aufgabenverteilung erfüllt. Noch nicht ausreichend bearbeitet sind die Dokumentationen (z.B. RiskList und Projektplan). Hier besteht die Notwendigkeit einer höheren Priorisierung in der Folgeiteration.
+Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements soweit in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. Die Dokumentationen müssen in der Folgeiteration verstärkteren Fokus erhalten. 
+Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen zur Nachbesserung in die nächste Iteration übernommen werden.
 
 //* Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
