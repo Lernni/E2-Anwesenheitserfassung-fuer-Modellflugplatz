@@ -13,6 +13,9 @@
 
 7;01.12.2020;Fehlende Beteiligung von Stakeholdern;Stakeholder ignorieren die Projektkommunikation;geschäftlich;4;10%;0,4;Simon Herbstrith;Bisher keine Gegenmaßnahme erforderlich, Stakeholder sind gut per E-Mail erreichbar
 
-8;03.12.2020;Dokumentenstruktur;Keine einheitliche, klare Struktur in Dokumenten;technisch;3;60%;1,8;Simon Herbstrith;Orientierung an der Github Vorlage;
+8;03.12.2020;Dokumentenstruktur;Keine einheitliche, klare Struktur in Dokumenten;technisch;3;60%;1,8;Simon Herbstrith;Orientierung an der Github Vorlage, mehr Absprachen untereinander
 
+9;05.02.2021;Komplexität; Sytstemnutzung wird zu komplex und es entsteht eher eine Abneigung dem System gegenüber von den Piloten;technisch;2;35%;0,7;Tsatsralterdene Batchimeg;Absprache mit Kunden, wie sie die Nutzung einschätzen
+
+10;05.02.2021;Zeitmanagement;Fehleinschätzung von Bearbeitungszeiten für Fristen und Terminen;zeitlich;4;60%;0,24;Terminierung mit einem Ganttdiagramm, kürzere Iterationsabstände oder genauer Zielsetzungen
 
