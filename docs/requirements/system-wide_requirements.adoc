@@ -6,52 +6,93 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-In diesem Dokument werden die systemweiten Anforderungen für das Projekt Anwesenheitserfassung des Modellflugplatzes spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
+In diesem Dokument werden die systemweiten Anforderungen für das Projekt {project-name} spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
 
 * Systemweite funktionale Anforderungen (F),
 * Qualitätsanforderungen für Benutzbarkeit, Zuverlässigkeit, Effizienz und Wartbarkeit (URPS) sowie
 * zusätzliche Anforderungen (+) für technische, rechtliche, organisatorische Randbedingungen
 
-NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in einem separaten Dokument festgehalten.
+NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in separaten Dokumenten festgehalten.
 
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
-* Zeitsteuerung: Aktualisierung des Flugprotokolls in bestimmten zeitlichen Abständen durch den Raspberry Pi
-* Sicherheit: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Vereinsmitglieder 
-* Online-Hilfe: Bedeutung der Status-LED
-* Authentifizierung: Anmeldung der Vereinsmitglieder auf dem Modellflugplatz
-* Zeitsteuerung: Flugprotokoll wird alle 30 min bei bestehender Internetverbindung durch den Raspberry Pi aktualisiert
-* Auditierung: Sollte das Flugprotokoll länger als 30 min nicht aktualisiert werden, erhält der Administrator eine Benachrichtigung
+
+// Tags für Einbindung in Architektur-Notebook
+
+// tag::nfaf1[]
+* *NFAF-1*: Zugriffsschutz: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Admins und Piloten
+// end::nfaf1[]
+
+* *NFAF-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED für Piloten sichtbar machen
+
+// tag::nfaf2[]
+* *NFAF-3*: Zeitsteuerung: Protokoll- und Pilotendaten werden in zeitlichen Abständen (alle 30 min) bei bestehender Internetverbindung durch den Raspberry Pi aktualisiert
+// end::nfaf2[]
+
+* *NFAF-4*: Auditierung: Sollte das Flugprotokoll eine bestimmte Zeit (länger als 30 min) nicht aktualisiert werden, erhält der Administrator eine entsprechende Information auf dem Webserver
+
+
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
-* Aufgabeneffizienz: Nur anhalten der RFID-Karte zum An-und Abmelden (3 sek zur Abmeldung), es müssen sich mehrere Mitglieder hintereinander an- und abmelden können, An- und Abmeldung innerhalb von wenigen Sekunden und konfigurierbar
+* *NFAU-1*: Aufgabeneffizienz: Simple und intuitive Kombinationen am Terminal (einfaches Anhalten des RFID-Ausweises zum An- und Abmelden)
+
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
-* Genauigkeit: Uhrzeit des Raspis muss genau sein (Raspi besitzt keine interne Uhr)
+
+// tag::nfar1[]
+* *NFAR-1*: Genauigkeit: Uhrzeit des Raspis muss genau sein und bei bestehender Internetverbindung synchronisiert werden. (Raspi hält die Uhrzeit nicht lokal)
+// end::nfar1[]
+
 
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
-* Antwortzeiten: An- und Abmeldung innerhalb 3s, abmelden aller Piloten in 10s und kofigurierbar
+
+// tag::nfap1[]
+* *NFAP-1*: Antwortzeiten: An- und Abmeldung innerhalb 3s, Abmelden aller Piloten in 10s (Konfigurierbare Antwortzeiten durch Admins)
+// end::nfap1[]
+
+// tag::nfap2[]
+* *NFAP-2*: Durchsatz: Mehrere Piloten müssen sich hintereinander an- und abmelden können
+// end::nfap2[]
+
 
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
-* Anpassbarkeit: Adaption für die Nutzung in der Werkstatt möglich
-* Kompatibilität: Einbettung in bestehenden Webserver
-* Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
+
+// tag::nfas1[]
+* *NFAS-1*: Anpassbarkeit: Adaptation für die Nutzung in der Werkstatt soll möglich sein
+// end::nfas1[]
+
+// tag::nfas2[]
+* *NFAS-2*: Kompatibilität: Einbettung in bestehenden Webserver
+// end::nfas2[]
+
+// tag::nfas3[]
+* *NFAS-3*: Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
+// end::nfas3[]
+
 
 == Zusätzliche Anforderungen
+
 === Einschränkungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Implementierung: Auf dem Raspberry Pi ist eine Scriptsprache zu nutzen
-* Plattform: Linux auf seite des Raspberry Pi
-* Ressourcenbegrenzungen: Stromversorgung des Raspberry Pi
-* Physische Begrenzung: Robustes Design des Raspberry Pi, Vergrabung in der Erde
-* Legal: Es ist eine Open-Source Lizenz zu nutzen
+* *NFA+-1*: Implementierung:
+** Auf dem Raspberry Pi ist eine Scriptsprache (Python) zu nutzen
+** Oberfläche des Webservers soll mit modernem JS-Framework realisiert werden (Angular)
 
-=== Business Rules
-* Bei Neuanmeldung auf dem Flugplatz muss ein Vereinsmitglied dabei sein
+* *NFA+-2*: Plattform: Raspberry Pi OS (Linux) auf Seite des Raspberry Pi
+
+// tag::nfa+3[]
+* *NFA+-3*: Ressourcenbegrenzungen: Stromversorgung und Datenvolumen des Raspberry Pi
+// end::nfa+3[]
+
+// tag::nfa+4[]
+* *NFA+-4*: Physische Begrenzung: Robustes Design des Terminals (E/A-Kompomenten in einem Gehäuse verpackt, Raspi im Boden verbaut)
+// end::nfa+4[]
+
+* *NFA+-5*: Legal: Es ist eine Open-Source Lizenz zu nutzen
