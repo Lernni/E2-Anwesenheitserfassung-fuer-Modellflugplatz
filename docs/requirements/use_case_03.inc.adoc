@@ -2,19 +2,19 @@
 == Use-Case: UC03: Pilotendaten anlegen
 
 ===	Kurzbeschreibung
-In diesem Use-Case wird der Vorgang zum Anlegen eines `Piloten` durch einen *Administrator* beschrieben.
+In diesem Use-Case wird der Vorgang zum Anlegen eines `Piloten` im _System_ durch einen *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 
 ==== Administrator
-Der "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf den _Admin-Bereich_ des _Webservers_.
+Der Akteur "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf den _Admin-Bereich_ des _Webservers_ und möchte einen neuen Piloten anlegen.
 
 === Vorbedingungen
 . Der *Administrator* hat Kenntnis über die einzutragenden `Pilotendaten`.
 
-. Es existiert mindestens ein nicht aktivierter _RFID-Ausweis_.
+. Es existiert mindestens ein nicht aktiver _RFID-Ausweis_.
 
-. Der *Administrator* hat sich auf dem _Admin-Bereich_ des _Webservers_ eingeloggt.
+. Der *Administrator* hat sich auf _Webserver_ eingeloggt.
 
 
 === Standardablauf (Basic Flow)
@@ -26,32 +26,26 @@ Der "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf den _A
 . Der *Administrator* gibt die `Kennung` des _RFID-Ausweises_, der dem `Piloten` zugewiesen werden soll, mit in das _Formular_ ein.
 
 . Der *Administrator* bestätigt das _Formular_.
-. Der _Webserver_ prüft die Richtigkeit der eingegeben `Pilotendaten`:
 
-.. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ noch nicht vergeben:
+. IF `Pilotendaten` korrekt eingegeben (überprüfe semantische Korrektheit) AND `Kennung` des _RFID-Ausweises_ noch nicht vergeben:
 
-... Der _Webserver_ erstellt einen neuen `Piloten`
+.. Der _Webserver_ erstellt einen neuen `Piloten`
 
-... Der _Webserver_ weist die `Kennung` des _RFID-Ausweises_ dem neuen `Piloten` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
+.. Der _Webserver_ weist die `Kennung` des _RFID-Ausweises_ dem neuen `Piloten` zu und setzt den Status des _RFID-Ausweises_ auf aktiviert.
 
-... Der _Webserver_ wechselt zur _Admin-Seite_.
+.. Der _Webserver_ wechselt zur _Admin-Seite_.
 
-.. ELSE
+. ELSE
 
-... Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
+.. Der _Webserver_ gibt eine deskriptive Fehlermeldung aus.
 
-... Der _Webserver_ bricht den Vorgang ab.
+.. Der _Webserver_ bricht den Vorgang ab.
 
-
-=== Wesentliche Szenarios
-
-==== Erfolgreiches Anlegen der Pilotendaten
-. Sc1: Der *Administrator* legt einen neuen `Piloten` über den _Webserver_ an und übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an den entsprechenden *Piloten*.
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Der *Pilot* besitzt den entsprechenden _RFID-Ausweis_, um sich damit eindeutig am Flugplatz an- und abmelden zu können.
+* Der neue *Pilot* besitzt den _RFID-Ausweis_, um sich damit eindeutig am Flugplatz identifizieren zu können.
 
 === Besondere Anforderungen
 ==== Usability

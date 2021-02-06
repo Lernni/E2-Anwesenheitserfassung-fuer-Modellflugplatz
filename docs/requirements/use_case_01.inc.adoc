@@ -9,58 +9,47 @@ Der Akteur "Pilot" möchte den Flugplatz betreten und nutzen.
 
 === Vorbedingungen
 
-. UC03 ist erfüllt
+. UC03 ist für den *Piloten* erfüllt
 . *Pilot* hat beim Antreffen auf den Flugplatz den _RFID-Ausweis_ dabei
 . *Pilot* ist noch nicht angemeldet
 
 === Standardablauf (Basic Flow) 
 
-. Der Use Case beginnt, wenn der *Pilot* seinen _RFID-Ausweis_ an den _RFID-Reader_ hält
-. _RFID-Reader_ prüft, ob *Pilot* existiert
+. Der *Pilot* hält seinen _RFID-Ausweis_ an den _RFID-Reader_
+. _System_ prüft, ob *Pilot* existiert
 . IF *Pilot* existiert
-.. `Anmeldedaten` werden erfolgreich gespeichert.
-.. _Signallämpchen_ leuchtet in Grün auf. 
+.. Anmeldung wird erfasst und protokolliert.
+.. _LED_ leuchtet grün auf (siehe S1). 
 . ELSE *Pilot* existiert nicht
-.. _Signallämpchen_ blinkt Rot auf. 
-. Der Use Case ist abgeschlossen.
-
-=== Alternative Abläufe
-
-//Systemausfall -> ist für uns nicht relevant (Aussage vom Verein)  
-
-==== keine Internetverbindung
-Wenn sich der *Pilot* im Schritt 3 des Standardablauf erfolgreich anmeldet, und die Daten entgegengenommen werden. In diesem Fall können aber die `Anmeldedaten` noch nicht zu den Webserver synchronisiert werden. 
-
-//Nichtfunktionale Anforderung -> Anmeldedaten müssen lokal vorbehalten werden und werden beim späteren Versuch synchronisiert
-
-
-==== Systemausfall
-Wenn der *Pilot* im Schritt 2 des Standardablauf sich versucht anzumelden, die Anmeldung aus einer anhaltenden technischen Störung fehlschlägt:
-
-. *Pilot* greift zum ursprünglichen manuellen System zurück 
-. *Pilot* trägt alle geforderten Daten händisch in das Flugbuch ein 
-. *Pilot* muss die technische Störung an *Administrator* weiterleiten
-. Der Use Case wird im Schritt 4d fortgesetzt.
+.. _LED_ blinkt rot auf. 
 
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Anmeldung
-. Sc1: *Pilot* A. trifft am Flugplatz ein. A. hällt seinen _RFID-Ausweis_ an den _RFID-Reader_. Die `Anmeldedaten` werden erfolgreich gespeichert und das _Signallämpchen_ leuchtet in Grün auf. A. darf den Flugplatz betreten.
+. Sc1: *Pilot* A. trifft am Flugplatz ein. A. hällt seinen _RFID-Ausweis_ an den _RFID-Reader_. Die Anmeldung wurde erfasst und protokolliert und die _LED_ leuchtet grün auf. A. darf den Flugplatz betreten.
+
+//Systemausfall -> ist für uns nicht relevant (Aussage vom Verein)  
+
+//Nichtfunktionale Anforderung -> Anmeldedaten müssen lokal vorbehalten werden und werden beim späteren Versuch synchronisiert
+
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* _Signallämpchen_: Das _Signallämpchen_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich):
+* Die Anmeldung des *Piloten* ist lokal am _Terminal_ protokolliert. (Eine Synchronsierung des Protokolls erfolgt zu einem späterem Zeitpunkt.)
 
-. davor und danach für eine Sekunde ausshalten. 
+* Die _LED_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich):
+
+. davor und danach für eine Sekunde ausschalten. 
 . auf ihren korrekten Zustand zurücksetzten.  
 
 //nicht funktionale Anforderungen -> technische Störung -> Admin bescheud geben etc.
 
 === Besondere Anforderungen
+==== Usability
+* Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_ und muss daher für jeden *Piloten* einfach und verständlich sein.
 
-//nicht funktionale Anforderungen ->  Performance ("schnelles" lesen des Readers) & Usability (einfach und verständliches System)
-
-
+==== Performance
+* Das Lesen des _RFID-Tags_ soll eine bestimme konfigurierbare Zeitdauer betragen (standardmäßig 3 Sekunden)
