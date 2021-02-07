@@ -24,31 +24,8 @@ include::../_includes/default-attributes.inc.adoc[]
 
 |===
 
-=== Use-Cases
 
-//
-* Vereinsmitglieder anmelden (include: 'Flugleiter bestimmen'-> Taste für Flugleiter bestimmen/ über Nutzerinterface?
-                              include:  'Vereinsmitglieder existiert'
-                             )
-* Vereinsmitglieder abmelden (include: 'Abmeldung vergessen') -> Reset-Taste
-
-* RFID-Ausweise zuorden
-* Pilotendaten verwalten (include: 
-                                    Vereinsmitglieder anlegen, 
-                                    Vereinsmitglieder modifizieren,
-                                    Vereinsmitglieder löschen
-                         )
-
-//oder
-
-* Vereinsmitglieder anlegen (include: 'RFID-Ausweise zuorden')
-* Vereinsmitglieder modifizieren (include: 'Manuell anmelden') -> Systemausfall
-* Vereinsmitglieder löschen
-
-//Wie oft müssen Vereinsmitglieder neu angelegt/entfernt werden?
-//Manuelles Flugbuch als Alternative für Systemausfall?
-
-=== Use-Cases: nach Priorisierung
+=== Einteilung nach Priorität
 
 ==== Höchste Priorität
 Diese Use-Cases sind Hauptfunktionen. Ohne diese kann die Grundfunktionalität des Systems nicht gewährleistet werden.
@@ -63,45 +40,43 @@ Diese Use-Cases sind Hauptfunktionen. Ohne diese kann die Grundfunktionalität d
 ==== Mittlere Priorität
 Diese Use-Cases sind Nebenfunktionen, die die Grundfunktionalität des Systems nicht beeinträchtigen, aber erheblich verbessern, bzw. vom Auftraggeber verlangt sind.
 
-- UC04: Pilotendaten löschen
-- UC09: Protokolldaten nachträglich einfügen
+- UC04: Piloten deaktivieren
 - UC06: Alle Piloten abmelden
+- UC09: Protokolldaten nachträglich einfügen
+- UC11: Piloten reaktiveren
 
 ==== Niedrige Priorität
 Diese Use-Cases sind optionale Zusatzfunktionen.
 
 - UC10: Handhabung Gastflüge
 
-=== Use-Cases: nach Lokalität
+=== Einteilung nach Lokalität
 
-==== Raspberry Pi (Flugplatz)
+==== Terminal (Flugplatz)
 
 - UC01: Piloten anmelden
 - UC02: Piloten abmelden
 - UC06: Alle Piloten abmelden (am Flugplatz)
 - UC07: Flugleiter bestimmen
 
-==== Webserver
+==== Webserver (Webseite)
 
 - UC03: Pilotendaten anlegen 
 - UC04: Pilotendaten löschen
 - UC05: Pilotendaten modifizieren
 - UC06: Alle Piloten abmelden (durch Webserver)
-// automatisch, nach gewisser Zeit (o.ä Faktoren))
 - UC08: Protokoll einsehen 
-// (Suchfunktion, Zeitraum filtern)
 - UC09: Protokolldaten nachträglich einfügen
 - UC10: Handhabung Gastflüge
-// Handhabung Gastflüge -> noch viel zu klären
+- UC11: Piloten reaktiveren
 
 
+=== Use-Case-Diagramm
 
-=== Use-Cases: Diagramm
+.Use-Case Diagram 
+plantuml::use_case_diagram.puml[]
 
-Diagramm einfügen -> Nur Übersicht
 
-//Fügen Sie nachfolgend eine Liste aller Use-Cases per Include ein.
-//Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem usecase_spec.adoc Template basiert.
 <<<
 include::use_case_01.inc.adoc[]
 <<<
@@ -112,13 +87,15 @@ include::use_case_03.inc.adoc[]
 include::use_case_04.inc.adoc[]
 <<<
 include::use_case_05.inc.adoc[]
-//<<<
-//include::use_case_06.inc.adoc[]
-//<<<
-//include::use_case_07.inc.adoc[]
-//<<<
-//include::use_case_08.inc.adoc[]
-//<<<
-//include::use_case_09.inc.adoc[]
-//<<<
-//include::use_case_10.inc.adoc[]
+<<<
+include::use_case_06.inc.adoc[]
+<<<
+include::use_case_07.inc.adoc[]
+<<<
+include::use_case_08.inc.adoc[]
+<<<
+include::use_case_09.inc.adoc[]
+<<<
+include::use_case_10.inc.adoc[]
+<<<
+include::use_case_11.inc.adoc[]
