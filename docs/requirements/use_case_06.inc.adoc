@@ -1,54 +1,47 @@
 == Use-Case: UC06: Alle Piloten abmelden
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Piloten* beschrieben.
+In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Piloten* beschrieben. Wenn ein oder mehrere *Piloten* vergessen sich abzumelden, dann können mehrere Akteure die Abmeldung aller *Piloten* nachträglich ausführen, um die zeitliche Benutzung des Flugplatzes im Nachhinein einzugrenzen.
 
 ===	Kurzbeschreibung der Akteure
 ==== Pilot
-Der Akteur Pilot nöchte sich und alle anderen *Piloten* abmelden und den Flugplatz verlassen.
+Der Akteur "Pilot" nöchte sich und alle anderen *Piloten* abmelden und den Flugplatz verlassen.
 
 ==== Administrator
-Der Akteur Administrator möchte alle *Piloten* auf einmal abmelden.
+Der Akteur "Administrator" möchte alle *Piloten* auf einmal abmelden.
+
+==== System
+Der Akteur "System" führt die Abmeldung aller *Piloten* immer um eine bestimmte Uhrzeit durch.
 
 === Vorbedingungen
-. Die *Piloten* sind angemeldet.
+. *Piloten* sind angemeldet.
 
 === Standardablauf (Basic Flow)
 
-. Der Use-Case beginnt, wenn ein *Pilot* gehen und alle anderen *Piloten* abmelden möchte.
-//sicher?
-. Der *Pilot* drückt (z.B.) lange auf den _Flugleiterknopf_.
-. Alle *Piloten* werden abgemeldet.
-//oder wie auch immer es aussehen soll, wenn niemand mehr angemeldet ist
-. Die LED hört auf zu leuchten und alle *Piloten* sind abgemeldet.
-. Der Vereinsflugplatz kann verlassen werden.
-. Der Use-Case ist abgeschlossen.
+. Ein *Pilot* hält seinen _RFID-Ausweis_ lange vor den _RFID-Scanner_ (10 Sekunden, siehe S6)
+. Das _System_ erfasst und protokolliert die Abmeldung aller *Piloten*
+. Die _LED_ leuchtet nicht mehr dauerhaft.
 
 === Alternative Abläufe
 ==== Deadline
-Es ist 24:00 Uhr und es sind noch *Piloten* angemeldet.
+Es ist 00:00 Uhr und es sind noch *Piloten* angemeldet.
 
-. Alle Piloten werden automatisch vom _System_ abgemeldet.
-. Die LED hört auf zu leuchten und alle Piloten sind abgemeldet.
+. Alle *Piloten* werden automatisch vom _System_ abgemeldet.
+. Die _LED_ leuchtet nicht mehr dauerhaft.
 
 ==== Admin
 Der *Administrator* möchte alle *Piloten* abmelden.
 
-. Der *Administrator* klickt auf der _Adminpage_ auf die Schaltfläche _Alle Piloten Abmelden_.
-. Die LED hört auf zu leuchten und alle Piloten sind abgemeldet.
+. Der *Administrator* klickt auf der _Admin-Seite_ des _Webservers_ auf die Schaltfläche _Alle Piloten Abmelden_.
+. Das _System_ erfasst und protokolliert die Abmeldung aller *Piloten*
+. Die _LED_ leuchtet nicht mehr dauerhaft.
 
-=== Wesentliche Szenarios
-
-==== Erfolgreiche Abmeldung
-
-. Sc1: Alle *Piloten* werden abgemeldet.
 
 ===	Nachbedingungen
-Das Signallämpchen sollte nicht mehr leuchten und alle *Piloten* sollten abgemeldet sein.
+. Das Vergessen der Abmeldung darf nicht dazu führen, dass der betreffende *Pilot* dann kontinuierlich angemeldet ist.
 
 
 === Besondere Anforderungen
 
 ==== Usability
-
 Der Use Case gehört zu der erweiterten Funktionalität des Systems und muss daher für die meisten Piloten einfach und verständlich sein.

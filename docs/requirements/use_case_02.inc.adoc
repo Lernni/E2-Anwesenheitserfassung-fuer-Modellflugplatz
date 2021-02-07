@@ -28,10 +28,7 @@ Der Akteur "Pilot" möchte sich abmelden und den Flugplatz verlassen.
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Die _LED_ sollte sich bei jeder Abmeldung (erfolgreich oder nicht erfolgreich):
-
-.. davor und danach für eine Sekunde ausschalten.
-.. auf ihren korrekten Zustand zurücksetzen.
+* Die _LED_ sollte nach erfolgreicher Abmeldung dauheraft leuchten, wenn noch andere *Piloten* angemeldet sind. Hat sich der letzte *Pilot* abgemeldet, soll die _LED_ nicht mehr leuchten.
 
 === Besondere Anforderungen
 ==== Usability

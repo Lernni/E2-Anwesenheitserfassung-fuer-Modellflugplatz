@@ -18,10 +18,10 @@ Der Akteur "Pilot" möchte den Flugplatz betreten und nutzen.
 . Der *Pilot* hält seinen _RFID-Ausweis_ an den _RFID-Reader_
 . _System_ prüft, ob *Pilot* existiert
 . IF *Pilot* existiert
-.. Anmeldung wird erfasst und protokolliert.
-.. _LED_ leuchtet grün auf (siehe S1). 
+.. Die Anmeldung wird erfasst und protokolliert.
+.. Die _LED_ leuchtet grün auf (siehe S1). 
 . ELSE *Pilot* existiert nicht
-.. _LED_ blinkt rot auf. 
+.. Die _LED_ blinkt rot auf.
 
 
 === Wesentliche Szenarios
@@ -40,10 +40,7 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 * Die Anmeldung des *Piloten* ist lokal am _Terminal_ protokolliert. (Eine Synchronsierung des Protokolls erfolgt zu einem späterem Zeitpunkt.)
 
-* Die _LED_ sollte sich bei jeder versuchten Anmeldung (erfolgreich oder nicht erfolgreich):
-
-. davor und danach für eine Sekunde ausschalten. 
-. auf ihren korrekten Zustand zurücksetzten.  
+* Die _LED_ sollte nach einer erfolgreichen Anmeldung dauerhaft leuchten, um zu signalisieren, dass es angemeldete Piloten gibt.
 
 //nicht funktionale Anforderungen -> technische Störung -> Admin bescheud geben etc.
 

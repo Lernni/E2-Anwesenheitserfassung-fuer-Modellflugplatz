@@ -15,8 +15,8 @@ Der Akteur "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf
 
 . Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
 . Der *Administrator* sucht in der _Mitgliederübersicht_ den zu deaktivierenden `Piloten` und klickt auf _Deaktivieren_.
-. Der *Administrator* bestätigt die Aktion auf Nachfrage des _Systems_.
-. Das _System_ markiert den `Piloten` als deaktiviert und gibt den zugewiesenen _RFID-Ausweis_ frei
+. Der *Administrator* bestätigt die Aktion auf Nachfrage des _Webservers_.
+. Der _Webserver_ markiert den `Piloten` als deaktiviert und gibt den zugewiesenen _RFID-Ausweis_ frei
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:

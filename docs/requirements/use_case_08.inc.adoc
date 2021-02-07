@@ -2,46 +2,43 @@
 :imagesdir: images/Protokoll
 ===	Kurzbeschreibung
 
-
+In diesem Use-Case wird das Einsehen des `Protokolls` durch einen einen *Piloten* (oder *Administrator*) beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 
 ==== Pilot
 Der Akteur "Pilot" möchte die Protokolldaten einsehen.
 
+==== Administrator
+Der Akteur "Administrator" möchte die Protokolldaten einsehen.
+
 === Vorbedingungen
-. Die `Protokolldaten` müssen vom _Raspi_ an den _Webserver_ übertragen worden sein.
+. Die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein.
+. Der *Pilot* hat sich am _Webserver_ eingeloggt.
 
 === Standardablauf (Basic Flow)
-. Der Use Case beginnt, wenn sich ein *Pilot* mit der Absicht das `Protokoll` einzusehen auf der _Webseite_ anmeldet
-. *Pilot* wählt die Protokollansicht aus
-. Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` weniger als 30 min her ist
+. Der *Pilot* wählt die _Protokollansicht_ aus
 . IF *Pilot* benötigt einen bestimmten Protokolleintrag
-.. *Pilot* gibt in einer Suchleiste einen Suchbegriff ein und/oder wählt einen bestimmten Tag aus
-.. Die Protokollansicht wird eingeschränkt auf die Einträge, die den Suchbegriff enthalten
+.. *Pilot* gibt in einer Suchleiste einen Suchbegriff ein und/oder wählt ein bestimmtes Datum aus
+.. Die _Protokollansicht_ wird eingeschränkt auf die Einträge, die den Suchbegriff enthalten
 . ELSE
-.. *Pilot* sieht sich die gesamten aktuellen `Protokolldaten` an
+.. *Pilot* sieht sich das gesamte _Protokoll_ an
 
 === Alternative Abläufe
 ==== Störung der Internetverbindung seitens des Raspi
-Wenn die Internetverbindung des _Raspis_ abbricht und aktuelle `Protokolldaten` nicht an den _Webserver_ übermittelt werden können.
+Die Internetverbindung des _Raspis_ bricht ab und aktuelle `Protokolldaten` können nicht an den _Webserver_ übermittelt werden.
 
-. *Pilot* hat Schritt 2 des Standardablaufes erfolgreich ausgeführt
-. Information auf der _Webseite_ zeigt an, dass letzte Übertragung der `Protokolldaten` länger als 30 min her ist
-. *Pilot* wiederholt den Standardablauf zu einem späteren Zeitpunkt
+. Der *Pilot* hat Schritt 2 des Standardablaufes ausgeführt
+. Eine Information auf der _Webseite_ zeigt an, dass die letzte Synchronisierung der `Protokolldaten` länger als bspw. 30 min her ist
 
-==== Keine Einträge zu Suchbegriff
-. *Administrator* hat Schritt 3.a des Standardablaufes erfolgreich ausgeführt
-. Auf der Protokolleinsicht wird eine Fehlermeldung ausgegeben
 
 === Wesentliche Szenarios
 ==== Erfolgreiche Einsicht
 . Sc1.1: *Pilot A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Pilot A* kann das gesamte aktuelle `Protokoll` einsehen.
 
-. Sc1.2: *Pilot B* möchte die aktuellen `Protokolldaten` zu *Pilot C* einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Nun gibt er den Namen von *Pilot B* in der Suchleiste ein. Es existieren Einträge zu diesem Mitglied und es werden nur noch diese angezeigt. *Pilot A* kann die gewünschten Protokolleinträge einsehen.
 
 ==== Temporärer Ausfall der Internetanbindung des Raspi
-. Sc2: *Pilot D* möchte die aktuellen `Protokolldaten` einsehen und meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` nicht korrekt übermittelt. *Pilot D* kann das aktuelle `Protokoll` nicht einsehen und wartet einige Stunden, danach versucht er es erneut. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun kann *Pilot D* das aktuelle `Protokoll` einsehen.
+. Sc2: *Pilot D* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protokollansicht aus. Der _Raspi_ hat temporär die Internetverbindung verloren und die `Protokolldaten` konnten nicht synchronisiert werden. *Pilot D* kann nur die veraltete _Protokollansicht_ einsehen. Nach einiger Zeit aktualisiert er die _Webseite_. Inzwischen besitzt der _Raspi_ wieder eine Internetverbindung und hat die `Protokolldaten` übermittelt. Nun sieht *Pilot D* die aktuelle _Protokollansicht_.
 
 === Wireframe
 
