@@ -1,5 +1,5 @@
 // Meta
-:project-name: Anwesenheitserfassung der Piloten auf dem Vereinsflugplatz des Mfc-Rossendorf (E2)
+:project-name: Anwesenheitserfassung für Piloten des Vereinsflugplatz
 // Settings:
 :toc:
 :toc-title: Inhaltsverzeichnis

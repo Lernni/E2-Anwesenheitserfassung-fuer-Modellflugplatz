@@ -1,5 +1,5 @@
 == Use-Case: UC09: Protokolldaten nachträglich einfügen
-:imagesdir: images/Protokoll
+:imagesdir: {docs-requirements}/images/Protokoll
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das nachträgliche Eintragen einer Flugsession durch einen *Administrator* beschrieben.

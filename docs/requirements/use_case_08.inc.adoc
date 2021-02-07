@@ -1,5 +1,5 @@
 == Use-Case: UC08: Protokoll einsehen
-:imagesdir: images/Protokoll
+:imagesdir: {docs-requirements}/images/Protokoll
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das Einsehen des `Protokolls` durch einen einen *Piloten* (oder *Administrator*) beschrieben.

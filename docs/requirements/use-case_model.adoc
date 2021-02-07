@@ -73,29 +73,43 @@ Diese Use-Cases sind optionale Zusatzfunktionen.
 
 === Use-Case-Diagramm
 
-.Use-Case Diagram 
-plantuml::use_case_diagram.puml[]
+.Use-Case-Diagramm
+[#diagram_syntax-example2]
+[plantuml, "Use-Case-Diagramm/use_case_diagram", svg]
+....
+include::images/Use-Case-Diagramm/use_case_diagram.puml[]
+....
 
 
 <<<
 include::use_case_01.inc.adoc[]
+
 <<<
 include::use_case_02.inc.adoc[]
+
 <<<
 include::use_case_03.inc.adoc[]
+
 <<<
 include::use_case_04.inc.adoc[]
+
 <<<
 include::use_case_05.inc.adoc[]
+
 <<<
 include::use_case_06.inc.adoc[]
+
 <<<
 include::use_case_07.inc.adoc[]
+
 <<<
 include::use_case_08.inc.adoc[]
+
 <<<
 include::use_case_09.inc.adoc[]
+
 <<<
 include::use_case_10.inc.adoc[]
+
 <<<
 include::use_case_11.inc.adoc[]

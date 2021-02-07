@@ -1,9 +1,9 @@
 // --- 1. Projektthema -------------------------
 = SE I - Belegabgabe: {project-name}
 // --- 2. Teammitglieder -----------------------
-Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 // --- 3. Abgabedatum --------------------------
-01. Januar 2020
+12. Februar 2021
 // ---------------------------------------------
 :docs: ../docs
 include::{docs}/_includes/default-attributes.inc.adoc[]
@@ -79,11 +79,8 @@ include::{docs-project-management}/risk_list.adoc[lines=1..1;4..-1,leveloffset=+
 // Iteration 1
 include::{docs-project-management}/iteration_plan_01.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
-// Iteration 2
-//include::{docs-project-management}/iteration_plan_02.adoc[lines=1..1;4..-1,leveloffset=+1]
-<<<
 // Iteration 3
-//include::{docs-project-management}/iteration_plan_03.adoc[lines=1..1;4..-1,leveloffset=+1]
+include::{docs-project-management}/iteration_plan_03.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
 // --- Entwurfsdokumentation ---
