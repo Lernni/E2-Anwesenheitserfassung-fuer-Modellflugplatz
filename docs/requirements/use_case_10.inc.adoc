@@ -3,14 +3,12 @@
 
 Gäste des Flugplatzes können einen Gastflug starten. Gastflüge müssen ebenso wie normale Flüge protokolliert werden. Dazu nutzen die betreffenden Personen den RFID-Ausweis eines Gastaccounts.
 
-Dies kann über einen oder mehrere künstliche Gastmitglieder realisiert werden, die nur existieren, um von den Gästen genutzt zu werden.
+Dies kann über einen oder mehrere künstliche "Piloten" realisiert werden, die nur existieren, um von den Gästen genutzt zu werden.
+
+////
 
 ===	Kurzbeschreibung der Akteure
-==== Vereinsmitglied
-Der Akteur "Vereinsmitglied" möchte den Flugplatz betreten und nutzen.
 
-==== Administrator
-Der Akteur "Administrator" verwaltet die entstehenden Daten.
 
 === Vorbedingungen
 
@@ -22,13 +20,6 @@ Der Akteur "Administrator" verwaltet die entstehenden Daten.
 === Alternative Abläufe
 
 
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
 
@@ -45,7 +36,4 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 ==== Performance
 
-
-==== <Besondere Anforderung 1>
-
-==== <Besondere Anforderung 1>
+////
