@@ -2,28 +2,28 @@
 
 left to right direction
 
-actor Vereinsmitglied
+actor Pilot
 
 actor Administrator
 
 rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   
-  rectangle "Raspberry Pi (Flugplatz)"{
+  rectangle "Terminal (Flugplatz)"{
 
-  (UC1: Piloten anmelden)
-  (UC2: Piloten abmelden)
-  (UC6: Alle Piloten abmelden)
-  (UC7: Flugleiter bestimmen)
+  (UC01: Piloten anmelden)
+  (UC02: Piloten abmelden)
+  (UC06: Alle Piloten abmelden)
+  (UC07: Flugleiter bestimmen)
 
   }
   
   rectangle "Webserver"{
 
-  (UC3: Pilotendaten anlegen)
-  (UC4: Pilotendaten löschen)
-  (UC5: Pilotendaten modifizieren)
-  (UC8: Protokoll einsehen)
-  (UC9: Protokolldaten nachträglich einfügen)
+  (UC03: Pilotendaten anlegen)
+  (UC04: Pilotendaten löschen)
+  (UC05: Pilotendaten modifizieren)
+  (UC08: Protokoll einsehen)
+  (UC09: Protokolldaten nachträglich einfügen)
   (UC10: Handhabung Gastflüge)
   (UC11: Piloten reaktivieren)
   
@@ -31,27 +31,27 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
 }
 
 
-Vereinsmitglied --> (UC1: Piloten anmelden)
-(UC1: Piloten anmelden) <.down. (UC7: Flugleiter bestimmen) : extend
+Pilot --> (UC01: Piloten anmelden)
+(UC01: Piloten anmelden) <.down. (UC07: Flugleiter bestimmen) : extends
 
-Vereinsmitglied --> (UC2: Piloten abmelden)
+Pilot --> (UC02: Piloten abmelden)
 
-Vereinsmitglied --> (UC6: Alle Piloten abmelden)
+Pilot --> (UC06: Alle Piloten abmelden)
 
 
-Administrator --> (UC3: Pilotendaten anlegen) 
+Administrator --> (UC03: Pilotendaten anlegen) 
 
-Administrator --> (UC4: Pilotendaten löschen) 
+Administrator --> (UC04: Pilotendaten löschen) 
 
-Administrator --> (UC5: Pilotendaten modifizieren) 
+Administrator --> (UC05: Pilotendaten modifizieren) 
 
-Administrator --> (UC8: Protokoll einsehen) 
+Administrator --> (UC08: Protokoll einsehen) 
 
-Administrator --> (UC9: Protokolldaten nachträglich einfügen) 
+Administrator --> (UC09: Protokolldaten nachträglich einfügen) 
 
 Administrator -->  (UC10: Handhabung Gastflüge)
 
-Administrator --> (UC6: Alle Piloten abmelden)
+Administrator --> (UC06: Alle Piloten abmelden)
 
 Administrator --> (UC11: Piloten reaktivieren)
 
