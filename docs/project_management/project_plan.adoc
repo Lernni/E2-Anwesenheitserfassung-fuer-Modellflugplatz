@@ -117,11 +117,11 @@ Zum Festhalten des Status der Projektarbeit wird "Essence" verwendet.
 == Fortschritte nach Sim4Seed
 
 Iteration 2:
-
 [#img-ip2]
 .Fortschritt Iteration 2
 image::images/project_status/Iteration_2.PNG[]
 
+Iteration 3 
 [#img-ip3]
 .Fortschritt Iteration 3
 image::images/project_status/Iteration_3.PNG[]
