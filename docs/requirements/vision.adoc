@@ -15,7 +15,8 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System 
 Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die digitalisierte Anwesenheitserfassung/Protokollierung zu nutzen, um damit einen nachvollziehbare und kontrollierte Übersicht über den Praxisbetrieb des Vereinsflugplatzes zu gewährleisten. 
 
 === Definitionen, Akronyme und Abkürzungen
-siehe Glossar (später Verweis)
+
+xref:glossary.adoc[siehe Glossar]
 
 //=== Referenzen
 //(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
@@ -92,23 +93,28 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 |===
 
 === Benutzerumgebung
-Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
+// Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 
 //. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das? 
 
 //. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? 
 
-* Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+//* Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
 
 // Unterteilung in Admin und Pilot
 
-[NOTE]
-====
+==== Admin
+- es wird nur bestimmten Vereinsmitgliedern möglich sein das System als Admin zu nutzen
+- der Admin hat gesonderte Zugangsrechte und Bearbeitungsmöglichkeiten in der Webanwendung
 
-====
+==== Pilot
+- Systemnutzung sollte einfach handhabbar sein
+- Durchführung kann anders ablaufen, bei einer Anmeldung als Flugleiter
+- möglichkeit einer Einsicht des derzeitigen Aufkommens auf dem Flugplatz über Webanwendung
 
-* Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig? 
+
+==== Systemplattform:
 
 [NOTE]
 ====
@@ -119,7 +125,7 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 - ein digitales System, welches über einen Raspberry Pi, die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht
 ====
 
-*  Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden? 
+==== zu integrierende Anwendungen:
 
 [NOTE]
 ====
@@ -137,14 +143,15 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 //Vermeiden Sie Angaben zum Entwurf. Nennen wesentliche Features (Produktmerkmale) auf allgemeiner Ebene. Fokussieren Sie sich auf die benötigten Fähigkeiten des Systems und warum (nicht wie!) diese realisiert werden sollen. Geben Sie die von den Stakeholdern vorgegebenen Prioritäten und das geplante Release für die Veröffentlichung der Features an.
 
 
-[%header, cols="4,1,4,1"]
+[%header, cols="3,1,3"]
 |===
-|Bedarf|Priorität|	Features|	Geplantes Release
-|Anwesenheitserfassung/ Protokollierung|Hoch| |06/07.2021
-|Zeiterfassung|Hoch|xx|06/07.2021
-|Verwaltung der Daten |Hoch|Das Verwalten(Anlegen, modifizieren, löschen) von Vereinsmitgliedern & Zuordnung von RFID-Ausweisen |06/07.2021
-|Flugleiter bestimmung|Mittel|xx|06/07.2021
-|Erweiterung der Werkstatt|niedrig||06/07.2021
+|Bedarf|Priorität|	Features
+|Anwesenheitserfassung/ Protokollierung|Hoch| xx
+|Zeiterfassung|Hoch|xx
+|Verwaltung der Daten |Hoch|Das Verwalten(Anlegen, modifizieren, löschen) von Vereinsmitgliedern & Zuordnung von RFID-Ausweisen 
+|Flugleiter bestimmung|Mittel|xx
+|Erweiterung der Werkstatt|niedrig| xx
+|Gastflüge| niedrig| xx
 |===
 
 // Gastflüge -> niedrig
@@ -154,14 +161,19 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 // wesentliche NFAs
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 
-. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
-. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
-. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
-. Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
+//. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
+//. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+//. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
+//. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
+//. Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 
-[%header, cols="4,1,1"]
+[%header, cols="4,1"]
 |===
-|Anforderung|	Priorität|	Geplantes Release
-|xx|xx|xx|
+|Anforderung|	Priorität
+|An-/Abmelden der Piloten durch individuelle RFID Tags|hoch
+|Auslesen/Verarbeiten der Daten durch Raspi|hoch
+|Synchronisation mit dem Webserver| hoch
+|Datenbankinfrastruktur gestalten | hoch
+|einfache Bedienbarkeit für Piloten| mittel
+|keine Displaynutzung aufgrund von Vandalismus| mittel
 |===
