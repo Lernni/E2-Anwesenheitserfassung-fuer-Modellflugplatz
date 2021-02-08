@@ -113,7 +113,19 @@ Zum Festhalten des Status der Projektarbeit wird "Essence" verwendet.
 |KW 23-24
 |?
 |===
-|===
+
+== Fortschritte nach Sim4Seed
+
+Iteration 2:
+
+[#img-ip2]
+.Fortschritt Iteration 2
+image::images/project_status/Iteration_2.PNG[]
+
+[#img-ip3]
+.Fortschritt Iteration 3
+image::images/project_status/Iteration_3.PNG[]
+
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
@@ -123,3 +135,5 @@ Zum Festhalten des Status der Projektarbeit wird "Essence" verwendet.
 * Frühzeitigere Bearbeitung der Dokumentationen
 * Häufigere Teilnahme an SE Praktikas für Feedback & Tipps
 * Einheitliche Begrifflichkeiten verwenden
+
+
