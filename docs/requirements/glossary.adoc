@@ -43,7 +43,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 
 |Flugleiter
 a|
-* ein Akteur, ein Mitglied, das bestimmt werden sollte, wenn die Anzahl der Piloten auf dem Flugplatz größer als 3 ist.
+* ein Akteur, ein Mitglied, das bestimmt werden kann, wenn die Anzahl der Piloten auf dem Flugplatz größer als 3 ist.
 * kontrolliert die Flüge auf dem Platz (?)
 |Startleiter
 
@@ -81,7 +81,7 @@ a|
 |ein Datenobjekt, eine fortlaufende Liste, die die Aktivitäten auf dem Flugplatz wiederspiegelt
 |Protokoll
 
-|Zeiterfassung|??|-
+|Zeiterfassung|die gespeicherten Zeitdaten zu einem zugehörigen RFID Tag|-
 
 |Flugbuch
 |umfasst die bisherige Lösung der Anwesenheitserfassung
@@ -97,7 +97,7 @@ a|
 |ein Stakeholder, der die Betreiber des Vereins dazu verfplichtet ein Flugbuch über die Aktivitäten auf dem Flugplatz zu führen 
 |-
 
-|"Größere" Flugzeuge|??|-
+//|"Größere" Flugzeuge|??|-
 
 |Sicherheit|??|-
 
