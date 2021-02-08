@@ -6,7 +6,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der "Anwesenheitserfassung des Modellflugplatzes" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden und der Begründung dieser Bedarfe. Die  Details, wie die "Anwesenheitserfassung des Modellflugplatzes" diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der "Anwesenheitserfassung des Modellflugplatzes" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden und der Begründung dieser Bedarfe. Die Details, wie die "Anwesenheitserfassung des Modellflugplatzes" diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
@@ -26,9 +26,9 @@ xref:glossary.adoc[siehe Glossar]
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
 Um einen kontrollierten Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzlich festgelegte bürokratische Maßnahmen zu beachten. 
-Eine davon ist die Erfassung/Protokollierung der anwesenden Piloten. Aktuell wird der Vorgang analog über ein zentrales Flugbuch geregelt, in welches sich beim Betreten eingetragen und beim Verlassen ausgetragen werden muss. Diese Protokollierung ist notwendig, um abgesichert zu sein und die Nachvollziehbarkeit im Fall eines Schadens oder bei möglichen Beschwerden über Lärm oder Sachschädigung zu gewährleisten.
+Eine davon ist die Erfassung/Protokollierung der anwesenden Piloten. Aktuell wird der Vorgang analog über ein zentrales Flugbuch geregelt, in welches sich beim Betreten und Verlassen eingetragen werden muss. Diese Protokollierung ist notwendig, um abgesichert zu sein und die Nachvollziehbarkeit im Fall eines Schadens oder bei möglichen Beschwerden über Lärm oder Sachschädigung zu gewährleisten.
 
-Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. In Zukunft sollen sich die Piloten lokal mittels eines RFID-Ausweises auf einem autarken Raspberry Pi anmelden bzw. abmelden können. Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden, und über einen Webserver leicht einsehbar und verwaltbar sein.
+Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. In Zukunft sollen sich die Piloten lokal mittels eines RFID-Ausweises an einem autarken Terminal anmelden bzw. abmelden können. Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden, und über einen Webserver leicht einsehbar und verwaltbar sein.
 So soll ein digitales System entstehen, welches frei von Unsicherheiten und bürokratischem Aufwand ist.
 
 
@@ -38,10 +38,10 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 [cols="1,3"]
 |===
-|Das Problem | einer, vom Gesetzgeber vorgeschriebenen Erfassung der Anwesenheit der Vereinsmitglieder im physischen Flugbuch _ist mit hohem Aufwand verbunden und nicht sehr zuverlässig_
-|betrifft |	die Vereinsmitglieder _(Vorsitzenden?)_ des Vereinsflugplatz Mfc-Rossendorf
+|Das Problem | einer, vom Gesetzgeber vorgeschriebenen Erfassung der Anwesenheit der Piloten im physischen Flugbuch ist mit hohem Aufwand verbunden und nicht sehr zuverlässig
+|betrifft |	die Piloten und Vorsitzenden des Vereinsflugplatz Mfc-Rossendorf
 |die Auswirkung davon ist| dass die An-/Abmeldedaten unvollständig, teilweise unleserlich sind oder gar vergessen werden einzutragen. Neben dem bürokratischen Aufwand, kann ein Abhandenkommen des physischen Flugbuches nicht ausgeschlossen werden.
-|eine erfolgreiche Lösung wäre |ein digitales System für die Anwesenheitserfassung bzw. Protokollierung der Vereinsmitglieder über einen Raspberry Pi, der die An- und Abmeldedaten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
+|eine erfolgreiche Lösung wäre |ein digitales System für die Anwesenheitserfassung bzw. Protokollierung der Piloten über einen Raspberry Pi, der die An- und Abmeldedaten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
 |===
 
 === Positionierung des Produkts
@@ -54,7 +54,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 |Für|  Piloten
 |die| den Vereinsflugplatz betreten oder verlassen wollen.   
 |Das Produkt| ist eine digitalisierte Anwesenheitserfassung/Protokollierung der Piloten
-|welches| eine sichere Erfassung und dadurch einen sicheren und kontrollierten Betrieb des Vereinsflugplatz gewährleistet
+|welches| eine sichere Erfassung und dadurch einen sicheren und kontrollierten Betrieb der Aktivitäten des Vereinsflugplatz gewährleistet
 |im Gegensatz zu| dem manuellen Eintragen in das Flugbuch.
 |Unser Produkt| gewährleistet eine zuverlässige An-/Abmeldung, Verarbeitung, Verwaltung und Synchronisation der Pilotendaten.
 |===
@@ -88,7 +88,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 |Administratoren
 |Vereinsmitglieder des Mfc-Rossendorf, welche die Rechte besitzen die Daten zu verwalten (Anlegen, Modifizieren, Löschen) 
-|verwalten Piloten- und Protokolldaten 
+|haben Zugriff auf die Verlwatung der Pilotendaten
 
 |===
 
@@ -102,39 +102,31 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 //* Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
 
-// Unterteilung in Admin und Pilot
-
 ==== Admin
-- es wird nur bestimmten Vereinsmitgliedern möglich sein das System als Admin zu nutzen
-- der Admin hat gesonderte Zugangsrechte und Bearbeitungsmöglichkeiten in der Webanwendung
+- kann das Protokoll einsehen
+- hat besondere Zugangsrechte und Bearbeitungsmöglichkeiten
+** Bearbeitung von Pilotendaten (Hinzufügen, Ändern, Deaktivieren)
+** Nachträgliches Einfügen von Protokolldaten
 
 ==== Pilot
-- Systemnutzung sollte einfach handhabbar sein
-- Durchführung kann anders ablaufen, bei einer Anmeldung als Flugleiter
-- möglichkeit einer Einsicht des derzeitigen Aufkommens auf dem Flugplatz über Webanwendung
+- möchte eine einfache und schnelle Nutzung des Systems
+- kann sich über einen RFID-Ausweis am Terminal identifizieren (An-/Abmeldung)
+- bekommt vom Terminal ein visuelles Feedback in Form einer LED
+- kann das derzeitige Aufkommen der Piloten auf dem Flugplatz über eine Webanwendung einsehen
 
 
 ==== Systemplattform:
 
-[NOTE]
-====
 .Aktuelle Systemplattform: 
 - ein zentrales Flugbuch, in welches sich manuell eingetragen wird
 
 .Zukunftige Systemplattform:
-- ein digitales System, welches über einen Raspberry Pi, die Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht
-====
+- ein digitales System, welches über einen Raspberry Pi Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht
 
 ==== zu integrierende Anwendungen:
 
-[NOTE]
-====
 // auch Anbindung an Webserver
-.durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte: 
-- autarker Raspberry Pi mit Internetanbindung
-- montierte Solarzelle 
-
-====
+Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte. Außerdem existiert bereits ein vereinseigener Webserver.
 
 //Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
 
@@ -145,20 +137,15 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 [%header, cols="3,1,3"]
 |===
-|Bedarf|Priorität|	Features
-|Anwesenheitserfassung/ Protokollierung|Hoch| xx
-|Zeiterfassung|Hoch|xx
-|Verwaltung der Daten |Hoch|Das Verwalten(Anlegen, modifizieren, löschen) von Vereinsmitgliedern & Zuordnung von RFID-Ausweisen 
-|Flugleiter bestimmung|Mittel|xx
-|Erweiterung der Werkstatt|niedrig| xx
-|Gastflüge| niedrig| xx
+|Bedarf|Priorität|Features
+|Anwesenheitserfassung/ Protokollierung|Hoch|Die exakte zeitliche Erfassung von Aktivitäten am Terminal & Synchronisation der Protokolldaten mit dem Webserver
+|Verwaltung der anfallenden Daten |Hoch|Das Verwalten (Anlegen, Modifizieren, Deaktivieren) von Piloten, dem Anwesenheitsprotokoll & Zuordnung von RFID-Ausweisen 
+|Bestimmung eines Flugleiters|Mittel|Die Möglichkeit am Terminal einen Flugleiter zu bestimmen und dies im Protokoll zu vermerken
+|Erweiterung der Werkstatt|niedrig|Die Protokollierung von An-/Abmeldung in der Werkstatt
+|Gastflüge|niedrig|Die Möglichkeit als Nicht-Pilot den Flugplatz nutzen und sich am Terminal ausweisen zu können 
 |===
 
-// Gastflüge -> niedrig
-
-
 == Zusätzliche Produktanforderungen
-// wesentliche NFAs
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 
 //. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
@@ -169,11 +156,12 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 [%header, cols="4,1"]
 |===
-|Anforderung|	Priorität
-|An-/Abmelden der Piloten durch individuelle RFID Tags|hoch
-|Auslesen/Verarbeiten der Daten durch Raspi|hoch
-|Synchronisation mit dem Webserver| hoch
-|Datenbankinfrastruktur gestalten | hoch
-|einfache Bedienbarkeit für Piloten| mittel
-|keine Displaynutzung aufgrund von Vandalismus| mittel
+|Anforderung|Priorität
+|An-/Abmelden der Piloten erfolgt durch individuelle RFID Tags|hoch
+|Raspberry Pi stellt die Funktionalität über eine Skript-Sprache am Terminal zur Verfügung|hoch
+|Synchronisation zwischen Terminal und Webserver|hoch
+|Gestaltung Datenhaltung über eine Datenbank|hoch
+|Bedienbarkeit des Terminals so einfach wie möglich halten|hoch
+|Moderne Gestaltung der Weboberfläche via JS-Framework|hoch
+|Keine Displaynutzung als visuelle Ausgabe aufgrund von Vandalismus|mittel
 |===
