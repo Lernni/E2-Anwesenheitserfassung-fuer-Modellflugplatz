@@ -13,18 +13,17 @@ include::../_includes/default-attributes.inc.adoc[]
 | Meilenstein
 | Datum
 
-| Beginn der Iteration | KW 1
-| Ende der Iteration | KW 2
+| Beginn der Iteration | KW 51
+| Ende der Iteration | KW 53
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* Erstellung Wireframes
-* Use-Case-Diagramm und Use Cases weiterentwickeln
-* System-Wide-Requirements bearbeiten
-* Bedienungs- & Zustandsplan des Terminals vor Ort erstellen
+* Weitere Bearbeitung Vision & Glossary
+* Weiterentwicklung Risikoanalyse
+* Beginn Use-Cases
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -45,44 +44,27 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 1 | Wireframes erstellen | 7 | 24 | 90% | x | 3-4 | Alex | 9 | 2 | 
+| 1 | Beginn Use-Cases | 1 | 120 | 50% | x | 3 | Analyse + Entwurf | 15 | 15 | 
 
-2 | Weiterentwicklung Use-Cases | 1 | 120 | 100% | x | 2-3 | Analyse (+Hilfe Entwurf) | 22 | 0 |
+2 | Weiterentwicklung Vision/Glossary | 3 | 2 | 100% | x | 1-2 | Analyse | 3 | 0 |
 
-3 | Erstellung Test-Cases | 2 | 6 | 40% | x | 3-4 | Alex | 4 | 1 |
+3 | Entwicklung Projektplan | 4 | 2 | 100% | x | 1 | Alex | 1 | 0 |
 
-4 | Glossar weiterentwickeln | 8 | 2 | 100% | x | 1-3 | Analyse | 3 | 0 |
+4 | Einarbeitung in verschiendene fachliche Bereiche | 5 | 6 | 100% | x | 1-2 | Alle | 5 | 0 |
 
-5 | Weiterentwicklung Risikoanalyse | 10 | 2 | 80% | x | 1-4 | Analyse (Rest) | 8 | 0 |
+5 | Bearbeitung Vision | 2 | 24 | 100% | x | 1-2 | Analyse | 15 | 0 |
 
-6 | Systemkonzept erstellen (C4) | 9 | 6 | 100% | x | 3 | Entwurf | 20 | 15 |
+6 | Weitere Bearbeitung Risikoanalyse | 6 | 6 | 70% | x | 1-4 | Analyse, Simon | 5 | 3 |
 
-7 | Bearbeitung Risikoanalyse | 11 | 24 | 80% | x | 1-4 | Analyse, Simon | 9 | 4 |
-
-8 | Zusammenstellung Wireframes, Use-Cases für AM | 12! | 2 | 100% | x | 1 | Analyse, Entwurf, Alex | 3 | 0 |
-
-9 | System-Wide-Requirementes erstellen | 3 | 2-4 | 30% | x | 1 | Analyse, Entwurf | 4 | 14 |
-
-10 | Bearbeitung Architecture Notebook | 4 | 24 | 40% | x | 3-4 | Entwurf | 4 | 7 |
-
-11 | Bedienungsplan für Terminal erstellen | 6 | 6 | 100% | x | 1-2 | Lenny, Alex | 5 | 0 |
-
-12 | Use-Case-Diagramm (vorläufig) finalisieren | 5 | 6 | 100% | x | 3 | Jakob | 3 | 0 |
-|===
 
 *Aufgaben Team-TS-Meeting:*
 
-* Use-Case-Diagramm Vorstellung
-* Use-Cases-Vorstellen
-* Aufgetretene Fragen stellen
-* Bedienungsplan vorstellen
+* Vorstellung Rest des Teams 
+* Weitere aufgetretene Fragen stellen
+* Erste Use-Case Entwürfe vorstellen
 
-== Aufgetretene Probleme
+//== Probleme (optional)
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
-* Es wurden zu viele UseCases zu detailliert beschrieben. Auch müssen nicht Software-relevante Elemente entfernt werden
-* Die Bedienung des Terminals wurde zu kompliziert geplant. Für die Akzeptanz der Nutzer müssen einige Prozesse, trotz erhöhter Fehleranfälligkeit, vereinfacht werden.
-* Das AM wurde zu ausführlich und lang gestaltet. Im nächsten AM müssen die Themengebiete eingeschränkt werden
-
 
 //[%header, cols="2,1,3"]
 //|===
@@ -113,10 +95,8 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Assessment Ziel | Iteration 1
 | Assessment Datum | 03.12.2020
 | Teilnehmer | Analyse, Leiter, TS
-| Projektstatus	| Grün-Gelb (siehe Probleme)
+| Projektstatus	ggü. TS | Grün
 |===
-
-
 
 === Teammeeting
 
@@ -125,16 +105,15 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Assessment Ziel | Iteration 1
 | Assessment Datum | 09.12.2020
 | Teilnehmer | Gesamtes Team
-| Projektstatus	| Grün-Gelb (siehe Probleme)
+| Projektstatus im Team	| Grün
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
-Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements soweit in Ordnung und werden in die nächste Iteration übernommen.
+Es wurden alle Ziele erfüllt. Aufgaben mit Nachholbedarf aus der vorherigen Iteration konnten nachgeholt werden.
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen zur Nachbesserung in die nächste Iteration übernommen werden.
-
+Es wurden alle Bewertungskriterien erfüllt.
 //* Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.

@@ -32,7 +32,7 @@ Als Grundlage wird das Prinzip der iterativ inkrementellen Softwareentwicklung v
 
 Zusätzlich findet innerhalb jedes Zykluses ein Meeting mit dem Kunden statt. Diesem werden die  Erfolge in aufbereiteter Form vorgelegt sowie Unklarheiten oder Fragen zur Beantwortung nähergebracht. In diesen Konferenzen nehmen die Teammitglieder je nach Bedarf teil. Der Teammanager sollte aber bei Möglichkeit als Ansprechpartner bei jedem Treffen teilnehmen.
 
-Zur Zyklusplanung werden Iteration Plans verwendet. Die dort eingefügten Elemente stammen aus der Datei <<Work Item List>> und sind ihrer Priorität nach in der nächsten Iteration zu planen.
+Zur Zyklusplanung werden Iteration Plans verwendet. Die dort eingefügten Elemente stammen aus dem erstellten GitHub Repository und sind ihrer Priorität nach in der nächsten Iteration zu planen.
 
 Für die Analyse und weitere Bearbeitung werden Use-Cases erstellt
 
@@ -54,32 +54,72 @@ Zum Festhalten des Status der Projektarbeit wird "Essence" verwendet.
 |Target Velocity
 
 |It. Nr. 1
-|Inception - Grobübersicht erhalten
-|Analyse, Erstbesprechung, Fortbildung
+|Inception - Übersicht erhalten
+|Analyse, Erstbesprechung, Fortbildung, Vision/Glossary/Risikoanalyse bearbeiten
 |KW 49-50
 |?
 
 |It. Nr. 2
-|Elaboration - Weitergehende Entwicklungsschritte
-|Weiterentwicklung der Analyse, Start des Entwurfs, Start des Designentwurfs, Use-Case-Entwicklung
+|Vorläufige Fertigstellung Inception (Milestone), Beginn Elaboration
+|Vorläufige Fertigstellung der Analyse, Start des Entwurfs, Start des Designentwurfs, Use-Case-Entwicklung
 |KW 51-53
 |?
 
 |It. Nr. 3
-|Elaboration - Weitergehende Entwicklungsschritte
-|Vorläufige Fertigstellung Analyse & Entwurf
+|Fortführung Elaboration
+|Weitere Bearbeitung  Use-Cases, Wireframes, Domänenmodell, System-Wide-Requirements, Architecture Notebook, Bedienungsplan, Use-Case-Diagramm, Testcases
 |KW 1-2
 |?
 
 |It. Nr. 4
-| ...
-|
-|
+|Vorläufige Fertigstellung Elaboration (Milestone)
+|Weitere Bearbeitung/Anpassungen der It. Nr. 3 Aufgaben
+|KW 3-5
 |?
+
+|It. Nr. 5
+|Construction
+|
+|KW 13-14
+|?
+
+|It. Nr. 6
+|Construction
+|
+|KW 15-16
+|?
+
+|It. Nr. 7
+|Construction
+|
+|KW 17-18
+|?
+
+|It. Nr. 8
+|Construction
+|
+|KW 19-20
+|?
+
+|It. Nr. 9
+|Transition & Tests
+|
+|KW 21-22
+|?
+
+|It. Nr. 10
+|Tests
+|
+|KW 23-24
+|?
+|===
 |===
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 
 == Erkenntnisse (Lessons learned)
-//List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
+* Bessere Meetingstrukturierung
+* Frühzeitigere Bearbeitung der Dokumentationen
+* Häufigere Teilnahme an SE Praktikas für Feedback & Tipps
+* Einheitliche Begrifflichkeiten verwenden
