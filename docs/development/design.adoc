@@ -7,4 +7,22 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Allgemeine Informationen
 
-== ...
+== Technische Designaspekte
+
+- Datenbankmodell
+- Synchronisierung Ablauf (grob)
+
+== Graphische Designaspekte
+
+== Terminal
+
+- Statusmeldungen/Ausgabezutsände
+
+== Webserver
+
+=== Wireframe
+
+- Protokoll als Liste
+- Popup-Meldungen als Bestätigung
+- Einfügen Wireframe-Startseite
+- Wireframe-Verlinkung Übersicht
