@@ -119,12 +119,15 @@ Zum Festhalten des Status der Projektarbeit wird "Essence" verwendet.
 Iteration 2:
 
 .Fortschritt Iteration 2
-image::images/project_status/Iteration_2.PNG[]
+
+image::images/project_status/Iteration2.PNG[]
+
 
 Iteration 3:
 
 .Fortschritt Iteration 3
-image::images/project_status/Iteration_3.PNG[]
+
+image::images/project_status/Iteration3.PNG[]
 
 
 == Deployment
