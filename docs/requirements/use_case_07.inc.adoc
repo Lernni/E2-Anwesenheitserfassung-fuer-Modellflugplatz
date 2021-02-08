@@ -5,36 +5,33 @@ In diesem Use-Case wird der Vorgang der freiwilligen Bestimmung eines *Flugleite
 
 ===	Kurzbeschreibung der Akteure
 ==== Pilot
-Der Akteur "Pilot" nutzt den Flugplatz bzw. möchte den Flugplatz nutzen.
+Der Akteur "Pilot" nutzt den Flugplatz.
 
 ==== Flugleiter
-Der Akteur "Flugleiter" ist ein Pilot, das den Flugplatz ebenfalls nutzen möchte und die Verantwortung über die Flugaktivitäten der anderen Piloten auf dem Platz hat.
+Der Akteur "Flugleiter" ist ein Pilot, der den Flugplatz nicht aktiv nutzt, sondern die Verantwortung über die Flugaktivitäten der anderen Piloten auf dem Platz hat.
 
 === Vorbedingungen
 
-. Es existiert mindestens ein *Pilot*.
-
-. Der *Pilot* besitzt einen aktivierten _RFID-Ausweis_.
+. Es existiert mindestens ein *Pilot* mit aktiviertem _RFID-Ausweis_.
 
 
 === Standardablauf (Basic Flow)
 
-. Ein bereits angemeldeter *Pilot* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
+. Ein bereits angemeldeter *Pilot* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe S4)
 
 . Das _System_ gibt die Rolle des *Flugleiters* an den *Piloten* ab, oder weist die Rolle erstmals zu, falls zuvor kein anderer *Pilot* als *Flugleiter* eingetragen war.
 
-. Das _System_ speichert die Änderung im `Protokoll`
+. Das _System_ erfasst und protokolliert die Änderung der Flugleiterrolle.
 
-. Das _System_ gibt dem *Piloten* eine Rückmeldung (Aufleuchten der _LED_) (siehe [.underline]#S4#)
+. Die _LED_ leuchtet auf (siehe S4)
 
 === Alternative Abläufe
 
 ==== Pilot noch nicht angemeldet
-Vorbedingung: Der *Pilot* ist noch nicht angemeldet.
 
-. Das *Pilot* hält seinen _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe [.underline]#S4#)
+. Der *Pilot* hält seinen _RFID-Ausweis_ an den _Scanner_ und drückt gleichzeitig den _Taster_. (siehe S4)
 
-. Das _System_ erkennt, dass der *Pilot* noch nicht angemeldet ist und führt so zunächst [.underline]#UC01# aus, um den *Piloten* anzumelden.
+. Das _System_ erkennt, dass der *Pilot* noch nicht angemeldet ist und führt so zunächst UC01 aus, um den *Piloten* anzumelden.
 
 . Weiter siehe Standardablauf Schritt 2
 
@@ -43,7 +40,7 @@ Vorbedingung: Der *Pilot* ist noch nicht angemeldet.
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-. Es existiert ein *Flugleiter*, der vom _System_ erfasst wurde.
+. Es existiert maximal ein *Flugleiter*, der vom _System_ erfasst wurde.
 
 ==== Usability
 

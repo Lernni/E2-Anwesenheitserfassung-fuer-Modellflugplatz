@@ -1,33 +1,36 @@
 == Use-Case: UC11: Piloten reaktivieren
-:imagesdir: images/Verwaltung
+:imagesdir: {docs-requirements}/images/Verwaltung
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Reaktiveren eines `Piloten` durch den *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Pilot
-Der Akteur "Pilot" möchte wieder auf dem Modellflugplatz fliegen.
+==== Administrator
+Der Akteur "Administrator" möchte einen `Piloten` wieder freischalten.
 
 === Vorbedingungen
-. Der Pilot ist in der Datenbank vorhanden, aber deaktiviert. Use-Case UC04 ist hier die Vorraussetzung.
+. Der `Pilot` wurde angelegt (UC03)
+
+. Der `Pilot` wurde deaktiviert (UC04)
+
+. Der *Administrator* ist auf dem _Webserver_ eingeloggt
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
-. Der *Administrator* sucht in der _Mitgliederübersicht_ den deaktivierten Piloten der zu aktivierende *Pilot* und klickt auf _Reaktivieren_.
-. Der *Administrator* bestätigt die Aktion.
-. Ein _RFID-Ausweis_ wird dem *Piloten* zugeordnet und evtl. in der Zwischenzeit aufgetretene Namensänderungen angegeben.
-. Der Use Case ist abgeschlossen, der *Pilot* kann den Flugplatz nun betreten.
+. Der *Administrator* navigigert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ den deaktivierten `Piloten` und klickt auf _Reaktivieren_
+. Der *Administrator* bestätigt in einem Formular die bereits hinterlegten `Pilotendaten` und weist dem `Piloten` wieder einen _RFID-Ausweis_ zu.
+. Der *Administrator* bestätigt das Formular.
+. Der _Webserver_ markiert den `Piloten` als aktiv.
 
 === Wesentliche Szenarios
 
 ==== Erfolgreiches Reaktivieren der Pilotendaten
-. Sc1: Die *Verwaltung* reaktiviert einen `Piloten` über den _Webserver_ und der *Pilot* bekommt im Anschluss einen aktivierten _RFID-Ausweis_ vom *Administrator*.
+. Sc1: Ein *Administrator* reaktiviert einen `Piloten` über den _Webserver_ und der entsprechende *Pilot* bekommt im Anschluss den aktivierten _RFID-Ausweis_ vom *Administrator*.
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Der *Pilot* besitzt einen aktivierten _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
-* Die `Pilotendaten` des (ehemaligen) *Piloten* befinden sich in der Datenbank, das Mitglied ist nun in der Mitgliederübersicht unter "aktiv".
+* Der entsprechende *Pilot* besitzt einen aktivierten _RFID-Ausweis_, um sich am Flugplatz an- und abmelden zu können
 
 // === Besondere Anforderungen
 // ==== Usability
@@ -36,8 +39,8 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 === Wireframe
 
-image::Pilotenübersicht_deaktiv.png[Flugzeiten nachtragen, width=60%]
+image::Pilotenübersicht_deaktiv.png[Pilotenübersicht (deaktiv), width=60%]
 
-image::Pilot_reaktivieren.png[Flugzeiten nachtragen, width=60%]
+image::Pilot_reaktivieren.png[Pilot reaktivieren, width=60%]
 
 

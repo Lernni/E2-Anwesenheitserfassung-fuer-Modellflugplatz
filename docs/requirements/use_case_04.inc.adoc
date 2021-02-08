@@ -3,32 +3,26 @@
 In diesem Use-Case wird der komplette Vorgang zum Deaktivieren eines `Piloten` durch den *Administrator* beschrieben.
 
 ===	Kurzbeschreibung der Akteure
-==== Pilot
-Der Akteur "Pilot" möchte nicht mehr auf dem Modellflugplatz fliegen.
+==== Administrator
+Der Akteur "Administrator" hat vollen Zugriff auf das _System_, insbesondere auf den _Admin-Bereich_ des _Webservers_ und möchte einen Piloten deaktivieren.
 
 === Vorbedingungen
-. Der *Pilot* muss bereits in der Datenbank vorhanden sein, Use-Case UC03 ist hier die Vorraussetzung.
-. Der *Administrator* hat Kenntnis über den `Namen` und die `RFID-Nr` des zu deaktivierenden Piloten.
+. Der entsprechende `Pilot` wurde bereits angelegt (UC03)
+
 . Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 
 === Standardablauf (Basic Flow)
 
-. Der Use Case beginnt, wenn der *Administrator* auf der _Admin-Seite_ des _Webservers_ in der _Mitgliederübersicht_ ist.
-. Der *Administrator* sucht in der _Mitgliederübersicht_ den zu deaktivierenden *Piloten* und klickt auf _Deaktivieren_.
-. Der *Administrator* bestätigt die Aktion.
-. Der _RFID-Ausweis_ wird dem *Administrator* übergeben und deaktiviert.
-. Der Use Case ist abgeschlossen, der ehemalige *Pilot* muss den Flugplatz nun verlassen und kann diesen bis zur Reaktivierung nicht mehr nutzen.
-
-=== Wesentliche Szenarios
-
-==== Erfolgreiches Deaktivieren der Pilotendaten
-. Sc1: Die *Verwaltung* deaktiviert einen `Piloten` über den _Webserver_ und der *Pilot* übergibt im Anschluss den entsprechenden _RFID-Ausweis_ an den *Administrator*.
+. Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
+. Der *Administrator* sucht in der _Mitgliederübersicht_ den zu deaktivierenden `Piloten` und klickt auf _Deaktivieren_.
+. Der *Administrator* bestätigt die Aktion auf Nachfrage des _Webservers_.
+. Der _Webserver_ markiert den `Piloten` als deaktiviert und gibt den zugewiesenen _RFID-Ausweis_ frei
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Der (ehemalige) *Pilot* besitzt keinen _RFID-Ausweis_ mehr, um sich am Flugplatz an- und abmelden zu können
-* Die `Pilotendaten` des (ehemaligen) *Piloten* befinden sich noch in der Datenbank, jedoch ist das Mitglied "ausgegraut".
+* Der ehemalige *Pilot* besitzt keinen _RFID-Ausweis_ mehr, um sich am Flugplatz an- und abmelden zu können. Im Idealfall wird der _RFID-Ausweis_ einem *Administrator* übergeben.
+* Die `Pilotendaten` des ehemaligen *Piloten* befinden sich noch in der Datenbank, jedoch werden diese "ausgegraut".
 
 === Besondere Anforderungen
 ==== Usability
