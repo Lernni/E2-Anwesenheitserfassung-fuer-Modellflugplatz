@@ -7,14 +7,15 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Allgemeine Informationen
 
+In Test-Cases geht es im Allgemeinen darum, sicherzustellen, dass das zu testende Produkt richtig funktioniert. Daher wird mit einem Test-Case eine Anleitung für die Entwickler gegeben.
+
 == Test Cases
 
 include::test_case_01.inc.adoc[]
 
-////
+
 <<<
 include::test_case_02.inc.adoc[]
 
 <<<
 include::test_case_03.inc.adoc[]
-////
