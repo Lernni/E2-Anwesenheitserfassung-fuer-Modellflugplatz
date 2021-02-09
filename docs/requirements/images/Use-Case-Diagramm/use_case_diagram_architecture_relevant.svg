@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' contentScriptType='application/ecmascript' contentStyleType='text/css' height='719px' preserveAspectRatio='none' style='width:465px;height:719px;' version='1.1' viewBox='0 0 465 719' width='465px' zoomAndPan='magnify'>
   <defs>
-    <filter height='300%' id='fcjlr6gfko5es' width='300%' x='-1' y='-1'>
+    <filter height='300%' id='f1ounbzfc5re1g' width='300%' x='-1' y='-1'>
       <feGaussianBlur result='blurOut' stdDeviation='2.0'/>
       <feColorMatrix in='blurOut' result='blurOut2' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0'/>
       <feOffset dx='4.0' dy='4.0' in='blurOut2' result='blurOut3'/>
@@ -11,62 +11,62 @@
   <g>
     <!--MD5=[81e9b31956fa1763a08246d39fd9f5b9]
 cluster Anwesenheitserfassung des Modellflugplatzes-->
-    <rect fill='#FFFFFF' filter='url(#fcjlr6gfko5es)' height='684' style='stroke: #000000; stroke-width: 1.5;' width='345' x='109' y='24'/>
+    <rect fill='#FFFFFF' filter='url(#f1ounbzfc5re1g)' height='684' style='stroke: #000000; stroke-width: 1.5;' width='345' x='109' y='24'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' font-weight='bold' lengthAdjust='spacingAndGlyphs' textLength='329' x='117' y='40.5332'>
       Anwesenheitserfassung des Modellflugplatzes
     </text>
     <!--MD5=[4aaa576539580a105be96fb158a08f63]
 cluster Terminal (Flugplatz)-->
-    <rect fill='#FFFFFF' filter='url(#fcjlr6gfko5es)' height='170' style='stroke: #000000; stroke-width: 1.5;' width='214' x='174.5' y='68'/>
+    <rect fill='#FFFFFF' filter='url(#f1ounbzfc5re1g)' height='170' style='stroke: #000000; stroke-width: 1.5;' width='214' x='174.5' y='68'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' font-weight='bold' lengthAdjust='spacingAndGlyphs' textLength='138' x='212.5' y='84.5332'>
       Terminal (Flugplatz)
     </text>
     <!--MD5=[d5b38d4b24307be98c9c362692fbd4b9]
 cluster Webserver-->
-    <rect fill='#FFFFFF' filter='url(#fcjlr6gfko5es)' height='422' style='stroke: #000000; stroke-width: 1.5;' width='257' x='153' y='262'/>
+    <rect fill='#FFFFFF' filter='url(#f1ounbzfc5re1g)' height='422' style='stroke: #000000; stroke-width: 1.5;' width='257' x='153' y='262'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' font-weight='bold' lengthAdjust='spacingAndGlyphs' textLength='78' x='242.5' y='278.5332'>
       Webserver
     </text>
-    <ellipse cx='281.3297' cy='125.0659' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='90.8297' ry='20.5659' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.3297' cy='125.0659' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='90.8297' ry='20.5659' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='152' x='205.3297' y='130.3706'>
       UC01: Piloten anmelden
     </text>
-    <ellipse cx='281.3297' cy='201.0659' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='90.8297' ry='20.5659' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.3297' cy='201.0659' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='90.8297' ry='20.5659' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='152' x='205.3297' y='206.3706'>
       UC02: Piloten abmelden
     </text>
-    <ellipse cx='281.3449' cy='320.769' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='101.8449' ry='22.769' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.3449' cy='320.769' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='101.8449' ry='22.769' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='177' x='192.8449' y='326.0737'>
       UC03: Pilotendaten anlegen
     </text>
-    <ellipse cx='281.3945' cy='400.8789' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='97.3945' ry='21.8789' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.3945' cy='400.8789' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='97.3945' ry='21.8789' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='167' x='197.8945' y='406.1836'>
       UC04: Piloten deaktivieren
     </text>
-    <ellipse cx='281.7192' cy='482.9438' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='112.7192' ry='24.9438' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.7192' cy='482.9438' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='112.7192' ry='24.9438' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='201' x='181.2192' y='488.2485'>
       UC05: Pilotendaten modifizieren
     </text>
-    <ellipse cx='281.7412' cy='565.9482' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='102.7412' ry='22.9482' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.7412' cy='565.9482' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='102.7412' ry='22.9482' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='179' x='192.2412' y='571.2529'>
       UC06: Alle Piloten abmelden
     </text>
-    <ellipse cx='281.313' cy='645.7626' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='94.313' ry='21.2626' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='281.313' cy='645.7626' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='94.313' ry='21.2626' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='160' x='201.313' y='651.0673'>
       UC08: Protokoll einsehen
     </text>
     <!--MD5=[9f42bb281c70cb27a9dbb9ef12badaa3]
 entity Pilot-->
-    <ellipse cx='47.5' cy='131' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='8' ry='8' style='stroke: #A80036; stroke-width: 1.5;'/>
-    <path d='M47.5,139 L47.5,166 M34.5,147 L60.5,147 M47.5,166 L34.5,181 M47.5,166 L60.5,181 ' fill='none' filter='url(#fcjlr6gfko5es)' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <ellipse cx='47.5' cy='131' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='8' ry='8' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <path d='M47.5,139 L47.5,166 M34.5,147 L60.5,147 M47.5,166 L34.5,181 M47.5,166 L60.5,181 ' fill='none' filter='url(#f1ounbzfc5re1g)' style='stroke: #A80036; stroke-width: 1.5;'/>
     <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='27' x='34' y='201.0332'>
       Pilot
     </text>
     <!--MD5=[62529e7d5259bf274c3bf3e446350d88]
 entity Administrator-->
-    <ellipse cx='47.5' cy='492' fill='#FEFECE' filter='url(#fcjlr6gfko5es)' rx='8' ry='8' style='stroke: #A80036; stroke-width: 1.5;'/>
-    <path d='M47.5,500 L47.5,527 M34.5,508 L60.5,508 M47.5,527 L34.5,542 M47.5,527 L60.5,542 ' fill='none' filter='url(#fcjlr6gfko5es)' style='stroke: #A80036; stroke-width: 1.5;'/>
-    <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='83' x='6' y='562.0332'>
+    <ellipse cx='47.5' cy='451' fill='#FEFECE' filter='url(#f1ounbzfc5re1g)' rx='8' ry='8' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <path d='M47.5,459 L47.5,486 M34.5,467 L60.5,467 M47.5,486 L34.5,501 M47.5,486 L60.5,501 ' fill='none' filter='url(#f1ounbzfc5re1g)' style='stroke: #A80036; stroke-width: 1.5;'/>
+    <text fill='#000000' font-family='sans-serif' font-size='14' lengthAdjust='spacingAndGlyphs' textLength='83' x='6' y='521.0332'>
       Administrator
     </text>
     <!--MD5=[0be07c07e64cafdf7f3c38789dfff595]
@@ -79,21 +79,25 @@ link Pilot to UC02: Piloten abmelden-->
     <polygon fill='#A80036' points='207.35,189.02,199.1199,183.6103,202.4165,188.2073,197.8195,191.5039,207.35,189.02' style='stroke: #A80036; stroke-width: 1.0;'/>
     <!--MD5=[eb85ae85d664cfc6d40a5982c0c7ca68]
 link Administrator to UC03: Pilotendaten anlegen-->
-    <path d='M50.67,482.4 C54.88,445.25 66.95,392.05 101,361 C121.43,342.37 148.59,331.77 175.57,325.89 ' fill='none' id='Administrator-&gt;UC03: Pilotendaten anlegen' style='stroke: #A80036; stroke-width: 1.0;'/>
-    <polygon fill='#A80036' points='180.61,324.85,170.986,322.7573,175.7138,325.8635,172.6076,330.5913,180.61,324.85' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <path d='M56.22,441.49 C63.35,414.68 76.67,381.15 101,361 C122.29,343.36 149.73,333.08 176.7,327.19 ' fill='none' id='Administrator-&gt;UC03: Pilotendaten anlegen' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <polygon fill='#A80036' points='181.73,326.14,172.1002,324.0742,176.8366,327.1672,173.7437,331.9036,181.73,326.14' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <!--MD5=[3baa612c1d4ee28afe863bcdb3c6148b]
+link Administrator to UC04: Piloten deaktivieren-->
+    <path d='M89.1,446.8 C92.98,444.26 96.97,441.95 101,440 C128.42,426.75 160.35,417.96 189.62,412.15 ' fill='none' id='Administrator-&gt;UC04: Piloten deaktivieren' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <polygon fill='#A80036' points='194.67,411.17,185.0775,408.9375,189.7596,412.1121,186.5849,416.7942,194.67,411.17' style='stroke: #A80036; stroke-width: 1.0;'/>
     <!--MD5=[9dc25fd778f998ffd990ffd163f14098]
 link Administrator to UC05: Pilotendaten modifizieren-->
-    <path d='M89.18,516.81 C116.43,512 153.45,505.45 187.66,499.41 ' fill='none' id='Administrator-&gt;UC05: Pilotendaten modifizieren' style='stroke: #A80036; stroke-width: 1.0;'/>
-    <polygon fill='#A80036' points='192.69,498.52,183.1298,496.1529,187.7668,499.393,184.5267,504.03,192.69,498.52' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <path d='M89.18,483 C110.01,483 136.55,483 163.19,483 ' fill='none' id='Administrator-&gt;UC05: Pilotendaten modifizieren' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <polygon fill='#A80036' points='168.52,483,159.52,479,163.52,483,159.52,487,168.52,483' style='stroke: #A80036; stroke-width: 1.0;'/>
     <!--MD5=[d12ef65b02e87aa271104278e375fa55]
 link Administrator to UC08: Protokoll einsehen-->
-    <path d='M66.81,565.74 C75.23,580.5 86.59,595.92 101,606 C125.61,623.21 156.37,633.17 185.43,638.89 ' fill='none' id='Administrator-&gt;UC08: Protokoll einsehen' style='stroke: #A80036; stroke-width: 1.0;'/>
-    <polygon fill='#A80036' points='190.46,639.84,182.3592,634.2385,185.5469,638.9117,180.8738,642.0994,190.46,639.84' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <path d='M56.05,524.55 C63.12,551.63 76.45,585.6 101,606 C123.98,625.1 154.15,635.58 183.18,641.19 ' fill='none' id='Administrator-&gt;UC08: Protokoll einsehen' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <polygon fill='#A80036' points='188.2,642.11,180.0678,636.5541,183.2818,641.2093,178.6267,644.4233,188.2,642.11' style='stroke: #A80036; stroke-width: 1.0;'/>
     <!--MD5=[c6e49dc46e18a478a79f0cd202ed79c5]
 link Administrator to UC06: Alle Piloten abmelden-->
-    <path d='M89.18,531.36 C118.53,536.68 159.23,544.05 195.54,550.62 ' fill='none' id='Administrator-&gt;UC06: Alle Piloten abmelden' style='stroke: #A80036; stroke-width: 1.0;'/>
-    <polygon fill='#A80036' points='200.86,551.58,192.7278,546.0241,195.9418,550.6793,191.2867,553.8933,200.86,551.58' style='stroke: #A80036; stroke-width: 1.0;'/>
-    <!--MD5=[5c9e5b020caf468ef6f5f97837771fd0]
+    <path d='M89.18,518.3 C93.04,520.79 97.01,523.07 101,525 C127.94,538 159.17,546.98 187.96,553.13 ' fill='none' id='Administrator-&gt;UC06: Alle Piloten abmelden' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <polygon fill='#A80036' points='192.93,554.17,184.931,548.4241,188.0344,553.1537,183.3048,556.2571,192.93,554.17' style='stroke: #A80036; stroke-width: 1.0;'/>
+    <!--MD5=[da65cf3b1b7195e5bf45cbef4a59c7bb]
 @startuml use_case_diagram_architecture_relevant
 
 left to right direction
@@ -129,6 +133,8 @@ Pilot - -> (UC02: Piloten abmelden)
 
 
 Administrator - -> (UC03: Pilotendaten anlegen)
+
+Administrator - -> (UC04: Piloten deaktivieren)
 
 Administrator - -> (UC05: Pilotendaten modifizieren)
 

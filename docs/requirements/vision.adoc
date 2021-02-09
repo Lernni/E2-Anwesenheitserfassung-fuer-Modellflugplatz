@@ -16,7 +16,7 @@ Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugpl
 
 === Definitionen, Akronyme und Abkürzungen
 
-xref:glossary.adoc[siehe Glossar]
+siehe Glossar
 
 //=== Referenzen
 //(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
