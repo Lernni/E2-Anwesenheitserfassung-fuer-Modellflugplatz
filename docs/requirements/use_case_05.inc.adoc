@@ -33,4 +33,5 @@ Die `Pilotendaten` müssen aktuell und semantisch korrekt in der _Datenbank_ hin
 
 === Wireframe
 
-image::Pilotendaten_modifizieren_neu.png[Pilotendaten modifizieren, width=60%]
+.Wireframe: Pilotendaten modifizieren
+image::Pilotendaten_modifizieren_neu.png[Pilotendaten modifizieren, width=70%, align="center"]

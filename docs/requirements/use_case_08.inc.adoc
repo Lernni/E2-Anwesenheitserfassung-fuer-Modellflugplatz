@@ -42,4 +42,5 @@ Die Internetverbindung des _Raspis_ bricht ab und aktuelle `Protokolldaten` kön
 
 === Wireframe
 
-image::Protokolldaten_neu.png[Protokolldaten, width="70%"]
+.Wirefreame: Protokolldaten
+image::Protokolldaten_neu.png[Protokolldaten, width="70%", align="center"]

@@ -132,7 +132,7 @@ Die logische Sicht enthält alle architektur-relevanten Klassen des Systems und 
 
 .Domainmodell
 :imagesdir: {docs-requirements}/images/Domainmodell
-image::domain_model.png[Domainmodell, width=70%]
+image::domain_model.png[Domainmodell, width=70%, align="center"]
 
 === Physische Sicht
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
@@ -141,7 +141,7 @@ Aus physischer Sicht ist eine klare Zweiteilung der Funktionalitäten erkennbar.
 
 .C4-Modell (Level 2)
 :imagesdir: {docs-architecture}/images/C4_Model
-image::C4_Level2.png[C4-Modell (Level 2), width=70%]
+image::C4_Level2.png[C4-Modell (Level 2), width=70%, align="center"]
 
 === Use cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.

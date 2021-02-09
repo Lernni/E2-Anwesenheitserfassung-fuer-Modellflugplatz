@@ -41,4 +41,5 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 === Wireframe
 
-image::Flugzeit_nachtragen_neu.png[Flugzeiten nachtragen, width=60%]
+.Wireframe: Flugzeiten nachtragen
+image::Flugzeit_nachtragen_neu.png[Flugzeiten nachtragen, width=70%, align="center"]

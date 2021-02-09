@@ -6,4 +6,5 @@ include::../_includes/default-attributes.inc.adoc[]
 
 :imagesdir: {docs-requirements}/images/Domainmodell
 
+.Domainmodell
 image::domain_model.png[Domainmodell]
