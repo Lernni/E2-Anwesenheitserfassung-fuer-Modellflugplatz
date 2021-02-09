@@ -30,61 +30,72 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |Begriff|	Definition und Erläuterung|	Synonyme
 
 |Vereinsmitglied
-|ein Akteur, der Mitglied des Vereins ist und im System hinterlegt ist, aber nicht zwangsweise auch Pilot ist
+|ein Mitglied des Vereins, welches ein Pilot und/oder Admin sein kann
 |Mitglied
 
-|Administrator
-|ein Akteur, (ein Mitglied?), welches Zugriff auf die Verwaltung des Systems hat und das Anwesenheitsprotokoll einsehen kann
-|Admin, (Verwaltung)
-
 |Pilot
-|ein Akteur, ein Mitglied, welches den Flugplatz nutzen darf und über einen RFID-Tag verfügt
+|ein Mitglied, welches den Flugplatz nutzt und sich über einen RFID-Ausweis identifzieren kann
 |-
+
+|Administrator
+|ein Pilot, welcher spezielle Zugriffsrechte auf die Verwaltung des Systems hat
+|Admin
 
 |Flugleiter
 a|
-* ein Akteur, ein Mitglied, das bestimmt werden kann, wenn die Anzahl der Piloten auf dem Flugplatz größer als 3 ist.
-* kontrolliert die Flüge auf dem Platz (?)
+* ein Pilot, der optional bestimmt werden kann
+* übernimmt die Verantwortung für die Flüge auf dem Platz, fliegt jedoch selbst nicht
 |Startleiter
 
 |Besucher|eine Person, die kein Vereinsmitglied ist und kein Flugzeug fliegt|-
 
-|Gast|ein Akteur, welcher kein Vereinsmitglied ist, aber den Flugplatz nutzt|-
+|Gast|eine Person, welche kein Vereinsmitglied ist, aber den Flugplatz nutzt|-
+
+|Flug
+|die Tätigkeit des Fliegens der Modellflugzeuge auf dem Flugplatz
+|
+
+|Flugsession
+|die Zeitdauer von Aktivitäten eines bestimmten Piloten auf dem Flugplatz zwischen An- und Abmeldung
+|Session
 
 |Flugplatz
-|Ort an dem die Piloten ihre Modellflugzeuge nutzen können
-|Platz
+|Ort, an dem die Piloten ihre Modellflugzeuge fliegen können
+|Platz, (im Kontext oft "vor Ort")
 
 |Modellflugzeug
 |wird von den Piloten auf dem Flugplatz geflogen
 |Flugzeug
 
+|Terminal
+a|
+* Anlage, an der die Piloten sich mittels RFID-Taf ausweisen
+* umfasst die Komponenten Raspberry Pi, RGB-LED, Flugleiter-Knopf und RFID-Scanner
+|Anlage
+
 |Webserver
 a|
-* ein Systembestandteil, mit zwei Sichten für Admin und Mitglieder
-* für den Admin werden Verwaltungs- und Ausgabefunktionen des Systems bereitgestellt
-* für das Vereinsmitglied sind nur Ausgabefunktionen des Systems verfügbar
+* ein Systembestandteil, der zwei Sichten für Admin und Pilot zur Verfügung stellt
+* für den Admin werden Verwaltungs- und Ausgabefunktionen bereitgestellt
+* für den Piloten sind nur Ausgabefunktionen verfügbar
 |-
 
 |Weboberfläche
-|ein Systembestandteil, Oberfläche des Webservers, die sich unterscheidet, je nachdem, ob sich ein Admin oder ein Mitglied einloggt
-|Sicht
+|Oberfläche des Webservers, die sich unterscheidet, je nachdem, ob sich ein Admin oder ein Mitglied einloggt
+|Sicht, Webseite
 
 |Anwesenheitserfassung
 a|
-* eine Hauptfunktion, die das System erfüllt
+* eine Hauptfunktion, die vom Terminal erfüllt wird
 * durch An- und Abmelden der Piloten auf dem Flugplatz ergibt die Anwesenheitserfassung das Anwesenheitsprotokoll
-* nur durch einen Admin einsehbar
-|Anwesenheitsprotokollierung
+|Anwesenheitsprotokollierung, Protokollierung
 
 |Anwesenheitsprotokoll
 |ein Datenobjekt, eine fortlaufende Liste, die die Aktivitäten auf dem Flugplatz wiederspiegelt
 |Protokoll
 
-|Zeiterfassung|die gespeicherten Zeitdaten zu einem zugehörigen RFID Tag|-
-
 |Flugbuch
-|umfasst die bisherige Lösung der Anwesenheitserfassung
+|physisches Buch, umfasst die bisherige Lösung der Anwesenheitserfassung
 |-
 
 |Vandalismus
@@ -97,19 +108,15 @@ a|
 |ein Stakeholder, der die Betreiber des Vereins dazu verfplichtet ein Flugbuch über die Aktivitäten auf dem Flugplatz zu führen 
 |-
 
-//|"Größere" Flugzeuge|??|-
-
-|Sicherheit|??|-
-
-|Datenbanksystem
-|ein Systembestanteil, der die Datenbank verwaltet und Anfragen bearbeitet
-|DBS
+|Datenbank
+|befindet sich auf dem Webserver und stellt die hauptsächliche Datenhaltung des Systems dar
+|DB
 
 |Lokaler Cache
 a|
-* ein Datenobjekt, welches sich auf dem Raspi befindet und periodisch mit der Datenbank synchronisiert wird
+* befindet sich auf dem Raspi und wird periodisch mit der Datenbank synchronisiert
 * sichert die Anwesenheitserfassung, wenn der Webserver nicht erreichbar ist
-|Cache
+|Cache, Zwischenspeicher
 
 |Taster
 |ein Systembestandteil zur Eingabe, der den Piloten beim An- und Abmelden verschiedene Funktionen erfüllt (Flugleiter bestimmen, alle Mitglieder abmelden, ...)
@@ -117,19 +124,23 @@ a|
 
 |RGB-LED
 |ein Systembestandteil zur Ausgabe, das den Piloten beim An- und Abmelden verschiedene Rekationen/Zustände des Systems durch verschiedene Farben, Signale verdeutlicht
-|LED, Meldeleuchte, Signallämpchen
+|LED, Meldeleuchte
 
 |RFID-Ausweis
-|ein Systembestandteil, das einem Piloten zugeordnet ist und es ihm ermöglicht, sich am Flugplatz zu authentifizieren und sich bspw. an- und abzumelden.
-|RFID-Tag, Ausweis
+|ein Systembestandteil, das einem Piloten zugeordnet ist und es ihm ermöglicht, sich am Flugplatz zu identifizieren und sich an- und abzumelden.
+|RFID-Tag, Ausweis, RFID-Karte
 
 |RFID-Scanner
-|ein Systembestanteil zur Eingabe, das dem System zur Authentifizierung eines Piloten am Flugplatz dient
-|Scanner, RFID-Reader
+|ein Systembestanteil zur Eingabe, das dem System zur Identifizierung eines Piloten am Flugplatz dient
+|Scanner, RFID-Reader, Reader
 
 |Raspberry Pi
-|ein Systembestandteil, Mini-Computer, der am Flugplatz installiert ist und die Anwesenheitserfassung vor Ort verwaltet
+|ein Systembestandteil, Mini-Computer, der am Terminal installiert ist und die Anwesenheitserfassung vor Ort ermöglicht
 |Raspberry, Raspi
+
+|Projekt Wetterstation
+|ein System, welches die Systemumgebung zum Großteil bereitgestellt hat
+|Wetterstation
 
 |===
 
@@ -140,7 +151,7 @@ a|
 |Abkürzung|Bedeutung|Erläuterung
 
 |RFID
-|engl.: "radio-frequency idenfication"; Identifikation mittels elektromagnetischer Wellen
+|engl.: "radio-frequency idenfication", Identifikation mittels elektromagnetischer Wellen
 |Kommunikationsart zwischen Ausweis und Scanner
 
 |Raspi
@@ -148,18 +159,38 @@ a|
 |siehe Begriffsdefinition
 
 |DB|Datenbank|Datenobjekt, siehe Begriffsdefinition
-|DBS|Datenbanksystem|Systembestandteil, siehe Begriffsdefinition
-|RGB-LED|engl.: RGB - "red, green, blue", LED - "light-emitting diode";|siehe Begriffsdefinition
+|RGB-LED|engl.: RGB - "red, green, blue", LED - "light-emitting diode"|siehe Begriffsdefinition
 
 |===
 
 == Verzeichnis der Datenstrukturen
 [%header]
 |===
-|Bezeichnung|	Definition |	Format | Gültigkeitsregeln | Aliase
-|Anmeldedaten|x|x|x|Login
-|Zeiterfassung|xx|xx|xx|Zeit
-|Besondere Vorkommnisse|xx|xx|xx|
+|Bezeichnung|Definition|Format|Gültigkeitsregeln|Aliase
+
+|Anmeldedaten
+|Nutzername und Passwort für die Anmeldung am Webserver
+|-
+|-
+|Login-Daten, Login
+
+|Protokolldaten
+|ein oder mehrere Protokolleinträge in Form von Flugsessions
+|mehrere: Date, Boolean
+|Pilot muss existieren und Endzeit > Startzeit
+|Protokolleintrag, Protokolleinträge, (Flugsessions)
+
+|Pilotendaten
+|Vorname und Nachname des Piloten, Eintrittsdatum in den Verein, Verweis auf die RFID-Kennung
+|mehrere: String, Date
+|Pilotenname semantisch korrekt, Eintrittsdatum < aktuelles Datum, RFID-Kennung muss exisieren
+|-
+
+|RFID-Kennung
+|Code, der einen RFID-Ausweis eindeutig beschreibt
+|Integer
+|-
+|Kennung
 
 |===
 
