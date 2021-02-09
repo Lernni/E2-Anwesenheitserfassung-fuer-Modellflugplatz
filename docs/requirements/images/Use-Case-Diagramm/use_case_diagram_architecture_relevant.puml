@@ -1,0 +1,45 @@
+@startuml use_case_diagram_architecture_relevant
+
+left to right direction
+
+actor Pilot
+
+actor Administrator
+
+rectangle "Anwesenheitserfassung des Modellflugplatzes" {
+  
+  rectangle "Terminal (Flugplatz)"{
+
+  (UC01: Piloten anmelden)
+  (UC02: Piloten abmelden)
+
+  }
+  
+  rectangle "Webserver"{
+  
+  (UC03: Pilotendaten anlegen)
+  (UC04: Piloten deaktivieren)
+  (UC05: Pilotendaten modifizieren)
+  (UC06: Alle Piloten abmelden)
+  (UC08: Protokoll einsehen)
+  
+  }
+}
+
+
+Pilot --> (UC01: Piloten anmelden)
+
+Pilot --> (UC02: Piloten abmelden)
+
+
+Administrator --> (UC03: Pilotendaten anlegen) 
+
+Administrator --> (UC04: Piloten deaktivieren) 
+
+Administrator --> (UC05: Pilotendaten modifizieren) 
+
+Administrator --> (UC08: Protokoll einsehen) 
+
+Administrator --> (UC06: Alle Piloten abmelden)
+
+@enduml
