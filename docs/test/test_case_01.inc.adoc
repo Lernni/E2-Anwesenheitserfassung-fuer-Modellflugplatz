@@ -1,17 +1,17 @@
-= Test Case: TC01: Synchronisation testen
+== Test Case: TC01: Synchronisation testen
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-== Beschreibung
+=== Beschreibung
 
 In diesem Test-Case geht es darum zu schauen, wie schnell und zuverlässig die lokale Datenbank des Raspis nach einer Änderung der Datenbank des Webservers aktualisiert wird.
 Dazu soll ein neuer Pilot ins System aufgenommen werden. Nach der Anmeldung soll sich dieser *unverzüglich* am Terminal anmelden.
 
-== Vorbedingungen
-- Es muss noch nicht vergebene RFID Chips geben.
+=== Vorbedingungen
+- Es muss noch nicht vergebene RFID-Ausweise geben.
 - Der Raspi muss eine Internetverbindung haben.
 
 === Nachbedingungen

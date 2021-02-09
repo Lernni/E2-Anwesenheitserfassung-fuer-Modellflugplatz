@@ -1,14 +1,14 @@
-= Test Case: TC02: Belastbarkeit testen
+== Test Case: TC02: Belastbarkeit testen
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-== Beschreibung
-In diesem Test-Case geht es darum die Belastbarkeit des Systems zu testen, das heißt es sollen Situationen getestet werden, die entweder nur sehr selten oder durch böswillige Aktionen auftreten. Konkret soll verhindert werden, dass durch zu häufiges an- und abmelden in einem kurzen Zeitraum am Terminal eine Komponente des Systems zum Absturz gebracht wird.
+=== Beschreibung
+In diesem Test-Case geht es darum die Belastbarkeit des Systems zu testen, das heißt, es sollen Situationen getestet werden, die entweder nur sehr selten oder durch böswillige Aktionen auftreten. Konkret soll verhindert werden, dass durch zu häufiges An- und Abmelden in einem kurzen Zeitraum am Terminal eine Komponente des Systems zum Absturz gebracht wird.
 
-== Vorbedingungen
+=== Vorbedingungen
 - Es muss mindestens ein Pilot in der Datenbank vorhanden sein.
 - Der Raspi muss eine Internetverbindung haben.
 
