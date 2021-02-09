@@ -20,7 +20,7 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   rectangle "Webserver"{
 
   (UC03: Pilotendaten anlegen)
-  (UC04: Pilotendaten löschen)
+  (UC04: Piloten deaktivieren)
   (UC05: Pilotendaten modifizieren)
   (UC08: Protokoll einsehen)
   (UC09: Protokolldaten nachträglich einfügen)
@@ -41,7 +41,7 @@ Pilot --> (UC06: Alle Piloten abmelden)
 
 Administrator --> (UC03: Pilotendaten anlegen) 
 
-Administrator --> (UC04: Pilotendaten löschen) 
+Administrator --> (UC04: Piloten deaktivieren) 
 
 Administrator --> (UC05: Pilotendaten modifizieren) 
 
