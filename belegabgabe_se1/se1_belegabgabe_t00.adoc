@@ -48,18 +48,23 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 // Vision
 include::{docs-requirements}/Vision.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Use Case Model (inkludiert selbst die einzelnen usecase_spec_x.adoc Dateien)
 include::{docs-requirements}/use-case_model.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // System-wide Requirements
 include::{docs-requirements}/system-wide_requirements.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Glossar
 include::{docs-requirements}/glossary.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Domänenmodell
 include::{docs-requirements}/domain_model.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 
 // --- Projektdokumentation ---
@@ -72,15 +77,19 @@ include::{docs-requirements}/domain_model.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 // Projektplan
 include::{docs-project-management}/project_plan.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Risikoliste
 include::{docs-project-management}/risk_list.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Iteration 1
 include::{docs-project-management}/iteration_plan_01.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Iteration 3
 include::{docs-project-management}/iteration_plan_03.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 
 // --- Entwurfsdokumentation ---
@@ -92,14 +101,17 @@ include::{docs-project-management}/iteration_plan_03.adoc[lines=1..1;4..-1,level
 // Architektur-Notizbuch
 :imagesdir: {docs-architecture}/images
 include::{docs-architecture}/architecture_notebook.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Test Cases
 :imagesdir: {docs-test}/images
 include::{docs-test}/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 // Design
 :imagesdir: {docs-development}/images
 include::{docs-development}/design.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 <<<
 
 // ---------------------------------------------
