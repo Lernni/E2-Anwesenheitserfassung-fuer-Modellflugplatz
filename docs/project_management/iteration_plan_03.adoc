@@ -1,9 +1,8 @@
-= Iteration Plan 01: E2 Anwesenheitserfassung Modellflugplatz
+= Iterationsplan 03
 Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+:imagesdir: {docs-project-management}/images/project_status
 
 == Meilensteine
 //Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
@@ -11,7 +10,7 @@ include::../_includes/default-attributes.inc.adoc[]
 [%header, cols="3,1"]
 |===
 | Meilenstein
-| Datum
+| Kalendarwoche
 
 | Beginn der Iteration | KW 1
 | Ende der Iteration | KW 2
@@ -39,47 +38,46 @@ Hinweise zur Darstellung:
 * AM ... Allgemeines Meeting mit Themensteller
 
 Diese Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="1,3,1,1,1,2,1,1,1,1"]
+[%header, cols="1,3,1,1,1,2,1,1,1"]
 |===
-|WID
-| Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+|WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 1 | Wireframes erstellen | 7 | 24 | 90% | x | 3-4 | Alex | 9 | 2 | 
+| 1 | Wireframes erstellen | 7 | 24 | 90% | 3-4 | Alex | 9 | 2 | 
 
-2 | Weiterentwicklung Use-Cases | 1 | 120 | 100% | x | 2-3 | Analyse (+Hilfe Entwurf) | 22 | 0 |
+2 | Weiterentwicklung Use-Cases | 1 | 120 | 90% | 2-3 | Analyse (+Hilfe Entwurf) | 22 | 3 |
 
-3 | Erstellung Test-Cases | 2 | 6 | 40% | x | 3-4 | Alex | 4 | 1 |
+3 | Erstellung Test-Cases | 2 | 6 | 40% | 3-4 | Alex | 4 | 1 |
 
-4 | Glossar weiterentwickeln | 8 | 2 | 100% | x | 1-3 | Analyse | 3 | 0 |
+4 | Glossar weiterentwickeln | 8 | 2 | 90% | 1-3 | Analyse | 3 | 1 |
 
-5 | Weiterentwicklung Risikoanalyse | 10 | 2 | 80% | x | 1-4 | Analyse (Rest) | 8 | 0 |
+5 | Weiterentwicklung Risikoanalyse | 10 | 2 | 80% | 1-4 | Analyse (Rest) | 8 | 1 |
 
-6 | Systemkonzept erstellen (C4) | 9 | 6 | 100% | x | 3 | Entwurf | 20 | 15 |
+6 | Systemkonzept erstellen (C4) | 9 | 6 | 100% | 3 | Entwurf | 4 | 0 |
 
-7 | Bearbeitung Risikoanalyse | 11 | 24 | 80% | x | 1-4 | Analyse, Simon | 9 | 4 |
+7 | Bearbeitung Risikoanalyse | 11 | 10 | 80% | 1-4 | Analyse, Simon | 9 | 4 |
 
-8 | Zusammenstellung Wireframes, Use-Cases für AM | 12! | 2 | 100% | x | 1 | Analyse, Entwurf, Alex | 3 | 0 |
+8 | Zusammenstellung Wireframes, Use-Cases für AM | 12! | 2 | 100% | 1 | Analyse, Entwurf, Alex | 3 | 0 |
 
-9 | System-Wide-Requirementes erstellen | 3 | 2-4 | 30% | x | 1 | Analyse, Entwurf | 4 | 14 |
+9 | System-Wide-Requirementes erstellen | 3 | 4 | 60% | 1 | Analyse, Entwurf | 4 | 3 |
 
-10 | Bearbeitung Architecture Notebook | 4 | 24 | 40% | x | 3-4 | Entwurf | 4 | 7 |
+10 | Bearbeitung Architecture Notebook | 4 | 24 | 60% | 3-4 | Entwurf | 4 | 4 |
 
-11 | Bedienungsplan für Terminal erstellen | 6 | 6 | 100% | x | 1-2 | Lenny, Alex | 5 | 0 |
+11 | Bedienungsplan für Terminal erstellen | 6 | 6 | 90% | 1-2 | Lenny, Alex | 5 | 1 |
 
-12 | Use-Case-Diagramm (vorläufig) finalisieren | 5 | 6 | 100% | x | 3 | Jakob | 3 | 0 |
+12 | Use-Case-Diagramm (vorläufig) finalisieren | 5! | 6 | 100% | 3 | Jakob | 3 | 0 |
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
 * Use-Case-Diagramm Vorstellung
-* Use-Cases-Vorstellen
+* Use-Cases vorstellen
 * Aufgetretene Fragen stellen
 * Bedienungsplan vorstellen
 
 == Aufgetretene Probleme
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
-* Es wurden zu viele UseCases zu detailliert beschrieben. Auch müssen nicht Software-relevante Elemente entfernt werden
+* Es wurden zu viele Use-Cases zu detailliert beschrieben. Auch müssen nicht systemrelevante Elemente und nichtfunktionale Anforderungen aus den Use-Cses entfernt werden.
 * Die Bedienung des Terminals wurde zu kompliziert geplant. Für die Akzeptanz der Nutzer müssen einige Prozesse, trotz erhöhter Fehleranfälligkeit, vereinfacht werden.
 * Das AM wurde zu ausführlich und lang gestaltet. Im nächsten AM müssen die Themengebiete eingeschränkt werden
 
@@ -96,7 +94,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 * Alle Work Items mit ! erreicht
 * Dem Themensteller angekündigte Änderungen/Ziele erfüllt und präsentiert
 * Fragen dokumentiert & Antwort erhalten
-* Mindestens 90% der Work Items für die aktuelle Iteration mit mindestens 80% Vollständigkeit (außer die planmäßig in nächste Iteration zu übertragende Work Items)
+* Mindestens 70% der Work Items für die aktuelle Iteration mit mindestens 80% Vollständigkeit (außer die planmäßig in nächste Iteration zu übertragende Work Items)
 
 //* 97% der Testfälle auf Systemebene sind erfolgreich.
 //* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
@@ -110,31 +108,44 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 1
-| Assessment Datum | 03.12.2020
-| Teilnehmer | Analyse, Leiter, TS
+| Assessment Ziel | Iteration 3
+| Assessment Datum | 14.01.2021
+| Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün-Gelb (siehe Probleme)
 |===
-
-
 
 === Teammeeting
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 1
-| Assessment Datum | 09.12.2020
+| Assessment Ziel | Iteration 3
+| Assessment Datum | 11.01.2021
+| Teilnehmer | Entwurf
+| Projektstatus	| Grün-Gelb (siehe Probleme)
+|===
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Iteration 3
+| Assessment Datum | 13.01.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün-Gelb (siehe Probleme)
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
-Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements soweit in Ordnung und werden in die nächste Iteration übernommen.
+Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sin in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
 Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen zur Nachbesserung in die nächste Iteration übernommen werden.
+
+*Projektfortschritt*
+
+Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
+
+.Projektfortschritt: Iteration 3
+image::Iteration3.png[]
 
 //* Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.

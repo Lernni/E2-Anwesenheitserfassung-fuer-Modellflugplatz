@@ -1,9 +1,8 @@
-= Iteration Plan 01: E2 Anwesenheitserfassung Modellflugplatz
+= Iterationsplan 01
 Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+:imagesdir: {docs-project-management}/images/project_status
 
 == Meilensteine
 //Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
@@ -11,7 +10,7 @@ include::../_includes/default-attributes.inc.adoc[]
 [%header, cols="3,1"]
 |===
 | Meilenstein
-| Datum
+| Kalendarwoche
 
 | Beginn der Iteration | KW 49
 | Ende der Iteration | KW 50
@@ -40,42 +39,41 @@ Hinweise zur Darstellung:
 * AM ... Allgemeines Meeting mit Themensteller
 
 Diese Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="1,3,1,1,1,2,1,1,1,1"]
+[%header, cols="1,3,1,1,1,2,1,1,1"]
 |===
-|WID
-| Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+|WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 1 | Kontakaufnahme Kunde & Tutor | 2 | 1 | 100% | x | 1 | Simon | 1 | 0 | 
+| 1 | Kontaktaufnahme Kunde & Tutor | 2 | 1 | 100% | 1 | Simon | 1 | 0 | 
 
-2 | Einarbeitung in verschiendene fachliche Bereiche | 7 | 120 | 90% | x | 1-2 | Alle | 20 (?) | x |
+2 | Einarbeitung in die fachlichen Bereiche des OpenUP | 7 | 120 | 90% | 1-2 | Alle | 20 | 3 |
 
-3 | Entwicklung Projektplan | 3 | 6 | 80% | x | 1 | Alex | 4 | 1 |
+3 | Entwicklung Projektplan | 3 | 6 | 80% | 1 | Alex | 4 | 1 |
 
-4 | Rollenzuweisungen | 1 | 1 | 100% | x | 1 | Alle | 1 | 0 |
+4 | Rollenzuweisungen | 1 | 1 | 100% | 1 | Alle | 1 | 0 |
 
-5 | Recherche zu TS & Projekt | 6 | 24 | 100% | x | 1-2 | Analyse (Rest) | 8 | 0 |
+5 | Recherche zu TS & Projekt | 6 | 24 | 100% | 1-2 | Analyse (Rest) | 8 | 0 |
 
-6 | Bearbeitung Vision | 9 | 120 | 60% | x | 1-2 | Analyse | 20 | 15 |
+6 | Bearbeitung Vision | 9 | 80 | 60% | 1-2 | Analyse | 10 | 5 |
 
-7 | Bearbeitung Risikoanalyse | 11 | 24 | 40% | x | 1-4 | Analyse, Simon | 5 | 8 |
+7 | Bearbeitung Risikoanalyse | 11 | 24 | 50% | 1-4 | Analyse, Simon | 5 | 8 |
 
-8 | Zusammenstellung Analyseerkenntnisse für AM | 13! | 2 | 100% | x | 1 | Analyse | 3 | 0 |
+8 | Zusammenstellung Analyseerkenntnisse für AM | 13! | 2 | 100% | 1 | Analyse | 3 | 0 |
 
-9 | Essence-Struktur in Projektvorgehen implementieren | 8 | 2 | 100% | x | 1 | Alle | 5 | 0 |
+9 | Essence-Modell in Projektvorgehen implementieren | 8 | 2 | 100% | 1 | Alle | 5 | 0 |
 
-10 | GitHub Repository erstellen | 4 | 1 | 100% | x | 1 | Simon | 1 | 0 |
+10 | GitHub Repository erstellen | 4 | 1 | 100% | 1 | Simon | 1 | 0 |
 
-11 | Konfiguration Repository (Lizenz, README) | 5 | 2 | 100% | x | 1-2 | Lenny | 2 | 0 |
+11 | Konfiguration Repository (Lizenz, README) | 5 | 2 | 100% | 1-2 | Lenny | 1 | 0 |
 
-12 | Bearbeitung Glossary | 10 | 24 | 60% | x | 1-x | Analyse | 8 | 3 |
+12 | Bearbeitung Glossary | 10 | 24 | 60% | 1-2 | Analyse | 8 | 3 |
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
 * Vorstellung Analyseteam/Leiter  
 * Kennenlernen der TS
-* "Betreuungswünsche" und dem TS wichtige Eckpunkte der Software herausfinden
+* "Betreuungswünsche" und wichtige Eckpunkte der Software herausfinden
 * Erste aufgetretene Fragen stellen
 * Vision aus PDF mit Realvision vergleichen 
 
@@ -124,13 +122,28 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Projektstatus im Team	| Grün
 |===
 
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Iteration 1
+| Assessment Datum | 11.12.2020
+| Teilnehmer | Entwurf
+| Projektstatus im Team	| Grün
+|===
+
 *Beurteilung im Vergleich zu den Zielen*
 
-Insbesondere das Ziel des Kundenkontaktes mit der Beantwortung unserer Fragen war erfolgreich. Auch wurde das Ziel der Schaffung einer guten Team-Arbeitsatmosphäre mit fairer Aufgabenverteilung erfüllt. Noch nicht ausreichend bearbeitet sind die Dokumentationen (z.B. RiskList und Projektplan). Hier besteht die Notwendigkeit einer höheren Priorisierung in der Folgeiteration.
+Insbesondere das Ziel des Kundenkontaktes mit der Beantwortung unserer Fragen war erfolgreich. Auch wurde das Ziel der Schaffung einer guten Team-Arbeitsatmosphäre mit fairer Aufgabenverteilung erfüllt. Noch nicht ausreichend bearbeitet sind die Dokumentationen (z.B. Risk-List und Projektplan). Hier besteht die Notwendigkeit einer höheren Priorisierung in der folgenden Iteration.
 
 *Geplante vs. erledigte Aufgaben*
 
 Es wurden alle Bewertungskriterien erfüllt. Die Dokumentationen müssen in der Folgeiteration verstärkteren Fokus erhalten. 
+
+*Projektfortschritt*
+
+Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
+
+.Projektfortschritt: Iteration 1
+image::Iteration1.png[]
 
 //* Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.

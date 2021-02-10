@@ -1,9 +1,8 @@
-= Iteration Plan 01: E2 Anwesenheitserfassung Modellflugplatz
+= Iterationsplan 02
 Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+:imagesdir: {docs-project-management}/images/project_status
 
 == Meilensteine
 //Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
@@ -11,7 +10,7 @@ include::../_includes/default-attributes.inc.adoc[]
 [%header, cols="3,1"]
 |===
 | Meilenstein
-| Datum
+| Kalendarwoche
 
 | Beginn der Iteration | KW 51
 | Ende der Iteration | KW 53
@@ -115,5 +114,11 @@ Es wurden alle Ziele erfüllt. Aufgaben mit Nachholbedarf aus der vorherigen Ite
 *Geplante vs. erledigte Aufgaben*
 
 Es wurden alle Bewertungskriterien erfüllt.
+
+*Projektfortschritt*
+Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
+
+.Projektfortschritt: Iteration 2
+image::Iteration2.png[]
 //* Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
