@@ -65,7 +65,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 7 | Bearbeitung Risikoanalyse | 11 | 24 | 50% | 1-4 | Analyse, Simon | 5 | 8 |
 
-8 | Zusammenstellung Analyseerkenntnisse für AM | 13! | 2 | 100% | 1 | Analyse | 3 | 0 |
+8 | Zusammenstellung Analyseerkenntnisse für AM | 12! | 2 | 100% | 1 | Analyse | 3 | 0 |
 
 
 |===
