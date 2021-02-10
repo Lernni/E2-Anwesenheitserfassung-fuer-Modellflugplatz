@@ -43,30 +43,31 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
+| 4 | Rollenzuweisungen | 1 | 1 | 100% | 1 | Alle | 1 | 0 |
 
-| 1 | Kontaktaufnahme Kunde & Tutor | 2 | 1 | 100% | 1 | Simon | 1 | 0 | 
-
-2 | Einarbeitung in die fachlichen Bereiche des OpenUP | 7 | 120 | 90% | 1-2 | Alle | 20 | 3 |
+1 | Kontaktaufnahme Kunde & Tutor | 2 | 1 | 100% | 1 | Simon | 1 | 0 | 
 
 3 | Entwicklung Projektplan | 3 | 6 | 80% | 1 | Alex | 4 | 1 |
 
-4 | Rollenzuweisungen | 1 | 1 | 100% | 1 | Alle | 1 | 0 |
+10 | GitHub Repository erstellen | 4 | 1 | 100% | 1 | Simon | 1 | 0 |
+
+11 | Konfiguration Repository (Lizenz, README) | 5 | 2 | 100% | 1-2 | Lenny | 2 | 0 |
 
 5 | Recherche zu TS & Projekt | 6 | 24 | 100% | 1-2 | Analyse (Rest) | 8 | 0 |
 
-6 | Bearbeitung Vision | 9 | 80 | 60% | 1-2 | Analyse | 10 | 5 |
+2 | Einarbeitung in die fachlichen Bereiche des OpenUP | 7 | 120 | 90% | 1-2 | Alle | 20 | 3 |
+
+9 | Essence-Modell in Projektvorgehen implementieren | 8 | 2 | 100% | 1 | Alle | 5 | 0 |
+
+6 | Bearbeitung Vision | 9 | 120 | 60% | 1-2 | Analyse | 15 | 10 |
+
+12 | Bearbeitung Glossary | 10 | 24 | 60% | 1-2 | Analyse | 8 | 3 |
 
 7 | Bearbeitung Risikoanalyse | 11 | 24 | 50% | 1-4 | Analyse, Simon | 5 | 8 |
 
 8 | Zusammenstellung Analyseerkenntnisse für AM | 13! | 2 | 100% | 1 | Analyse | 3 | 0 |
 
-9 | Essence-Modell in Projektvorgehen implementieren | 8 | 2 | 100% | 1 | Alle | 5 | 0 |
 
-10 | GitHub Repository erstellen | 4 | 1 | 100% | 1 | Simon | 1 | 0 |
-
-11 | Konfiguration Repository (Lizenz, README) | 5 | 2 | 100% | 1-2 | Lenny | 1 | 0 |
-
-12 | Bearbeitung Glossary | 10 | 24 | 60% | 1-2 | Analyse | 8 | 3 |
 |===
 
 *Aufgaben Team-TS-Meeting:*
