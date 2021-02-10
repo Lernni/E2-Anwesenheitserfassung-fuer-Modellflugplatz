@@ -93,7 +93,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 * Alle Work Items mit ! erreicht
 * Dem Themensteller angekündigte Änderungen/Ziele erfüllt und präsentiert
 * Fragen dokumentiert & Antwort erhalten
-* Mindestens 90% der Work Items für die aktuelle Iteration mit mindestens 80% Vollständigkeit (außer die planmäßig in nächste Iteration zu übertragende Work Items)
+* Mindestens 90% der Work Items wurden mit mindestens 80% Vollständigkeit bearbeitet. Ausgenommen sind die Aufgaben, die planmäßig in die nächste Iteration übertragen werden. Sprich, maximal 10% der Aufgaben wurden mit weniger als 80% bearbeitet
 
 //* 97% der Testfälle auf Systemebene sind erfolgreich.
 //* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
