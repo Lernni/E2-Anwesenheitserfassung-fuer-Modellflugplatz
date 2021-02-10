@@ -43,9 +43,9 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 1 | Beginn Use-Cases | 1 | 120 | 50% | x | 3 | Analyse + Entwurf | 15 | 15 | 
+| 201 | Bearbeitung Use-Cases | 1 | 120 | 50% | x | 2-3 | Analyse + Entwurf | 15 | 15 | 
 
-6 | Bearbeitung Vision | 2 | 120 | 100% | x | 1-2 | Analyse | 25 | 0 |
+6 | Bearbeitung Vision | 2 | 120 | 100% | link:vision.adoc[Vision] | 1-2 | Analyse | 25 | 0 |
 
 3 | Entwicklung Projektplan | 3 | 6 | 100% | x | 1 | Alex | 5 | 0 |
 
@@ -114,7 +114,7 @@ Es wurden alle Ziele erfüllt. Aufgaben mit Nachholbedarf aus der vorherigen Ite
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt.
+Es wurden fast alle Bewertungskriterien erfüllt. Die geplanten Iterationen für das Glossary müssen auf die 3. Iteration verlängert werden, da einige Begrifflichkeiten noch geklärt werden müssen.
 
 *Projektfortschritt*
 Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
