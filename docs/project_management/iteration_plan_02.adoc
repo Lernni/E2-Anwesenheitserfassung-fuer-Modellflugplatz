@@ -47,11 +47,11 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 6 | Bearbeitung Vision | 2 | 120 | 100% | link:../requirements/vision.adoc[Vision] | 1-2 | Analyse | 25 | 0 |
 
-3 | Entwicklung Projektplan | 3 | 6 | 100% | link:../project_plan.adoc[Projektplan] | 1 | Alex | 5 | 0 |
+3 | Entwicklung Projektplan | 3 | 6 | 100% | link:project_plan.adoc[Projektplan] | 1 | Alex | 5 | 0 |
 
 2 | Einarbeitung in verschiendene fachliche Bereiche des OpenUP | 4 | 120 | 100% |  | 1-2 | Alle | 23 | 0 |
 
-7 | Bearbeitung Risikoanalyse | 5 | 24 | 70% | link:../risk_list.adoc[Risk List] | 1-4 | Analyse, Simon | 8 | 5 |
+7 | Bearbeitung Risikoanalyse | 5 | 24 | 70% | link:risk_list.adoc[Risk List] | 1-4 | Analyse, Simon | 8 | 5 |
 
 12 | Bearbeitung Glossary | 6 | 24 | 80% | link:../requirements/glossary.adoc[Glossary] | 1-2 | Analyse | 9 | 2 |
 
