@@ -137,7 +137,7 @@ Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkei
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen zur Nachbesserung in die nächste Iteration übernommen werden.
+Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
 
 *Projektfortschritt*
 
