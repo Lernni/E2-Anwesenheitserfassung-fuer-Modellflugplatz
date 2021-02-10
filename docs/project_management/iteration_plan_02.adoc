@@ -55,6 +55,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 12 | Bearbeitung Glossary | 6 | 24 | 80% | x | 1-2 | Analyse | 9 | 2 |
 
+|===
 
 *Aufgaben Team-TS-Meeting:*
 
