@@ -45,7 +45,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 | 201 | Bearbeitung Use-Cases | 1 | 120 | 50% | x | 2-3 | Analyse + Entwurf | 15 | 15 | 
 
-6 | Bearbeitung Vision | 2 | 120 | 100% | link:vision.adoc[Vision] | 1-2 | Analyse | 25 | 0 |
+6 | Bearbeitung Vision | 2 | 120 | 100% | link:../requirements/vision.adoc[Vision] | 1-2 | Analyse | 25 | 0 |
 
 3 | Entwicklung Projektplan | 3 | 6 | 100% | x | 1 | Alex | 5 | 0 |
 
