@@ -45,15 +45,15 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 | 1 | Beginn Use-Cases | 1 | 120 | 50% | x | 3 | Analyse + Entwurf | 15 | 15 | 
 
-2 | Weiterentwicklung Vision/Glossary | 3 | 2 | 100% | x | 1-2 | Analyse | 3 | 0 |
+6 | Bearbeitung Vision | 2 | 120 | 100% | x | 1-2 | Analyse | 25 | 0 |
 
-3 | Entwicklung Projektplan | 4 | 2 | 100% | x | 1 | Alex | 1 | 0 |
+3 | Entwicklung Projektplan | 3 | 6 | 100% | x | 1 | Alex | 5 | 0 |
 
-4 | Einarbeitung in verschiendene fachliche Bereiche | 5 | 6 | 100% | x | 1-2 | Alle | 5 | 0 |
+2 | Einarbeitung in verschiendene fachliche Bereiche des OpenUP | 4 | 120 | 100% | x | 1-2 | Alle | 23 | 0 |
 
-5 | Bearbeitung Vision | 2 | 24 | 100% | x | 1-2 | Analyse | 15 | 0 |
+7 | Bearbeitung Risikoanalyse | 5 | 24 | 70% | x | 1-4 | Analyse, Simon | 8 | 5 |
 
-6 | Weitere Bearbeitung Risikoanalyse | 6 | 6 | 70% | x | 1-4 | Analyse, Simon | 5 | 3 |
+12 | Bearbeitung Glossary | 6 | 24 | 80% | x | 1-2 | Analyse | 9 | 2 |
 
 
 *Aufgaben Team-TS-Meeting:*
@@ -77,7 +77,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 * Alle Work Items mit ! erreicht
 * Dem Themensteller angekündigte Änderungen/Ziele erfüllt und präsentiert
 * Fragen dokumentiert & Antwort erhalten
-* Mindestens 90% der Work Items für die aktuelle Iteration mit mindestens 80% Vollständigkeit (außer die planmäßig in nächste Iteration zu übertragende Work Items)
+* Mindestens 90% der Work Items wurden mit mindestens 80% Vollständigkeit bearbeitet. Ausgenommen sind die Aufgaben, die planmäßig in die nächste Iteration übertragen werden. Sprich, maximal 10% der Aufgaben wurden mit weniger als 80% bearbeitet
 
 //* 97% der Testfälle auf Systemebene sind erfolgreich.
 //* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
