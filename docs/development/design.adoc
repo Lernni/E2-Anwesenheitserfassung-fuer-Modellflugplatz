@@ -37,25 +37,42 @@ Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabel
 
 == Graphische Designaspekte
 
-== Terminal
+Das System unterscheidet sich in zwei physisch getrennte Bereche:
+
+=== Terminal
+
+In der folgenden Übersicht sind die verschiedenen Bedienungsmöglichkeiten am Terminal vor Ort sowie die Reaktion des Systems in Form einer RGBW-LED angegeben. Der Button ist ein dort platzierter Druckknopf und die Karte der RFID-Ausweis eines Piloten. Des Weiteren sind am unteren Ende der Grafik die Zustände der LED während der Nicht-Benutzung des Terminals dargestellt.
 
 :imagesdir: {docs-architecture}/images/Statusmeldungen
 
 .Statusmeldungen/Bedienungsanleitung am Terminal
 image::Status_und_Bedienungsanleitung_10_02_2021.png[Statusmeldungen Terminal, width=60%, align="center"]
 
-== Webserver
+=== Webserver
 
-=== Wireframe
+==== Wireframe
 
-- Protokoll als Liste
-- Popup-Meldungen als Bestätigung
+Großteiltig sind die Wireframes in den dazu passenden Use Cases eingefügt. Sämtliche Wireframes sind zudem unter https://github.com/simonherbstrith/E2-Anwesenheitserfassung-fuer-Modellflugplatz/tree/master/docs/requirements/images/Wireframes zu finden.
+
+Weitere Festlegungen zur Darstellung und Bedienung der Website:
+* Die Protokolldaten werden als Liste im Reiter "Protokoll" dargestellt. Eine Zeile des Protokolls bildet dabei eine Flugsession eines Piloten ab.
+* Als Bestätigung zur Ausführung von essentiellen Funktionen wird ein Bestätigungs-Fenster entwickelt. Dies erscheint beispielsweise beim Deaktivieren von Piloten und ist entweder mit "Ja" (Ausführung) oder "Nein" (Abbruch) zu beantworten.
+
+Für eine Übersicht der verschiedenen Wireframes und deren Beziehungen wurde folgendes Diagramm erstellt:
+
+.Verlinkung/Zusammenhänge zwischen Wireframes
+image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
+
+Das Wireframe "Startseite Admin" ist nicht in Use Cases platziert und wird deshalb im Folgenden erläutert. Aus diesem Wireframe lässt sich ebenso das Wireframe "Startseite" für Nicht-Admins ableiten, bei welchem lediglich die Admin- sowie der Pilotenbereiche nicht vorhanden sind (siehe Startseite bei Wireframes). Beide Seiten sind nur durch einen Login mit Nutzername und Passwort erreichbar (siehe Login Seite bei Wireframes).
+
+Im oberen Teil des Wireframes "Startseite Admin" sind die aktuell aktiven Piloten sichtbar. Dies ist aus folgenden Gründen relevant:
+* Bin ich als momentan aktiv eingetragen? (z.B. bei Unsicherheit, ob die An-/Abmeldung funktioniert hat)
+* Ist noch ein weiterer Pilot aktiv? (z.B. falls letzte Person vor Ort -> alle Mitglieder abmelden (UC 06))
+* Wie viele Piloten sind momentan aktiv? (da ab 3 Piloten ein Flugleiter notwendig ist (UC 07))
+
+Unterhalb dieses Bereiches sind weitere Funktionalitäten für angemeldete Admins verfügbar.
 
 :imagesdir: {docs-requirements}/images/Wireframes
 
 .Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
 image::Startseiten/Startseite_Admin_neu.png[Startseite Admin, width=70%, align="center"]
-
-
-.Verlinkung/Zusammenhänge zwischen Wireframes
-image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
