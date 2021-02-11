@@ -61,6 +61,8 @@ Weitere Festlegungen zur Darstellung und Bedienung der Website:
 
 Für eine Übersicht der verschiedenen Wireframes und deren Beziehungen wurde folgendes Diagramm erstellt:
 
+:imagesdir: {docs-requirements}/images/Wireframes
+
 .Verlinkung/Zusammenhänge zwischen Wireframes
 image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
 
@@ -72,8 +74,6 @@ Im oberen Teil des Wireframes "Startseite Admin" sind die aktuell aktiven Pilote
 * Wie viele Piloten sind momentan aktiv? (da ab 3 Piloten ein Flugleiter notwendig ist (UC 07))
 
 Unterhalb dieses Bereiches sind weitere Funktionalitäten für angemeldete Admins verfügbar.
-
-:imagesdir: {docs-requirements}/images/Wireframes
 
 .Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
 image::Startseiten/Startseite_Admin_neu.png[Startseite Admin, width=70%, align="center"]
