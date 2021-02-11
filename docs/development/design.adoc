@@ -9,14 +9,21 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Technische Designaspekte
 
-- Datenbankmodell
+:imagesdir: {docs-requirements}/images/Datenmodell
+
+.Datenbankmodell
+image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
+
 - Synchronisierung Ablauf (grob)
 
 == Graphische Designaspekte
 
 == Terminal
 
-- Statusmeldungen/Ausgabezutsände
+:imagesdir: {docs-architecture}/images/Statusmeldungen
+
+.Statusmeldungen/Bedienungsanleitung am Terminal
+image::Status_und_Bedienungsanleitung_10_02_2021.png[Statusmeldungen Terminal, width=60%, align="center"]
 
 == Webserver
 
@@ -24,5 +31,12 @@ include::../_includes/default-attributes.inc.adoc[]
 
 - Protokoll als Liste
 - Popup-Meldungen als Bestätigung
-- Einfügen Wireframe-Startseite
-- Wireframe-Verlinkung Übersicht
+
+:imagesdir: {docs-requirements}/images/Wireframes
+
+.Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
+image::Startseiten/Startseite_Admin_neu.png[Startseite Admin, width=70%, align="center"]
+
+
+.Verlinkung/Zusammenhänge zwischen Wireframes
+image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
