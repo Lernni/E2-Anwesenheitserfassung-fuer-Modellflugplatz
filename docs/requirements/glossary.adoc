@@ -58,7 +58,7 @@ a|
 
 |Flugsession
 |die Zeitdauer von Aktivitäten eines bestimmten Piloten auf dem Flugplatz zwischen An- und Abmeldung
-|Session
+|Session, Flugzeit
 
 |Flugplatz
 |Ort, an dem die Piloten ihre Modellflugzeuge fliegen können
