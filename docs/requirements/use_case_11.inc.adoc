@@ -1,5 +1,5 @@
 == Use-Case: UC11: Piloten reaktivieren
-:imagesdir: {docs-requirements}/images/Verwaltung
+:imagesdir: {docs-requirements}/images/Wireframes/Verwaltung
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Reaktiveren eines `Piloten` durch den *Administrator* beschrieben.
 

@@ -1,4 +1,4 @@
-:imagesdir: {docs-requirements}/images/Verwaltung
+:imagesdir: {docs-requirements}/images/Wireframes/Verwaltung
 == Use-Case: UC03: Pilotendaten anlegen
 
 ===	Kurzbeschreibung
