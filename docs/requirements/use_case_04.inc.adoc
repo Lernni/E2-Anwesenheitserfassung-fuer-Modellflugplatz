@@ -1,3 +1,4 @@
+:imagesdir: {docs-requirements}/images/Wireframes/Verwaltung
 == Use-Case: UC04: Piloten deaktivieren
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Deaktivieren eines `Piloten` durch den *Administrator* beschrieben.
@@ -28,3 +29,8 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 ==== Usability
 
 * Um das versehentliche Deaktivieren eines *Piloten* zu verhinden, sollte es ein Popup (o.ä.) geben, bei dem der Vorgang nochmals bestätigt werden muss.
+
+=== Wireframe
+
+.Wireframe: Piloten deaktivieren
+image::Pilotenübersicht_neu.png[Piloten deaktivieren, width=70%, align="center"]
