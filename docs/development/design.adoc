@@ -6,15 +6,34 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
+Dieses Dokument enthält Modelle/Beschreibungen zu diskreten Entwurfsentscheidungen, die aus einzelnen Use-Cases und den Konzepten des Architecture-Notebooks hervorgehen.
 
 == Technische Designaspekte
+Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Funktionsweise einzelner Systemkomponenten haben.
+
+=== Datenbankmodell
+Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Auweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:1-Beziehung zwischen den entsprechenden Tabellen. Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
 
 :imagesdir: {docs-requirements}/images/Datenmodell
 
 .Datenbankmodell
 image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
 
-- Synchronisierung Ablauf (grob)
+=== Synchronisation
+Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind.
+
+Mögliche Änderungen auf Seite des Webservers:
+
+* Neue Einträge in die Tabelle Pilot (neuen Pilot anlegen)
+* Modifizierte Einträge in der Tabelle Pilot (Pilotendaten modifizieren, Pilot deaktivieren, ...)
+* Neue Einträge in die Tabelle Flugsession (Flüge nachtragen)
+* Neue Einträge in die Tabelle RFID-Ausweis (RFID-Ausweis hinzufügen)
+
+Mögliche Änderungen auf Seite des Terminals:
+
+* Neue Einträge in die Tabelle Flugsession (An-/Abmeldung, Flugleiter bestimmen)
+
+Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen.
 
 == Graphische Designaspekte
 
