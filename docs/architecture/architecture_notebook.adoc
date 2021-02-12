@@ -25,7 +25,7 @@ Da das Terminal im Freien steht, wird auf eine *robuste Installation* gesetzt, u
 
 Darüber hinaus soll sich die Anlage möglichst *nahtlos in die Flugaktivitäten der Piloten eingliedern*. Das bedeutet, dass ein möglichst reibungsloser und schneller Ablauf der Prozesse am Terminal gewährleistet sein muss, um die Nutzungsbereitschaft hochzuhalten. Darüber hinaus soll sich das Terminal die meiste Zeit über nicht bemerkbar machen, d.h. solange niemand mit der Anlage interagiert oder Piloten auf dem Platz sind, gibt die Anlage auch kein visuelles Feedback.
 
-Um die oberen Aspekte, insbesondere die der Widerstandsfähigkeit gegenüber Vandalismus, zu erfüllen, wird auf eine *minimalisitische Ausgabe* als Feedback für den Benutzer des Terminals gesetzt (einfache RGB-Leuchte). Da viele der Piloten keine umfangreichen Kentnisse bezüglich der Funktionsweise der Anlage haben, stellt eine einfache und verständliche Lichtrückmeldung eine zentrale Umsetzungsrolle dar. Das selbe gilt auch für die Verwendung des RFID-Scanners und der Benutzung des Flugleiter-Knopfes.
+Um die oberen Aspekte, insbesondere die der Widerstandsfähigkeit gegenüber Vandalismus, zu erfüllen, wird auf eine *minimalisitische Ausgabe* als Feedback für den Benutzer des Terminals gesetzt (einfache RGB-LED). Da viele der Piloten keine umfangreichen Kentnisse bezüglich der Funktionsweise der Anlage haben, stellt eine einfache und verständliche Lichtrückmeldung eine zentrale Umsetzungsrolle dar. Das selbe gilt auch für die Verwendung des RFID-Scanners und der Benutzung des Flugleiter-Knopfes.
 
 Der Webserver soll durch eine *moderne Oberfläche* eine einfache Übersicht und Verwaltungsoption für die Administratoren bieten und für die Mitglieder eine beschränkte Übersicht über aktuelle Aktivitäten auf dem Flugplatz. Der Zugang für Administratoren und Mitglieder wird seperat *durch Logins gesichert*.
 
@@ -97,15 +97,15 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Aus NFAF-1 geht hervor, dass Admins und Piloten Anmeldedaten erhalten müssen, um sich auf dem Webserver einzuloggen. Im Gespräch mit den Themenstellern hat sich ergeben, dass es jeweils ein Zugang für die Rollen Administrator und ein Zugang für die Rolle Pilot geben soll. Jeder Pilot loggt sich dann also über den Piloten-Zugang ein mit beschränkter Funktionalität und jeder Admin über den Admin-Zugang mit vollem Funktionsumfang. Die konkrete technische Realisierung dieser getrennten Logins steht noch nicht fest.
+. Aus NFAF-1 geht hervor, dass Admins und Piloten Anmeldedaten erhalten müssen, um sich auf dem Webserver einzuloggen. Im Gespräch mit den Themenstellern hat sich ergeben, dass es jeweils ein Zugang für die Rollen Administrator und ein Zugang für die Rolle Pilot geben soll. Jeder Pilot loggt sich dann also über den Piloten-Zugang ein mit beschränkter Funktionalität und jeder Admin über den Admin-Zugang mit vollem Funktionsumfang ein. Die konkrete technische Realisierung dieser getrennten Logins steht noch nicht fest.
 
 . Für die Gestaltung des Frontends des Webservers wird sich ein _Responsive Design_ eignen, da die Webseiten sowohl auf einem Smartphone als auch auf einem Desktop-PC ausgegeben werden. Die Administratoren werden die Verwaltung der Piloten wahrscheinlich hauptsächlich am Desktop-PC durchführen, während die Piloten den Status am Flugplatz auch mal vom Smartphone aus verfolgen wollen.
 
 . Wie aus NFAF-3 und NFAR-1 hervorgeht, muss der Raspberry Pi bei bestehender Internetverbindung in gewissen zeitlichen Abständen auf externe Informationen zugreifen. Dabei handelt es sich einerseits um eine triviale Aktualisierung der Uhrzeit des Raspis. Andererseits müssen Piloten- und Protokolldaten mit dem Webserver ausgetauscht bzw. synchronisiert werden. Zu synchronsierende Daten fallen auf beiden Seiten an, Terminal und Webserver. Zum einen kann über den Webserver ein neuer Pilot hinzugefügt werden, der dem Terminal erst bekannt gemacht werden muss. Auf der anderen Seite müssen die zunächst lokal gehaltenen Protokolländerungen am Terminal auch den Webserver erreichen. Bei Absprache mit den Themenstellern hat sich herausgestellt, dass dabei eine zeitgesteuerte Synchronisation wünschenswert ist. Die genaue technische Umsetzung der Kommunikation streben wir über REST API an, die logischen Feinheiten der Synchronisierung stehen noch nicht fest.
 
-. Durch NFA+-3 und den vorherigen Absatz lässt sich schlussfolgern, dass, wenn es eine zeitgesteuerte Synchronisation gibt, diese in relativ langen Zeitabständen (30 min) stattfindet. Noch auszuschließen ist, ob es sich wirklich ausschließlich um eine rein zeitgesteurte Synchronnisation handeln soll. Es gäbe dann also keinen Befehl vom Webserver, der sofort am Terminal umgesetzt werden würde.
+. Durch NFA+-3 und den vorherigen Absatz lässt sich schlussfolgern, dass, wenn es eine zeitgesteuerte Synchronisation gibt, diese in relativ langen Zeitabständen (30 min) stattfindet. Noch auszuschließen ist, ob es sich wirklich ausschließlich um eine rein zeitgesteurte Synchronisation handeln soll. Es gäbe dann also keinen Befehl vom Webserver, der sofort am Terminal umgesetzt werden würde.
 
-. Für den Testbetrieb in der Praxis ist es sinnvoll, die einzelnen Parameter für die Befehle am Terminal nicht festzuschreiben. Im Vordergrund steht hier vor allem die Zeitdauer die für ein An- bzw. Abmeldung angesetzt wird (3s) und die Zeitdauer für die Abmeldung aller Piloten (10s). Diese Parameter sollen durch den Administrator konfigurierbar sein (NFAP-1 und NFAS-3), um Erfahrungswerte aus der Praxis leicht einstellen zu können. Es steht noch aus, ob die Konfiguration sich ausschließlich um die Zeitdauern dreht, oder ob auch weitere Parameter (LED-Farbe, LED-Blink-Rhythmus, Befehlsreihenfolge) konfigurierbar sein sollen.
+. Für den Testbetrieb in der Praxis ist es sinnvoll, die einzelnen Parameter für die Befehle am Terminal nicht festzuschreiben. Im Vordergrund steht hier vor allem die Zeitdauer, die für die An- bzw. Abmeldung angesetzt wird (3s) und die Zeitdauer für die Abmeldung aller Piloten (10s). Diese Parameter sollen durch den Administrator konfigurierbar sein (NFAP-1 und NFAS-3), um Erfahrungswerte aus der Praxis leicht einstellen zu können. Es steht noch aus, ob die Konfiguration sich ausschließlich um die Zeitdauern dreht, oder ob auch weitere Parameter (LED-Farbe, LED-Blink-Rhythmus, Befehlsreihenfolge) konfigurierbar sein sollen.
 
 . Das Anlernen neuer RFID-Ausweise zum System ist bisher noch nicht technisch spezifiert. Wir gehen jedoch von beschreibbaren RFID-Ausweisen aus, die über einen einfachen Code identifiziert und auch händisch in das System eingetragen werden können. 
 
@@ -128,7 +128,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten von Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
 
-Die logische Sicht enthält alle architektur-relevanten Klassen des Systems und wie diese in Beziehung zueinander stehen. Man kann hier unter anderem erkennen, dass der Pilot das Zentrum der Sicht markiert. Durch das Terminal wird Flugsession erzeugt, welche die Beziehung zwischen Pilot und Protokoll herstellt.
+Die logische Sicht enthält alle architektur-relevanten Klassen des Systems und wie diese in Beziehung zueinander stehen. Man kann hier unter anderem erkennen, dass der Pilot das Zentrum der Sicht markiert. Durch das Terminal werden Flugsessions erzeugt, welche die Beziehung zwischen Pilot und Protokoll herstellen.
 
 .Domainmodell
 :imagesdir: {docs-requirements}/images/Domainmodell
@@ -137,13 +137,13 @@ image::domain_model.png[Domainmodell, width=70%, align="center"]
 === Physische Sicht
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
-Aus physischer Sicht ist eine klare Zweiteilung der Funktionalitäten erkennbar. Diese Zweiteilung zwischen Terminal und Webserver existiert auch physisch. Man kann außerdem gut erkennen, über welche Komponenten Informationen in das System gelangen und ausgegeben werden.
+Auf physischer Sicht ist eine klare Zweiteilung der Funktionalitäten erkennbar. Man kann außerdem gut erkennen, über welche Komponenten Informationen in das System gelangen und ausgegeben werden.
 
 .C4-Modell (Level 2)
 :imagesdir: {docs-architecture}/images/C4_Model
 image::C4_Level2.png[C4-Modell (Level 2), width=70%, align="center"]
 
-=== Use cases
+=== Use Cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.
 
 Im Vergleich zum vollständigen Use-Case-Diagramm fallen hier einige Use-Cases weg, die nicht zur Architektur des Systems beitragen. Die An- und Abmeldung der Piloten auf dem Flugplatz rechtfertigt das Bestehen eines Terminals mit lokaler Datenverwaltung. Die Pilotenverwaltung auf dem Webserver rechtfertigt eine direkten Anschluss zur Datenbank. Die Möglichkeit das Protokoll einzusehen und alle Piloten vom Webserver aus abzumelden, rechtfertigt die beidseitge Synchronisation zwischen Terminal und Webserver.

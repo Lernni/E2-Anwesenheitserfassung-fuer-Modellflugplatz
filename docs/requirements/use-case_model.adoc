@@ -19,10 +19,12 @@ include::../_includes/default-attributes.inc.adoc[]
 |System
 |_System_
 
-|Datenspeicher
+|Datenspeicher/Datenobjekt
 |`Datenspeicher`
 
 |===
+
+NOTE: Die Abkürzungen S1, ..., Sn beschreiben die jeweilige Sequenz an Aktionen am Terminal, um einen bestimmten Befehl auszuführen. Die Auflistung der Sequenzen befindet sich in der Bedienungsanleitung des Terminals: <<terminal_states>>
 
 
 === Einteilung nach Priorität
@@ -62,7 +64,7 @@ Diese Use-Cases sind optionale Zusatzfunktionen.
 ==== Webserver (Webseite)
 
 - UC03: Pilotendaten anlegen 
-- UC04: Pilotendaten löschen
+- UC04: Piloten deaktivieren
 - UC05: Pilotendaten modifizieren
 - UC06: Alle Piloten abmelden (durch Webserver)
 - UC08: Protokoll einsehen 

@@ -34,7 +34,7 @@ Die Internetverbindung des _Raspis_ bricht ab und aktuelle `Protokolldaten` kön
 
 === Wesentliche Szenarios
 ==== Erfolgreiche Einsicht
-. Sc1.1: *Pilot A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Pilot A* kann das gesamte aktuelle `Protokoll` einsehen.
+. Sc1.1: *Pilot A* möchte die aktuellen `Protokolldaten` einsehen, meldet sich dazu auf der _Webseite_ an und wählt die Protokollansicht aus. Der _Raspi_ hat die `Protokolldaten` korrekt übermittelt und der *Pilot A* kann das gesamte aktuelle `Protokoll` einsehen.
 
 
 ==== Temporärer Ausfall der Internetanbindung des Raspi

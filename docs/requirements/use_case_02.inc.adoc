@@ -22,13 +22,13 @@ Der Akteur "Pilot" möchte sich abmelden und den Flugplatz verlassen.
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Abmeldung
-. Sc1: *Pilot* A. möchte den Flugplatz verlassen. Er/Sie hält sein/ihr _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und meldet sich erfolgreich ab. Die _LED_ leuchtet zweimal grün auf, die Abmeldung wird erfolgreich erfasst und protokolliert und *Pilot* A. kann den Flugplatz verlassen.
+. Sc1: *Pilot* A. möchte den Flugplatz verlassen. Er hält seinen _RFID-Tag_ 3 Sekunden an den _RFID-Reader_ und meldet sich erfolgreich ab. Die _LED_ leuchtet zweimal grün auf, die Abmeldung wird erfolgreich erfasst und protokolliert und *Pilot* A. kann den Flugplatz verlassen.
 
 
 ===	Nachbedingungen
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
 
-* Die _LED_ sollte nach erfolgreicher Abmeldung dauheraft leuchten, wenn noch andere *Piloten* angemeldet sind. Hat sich der letzte *Pilot* abgemeldet, soll die _LED_ nicht mehr leuchten.
+* Die _LED_ sollte nach erfolgreicher Abmeldung dauerhaft leuchten, wenn noch andere *Piloten* angemeldet sind. Hat sich der letzte *Pilot* abgemeldet, soll die _LED_ nicht mehr leuchten.
 
 === Besondere Anforderungen
 ==== Usability

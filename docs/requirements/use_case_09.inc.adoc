@@ -7,11 +7,11 @@ In diesem Use-Case wird das nachträgliche Eintragen einer Flugsession durch ein
 ===	Kurzbeschreibung der Akteure
 
 ==== Administrator
-Der Akteur "Administrator" will das `Protokoll` händisch nachtragen.
+Der Akteur "Administrator" will das Protokoll händisch nachtragen.
 
 === Vorbedingungen
 
-. Der *Administrator* hat Kenntnis über die einzutragenden `Protokolldaten` (eine oder mehrere Flugsessions).
+. Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
 
 . Der *Administrator* hat sich auf dem _Webserver_ eingeloggt.
 

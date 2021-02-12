@@ -27,7 +27,7 @@ Der Akteur "Pilot" möchte den Flugplatz betreten und nutzen.
 === Wesentliche Szenarios
 
 ==== Erfolgreiche Anmeldung
-. Sc1: *Pilot* A. trifft am Flugplatz ein. A. hällt seinen _RFID-Ausweis_ an den _RFID-Reader_. Die Anmeldung wurde erfasst und protokolliert und die _LED_ leuchtet grün auf. A. darf den Flugplatz betreten.
+. Sc1: *Pilot* A. trifft am Flugplatz ein. A. hält seinen _RFID-Ausweis_ an den _RFID-Reader_. Die Anmeldung wurde erfasst und protokolliert und die _LED_ leuchtet grün auf. A. darf den Flugplatz betreten.
 
 //Systemausfall -> ist für uns nicht relevant (Aussage vom Verein)  
 

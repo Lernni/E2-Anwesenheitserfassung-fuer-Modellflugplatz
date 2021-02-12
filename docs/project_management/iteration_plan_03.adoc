@@ -47,7 +47,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 302 | Erstellung Test-Cases | 2 | 6 | 40% | 3-4 | Alex, Max | 4 | 1 |
 
-305 | Bearbeitung System-Wide-Requirementes | 3 | 4 | 60% | 3-4 | Analyse, Entwurf | 4 | 3 |
+305 | Bearbeitung System-Wide-Requirements | 3 | 4 | 60% | 3-4 | Analyse, Entwurf | 4 | 3 |
 
 306 | Bearbeitung Architecture Notebook | 4 | 24 | 60% | 3-4 | Entwurf | 4 | 4 |
 
@@ -133,7 +133,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 *Beurteilung im Vergleich zu den Zielen*
 
-Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sin in Ordnung und werden in die nächste Iteration übernommen.
+Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 

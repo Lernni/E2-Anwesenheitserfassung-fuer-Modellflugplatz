@@ -5,7 +5,7 @@ In diesem Use-Case wird der komplette Vorgang zum Reaktiveren eines `Piloten` du
 
 ===	Kurzbeschreibung der Akteure
 ==== Administrator
-Der Akteur "Administrator" möchte einen `Piloten` wieder freischalten.
+Der Akteur "Administrator" möchte einen Piloten wieder freischalten.
 
 === Vorbedingungen
 . Der `Pilot` wurde angelegt (UC03)
@@ -16,7 +16,7 @@ Der Akteur "Administrator" möchte einen `Piloten` wieder freischalten.
 
 === Standardablauf (Basic Flow)
 
-. Der *Administrator* navigigert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
+. Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
 . Der *Administrator* sucht in der _Mitgliederübersicht_ den deaktivierten `Piloten` und klickt auf _Reaktivieren_
 . Der *Administrator* bestätigt in einem Formular die bereits hinterlegten `Pilotendaten` und weist dem `Piloten` wieder einen _RFID-Ausweis_ zu.
 . Der *Administrator* bestätigt das Formular.
@@ -24,7 +24,7 @@ Der Akteur "Administrator" möchte einen `Piloten` wieder freischalten.
 
 === Wesentliche Szenarios
 
-==== Erfolgreiches Reaktivieren der Pilotendaten
+==== Erfolgreiches Reaktivieren eines Piloten
 . Sc1: Ein *Administrator* reaktiviert einen `Piloten` über den _Webserver_ und der entsprechende *Pilot* bekommt im Anschluss den aktivierten _RFID-Ausweis_ vom *Administrator*.
 
 ===	Nachbedingungen

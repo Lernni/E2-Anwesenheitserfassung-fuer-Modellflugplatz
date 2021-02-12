@@ -5,7 +5,7 @@ In diesem Use-Case wird der komplette Vorgang der Abmeldung aller *Piloten* besc
 
 ===	Kurzbeschreibung der Akteure
 ==== Pilot
-Der Akteur "Pilot" nöchte sich und alle anderen *Piloten* abmelden und den Flugplatz verlassen.
+Der Akteur "Pilot" möchte sich und alle anderen *Piloten* abmelden und den Flugplatz verlassen.
 
 ==== Administrator
 Der Akteur "Administrator" möchte alle *Piloten* auf einmal abmelden.
@@ -38,7 +38,7 @@ Der *Administrator* möchte alle *Piloten* abmelden.
 
 
 ===	Nachbedingungen
-. Das Vergessen der Abmeldung darf nicht dazu führen, dass der betreffende *Pilot* dann kontinuierlich angemeldet ist.
+. Das Vergessen der Abmeldung darf nicht dazu führen, dass betreffende *Piloten* dann kontinuierlich angemeldet ist.
 
 
 === Besondere Anforderungen

@@ -6,7 +6,7 @@ In diesem Use-Case wird das Modifizieren der `Pilotendaten` eines *Piloten* durc
 
 ===	Kurzbeschreibung der Akteure
 ==== Administrator
-Der Akteur *Administrator* möchte die `Pilotendaten` eines Piloten verändern.
+Der Akteur "Administrator" möchte die Pilotendaten eines Piloten verändern.
 
 
 === Vorbedingungen
@@ -28,8 +28,7 @@ Der Akteur *Administrator* möchte die `Pilotendaten` eines Piloten verändern.
 
 
 ===	Nachbedingungen
-==== Datenbank
-Die `Pilotendaten` müssen aktuell und semantisch korrekt in der _Datenbank_ hinterlegt sein.
+* Die `Pilotendaten` müssen aktuell und semantisch korrekt in der _Datenbank_ hinterlegt sein.
 
 === Wireframe
 

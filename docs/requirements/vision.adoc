@@ -12,11 +12,11 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, die digitalisierte Anwesenheitserfassung/Protokollierung zu nutzen, um damit einen nachvollziehbare und kontrollierte Übersicht über den Praxisbetrieb des Vereinsflugplatzes zu gewährleisten. 
+Dieses Visions-Dokument bezieht sich auf "Anwesenheitserfassung des Modellflugplatzes", das vom Team "E2" entwickelt wird. Das System wird es dem "Vereinsflugplatz des Mfc-Rossendorf" erlauben, eine digitalisierte Anwesenheitserfassung/Protokollierung der Piloten zu nutzen, um damit eine nachvollziehbare und kontrollierte Übersicht über den Praxisbetrieb des Vereinsflugplatzes gewährleisten zu können. 
 
 === Definitionen, Akronyme und Abkürzungen
 
-siehe <<glossary>>
+siehe Glossar: <<glossary>>
 
 //=== Referenzen
 //(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
@@ -28,7 +28,7 @@ siehe <<glossary>>
 Um einen kontrollierten Betrieb des Vereinsflugplatzes zu gewährleisten, gibt es einige gesetzlich festgelegte bürokratische Maßnahmen zu beachten. 
 Eine davon ist die Erfassung/Protokollierung der anwesenden Piloten. Aktuell wird der Vorgang analog über ein zentrales Flugbuch geregelt, in welches sich beim Betreten und Verlassen eingetragen werden muss. Diese Protokollierung ist notwendig, um abgesichert zu sein und die Nachvollziehbarkeit im Fall eines Schadens oder bei möglichen Beschwerden über Lärm oder Sachschädigung zu gewährleisten.
 
-Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. In Zukunft sollen sich die Piloten lokal mittels eines RFID-Ausweises an einem autarken Terminal anmelden bzw. abmelden können. Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden, und über einen Webserver leicht einsehbar und verwaltbar sein.
+Im Rahmen unserer studentischen Projektarbeit hat uns der "Vereinsflugplatz des Mfc-Rossendorf" die Möglichkeit gegeben, diesen aktuellen Vorgang zu digitalisieren. In Zukunft sollen sich die Piloten lokal mittels RFID-Ausweis an einem autarken Terminal anmelden bzw. abmelden können. Die An-/Abmeldedaten sollen dabei korrekt erfasst und gesichert werden und über einen Webserver leicht einsehbar und verwaltbar sein.
 So soll ein digitales System entstehen, welches frei von Unsicherheiten und bürokratischem Aufwand ist.
 
 
@@ -84,11 +84,11 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 |Gesetzgeber 
 |gibt rechtliche/bürokratische Rahmenbedingungen vor 
-|überwacht Gesetze und Regelungen hinsichtlich Sicherheit
+|bestimmt Gesetze und Regelungen hinsichtlich Sicherheit
 
 |Administratoren
-|Vereinsmitglieder des Mfc-Rossendorf, welche die Rechte besitzen die Daten zu verwalten (Anlegen, Modifizieren, Löschen) 
-|haben Zugriff auf die Verlwatung der Pilotendaten
+|Vereinsmitglieder des Mfc-Rossendorf, welche die Rechte besitzen die Daten zu verwalten (Anlegen, Modifizieren, Deaktivieren) 
+|haben Zugriff auf die Verwaltung der Pilotendaten
 
 |===
 
@@ -138,7 +138,7 @@ Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die ei
 [%header, cols="3,1,3"]
 |===
 |Bedarf|Priorität|Features
-|Anwesenheitserfassung/ Protokollierung|Hoch|Die exakte zeitliche Erfassung von Aktivitäten am Terminal & Synchronisation der Protokolldaten mit dem Webserver
+|Anwesenheitserfassung/Protokollierung|Hoch|Die exakte zeitliche Erfassung von Aktivitäten am Terminal & Synchronisation der Protokolldaten mit dem Webserver
 |Verwaltung der anfallenden Daten |Hoch|Das Verwalten (Anlegen, Modifizieren, Deaktivieren) von Piloten, dem Anwesenheitsprotokoll & Zuordnung von RFID-Ausweisen 
 |Bestimmung eines Flugleiters|Mittel|Die Möglichkeit am Terminal einen Flugleiter zu bestimmen und dies im Protokoll zu vermerken
 |Erweiterung der Werkstatt|niedrig|Die Protokollierung von An-/Abmeldung in der Werkstatt
@@ -157,7 +157,7 @@ Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die ei
 [%header, cols="4,1"]
 |===
 |Anforderung|Priorität
-|An-/Abmelden der Piloten erfolgt durch individuelle RFID Tags|hoch
+|An-/Abmelden der Piloten erfolgt durch individuelle RFID-Ausweise|hoch
 |Raspberry Pi stellt die Funktionalität über eine Skript-Sprache am Terminal zur Verfügung|hoch
 |Synchronisation zwischen Terminal und Webserver|hoch
 |Gestaltung Datenhaltung über eine Datenbank|hoch

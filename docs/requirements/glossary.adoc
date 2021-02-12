@@ -20,7 +20,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |System
 |eine Zusammenfassung aller Bestandteile (Hardware und Software), die miteinander kommunizieren können und Eingabe-, Verarbeitungs- und Ausgabefunktionen haben können.
 
-|Datenobjekt/Daten
+|Datenobjekt/Datenspeicher
 |alle Art von Informationen, die zwischen den Bestandteilen des Systems erzeugt, ausgetauscht und gesichert werden.
 
 |===
@@ -62,7 +62,7 @@ a|
 
 |Flugplatz
 |Ort, an dem die Piloten ihre Modellflugzeuge fliegen können
-|Platz, (im Kontext oft "vor Ort")
+|Modellflugplatz, Vereinsflugplatz, Platz, (im Kontext oft "vor Ort")
 
 |Modellflugzeug
 |wird von den Piloten auf dem Flugplatz geflogen
@@ -70,7 +70,7 @@ a|
 
 |Terminal
 a|
-* Anlage, an der die Piloten sich mittels RFID-Taf ausweisen
+* Anlage, an der die Piloten sich mittels RFID-Tag ausweisen
 * umfasst die Komponenten Raspberry Pi, RGB-LED, Flugleiter-Knopf und RFID-Scanner
 |Anlage
 
@@ -82,7 +82,7 @@ a|
 |-
 
 |Weboberfläche
-|Oberfläche des Webservers, die sich unterscheidet, je nachdem, ob sich ein Admin oder ein Mitglied einloggt
+|Oberfläche des Webservers, die sich unterscheidet, je nachdem, ob sich ein Admin oder ein Pilot einloggt
 |Sicht, Webseite
 
 |Anwesenheitserfassung
@@ -106,7 +106,7 @@ a|
 |-
 
 |Gesetzgeber
-|ein Stakeholder, der die Betreiber des Vereins dazu verfplichtet ein Flugbuch über die Aktivitäten auf dem Flugplatz zu führen 
+|ein Stakeholder, der die Betreiber des Vereins dazu verpflichtet ein Flugbuch über die Aktivitäten auf dem Flugplatz zu führen 
 |-
 
 |Datenbank
@@ -184,7 +184,7 @@ a|
 |Pilotendaten
 |Vorname und Nachname des Piloten, Eintrittsdatum in den Verein, Verweis auf die RFID-Kennung
 |mehrere: String, Date
-|Pilotenname semantisch korrekt, Eintrittsdatum < aktuelles Datum, RFID-Kennung muss exisieren
+|Pilotenname semantisch korrekt, Eintrittsdatum < aktuelles Datum, RFID-Kennung muss existieren
 |-
 
 |RFID-Kennung

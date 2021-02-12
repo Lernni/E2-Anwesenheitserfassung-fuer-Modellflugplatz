@@ -23,7 +23,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * *NFAF-1*: Zugriffsschutz: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Admins und Piloten
 // end::nfaf1[]
 
-* *NFAF-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED für Piloten sichtbar machen
+* *NFAF-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
 
 // tag::nfaf2[]
 * *NFAF-3*: Zeitsteuerung: Protokoll- und Pilotendaten werden in zeitlichen Abständen (alle 30 min) bei bestehender Internetverbindung durch den Raspberry Pi aktualisiert

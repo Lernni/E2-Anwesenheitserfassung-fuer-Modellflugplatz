@@ -13,4 +13,4 @@ In diesem Test-Case geht es darum die vom Themensteller vorgegebene Rahmenbeding
 Im besten Fall gilt:
 
 - Der Pilot, der sich als erster als Flugleiter angemeldet hat, ist nun Flugleiter und hat diesbezüglich eine Rückmeldung vom Terminal via LED erhalten.
-- Der Pilot, der sich als zweiter als Flugleiter angemeldet hat, ist kein Flugleiter und hat diesbezüglich eine Rückmeldung vom Terminal via LED erhalten.
+- Der Pilot, der sich als zweiter als Flugleiter angemeldet hat, bekommt die Rolle übertragen und hat diesbezüglich eine Rückmeldung vom Terminal via LED erhalten.

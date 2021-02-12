@@ -34,7 +34,7 @@ Als Grundlage wird das Prinzip der iterativ inkrementellen Softwareentwicklung v
 
 Zusätzlich findet innerhalb jedes Zykluses ein Meeting mit dem Kunden statt. Diesem werden die Erfolge in aufbereiteter Form vorgelegt, sowie Unklarheiten oder Fragen nähergebracht. In diesen Konferenzen nehmen die Teammitglieder je nach Bedarf teil. Der Teammanager sollte aber bei Möglichkeit als Ansprechpartner bei jedem Treffen teilnehmen.
 
-Zur Zyklusplanung werden Iteration Plans verwendet. Die dort eingefügten Elemente stammen aus dem erstellten GitHub-Repository und sind ihrer Priorität nach in den einzelnen Iterationen zu planen. Das GitHub-Repository ist unter https://github.com/simonherbstrith/E2-Anwesenheitserfassung-fuer-Modellflugplatz/ zu finden.
+Zur Zyklusplanung werden Iterationspläne verwendet. Die dort eingefügten Elemente stammen aus dem erstellten GitHub-Repository und sind ihrer Priorität nach in den einzelnen Iterationen zu planen. Das GitHub-Repository ist unter https://github.com/simonherbstrith/E2-Anwesenheitserfassung-fuer-Modellflugplatz/ zu finden.
 
 Für die Analyse und weitere Bearbeitung werden Use-Cases erstellt.
 
@@ -112,6 +112,6 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 * Bessere Meetingstrukturierung
 * Frühzeitigere Bearbeitung der Dokumentationen
 * Dokumentationsvorlagen nicht als Lückentext verstehen; auf die wesentlich benötigten Aspekte begrenzen
-* Fertigstellung eines Work Items (Use-Cases) kann und soll nicht innerhalb einer Iteration bewerkstelligt werden (iteratives Arbeiten vertiefen)
+* Fertigstellung eines Work Items (bspw. Use-Cases) kann und soll nicht innerhalb einer Iteration bewerkstelligt werden (iteratives Arbeiten vertiefen)
 * Häufigere Teilnahme an SE Praktika für Feedback & Tipps
 * Einheitliche Begrifflichkeiten verwenden
