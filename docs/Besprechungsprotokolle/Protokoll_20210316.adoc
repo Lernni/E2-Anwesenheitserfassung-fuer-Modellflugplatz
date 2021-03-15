@@ -1,0 +1,35 @@
+= Meetingplan für den 16.03.2021
+1.0, 16.03.2021
+
+== Ablauf
+=== 1. Vorstellung der letzten Änderungen
+- Architektur-Notebook 
+* Kernaspekte
+* Schlussfolgerungen, Entscheidungen
+* Logische Sicht
+* Physische Sicht
+- Design
+* Datenbankmodell
+* Synchronisation
+* Bedienungsanleitung Terminal
+* Wireframe-Übersicht
+
+=== 2. Grober Plan der Konstruktion
+- Bau von Prototypen
+* Test: RFID-Scanner, RFID-Auweis -> LED-Feedback
+* Test: Kommunikation Raspberry Pi und Webserver
+- Erstellen der Datenbank -> Synchronistaion
+- Entwicklung Frontend
+- Test-Cases durchspielen
+
+=== 3. Angular -> Vue
+- Vue ist einsteigerfreundlicher als Angular
+- Zurückgreifen auf Wissen und Ressourcen von Kommilitonen
+
+=== 4. Beschaffung der Hardware/Zugänge
+* Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis, Taster -> Bau von Prototypen
+* Zugang zum Webserver -> Testen von Funktionen, Aufbau der Datenbank
+
+
+== Sonstige Fragen:
+* Handhabung Gastflüge?
