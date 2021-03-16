@@ -1,0 +1,28 @@
+= Kundenmeeting vom 16.03.2021
+1.0, 16.03.2021
+:toc: 
+:toc-title: Inhaltsverzeichnis
+
+== Ergebnisse des Meetings
+
+=== Vorstellung der letzten Änderungen
+
+- Architektur-Notebook 
+* Architektur-Ziele --> Ziele passen mit dem vom Kunden überein & wurden abgesegnet 
+* Änderung bei den Architektur-Merkmalen: 
+** Synchronisation Terminel - Website --> Ergeignissgesteuert (Echt-Zeit - bei Anmeldunung direkt an Web-Server senden) 
+** Fehler könnten bei dem minütlichen senden der Wetterstation erkannt werden
+* Bedienungsanleitung Terminal --> Vereinfachungen passen dem Kunden & Farben stehen jetzt fest
+
+=== Angular -> Vue
+
+* Wechsel von Angular zu Vue passt dem Kunden
+
+=== Beschaffung der Hardware/Zugänge
+* Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis, Taster -> Bau von Prototypen
+** Hardware wird "vorbereitet" an Max verschickt (in der KW 12 (ab 22.03.2021))
+
+== Sonstige Fragen:
+* Handhabung Gastflüge?
+** Gast Pilot bekommt kein RFID-Tag & es soll keine Registrierung vor Ort möglich --> Zugang zum Flugplatz nur in Anwesenheit mit bereits registrierten Pilot möglich 
+** im nachinein auf Website kenntlich machen, das ein Gast mit auf dem Fliugplatz war
