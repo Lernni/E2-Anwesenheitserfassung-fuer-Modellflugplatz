@@ -1,0 +1,33 @@
+= Protokoll vom 31.03.2021
+1.0 31.03.2021
+
+== Aktueller Stand
+
+- warten auf Hardware von TS -> Max schreibt noch eine Mail
+- Iteration 5 begonnen
+- Construction-Phase begonnen
+
+== Schwerpunkte
+- ausstehende Änderungen an der Dokumentation, Systementwurf
+- neue Rollenzuweisungen
+- Terminplanung
+- Fragen für nächstes Kundenmeeting (Issue #65)
+
+== Rollenzuweisungen
+Neue Rollen:
+
+- Max: Test, Implementierung
+- Richard: Deployment, Analyse
+
+== Aufgabenverteilung
+
+- Dokumentation korrigieren (Issue #62) -> Team Analyse
+- Deployment zu Dokumentation hinzufügen (Issue #62) -> Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+- Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 07.04.21, 17 Uhr
+- Meeting Implementierung: Sa 03.04.21, 15 Uhr
+- nächstes Kundenmeeting: offen
