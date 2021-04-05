@@ -170,25 +170,25 @@ a|
 |Bezeichnung|Definition|Format|Gültigkeitsregeln|Aliase
 
 |Anmeldedaten
-|Nutzername und Passwort für die Anmeldung am Webserver
+|Nutzername, Passwort
 |-
 |-
 |Login-Daten, Login
 
 |Protokolldaten
-|ein oder mehrere Protokolleinträge in Form von Flugsessions
+|Protokolleintrag (in Form von Flugsessions)
 |mehrere: Date, Boolean
 |Pilot muss existieren und Endzeit > Startzeit
 |Protokolleintrag, Protokolleinträge, (Flugsessions)
 
 |Pilotendaten
-|Vorname und Nachname des Piloten, Eintrittsdatum in den Verein, Verweis auf die RFID-Kennung
+|Vorname, Nachname, Eintrittsdatum in den Verein, Verweis auf die RFID-Kennung
 |mehrere: String, Date
 |Pilotenname semantisch korrekt, Eintrittsdatum < aktuelles Datum, RFID-Kennung muss existieren
 |-
 
 |RFID-Kennung
-|Code, der einen RFID-Ausweis eindeutig beschreibt
+|Code (der einen RFID-Ausweis eindeutig beschreibt)
 |Integer
 |-
 |Kennung

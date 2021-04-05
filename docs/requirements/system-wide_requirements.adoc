@@ -23,13 +23,11 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * *NFAF-1*: Zugriffsschutz: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Admins und Piloten
 // end::nfaf1[]
 
-* *NFAF-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
-
 // tag::nfaf2[]
-* *NFAF-3*: Zeitsteuerung: Protokoll- und Pilotendaten werden in zeitlichen Abständen (alle 30 min) bei bestehender Internetverbindung durch den Raspberry Pi aktualisiert
+* *NFAF-2*: Ergeignissgesteuert: Protokoll- und Pilotendaten werden bei der Anmeldung direkt an den Web-Server gesendet
 // end::nfaf2[]
 
-* *NFAF-4*: Auditierung: Sollte das Flugprotokoll eine bestimmte Zeit (länger als 30 min) nicht aktualisiert werden, erhält der Administrator eine entsprechende Information auf dem Webserver
+//* *NFAF-3*: Auditierung: Sollte das Flugprotokoll eine bestimmte Zeit (länger als 30 min) nicht aktualisiert werden, erhält der Administrator eine entsprechende Information auf dem Webserver
 
 
 
@@ -40,12 +38,15 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 * *NFAU-1*: Aufgabeneffizienz: Simple und intuitive Kombinationen am Terminal (einfaches Anhalten des RFID-Ausweises zum An- und Abmelden)
 
+* *NFAU-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
+
+
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
 
 // tag::nfar1[]
-* *NFAR-1*: Genauigkeit: Uhrzeit des Raspis muss genau sein und bei bestehender Internetverbindung synchronisiert werden. (Raspi hält die Uhrzeit nicht lokal)
+* *NFAR-1*: Korrektheit: Uhrzeit des Raspis muss genau sein und bei bestehender Internetverbindung synchronisiert werden. (Raspi hält die Uhrzeit nicht lokal)
 // end::nfar1[]
 
 
@@ -57,7 +58,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // end::nfap1[]
 
 // tag::nfap2[]
-* *NFAP-2*: Durchsatz: Mehrere Piloten müssen sich hintereinander an- und abmelden können
+* *NFAP-2*: Durchsatz: Mehrere Piloten müssen sich hintereinander (innerhalb von 30 Sekunden) an- und abmelden können
 // end::nfap2[]
 
 
@@ -69,11 +70,11 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // end::nfas1[]
 
 // tag::nfas2[]
-* *NFAS-2*: Kompatibilität: Einbettung in bestehenden Webserver
+* *NFAS-2*: Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
 // end::nfas2[]
 
 // tag::nfas3[]
-* *NFAS-3*: Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
+
 // end::nfas3[]
 
 
@@ -83,9 +84,11 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 * *NFA+-1*: Implementierung:
 ** Auf dem Raspberry Pi ist eine Scriptsprache (Python) zu nutzen
-** Oberfläche des Webservers soll mit modernem JS-Framework realisiert werden (Angular)
+** Oberfläche des Webservers soll mit modernem JS-Framework realisiert werden (Vue)
 
-* *NFA+-2*: Plattform: Raspberry Pi OS (Linux) auf Seite des Raspberry Pi
+* *NFA+-2*: Plattform: 
+** Raspberry Pi OS (Linux) auf Seite des Raspberry Pi
+** bestehender Webserver soll als Webplatform verwendet werden
 
 // tag::nfa+3[]
 * *NFA+-3*: Ressourcenbegrenzungen: Stromversorgung und Datenvolumen des Raspberry Pi
@@ -96,3 +99,4 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // end::nfa+4[]
 
 * *NFA+-5*: Legal: Es ist eine Open-Source Lizenz zu nutzen
+

@@ -8,7 +8,7 @@ actor Administrator
 
 rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   
-  rectangle "Terminal (Flugplatz)"{
+  package "Terminal (Flugplatz)"{
 
   (UC01: Piloten anmelden)
   (UC02: Piloten abmelden)
@@ -17,7 +17,7 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
 
   }
   
-  rectangle "Webserver"{
+  package "Webserver"{
 
   (UC03: Pilotendaten anlegen)
   (UC04: Piloten deaktivieren)

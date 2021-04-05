@@ -50,7 +50,7 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 === Besondere Anforderungen
 ==== Usability
 
-Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ eventuell Vorkehrungen treffen:
+Der Use Case gehört zu der grundlegenden Funktionalität des _Systems_, da er Vorraussetzung für viele weitere Use Cases ist. Der *Administrator* muss diesen Use Case möglichst effizient fehlerfrei durchführen können, da er vor allem in der Einrichtungsphase des _Systems_ sehr oft benötigt wird. Um mögliche Fehlerquellen zu vermeiden, sollte der _Webserver_ Vorkehrungen treffen:
 
 * nur bestimmte Zeichen im Formular zulassen
 * nur `Kennungen` von _RFID-Ausweisen_ zulassen, die bereits existieren, aber nicht aktiviert sind -> Anfrage an das _Datenbanksystem_ und eventuelle Auflistung in einer Dropdown-Liste

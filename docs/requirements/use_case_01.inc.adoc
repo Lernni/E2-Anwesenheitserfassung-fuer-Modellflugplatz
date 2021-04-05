@@ -1,4 +1,4 @@
-== Use-Case: UC01 Piloten anmelden
+== Use-Case: UC01 Pilot anmelden
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird der komplette Vorgang der Anmeldung eines *Piloten* beim Betreten des Flugplatzes beschrieben.

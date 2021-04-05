@@ -38,10 +38,10 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 [cols="1,3"]
 |===
-|Das Problem | einer, vom Gesetzgeber vorgeschriebenen Erfassung der Anwesenheit der Piloten im physischen Flugbuch ist mit hohem Aufwand verbunden und nicht sehr zuverlässig
-|betrifft |	die Piloten und Vorsitzenden des Vereinsflugplatz Mfc-Rossendorf
-|die Auswirkung davon ist| dass die An-/Abmeldedaten unvollständig, teilweise unleserlich sind oder gar vergessen werden einzutragen. Neben dem bürokratischen Aufwand, kann ein Abhandenkommen des physischen Flugbuches nicht ausgeschlossen werden.
-|eine erfolgreiche Lösung wäre |ein digitales System für die Anwesenheitserfassung bzw. Protokollierung der Piloten über einen Raspberry Pi, der die An- und Abmeldedaten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
+|Das Problem | Die vom Gesetzgeber vorgeschriebene Erfassung der Anwesenheit auf dem Vereinsflugplatz, findet händisch in einem physischen Flugbuch statt. 
+|betrifft |	Die Piloten und Vorsitzenden des Vereinsflugplatz Mfc-Rossendorf
+|die Auswirkung davon ist| Dass die An-/Abmeldedaten unvollständig, teilweise unleserlich sind oder gar vergessen werden einzutragen. Neben dem bürokratischen Aufwand, kann ein Abhandenkommen des physischen Flugbuches nicht ausgeschlossen werden.
+|eine erfolgreiche Lösung wäre | Ein digitales System für die Anwesenheitserfassung bzw. Protokollierung der Piloten über ein Terminal, der die An- und Abmeldedaten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht.
 |===
 
 === Positionierung des Produkts
@@ -79,7 +79,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 |werden das neue System der Anwesenheitserfassung nutzen
 
 |Vandalisten/Störende
-|unzuverlässiges Eintragen, Beschädigen bzw. Klauen von Eigentum des Vereinsflugplatzes
+|unzuverlässiges Eintragen, Beschädigen bzw. klauen von Eigentum des Vereinsflugplatzes
 |sorgten in Vergangenheit für Konflikte, welche bei der Bearbeitung berücksichtigt werden müssen
 
 |Gesetzgeber 
@@ -102,31 +102,58 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 
 //* Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
 
-==== Admin
-- kann das Protokoll einsehen
-- hat besondere Zugangsrechte und Bearbeitungsmöglichkeiten
-** Bearbeitung von Pilotendaten (Hinzufügen, Ändern, Deaktivieren)
-** Nachträgliches Einfügen von Protokolldaten
-
-==== Pilot
-- möchte eine einfache und schnelle Nutzung des Systems
-- kann sich über einen RFID-Ausweis am Terminal identifizieren (An-/Abmeldung)
-- bekommt vom Terminal ein visuelles Feedback in Form einer LED
-- kann das derzeitige Aufkommen der Piloten auf dem Flugplatz über eine Webanwendung einsehen
-
-
 ==== Systemplattform:
 
 .Aktuelle Systemplattform: 
-- ein zentrales Flugbuch, in welches sich manuell eingetragen wird
+* momentan befindet sich ein zentrales Flugbuch vor Ort (Vereinsflugplatz des Mfc-Rossendorf), in welches sich manuell eingetragen wird
+* problematisch dabei ist, das es schwierig unter verschluss zu halten ist, um es nur autorisierten Mitgliedern zugänglich zu machen
 
 .Zukunftige Systemplattform:
-- ein digitales System, welches über einen Raspberry Pi Daten einliest, verarbeitet und sicher über einen Webserver einsehbar und verwaltbar macht
+* zukünftig soll ein digitales System das physische System ersetzten
+* es soll über einen Raspberry Pi Daten einlesen, verarbeiten und sicher über einen Webserver einsehbar und verwaltbar machen
 
 ==== zu integrierende Anwendungen:
 
 // auch Anbindung an Webserver
-Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte. Außerdem existiert bereits ein vereinseigener Webserver.
+* in einem vergangenden Projekt (SE-Projekt: "Wetterstation") enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte
+* zusätzlich existiert bereits ein vereinseigener Webserver, welcher genutzt werden soll
+
+==== Administratoren
+
+* sind Vereinsmitglieder des Mfc-Rossendorf
+** es gibt ca. ... Admins 
+** Anzahl der Admins ändert sich in laufe der Zeit selten
+* aus rechlichen Gründen, muss die Anwesenheit der Piloten erfasst & protokolliert werden
+* sind autorisiert auf diese Protokolldaten bzw. Pilotendaten zuzugreifen und sie einzusehen
+* besitzen besondere Zugangsrechte und Bearbeitungsmöglichkeiten: 
+** Bearbeitung von Pilotendaten (Hinzufügen, Ändern, Deaktivieren)
+** Nachträgliches Einfügen von Protokolldaten
+*** Komplexität (Dauer) dieser Vorgänge sollte nicht zu hoch sein
+* sorgfälltig und behutsam mit diesen Rechten umgehen 
+** Privatsphäre muss gewährleistet werden
+** Daten dürfen nicht missbräuchlich verbreitet werden
+
+==== Piloten
+
+* sind Vereinsmitglieder des Mfc-Rossendorf *ohne* besondere Zugangsrechte
+** insgesamt sind es ca. 100 Vereinsmitglieder
+** aktiv nutzen ca. ein-drittel den Flugplatz
+//Wie oft kommen neu-Anmeldungen vor, Wie oft Gäste 
+** parallel nutzen 5-10 Piloten den Flugplatz gleichzeitig (das fliegen von Modellflugzeugen) 
+* aus rechlichen Gründen haben die Piloten beim betreten des Flugplatzes die Aufgabe, sich "anzumelden"
+** in der Vergangenheit: 
+*** manuelles eintragen in ein physisches Flugbuch vor Ort
+*** war für jeden einsehbar und durch äußere Einflüsse (Wetter, Vandalisten) ungeschützt  
+** zukünflich mit unserem System:  
+*** kann sich über einen RFID-Ausweis am Terminal identifizieren (An-/Abmeldung)
+*** bekommt vom Terminal ein visuelles Feedback in Form einer LED
+*** kann das derzeitige Aufkommen der Piloten auf dem Flugplatz über eine Webanwendung einsehen
+** möchte eine einfache schnelle Bedienung des Systems
+** möchte, dass die protokollierten Daten sicher, zuverlässig und vollständig erfasst werden
+** darf auf Anfrage bei den Administratoren in seine persöhnlichen Daten einsehen 
+
+
+
 
 //Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
 
@@ -138,11 +165,11 @@ Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die ei
 [%header, cols="3,1,3"]
 |===
 |Bedarf|Priorität|Features
-|Anwesenheitserfassung/Protokollierung|Hoch|Die exakte zeitliche Erfassung von Aktivitäten am Terminal & Synchronisation der Protokolldaten mit dem Webserver
-|Verwaltung der anfallenden Daten |Hoch|Das Verwalten (Anlegen, Modifizieren, Deaktivieren) von Piloten, dem Anwesenheitsprotokoll & Zuordnung von RFID-Ausweisen 
+|Korrekte und zuverlässige Anwesenheitserfassung/Protokollierung|Hoch|Die exakte zeitliche Erfassung von Aktivitäten am Terminal & Synchronisation der Protokolldaten mit dem Webserver
+|Einfache Datenverwaltung|Hoch|Das Verwalten (Anlegen, Modifizieren, Deaktivieren) von Piloten, dem Anwesenheitsprotokoll & Zuordnung von RFID-Ausweisen 
 |Bestimmung eines Flugleiters|Mittel|Die Möglichkeit am Terminal einen Flugleiter zu bestimmen und dies im Protokoll zu vermerken
-|Erweiterung der Werkstatt|niedrig|Die Protokollierung von An-/Abmeldung in der Werkstatt
-|Gastflüge|niedrig|Die Möglichkeit als Nicht-Pilot den Flugplatz nutzen und sich am Terminal ausweisen zu können 
+|Korrekte und zuverlässige Anwesenheitserfassung auch für das Werkstattgebäude |niedrig|Die Protokollierung von An-/Abmeldung in der Werkstatt
+|Flüge durch Gäste ermöglichen |niedrig|Die Möglichkeit als Nicht-Pilot den Flugplatz nutzen und sich am Terminal ausweisen zu können 
 |===
 
 == Zusätzliche Produktanforderungen
@@ -162,6 +189,7 @@ Durch das Projekt "Wetterstation" enstand eine wetterfeste Infrastruktur, die ei
 |Synchronisation zwischen Terminal und Webserver|hoch
 |Gestaltung Datenhaltung über eine Datenbank|hoch
 |Bedienbarkeit des Terminals so einfach wie möglich halten|hoch
-|Moderne Gestaltung der Weboberfläche via JS-Framework|hoch
+|System muss datenschutzkonform sein|hoch
+|Moderne bzw. zeitgemäße Gestaltung der Weboberfläche|hoch
 |Keine Displaynutzung als visuelle Ausgabe aufgrund von Vandalismus|mittel
 |===

@@ -20,9 +20,9 @@ Der Akteur "Administrator" möchte die Pilotendaten eines Piloten verändern.
 . Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
 . Der *Administrator* sucht in der _Mitgliederübersicht_ den zu modifizierenden `Piloten` und klickt auf _Bearbeiten_.
 . Der *Administrator* verändert die `Pilotendaten` in einem Formular und bestätigt diese.
-. IF `Pilotendaten` semantisch korrekt
+. IF `Pilotendaten` plausibel
 .. Der _Webserver_ über die Änderungen in die _Datenbank_
-. ELSE `Daten` semantisch nicht korrekt
+. ELSE `Daten` nicht plausibel
 .. _Webserver_ gibt eine deskriptive Fehlermeldung aus
 .. Der Vorgang wird abgebrochen
 

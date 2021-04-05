@@ -1,4 +1,4 @@
-== Use-Case: UC02 Piloten abmelden
+== Use-Case: UC02 Pilot abmelden
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang der Abmeldung eines *Piloten* beim Verlassen des Flugplatzes beschrieben.
 
