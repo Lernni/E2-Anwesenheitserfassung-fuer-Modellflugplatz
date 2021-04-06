@@ -37,6 +37,13 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 * *NFAU-1*: Aufgabeneffizienz: Simple und intuitive Kombinationen am Terminal (einfaches Anhalten des RFID-Ausweises zum An- und Abmelden)
+** Sc-NRAU-1: 
+*** Auslöser: RFID-Ausweis am RFID-Scanner
+*** Quelle des Auslösers: Pilot
+*** Umgebung: arbeitend
+*** Systembestandteil: Raspi, RFID-Scanner, LED
+*** Antwort: Leuchten der LED
+*** Antwortmetrik: nach festgelegten Statusmeldungen
 
 * *NFAU-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
 
@@ -47,6 +54,13 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 // tag::nfar1[]
 * *NFAR-1*: Korrektheit: Uhrzeit des Raspis muss genau sein und bei bestehender Internetverbindung synchronisiert werden. (Raspi hält die Uhrzeit nicht lokal)
+** Sc-NRAR-1: 
+*** Auslöser: bestehende Internetverbindung, interner Timer
+*** Quelle des Auslösers: Raspi selbst
+*** Umgebung: arbeitend
+*** Systembestandteil: Raspi
+*** Antwort: Aktualisierung der lokalen Uhrzeit
+*** Antwortmetrik: Uhrzeit
 // end::nfar1[]
 
 
@@ -55,10 +69,24 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 // tag::nfap1[]
 * *NFAP-1*: Antwortzeiten: An- und Abmeldung innerhalb 3s, Abmelden aller Piloten in 10s (Konfigurierbare Antwortzeiten durch Admins)
+** Sc-NRAP-1: 
+*** Auslöser: RFID-Ausweis am RFID-Scanner, Betätigung des Knopfs
+*** Quelle des Auslösers: Pilot
+*** Umgebung: arbeitend
+*** Systembestandteil: Raspi, RFID-Scanner, Knopf
+*** Antwort: Aktualisierung des Flugprotokolls
+*** Antwortmetrik: An/Abmeldung eines Piloten in 3s oder Abmeldung aller Piloten in 10s
 // end::nfap1[]
 
 // tag::nfap2[]
 * *NFAP-2*: Durchsatz: Mehrere Piloten müssen sich hintereinander (innerhalb von 30 Sekunden) an- und abmelden können
+** Sc-NRAP-2: 
+*** Auslöser: RFID-Ausweise am RFID-Scanner
+*** Quelle des Auslösers: Piloten
+*** Umgebung: arbeitend
+*** Systembestandteil: Raspi, RFID-Scanner
+*** Antwort: Aktualisierung des Flugprotokolls
+*** Antwortmetrik: fehlerfreie An/Abmeldung mehrerer Piloten innerhalb von 30s
 // end::nfap2[]
 
 
