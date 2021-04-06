@@ -89,6 +89,43 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 
 . Die Skriptprogrammierung des Raspberry Pi erfolgt mit Python, da es auch hier bereits Erfahrungswerte gibt und eine Skriptsprache von den Themenstellern verlangt wird.
 
+=== Organisatorische Randbedingungen
+
+. Anprechpartner
+.. Thomas Brenner, Themensteller, h.iwe@t-online.de
+.. Heino Iwe, Themensteller, thomas.brenner@gmx.de
+.. Christoph Zirkelbach, Projektbetreuer, christoph.zirkelbach@htw-dresden.de
+.. Prof. Jürgen Anke, Professor des Moduls Software Engineering I/II, juergen.anke@htw-dresden.de
+
+. Zeitplan: siehe Projektplan
+
+. Qualifikation und Verfügbarkeit der Mitarbeiter
+.. Batchimeg, Tsatsralterdene: Studentin des Wirtschaftsingenuerwesens, nur erstes Semester
+.. Haufe, Max: Student der Informatik, beide Semester
+.. Heiß, Alexander: beide Semester
+.. Herbstrith, Simon: Student des Wirtschaftsingenuerwesens, nur erstes Semester
+.. Kleint, Richard, beide Semester
+.. Laufer, Jakob, beide Semester
+.. Reitz, Lenny: Student der Informatik, beide Semester
+.. Zimmermann, Dirk: Student der Informatik, beide Semester
+
+. Vorgehensmodell: OpenUP
+
+=== Technische Randbedingungen
+
+. Hardware
+.. Raspberry Pi 4
+
+. Software
+.. Betriebssysteme: Linux
+.. Datenbanken: MySQL
+
+. Frameworks: Vue.js
+
+. Programmiersprachen
+.. Terminal: Python
+.. Server: Python, Javascript
+
 == Architekturmechanismen
 https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
 //[List the architectural mechanisms and describe the current state of each one. Initially, each mechanism may be only name and a brief description. They will evolve until the mechanism is a collaboration or pattern that can be directly applied to some aspect of the design.]
