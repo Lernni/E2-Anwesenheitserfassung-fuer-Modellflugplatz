@@ -1,32 +1,70 @@
 == Use-Case: UC10: Handhabung Gastflüge
 ===	Kurzbeschreibung
 
+In diesem Use-Case wird die Handhabung der Protokollierung eines nicht registrierten Gastes beschrieben.
+
+////
 Gäste des Flugplatzes können einen Gastflug starten. Gastflüge müssen ebenso wie normale Flüge protokolliert werden. Dazu nutzen die betreffenden Personen den RFID-Ausweis eines Gastaccounts.
 
 Dies kann über einen oder mehrere "künstliche Piloten" realisiert werden, die nur existieren, um von den Gästen genutzt zu werden.
+
+
+--> im Meeting besprochen:
+
+** Gast Pilot bekommt kein RFID-Tag & es soll keine Registrierung vor Ort möglich --> Zugang zum Flugplatz nur in Anwesenheit mit bereits registrierten Pilot möglich 
+** im nachinein auf Website kenntlich machen, das ein Gast mit auf dem Flugplatz war
+** begleitende Piloten (nur in Anwesenheit eines registrierten Piloten)
 
 ////
 
 ===	Kurzbeschreibung der Akteure
 
+==== Pilot
+Der Akteur "Pilot", der den Gast beim Betreten des Flugplatzes begleitet und bei dessen Aufenthalt anwesend bleibt.
+
+==== Administrator
+Der Akteur "Administrator" will im Nachhinein den Gast auf der Website kenntlich machen und händisch nachtragen.  
 
 === Vorbedingungen
+. UC03 ist für den *Piloten* erfüllt
 
 
 === Standardablauf (Basic Flow)
 
+. IF *Pilot* noch nicht angemeldet
+.. Der UC10 wird im Schritt 1 des UC01 fortgesetzt
+.. Der *Pilot* begleitet den Gast beim betreten 
+. ELSE *Pilot* bereits angemeldet
+.. Der *Pilot* empfängt den Gast
+. Der *Pilot* bleibt als Begleitperson beim Aufhenthalt des Gastes anwesend
+. Der UC10 wird im Schritt 1 des UC02 fortgesetzt
+. Der *Pilot* meldet den Gast bei einem *Administrator*
+. ....
 
+//1. Möglichkeit -> Gast mit persöhnlichen Daten (Vorname, Nachname, Zeiten) in das Protokoll nachgetragen -> siehe UC09 
+//2. Möglichkeit -> Gast Anonym beim Piloten beifügen (mit einem G, Button o.ä.)  
 
-=== Alternative Abläufe
 
 
 
 === Wesentliche Szenarios
+ 
+. Sc1: *Pilot* A. ist mit einem Gast G. am Flugplatz eingetroffen und meldet sich an. Nachdem sich A. erfolgreich angemeldet hat, dürfen A. und G. den Flugplatz betreten. Während des gesamten Aufenthaltes ist A. die Begleitperson von G.. Möchten beide   nach dem Fliegen den Flugplatz verlassen, so meldet sich A. ab. Nach der erfolgreichen Abmeldung, kontaktiert A. den *Administrator* D., und bittet um eine Nachtragung des Gastes G. .....  
+
+. Sc2: Gast H. trifft sich mit dem bereits erfolgreich angemeldeten *Pilot* B..
+Während des gesamten Aufenthaltes ist B. die Begleitperson von H.. Möchten beide   nach dem Fliegen den Flugplatz verlassen, so meldet sich B. ab. Nach der erfolgreichen Abmeldung, kontaktiert B. den *Administrator* E., und bittet um eine Nachtragung des Gastes H. .....  
+
 
 
 ===	Nachbedingungen
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+* Die `Flugdaten` des Gastes müssen korrekt und vollständig im `Protokoll` zu finden sein.
+
+//oder
+
+* Der Gast muss korrekt und vollständig im `Protokoll` zu finden sein.
 
 
 === Besondere Anforderungen
@@ -36,4 +74,3 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 ==== Performance
 
-////
