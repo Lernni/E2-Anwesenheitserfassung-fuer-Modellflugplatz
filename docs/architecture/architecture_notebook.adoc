@@ -118,7 +118,7 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 
 . Software
 .. Betriebssysteme: Linux
-.. Datenbanken: MySQL
+.. Datenbanken: MySQL, MariaDB
 
 . Frameworks: Vue.js
 
