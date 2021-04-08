@@ -1,0 +1,35 @@
+= Protokoll vom 03.04.2021
+1.0 03.04.2021
+
+- Team Implementierung (Lenny, Max, Alex, Dirk)
+
+== Aktueller Stand
+
+- warten auf Hardware von TS
+- Systementwurf vertiefen (Webserver, Terminal)
+
+== Schwerpunkte
+- Planung: Aufbau Webserver
+* Frontend: Vue.js
+* Backend: Python (Flask)
+* Datenbank: SQLite oder MySQL -> TS fragen
+
+== Aufgabenverteilung
+
+=== vom 31.03.
+- Dokumentation korrigieren (Issue #62) -> Team Analyse
+- Deployment zu Dokumentation hinzufügen (Issue #62) -> Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+- Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+
+=== vom 03.04.
+- Grundstruktur Webserver erstellen -> Lenny
+- Datenbank mittels SQLite testen -> Max
+- Qualitätsanforderungen, technische & organisatorische Randbedingungen erweitern -> Dirk
+- Datenschutz (Issue #61) -> Alex
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 07.04.21, 17 Uhr
+- Meeting Implementierung: Sa 10.04.21, 15 Uhr
+- nächstes Kundenmeeting: offen

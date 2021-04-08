@@ -1,0 +1,40 @@
+= Protokoll vom 07.04.2021
+1.0 07.04.2021
+
+- alle anwesend außer Alex (abgemeldet)
+
+== Aktueller Stand
+
+- warten auf Hardware von TS
+- Dokumentation teilweise korrigiert und Fragen gestellt -> Jakob & Richard
+- Webserver Frontend und Backend initialisiert -> Lenny
+- Qualitätsanforderugen & Randbedingungen erweitert -> Dirk
+
+== Schwerpunkte
+- Beschaffung Hardware
+- Vorstellung des initialen Frontend und Backend in der Entwicklungsumgebung
+- Fragen zu ausstehende Änderungen an der Dokumentation
+- Fragen für nächstes Kundenmeeting ergänzt (Issue #65)
+
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Dokumentation korrigieren (Issue #62) -> Team Analyse
+- Deployment zu Dokumentation hinzufügen (Issue #62) -> Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+
+=== vom 03.04.
+- Grundstruktur Webserver erstellen -> Lenny
+- Datenbank mittels SQLite testen -> Max
+- Qualitätsanforderungen, technische & organisatorische Randbedingungen erweitern -> Dirk
+- Datenschutz (Issue #61) -> Alex
+
+=== aktuell
+- Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+* Fokus auf Anpassungen in der Dokumentation
+* Systementwurf Terminal überlegen -> Dirk
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 14.04.21, 17 Uhr
+- nächstes Kundenmeeting: offen
