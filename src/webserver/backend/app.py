@@ -2,10 +2,11 @@
 import sqlite3
 
 from flask import Flask
-from flask_restx import Resource, Api
+from flask_restx import Resource, Api, cors
 
 app = Flask(__name__)
 api = Api(app)
+api.decorators=[cors.crossdomain(origin='*')]
 
 
 # Ressourcen definieren
@@ -17,15 +18,16 @@ class ActivePilots(Resource):
                 {
                     "id": "1",
                     "name": "Max Muster",
-                    "start_time": "03.06.2021 15:23:10"
+                    "start_time": "03.06.2021 15:23:10",
+                    "leader": "True"
                 },
                 {
                     "id": "2",
                     "name": "Jens Müller",
-                    "start_time": "03.06.2021 14:17:40"
+                    "start_time": "03.06.2021 14:17:40",
+                    "leader": "False"
                 }
-            ],
-            "leader": "1"
+            ]
         }
 
 class Pilots(Resource):
