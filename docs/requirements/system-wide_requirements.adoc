@@ -24,7 +24,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // end::nfaf1[]
 
 // tag::nfaf2[]
-* *NFAF-2*: Ergeignissgesteuert: Protokoll- und Pilotendaten werden bei der Anmeldung direkt an den Web-Server gesendet
+* *NFAF-2*: Datensynchronisierung (ereignisgesteuert): Protokoll- und Pilotendaten werden bei der Anmeldung direkt an den Web-Server gesendet
 // end::nfaf2[]
 
 //* *NFAF-3*: Auditierung: Sollte das Flugprotokoll eine bestimmte Zeit (länger als 30 min) nicht aktualisiert werden, erhält der Administrator eine entsprechende Information auf dem Webserver
