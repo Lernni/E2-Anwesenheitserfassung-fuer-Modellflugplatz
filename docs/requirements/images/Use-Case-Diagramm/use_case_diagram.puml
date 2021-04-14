@@ -6,6 +6,8 @@ actor Pilot
 
 actor Administrator
 
+actor Zeitsteuerung
+
 rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   
   package "Terminal (Flugplatz)"{
@@ -54,6 +56,9 @@ Administrator -->  (UC10: Handhabung Gastflüge)
 Administrator --> (UC06: Alle Piloten abmelden)
 
 Administrator --> (UC11: Piloten reaktivieren)
+
+
+Zeitsteuerung --> (UC06: Alle Piloten abmelden)
 
 
 @enduml

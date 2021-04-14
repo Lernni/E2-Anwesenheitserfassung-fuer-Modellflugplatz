@@ -42,6 +42,10 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |ein Pilot, welcher spezielle Zugriffsrechte auf die Verwaltung des Systems hat
 |Admin
 
+|Zeitsteuerung
+|ein programmgesteuerter Mechanismus, welcher die Abmeldung aller Piloten immer um eine bestimmte Uhrzeit durchführt.
+|Timer
+
 |Flugleiter
 a|
 * ein Pilot, der optional bestimmt werden kann

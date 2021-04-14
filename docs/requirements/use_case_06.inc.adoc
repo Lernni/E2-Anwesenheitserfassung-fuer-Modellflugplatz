@@ -10,8 +10,9 @@ Der Akteur "Pilot" möchte sich und alle anderen *Piloten* abmelden und den Flug
 ==== Administrator
 Der Akteur "Administrator" möchte alle *Piloten* auf einmal abmelden.
 
-==== System
-Der Akteur "System" führt die Abmeldung aller *Piloten* immer um eine bestimmte Uhrzeit durch.
+==== Zeitsteuerung
+Der Akteur "Zeitsteuerung" führt die Abmeldung aller *Piloten* immer um eine bestimmte Uhrzeit durch.
+
 
 === Vorbedingungen
 . *Piloten* sind angemeldet.
@@ -26,7 +27,7 @@ Der Akteur "System" führt die Abmeldung aller *Piloten* immer um eine bestimmte
 ==== Deadline
 Es ist 00:00 Uhr und es sind noch *Piloten* angemeldet.
 
-. Alle *Piloten* werden automatisch vom _System_ abgemeldet.
+. Alle *Piloten* werden automatisch von der *Zeitsteuerung* abgemeldet.
 . Die _LED_ leuchtet nicht mehr dauerhaft.
 
 ==== Admin
