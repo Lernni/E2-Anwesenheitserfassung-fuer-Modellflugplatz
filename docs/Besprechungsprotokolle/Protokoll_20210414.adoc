@@ -1,0 +1,47 @@
+= Protokoll vom 14.04.2021
+1.0 14.04.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- warten auf Hardware von TS
+- nächstes Kundenmeeting angefragt
+- Webserver: Frontend und Backend Verbindung mittels axios hergestellt -> Lenny
+- Überlegungen zum Terminalaufbau -> Dirk
+- DB in SQLite initialisiert -> Max
+- Weiterarbeit erfordert Rücksprache mit Themenstellern
+
+== Schwerpunkte
+- Beschaffung Hardware
+- Vorstellung der Fortschritte des Prototyps Webserver
+- Überlegungen zum Terminal, Datenschutz
+- Fragen fürs Kundenmeeting -> Weiterarbeiten erst sinnvoll nach Absprache mit den TS
+
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Dokumentation korrigieren (Issue #62) -> Team Analyse
+- Deployment zu Dokumentation hinzufügen (Issue #62) -> Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+
+=== vom 03.04.
+- Datenbank mittels SQLite testen -> Max
+- Datenschutz (Issue #61) -> Alex
+
+=== vom 07.04.
+- Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+* Fokus auf Anpassungen in der Dokumentation
+
+=== aktuell
+- Fokus auf Anpassungen im Architecture-Notebook
+* Entscheidungen beim Bau des Webservers festhalten
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver
+- Bedienungselemente anpassen -> Alex
+- REST-API Requests überlegen
+- NFAs überprüfen
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 21.04.21, 17 Uhr
+- nächstes Kundenmeeting: vorraussichtlich Sa 17.04.21 15 Uhr
