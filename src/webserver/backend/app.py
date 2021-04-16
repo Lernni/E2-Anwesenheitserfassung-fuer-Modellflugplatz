@@ -1,12 +1,13 @@
 # coding=utf-8
 import sqlite3
+import os.path
 
 from flask import Flask
 from flask_restx import Resource, Api, cors
 
 app = Flask(__name__)
 api = Api(app)
-api.decorators=[cors.crossdomain(origin='*')]
+api.decorators = [cors.crossdomain(origin='*')]
 
 
 # Ressourcen definieren
@@ -30,8 +31,25 @@ class ActivePilots(Resource):
             ]
         }
 
+
 class Pilots(Resource):
     def get(self):
+        # wenn es keine datenbank gibt, dann neue erzeugen
+        if not os.path.exists("database.db"):
+            print("First Connection... setting up database")
+            first_connection = sqlite3.connect("database.db")
+            c = first_connection.cursor()
+            fd = open('sample.sql', 'r')
+            sql_file = fd.read()
+            fd.close()
+            sql_commands = sql_file.split(';')
+
+            # Execute every command from the input file
+            for command in sql_commands:
+                c.execute(command)
+
+            first_connection.commit()
+
         connection = sqlite3.connect("database.db")
         cursor = connection.cursor()
 
@@ -65,7 +83,6 @@ class Pilots(Resource):
         return return_dict
 
 # Ressourcen mit gewünschtem Pfad verknüpfen
-
 api.add_resource(ActivePilots, '/active_pilots')
 api.add_resource(Pilots, '/pilots')
 
