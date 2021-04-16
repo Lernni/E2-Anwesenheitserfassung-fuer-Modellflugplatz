@@ -27,5 +27,5 @@ VALUES (1);
 INSERT INTO RFID_Ausweis (RFID_Code)
 VALUES (2);
 
-INSERT INTO Pilot(Pilot_ID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES (1,1,'Mustermann', 'Max', CURRENT_TIMESTAMP, true);
-INSERT INTO Pilot(Pilot_ID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES (2,2,'Mustermann', 'Maria', CURRENT_TIMESTAMP, true);
+INSERT INTO Pilot(Pilot_ID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES (1,1,'Mustermann', 'Max', CURRENT_TIMESTAMP, 1);
+INSERT INTO Pilot(Pilot_ID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES (2,2,'Mustermann', 'Maria', CURRENT_TIMESTAMP, 1);

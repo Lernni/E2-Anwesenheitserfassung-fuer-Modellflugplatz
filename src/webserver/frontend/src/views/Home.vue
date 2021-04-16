@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <ActivePilots/>
+    <AllPilots/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ActivePilots from '@/components/ActivePilots.vue'
+import AllPilots from '@/components/AllPilots.vue'
 
 export default {
   name: 'Home',
   components: {
-    ActivePilots
+    AllPilots
   }
 }
 </script>

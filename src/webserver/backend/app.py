@@ -12,26 +12,6 @@ api.decorators = [cors.crossdomain(origin='*')]
 
 # Ressourcen definieren
 
-class ActivePilots(Resource):
-    def get(self):
-        return {
-            "active_pilots": [
-                {
-                    "id": "1",
-                    "name": "Max Muster",
-                    "start_time": "03.06.2021 15:23:10",
-                    "leader": "True"
-                },
-                {
-                    "id": "2",
-                    "name": "Jens Müller",
-                    "start_time": "03.06.2021 14:17:40",
-                    "leader": "False"
-                }
-            ]
-        }
-
-
 class Pilots(Resource):
     def get(self):
         # wenn es keine datenbank gibt, dann neue erzeugen
@@ -83,7 +63,6 @@ class Pilots(Resource):
         return return_dict
 
 # Ressourcen mit gewünschtem Pfad verknüpfen
-api.add_resource(ActivePilots, '/active_pilots')
 api.add_resource(Pilots, '/pilots')
 
 if __name__ == '__main__':
