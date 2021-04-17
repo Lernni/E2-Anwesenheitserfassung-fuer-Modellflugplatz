@@ -1,0 +1,34 @@
+= Meetingplan für den 17.04.2021
+1.0, 17.04.2021
+
+== Ablauf
+=== 1. Klärung Hardware
+* Herr Brenner nicht erreichbar, da neue Mailadresse: info@nandev.de
+* Hardware wird versandt, sobald Max sich noch einmal gemeldet hat
+
+=== 2. Vorstellung Prototyp Webserver
+* SQLite kann verwendet werden
+* Webserver-Prototyp ist so okay
+* Zunächst Arbeit am Webserver lokal
+
+
+== Fragen:
+* Flugleiter-Formular: für uns nicht weiter relevant
+* Datenschutz:
+** Piloten haben kein Recht auf Löschung der Daten, (stimmen dem zu bei Eintritt in den Verein)
+** Löschung von Daten wahrscheinlich nach 2 Jahren
+** Im Adminbereich kann (optional) ein Feld "Pilot löschen" hinzukommen, welches noch einmal mit einer extra Bestätigung agesichert wird, damit Piloten nicht versehentlich entfernt werden.
+* Technische Randbedingungen:
+** Netzwerk: UMTS Stick am Raspberry über VPN
+** Speicher: Keine Speicherbeschränkung (128 GB)
+** Scannermodell: Selber informieren, sobald Hardware da ist
+* Deployment:
+** Bei Einführung des Systems am Verein, können 1-2 Teammitglieder mit vor Ort sein
+* Benutzerumgebung:
+** Wie viele Admins gibt es ca. ? - 3-4
+** Wie oft kommen Neu-Anmeldungen ca. Vor? - 6-7 pro Jahr
+** Wie oft kommen Gäste? - höchstens einmal wöchentlich
+** Wie soll der Admin einen Gast im Nachhinein auf der Webseite kenntlich machen? - Die Flugsession soll als "mit Gast" markierbar sein und es soll die Möglichkeit einer Freitexteingabe geben
+
+== Nächstes Meeting
+* in ca. 2 Wochen angesetzt
