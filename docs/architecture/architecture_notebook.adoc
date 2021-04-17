@@ -92,8 +92,8 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 === Organisatorische Randbedingungen
 
 . Anprechpartner
-.. Thomas Brenner, Themensteller, h.iwe@t-online.de
-.. Heino Iwe, Themensteller, thomas.brenner@gmx.de
+.. Thomas Brenner, Themensteller, info@nandev.de
+.. Heino Iwe, Themensteller, h.iwe@t-online.de
 .. Christoph Zirkelbach, Projektbetreuer, christoph.zirkelbach@htw-dresden.de
 .. Prof. Jürgen Anke, Professor des Moduls Software Engineering I/II, juergen.anke@htw-dresden.de
 
@@ -115,12 +115,17 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 
 . Hardware
 .. Raspberry Pi 4
+.. 128 GB SD-Speicherkarte, bei Bedarf erweiterbar
+
+. Internetanbindung: UMTS Stick am Raspi, VPN
 
 . Software
 .. Betriebssysteme: Linux
-.. Datenbanken: MySQL, MariaDB
+.. Datenbanken: SQLite
 
-. Frameworks: Vue.js
+. Frameworks
+.. Terminal: Flask, SQLite3
+.. Server: Vue.js, Flask, SQLite3
 
 . Programmiersprachen
 .. Terminal: Python
