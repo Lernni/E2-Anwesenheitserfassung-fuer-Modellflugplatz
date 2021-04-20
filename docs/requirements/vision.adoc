@@ -121,7 +121,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 ==== Administratoren
 
 * sind Vereinsmitglieder des Mfc-Rossendorf
-** es gibt ca. ... Admins 
+** es gibt ca. 3-4 Administratoren 
 ** Anzahl der Admins ändert sich im Laufe der Zeit selten
 * aus rechlichen Gründen, muss die Anwesenheit der Piloten erfasst & protokolliert werden
 * sind autorisiert auf diese Protokolldaten bzw. Pilotendaten zuzugreifen und sie einzusehen
@@ -138,8 +138,10 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 * sind Vereinsmitglieder des Mfc-Rossendorf *ohne* besondere Zugangsrechte
 ** insgesamt sind es ca. 100 Vereinsmitglieder
 ** aktiv nutzen ca. ein Drittel den Flugplatz
-//Wie oft kommen neu-Anmeldungen vor, Wie oft Gäste 
-** parallel nutzen 5-10 Piloten den Flugplatz gleichzeitig (das Fliegen von Modellflugzeugen) 
+** die Zahl der Vereinsmitglieder bleibt relativ stabil, wobei es 6-7 Neuzugänge pro Jahr gibt 
+** 
+** parallel nutzen 5-10 Piloten den Flugplatz gleichzeitig (das Fliegen von Modellflugzeugen)
+** es kommt ca. 1 Gast mit dem Piloten pro Woche  
 * aus rechtlichen Gründen haben die Piloten beim Betreten des Flugplatzes die Aufgabe, sich "anzumelden"
 ** in der Vergangenheit: 
 *** manuelles Eintragen in ein physisches Flugbuch vor Ort

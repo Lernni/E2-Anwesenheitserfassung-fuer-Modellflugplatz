@@ -2,7 +2,7 @@
 :imagesdir: {docs-requirements}/images/Wireframes/Protokoll
 ===	Kurzbeschreibung
 
-In diesem Use-Case wird das Einsehen des `Protokolls` durch einen einen *Piloten* (oder *Administrator*) beschrieben.
+In diesem Use-Case wird das Einsehen des `Protokolls` durch einen *Piloten* (oder *Administrator*) beschrieben.
 
 ===	Kurzbeschreibung der Akteure
 
