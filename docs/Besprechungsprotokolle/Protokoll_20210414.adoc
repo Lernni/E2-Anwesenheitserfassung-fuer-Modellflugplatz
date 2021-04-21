@@ -1,5 +1,5 @@
 = Protokoll vom 14.04.2021
-1.0 14.04.2021
+1.0 21.04.2021
 
 - alle anwesend
 
@@ -11,6 +11,7 @@
 - Überlegungen zum Terminalaufbau -> Dirk
 - DB in SQLite initialisiert -> Max
 - Weiterarbeit erfordert Rücksprache mit Themenstellern
+- Iteration 6 begonnen (Construction Phase)
 
 == Schwerpunkte
 - Beschaffung Hardware

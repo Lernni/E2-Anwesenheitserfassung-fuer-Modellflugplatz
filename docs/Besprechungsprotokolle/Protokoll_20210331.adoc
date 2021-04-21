@@ -1,13 +1,12 @@
 = Protokoll vom 31.03.2021
-1.1 07.04.2021
+1.1 21.04.2021
 
 - alle Teammitglieder anwesend
 
 == Aktueller Stand
 
 - warten auf Hardware von TS -> Max schreibt noch eine Mail
-- Iteration 5 begonnen
-- Construction-Phase begonnen
+- Iteration 5 begonnen (Construction Phase)
 
 == Schwerpunkte
 - ausstehende Änderungen an der Dokumentation, Systementwurf

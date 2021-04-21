@@ -1,0 +1,43 @@
+= Protokoll vom 21.04.2021
+1.0 21.04.2021
+
+- alle anwesend außer Max  
+
+== Aktueller Stand
+
+- warten auf Hardware von TS
+- Entwurfsunabhängige Dokumentation soweit korrigiert (bis auf Bedienungselemente) -> Jakob, Richard
+
+== Schwerpunkte
+- Fortschritte bei Dokumentation vorgestellt
+- Dokumentation an Architecture-Notebook erst ab nächster Woche sinnvoll, weil erst dann in der Vorlesung behandelt
+- Langfristige Planung
+* Grobe Zielsetzung: Bis 23.05. - Systemimplementierung soweit abgeschlossen (2 Iterationen Construction-Phase noch)
+* Nur ein Team-Meeting in der Woche: immer mittwochs 16 Uhr
+* Analyse beschäftigt sich langfristig auch mit Planung und Test-Cases
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Dokumentation korrigieren (Issue #62) -> Team Analyse
+- Deployment zu Dokumentation hinzufügen (Issue #62) -> Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+
+=== vom 03.04.
+- Datenschutz (Issue #61) -> Alex
+
+=== vom 07.04.
+- Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+* Fokus auf Anpassungen in der Dokumentation
+
+=== vom 14.04
+- Fokus auf Anpassungen im Architecture-Notebook
+* Entscheidungen beim Bau des Webservers festhalten
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver
+- Bedienungselemente anpassen -> Alex
+- REST-API Requests überlegen -> alle
+- NFAs überprüfen -> alle
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 28.04.21, 16 Uhr
+- nächstes Kundenmeeting: vorraussichtlich ab Sa 01.05.21
