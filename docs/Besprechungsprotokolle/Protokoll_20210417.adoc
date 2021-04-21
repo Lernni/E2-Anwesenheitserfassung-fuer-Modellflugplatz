@@ -23,7 +23,10 @@
 ** Speicher: Keine Speicherbeschränkung (128 GB)
 ** Scannermodell: Selber informieren, sobald Hardware da ist
 * Deployment:
+** Benötigen die Endbenutzer eine Schulung? Ja, generell durchgeführt von Herr Iwe und Herr Brenner während eines größeren Turniers oder Mitgliederversammlung
 ** Bei Einführung des Systems am Verein, können 1-2 Teammitglieder mit vor Ort sein
+** Sollen bestimmte Funktionen schon vorher released werden? So wie für uns sinnvoll
+** Wird nach der Bereitstellung Unterstützung benötigt? TS betreuen die Funktionenselber weiter, bei spezielleren Problemen können sie den Kontakt zu uns aktivieren
 * Benutzerumgebung:
 ** Wie viele Admins gibt es ca. ? - 3-4
 ** Wie oft kommen Neu-Anmeldungen ca. Vor? - 6-7 pro Jahr
