@@ -1,0 +1,24 @@
+= Deployment Plan: {project-name}
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+
+== Allgemeine Informationen
+
+Dieses Dokument enthält die Beantwortung einer Reihe allgemeiner Fragen in Bezug auf die erfolgreiche Bereitstellung des Systems.
+
+
+== Deployment Plan
+
+Um eine erfolgreiche Bereitstellung des Systems zu gewährleisten ist beispielsweise zu klären, wer die Endbenutzer der zu veröffentlichen Funktionen sind. Die Endbenutzer sind in diesem Fall die Piloten und die Administratoren. Um die Funktionen richtig anwenden zu können, benötigen die Endbenutzer eine Einführung. Die Ansprechpartner Herr Iwe und Herr Brenner würden die Schulung generell übernehmen und bei einem größeren Turnier oder einer Mitgliederversammlung durchführen. Sollte es zeitlich umsetzbar sein, würden 1-2 Teammitglieder bei der Einführung persönlich dabei sein und für Fragen zur Verfügung stehen.
+
+Ein vom Themensteller festgelegtes Datum, wann die Funktionen verfügbar sein sollen, gibt es nicht. Das Projektteam plant mit einer Fertigstellung aller Funktionen spätestens Mitte Juni.
+
+Die Endbenutzer werden je nach der zu verwendenden Funktion an unterschiedlichen Orten sein. Möchte sich ein Pilot an- oder abmelden, dann wird dies immer am gleichen Ort auf dem Flugplatz geschehen. Die Web-Site hingegen kann jeder Endbenutzer von ihrem eigenen Zuhause aus Aufrufen. 
+
+Falls es nach der erfolgreichen Übergabe des Systems kompliziertere Probleme gibt, die durch die Dokumentation nicht gelöst werden können, hat sich das Projektteam bereit erklärt weiterhin zu helfen. Die Themensteller würden die Funktionen prinzipiell jedoch selbst weiter betreuen.
+
+Die Veröffentlichung gilt als fertig, sobald alle gewünschten Funktionen implementiert sind und dem Auftraggeber übergeben wurde.
