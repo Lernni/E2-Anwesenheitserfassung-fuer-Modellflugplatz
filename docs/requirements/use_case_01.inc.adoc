@@ -1,3 +1,4 @@
+:imagesdir: images/Einzelne_Statusmeldungen
 == Use-Case: UC01 Pilot anmelden
 ===	Kurzbeschreibung
 
@@ -21,7 +22,7 @@ Der Akteur "Pilot" möchte den Flugplatz betreten und nutzen.
 .. Die Anmeldung wird erfasst und protokolliert.
 .. Die _LED_ leuchtet grün auf (siehe S1). 
 . ELSE *Pilot* existiert nicht
-.. Die _LED_ blinkt rot auf.
+.. Die _LED_ blinkt rot auf (siehe S3).
 
 
 === Wesentliche Szenarios
@@ -50,3 +51,12 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 ==== Performance
 * Das Lesen des _RFID-Tags_ soll eine bestimme konfigurierbare Zeitdauer betragen (standardmäßig 3 Sekunden)
+
+=== Statusmeldung
+
+.Statusmeldung: S1
+image::UC01_S1.png[S1, width=70%, align="center"]
+
+.Statusmeldung: S3
+image::UC01_S3.png[S3, width=70%, align="center"]
+

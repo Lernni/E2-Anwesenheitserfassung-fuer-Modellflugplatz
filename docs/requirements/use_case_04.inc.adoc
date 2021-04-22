@@ -1,4 +1,4 @@
-:imagesdir: {docs-requirements}/images/Wireframes/Verwaltung
+:imagesdir: images/Wireframes/Verwaltung
 == Use-Case: UC04: Pilot deaktivieren
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang zum Deaktivieren eines `Piloten` durch den *Administrator* beschrieben.

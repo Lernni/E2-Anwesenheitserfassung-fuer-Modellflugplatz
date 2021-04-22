@@ -1,5 +1,6 @@
+:imagesdir: images/Wireframes/Verwaltung
 == Use-Case: UC05: Pilotendaten modifizieren
-:imagesdir: {docs-requirements}/images/Wireframes/Verwaltung
+
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das Modifizieren der `Pilotendaten` eines *Piloten* durch einen *Administrator* beschrieben.

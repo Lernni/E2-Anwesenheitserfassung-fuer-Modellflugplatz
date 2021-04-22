@@ -1,3 +1,4 @@
+:imagesdir: images/Einzelne_Statusmeldungen
 == Use-Case: UC02 Pilot abmelden
 ===	Kurzbeschreibung
 In diesem Use-Case wird der komplette Vorgang der Abmeldung eines *Piloten* beim Verlassen des Flugplatzes beschrieben.
@@ -37,3 +38,7 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 ==== Performance
 * Das Lesen des _RFID-Tags_ soll eine bestimme konfigurierbare Zeitdauer betragen (standardmäßig 3 Sekunden)
 
+=== Statusmeldung
+
+.Statusmeldung: S2
+image::UC02_S2.png[S2, width=70%, align="center"]

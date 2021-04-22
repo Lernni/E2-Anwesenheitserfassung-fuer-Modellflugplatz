@@ -1,5 +1,6 @@
+:imagesdir: images/Wireframes/Protokoll
 == Use-Case: UC08: Protokoll einsehen
-:imagesdir: {docs-requirements}/images/Wireframes/Protokoll
+
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das Einsehen des `Protokolls` durch einen *Piloten* (oder *Administrator*) beschrieben.

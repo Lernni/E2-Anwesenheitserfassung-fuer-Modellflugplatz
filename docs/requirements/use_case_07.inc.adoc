@@ -1,3 +1,4 @@
+:imagesdir: images/Einzelne_Statusmeldungen
 == Use-Case: UC07: Flugleiter bestimmen
 ===	Kurzbeschreibung
 
@@ -45,3 +46,6 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 ==== Usability
 
 Die Bestimmung eines *Flugleiters* ist prinzipiell ab dem dritten *Piloten* auf dem Flugplatz notwendig. Um jedoch keinen Zwang und somit eine mögliche Ablehnung der *Piloten* gegenüber der Anwesenheitserfassung zu vermeiden, wird die Bestimmung des *Flugleiters* auf freiwilliger Basis bevorzugt.
+
+.Statusmeldung: S4
+image::UC07_S4.png[S4, width=70%, align="center"]

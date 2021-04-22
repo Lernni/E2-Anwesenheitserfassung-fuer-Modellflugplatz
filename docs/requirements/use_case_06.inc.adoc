@@ -1,3 +1,4 @@
+:imagesdir: images/Einzelne_Statusmeldungen
 == Use-Case: UC06: Alle Piloten abmelden
 ===	Kurzbeschreibung
 
@@ -46,3 +47,15 @@ Der *Administrator* möchte alle *Piloten* abmelden.
 
 ==== Usability
 Der Use Case gehört zu der erweiterten Funktionalität des Systems und muss daher für die meisten Piloten einfach und verständlich sein.
+
+=== Statusmeldung
+
+.Statusmeldung: S6
+image::UC06_S6.png[S6, width=70%, align="center"]
+
+.Zustand: Kein Pilot aktiv
+image::Zustand_1_Kein_Pilot_aktiv.png[Kein Pilot aktiv, width=70%, align="center"]
+
+.Zustand: Mindestens 1 Pilot aktiv
+image::Zustand_2_Mindestens_ein_Pilot_aktiv.png[Mindestens 1 Pilot aktiv, width=70%, align="center"]
+

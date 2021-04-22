@@ -1,5 +1,6 @@
+:imagesdir: images/Wireframes/Protokoll
 == Use-Case: UC09: Protokolldaten nachträglich einfügen
-:imagesdir: {docs-requirements}/images/Wireframes/Protokoll
+
 ===	Kurzbeschreibung
 
 In diesem Use-Case wird das nachträgliche Eintragen einer Flugsession durch einen *Administrator* beschrieben.
