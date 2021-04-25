@@ -61,12 +61,9 @@ include::../requirements/system-wide_requirements.adoc[tag=nfap2]
 === Wartbarkeit (Supportability)
 include::../requirements/system-wide_requirements.adoc[tag=nfas1]
 include::../requirements/system-wide_requirements.adoc[tag=nfas2]
-include::../requirements/system-wide_requirements.adoc[tag=nfas3]
 
 === Zusätzliche Anforderungen
 include::../requirements/system-wide_requirements.adoc[tag=nfa+3]
-include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
-
 
 
 == Entscheidungen, Nebenbedingungen und Begründungen

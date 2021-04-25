@@ -27,9 +27,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * *NFAF-2*: Datensynchronisierung (ereignisgesteuert): Protokoll- und Pilotendaten werden bei der Anmeldung direkt an den Web-Server gesendet
 // end::nfaf2[]
 
-//* *NFAF-3*: Auditierung: Sollte das Flugprotokoll eine bestimmte Zeit (länger als 30 min) nicht aktualisiert werden, erhält der Administrator eine entsprechende Information auf dem Webserver
-
-
+* *NFAS-3*: Überwachung der Synchronisation: Der Administrator kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde und so Rückschlüsse auf mögliche Kommunikationsprobleme ziehen
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -46,7 +44,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 *** Antwortmetrik: nach festgelegten Statusmeldungen
 
 * *NFAU-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
-
 
 
 === Zuverlässigkeit (Reliability)
@@ -101,30 +98,27 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * *NFAS-2*: Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
 // end::nfas2[]
 
-// tag::nfas3[]
-
-// end::nfas3[]
-
 
 == Zusätzliche Anforderungen
 
 === Einschränkungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 * *NFA+-1*: Implementierung:
-** Auf dem Raspberry Pi ist eine Scriptsprache (Python) zu nutzen
+** Auf dem Raspberry Pi ist eine Skriptsprache (Python) zu nutzen
 ** Oberfläche des Webservers soll mit modernem JS-Framework realisiert werden (Vue)
 
 * *NFA+-2*: Plattform: 
 ** Raspberry Pi OS (Linux) auf Seite des Raspberry Pi
-** bestehender Webserver soll als Webplatform verwendet werden
+** Webserver soll sich in bestehende Infrastruktur der Wetterstation eingliedern
 
 // tag::nfa+3[]
-* *NFA+-3*: Ressourcenbegrenzungen: Stromversorgung und Datenvolumen des Raspberry Pi
+* *NFA+-3*: Ressourcenbegrenzungen: Stromversorgung des Raspberry Pi durch Solarkollektoren
+** Auf stromsparende Arbeitsweise achten
 // end::nfa+3[]
 
 // tag::nfa+4[]
-* *NFA+-4*: Physische Begrenzung: Robustes Design des Terminals (E/A-Kompomenten in einem Gehäuse verpackt, Raspi im Boden verbaut)
+//* *NFA+-4*: Physische Begrenzung: bevorzugt robustes Design des Terminals (E/A-Kompomenten in einem Gehäuse verpackt, Raspi im Boden verbaut)
+// -> schränkt den Entwurf des Systems nicht ein
 // end::nfa+4[]
 
-* *NFA+-5*: Legal: Es ist eine Open-Source Lizenz zu nutzen
-
+* *NFA+-5*: Legal: Es ist eine Open-Source Lizenz zu nutzen 
