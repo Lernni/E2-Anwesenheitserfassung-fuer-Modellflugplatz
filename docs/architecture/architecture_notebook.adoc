@@ -38,11 +38,11 @@ Das System muss *skalierbar* sein, da davon auszugehen ist, dass zusätzlich zur
 *Annahmen:*
 
 * Es exitsieren ausreichend RFID-Ausweise, sodass sich jeder Pilot am Terminal eindeutig identifizieren kann.
-* Die Solarkollektoren am Terminal liefern ausreichend Strom für die dauerhafte Betreibung des Raspberry Pis.
+//* Die Solarkollektoren am Terminal liefern ausreichend Strom für die dauerhafte Betreibung des Raspberry Pis.
 
 *Abhängigkeiten:*
 
-* Es besteht eine gegenseitige Abhängigkeit zwischen Webserver und Terminal. Beide Teile des Systems müssen miteinander kommunizieren können.
+* Es besteht eine gegenseitige Abhängigkeit zwischen Webserver und Terminal. Beide Teile des Systems müssen miteinander kommunizieren können. Fällt ein Teil des Systems langfrisitg aus, oder fehlt der Kommunikationskanal, dann ist das System nicht mehr zielführend.
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -72,20 +72,25 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Wir haben uns entschieden bei der Umsetzung der Webserver-Oberfläche auf das Frameworks Angular und Djano zu setzen, da
-.. das Projekt "Wetterstation" diese Frameworks auch verwendet hat
-.. in unserer Gruppe keine Erfahrungswerte zu JS-Frameworks bestehen
-.. die Themensteller eine moderne Oberflächengestaltung mit JS-Frameworks wünschen
-
-. Bei der Enstscheidung über die Rückmeldevarianten am Terminal haben wir uns gegen ein Display und für eine RGB-LED entschieden, da der Aufwand einer speziellen Nutzeroberfläche und die Auswahl und Einrichtung eines Displays dem relativ kleinen Funktionsumfang des Terminals nicht gerecht wird. Man kann die Rückmeldung aller Ereignisse ebenso gut mit einer RGB-LED realisieren, die unterschiedlich oft und in verschiedenen Farbkombinationen aufblinkt.
-
 . Wir haben uns für eine relationale Datenbank entschieden, da sich unsere Datenobjekte (Piloten, Protokoll) dafür anbieten. Insbesondere für die fortlaufende Protokollierung eignet sich hier eine relationale Datenbank.
 
-. Wir haben beschlossen, die relationale Datenbank auf dem Raspberry Pi (Zwischenspeicher) mit MariaDB umzusetzen, da es hier bereits Erfahrungswerte in der Gruppe gibt.
+. Wir haben beschlossen, die relationale Datenbank mit SQLite umzusetzen, da es hier bereits Erfahrungswerte in der Gruppe gibt.
 
-. Wir haben uns für eine MySQL Datenbank für die Haltung der Daten auf dem Webserver entschieden, da es persönliche Erfahrungswerte gibt und zahlreiche Informationsquellen.
+. Für die Kommunikation zwischen Terminal und Webserver nutzen wir REST API, auf Vorschlag der Themensteller.
 
-. Für die Kommunikation zwischen Raspberry Pi und Webserver nutzen wir REST API, auf Vorschlag der Themensteller.
+. Um den Aufwand gering und die Kommunikation effizient zu gestalten, bietet es sich an dieselben Frameworks auf dem Terminal und Webserver zu benutzen:
+.. Die relationale Datenbank auf dem Webserver und dem Terminal wird mit SQLite realisiert.
+.. Das Backend des Webservers wird mit dem Webframework Flask in Python realsiert, genauso das Web-Interface des Terminals.
+
+=== Webserver
+. Wir haben uns entschieden bei der Umsetzung des Webservers auf Vue.js als Frontend-Framework zu setzen, da
+.. in unserer Gruppe kaum Erfahrungswerte zu JS-Frameworks bestehen und Vue.js relativ einsteigerfreundlich ist
+.. die Themensteller eine moderne Oberflächengestaltung mit JS-Frameworks wünschen
+
+. Für Testzwecke haben wir das Backend mit der Weboberfläche Swagger.io ausgestattet, die einen guten Überblick über die vorhandenen Requests der REST API bietet.
+
+=== Terminal
+. Bei der Enstscheidung über die Rückmeldevarianten am Terminal haben wir uns gegen ein Display und für eine RGB-LED entschieden, da der Aufwand einer speziellen Nutzeroberfläche und die Auswahl und Einrichtung eines Displays dem relativ kleinen Funktionsumfang des Terminals nicht gerecht wird. Man kann die Rückmeldung aller Ereignisse ebenso gut mit einer RGB-LED realisieren, die unterschiedlich oft und in verschiedenen Farbkombinationen aufblinkt.
 
 . Die Skriptprogrammierung des Raspberry Pi erfolgt mit Python, da es auch hier bereits Erfahrungswerte gibt und eine Skriptsprache von den Themenstellern verlangt wird.
 
@@ -128,8 +133,8 @@ include::../requirements/system-wide_requirements.adoc[tag=nfa+4]
 .. Server: Vue.js, Flask, SQLite3
 
 . Programmiersprachen
-.. Terminal: Python
-.. Server: Python, Javascript
+.. Terminal: Python, SQL
+.. Server: Python, Javascript, HTML, CSS, SQL
 
 == Architekturmechanismen
 https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
@@ -170,7 +175,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten von Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
 
-Die logische Sicht enthält alle architektur-relevanten Klassen des Systems und wie diese in Beziehung zueinander stehen. Man kann hier unter anderem erkennen, dass der Pilot das Zentrum der Sicht markiert. Durch das Terminal werden Flugsessions erzeugt, welche die Beziehung zwischen Pilot und Protokoll herstellen.
+Die logische Sicht enthält alle Softwarekomponenten und ihre Abhängigkeiten zueinander. Man kann hier unter anderem erkennen, dass der Pilot das Zentrum der Sicht markiert. Durch das Terminal werden Flugsessions erzeugt, welche die Beziehung zwischen Pilot und Protokoll herstellen.
 
 .Domainmodell
 :imagesdir: {docs-requirements}/images/Domainmodell
@@ -179,7 +184,7 @@ image::domain_model.png[Domainmodell, width=70%, align="center"]
 === Physische Sicht
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
-Auf physischer Sicht ist eine klare Zweiteilung der Funktionalitäten erkennbar. Man kann außerdem gut erkennen, über welche Komponenten Informationen in das System gelangen und ausgegeben werden.
+Auf physischer Sicht werden die Komponenten der logischen Sicht auf physische Knoten verteilt. Dabei ist eine klare Zweiteilung der Funktionalitäten erkennbar. Man kann gut erkennen, wie Informationen in das System gelangen und ausgegeben werden.
 
 .C4-Modell (Level 2)
 :imagesdir: {docs-architecture}/images/C4_Model
@@ -196,4 +201,3 @@ Im Vergleich zum vollständigen Use-Case-Diagramm fallen hier einige Use-Cases w
 ....
 include::../requirements/images/Use-Case-Diagramm/use_case_diagram_architecture_relevant.puml[]
 ....
-

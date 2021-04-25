@@ -12,8 +12,8 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   
   package "Terminal (Flugplatz)"{
 
-  (UC01: Piloten anmelden)
-  (UC02: Piloten abmelden)
+  (UC01: Pilot anmelden)
+  (UC02: Pilot abmelden)
   (UC06: Alle Piloten abmelden)
   (UC07: Flugleiter bestimmen)
 
@@ -22,28 +22,28 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
   package "Webserver"{
 
   (UC03: Pilotendaten anlegen)
-  (UC04: Piloten deaktivieren)
+  (UC04: Pilot deaktivieren)
   (UC05: Pilotendaten modifizieren)
   (UC08: Protokoll einsehen)
   (UC09: Protokolldaten nachträglich einfügen)
   (UC10: Handhabung Gastflüge)
-  (UC11: Piloten reaktivieren)
+  (UC11: Pilot reaktivieren)
   
   }
 }
 
 
-Pilot --> (UC01: Piloten anmelden)
+Pilot --> (UC01: Pilot anmelden)
 (UC01: Piloten anmelden) <.down. (UC07: Flugleiter bestimmen) : extends
 
-Pilot --> (UC02: Piloten abmelden)
+Pilot --> (UC02: Pilot abmelden)
 
 Pilot --> (UC06: Alle Piloten abmelden)
 
 
 Administrator --> (UC03: Pilotendaten anlegen) 
 
-Administrator --> (UC04: Piloten deaktivieren) 
+Administrator --> (UC04: Pilot deaktivieren) 
 
 Administrator --> (UC05: Pilotendaten modifizieren) 
 
@@ -55,7 +55,7 @@ Administrator -->  (UC10: Handhabung Gastflüge)
 
 Administrator --> (UC06: Alle Piloten abmelden)
 
-Administrator --> (UC11: Piloten reaktivieren)
+Administrator --> (UC11: Pilot reaktivieren)
 
 
 Zeitsteuerung --> (UC06: Alle Piloten abmelden)
