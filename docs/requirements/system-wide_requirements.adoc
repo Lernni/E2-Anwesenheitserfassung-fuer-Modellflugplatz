@@ -24,10 +24,10 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // end::nfaf1[]
 
 // tag::nfaf2[]
-* *NFAF-2*: Datensynchronisierung (ereignisgesteuert): Protokoll- und Pilotendaten werden bei der Anmeldung direkt an den Web-Server gesendet
+* *NFAF-2*: Datensynchronisierung (ereignisgesteuert): Bsp.: Protokoll- und Pilotendaten werden bei der Anmeldung eines Piloten direkt an den Webserver gesendet
 // end::nfaf2[]
 
-* *NFAS-3*: Überwachung der Synchronisation: Der Administrator kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde und so Rückschlüsse auf mögliche Kommunikationsprobleme ziehen
+* *NFAF-3*: Überwachung der Synchronisation: Der Administrator kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde und so Rückschlüsse auf mögliche Kommunikationsprobleme ziehen
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -44,6 +44,10 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 *** Antwortmetrik: nach festgelegten Statusmeldungen
 
 * *NFAU-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
+
+// tag::nfau3[]
+* *NFAU-3*: Benutzerfreundlichkeit: Verwendung der gleichen Weboberfläche für den Webserver auf Smartphone und Desktop-PC verlangt eine Anpassung der Webseite an die Fenstergröße (responsive).
+// end::nfau3[]
 
 
 === Zuverlässigkeit (Reliability)

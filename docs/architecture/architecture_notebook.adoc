@@ -51,6 +51,9 @@ Das System muss *skalierbar* sein, da davon auszugehen ist, dass zusätzlich zur
 include::../requirements/system-wide_requirements.adoc[tag=nfaf1]
 include::../requirements/system-wide_requirements.adoc[tag=nfaf2]
 
+=== Benutzbarkeit (Usability)
+include::../requirements/system-wide_requirements.adoc[tag=nfau3]
+
 === Zuverlässigkeit (Reliability)
 include::../requirements/system-wide_requirements.adoc[tag=nfar1]
 
@@ -141,20 +144,30 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Aus NFAF-1 geht hervor, dass Admins und Piloten Anmeldedaten erhalten müssen, um sich auf dem Webserver einzuloggen. Im Gespräch mit den Themenstellern hat sich ergeben, dass es jeweils ein Zugang für die Rollen Administrator und ein Zugang für die Rolle Pilot geben soll. Jeder Pilot loggt sich dann also über den Piloten-Zugang ein mit beschränkter Funktionalität und jeder Admin über den Admin-Zugang mit vollem Funktionsumfang ein. Die konkrete technische Realisierung dieser getrennten Logins steht noch nicht fest.
+. Um die Protokollverwaltung und systemkritische Einstellungen vor Fremdzugriff zu schützen, ist es sinnvoll das System mittels Authentifizierung zu schützen (siehe *NFAF-1: Zugriffsschutz*).
 
-. Für die Gestaltung des Frontends des Webservers wird sich ein _Responsive Design_ eignen, da die Webseiten sowohl auf einem Smartphone als auch auf einem Desktop-PC ausgegeben werden. Die Administratoren werden die Verwaltung der Piloten wahrscheinlich hauptsächlich am Desktop-PC durchführen, während die Piloten den Status am Flugplatz auch mal vom Smartphone aus verfolgen wollen.
+* Es ist sinnvoll, dass Admins und Piloten Anmeldedaten erhalten, um sich auf dem Webserver einzuloggen zu können.
+* Im Gespräch mit den Themenstellern hat sich ergeben, dass es jeweils ein Zugang für die Rollen Administrator und einen Zugang für die Rolle Pilot geben soll. Jeder Pilot loggt sich dann also über den Piloten-Zugang ein mit beschränkter Funktionalität und jeder Admin über den Admin-Zugang mit vollem Funktionsumfang ein. Dadurch wird ein versehentlicher Eingriff in den systemkritischen Bereich umgangen.
+* Die konkrete technische Realisierung dieser getrennten Logins steht noch nicht fest.
 
-. Wie aus NFAF-3 und NFAR-1 hervorgeht, muss der Raspberry Pi bei bestehender Internetverbindung in gewissen zeitlichen Abständen auf externe Informationen zugreifen. Dabei handelt es sich einerseits um eine triviale Aktualisierung der Uhrzeit des Raspis. Andererseits müssen Piloten- und Protokolldaten mit dem Webserver ausgetauscht bzw. synchronisiert werden. Zu synchronsierende Daten fallen auf beiden Seiten an, Terminal und Webserver. Zum einen kann über den Webserver ein neuer Pilot hinzugefügt werden, der dem Terminal erst bekannt gemacht werden muss. Auf der anderen Seite müssen die zunächst lokal gehaltenen Protokolländerungen am Terminal auch den Webserver erreichen. Bei Absprache mit den Themenstellern hat sich herausgestellt, dass dabei eine zeitgesteuerte Synchronisation wünschenswert ist. Die genaue technische Umsetzung der Kommunikation streben wir über REST API an, die logischen Feinheiten der Synchronisierung stehen noch nicht fest.
+. Für die Gestaltung des Frontends des Webservers wird sich ein _Responsive Design_ eignen (siehe *NFAU-3: Benutzerfreundlichkeit*), da die Webseiten sowohl auf einem Smartphone als auch auf einem Desktop-PC ausgegeben werden
+* Die Administratoren werden die Verwaltung der Piloten wahrscheinlich hauptsächlich am Desktop-PC durchführen, während die Piloten den Status am Flugplatz auch vom Smartphone aus verfolgen wollen.
+* Zunächst steht die Ausgestaltung des Frontends für den Desktop-PC zu Testzwecken im Vordergrund
 
-. Durch NFA+-3 und den vorherigen Absatz lässt sich schlussfolgern, dass, wenn es eine zeitgesteuerte Synchronisation gibt, diese in relativ langen Zeitabständen (30 min) stattfindet. Noch auszuschließen ist, ob es sich wirklich ausschließlich um eine rein zeitgesteurte Synchronisation handeln soll. Es gäbe dann also keinen Befehl vom Webserver, der sofort am Terminal umgesetzt werden würde.
+. Wie aus *NFAF-2: Datensynchronisierung* und *NFAR-1: Korrektheit* hervorgeht, muss der Raspberry Pi bei bestehender Internetverbindung auf externe Informationsquellen zugreifen. Man kann hierbei unterteilen in:
+* die triviale Aktualisierung der Uhrzeit des Raspis (zeitgesetuert)
+* den beiderseitigen Austausch von Piloten- und Protokolldaten zwischen Webserver und Terminal (ereignisgesteuerte Synchronisation)
+** Hinzufügen eines neuen Piloten am Webserver, der dem Terminal erst bekannt gemacht werden muss
+** Lokal gehaltene Protokolländerungen am Terminal, müssen den Webserver erreichen. 
+* den beiderseitigen Austausch von Befehlen zwischen Terminal und Webserver (ereignisgesteuert/zeitgesteuert)
+** Die Aktion "Alle Piloten abmelden (UC06)" kann sowohl vom Terminal als auch vom Webserver ausgelöst werden und muss auf beiden Seiten wahrgenommen werden
+* Die Schaffung der Schnittstellen streben wir über Flask-Server an, die über REST API miteinander kommunizieren. Wir haben bereits mit einem Backend-Prototypen des Webservers erste Requests realisiert.
 
-. Für den Testbetrieb in der Praxis ist es sinnvoll, die einzelnen Parameter für die Befehle am Terminal nicht festzuschreiben. Im Vordergrund steht hier vor allem die Zeitdauer, die für die An- bzw. Abmeldung angesetzt wird (3s) und die Zeitdauer für die Abmeldung aller Piloten (10s). Diese Parameter sollen durch den Administrator konfigurierbar sein (NFAP-1 und NFAS-3), um Erfahrungswerte aus der Praxis leicht einstellen zu können. Es steht noch aus, ob die Konfiguration sich ausschließlich um die Zeitdauern dreht, oder ob auch weitere Parameter (LED-Farbe, LED-Blink-Rhythmus, Befehlsreihenfolge) konfigurierbar sein sollen.
+. Für den Testbetrieb in der Praxis ist es sinnvoll, die einzelnen Parameter für die Befehle am Terminal nicht festzuschreiben. Im Vordergrund steht hier vor allem die Zeitdauer, die für die An- bzw. Abmeldung angesetzt wird (3s) und die Zeitdauer für die Abmeldung aller Piloten (10s). Diese Parameter sollen durch den Administrator konfigurierbar sein (siehe *NFAP-1: Antwortzeiten* und *NFAS-2: Konfigurierbarkeit*), um Erfahrungswerte aus der Praxis leicht einstellen zu können. 
+* Es steht noch aus, ob die Konfiguration sich ausschließlich um die Zeitdauern dreht, oder ob auch weitere Parameter (LED-Farbe, LED-Blink-Rhythmus, Befehlsreihenfolge) konfigurierbar sein sollen.
 
-. Das Anlernen neuer RFID-Ausweise zum System ist bisher noch nicht technisch spezifiert. Wir gehen jedoch von beschreibbaren RFID-Ausweisen aus, die über einen einfachen Code identifiziert und auch händisch in das System eingetragen werden können. 
-
-. Ein weiterer technisch unbekannter Aspekt ist die genaue Anfrage des Terminals an den Webserver, um die Datenstände zu synchronisieren. Hier handelt es sich nicht um eine Anfrage in Form einer Webseite, sondern über eine Anfrage, die im Hintergrund abgehandelt werden soll.
-
+. Das Anlernen neuer RFID-Ausweise zum System ist bisher noch nicht technisch spezifiert. Wir gehen jedoch von beschreibbaren RFID-Ausweisen aus, die über einen einfachen Code identifiziert und auch händisch in das System eingetragen werden können.
+* Es wird sich beim Bau eines Prototypen des Terminals zeigen, wie der Umgang mit den RFID-Ausweisen zu implementieren ist
 
 ////
 
