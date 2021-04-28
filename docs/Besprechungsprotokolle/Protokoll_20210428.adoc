@@ -1,0 +1,53 @@
+= Protokoll vom 28.04.2021
+1.0 28.04.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- warten auf Hardware von TS -> Max
+* Max hat erneut eine Mail geschickt an die neue Mailadresse
+* Wenn bis zum Wochenende keine Rückmeldung, dann Prof. Anke hinzuholen
+- Entwurfsunabhängige Dokumentation korrigiert -> Jakob, Richard
+- NFAs überpüft
+- Entwurfsabhängige Dokumentation korrigiert -> Lenny
+
+== Schwerpunkte
+- Fortschritte bei Dokumentation vorgestellt
+- Fragen bezüglich Domainmodell, Datenmodell und Deployment geklärt
+- REST-API besprochen
+- Folien zum Projektmanagement
+- Grober Ablaufplan zur Implementierung des Webservers erstellt
+. Erstellung der Datenbank
+* Gast hinzufügen zum Datenbankmodell
+* Datenbank erstellen
+. Frontend erstellen
+* Wireframes aktualisieren
+* Vue-Komponenten erstellen
+. Logins verwalten
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+
+=== vom 07.04.
+- Systementwurf erweitern (Issue #64) -> Lenny
+* Zusammenfassung der REST-API ausstehend
+
+=== vom 14.04.
+- Fokus auf Anpassungen im Architecture-Notebook
+* Entscheidungen beim Bau des Webservers festhalten
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver (Issue #72) -> Lenny, Dirk
+
+=== vom 28.04.
+- Deployment weiterführen (Issue #76) -> Richard
+- Domainmodell aktualisieren (Issue #71) -> Richard
+- Nicht benötigte NFAs entfernen (Issue #68) -> Jakob
+- Wireframes überarbeiten (Issue #69) -> Alex
+- Datenbankmodell aktualisieren/Datenbank erstellen (Issue #73) -> Max
+- Vue-Komponenten aus Wireframes erstellen (Issue #74) -> Lenny
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 05.05.21, 17 Uhr
+- nächstes Kundenmeeting: offen
