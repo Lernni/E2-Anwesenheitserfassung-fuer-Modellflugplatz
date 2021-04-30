@@ -35,6 +35,160 @@ Mögliche Änderungen auf Seite des Terminals:
 
 Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen.
 
+=== Aufbau der REST-API
+In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Webserver (Frontend & Backend) und Terminal benutzt werden, um Informationen und Befehle untereinander auszutauschen. Die Unterteilung der URLs erfolgt nach HTTP-Methode:
+
+* GET - Anfordern von Daten
+* POST - Übermitteln neuer Daten
+* PUT - Verändern bestehender Daten
+* DELETE - Löschen bestehender Daten
+
+// Im Laufe der Entwicklung diesen Abschnitt um Screenshots von Swagger.io ergänzen
+
+==== GET
+
+[%header, cols="1,1,2,2"]
+|===
+| URL
+| Beschreibung
+| Attribute
+| Start -> Ziel
+
+| /pilots
+| Erwarte alle Piloten der Tabelle Pilot
+a|
+* ?from=0?to=20 (die ersten 20)
+* ?active=false (alle deaktiven)
+* /id/2 (Pilot mit Id = 2)
+a|
+* Frontend -> Backend
+* Terminal -> Backend
+
+| /sessions
+| Erwarte alle Sessions der Tabelle Flugsession
+a|
+* ?from=0?to=20 (die ersten 20)
+* ?running=true (alle derzeitigen)
+* /filterByTime?from=23.04.2021?to=25.04.2021
+* /filterByPilot/2 (alle Sessions von Pilot 2)
+* /filterById/5 (Session mit Id = 5)
+a|
+* Frontend -> Backend
+* Terminal -> Backend
+
+| /settings
+| Erwarte alle Einstellungen für den Terminalablauf
+a|
+JSON
+a|
+* Frontend -> Backend
+* Terminal -> Backend
+
+|===
+
+==== POST
+
+[%header, cols="1,1,2,2"]
+|===
+| URL
+| Beschreibung
+| Attribute
+| Start -> Ziel
+
+| /pilots
+| Hinzufügen eines neuen Piloten zur Tabelle Pilot
+a|
+* "name": "Mustermann",
+* "rfid": "24572"
+* ...
+a|
+* Frontend -> Backend
+
+| /sessions (alterntaiv: /sessions/check_in)
+| Hinzufügen einer neuen Session
+a|
+* "pilot_id": "3",
+* "start_time": "23.06.2021 15:43:12"
+* ...
+a|
+* Terminal -> Backend
+// Return Session Id?
+
+| /ping
+| Sende "Lebenszeichen" des Terminals
+a|
+a|
+* Terminal -> Backend
+|===
+
+==== PUT
+
+[%header, cols="1,1,2,2"]
+|===
+| URL
+| Beschreibung
+| Attribute
+| Start -> Ziel
+
+| /pilots
+| Ändern eines Piloten in der Tabelle Pilot
+a|
+* /id/2 (ID des Piloten)
+* ?active=false
+* "rfid": "24572"
+a|
+* Frontend -> Backend
+
+| /sessions/check_out
+| Beenden einer Session oder aller Sessions
+a|
+* "session_id": "18",
+* "end_time": "23.06.2021 17:09:12"
+* ...
+* ?all
+a|
+* Terminal -> Backend
+* Frontend -> Backend
+* Backend -> Terminal
+
+| /sessions/flags
+| Flugleiter bestimmen, Gast hinzufügen
+a|
+* ?leader
+* "session_id": "18",
+* ?guest
+* "guest_name": "Max Muster",
+* "guest_info": "..."
+a|
+* Terminal -> Backend
+* Frontend -> Backend
+
+| /settings
+| Ändere Einstellungen für den Terminalablauf
+a|
+JSON
+a|
+* Frontend -> Backend
+|===
+
+==== DELETE
+
+[%header, cols="1,1,2,2"]
+|===
+| URL
+| Beschreibung
+| Attribute
+| Start -> Ziel
+
+| /pilots
+| Löschen eines Piloten aus der Tabelle Pilot
+a|
+* /id/2 (ID des Piloten)
+a|
+* Frontend -> Backend
+|===
+
+
 == Graphische Designaspekte
 Garphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
 
