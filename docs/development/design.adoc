@@ -203,7 +203,7 @@ In der folgenden Übersicht sind die verschiedenen Bedienungsmöglichkeiten am T
 :imagesdir: {docs-architecture}/images/Statusmeldungen
 
 .Statusmeldungen/Bedienungsanleitung am Terminal
-image::Status_und_Bedienungsanleitung_10_02_2021.png[Statusmeldungen Terminal, width=60%, align="center"]
+image::Statusmeldungen.png[Statusmeldungen Terminal, width=60%, align="center"]
 
 === Webserver
 
