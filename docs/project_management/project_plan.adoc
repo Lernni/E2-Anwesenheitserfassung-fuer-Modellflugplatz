@@ -75,27 +75,27 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 |KW 3-5
 
 |It. Nr. 5
-|Construction
-|
+|*Elaboration* & *Construction*
+|Designentschlüsse festlegen, Konkrete Konstruktionspläne entwerfen
 |KW 13-14
 
 |It. Nr. 6
 |Construction
-|
+|Datenbank umsetzen, Erweiterung Dokumentation zu Design und Entwurf, REST-API entwerfen
 |KW 15-16
 
 |It. Nr. 7
 |Construction
-|
+|REST-API umsetzen, Datenbank erweitern, Vue.js Komponenten umsetzen, Paketdiagramm entwerfen 
 |KW 17-18
 
 |It. Nr. 8
 |Construction
-|
+|Zusätzliche Test-Cases entwerfen, 
 |KW 19-20
 
 |It. Nr. 9
-|Transition & Tests
+|Construction & Tests
 |
 |KW 21-22
 
