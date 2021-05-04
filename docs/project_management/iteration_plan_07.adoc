@@ -66,9 +66,9 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 712 | Domainmodell überarbeiten | x | 2 | 7 | Richard | x | x |
 
-713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 7-9 | Lenny | x | x |
+713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 7-9 | Lenny | x | x 
 
-|===
+| ===
 
 *Aufgaben Team-TS-Meeting:*
 
