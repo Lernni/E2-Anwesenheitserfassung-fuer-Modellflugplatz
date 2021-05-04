@@ -60,13 +60,13 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 709 | Wireframes aktualisieren | x | 6 | 0% | 7 | Alex | x | x |
 
-710 | Datenbankmodell überarbeiten | x | 2 | 7 | Max | x | x |
+710 | Datenbankmodell überarbeiten | x | 2 | 0% | 7 | Max | x | x |
 
-711 | Paketdiagramm entwerfen | x | 64 | 7-8 | Lenny, Dirk | x | x |
+711 | Paketdiagramm entwerfen | x | 64 | 0% | 7-8 | Lenny, Dirk | x | x |
 
-712 | Domainmodell überarbeiten | x | 2 | 7 | Richard | x | x |
+712 | Domainmodell überarbeiten | x | 2 | 0% | 7 | Richard | x | x |
 
-713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 7-9 | Lenny | x | x 
+713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 0% | 7-9 | Lenny | x | x 
 
 | ===
 
