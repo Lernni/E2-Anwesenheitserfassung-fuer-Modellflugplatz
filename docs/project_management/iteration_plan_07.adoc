@@ -68,7 +68,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 0% | 7-9 | Lenny | x | x |
 
-| ===
+|===
 
 *Aufgaben Team-TS-Meeting:*
 
