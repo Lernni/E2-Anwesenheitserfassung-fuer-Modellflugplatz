@@ -1,0 +1,13 @@
+== Test Case: TC04: Sicherheitsüberprüfung
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+In diesem Test-Case wird die nichtfunktionale Anforderung "Legal" auf Erfüllung getestet. Die vollständige Website (außer Login-Page, Datenschutzerklärung, Impressum), die personalisierten Daten sowie Dokumente der Datenbank und des Webservers dürfen nur nach der Eingabe von Passwörtern lesbar, veränderbar oder löschbar sein.
+
+=== Vorbedingungen
+- Es besteht kein aktiver Login
+
+=== Nachbedingungen
+Der Test gilt als erfolgreich abgeschlossen, wenn
+- keine Änderung oder Anzeige der Daten stattfand und die Website außerhalb der oben genannten Seiten nicht besucht werden konnte
