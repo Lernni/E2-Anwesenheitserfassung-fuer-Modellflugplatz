@@ -91,17 +91,17 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 
 |It. Nr. 8
 |Construction
-|Zusätzliche Test-Cases entwerfen, 
+|Zusätzliche Test-Cases entwerfen, Vue.js Komponenten umsetzen, Terminal umsetzen
 |KW 19-20
 
 |It. Nr. 9
 |Construction & Tests
-|
+|Verbindung der Komponenten schaffen, Website responsive gestalten, Test-Cases anwenden 
 |KW 21-22
 
 |It. Nr. 10
-|Tests
-|
+|Transition & Tests
+|Einbindung System vor Ort, Tests, Einführung in das System 
 |KW 23-24
 |===
 
