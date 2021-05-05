@@ -47,6 +47,7 @@ Das System muss *skalierbar* sein, da davon auszugehen ist, dass zusätzlich zur
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 
+
 === Funktional
 include::../requirements/system-wide_requirements.adoc[tag=nfaf1]
 include::../requirements/system-wide_requirements.adoc[tag=nfaf2]
@@ -65,8 +66,6 @@ include::../requirements/system-wide_requirements.adoc[tag=nfap2]
 include::../requirements/system-wide_requirements.adoc[tag=nfas1]
 include::../requirements/system-wide_requirements.adoc[tag=nfas2]
 
-=== Zusätzliche Anforderungen
-include::../requirements/system-wide_requirements.adoc[tag=nfa+3]
 
 
 == Entscheidungen, Nebenbedingungen und Begründungen

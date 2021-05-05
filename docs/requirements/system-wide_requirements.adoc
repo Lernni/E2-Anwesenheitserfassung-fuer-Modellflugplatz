@@ -19,9 +19,9 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 // Tags für Einbindung in Architektur-Notebook
 
-// tag::nfaf1[]
+//tag::nfaf1[]
 * *NFAF-1*: Zugriffsschutz: Schutz der Datenbank durch Admin-Rechte, Einsicht des Flugprotokolls nur für Admins und Piloten
-// end::nfaf1[]
+//end::nfaf1[]
 
 // tag::nfaf2[]
 * *NFAF-2*: Datensynchronisierung (ereignisgesteuert): Bsp.: Protokoll- und Pilotendaten werden bei der Anmeldung eines Piloten direkt an den Webserver gesendet
@@ -29,11 +29,13 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 * *NFAF-3*: Überwachung der Synchronisation: Der Administrator kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde und so Rückschlüsse auf mögliche Kommunikationsprobleme ziehen
 
+
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
+
 * *NFAU-1*: Aufgabeneffizienz: Simple und intuitive Kombinationen am Terminal (einfaches Anhalten des RFID-Ausweises zum An- und Abmelden)
 ** Sc-NRAU-1: 
 *** Auslöser: RFID-Ausweis am RFID-Scanner
@@ -102,7 +104,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * *NFAS-2*: Konfigurierbarkeit: Konfiguration von Antwortzeiten und Statusmeldungen durch Admins
 // end::nfas2[]
 
-
 == Zusätzliche Anforderungen
 
 === Einschränkungen
@@ -115,17 +116,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 ** Raspberry Pi OS (Linux) auf Seite des Raspberry Pi
 ** Webserver soll sich in bestehende Infrastruktur der Wetterstation eingliedern
 
-// tag::nfa+3[]
-* *NFA+-3*: Ressourcenbegrenzungen: Stromversorgung des Raspberry Pi durch Solarkollektoren
-** Auf stromsparende Arbeitsweise achten
-// end::nfa+3[]
-
-// tag::nfa+4[]
-//* *NFA+-4*: Physische Begrenzung: bevorzugt robustes Design des Terminals (E/A-Kompomenten in einem Gehäuse verpackt, Raspi im Boden verbaut)
-// -> schränkt den Entwurf des Systems nicht ein
-// end::nfa+4[]
-
-* *NFA+-5*: Legal: 
+* *NFA+-3*: Legal: 
 ** Es ist eine Open-Source Lizenz zu nutzen
 
 == Datenschutz

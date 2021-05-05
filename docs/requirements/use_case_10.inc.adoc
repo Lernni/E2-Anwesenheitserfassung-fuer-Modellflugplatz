@@ -20,31 +20,27 @@ Dies kann über einen oder mehrere "künstliche Piloten" realisiert werden, die 
 ===	Kurzbeschreibung der Akteure
 
 ==== Pilot
+
 Der Akteur "Pilot", der den Gast beim Betreten des Flugplatzes begleitet und bei dessen Aufenthalt anwesend bleibt.
-
-==== Administrator
-Der Akteur "Administrator" will im Nachhinein den Gast auf der Website kenntlich machen und händisch nachtragen.  
-
+ 
 === Vorbedingungen
+
 . UC01 ist für den *Piloten* erfüllt
 . UC03 ist für den *Piloten* erfüllt
 . Die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein.
-
 
 === Standardablauf (Basic Flow)
 
 . Der *Pilot* empfängt/begleitet den Gast beim betreten 
 . Der *Pilot* bleibt als Begleitperson beim Aufhenthalt des Gastes anwesend
 . Beim Verlassen wird UC10 im Schritt 1 des UC02 fortgesetzt
-. Der *Pilot* meldet den Gast bei einem *Administrator*
-. Der *Administrator* wählt die _Protokollansicht_ aus 
-. Der UC10 wird im Schritt 2 des UC08 fortgesetzt
-. Der *Administrator* trägt den Gast in das _Protokoll_ ein
-
+. Um den Gast im _Protokoll_ zu vermerken, durchläuft der *Pilot* UC08 ab den Schritt 1
+. *Pilot* wählt die ensprechende Flugsession aus, wo der Gast mit anwesend war
+. Der *Pilot* trägt den Gast in seine Flugsession in das _Protokoll_ ein
 
 === Wesentliche Szenarios
  
-. Sc1: *Pilot* A. ist mit einem Gast G. am Flugplatz eingetroffen und meldet sich an. Nachdem sich A. erfolgreich angemeldet hat, dürfen A. und G. den Flugplatz betreten. Während des gesamten Aufenthaltes ist A. die Begleitperson von G.. Möchten beide nach dem Fliegen den Flugplatz verlassen, so meldet sich A. ab. Nach der erfolgreichen Abmeldung, kontaktiert A. den *Administrator* D., und bittet um eine Nachtragung des Gastes G.. D. meldet sich auf der _Webseite_ an und wählt die Protokollansicht aus. Dort trägt er den Gast in das _Protokoll_ ein
+. Sc1: *Pilot* A. ist mit einem Gast G. am Flugplatz eingetroffen und meldet sich an. Nachdem sich A. erfolgreich angemeldet hat, dürfen A. und G. den Flugplatz betreten. Während des gesamten Aufenthaltes ist A. die Begleitperson von G.. Möchten beide nach dem Fliegen den Flugplatz verlassen, so meldet sich A. ab. Nach der erfolgreichen Abmeldung, muss A. den Gast im _Protokoll_ vermerken. A. meldet sich auf der _Webseite_ an und wählt die _Protokollansicht_ aus. Dort trägt er den Gast in seine Flugsession in das _Protokoll_ ein.
 
 
 ===	Nachbedingungen
@@ -53,11 +49,4 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 
 * Die `Flugdaten` des Gastes müssen korrekt und vollständig im `Protokoll` zu finden sein.
 
-
-=== Besondere Anforderungen
-
-==== Usability
-
-
-==== Performance
 
