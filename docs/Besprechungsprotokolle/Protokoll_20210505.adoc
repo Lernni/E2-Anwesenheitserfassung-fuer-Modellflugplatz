@@ -1,0 +1,53 @@
+= Protokoll vom 05.05.2021
+1.0 05.05.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Max hat Hardware und Einführung von Herr Brenner erhalten
+- Projektplanung und Test-Cases fortgesetzt -> Alex
+- REST-API dokumentiert und angefangen Vue-Komponenten zu implementieren -> Lenny
+- Package Diagramm für Terminal entworfen -> Dirk
+
+== Schwerpunkte
+- Hardwareübergabe und -aufbau erläutert
+- Bericht über Fachaustausch zum Projektmanagement
+* Mehr Fokus auf Iterationsplänen
+- Planung und Verteilung der Aufgaben (Iteration 7 und Iteration 8)
+- Kurze Rücksprache mit Herr Brenner bezüglich Logins:
+* Die Tabelle Pilot soll erweitert werden, sodass jeder Pilot einen eigenen Login hat (3 neue Spalten, Nutzername, Passwort, Adminflag)
+* Es wird ein initialer Pilot mit Adminrechten erstellt
+* Das Passwort für die Piloten ist initial NULL und wird von den Piloten beim ersten Anmelden festgelegt
+* Piloten können das gesamte Flugprotokoll einsehen
+* Piloten können nur ihre eigenen Flugsessions bearbeiten (Gäste hinzufügen)
+* Admins haben die Möglichkeit Passwörter zurückzusetzen
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Projektplan und Test-Cases erweitern (Issue #63) -> Alex, Jakob
+
+=== vom 14.04.
+- Fokus auf Anpassungen im Architecture-Notebook
+* Entscheidungen beim Bau des Webservers festhalten
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver (Issue #72) -> Lenny, Dirk
+
+=== vom 28.04.
+- Deployment weiterführen (Issue #76) -> Richard
+- Domainmodell aktualisieren (Issue #71) -> Richard
+- Nicht benötigte NFAs entfernen (Issue #68) -> Jakob
+- Wireframes überarbeiten (Issue #69) -> Alex
+- Datenbankmodell aktualisieren/Datenbank erstellen (Issue #73) -> Max
+- Vue-Komponenten aus Wireframes erstellen (Issue #74) -> Lenny
+
+=== aktuell
+- Datenbank für Terminal erstellen (Issue #77) -> Max
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Komponentendiagramm entwerfen (Issue #79) -> Dirk, Jakob
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+- UC10 und UC08 überprüfen und korrigieren (Issue #81) -> Jakob
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 12.05.21, 17 Uhr
+- nächstes Kundenmeeting: offen
