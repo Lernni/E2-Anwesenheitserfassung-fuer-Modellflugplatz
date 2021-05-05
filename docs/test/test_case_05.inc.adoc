@@ -1,0 +1,15 @@
+== Test Case: TC05: Vollständige Deaktivierung Pilot
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+In diesem Test-Case wird getestet, ob die Deaktivierung eines Piloten vollständig durchgeführt wird und eine Anmeldung am Terminal nicht mehr möglich ist.
+
+=== Vorbedingungen
+- Ein Pilot war ursprünglich mit zugewiesener RFID-Karte als aktiver Pilot im System eingetragen
+- Der Pilot ist nun durch das System deaktiviert
+
+=== Nachbedingungen
+Im Erfolgsfall gilt:
+
+- Der deaktivierte Pilot kann sich nicht mehr am Terminal anmelden. Die LED blinkt rot auf. Auch sind die weiteren Funktionen (z.b. Ernennung als Flugleiter, Alle Piloten abmelden, siehe Use Cases am Terminal) nicht mehr möglich 
