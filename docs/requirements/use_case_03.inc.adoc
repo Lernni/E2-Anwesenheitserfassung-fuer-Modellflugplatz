@@ -61,4 +61,6 @@ Diese Vorkehrungen sind notwendig, wenn sie nicht die Performance des _Webserver
 === Wireframe
 
 .Wireframe: Pilotendaten anlegen
-image::Pilot_erstellen_neu.png[Pilotendaten anlegen, width=70%, align="center"]
+image::Pilot_Erstellen_V3.png[Pilotendaten anlegen, width=70%, align="center"]
+
+

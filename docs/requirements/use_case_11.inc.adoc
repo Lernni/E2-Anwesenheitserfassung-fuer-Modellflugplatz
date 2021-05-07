@@ -41,9 +41,10 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 === Wireframe
 
 .Wireframe: Pilotenübersicht (deaktiv)
-image::Pilotenübersicht_deaktiv.png[Pilotenübersicht (deaktiv), width=70%, align="center"]
+image::Piloten_Uebersicht_deaktivierte_Piloten_V3.png[Pilotenübersicht (deaktiv), width=70%, align="center"]
+
 
 .Wireframe: Pilot reaktivieren
-image::Pilot_reaktivieren.png[Pilot reaktivieren, width=70%, align="center"]
+image::Pilotendaten_Reaktivieren_V3.png[Pilot reaktivieren, width=70%, align="center"]
 
 

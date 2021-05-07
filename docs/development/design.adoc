@@ -1,4 +1,7 @@
 = Design: {project-name}
+
+:imagesdir: images
+
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -14,7 +17,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 === Datenbankmodell
 Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Auweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:c-Beziehung zwischen den entsprechenden Tabellen (Es kann mehr hinterlegte RFID-Ausweise als Piloten geben, daher die konditionale Beziehung). Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
 
-:imagesdir: {docs-requirements}/images/Datenmodell
+
 
 .Datenbankmodell
 image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
@@ -200,8 +203,6 @@ Das System unterscheidet sich in zwei physisch getrennte Bereiche:
 
 In der folgenden Übersicht sind die verschiedenen Bedienungsmöglichkeiten am Terminal vor Ort sowie die Reaktion des Systems in Form einer RGB-LED angegeben. Der Button ist ein dort platzierter Druckknopf und die Karte der RFID-Ausweis eines Piloten. Des Weiteren sind am unteren Ende der Grafik die Zustände der LED während der Nicht-Benutzung des Terminals dargestellt:
 
-:imagesdir: {docs-architecture}/images/Statusmeldungen
-
 .Statusmeldungen/Bedienungsanleitung am Terminal
 image::Statusmeldungen.png[Statusmeldungen Terminal, width=60%, align="center"]
 
@@ -218,8 +219,6 @@ Weitere Festlegungen zur Darstellung und Bedienung der Website:
 
 Für eine Übersicht der verschiedenen Wireframes und deren Beziehungen wurde folgendes Diagramm erstellt:
 
-:imagesdir: {docs-requirements}/images/Wireframes
-
 .Verlinkung/Zusammenhänge zwischen Wireframes
 image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
 
@@ -233,5 +232,16 @@ Im oberen Teil des Wireframes "Startseite Admin" sind die aktuell aktiven Pilote
 
 Unterhalb dieses Bereiches sind weitere Funktionalitäten für angemeldete Admins verfügbar.
 
+
+.Wireframe: Login
+image::Login_V3.png[Startseite Admin, width=70%, align="center"]
+
 .Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
-image::Startseiten/Startseite_Admin_neu.png[Startseite Admin, width=70%, align="center"]
+image::Startseite_Admin_V3.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
+image::Startseite_Admin_V3.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Startseite (Mitglied), zeigt aktuell aktive Piloten auf dem Flugplatz
+image::Startseite_Mitglied_V3.png[Startseite Admin, width=70%, align="center"]
+

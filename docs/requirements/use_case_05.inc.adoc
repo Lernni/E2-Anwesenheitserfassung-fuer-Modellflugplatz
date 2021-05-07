@@ -34,4 +34,5 @@ Der Akteur "Administrator" möchte die Pilotendaten eines Piloten verändern.
 === Wireframe
 
 .Wireframe: Pilotendaten modifizieren
-image::Pilotendaten_modifizieren_neu.png[Pilotendaten modifizieren, width=70%, align="center"]
+image::Pilotendaten_Modifizieren_V3.png[Pilotendaten modifizieren, width=70%, align="center"]
+
