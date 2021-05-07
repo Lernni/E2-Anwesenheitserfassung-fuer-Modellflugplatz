@@ -1,22 +1,20 @@
 <template>
-  <div class="container">
-    <h2>Aktive Flugsessions</h2>
-    <ActiveSessions/>
-    <hr>
-    <h2>Admin-Bereich</h2>
-    <AdminPanel/>
-  </div>
+  <h2>Aktive Flugsessions</h2>
+  <ActiveSessionsTable/>
+  <hr>
+  <h2>Admin-Bereich</h2>
+  <AdminPanel/>
 </template>
 
 <script>
 // @ is an alias to /src
-import ActiveSessions from '@/components/ActiveSessions.vue'
+import ActiveSessionsTable from '@/components/ActiveSessionsTable.vue'
 import AdminPanel from '@/components/AdminPanel.vue'
 
 export default {
   name: 'Home',
   components: {
-    ActiveSessions,
+    ActiveSessionsTable,
     AdminPanel
   }
 }

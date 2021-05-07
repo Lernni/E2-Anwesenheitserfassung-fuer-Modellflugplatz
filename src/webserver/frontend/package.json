@@ -15,7 +15,8 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.2.13",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vue-unicons": "^3.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
