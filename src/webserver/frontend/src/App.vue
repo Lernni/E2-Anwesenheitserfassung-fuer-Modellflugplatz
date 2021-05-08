@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/login">Login</router-link> | 
-      <router-link to="/pilot-overview">Pilotenübersicht</router-link>
+      <router-link to="/pilot-overview">Pilotenübersicht</router-link> | 
+      <router-link to="/add-session">Flugsession nachtragen</router-link>
     </div>
     <div class="container">
       <router-view/>

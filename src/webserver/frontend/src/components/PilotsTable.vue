@@ -2,8 +2,12 @@
   <b-table striped :items="items" :fields="fields">
     <template #cell(actions)="row">
         <b-button-group size="sm">
-          <b-button variant="outline-primary" :href="'/edit-pilot?id=' + row.item.pilot_id">edit</b-button>
-          <b-button variant="outline-danger" v-on:click="delete_pilot(row.item.pilot_id)">deactivate</b-button>
+          <b-button variant="outline-primary" :href="'/edit-pilot?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
+            <b-icon-pencil-square></b-icon-pencil-square>
+          </b-button>
+          <b-button variant="outline-danger" v-on:click="delete_pilot(row.item.pilot_id)" v-b-tooltip.hover title="Deaktivieren">
+            <b-icon-dash-circle-fill></b-icon-dash-circle-fill>
+          </b-button>
         </b-button-group>
     </template>
   </b-table>
@@ -11,11 +15,16 @@
 
 <script>
 import axios from 'axios'
+import { BIconPencilSquare, BIconDashCircleFill } from 'bootstrap-vue'
 
 export default {
   name: 'PilotsTable',
   props: {
     msg: String
+  },
+  components: {
+    BIconPencilSquare,
+    BIconDashCircleFill
   },
   data() {
     return {
