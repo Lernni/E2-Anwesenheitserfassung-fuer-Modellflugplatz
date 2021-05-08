@@ -42,15 +42,6 @@ npm run serve
 
 Der Development-Server kann über http://localhost:8080/ erreicht werden.
 
-### Einstellungen für VSCode
-Für VSCode als Entwicklungsumgebung, lohnt sich die [Vetur Extension](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Es ist aber empfehlenswert folgende Zeilen in die `settings.json` von VSCode anzufügen, um die veraltete Fehlermeldung `no-multiple-template-root` zu entfernen:
-
-```
-"vetur.validation.template": false,
-"vetur.validation.script": false,
-"vetur.validation.style": false,
-```
-
 
 ### Installation (Ubuntu)
 Nur, falls noch kein Projekt global erstellt wurde.
@@ -69,18 +60,13 @@ vue create frontend
 ```
 
 ```
+Vue CLI v4.5.12
 ? Please pick a preset: Manually select features
 ? Check the features needed for your project: Choose Vue version, Babel, Router, Linter
-? Choose a version of Vue.js that you want to start the project with 3.x (Preview)
+? Choose a version of Vue.js that you want to start the project with 2.x
 ? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
 ? Pick a linter / formatter config: Basic
 ? Pick additional lint features: Lint on save
 ? Where do you prefer placing config for Babel, ESLint, etc.? In package.json
 ? Save this as a preset for future projects? No
-```
-
-4. Abhängigkeiten installieren:
-
-```
-npm install axios
 ```

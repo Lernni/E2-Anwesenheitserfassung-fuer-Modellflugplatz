@@ -1,21 +1,8 @@
 <template>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Pilot</th>
-        <th scope="col">Beginn</th>
-        <th scope="col">Flugleiter</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="session in sessions" :key="session.session_id">
-        <td>{{session.pilot_name}}</td>
-        <td>{{session.start_time}}</td>
-        <td v-if="session.leader == 'True'">F</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="font-italic text-right">Letzte Aktualisierung: --:--</p>
+  <div class="active-sessions-table">
+    <b-table striped :items="items" :fields="fields"></b-table>
+    <p class="font-italic text-right">Letzte Aktualisierung: --:--</p>
+  </div>
 </template>
 
 <script>
@@ -28,20 +15,29 @@ export default {
   },
   data() {
     return {
-      sessions: []
+      items: [
+        // test item
+        {session_id: 1, pilot_name: "Max Mustermann", start_time: "12.05.2020", session_leader: true}
+      ],
+      fields: [
+        {key: "pilot_name", label: "Pilot"},
+        {key: "start_time", label: "Beginn"},
+        {
+          key: "session_leader",
+          label: "Flugleiter",
+          formatter: (value) => {
+            return value ? "F" : ""
+          }
+        }
+      ]
     };
   },
   async mounted() {
     await axios({method: "GET", "url": "http://localhost:5000/sessions?running=true"}).then(result => {
-      this.sessions = result.data['sessions'];
+      this.items = result.data['sessions'];
     }, error => {
       console.error(error);
     });
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
-</style>

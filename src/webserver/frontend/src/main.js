@@ -1,13 +1,15 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Unicon from 'vue-unicons'
-import { uniEditAlt, uniMinusCircle } from 'vue-unicons/dist/icons'
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
-Unicon.add([uniEditAlt, uniMinusCircle])
-
-createApp(App).use(Unicon).use(router).mount('#app')
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')

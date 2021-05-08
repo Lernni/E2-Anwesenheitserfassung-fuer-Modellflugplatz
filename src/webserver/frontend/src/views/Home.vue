@@ -1,9 +1,11 @@
 <template>
-  <h2>Aktive Flugsessions</h2>
-  <ActiveSessionsTable/>
-  <hr>
-  <h2>Admin-Bereich</h2>
-  <AdminPanel/>
+  <div class="admin-panel">
+    <h2>Aktive Flugsessions</h2>
+    <ActiveSessionsTable/>
+    <hr>
+    <h2>Admin-Bereich</h2>
+    <AdminPanel/>
+  </div>
 </template>
 
 <script>

@@ -1,11 +1,13 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/login">Login</router-link> | 
-    <router-link to="/pilot-overview">Pilotenübersicht</router-link>
-  </div>
-  <div class="container">
-    <router-view/>
+  <div class="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/login">Login</router-link> | 
+      <router-link to="/pilot-overview">Pilotenübersicht</router-link>
+    </div>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 

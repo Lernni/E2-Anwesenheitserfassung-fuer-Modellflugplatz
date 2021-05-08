@@ -1,16 +1,18 @@
 <template>
-  <h2>Pilotenübersicht</h2>
+  <div class="pilot-overview">
+    <h2>Pilotenübersicht</h2>
 
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Pilot">
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button">Suche</button>
-    </div>
+    <b-input-group class="mb-3">
+      <b-form-input placeholder="Pilot"></b-form-input>
+      <b-input-group-append>
+        <b-button variant="primary">Suchen</b-button>
+      </b-input-group-append>
+    </b-input-group>
+
+    <PilotsTable/>
+
+    <b-button variant="primary">Deaktivierte Piloten</b-button>
   </div>
-
-  <PilotsTable/>
-
-  <button class="btn btn-primary">Deaktivierte Piloten</button>
 </template>
 
 <script>

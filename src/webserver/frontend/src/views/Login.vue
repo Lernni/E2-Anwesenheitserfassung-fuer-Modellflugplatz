@@ -1,20 +1,15 @@
 <template>
-  <div class="login-box card">
-    <div class="card-body">
-      <h5 class="card-title">Login</h5>
-      <form action="">
-        <div class="form-group">
-          <label for="userInput">Benutzername</label>
-          <input type="text" class="form-control" id="userInput">
-        </div>
-        <div class="form-group">
-          <label for="passwordInput">Passwort</label>
-          <input type="password" class="form-control" id="passwordInput">
-        </div>
-        <button type="submit" class="btn btn-primary">Anmelden</button>
-      </form>
-    </div>
-  </div>
+  <b-card class="login-box" title="Login">
+    <b-form>
+      <b-form-group label="Benutzername" label-for="userInput">
+        <b-form-input type="text" id="userInput"></b-form-input>
+      </b-form-group>
+      <b-form-group label="Passwort" label-for="passwordInput">
+        <b-form-input type="password" id="passwordInput"></b-form-input>
+      </b-form-group>
+      <b-button type="submit" variant="primary">Anmelden</b-button>
+    </b-form>
+  </b-card>
 </template>
 
 <script>

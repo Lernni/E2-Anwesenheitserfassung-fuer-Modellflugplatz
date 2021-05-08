@@ -1,31 +1,12 @@
 <template>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Aktiv</th>
-        <th>RFID</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="pilot in pilots" :key="pilot.pilot_id">
-        <td>{{pilot.pilot_name}}</td>
-        <td>{{pilot.entry_date}}</td>
-        <td>{{pilot.rfid}}</td>
-        <td>
-          <div class="btn-group pilot-options" role="group">
-            <a type="button" :href="'/edit-pilot?id=' + pilot.pilot_id" class="btn btn-outline-primary">
-              <unicon name="edit-alt"></unicon>
-            </a>
-            <a type="button" v-on:click="delete_pilot(pilot)" class="btn btn-outline-danger">
-              <unicon name="minus-circle"></unicon>
-            </a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <b-table striped :items="items" :fields="fields">
+    <template #cell(actions)="row">
+        <b-button-group size="sm">
+          <b-button variant="outline-primary" :href="'/edit-pilot?id=' + row.item.pilot_id">edit</b-button>
+          <b-button variant="outline-danger" v-on:click="delete_pilot(row.item.pilot_id)">deactivate</b-button>
+        </b-button-group>
+    </template>
+  </b-table>
 </template>
 
 <script>
@@ -38,20 +19,27 @@ export default {
   },
   data() {
     return {
-      pilots: [
+      items: [
+        // test item
         { pilot_id: 1, pilot_name: "Testpilot", entry_date: "21.03.2021", rfid: 123}
+      ],
+      fields: [
+        {key: "pilot_name", label: "Name"},
+        {key: "entry_date", label: "Eintrittsdatum"},
+        {key: "rfid", label: "RFID"},
+        {key: "actions", label: ""}
       ]
     };
   },
   methods: {
-    delete_pilot: function(pilot) {
-      alert("Soll " + pilot.pilot_name + " wirklich deaktiviert werden? Die Zuordnung zum RFID-Ausweis wird entfernt.")
+    delete_pilot: function(pilot_id) {
+      alert("Soll " + this.items.find(x => x.pilot_id === pilot_id).pilot_name + " wirklich deaktiviert werden? Die Zuordnung zum RFID-Ausweis wird entfernt.")
       // POST pilot deactivate
     }
   },
   async mounted() {
     await axios({method: "GET", "url": "http://localhost:5000/pilots"}).then(result => {
-      this.pilots = result.data['pilots'];
+      this.items = result.data['pilots'];
     }, error => {
       console.error(error);
     });
@@ -62,7 +50,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.pilot-options .unicon svg {
+/*.pilot-options .unicon svg {
   fill: currentColor;
-}
+}*/
 </style>

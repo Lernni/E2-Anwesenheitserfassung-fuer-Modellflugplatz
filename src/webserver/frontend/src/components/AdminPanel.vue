@@ -1,28 +1,28 @@
 <template>
-  <div class="container">
-    <div class="row row-cols-2 text-center">
-      <div class="col py-3">Protokoll ansehen</div>
-      <div class="col">
-        <button class="btn btn-primary">Zum Protokoll</button>
-      </div>
-      <div class="col py-3">Flüge nachtragen</div>
-      <div class="col">
-        <button class="btn btn-primary">Formular</button>
-      </div>
-      <div class="col py-3">Mitgliederverwaltung</div>
-      <div class="col">
-        <button class="btn btn-primary">Zur Übersicht</button>
-      </div>
-      <div class="col py-3">Alle Piloten abmelden</div>
-      <div class="col">
-        <button class="btn btn-primary">Piloten abmelden</button>
-      </div>
-      <div class="col py-3">Systemeinstellungen</div>
-      <div class="col">
-        <button class="btn btn-primary">Einstellungen</button>
-      </div>
-    </div>
-  </div>
+  <b-container>
+    <b-row cols="2" class="text-center">
+      <b-col class="py-3">Protokoll ansehen</b-col>
+      <b-col>
+        <b-button variant="primary">Zum Protokoll</b-button>
+      </b-col>
+      <b-col class="py-3">Flüge nachtragen</b-col>
+      <b-col>
+        <b-button variant="primary">Formular</b-button>
+      </b-col>
+      <b-col class="py-3">Mitgliederverwaltung</b-col>
+      <b-col>
+        <b-button variant="primary">Zur Übersicht</b-button>
+      </b-col>
+      <b-col class="py-3">Alle Piloten abmelden</b-col>
+      <b-col>
+        <b-button variant="primary">Piloten abmelden</b-button>
+      </b-col>
+      <b-col class="py-3">Systemeinstellungen</b-col>
+      <b-col>
+        <b-button variant="primary">Einstellungen</b-button>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
