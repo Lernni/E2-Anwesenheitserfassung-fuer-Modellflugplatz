@@ -32,8 +32,8 @@ NOTE: Die Abkürzungen S1, ..., Sn beschreiben die jeweilige Sequenz an Aktionen
 ==== Höchste Priorität
 Diese Use-Cases sind Hauptfunktionen. Ohne diese kann die Grundfunktionalität des Systems nicht gewährleistet werden.
 
-- UC01: Piloten anmelden
-- UC02: Piloten abmelden
+- UC01: Pilot anmelden
+- UC02: Pilot abmelden
 - UC03: Pilotendaten anlegen 
 - UC05: Pilotendaten modifizieren
 - UC07: Flugleiter bestimmen
@@ -42,10 +42,10 @@ Diese Use-Cases sind Hauptfunktionen. Ohne diese kann die Grundfunktionalität d
 ==== Mittlere Priorität
 Diese Use-Cases sind Nebenfunktionen, die die Grundfunktionalität des Systems nicht beeinträchtigen, aber erheblich verbessern, bzw. vom Auftraggeber verlangt sind.
 
-- UC04: Piloten deaktivieren
+- UC04: Pilot deaktivieren
 - UC06: Alle Piloten abmelden
 - UC09: Protokolldaten nachträglich einfügen
-- UC11: Piloten reaktiveren
+- UC11: Pilot reaktiveren
 
 ==== Niedrige Priorität
 Diese Use-Cases sind optionale Zusatzfunktionen.
@@ -56,21 +56,21 @@ Diese Use-Cases sind optionale Zusatzfunktionen.
 
 ==== Terminal (Flugplatz)
 
-- UC01: Piloten anmelden
-- UC02: Piloten abmelden
+- UC01: Pilot anmelden
+- UC02: Pilot abmelden
 - UC06: Alle Piloten abmelden (am Flugplatz)
 - UC07: Flugleiter bestimmen
 
 ==== Webserver (Webseite)
 
 - UC03: Pilotendaten anlegen 
-- UC04: Piloten deaktivieren
+- UC04: Pilot deaktivieren
 - UC05: Pilotendaten modifizieren
 - UC06: Alle Piloten abmelden (durch Webserver)
 - UC08: Protokoll einsehen 
 - UC09: Protokolldaten nachträglich einfügen
 - UC10: Handhabung Gastflüge
-- UC11: Piloten reaktiveren
+- UC11: Pilot reaktiveren
 
 
 === Use-Case-Diagramm
