@@ -10,8 +10,6 @@
     </b-input-group>
 
     <PilotsTable/>
-
-    <b-button variant="primary">Deaktivierte Piloten</b-button>
   </div>
 </template>
 
