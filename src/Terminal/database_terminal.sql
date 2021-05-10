@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS Pilot
     Vorname        varchar(20) NOT NULL,
     Eintrittsdatum date        NOT NULL,
     Ist_Aktiv      bool,
-    Nutzername     varchar(20),
 
     PRIMARY KEY (Pilot_ID),
 -- ok so?!
