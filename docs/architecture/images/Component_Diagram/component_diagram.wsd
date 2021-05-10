@@ -1,0 +1,11 @@
+@startuml
+
+node "Terminal" {
+    [databaseAccess] ..> [userInterface]
+    [serverConnection] ..> [databaseAccess]
+}
+
+node "Webserver"
+
+
+@enduml
