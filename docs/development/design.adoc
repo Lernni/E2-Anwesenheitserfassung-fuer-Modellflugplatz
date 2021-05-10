@@ -14,13 +14,21 @@ Dieses Dokument enthält Modelle/Beschreibungen zu diskreten Entwurfsentscheidun
 == Technische Designaspekte
 Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Funktionsweise einzelner Systemkomponenten haben.
 
-=== Datenbankmodell
+=== Datenbankmodell vom Terminal
+
 Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Auweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:c-Beziehung zwischen den entsprechenden Tabellen (Es kann mehr hinterlegte RFID-Ausweise als Piloten geben, daher die konditionale Beziehung). Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
 
+.Datenbankmodell vom Terminal 
+image::Datenmodell_Terminal.png[Datenbankmodell, width=70%, align="center"]
 
+=== Datenbankmodell vom Webserver
 
-.Datenbankmodell
+Zu den 3 relationalen Tabellen vom Terminal, kommt beim Datenbankmodell vom Webserver noch eine Gasttabelle hinzu. Sie steht mit der Menge von Flugsessions (dem Protokoll) in einer nc:c beziehung.
+So kann ein Gast entweder Teil einer Flugsession sein oder nicht, und eine Flugsession könnte keinen, einen oder mehrere Gäste beinhalten. 
+
+.Datenbankmodell vom Webserver
 image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
+
 
 === Synchronisation
 Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind.
