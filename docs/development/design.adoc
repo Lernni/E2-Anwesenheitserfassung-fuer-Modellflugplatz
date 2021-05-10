@@ -24,14 +24,15 @@ image::Datenmodell_Terminal.png[Datenbankmodell, width=70%, align="center"]
 === Datenbankmodell vom Webserver
 
 Zu den 3 relationalen Tabellen vom Terminal, kommt beim Datenbankmodell vom Webserver noch eine Gasttabelle hinzu. Sie steht mit der Menge von Flugsessions (dem Protokoll) in einer nc:c beziehung.
-So kann ein Gast entweder Teil einer Flugsession sein oder nicht, und eine Flugsession könnte keinen, einen oder mehrere Gäste beinhalten. 
+So kann ein Pilot in einer Flugsession entweder einen oder keinen Gast haben,  und eine Flugsession könnte keinen, einen oder mehrere Gäste beinhalten. 
+Für den Login am Webserver wurden in der Tabelle Pilot außerdem noch drei zusätzlichen Spalten (Nutzername, Passwort, Ist_Admin) hinzugefügt. 
 
 .Datenbankmodell vom Webserver
 image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
 
 
 === Synchronisation
-Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind.
+Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind. 
 
 Mögliche Änderungen auf Seite des Webservers:
 
@@ -45,6 +46,7 @@ Mögliche Änderungen auf Seite des Terminals:
 * Neue Einträge in die Tabelle Flugsession (An-/Abmeldung, Flugleiter bestimmen)
 
 Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen.
+Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Daten nicht mit synchronisiert. 
 
 === Aufbau der REST-API
 In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Webserver (Frontend & Backend) und Terminal benutzt werden, um Informationen und Befehle untereinander auszutauschen. Die Unterteilung der URLs erfolgt nach HTTP-Methode:
