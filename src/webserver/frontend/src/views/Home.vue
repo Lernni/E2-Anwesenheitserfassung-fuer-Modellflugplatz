@@ -1,7 +1,8 @@
 <template>
   <div class="admin-panel">
     <h2>Aktive Flugsessions</h2>
-    <SessionsTable/>
+    <b-table striped :items="items" :fields="fields"></b-table>
+    <p class="font-italic text-right">Letzte Aktualisierung: --:--</p>
     <hr>
     <h2>Admin-Bereich</h2>
     <AdminPanel/>
@@ -10,32 +11,35 @@
 
 <script>
 import axios from 'axios'
-import SessionsTable from '@/components/SessionsTable.vue'
 import AdminPanel from '@/components/AdminPanel.vue'
 
 export default {
   name: 'Home',
   components: {
-    SessionsTable,
     AdminPanel
   },
   data() {
     return {
-      sessions: [
+      items: [
         // test object
-        {session_id: 1, pilot_name: "Maria Mustermann", start_time: "12.05.2020", session_leader: true}
+        {session_id: 1, pilot_name: "Maria Mustermann", start_time: "12:07", session_leader: true}
+      ],
+      fields: [
+        {key: "pilot_name", label: "Pilot"},
+        {key: "start_time", label: "Beginn"},
+        {
+          key: "session_leader",
+          label: "Flugleiter",
+          formatter: (value) => {
+            return value ? "F" : ""
+          }
+        }
       ]
-    }
-  },
-  provide() {
-    // TODO: Test reactivity to dynamic changes
-    return {
-      items: this.sessions
     }
   },
   async mounted() {
     await axios({method: "GET", "url": "http://localhost:5000/sessions?running=true"}).then(result => {
-      this.sessions = result.data['sessions'];
+      this.items = result.data['sessions'];
     }, error => {
       console.error(error);
     });
