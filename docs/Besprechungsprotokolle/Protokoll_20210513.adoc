@@ -1,0 +1,45 @@
+= Protokoll vom 13.05.2021
+1.0 13.05.2021
+
+- anwesend: Lenny, Max, Dirk, Richard
+
+== Aktueller Stand
+
+- Vue Komponenten fast fertig erstellt -> Lenny
+
+== Schwerpunkte
+- Beantwortung der Fragen für Fachaustausch Entwurf
+- Bereits erstellte Vue Views durchgegangen und alle Requests rausgeschrieben
+- Dirk ist jetzt mit verantwortlich für Terminalprogrammierung
+* insbesondere: Herstellung der Server-Connection
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Projektplan und Test-Cases erweitern (Issue #63) -> Alex, Jakob
+
+=== vom 14.04.
+- Fokus auf Anpassungen im Architecture-Notebook
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver (Issue #72) -> Lenny, Dirk
+
+=== vom 28.04.
+- Deployment weiterführen (Issue #76) -> Richard
+- Domainmodell aktualisieren (Issue #71) -> Richard
+- Vue-Komponenten aus Wireframes erstellen (Issue #74) -> Lenny
+
+=== vom 05.05.
+- Datenbank für Terminal erstellen (Issue #77) -> Max
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Komponentendiagramm entwerfen (Issue #79) -> Dirk, Jakob
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+
+=== vom 12.05.
+- Webserver lokal einrichten (Issue #83) -> Lenny
+- Test-Case 1 erstellen (Issue #84) -> Team Analyse, Max und Alex
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Bilder verlinken und einpflegen (Issue #86) -> Jakob
+- Recherche: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 19.05.21, 17 Uhr
+- nächstes Kundenmeeting: offen

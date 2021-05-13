@@ -1,0 +1,55 @@
+= Protokoll vom 12.05.2021
+1.0 12.05.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Datenbank für Webserver und Terminal vorbereitet -> Max
+- Wechsel von Vue v3 zu v2, Vorstellung Vue Komponenten, Package Diagramm Webserver -> Lenny
+- Komponentendiagramm erstellt -> Jakob, Dirk
+- Ende Iteration 7 -> Neue Iteration 8
+
+== Schwerpunkte
+- Neuer Abgabetermin für Beleg: 04.07.2021
+- Diskussion zum Unterschied von Paketdiagramm und Komponentendiagramm -> Richard schreibt Herrn Zirkelbach eine Mail dazu
+- Tests: Methode Concurrent Testing
+* Erster Test-Case TC01: Pilot am Terminal anmelden
+* Test-Case für Login
+* Realisierung für Tests: Webserver Testumgebung planen
+- Planung und Verteilung der Aufgaben (Iteration 8)
+- Meeting im Team Implementierung festgelegt: 13.05.2021 15 Uhr
+* Besprechung Fachaustausch Entwurf
+* Diskussion Requests im Backend
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Projektplan und Test-Cases erweitern (Issue #63) -> Alex, Jakob
+
+=== vom 14.04.
+- Fokus auf Anpassungen im Architecture-Notebook
+* Auflistung der benötigten Systemkomponenten in Terminal und Webserver (Issue #72) -> Lenny, Dirk
+
+=== vom 28.04.
+- Deployment weiterführen (Issue #76) -> Richard
+- Domainmodell aktualisieren (Issue #71) -> Richard
+- Vue-Komponenten aus Wireframes erstellen (Issue #74) -> Lenny
+
+=== vom 05.05.
+- Datenbank für Terminal erstellen (Issue #77) -> Max
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Komponentendiagramm entwerfen (Issue #79) -> Dirk, Jakob
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+
+=== aktuell
+- Webserver lokal einrichten (Issue #83) -> Lenny
+- Test-Case 1 erstellen (Issue #84) -> Team Analyse, Max und Alex
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Bilder verlinken und einpflegen (Issue #86) -> Jakob
+- Recherche: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 19.05.21, 17 Uhr
+- Meeting Team Implementierung: Do 13.05.21, 15 Uhr
+- nächstes Kundenmeeting: offen
