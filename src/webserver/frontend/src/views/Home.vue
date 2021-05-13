@@ -5,19 +5,38 @@
     <p class="font-italic text-right">Letzte Aktualisierung: --:--</p>
     <hr>
     <h2>Admin-Bereich</h2>
-    <AdminPanel/>
+    <b-container>
+      <b-row cols="2" class="text-center">
+        <b-col class="py-3">Protokoll ansehen</b-col>
+        <b-col>
+          <b-button variant="primary">Zum Protokoll</b-button>
+        </b-col>
+        <b-col class="py-3">Flüge nachtragen</b-col>
+        <b-col>
+          <b-button variant="primary">Formular</b-button>
+        </b-col>
+        <b-col class="py-3">Mitgliederverwaltung</b-col>
+        <b-col>
+          <b-button variant="primary">Zur Übersicht</b-button>
+        </b-col>
+        <b-col class="py-3">Alle Piloten abmelden</b-col>
+        <b-col>
+          <b-button variant="primary">Piloten abmelden</b-button>
+        </b-col>
+        <b-col class="py-3">Systemeinstellungen</b-col>
+        <b-col>
+          <b-button variant="primary">Einstellungen</b-button>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import AdminPanel from '@/components/AdminPanel.vue'
 
 export default {
   name: 'Home',
-  components: {
-    AdminPanel
-  },
   data() {
     return {
       items: [
