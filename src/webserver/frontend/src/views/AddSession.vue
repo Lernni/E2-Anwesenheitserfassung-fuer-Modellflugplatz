@@ -46,7 +46,12 @@
 </template>
 
 <script>
+// TODO: Pilotenauswahl: Namenssuche und Filter aus Pilotenliste
+// TODO: GET Request: /pilot-list
+// -> Backend liefert aktive Piloten: {pilot_id, pilot_name}
 export default {
+    // TODO: Submit: POST /sessions
+    // Rückgabe: Hinzufügen erfolgreich -> Gehe auf die aufrufende Seite zurück
     data() {
         return {
             selected: null,

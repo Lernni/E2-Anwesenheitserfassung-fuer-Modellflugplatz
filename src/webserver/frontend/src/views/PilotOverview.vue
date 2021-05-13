@@ -43,7 +43,9 @@ export default {
     return {
       items: [
         // test item
-        { pilot_id: 1, pilot_name: "Testpilot", entry_date: "21.03.2021", rfid: 123, active: true},
+        // TODO: rfid format prüfen
+        // TODO: filter event -> asynchrones GET Request
+        { pilot_id: 1, pilot_name: "Testpilot", entry_date: "2021-03-21", rfid: 123, active: true},
         { pilot_id: 2, pilot_name: "Deaktivierter Testpilot", entry_date: "21.03.2008", rfid: 125, active: false}
       ],
       fields: [
@@ -60,9 +62,14 @@ export default {
   methods: {
     delete_pilot: function(pilot_id) {
       alert("Soll " + this.items.find(x => x.pilot_id === pilot_id).pilot_name + " wirklich deaktiviert werden? Die Zuordnung zum RFID-Ausweis wird entfernt.")
-      // POST pilot deactivate
+      // TODO: PUT /pilots?id=2?active=false
+      // Rückgabe: Änderung erfolgreich -> Seite neu laden
     },
+    // TODO: Methode: reaktivieren eines Piloten
+    // TODO: PUT /pilots?id=2?active=true
+    // Rückgabe: Änderung erfolgreich -> Seite neu laden
     toggle_active_pilots: function() {
+      // TODO: toggle GET Request ?active=false
       if (this.filter == "true") {
         this.filter = "false"
         this.toggle_active_pilots_button = "Aktive Piloten"
@@ -73,7 +80,7 @@ export default {
     }
   },
   async mounted() {
-    await axios({method: "GET", "url": "http://localhost:5000/pilots"}).then(result => {
+    await axios({method: "GET", "url": "http://localhost:5000/pilots?active=true"}).then(result => {
       this.items = result.data['pilots'];
     }, error => {
       console.error(error);

@@ -95,6 +95,15 @@ export default {
       }
     }
   },
+  // TODO: Filtern auf Backend auslagern
+  // GET /sessions?name=''?start_date=''?end_datum=''?from=0?to=20 (variable Anzahl Attribute)
+  // Pagination verwaltet Anzahl Sessions auf einer Seite nachdem auf dem Backend gefiltert wurde
+  // Filtern erst nach Klicken eines Buttons
+
+  // TODO: Protokolldaten herunterladen
+  // GET /sessions?csv
+  // Rückgabe: CSV zum Download
+
   methods: {
     filterTable(row, filter) {
       if (filter.pilot_name != null) {
@@ -108,12 +117,12 @@ export default {
 
         if (!(row_date >= start_date && row_date <= end_date)) return false
       }
-      
+
       return true
     }
   },
   async mounted() {
-    await axios({method: "GET", "url": "http://localhost:5000/sessions?all"}).then(result => {
+    await axios({method: "GET", "url": "http://localhost:5000/sessions"}).then(result => {
       this.items = result.data['sessions'];
     }, error => {
       console.error(error);

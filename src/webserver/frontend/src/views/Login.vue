@@ -16,6 +16,9 @@
 export default {
   name: 'Login'
 }
+// POST /login?username=''?password=''
+// Rückgabe: Bestätigung des Anmeldevorgangs
+// Submit Request -> Verschlüsselung des Passworts
 </script>
 
 <style>
