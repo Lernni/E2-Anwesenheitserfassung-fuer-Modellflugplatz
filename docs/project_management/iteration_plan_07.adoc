@@ -50,7 +50,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 704 | Überprüfung NFAs | x | 6 | 100% | 7 | Gesamtes Team | x | x |
 
-705 | REST-API-Request überlegen | x | 6 | 100% | 3 | Entwurf, Implementierung | x | x |
+705 | REST-API-Request überlegen | x | 6 | 100% | 7 | Entwurf, Implementierung | x | x |
 
 // REST-API umsetzen 80%
 
@@ -69,6 +69,8 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 712 | Domainmodell überarbeiten | x | 2 | 60% | 7-8 | Richard | x | x |
 
 713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 20% | 7-9 | Lenny | x | x |
+
+714 | REST-API umsetzen | x | 24 | 80% | 7-8 | Implementierung | x | x |
 
 |===
 
