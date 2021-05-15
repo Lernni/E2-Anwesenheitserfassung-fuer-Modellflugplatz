@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-pilot">
+  <div class="new-pilot">
     <h2>Pilot erstellen</h2>
     <b-form @submit="onSubmit" @reset="onReset" :novalidate="true">
       <b-container class="w-75">
@@ -31,7 +31,7 @@
             </b-form-group>
           </b-col>
           <b-col>
-            <RfidList @selectedRfid='rfid_code = $event'/>
+            <RfidList @selectedRfid='form.rfid_code = $event'/>
           </b-col>
         </b-row>
 
@@ -132,7 +132,7 @@ export default {
     onSubmit(event) {
       event.preventDefault()
       this.$v.form.$touch()
-      if (!this.$v.form.$invalid) {
+      if (!this.$v.form.$anyError) {
         this.postNewPilot()
       }
     },

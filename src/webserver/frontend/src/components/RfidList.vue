@@ -37,7 +37,7 @@ export default {
 
     await axios.get("http://localhost:5000/rfid")
       .then(response => {
-        this.rfidList = response.data.total
+        this.rfidList = response.data['rfid_list']
         this.rfidListLoader = false
       })
       .catch(error => {
