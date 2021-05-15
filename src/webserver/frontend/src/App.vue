@@ -5,7 +5,10 @@
       <router-link to="/login">Login</router-link> | 
       <router-link to="/pilot-overview">Pilotenübersicht</router-link> | 
       <router-link to="/add-session">Flugsession nachtragen</router-link> | 
-      <router-link to="/protocol-overview">Protokolldaten</router-link>
+      <router-link to="/protocol-overview">Protokolldaten</router-link> | 
+      <router-link to="/pilot/new">Pilot erstellen</router-link> | 
+      <router-link to="/pilot/modify">Pilot bearbeiten</router-link> | 
+      <router-link :to="{ name: 'Pilot', params: { mode: 'reactivate'}}">Pilot reaktivieren</router-link> | 
     </div>
     <div class="container">
       <router-view/>
