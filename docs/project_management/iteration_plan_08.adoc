@@ -41,7 +41,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
-702 | Erstellung neuer Test-Cases | x | 24 | 50% | 7-9 | Alex, Max | x | x |
+801 | Erstellung spezifischer Test-Cases | x | 24 | 0% | 8-10 | Alex, Max, Analyse | x | x |
 
 703 | Bearbeitung Architecture-Notebook | x | 128 | 60% | 6-8 | Entwurf, Implementierung | x | x |
 
