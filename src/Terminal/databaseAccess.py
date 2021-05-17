@@ -14,10 +14,21 @@ def get_connection(filename):
     cursor.execute("PRAGMA FOREIGN_KEYS=ON")
     return connection
 
-def createSession(RFID_Code):
+def create_session(RFID_Code):
+    connection = get_connection('database_server.db')
+    cursor = connection.cursor()
+
+    pilot = get_pilot(RFID_Code)
+
+    cursor.execute(
+        "INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime('now'), NULL, FALSE)",
+        pilot['pilot_id'])
+    
+    connection.commit()
+    connection.close()
     return
 
-def getSession(SessionID):
+def get_session(SessionID):
     connection = get_connection('database_server.db')
     cursor = connection.cursor()
 
@@ -26,20 +37,29 @@ def getSession(SessionID):
                 SessionID)
     
     for row in select_stmt:
-            return_dict = {
-                'pilot_id': row[0],
-                'start_time': row[1] + " " + row[2],
-                'end_time': row[3],
-                'is_controller': row[4],
-            }
+        return_dict = {
+            'pilot_id': row[0],
+            'start_time': row[1] + " " + row[2],
+            'end_time': row[3],
+            'is_controller': row[4]
+        }
 
     connection.close()
     return return_dict
 
-def endSession(SessionID):
+def end_session(SessionID):
+    connection = get_connection('database_server.db')
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "UPDATE Flugsession SET Endzeit = datetime('now') TRUE WHERE SessionID = ?",
+        SessionID)
+    
+    connection.commit()
+    connection.close()
     return
 
-def setFlugleiter(SessionID):
+def set_flugleiter(SessionID):
     connection = get_connection('database_server.db')
     cursor = connection.cursor()
 
@@ -47,31 +67,35 @@ def setFlugleiter(SessionID):
         'UPDATE Flugsession SET Ist_Flugleiter = TRUE WHERE SessionID = ?',
         SessionID)
     
+    connection.commit()
     connection.close()
     return
 
-def getPilot(RFID_Code):
+def get_pilot(RFID_Code):
     connection = get_connection('database_server.db')
     cursor = connection.cursor()
 
     select_stmt = cursor.execute(
-                'SELECT RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
+                'SELECT ROWID, RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
                 RFID_Code)
     
     for row in select_stmt:
-            return_dict = {
-                'rfid_code': row[0],
-                'pilot_last_name': row[1] + " " + row[2],
-                'pilot_first_name': row[3],
-                'entry_date': row[4],
-                'active': row[5]
-            }
+        return_dict = {
+            'pilot_id': row[0],
+            'rfid_code': row[1],
+            'pilot_name': row[2] + " " + row[3],
+            'entry_date': row[4],
+            'active': row[5]
+        }
 
     connection.close()
     return return_dict
 
-def syncSession(SessionID):
+def sync_session(SessionID):
+    session = get_session(SessionID)
+    serverConnection.syncSession() 
     return
 
-def syncPilot():
+def sync_pilot():
+    # TODO: implement POST request for server to sync new pilot data
     return
