@@ -15,7 +15,7 @@
           <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
         </b-button>
         <b-button-group v-else size="sm">
-          <b-button variant="outline-primary" :href="'/edit-pilot?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
+          <b-button variant="outline-primary" :href="'/pilot/modify?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
             <b-icon-pencil-square></b-icon-pencil-square>
           </b-button>
           <b-button variant="outline-danger" v-on:click="delete_pilot(row.item.pilot_id)" v-b-tooltip.hover title="Deaktivieren">

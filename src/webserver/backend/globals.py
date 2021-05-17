@@ -2,11 +2,12 @@ import os.path
 import sqlite3
 
 from flask import Flask
-from flask_restx import Api, cors
+from flask_restx import Api
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
-api.decorators = [cors.crossdomain(origin='*')]
+cors = CORS(app)
 
 
 def get_connection(filename):

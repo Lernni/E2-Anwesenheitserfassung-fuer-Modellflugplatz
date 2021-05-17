@@ -1,16 +1,18 @@
 <template>
   <div class="new-pilot">
     <h2>Pilot erstellen</h2>
-    <b-form @submit="onSubmit" @reset="onReset" :novalidate="true">
-      <b-container class="w-75">
-        <b-alert variant="success" :show="submitSuccess" dismissible>
-          Pilot wurde erfolgreich angelegt!
-        </b-alert>
+    <b-container class="w-75">
+      <b-alert variant="success" :show="submitSuccess" dismissible>
+        Pilot wurde erfolgreich angelegt!
+      </b-alert>
 
-        <b-alert variant="danger" :show="submitError" dismissible>
-          Pilot konnte nicht angelegt werden!<br>
-          {{submitErrorMsg}}
-        </b-alert>
+      <b-alert variant="danger" :show="submitError" dismissible>
+        Pilot konnte nicht angelegt werden!<br>
+        {{submitErrorMsg}}
+      </b-alert>
+
+    
+      <b-form @submit="onSubmit" @reset="onReset" :novalidate="true">
 
         <h4>Pilotendaten</h4>
         <b-row cols="2">
@@ -54,8 +56,8 @@
           <b-spinner v-show="submitLoader" small></b-spinner>
           Speichern
         </b-button>
-      </b-container>
-    </b-form>
+      </b-form>
+    </b-container>
   </div>
 </template>
 
@@ -67,22 +69,6 @@ import RfidList from '@/components/RfidList.vue'
 const surname_regex = helpers.regex("surname_regex", /^([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/)
 const name_regex = helpers.regex("name_regex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+))*$/)
 const username_regex = helpers.regex("username_regex", /^[a-z][a-z0-9_-]{2,15}$/)
-
-// TODO:
-
-// Pilot modifizieren
-// GET /pilots?id=2
-// GET /rfid
-// -> Vorauswahl für den eigenen Ausweis
-
-// PUT /pilots
-
-
-// Pilot reaktivieren
-// GET /pilots?id=2
-// GET /rfid
-
-// PUT /pilots JSON: {active=true}
 
 export default {
   name: "NewPilot",
@@ -120,6 +106,7 @@ export default {
         username_regex
       },
       rfid_code: {
+        // TODO: show invalid message
         required
       }
     }

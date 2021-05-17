@@ -12,7 +12,7 @@ Schritt 8 & 9: jeweils mit `python3` ausführen
 
 2. Abhängigkeiten installieren:
 ```
-pip install flask flask_restx
+pip install flask flask_restx flask-cors
 ```
 4. Flask App ausführen:
 ```

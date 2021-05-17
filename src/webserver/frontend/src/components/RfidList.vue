@@ -21,9 +21,9 @@ export default {
       rfid: null,
       rfidList: [
         // test objects
-        {value: 7, text: "0x65A7F"},
-        {value: 12, text: "0xAA340"},
-        {value: 8, text: "0xDCA11"},
+        "0x65A7F",
+        "0xAA340",
+        "0xDCA11",
       ]
     }
   },
