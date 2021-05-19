@@ -5,24 +5,39 @@ include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-
+////
 == Allgemeine Informationen
 
 Dieses Dokument enthält die Beantwortung einer Reihe allgemeiner Fragen in Bezug auf die erfolgreiche Bereitstellung des Systems.
+////
 
 
 == Deployment Plan
 
+=== Wer sind die Endbenutzer des Systems?
+
 Um eine erfolgreiche Bereitstellung des Systems zu gewährleisten ist beispielsweise zu klären, wer die Endbenutzer der zu veröffentlichen Funktionen sind. Die Endbenutzer sind in diesem Fall die Piloten und die Administratoren. Um die Funktionen richtig anwenden zu können, benötigen die Endbenutzer eine Einführung. Die Themensteller würden die Schulung generell übernehmen und bei einem größeren Turnier oder einer Mitgliederversammlung durchführen. Sollte es zeitlich umsetzbar sein, würden 1-2 Teammitglieder bei der Einführung persönlich dabei sein und für Fragen zur Verfügung stehen.
+
+=== Welche Funktionen müssen bereitgestellt werden?
 
 Eine hohe Priorität an das neue System besitzt das exakte zeitliche Erfassen der Aktivitäten am Terminal und die Synchronisation der Protokolldaten mit dem Webserver. Eine ebenso wichtige Funktion des neuen Systems ist Anlegen, Modifizieren und Deaktivieren von Piloten, dem Anwesenheitsprotokoll und und die Zuordnung der RFID-Ausweise. Eine weitere wichtige Funktion für die Piloten ist die Möglichkeit am Terminal einen Flugleiter zu bestimmen und dies automatisch im Protokoll zu vermerken. Die Funktionalitäten des Terminals stellt ein Raspberry Pi zur Verfügung. Das An- und Abmelden der Piloten erfolgt durch individuelle RFID-Ausweise.
 
+=== Wann müssen die Funktionen verfügbar sein?
+
 Ein vom Themensteller festgelegtes Datum, wann die Funktionen verfügbar sein sollen, gibt es nicht. Das Projektteam plant mit einer Fertigstellung aller Funktionen spätestens Mitte Juni. Für eine reibungslose Übergabe wünschen sich die Themensteller ein bereits eingerichteten Administrator.
 
-Die Endbenutzer werden je nach der zu verwendenden Funktion an unterschiedlichen Orten sein. Möchte sich ein Pilot an- oder abmelden, dann wird dies immer am gleichen Ort auf dem Flugplatz geschehen. Es wird dabei nicht zwischen Pilot und Administrator unterschieden. Die Web-Site hingegen kann jeder Endbenutzer vom eigenen Zuhause aus Aufrufen. Dabei benötigen alle Benutzer eine vergleichbare PC-Leistungsstärke.
+=== Wo befinden sich die Endbenutzer?
+
+Die Endbenutzer werden je nach der zu verwendenden Funktion an unterschiedlichen Orten sein. Möchte sich ein Pilot an- oder abmelden, dann wird dies immer am gleichen Ort auf dem Flugplatz geschehen. Es wird dabei nicht zwischen Pilot und Administrator unterschieden. Auf die Web-Site hingegen kann jeder Endbenutzer von seinem Smartphone oder Computer aus zugreifen. Um die Web-Site aufrufen zu können, benötigen die Endbenutzer lediglich ein Gerät, welches Internetfähig ist.
+
+=== Warum findet die Veröffentlichung statt?
 
 Aufgrund der vom Gesetzgeber vorgeschrieben Anwesenheitserfassung auf dem Flugplatz, ist der Mfc-Rossendorf verpflichtet ein Flugbuch zu führen. Aufgrund von unvollständigen An- und Abmeldedaten, bürokratischem Aufwand und Vandalismus wird erstmals ein digitales System mit neuen Funktionen für die Anwesenheitserfassung und Protokollierung bereit gestellt.
 
+=== Wer unterstützt das System nach der Bereitstellung?
+
 Falls es nach der erfolgreichen Übergabe des Systems kompliziertere Probleme gibt, die durch die Dokumentation nicht gelöst werden können, hat sich das Projektteam bereit erklärt weiterhin zu helfen. Die Themensteller würden die Funktionen prinzipiell jedoch selbst weiter betreuen.
+
+=== Wann gilt die Veröffentlichung als fertig?
 
 Die Veröffentlichung gilt als fertig, sobald alle gewünschten Funktionen implementiert sind und dem Auftraggeber übergeben wurde.
