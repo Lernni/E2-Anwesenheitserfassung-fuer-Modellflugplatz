@@ -26,7 +26,7 @@ class Sessions(Resource):
             if v is None:
                 args.pop(k)
 
-        # GET sessions?name?start_date?end_date
+        # GET sessions?name&start_date&end_date
         if 'name' in args.keys() and 'start_date' in args.keys() and 'end_date' in args.keys():
             name_list = args['name'].split()
             # z.B. 'Mustermann' -> in Vor- und Nachname suchen
@@ -58,7 +58,7 @@ class Sessions(Resource):
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['start_date'], args['end_date']]
                 )
 
-        # GET sessions?name?start_date
+        # GET sessions?name&start_date
         elif 'name' in args.keys() and 'start_date' in args.keys():
             name_list = args['name'].split()
             if len(name_list) == 1:
@@ -118,7 +118,7 @@ class Sessions(Resource):
                     'AND date(F.Startzeit) < ?',
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['end_date']]
                 )
-        # GET sessions?start_date?end_date
+        # GET sessions?start_date&end_date
         elif 'start_date' in args.keys() and 'end_datum' in args.keys():
             select_stmt = cursor.execute(
                 'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '

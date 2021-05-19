@@ -31,7 +31,7 @@ pilot_put_model = api.model('pilot_put_model', {
 
 
 class Pilots(Resource):
-    # GET /pilots?id=1?is_active=true
+    # GET /pilots?id=1&is_active=true
     @api.expect(pilots_parser)
     def get(self):
         '''get pilots'''
@@ -48,7 +48,7 @@ class Pilots(Resource):
             select_stmt = cursor.execute(
                 'SELECT ROWID, Vorname, Nachname, Eintrittsdatum,RFID_Code,Ist_Aktiv FROM Pilot WHERE Ist_Aktiv IS ?',
                 [is_active])
-        # /pilots?id=1?is_active=true und /pilots?id=1
+        # /pilots?id=1&is_active=true und /pilots?id=1
         else:
             # is_active ist NULL, wenn nur eine id übergeben wird?
             select_stmt = cursor.execute(
@@ -106,11 +106,6 @@ class Pilots(Resource):
         if 'pilot_surname' in payload.keys():
             new_last_name = payload['pilot_surname']
             cursor.execute('UPDATE Pilot SET Nachname = ? WHERE ROWID = ?', [new_last_name, p_id])
-
-        # Eintrittsdatum soll eigentlich nicht verändert werden können
-        # if 'entry_date' in payload.keys():
-        #    new_entry_date = payload['entry_date']
-        #    cursor.execute('UPDATE Pilot SET Eintrittsdatum = ? WHERE ROWID = ?', [new_entry_date, p_id])
 
         # update funktoniert nicht, da foreign key constraint
         # TODO:Lösung drop constraint -> update -> reapply constraint

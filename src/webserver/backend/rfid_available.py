@@ -11,8 +11,6 @@ class RfidAvailable(Resource):
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
 
-        # Vue kann auch Rfid-Tags als einfache Liste ohne Index darstellen: rfid_list: ["0x0123", "0xABCD"]
-        # daher kein value nötig
         return_dict = {
             'rfid_list': []
         }
