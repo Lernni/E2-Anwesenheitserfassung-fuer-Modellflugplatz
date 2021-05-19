@@ -22,19 +22,19 @@ def create_session(RFID_Code):
 
     cursor.execute(
         "INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime('now'), NULL, FALSE)",
-        pilot['pilot_id'])
+        (pilot['pilot_id'],))
     
     connection.commit()
     connection.close()
     return
 
 def get_session(SessionID):
-    connection = get_connection('database_server.db')
+    connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
     select_stmt = cursor.execute(
-                'SELECT PilotID, Startzeit, Endzeit, Ist_Flugkeiter FROM Session WHERE SessionID = ?',
-                SessionID)
+                'SELECT PilotID, Startzeit, Endzeit, Ist_Flugleiter FROM Flugsession WHERE ROWID = ?',
+                (SessionID,))
     
     for row in select_stmt:
         return_dict = {
@@ -48,36 +48,36 @@ def get_session(SessionID):
     return return_dict
 
 def end_session(SessionID):
-    connection = get_connection('database_server.db')
+    connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now') TRUE WHERE SessionID = ?",
-        SessionID)
+        "UPDATE Flugsession SET Endzeit = datetime('now') TRUE WHERE ROWID = ?",
+        (SessionID,))
     
     connection.commit()
     connection.close()
     return
 
 def set_flugleiter(SessionID):
-    connection = get_connection('database_server.db')
+    connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
     cursor.execute(
-        'UPDATE Flugsession SET Ist_Flugleiter = TRUE WHERE SessionID = ?',
-        SessionID)
+        'UPDATE Flugsession SET Ist_Flugleiter = TRUE WHERE ROWID = ?',
+        (SessionID,))
     
     connection.commit()
     connection.close()
     return
 
 def get_pilot(RFID_Code):
-    connection = get_connection('database_server.db')
+    connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
     select_stmt = cursor.execute(
                 'SELECT ROWID, RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
-                RFID_Code)
+                (RFID_Code,))
     
     for row in select_stmt:
         return_dict = {
@@ -94,6 +94,10 @@ def get_pilot(RFID_Code):
 def sync_session(SessionID):
     session = get_session(SessionID)
     serverConnection.syncSession() 
+    return
+
+def sync_rfid():
+    # TODO: implement POST request for server to sync new rfid codes
     return
 
 def sync_pilot():
