@@ -56,7 +56,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 508 | Datenbankprototyp erstellen |  |  | 100% | 5-7 |  |  |  |
 
-601 | Vue-Komponenten für Website umsetzen |  |  | 5% | 7 | Lenny |  |  |
+601 | Vue-Komponenten für Website umsetzen |  |  | 5% | 6-9 | Lenny |  |  |
 
 602 | Entwurf REST-API-Anfragen |  |  | 100% |  | Lenny | x | x |
 
