@@ -42,35 +42,33 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 701 | Korrektur der Fehler in den Dokumente nach Bewertung | x | 64 | 100% | 5-7 | Analyse | x | 0 |
+| 302 | Erstellung allgemeiner Test-Cases |  | 24 | 100% | 7-9 | Alex |  |  |
 
-702 | Erstellung neuer Test-Cases | x | 24 | 50% | 7-9 | Alex, Max | x | x |
+503 | Anforderung der Technik |  |  | 100% | 5 | Dirk |  |  |
 
-703 | Bearbeitung Architecture-Notebook | x | 128 | 60% | 6-8 | Entwurf, Implementierung | x | x |
+504 | Korrektur Dokumentation |  | 64 | 100% | 5-7 | Analyse |  | 0 |
 
-704 | Überprüfung NFAs | x | 6 | 100% | 7 | Gesamtes Team | x | x |
+505 | Deployment planen |  | 24 | 90% | 5-8 | Richard |  |  |
 
-705 | REST-API-Request überlegen | x | 6 | 100% | 7 | Entwurf, Implementierung | x | x |
+601 | Vue-Komponenten für Website erstellen | x | 128 | 20% | 6-9 | Lenny |  |  |
 
-// REST-API umsetzen 80%
+603 | Architecture-Notebook erweitern |  | 128 | 60% | 6-9 | Entwurf, Implementierung |  |  |
 
-706 | Datenschutz-Erkenntnisse in Dokumentation einbringen | x | 2 | 100% | 7 | Alex | x | x | 
+701 | Überprüfung NFAs |  | 6 | 100% | 7 | Gesamtes Team |  |  |
 
-707 | Überführung in Realsystem planen | x | 24 | 90% | 7 | Entwurf, Implementierung | x | x |
+702 | REST-API-Request überlegen |  | 6 | 100% | 7 | Entwurf, Implementierung |  |  |
 
-//708 | Deployment zur Dokumentation hinzufügen | x | 128 | 90% | 7-8 | Richard | x | x |
+703 | Datenschutz-Erkenntnisse in Dokumentation einbringen |  | 2 | 100% | 7 | Alex |  |  | 
 
-709 | Wireframes aktualisieren | x | 6 | 100% | 7 | Alex | x | x |
+704 | Wireframes aktualisieren |  | 6 | 100% | 7 | Alex |  |  |
 
-710 | Datenbankmodell überarbeiten | x | 2 | 100% | 7 | Max | x | x |
+705 | Datenbankmodell überarbeiten |  | 2 | 100% | 7 | Max |  |  |
 
-711 | Paketdiagramm entwerfen | x | 64 | 20% | 7-9 | Lenny, Dirk | x | x |
+706 | Paketdiagramm entwerfen |  | 64 | 20% | 7-9 | Lenny, Dirk |  |  |
 
-712 | Domainmodell überarbeiten | x | 2 | 60% | 7-8 | Richard | x | x |
+707 | Domainmodell überarbeiten |  | 2 | 60% | 7-8 | Richard |  |  |
 
-713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 20% | 7-9 | Lenny | x | x |
-
-714 | REST-API umsetzen | x | 24 | 80% | 7-8 | Implementierung | x | x |
+708 | REST-API umsetzen |  | 24 | 80% | 7-8 | Implementierung |  |  |
 
 |===
 
