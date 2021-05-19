@@ -7,6 +7,7 @@ import AddSession from '../views/AddSession.vue'
 import ProtocolOverview from '../views/ProtocolOverview.vue'
 import NewPilot from '../views/NewPilot.vue'
 import ModifyPilot from '../views/ModifyPilot.vue'
+import ReactivatePilot from '../views/ReactivatePilot.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/pilot/modify',
     name: 'ModifyPilot',
     component: ModifyPilot
+  },
+  {
+    path: '/pilot/reactivate',
+    name: 'ReactivatePilot',
+    component: ReactivatePilot
   },
 ]
 

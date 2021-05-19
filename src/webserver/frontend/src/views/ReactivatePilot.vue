@@ -1,18 +1,18 @@
 <template>
-  <div class="modify-pilot">
-    <h2>Pilot bearbeiten</h2>
+  <div class="reactivate-pilot">
+    <h2>Pilot reaktivieren</h2>
     <b-container class="w-75">
       <b-alert variant="success" :show="submitSuccess" dismissible>
-        Pilot wurde erfolgreich bearbeitet!
+        Pilot wurde erfolgreich reaktiviert!
       </b-alert>
 
       <b-alert variant="danger" :show="submitError" dismissible>
-        Pilot konnte nicht bearbeitet werden!<br>
+        Pilot konnte nicht reaktiviert werden!<br>
         {{submitErrorMsg}}
       </b-alert>
 
       <b-alert variant="danger" :show="pilotError">
-        Der angeforderte Pilot existiert nicht!
+        {{pilotErrorMsg}}
       </b-alert>
       
       <b-overlay :show="pilotLoader">
@@ -61,7 +61,7 @@
           
           <b-button class="mt-3" type="submit" variant="primary" :disabled="submitLoader">
             <b-spinner v-show="submitLoader" small></b-spinner>
-            Speichern
+            Reaktivieren
           </b-button>
         </b-form>
       </b-overlay>
@@ -79,7 +79,7 @@ const name_regex = helpers.regex("name_regex", /^([A-Z][a-zöäüß]+)([- ]([A-Z
 const username_regex = helpers.regex("username_regex", /^[a-z][a-z0-9_-]{2,15}$/)
 
 export default {
-  name: "ModifyPilot",
+  name: "ReactivatePilot",
   components: {
     RfidList
   },
@@ -97,6 +97,7 @@ export default {
 
       pilotLoader: false,
       pilotError: false,
+      pilotErrorMsg: null,
 
       submitLoader: false,
       submitSuccess: false,
@@ -136,19 +137,24 @@ export default {
         var pilot = response.data['pilots'][0]
         console.log(pilot)
 
-        this.form.pilot_surname = pilot.pilot_surname
-        this.form.pilot_name = pilot.pilot_name
-        this.form.rfid_code = pilot.rfid_code
-        this.form.pilot_username = pilot.pilot_username
-        this.form.is_admin = pilot.is_admin
+        if (pilot.is_active) {
+          this.pilotError = true
+          this.pilotErrorMsg = "Der angeforderte Pilot ist aktiv!"
+        } else {
+          this.form.pilot_surname = pilot.pilot_surname
+          this.form.pilot_name = pilot.pilot_name
+          this.form.rfid_code = pilot.rfid_code
+          this.form.pilot_username = pilot.pilot_username
+          this.form.is_admin = pilot.is_admin
+        }
       })
       .catch(error => {
         this.pilotLoader = false
         this.pilotError = true
+        this.pilotErrorMsg = "Der angeforderte Pilot existiert nicht!"
         console.error(error);
     });
   },
-  // TODO: Vorauswahl für eigenen Ausweis
   methods: {
     validateState(name) {
       const { $dirty, $error } = this.$v.form[name];
@@ -158,7 +164,7 @@ export default {
       event.preventDefault()
       this.$v.form.$touch()
       if (!this.$v.form.$anyError) {
-        this.updatePilot()
+        this.reactivatePilot()
       }
     },
     // TODO: access reset event
@@ -171,7 +177,7 @@ export default {
       this.form.reset_password = false
     },
 
-    async updatePilot() {
+    async reactivatePilot() {
       this.submitLoader = true
 
       const newPilot = {
@@ -182,6 +188,7 @@ export default {
         pilot_username: this.form.pilot_username,
         reset_password: this.form.reset_password,
         is_admin: this.form.is_admin,
+        is_active: true
       }
 
       await axios.put("http://localhost:5000/pilots", newPilot)

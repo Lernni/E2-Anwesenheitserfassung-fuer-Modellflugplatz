@@ -50,6 +50,7 @@ class Pilots(Resource):
                 [is_active])
         # /pilots?id=1?is_active=true und /pilots?id=1
         else:
+            # is_active ist NULL, wenn nur eine id übergeben wird?
             select_stmt = cursor.execute(
                 'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE ROWID = ? AND '
                 'Ist_Aktiv IS ?', [p_id, is_active])
