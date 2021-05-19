@@ -41,33 +41,34 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
-| 801 | Erstellung spezifischer Test-Cases | x | 24 | 0% | 8-10 | Alex, Max, Analyse | x | x |
+| 
+505 | Deployment planen |  | 24 | 90% | 5-8 | Richard |  |  |
 
-703 | Bearbeitung Architecture-Notebook | x | 128 | 60% | 6-8 | Entwurf, Implementierung | x | x |
+601 | Vue-Komponenten für Website erstellen |  | 128 | 20% | 6-9 | Lenny |  |  |
 
-707 | Überführung in Realsystem planen | x | 24 | 90% | 7 | Entwurf, Implementierung | x | x |
+603 | Architecture-Notebook erweitern |  | 128 | 60% | 6-9 | Entwurf, Implementierung |  |  |
 
-711 | Paketdiagramm entwerfen | x | 64 | 20% | 7-9 | Lenny, Dirk | x | x |
+706 | Paketdiagramm entwerfen |  | 64 | 20% | 7-9 | Lenny, Dirk |  |  |
 
-712 | Domainmodell überarbeiten | x | 2 | 60% | 7-8 | Richard | x | x |
+707 | Domainmodell überarbeiten |  | 2 | 60% | 7-8 | Richard |  |  |
 
-713 | Vue-Komponenten aus Wireframes erstellen | x | 128 | 20% | 7-9 | Lenny | x | x |
+708 | REST-API umsetzen |  | 24 | 80% | 7-8 | Implementierung |  |  |
 
-714 | REST-API umsetzen | x | 24 | 80% | 7-8 | Implementierung | x | x |
+801 | Komponentendiagramm erstellen |  | 24 | 0% | 8 |Jakob, Dirk |  |  |
 
-801 | Komponentendiagramm erstellen | x | 24 | 0% | 8 |Jakob, Dirk | x | x |
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 0% | 8 | Max, Dirk |  |  |
 
-802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen | x | 6 | 0% | 8 | Max, Dirk | x | x |
+803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 6 | 0% | 8 | Jakob |  |  |
 
-803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen | x | 6 | 0% | 8 | Jakob | x | x |
+804 | Synchronisation Webserver - Terminal implementieren |  | 24 | 0% | 8 | Implementierung |  |  |
 
-804 | Synchronisation Webserver - Terminal implementieren | x | 24 | 0% | 8 | Implementierung | x | x |
+805 | Webserver lokal einrichten |  | 6 | 0% | 8 | Lenny |  |  |
 
-805 | Webserver lokal einrichten | x | 6 | 0% | 8 | Lenny | x | x |
+806 | Terminalfunktionalität implementieren |  | 24 | 0% | 8 | Max, Dirk |  |  |
 
-806 | Terminalfunktionalität implementieren | x | 24 | 0% | 8 | Max, Dirk | x | x |
+807 | Datenbank für Terminal erstellen |  | 24 | 0% | 8 | Max |  |  |
 
-807 | Datenbank für Terminal erstellen | x | 24 | 0% | 8 | Max | x | x |
+808 | Erstellung spezifischer Test-Cases |  | 24 | 0% | 8-10 | Alex, Analyse |  |  |
 
 |===
 
