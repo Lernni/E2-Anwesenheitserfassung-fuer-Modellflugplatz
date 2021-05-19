@@ -130,28 +130,23 @@ export default {
     this.form.pilot_id = this.$route.query.id
     this.pilotLoader = true 
 
-    await axios.get("http://localhost:5000/pilots?id=" + this.form.pilot_id)
+    await axios.get("http://localhost:5000/pilots?id=" + this.form.pilot_id + "&is_active=false")
       .then(response => {
         this.pilotLoader = false
 
         var pilot = response.data['pilots'][0]
         console.log(pilot)
 
-        if (pilot.is_active) {
-          this.pilotError = true
-          this.pilotErrorMsg = "Der angeforderte Pilot ist aktiv!"
-        } else {
-          this.form.pilot_surname = pilot.pilot_surname
-          this.form.pilot_name = pilot.pilot_name
-          this.form.rfid_code = pilot.rfid_code
-          this.form.pilot_username = pilot.pilot_username
-          this.form.is_admin = pilot.is_admin
-        }
+        this.form.pilot_surname = pilot.pilot_surname
+        this.form.pilot_name = pilot.pilot_name
+        this.form.rfid_code = pilot.rfid_code
+        this.form.pilot_username = pilot.pilot_username
+        this.form.is_admin = pilot.is_admin
       })
       .catch(error => {
         this.pilotLoader = false
         this.pilotError = true
-        this.pilotErrorMsg = "Der angeforderte Pilot existiert nicht!"
+        this.pilotErrorMsg = "Der angeforderte Pilot existiert nicht oder ist bereits aktiviert!"
         console.error(error);
     });
   },

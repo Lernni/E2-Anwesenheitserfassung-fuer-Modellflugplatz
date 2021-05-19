@@ -7,7 +7,7 @@ from globals import api, get_connection
 
 pilots_parser = api.parser()
 pilots_parser.add_argument('id', type=int)
-pilots_parser.add_argument('is_active', type=inputs.boolean, default=True)
+pilots_parser.add_argument('is_active', type=inputs.boolean)
 
 pilot_post_model = api.model('pilot_post_model', {
     'first_name': fields.String(description='Vorname des Piloten'),
@@ -43,14 +43,18 @@ class Pilots(Resource):
         return_dict = {
             'pilots': []
         }
+
         # /pilots?is_active=true
         if p_id is None:
             select_stmt = cursor.execute(
-                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum,RFID_Code,Ist_Aktiv FROM Pilot WHERE Ist_Aktiv IS ?',
+                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE Ist_Aktiv IS ?',
                 [is_active])
-        # /pilots?id=1&is_active=true und /pilots?id=1
+        # /pilots?id=1
+        elif is_active is None:
+            select_stmt = cursor.execute(
+                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE ROWID = ?', [p_id])
+        # /pilots?id=1&is_active=true
         else:
-            # is_active ist NULL, wenn nur eine id übergeben wird?
             select_stmt = cursor.execute(
                 'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE ROWID = ? AND '
                 'Ist_Aktiv IS ?', [p_id, is_active])
