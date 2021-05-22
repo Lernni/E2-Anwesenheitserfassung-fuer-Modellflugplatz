@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS RFID_Ausweis
     RFID_Code integer PRIMARY KEY
 );
 
--- keine PilotID, stattdessen: ROWID
 CREATE TABLE IF NOT EXISTS Pilot
 (
     PilotID        integer,
@@ -22,7 +21,6 @@ CREATE TABLE IF NOT EXISTS Pilot
     UNIQUE (RFID_Code)
 );
 
--- keine SessionID, stattdessen: ROWID
 CREATE TABLE IF NOT EXISTS Flugsession
 (
     SessionID      integer,
