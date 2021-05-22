@@ -70,7 +70,7 @@
       </template>
 
       <template #cell(actions)="row">
-          <b-button :href="'/session/modify?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
+          <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
             <b-icon-pencil-square></b-icon-pencil-square>
           </b-button>
       </template>

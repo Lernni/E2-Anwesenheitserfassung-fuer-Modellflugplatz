@@ -14,15 +14,15 @@
       <b-row cols="2" class="text-center">
         <b-col class="py-3">Protokoll ansehen</b-col>
         <b-col>
-          <b-button variant="primary" to="protocol-overview">Zum Protokoll</b-button>
+          <b-button variant="primary" to="protocol">Zum Protokoll</b-button>
         </b-col>
         <b-col class="py-3">Flüge nachtragen</b-col>
         <b-col>
-          <b-button variant="primary" to="add-session">Formular</b-button>
+          <b-button variant="primary" to="session/add">Formular</b-button>
         </b-col>
         <b-col class="py-3">Mitgliederverwaltung</b-col>
         <b-col>
-          <b-button variant="primary" to="pilot-overview">Zur Übersicht</b-button>
+          <b-button variant="primary" to="pilots">Zur Übersicht</b-button>
         </b-col>
         <b-col class="py-3">Alle Piloten abmelden</b-col>
         <b-col>

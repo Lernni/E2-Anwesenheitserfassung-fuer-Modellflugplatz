@@ -80,7 +80,7 @@ const name_regex = helpers.regex("name_regex", /^([A-Z][a-zöäüß]+)([- ]([A-Z
 const username_regex = helpers.regex("username_regex", /^[a-z][a-z0-9_-]{2,15}$/)
 
 export default {
-  name: "ModifyPilot",
+  name: "EditPilot",
   components: {
     RfidList
   },

@@ -50,6 +50,7 @@
 // TODO: GET Request: /pilot-list
 // -> Backend liefert aktive Piloten: {pilot_id, pilot_name}
 export default {
+    name: "NewSession",
     // TODO: Submit: POST /sessions
     // Rückgabe: Hinzufügen erfolgreich -> Gehe auf die aufrufende Seite zurück
     data() {

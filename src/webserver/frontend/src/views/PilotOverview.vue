@@ -42,7 +42,7 @@
             <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
           </b-button>
           <b-button-group v-else size="sm">
-            <b-button variant="outline-primary" :href="'/pilot/modify?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
+            <b-button variant="outline-primary" :href="'/pilot/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
               <b-icon-pencil-square></b-icon-pencil-square>
             </b-button>
             <b-button variant="outline-danger" @click="showDeactivateModal(row.item)" v-b-tooltip.hover title="Deaktivieren">

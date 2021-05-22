@@ -3,11 +3,12 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/login">Login</router-link> | 
-      <router-link to="/pilot-overview">Pilotenübersicht</router-link> | 
-      <router-link to="/add-session">Flugsession nachtragen</router-link> | 
-      <router-link to="/protocol-overview">Protokolldaten</router-link> | 
+      <router-link to="/pilots">Pilotenübersicht</router-link> | 
+      <router-link to="/session/new">Flugsession nachtragen</router-link> | 
+      <router-link to="/session/edit">Flugsession bearbeiten</router-link> | 
+      <router-link to="/protocol">Protokolldaten</router-link> | 
       <router-link to="/pilot/new">Pilot erstellen</router-link> | 
-      <router-link to="/pilot/modify">Pilot bearbeiten</router-link> | 
+      <router-link to="/pilot/edit">Pilot bearbeiten</router-link> | 
       <router-link to="/pilot/reactivate">Pilot reaktivieren</router-link> | 
     </div>
     <div class="container">

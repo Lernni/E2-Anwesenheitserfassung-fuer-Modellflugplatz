@@ -3,10 +3,10 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import PilotOverview from '../views/PilotOverview.vue'
-import AddSession from '../views/AddSession.vue'
+import NewSession from '../views/NewSession.vue'
 import ProtocolOverview from '../views/ProtocolOverview.vue'
 import NewPilot from '../views/NewPilot.vue'
-import ModifyPilot from '../views/ModifyPilot.vue'
+import EditPilot from '../views/EditPilot.vue'
 import ReactivatePilot from '../views/ReactivatePilot.vue'
 
 Vue.use(VueRouter)
@@ -23,17 +23,17 @@ const routes = [
     component: Login
   },
   {
-    path: '/pilot-overview',
+    path: '/pilots',
     name: 'PilotOverview',
     component: PilotOverview
   },
   {
-    path: '/add-session',
-    name: 'AddSession',
-    component: AddSession
+    path: '/session/new',
+    name: 'NewSession',
+    component: NewSession
   },
   {
-    path: '/protocol-overview',
+    path: '/protocol',
     name: 'ProtocolOverview',
     component: ProtocolOverview
   },
@@ -43,9 +43,9 @@ const routes = [
     component: NewPilot
   },
   {
-    path: '/pilot/modify',
-    name: 'ModifyPilot',
-    component: ModifyPilot
+    path: '/pilot/edit',
+    name: 'EditPilot',
+    component: EditPilot
   },
   {
     path: '/pilot/reactivate',
