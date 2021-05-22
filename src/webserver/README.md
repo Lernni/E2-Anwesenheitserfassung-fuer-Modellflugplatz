@@ -21,6 +21,17 @@ python3 -m flask run
 
 Das Backend kann über http://localhost:5000/ erreicht werden und öffnet dort Swagger UI mit einer Übersicht über alle URLs der REST API.
 
+### Setup Datenbank für das Backend
+
+```
+cd backend
+python3 make_server_db.py
+```
+bzw.
+```
+python make_server_db.py
+```
+
 ## Frontend (Vue CLI v3)
 >Dokumentation Vue CLI: https://cli.vuejs.org/guide/
 
