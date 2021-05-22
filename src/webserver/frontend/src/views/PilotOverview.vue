@@ -59,18 +59,11 @@
 
 <script>
 import axios from 'axios'
-import { BIconPencilSquare, BIconDashCircleFill, BIconPlusCircleFill } from 'bootstrap-vue'
 
 export default {
   name: 'PilotOverview',
-  components: {
-    BIconPencilSquare,
-    BIconDashCircleFill,
-    BIconPlusCircleFill
-  },
   data() {
     return {
-      // TODO: filter event -> asynchrones GET Request
       items: [],
       fields: [
         {key: "pilot_name", label: "Name"},
@@ -113,9 +106,6 @@ export default {
     showDeactivateModal(pilot) {
       this.toDeactivatePilot = pilot
       this.showModal = true
-
-      // TODO: PUT /pilots?id=2?active=false
-      // Rückgabe: Änderung erfolgreich -> Seite neu laden
     },
     async deactivatePilot() {
       this.deactivateLoader = true
@@ -135,11 +125,7 @@ export default {
         this.deactivateState = false
       });
     },
-    // TODO: Methode: reaktivieren eines Piloten
-    // TODO: PUT /pilots?id=2?active=true
-    // Rückgabe: Änderung erfolgreich -> Seite neu laden
     toggleActivePilots() {
-      // TODO: toggle GET Request ?active=false
       if (this.filterCriteria.is_active) {
         this.filterCriteria.is_active = false
         this.toggle_active_pilots_button = "Aktive Piloten"
