@@ -19,10 +19,7 @@ pilot_put_model = api.model('pilot_put_model', {
     'pilot_id': fields.Integer(description='PilotID', required=True),
     'pilot_name': fields.String(description='Vorname des Piloten'),
     'pilot_surname': fields.String(description='Nachname des Piloten'),
-    #'entry_date': fields.Date(description='Eintrittsdatum'),
-
-    # TODO geht nicht, da foreign key
-    # 'rfid': fields.Integer(description='RFID Tag des Piloten'),
+    'rfid': fields.Integer(description='RFID Tag des Piloten'),
     'pilot_username': fields.String(description='Benutzername des Piloten'),
     'reset_password': fields.Boolean(description='Setzt das Passwort des Piloten auf NULL, wenn true'),
     'is_admin': fields.Boolean,
@@ -47,16 +44,17 @@ class Pilots(Resource):
         # /pilots?is_active=true
         if p_id is None:
             select_stmt = cursor.execute(
-                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE Ist_Aktiv IS ?',
+                'SELECT PilotID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE Ist_Aktiv IS ?',
                 [is_active])
         # /pilots?id=1
         elif is_active is None:
             select_stmt = cursor.execute(
-                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE ROWID = ?', [p_id])
+                'SELECT PilotID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE PilotID = ?',
+                [p_id])
         # /pilots?id=1&is_active=true
         else:
             select_stmt = cursor.execute(
-                'SELECT ROWID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE ROWID = ? AND '
+                'SELECT PilotID, Vorname, Nachname, Eintrittsdatum, RFID_Code, Ist_Aktiv, Nutzername, Ist_Admin FROM Pilot WHERE PilotID = ? AND '
                 'Ist_Aktiv IS ?', [p_id, is_active])
 
         for row in select_stmt:
@@ -105,34 +103,32 @@ class Pilots(Resource):
         # da sqlite keine funktion zum updaten einer variablen anzahl von spalten anbietet, wird es ab hier hässlich
         if 'pilot_name' in payload.keys():
             new_first_name = payload['pilot_name']
-            cursor.execute('UPDATE Pilot SET Vorname = ? WHERE ROWID = ?', [new_first_name, p_id])
+            cursor.execute('UPDATE Pilot SET Vorname = ? WHERE PilotID = ?', [new_first_name, p_id])
 
         if 'pilot_surname' in payload.keys():
             new_last_name = payload['pilot_surname']
-            cursor.execute('UPDATE Pilot SET Nachname = ? WHERE ROWID = ?', [new_last_name, p_id])
+            cursor.execute('UPDATE Pilot SET Nachname = ? WHERE PilotID = ?', [new_last_name, p_id])
 
-        # update funktoniert nicht, da foreign key constraint
-        # TODO:Lösung drop constraint -> update -> reapply constraint
-        # if 'rfid' in payload.keys():
-        #     new_rfid = payload['rfid']
-        #     cursor.execute('UPDATE Pilot SET RFID_Code = ? WHERE ROWID = ?', [new_rfid, p_id])
+        if 'rfid' in payload.keys():
+            new_rfid = payload['rfid']
+            cursor.execute('UPDATE Pilot SET RFID_Code = ? WHERE PilotID = ?', [new_rfid, p_id])
 
         if 'pilot_username' in payload.keys():
             new_user_name = payload['pilot_username']
-            cursor.execute('UPDATE Pilot SET Nutzername = ? WHERE ROWID = ?', [new_user_name, p_id])
+            cursor.execute('UPDATE Pilot SET Nutzername = ? WHERE PilotID = ?', [new_user_name, p_id])
 
         if 'is_admin' in payload.keys():
             new_admin = payload['is_admin']
-            cursor.execute('UPDATE Pilot SET Ist_Admin = ? WHERE ROWID = ?', [new_admin, p_id])
+            cursor.execute('UPDATE Pilot SET Ist_Admin = ? WHERE PilotID = ?', [new_admin, p_id])
 
         if 'reset_password' in payload.keys():
             new_password = payload['reset_password']
             if (new_password):
-                cursor.execute('UPDATE Pilot SET Passwort = NULL WHERE ROWID = ?', [p_id])
+                cursor.execute('UPDATE Pilot SET Passwort = NULL WHERE PilotID = ?', [p_id])
 
         if 'is_active' in payload.keys():
             new_active = payload['is_active']
-            cursor.execute('UPDATE Pilot SET Ist_Aktiv = ? WHERE ROWID = ?', [new_active, p_id])
+            cursor.execute('UPDATE Pilot SET Ist_Aktiv = ? WHERE PilotID = ?', [new_active, p_id])
 
         connection.commit()
         connection.close()
