@@ -13,7 +13,7 @@ class PilotList(Resource):
         return_dict = {
             'pilots': []
         }
-        for row in cursor.execute('SELECT ROWID, Vorname, Nachname FROM Pilot'):
+        for row in cursor.execute('SELECT PilotID, Vorname, Nachname FROM Pilot'):
             pilot = {
                 'value': row[0],
                 'text': "[" + str(row[0]) + "] " + row[1] + " " + row[2]
