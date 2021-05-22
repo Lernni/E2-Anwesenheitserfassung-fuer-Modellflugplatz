@@ -2,11 +2,11 @@
   <div class="new-pilot">
     <h2>Pilot erstellen</h2>
     <b-container class="w-75">
-      <b-alert variant="success" :show="submitSuccess" dismissible>
+      <b-alert variant="success" :show="submitState" dismissible>
         Pilot wurde erfolgreich angelegt!
       </b-alert>
 
-      <b-alert variant="danger" :show="submitError" dismissible>
+      <b-alert variant="danger" :show="submitState == false" dismissible>
         Pilot konnte nicht angelegt werden!<br>
         {{submitErrorMsg}}
       </b-alert>
@@ -86,8 +86,7 @@ export default {
       },
 
       submitLoader: false,
-      submitSuccess: false,
-      submitError: false,
+      submitState: null,
       submitErrorMsg: null
     }
   },
@@ -146,12 +145,12 @@ export default {
       await axios.post("http://localhost:5000/pilots", newPilot)
         .then(() => {
           this.submitLoader = false
-          this.submitSuccess = true
+          this.submitState = true
         })
         .catch(error => {
           console.error(error);
           this.submitLoader = false
-          this.submitError = true
+          this.submitState = false
           this.submitErrorMsg = error
       });
     }

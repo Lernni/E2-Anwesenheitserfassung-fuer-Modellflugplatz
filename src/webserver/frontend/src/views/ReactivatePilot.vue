@@ -2,11 +2,12 @@
   <div class="reactivate-pilot">
     <h2>Pilot reaktivieren</h2>
     <b-container class="w-75">
-      <b-alert variant="success" :show="submitSuccess" dismissible>
-        Pilot wurde erfolgreich reaktiviert!
+      <b-alert variant="success" :show="submitState" dismissible>
+        Pilot wurde erfolgreich reaktiviert!<br/><br/>
+        Weiterleitung zur Pilotenübersicht...
       </b-alert>
 
-      <b-alert variant="danger" :show="submitError" dismissible>
+      <b-alert variant="danger" :show="submitState" dismissible>
         Pilot konnte nicht reaktiviert werden!<br>
         {{submitErrorMsg}}
       </b-alert>
@@ -100,8 +101,7 @@ export default {
       pilotErrorMsg: null,
 
       submitLoader: false,
-      submitSuccess: false,
-      submitError: false,
+      submitState: null,
       submitErrorMsg: null
     }
   },
@@ -189,12 +189,13 @@ export default {
       await axios.put("http://localhost:5000/pilots", newPilot)
         .then(() => {
           this.submitLoader = false
-          this.submitSuccess = true
+          this.submitState = true
+          setTimeout(() => {this.$router.go(-1)}, 3000)
         })
         .catch(error => {
           console.error(error);
           this.submitLoader = false
-          this.submitError = true
+          this.submitState = false
           this.submitErrorMsg = error
       });
     }

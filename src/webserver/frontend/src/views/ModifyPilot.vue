@@ -2,17 +2,18 @@
   <div class="modify-pilot">
     <h2>Pilot bearbeiten</h2>
     <b-container class="w-75">
-      <b-alert variant="success" :show="submitSuccess" dismissible>
-        Pilot wurde erfolgreich bearbeitet!
+      <b-alert variant="success" :show="submitState" dismissible>
+        Pilot wurde erfolgreich bearbeitet!<br/><br/>
+        Weiterleitung zur Pilotenübersicht...
       </b-alert>
 
-      <b-alert variant="danger" :show="submitError" dismissible>
+      <b-alert variant="danger" :show="submitState == false" dismissible>
         Pilot konnte nicht bearbeitet werden!<br>
         {{submitErrorMsg}}
       </b-alert>
 
       <b-alert variant="danger" :show="pilotError">
-        Der angeforderte Pilot existiert nicht!
+        Der angeforderte Pilot konnte nicht geladen werden!
       </b-alert>
       
       <b-overlay :show="pilotLoader">
@@ -98,8 +99,7 @@ export default {
       pilotLoader: false,
       pilotError: false,
 
-      submitLoader: false,
-      submitSuccess: false,
+      submitState: null,
       submitError: false,
       submitErrorMsg: null
     }
@@ -187,12 +187,13 @@ export default {
       await axios.put("http://localhost:5000/pilots", newPilot)
         .then(() => {
           this.submitLoader = false
-          this.submitSuccess = true
+          this.submitState = true
+          setTimeout(() => {this.$router.go(-1)}, 3000)
         })
         .catch(error => {
           console.error(error);
           this.submitLoader = false
-          this.submitError = true
+          this.submitState = false
           this.submitErrorMsg = error
       });
     }
