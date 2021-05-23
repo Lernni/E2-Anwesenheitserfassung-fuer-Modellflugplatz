@@ -15,12 +15,36 @@ def get_connection(filename):
     cursor.execute("PRAGMA FOREIGN_KEYS=ON")
     return connection
 
-#erstellt neue Session mit aktueller Uhrzeit, gibt SessionID der neuen Session zurück
+#gibt Details eines Piloten mit RFID_Code zurück, -1 falls keiner gefunden
+def get_pilot(RFID_Code):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    select_stmt = cursor.execute(
+                'SELECT PilotID, RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
+                (RFID_Code,))
+    
+    return_dict = -1
+    for row in select_stmt:
+        return_dict = {
+            'pilot_id': row[0],
+            'rfid_code': row[1],
+            'pilot_name': row[3] + " " + row[2],
+            'entry_date': row[4],
+            'active': row[5]
+        }
+
+    connection.close()
+    return return_dict
+
+#erstellt neue Session mit aktueller Uhrzeit, gibt SessionID der neuen Session zurück, -1 wenn RFID_Code nicht existiert
 def create_session(RFID_Code):
     connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
     pilot = get_pilot(RFID_Code)
+    if pilot == -1:
+        return []
 
     cursor.execute(
         'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime("now"), NULL, 0)',
@@ -57,6 +81,35 @@ def get_session(SessionID):
     connection.close()
     return return_dict
 
+#gibt Liste aktiver Sessions eines Piloten mit RFID_Code, [] falls keine gefunden
+def get_active_sessions(RFID_Code):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    pilot = get_pilot(RFID_Code)
+    if pilot == -1:
+        return []
+
+    select_stmt = cursor.execute(
+                'SELECT SessionID, PilotID, Startzeit, Endzeit, Ist_Flugleiter FROM Flugsession WHERE PilotID = ? AND Endzeit IS NULL',
+                (pilot['pilot_id'],))
+
+    sessions = []
+    return_dict = -1
+    for row in select_stmt:
+        return_dict = {
+            'session_id': row[0],
+            'pilot_id': row[1],
+            'start_time': row[2],
+            'end_time': row[3],
+            'is_controller': row[4]
+        }
+        sessions.append(return_dict)
+
+    connection.close()
+    return sessions
+
+
 #setzt Endzeit einer Session auf aktuelle Zeit
 def end_session(SessionID):
     connection = get_connection('database_terminal.db')
@@ -65,6 +118,18 @@ def end_session(SessionID):
     cursor.execute(
         "UPDATE Flugsession SET Endzeit = datetime('now') WHERE SessionID = ?",
         (SessionID,))
+    
+    connection.commit()
+    connection.close()
+    return
+
+#setzt Endzeit aller aktiven Sessions auf aktuelle Zeit
+def end_all_sessions():
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "UPDATE Flugsession SET Endzeit = datetime('now') WHERE Endzeit IS NULL")
     
     connection.commit()
     connection.close()
@@ -82,28 +147,6 @@ def set_flugleiter(SessionID):
     connection.commit()
     connection.close()
     return
-
-#gibt Details eines Piloten mit RFID_Code zurück, -1 falls keiner gefunden
-def get_pilot(RFID_Code):
-    connection = get_connection('database_terminal.db')
-    cursor = connection.cursor()
-
-    select_stmt = cursor.execute(
-                'SELECT PilotID, RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
-                (RFID_Code,))
-    
-    return_dict = -1
-    for row in select_stmt:
-        return_dict = {
-            'pilot_id': row[0],
-            'rfid_code': row[1],
-            'pilot_name': row[3] + " " + row[2],
-            'entry_date': row[4],
-            'active': row[5]
-        }
-
-    connection.close()
-    return return_dict
 
 def sync_session(SessionID):
     session = get_session(SessionID)
@@ -137,9 +180,12 @@ if __name__ == '__main__':
 
     id = create_session(346352)
     set_flugleiter(id)
-    end_session(id)
+    #end_session(id)
+    #end_all_sessions()
 
     print(get_session(id))
+    print(get_active_sessions(346352))
     print(get_pilot(346352))
     print(get_session(32462))
     print(get_pilot(342347))
+    print(get_active_sessions(343454652))
