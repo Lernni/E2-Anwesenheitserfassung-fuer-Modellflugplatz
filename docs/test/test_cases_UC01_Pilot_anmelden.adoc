@@ -8,9 +8,10 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 === TestCases
 
-[%header, cols=6*]
+[%header, cols=7*]
 |===
 |TID
+|Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
@@ -19,6 +20,7 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |1
 |Pilot abgemeldet, Pilot aktives Mitglied, gültige RFID-Karte
+|Positiv, manuell
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich anmelden, LED-Rückmeldung: Grün
 |
@@ -26,6 +28,7 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |2
 |Pilot kein aktives Mitglied, ungültige RFID-Karte
+|Negativ, manuell
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich nicht anmelden, LED-Rückmeldung: Rot
 |
@@ -33,6 +36,7 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |3
 |Pilot angemeldet
+|Negativ, manuell
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich nicht erneut anmelden, LED-Rückmeldung: Grün (da Abmeldung), Pilot abgemeldet in System
 |
@@ -40,6 +44,7 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |4
 |Pilot ist abgemeldet
+|Negativ, manuell
 |Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
 |Das System meldet den Piloten korrekt abwechselnd an und ab (evtl. hier schon relevant: Der Eintrag wird nicht ins Protokoll übernommen da Zeit < x Minuten)
 |
