@@ -78,15 +78,17 @@ class Pilots(Resource):
     def post(self):
         '''create pilot'''
         payload = api.payload
-        first_name = payload['first_name']
-        last_name = payload['last_name']
-        rfid = payload['rfid']
+        first_name = payload['pilot_name']
+        last_name = payload['pilot_surname']
+        rfid = int(payload['rfid_code'], 16)
+        username = payload['pilot_username']
+        is_admin = bool(payload['is_admin'])
 
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
         cursor.execute(
-            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES(?, ?, ?, date(), true)',
-            [rfid, last_name, first_name])
+            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv, Nutzername, Passwort, Ist_Admin) VALUES(?, ?, ?, date(), true, ?, NULL, ?)',
+            [rfid, last_name, first_name, username, is_admin])
         connection.commit()
         connection.close()
         return {}
@@ -110,7 +112,7 @@ class Pilots(Resource):
             cursor.execute('UPDATE Pilot SET Nachname = ? WHERE PilotID = ?', [new_last_name, p_id])
 
         if 'rfid' in payload.keys():
-            new_rfid = payload['rfid']
+            new_rfid = int(payload['rfid'], 16)
             cursor.execute('UPDATE Pilot SET RFID_Code = ? WHERE PilotID = ?', [new_rfid, p_id])
 
         if 'pilot_username' in payload.keys():

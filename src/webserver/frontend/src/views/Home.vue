@@ -64,7 +64,7 @@ export default {
     }
   },
   async mounted() {
-    await axios({method: "GET", "url": "http://localhost:5000/sessions?running"}).then(result => {
+    await axios.get("http://localhost:5000/sessions/running").then(result => {
       this.items = result.data['sessions'];
       this.noSessions = (this.items.length == 0)
 
