@@ -19,32 +19,32 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |Nachgebessert
 
 |1
-|Pilot abgemeldet, Pilot aktives Mitglied, gültige RFID-Karte
 |Positiv, manuell
+|Pilot abgemeldet, Pilot aktives Mitglied, gültige RFID-Karte
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich anmelden, LED-Rückmeldung: Grün
 |
 |
 
 |2
-|Pilot kein aktives Mitglied, ungültige RFID-Karte
 |Negativ, manuell
+|Pilot kein aktives Mitglied, ungültige RFID-Karte
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich nicht anmelden, LED-Rückmeldung: Rot
 |
 |
 
 |3
-|Pilot angemeldet
 |Negativ, manuell
+|Pilot angemeldet
 |Pilot hält RFID-Karte an Terminal
 |Pilot kann sich nicht erneut anmelden, LED-Rückmeldung: Grün (da Abmeldung), Pilot abgemeldet in System
 |
 |
 
 |4
-|Pilot ist abgemeldet
 |Negativ, manuell
+|Pilot ist abgemeldet
 |Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
 |Das System meldet den Piloten korrekt abwechselnd an und ab (evtl. hier schon relevant: Der Eintrag wird nicht ins Protokoll übernommen da Zeit < x Minuten)
 |
