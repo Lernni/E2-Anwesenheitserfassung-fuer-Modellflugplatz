@@ -63,7 +63,7 @@ class Pilots(Resource):
                 'pilot_name': row[1],
                 'pilot_surname': row[2],
                 'entry_date': row[3],
-                'rfid': hex(row[4]),
+                'rfid': 'null' if row[4] is None else hex(row[4]),
                 'is_active': bool(row[5]),
                 'pilot_username': row[6],
                 'is_admin': bool(row[7])
@@ -112,7 +112,10 @@ class Pilots(Resource):
             cursor.execute('UPDATE Pilot SET Nachname = ? WHERE PilotID = ?', [new_last_name, p_id])
 
         if 'rfid' in payload.keys():
-            new_rfid = int(payload['rfid'], 16)
+            if not payload['rfid']:
+                new_rfid = None
+            else:
+                new_rfid = int(payload['rfid'], 16)
             cursor.execute('UPDATE Pilot SET RFID_Code = ? WHERE PilotID = ?', [new_rfid, p_id])
 
         if 'pilot_username' in payload.keys():

@@ -111,6 +111,7 @@ export default {
       this.deactivateLoader = true
 
       this.toDeactivatePilot.is_active = false
+      this.toDeactivatePilot.rfid = null
 
       await axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
         this.items = result.data["pilots"]
@@ -141,6 +142,7 @@ export default {
 
       await axios.get("http://localhost:5000/pilots?is_active=" + this.filterCriteria.is_active).then(result => {
         this.items = result.data["pilots"]
+        console.log(this.items)
         this.pilotsLoader = false
       }, error => {
         console.error(error)

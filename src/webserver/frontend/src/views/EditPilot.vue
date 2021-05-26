@@ -36,6 +36,7 @@
 </template>
 
 <script>
+// TODO: Überprüfe, ob man einen deaktivierten Piloten bearbeiten kann
 import axios from 'axios'
 import Pilot from '@/components/Pilot.vue'
 import { formPilot } from '@/scripts/pilot'
