@@ -18,8 +18,8 @@ Der Akteur "Administrator" möchte die Pilotendaten eines Piloten verändern.
 
 === Standardablauf (Basic Flow)
 
-. Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederübersicht_.
-. Der *Administrator* sucht in der _Mitgliederübersicht_ den zu modifizierenden `Piloten` und klickt auf _Bearbeiten_.
+. Der *Administrator* navigiert auf der _Admin-Seite_ des _Webservers_ zur _Mitgliederverwaltung_.
+. Der *Administrator* sucht in der _Mitgliederverwaltung_ den zu modifizierenden `Piloten` und klickt auf _Bearbeiten_.
 . Der *Administrator* verändert die `Pilotendaten` in einem Formular und bestätigt diese.
 . IF `Pilotendaten` plausibel
 .. Der _Webserver_ über die Änderungen in die _Datenbank_

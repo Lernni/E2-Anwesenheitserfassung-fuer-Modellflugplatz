@@ -1,0 +1,53 @@
+== Test Cases: UC07 - Flugleiter bestimmen
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|
+|
+|
+|
+|
+|
+
+|2
+|
+|
+|
+|
+|
+|
+
+|3
+|
+|
+|
+|
+|
+|
+
+|4
+|
+|
+|
+|
+|
+|
+
+|===

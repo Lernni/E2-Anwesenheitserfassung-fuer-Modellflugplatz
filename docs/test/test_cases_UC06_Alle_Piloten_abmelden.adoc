@@ -1,0 +1,46 @@
+== Test Cases: UC06 - Alle Piloten abmelden
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+|*Pilot* hat sich vergessen abzumelden; _LED_ leuchtet dauerhaft
+|Vermeintlich "letzter" *Pilot* hält seinen _RFID-Ausweis_ 10 Sekunden vor den _RFID-Scanner_ 
+|_LED_ leuchtet nicht mehr dauerhaft; _System_ erfasst und protokolliert die Abmeldung; Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
+|
+|
+
+|2
+|Positiv, automatisch
+|*Pilot* hat sich vergessen abzumelden; _LED_ leuchtet dauerhaft
+|Jeder *Pilot* wird um 00:00 Uhr automatisch von der *Zeitsteuerung* abgemeldet 
+|_LED_ leuchtet nicht mehr dauerhaft; _System_ erfasst und protokolliert die Abmeldung; Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
+|
+|
+
+|3
+|Positiv, manuell
+|*Pilot* hat sich vergessen abzumelden; _LED_ leuchtet dauerhaft; *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Betätigen der Schaltfläche _Alle Piloten abmelden_   
+|_LED_ leuchtet nicht mehr dauerhaft; _System_ erfasst und protokolliert die Abmeldung; Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
+|
+|
+
+
+|===

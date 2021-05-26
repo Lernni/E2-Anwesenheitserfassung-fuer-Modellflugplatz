@@ -16,7 +16,8 @@ Der Akteur "Zeitsteuerung" führt die Abmeldung aller *Piloten* immer um eine be
 
 
 === Vorbedingungen
-. *Piloten* sind angemeldet.
+. *Piloten* sind angemeldet
+. Die _LED_ leuchtet dauerhaft
 
 === Standardablauf (Basic Flow)
 
