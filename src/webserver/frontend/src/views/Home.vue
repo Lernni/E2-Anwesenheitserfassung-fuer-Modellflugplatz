@@ -18,7 +18,7 @@
         </b-col>
         <b-col class="py-3">Flüge nachtragen</b-col>
         <b-col>
-          <b-button variant="primary" to="session/add">Formular</b-button>
+          <b-button variant="primary" to="session/new">Formular</b-button>
         </b-col>
         <b-col class="py-3">Mitgliederverwaltung</b-col>
         <b-col>

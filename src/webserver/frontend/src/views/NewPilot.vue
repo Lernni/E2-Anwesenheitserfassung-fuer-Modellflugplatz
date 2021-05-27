@@ -11,8 +11,9 @@
       @formSubmit="onSubmit"
     >
       <template v-slot:alerts>
-        <b-alert variant="success" :show="submit.submitState" dismissible>
-          Pilot wurde erfolgreich angelegt!
+        <b-alert variant="success" :show="submit.submitState">
+          Pilot wurde erfolgreich angelegt!<br/><br/>
+          <b-button variant="success" @click="newPilot()">Weiteren Piloten erstellen</b-button>
         </b-alert>
 
         <b-alert variant="danger" :show="submit.submitState == false" dismissible>
@@ -37,6 +38,11 @@ export default {
   },
 
   methods: {
+    newPilot() {
+      this.submit.submitState = null
+      this.$v.$reset()
+    },
+
     async pilotRequest() {
       this.submit.submitLoader = true
 

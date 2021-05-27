@@ -7,7 +7,7 @@
       </b-alert>
       <slot name="alerts"></slot>
       <b-overlay :show="pilot.pilotLoader">
-        <b-form v-show="pilot.pilotState != false" @submit="onSubmit" :novalidate="true">
+        <b-form v-show="(pilot.pilotState != false) ? !submit.submitState : submit.submitState" @submit="onSubmit" :novalidate="true">
           <h4>Pilotendaten</h4>
           <b-row cols="2">
             <b-col>
