@@ -1,0 +1,38 @@
+== Test Cases: UC08 - Protokoll einsehen
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+|*Administrator* / *Pilot* ist auf dem _Webserver_ eingeloggt; hat Zugriffsrechte für die _Protokollansicht_; die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
+|Eine normale Suche in der _Protokollansicht_ eines bestehenden Protokolls durch die Eingabe von Name, Startdatum und Enddatum 
+|Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in der _Protokollansicht_
+|
+|
+
+|2
+|Negativ, manuell
+|*Administrator* / *Pilot* ist auf dem _Webserver_ eingeloggt; hat Zugriffsrechte für die _Protokollansicht_; die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
+|Eine normale Suche in der _Protokollansicht_ eines bestehenden Protokolls durch die Eingabe von einem nicht existierenden Namen/Startdatum/Enddatum 
+|Fehlerhafte Suche muss dem *Administrator*/ *Pilot* kenntlich gemacht werden; die Suche ist nicht möglich
+|
+|
+
+
+|===
