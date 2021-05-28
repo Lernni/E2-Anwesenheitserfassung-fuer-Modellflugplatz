@@ -142,7 +142,6 @@ export default {
 
       await axios.get("http://localhost:5000/pilots?is_active=" + this.filterCriteria.is_active).then(result => {
         this.items = result.data["pilots"]
-        console.log(this.items)
         this.pilotsLoader = false
       }, error => {
         console.error(error)

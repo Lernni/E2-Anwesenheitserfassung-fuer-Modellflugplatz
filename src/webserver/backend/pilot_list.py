@@ -13,10 +13,11 @@ class PilotList(Resource):
         return_dict = {
             'pilots': []
         }
-        for row in cursor.execute('SELECT PilotID, Vorname, Nachname FROM Pilot'):
+        for row in cursor.execute('SELECT PilotID, Vorname, Nachname, Nutzername FROM Pilot'):
             pilot = {
-                'value': row[0],
-                'text': "[" + str(row[0]) + "] " + row[1] + " " + row[2]
+                'pilot_id': row[0],
+                'pilot_name': row[1] + " " + row[2],
+                'pilot_username': row[3]
             }
             return_dict['pilots'].append(pilot)
         connection.close()

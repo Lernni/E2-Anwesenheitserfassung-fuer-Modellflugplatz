@@ -8,16 +8,18 @@
       :submit="submit"
       :rfidList="rfidList"
       :pilot="pilot"
+      :username="username"
       @formSubmit="onSubmit"
+      @setUsername="setUsername"
     >
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
-          Pilot wurde erfolgreich bearbeitet!<br/><br/>
+          Pilot wurde erfolgreich reaktiviert!<br/><br/>
           Weiterleitung zur Pilotenübersicht...
         </b-alert>
 
         <b-alert variant="danger" :show="submit.submitState == false" dismissible>
-          Pilot konnte nicht bearbeitet werden!<br>
+          Pilot konnte nicht reaktiviert werden!<br>
           {{ submit.submitErrorMsg }}
         </b-alert>
 
@@ -53,9 +55,11 @@ export default {
     }
   },
   async mounted() {
-
     this.pilotId = this.$route.query.id
     this.pilot.pilotLoader = true 
+
+    await this.getRfidList()
+    await this.getPilotUsernames()
 
     await axios.get("http://localhost:5000/pilots?id=" + this.pilotId + "&is_active=false")
       .then(response => {

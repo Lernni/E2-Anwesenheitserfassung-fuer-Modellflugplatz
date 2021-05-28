@@ -8,12 +8,19 @@
       :submit="submit"
       :rfidList="rfidList"
       :pilot="pilot"
+      :username="username"
       @formSubmit="onSubmit"
+      @setUsername="setUsername"
     >
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
           Pilot wurde erfolgreich angelegt!<br/><br/>
           <b-button variant="success" @click="newPilot()">Weiteren Piloten erstellen</b-button>
+        </b-alert>
+
+        <b-alert variant="info" :show="rfidList.noRfid">
+          Kein freier RFID-Tag verfügbar! Fügen Sie dem System einen neuen RFID-Tag hinzu, bevor sie einen Piloten erstellen.<br/><br/>
+          <b-button variant="info" to="new-rfid">RFID-Tag hinzufügen</b-button>
         </b-alert>
 
         <b-alert variant="danger" :show="submit.submitState == false" dismissible>
@@ -58,9 +65,14 @@ export default {
         .then(() => {
           this.submitSuccess()
           this.getRfidList()
+          this.getPilotUsernames()
         })
         .catch(error => {this.submitFailure(error)});
     }
+  },
+  mounted() {
+    this.getRfidList()
+    this.getPilotUsernames()
   }
 }
 </script>

@@ -8,7 +8,9 @@
       :submit="submit"
       :rfidList="rfidList"
       :pilot="pilot"
+      :username="username"
       @formSubmit="onSubmit"
+      @setUsername="setUsername"
     >
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
@@ -56,6 +58,9 @@ export default {
   async mounted() {
     this.pilotId = this.$route.query.id
     this.pilot.pilotLoader = true 
+
+    await this.getRfidList()
+    await this.getPilotUsernames()
 
     await axios.get("http://localhost:5000/pilots?id=" + this.pilotId)
       .then(response => {

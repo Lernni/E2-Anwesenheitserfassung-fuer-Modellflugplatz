@@ -210,8 +210,13 @@ export default {
 
     await axios.get("http://localhost:5000/pilot-list")
       .then(response => {
-        this.pilotList = response.data['pilots']
-        this.filteredPilotList = response.data['pilots']
+        var pilotList = response.data['pilots'].map((pilot) => ({
+          value: pilot.pilot_id,
+          text: "[" + pilot.pilot_id + "] " + pilot.pilot_name 
+        }))
+
+        this.pilotList = pilotList
+        this.filteredPilotList = pilotList
         this.pilotListLoader = false
       })
       .catch(error => {
