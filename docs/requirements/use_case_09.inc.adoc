@@ -1,4 +1,3 @@
-:imagesdir: images/Wireframes/Protokoll
 == Use-Case: UC09: Protokolldaten nachträglich einfügen
 
 ===	Kurzbeschreibung
@@ -43,5 +42,5 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 === Wireframe
 
 .Wireframe: Flugzeiten nachtragen
-image::Flugzeit_nachtragen_V3.png[Flugzeiten nachtragen, width=70%, align="center"]
+image::Wireframes/Protokoll/Flugzeit_nachtragen_V3.png[Flugzeiten nachtragen, width=70%, align="center"]
 
