@@ -14,9 +14,20 @@
       Piloten konnten nicht geladen werden!
     </b-alert>
 
-    <b-input-group prepend="Suche" class="mb-3">
-      <b-form-input type="search" v-model="filterCriteria.pilot_name" placeholder="Name"></b-form-input>
-    </b-input-group>
+    <b-row class="text-center no-gutters mb-2">
+      <b-col>
+        <b-input-group prepend="Suche">
+          <b-form-input type="search" v-model="filterCriteria.pilot_name" placeholder="Name"></b-form-input>
+        </b-input-group>
+      </b-col>
+      <b-col cols="12" md="auto">
+        <b-button variant="primary" class="ml-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
+        <b-button variant="success" class="ml-2" to="pilot/new">
+          <b-icon icon="plus" scale="1.5"></b-icon>
+          Pilot erstellen
+        </b-button>
+      </b-col>
+    </b-row>
 
     <b-modal disabled v-model="showModal" title="Pilot deaktivieren" header-bg-variant="danger" header-text-variant="light">
       Soll {{ toDeactivatePilot.pilot_name }} {{ toDeactivatePilot.pilot_surname }} wirklich deaktiviert werden?<br/><br/>
@@ -52,8 +63,6 @@
         </template>
       </b-table>
     </b-overlay>
-    <b-button variant="primary" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
-    <b-button variant="primary" class="ml-2" to="pilot/new">Pilot erstellen</b-button>
   </div>
 </template>
 
@@ -66,6 +75,7 @@ export default {
     return {
       items: [],
       fields: [
+        {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Name"},
         {
           key: "entry_date",
@@ -74,10 +84,16 @@ export default {
             return new Date(value).toLocaleDateString()
           }
         },
-        {key: "rfid", label: "RFID"},
+        {
+          key: "rfid",
+          label: "RFID",
+          formatter: (value) => {
+            return (value == "null") ? "nicht vergeben" : value
+          }
+        },
         {key: "actions", label: ""}
       ],
-      toggleActivePilotsButton: "Deaktivierte Piloten",
+      toggleActivePilotsButton: "Zeige deaktive Piloten",
 
       filterCriteria: {
         pilot_name: null,
@@ -129,10 +145,10 @@ export default {
     toggleActivePilots() {
       if (this.filterCriteria.is_active) {
         this.filterCriteria.is_active = false
-        this.toggle_active_pilots_button = "Aktive Piloten"
+        this.toggleActivePilotsButton = "Zeige aktive Piloten"
       } else {
         this.filterCriteria.is_active = true
-        this.toggle_active_pilots_button = "Deaktivierte Piloten"
+        this.toggleActivePilotsButton = "Zeige deaktive Piloten"
       }
 
       this.getPilots()
