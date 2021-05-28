@@ -1,0 +1,69 @@
+= Protokoll vom 26.05.2021
+1.0 26.05.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Fortschritte Frontend -> Lenny
+- Terminalprogrammierung, Synchronisation -> Dirk
+- TestCase TC01, Iterationsplanung -> Alex, Jakob
+- Wireframes -> Alex
+- Deployment, Domainmodell -> Richard
+- Terminal, Backend -> Max
+
+== Schwerpunkte
+- Iterationswechsel: Iteration 8 -> Iteration 9
+- Fortschritte Frontend und aufgetretene Fragen dazu durchgegangen
+- Vorstellung der Fortschritte vor Herr Iwe und Herr Zirkelbach
+- Folgende Neuerungen:
+* Normale Piloten dürfen in ihren eigenen Flugsessions im Nachhinein nur einen Gast hinzufügen, aber keine Flugzeiten ändern
+* Die Möglichkeit, dem System RFID-Tags hinzuzufügen, soll über ein gesondertes Formular auf dem Webserver möglich sein
+* Die Standardsicht der Pilotenübersicht enthält nur aktive Piloten.
+* Die Admins haben die Möglichkeit bei der Pilotenerstellung/-bearbeitung aus einer Menge von freien RFID-Tags zu wählen.
+* Der Nutzername für die Anmeldung der Piloten am Webserver wird bei der Pilotenerstellung/-bearbeitung durch das System festgelegt nach dem Muster „vorname_nachname“.
+* Ein Pilot kann vom Admin nicht deaktiviert werden, solange der Pilot eine aktive Flugsession hat. Es erscheint dann eine entsprechende Fehlermeldung.
+* Folgende Optionen sind für die Einstellungsseite auf dem Webserver vorgesehen:
+** Einstellung der Bedienung am Terminal (Wie lange muss ein Pilot seinen Ausweis vorhalten, um alle Piloten abzumelden?)
+** Einstellung der LED-Farbrückmeldungen des Terminals
+** Einstellung der Toleranzzeit, bis das System eine Flugsession einträgt (Meldet sich ein Pilot an und kurz darauf wieder ab, wird dies nicht im Protokoll hinterlegt)
+** Einstellung der Reset-Zeit, wann alle verbleibenden Piloten vom System abgemeldet werden (i.d.R. Mitternacht)
+- Zielsetzung für Ende der Construction Phase: 09.06.
+- Fortschritt der Aufgaben mit aktuellem Iterationsplan verglichen
+* Abschätzen der Fortschritts in Prozent, Geleisteten Stunden, Verbleibenden Stunden
+* Augabenverteilung
+- Beantworten von Fragen im SE Praktikum am Freitag 9:20 Uhr
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Test-Cases erstellen (Issue #63) -> Alex, Jakob
+
+=== vom 28.04.
+- Domainmodell aktualisieren (Issue #71) -> Richard
+
+=== vom 05.05.
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Komponentendiagramm entwerfen (Issue #79) -> Dirk, Jakob
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+
+=== vom 12.05.
+- Test-Case 1 erstellen (Issue #84) -> Team Analyse, Max und Alex
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Bilder verlinken und einpflegen (Issue #86) -> Jakob
+- Recherche: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+=== vom 19.05.
+- Wireframes erstellen (Einstellungen, Anlegen eines RFID-Ausweises) (Issue #89) -> Alex
+- Paketdiagramm/Komponentendiagramm korrigieren -> Lenny, Dirk, Jakob
+
+=== aktuell
+- Frontend -> Lenny
+* Responsive gestalten (Issue #90)
+* Vervollständigen (Issue #91)
+* Login implementieren (Issue #92)
+- Dokumentation auf Aktualität prüfen -> Jakob, Richard
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 02.06.21, 17 Uhr
+- nächstes Kundenmeeting: offen
