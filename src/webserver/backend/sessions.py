@@ -10,8 +10,8 @@ class TimeFormat(fields.String):
 
 
 session_post_model = api.model('session_post_model', {
-    'id': fields.Integer(description='ID of Pilot', required=True),
-    'date': fields.Date(required=True),
+    'pilot_id': fields.Integer(description='ID of Pilot', required=True),
+    'session_date': fields.Date(required=True),
     'start_time': TimeFormat(description='Time in 24 hour HH:MM format', required=True, default='HH:MM'),
     'end_time': TimeFormat(description='Time in 24 hour HH:MM format', required=True, default='HH:MM'),
     'is_leader': fields.Boolean(required=True),
@@ -223,9 +223,9 @@ class Sessions(Resource):
         cursor = connection.cursor()
 
         payload = api.payload
-        start_time = datetime.combine(date.fromisoformat(payload['date']),
+        start_time = datetime.combine(date.fromisoformat(payload['session_date']),
                                       datetime.strptime(payload['start_time'], "%H:%M").time())
-        end_time = datetime.combine(date.fromisoformat(payload['date']),
+        end_time = datetime.combine(date.fromisoformat(payload['session_date']),
                                     datetime.strptime(payload['end_time'], "%H:%M").time())
 
         try:
@@ -245,7 +245,7 @@ class Sessions(Resource):
         # session einfügen
         cursor.execute(
             'INSERT INTO Flugsession(PilotID, GastID, Startzeit, Endzeit, Ist_Flugleiter) VALUES (?,?,?,?,?)',
-            [payload['id'], guest_id, start_time, end_time, payload['is_leader']]
+            [payload['pilot_id'], guest_id, start_time, end_time, payload['is_leader']]
         )
 
         connection.commit()

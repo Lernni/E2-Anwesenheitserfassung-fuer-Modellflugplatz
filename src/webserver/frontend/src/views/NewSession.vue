@@ -167,7 +167,7 @@ export default {
       this.submitLoader = true
 
       var session = {
-        pilot_id: this.form.pilot.value,
+        pilot_id: this.form.pilot,
         session_date: this.form.date,
         start_time: this.form.startTime,
         end_time: this.form.endTime,
@@ -175,13 +175,13 @@ export default {
       }
 
       if (this.form.guest) {
-        session.push({
-          guest_name: this.form.guestName,
-          guest_text: this.form.guestText
-        })
+        session['guest_name'] = this.form.guestName
+        session['guest_info'] = this.form.guestText
       }
 
-      await axios.post("http://localhost:5000/session", session)
+      console.log(session)
+
+      await axios.post("http://localhost:5000/sessions", session)
         .then(() => {
           this.submitLoader = false
           this.submitState = true
