@@ -67,14 +67,27 @@ In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Web
 | Attribute
 | Start -> Ziel
 
+| /pilot-list
+| Erwarte die ID und Namen aller Piloten
+|No parameters
+a|
+* Frontend -> Backend
+* Terminal -> Backend
+
 | /pilots
 | Erwarte alle Piloten der Tabelle Pilot
 a|
 * ?from=0?to=20 (die ersten 20)
-* ?active=false (alle deaktiven)
 * /id/2 (Pilot mit Id = 2)
+* ?active=false (alle deaktiven)
 a|
 * Frontend -> Backend
+* Terminal -> Backend
+
+| /rfid
+|verfügbare RFID tags
+|No parameters
+a|* Frontend -> Backend
 * Terminal -> Backend
 
 | /sessions
@@ -85,19 +98,25 @@ a|
 * /filterByTime?from=23.04.2021?to=25.04.2021
 * /filterByPilot/2 (alle Sessions von Pilot 2)
 * /filterById/5 (Session mit Id = 5)
-a|
-* Frontend -> Backend
+a|* Frontend -> Backend
+* Terminal -> Backend
+
+| /sessions/running
+|alle aktiven Sessions
+|No parameters
+a|* Frontend -> Backend
 * Terminal -> Backend
 
 | /settings
 | Erwarte alle Einstellungen für den Terminalablauf
 a|
 JSON
-a|
-* Frontend -> Backend
+a|* Frontend -> Backend
 * Terminal -> Backend
 
 |===
+
+// setting ist noch nicht vorhanden
 
 ==== POST
 
@@ -121,11 +140,21 @@ a|
 | Hinzufügen einer neuen Session
 a|
 * "pilot_id": "3",
+* "session_date": "2021-05-29"
 * "start_time": "23.06.2021 15:43:12"
-* ...
+* "end_time": "HH:MM",
+* "is_leader": true,
+* "guest_name": "string",
+*  "guest_info": "string"
 a|
 * Terminal -> Backend
 // Return Session Id?
+
+| /sessions/checkout-all
+| Alle Piloten abmelden
+|No parameters
+a|* Terminal -> Backend
+* Frontend -> Backend
 
 | /ping
 | Sende "Lebenszeichen" des Terminals
@@ -133,6 +162,8 @@ a|
 a|
 * Terminal -> Backend
 |===
+
+// ping ist noch nicht vorhanden
 
 ==== PUT
 
@@ -147,8 +178,13 @@ a|
 | Ändern eines Piloten in der Tabelle Pilot
 a|
 * /id/2 (ID des Piloten)
-* ?active=false
+* "pilot_name": "string"
+* "pilot_surname": "string"
 * "rfid": "24572"
+* ?active=false
+* "reset_password": true
+* "is_admin": true
+* "is_active": true
 a|
 * Frontend -> Backend
 
