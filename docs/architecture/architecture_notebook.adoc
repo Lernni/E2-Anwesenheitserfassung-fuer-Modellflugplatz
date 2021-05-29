@@ -186,6 +186,11 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 Die logische Sicht enthält alle Softwarekomponenten und ihre Abhängigkeiten zueinander. Man kann hier unter anderem erkennen, dass der Pilot das Zentrum der Sicht markiert. Durch das Terminal werden Flugsessions erzeugt, welche die Beziehung zwischen Pilot und Protokoll herstellen.
 
+//:docs-requirements: ../requirements
+//:docs-architecture: ../architecture
+ifndef::docs-requirements[:docs-requirements: ../requirements]
+ifndef::docs-architecture[:docs-architecture: ../architecture]
+
 .Domainmodell
 :imagesdir: {docs-requirements}/images/Domainmodell
 image::domain_model.png[Domainmodell, width=70%, align="center"]

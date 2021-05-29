@@ -1,4 +1,4 @@
-:imagesdir: images/Einzelne_Statusmeldungen
+ifndef::imagesdir[:imagesdir: images]
 == Use-Case: UC01 Pilot anmelden
 ===	Kurzbeschreibung
 
@@ -55,8 +55,8 @@ Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen er
 === Statusmeldung
 
 .Statusmeldung: S1
-image::UC01_S1.png[S1, width=70%, align="center"]
+image::Einzelne_Statusmeldungen/UC01_S1.png[S1, width=70%, align="center"]
 
 .Statusmeldung: S3
-image::UC01_S3.png[S3, width=70%, align="center"]
+image::Einzelne_Statusmeldungen/UC01_S3.png[S3, width=70%, align="center"]
 
