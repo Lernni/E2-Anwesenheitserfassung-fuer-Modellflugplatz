@@ -194,6 +194,15 @@ class Sessions(Resource):
                 [args['end_date']]
             )
 
+        else:
+            select_stmt = cursor.execute(
+                'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
+                'FROM Flugsession F '
+                'JOIN Pilot P on P.PilotID = F.PilotID '
+                'LEFT JOIN Gast G on G.GastID = F.GastID '
+            )
+
         return_dict = {
             'sessions': []
         }
