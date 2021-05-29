@@ -20,17 +20,24 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |1
 |Positiv, manuell
-|*Pilot* ist bereits angemeldet; *Pilot* ist bereits im _System_ angelegt worden; gültige RFID-Karte
+a|* *Pilot* ist bereits angemeldet
+* *Pilot* ist bereits im _System_ angelegt worden
+* gültige RFID-Karte
 |*Pilot* hällt _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
-|_LED_ leuchtet auf; _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters; Bei _Protokoll ansehen_ des Webservers erscheint in der Zeile des *Piloten* in der Spalte "Flugleiter" ein "F" 
+a|* _LED_ leuchtet auf; _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters
+* Bei _Protokoll ansehen_ des Webservers erscheint in der Zeile des *Piloten* in der Spalte "Flugleiter" ein "F" 
 |
 |
 
 |2
 |Positiv, manuell
-|*Pilot* ist noch nicht angemeldet; *Pilot* ist bereits im _System_ angelegt worden; gültige RFID-Karte
+a|* *Pilot* ist noch nicht angemeldet
+* *Pilot* ist bereits im _System_ angelegt worden
+* gültige RFID-Karte
 |*Pilot* hällt _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
-|_LED_ leuchtet auf; _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters; _System_ erfasst und protokolliert die Anmeldung des *Piloten*;  Bei _Protokoll ansehen_ des Webservers erscheint der *Pilot* und in dessen Zeile in der Spalte "Flugleiter" ein "F" 
+a|* _LED_ leuchtet auf
+* _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters * _System_ erfasst und protokolliert die Anmeldung des *Piloten*
+* Bei _Protokoll ansehen_ des Webservers erscheint der *Pilot* und in dessen Zeile in der Spalte "Flugleiter" ein "F" 
 |
 |
 
@@ -38,23 +45,33 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |Negativ, manuell
 |*Pilot* ist bereits angemeldet; *Pilot* ist bereits im _System_ angelegt worden; gültige RFID-Karte
 |*Pilot* hällt _RFID-Ausweis_ and den _Scanner_ und drückt mit einer Verzögerung den _Taster_
-|_LED_ leuchtet nicht auf; _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters nicht; Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
+a|* _LED_ leuchtet nicht auf
+* _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters nicht
+* Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
 |
 |
 
 |4
 |Negativ, manuell
-|*Pilot* ist bereits angemeldet; *Pilot* ist bereits im _System_ angelegt worden; gültige RFID-Karte
+a|* *Pilot* ist bereits angemeldet
+* *Pilot* ist bereits im _System_ angelegt worden
+* gültige RFID-Karte
 |*Pilot* drückt nur den _Taster_
-|_LED_ leuchtet nicht auf; _System_ erfasst und protokolliert die Rollenzuweisung/Rollenabgabe des Flugleiters nicht; Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
+a|* _LED_ leuchtet nicht auf
+* _System_ erfasst und protokolliert die Rollenzuweisung/Rollenabgabe des Flugleiters nicht
+* Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
 |
 |
 
 |5
 |Positiv, manuell
-|*Pilot* ist bereits angemeldet und Flugleiter; *Pilot* ist bereits im _System_ angelegt worden; gültige RFID-Karte
+a|* *Pilot* ist bereits angemeldet und Flugleiter
+* *Pilot* ist bereits im _System_ angelegt worden
+* gültige RFID-Karte
 |*Pilot 2* hällt _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
-|_LED_ leuchtet nicht auf; _System_ erfasst und protokolliert die Rollenabgabe des Flugleiters; Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten 2* in dessen Zeile in der Spalte "Flugleiter" ein "F"
+a|* _LED_ leuchtet nicht auf
+* _System_ erfasst und protokolliert die Rollenabgabe des Flugleiters
+* Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten 2* in dessen Zeile in der Spalte "Flugleiter" ein "F"
 |
 |
 

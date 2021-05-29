@@ -20,23 +20,28 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |1
 |Positiv, manuell
-|*Pilot* ist bereits im _System_ angelegt worden; *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Plausible Veränderung der `Pilotendaten` in der _Mitgliederverwaltung_ (z.B. Nachnamen ändern)
-|Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht; geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
+a|* Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht
+* geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
 |
 |
 
 |2
 |Negativ, manuell
-|*Pilot* ist bereits im _System_ angelegt worden; *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Unlogische Veränderung der `Pilotendaten` in der _Mitgliederverwaltung_ (z.B. Zahlen/Sonderzeichen im Namen enthalten)
-|Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden; das Speichern ist nicht möglich
+a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
+* das Speichern ist nicht möglich
 |
 |
 
 |3
 |Positiv, manuell
-|*Pilot* ist bereits im _System_ angelegt worden; *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Dem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben 
 |Der jeweilige *Pilot* muss Zugriff für die _Admin-Seite_ haben
 |
@@ -44,7 +49,8 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |4
 |Positiv, manuell
-|*Pilot* ist bereits im _System_ angelegt worden; *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Das Passwort vom *Pilot* wird zurückgesetzt 
 |Beim erneute Anmelden, ist es dem *Pilot* möglich, ein neues beliebiges Passwort zu wählen  
 |
