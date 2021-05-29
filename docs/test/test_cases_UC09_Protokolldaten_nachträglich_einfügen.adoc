@@ -19,35 +19,34 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |Nachgebessert
 
 |1
-|
-|
-|
-|
+|Positiv, manuell
+a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
+|Über die _Admin-Seite_ beim _Formular_ existierenden Pilotennamen und plausible Start-Endzeit nachtragen.
+a| * Nach dem erfolgreichen speichern, gelangt man .....
+* Neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt & im Bereich der _Flugsession bearbeiten_ angezeigt und bearbeitbar sein 
 |
 |
 
 |2
-|
-|
-|
-|
+|Negativ, manuell
+a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
+| Über die _Admin-Seite_ beim _Formular_ nicht existierenden Pilotennamen und plausible Start-Endzeit nachtragen.
+a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
+* das Speichern ist nicht möglich
 |
 |
 
 |3
-|
-|
-|
-|
+|Negativ, manuell
+a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
+| Über die _Admin-Seite_ beim _Formular_  existierenden Pilotennamen und nicht plausible Start-Endzeit nachtragen. (z.B. Endzeit ist vor der Startzeit)
+a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
+* das Speichern ist nicht möglich
 |
 |
 
-|4
-|
-|
-|
-|
-|
-|
 
 |===

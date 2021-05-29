@@ -1,0 +1,55 @@
+== Test Cases: UC11 - Pilot reaktivieren
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+a|* *Pilot* ist bereits im _System_ angelegt und deaktiviert worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Auf der _Admin-Seite_ über die _Mitgliederverwaltung_ alle deaktivierten Piloten anzeigen lassen (über _Zeige deaktivierte Piloten_). In der Übersicht den  
+deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zu ordenen und die hinterlegten `Pilotendaten` bestätigen.
+a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur Pilotenübersicht
+* der *Pilot* erscheint bei den aktiven Piloten. (über _Zeige aktive Piloten_)
+|
+|
+
+|2
+|Negativ, manuell
+a|* *Pilot* ist bereits im _System_ angelegt und deaktiviert worden
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Auf der _Admin-Seite_ über die _Mitgliederverwaltung_ alle deaktivierten Piloten anzeigen lassen (über _Zeige deaktivierte Piloten_). In der Übersicht den  
+deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine ungültige RFID-Kennung zu ordenen und die hinterlegten `Pilotendaten` bestätigen.
+a|* Das bestätigen ist nicht möglich. 
+* Fehlermeldung erscheint, das die RFID-Kennung ungültig ist.
+|
+|
+
+
+|3
+|
+|
+|
+|
+|
+|
+
+
+
+
+|===

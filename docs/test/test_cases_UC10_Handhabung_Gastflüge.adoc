@@ -1,0 +1,45 @@
+== Test Cases: UC10 - Handhabung Gastflüge
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
+* die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
+* das Filtern der `Protokolldaten` in der _Protokollansicht_ funktioniert & wird korrekt ausgeführt
+|Nach der erfolgreichen Suche nach dem passenden `Protokolleintrag`, wird
+der Name des Gastes hinzugefügt. (Indem man den betroffenden Pilot (Bezugsperson) bearbeitet
+a|* Der hinzugefügte name des Gastes wird semantisch korrekt in der Datenbank hinterlegt
+* Der Name es Gastes erscheint in den Protokolldaten in der Spalte Gast
+|
+|
+
+|2
+|Negat, manuell
+a|* *Pilot* ist bereits im _System_ angelegt worden
+* *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
+* die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
+* das Filtern der `Protokolldaten` in der _Protokollansicht_ funktioniert & wird korrekt ausgeführt
+|......Gast besteht aus Zahlen oder so...
+|Das hinzufügen des Gastes ist nicht möglich.
+|
+|
+
+|===
