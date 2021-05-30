@@ -12,7 +12,7 @@ class RunningSessions(Resource):
         cursor = connection.cursor()
 
         select_stmt = cursor.execute(
-            'SELECT P.Vorname, P.Nachname, time(F.Startzeit), F.Ist_Flugleiter '
+            'SELECT P.PilotID, P.Vorname, P.Nachname, time(F.Startzeit), F.Ist_Flugleiter '
             'FROM Flugsession F '
             'JOIN Pilot P on P.PilotID = F.PilotID '
             'WHERE F.Endzeit IS NULL'
@@ -24,9 +24,10 @@ class RunningSessions(Resource):
 
         for row in select_stmt:
             session = {
-                'pilot_name': row[0] + " " + row[1],
-                'start_time': row[2],
-                'session_leader': row[3]
+                'pilot_id': row[0],
+                'pilot_name': row[1] + " " + row[2],
+                'start_time': row[3],
+                'session_leader': row[4]
             }
             return_dict['sessions'].append(session)
 

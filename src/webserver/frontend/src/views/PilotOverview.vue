@@ -7,7 +7,7 @@
     </b-alert>
 
     <b-alert variant="danger" :show="deactivateState == false" dismissible>
-      Pilot konnte nicht deaktiviert werden!
+      {{ deactivateMsg }}
     </b-alert>
 
     <b-alert variant="danger" :show="pilotsState == false">
@@ -109,6 +109,7 @@ export default {
 
       deactivateLoader: false,
       deactivateState: null,
+      deactivateMsg: null,
     };
   },
   methods: {
@@ -119,29 +120,59 @@ export default {
 
         return (row.is_active == filter.is_active)
     },
+
     showDeactivateModal(pilot) {
       this.toDeactivatePilot = pilot
       this.showModal = true
     },
+
     async deactivatePilot() {
       this.deactivateLoader = true
 
-      this.toDeactivatePilot.is_active = false
-      this.toDeactivatePilot.rfid = null
+      // check if pilot has a running session
+      new Promise((resolve, reject) => {
+        axios.get("http://localhost:5000/sessions/running").then(result => {
+          var sessions = result.data["sessions"]
 
-      await axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
-        this.items = result.data["pilots"]
-        this.deactivateLoader = false
-        this.showModal = false
-        this.deactivateState = true
-        this.getPilots()
+          for (var i = 0; i < sessions.length; i++) {
+            if (sessions[i].pilot_id == this.toDeactivatePilot.pilot_id) {
+              console.log(sessions[i])
+              // pilot has active session
+              this.deactivateMsg = "Pilot konnte nicht deaktiviert werden, da er zurzeit eine Flugsession hat!"
+              reject()
+            }
+          }
+          
+          resolve()
+        }, error => {
+          console.error(error)
+          this.deactivateMsg = "Pilot konnte nicht deaktiviert werden!"
+          reject()
+        });
+      }).then(() => {
+        // pilot has no running session and can be deactivated
+        this.toDeactivatePilot.is_active = false
+        this.toDeactivatePilot.rfid = null
+
+        axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
+          this.items = result.data["pilots"]
+          this.deactivateState = true
+          this.getPilots()
+        }, error => {
+          console.error(error)
+          this.deactivateMsg = "Pilot konnte nicht deaktiviert werden!"
+          this.deactivateState = false
+        });
       }, error => {
+        // pilot has active session, or get request failed
         console.error(error)
-        this.deactivateLoader = false
-        this.showModal = false
         this.deactivateState = false
       });
+
+      this.deactivateLoader = false
+      this.showModal = false
     },
+
     toggleActivePilots() {
       if (this.filterCriteria.is_active) {
         this.filterCriteria.is_active = false
@@ -153,6 +184,7 @@ export default {
 
       this.getPilots()
     },
+
     async getPilots() {
       this.pilotsLoader = true
 

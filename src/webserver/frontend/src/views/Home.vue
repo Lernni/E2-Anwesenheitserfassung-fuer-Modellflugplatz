@@ -49,6 +49,7 @@ export default {
     return {
       items: [],
       fields: [
+        {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Pilot"},
         {key: "start_time", label: "Beginn"},
         {
