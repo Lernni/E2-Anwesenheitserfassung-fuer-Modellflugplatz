@@ -54,7 +54,7 @@ class Sessions(Resource):
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
-                    'WHERE (lower(P.Vorname) LIKE lower(?) OR lower(P.Nachname) LIKE lower(?))'
+                    'WHERE (instr(lower(P.Vorname), lower(?)) > 0 OR instr(lower(P.Nachname), lower(?)) > 0)'
                     'AND date(F.Startzeit) BETWEEN ? AND ?',
                     [name_list[0], name_list[0], args['start_date'], args['end_date']]
                 )
@@ -67,9 +67,9 @@ class Sessions(Resource):
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
                     'WHERE ('
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?)) '
-                    '   OR '
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?))'
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0) '
+                    'OR '
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0)'
                     ')'
                     'AND date(F.Startzeit) BETWEEN ? AND ?',
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['start_date'], args['end_date']]
@@ -85,7 +85,7 @@ class Sessions(Resource):
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
-                    'WHERE (lower(P.Vorname) LIKE lower(?) OR lower(P.Nachname) LIKE lower(?))'
+                    'WHERE (instr(lower(P.Vorname), lower(?)) > 0 OR instr(lower(P.Nachname), lower(?)) > 0)'
                     'AND date(F.Startzeit) > ?',
                     [name_list[0], name_list[0], args['start_date']]
                 )
@@ -98,10 +98,11 @@ class Sessions(Resource):
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
                     'WHERE ('
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?)) '
-                    '   OR '
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?))'
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0) '
+                    'OR '
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0)'
                     ')'
+                    'AND date(F.Startzeit) BETWEEN ? AND ?'
                     'AND date(F.Startzeit) > ?',
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['start_date']]
                 )
@@ -115,7 +116,7 @@ class Sessions(Resource):
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
-                    'WHERE (lower(P.Vorname) LIKE lower(?) OR lower(P.Nachname) LIKE lower(?))'
+                    'WHERE (instr(lower(P.Vorname), lower(?)) > 0 OR instr(lower(P.Nachname), lower(?)) > 0)'
                     'AND date(F.Startzeit) < ?',
                     [name_list[0], name_list[0], args['end_date']]
                 )
@@ -128,10 +129,11 @@ class Sessions(Resource):
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
                     'WHERE ('
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?)) '
-                    '   OR '
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?))'
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0) '
+                    'OR '
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0)'
                     ')'
+                    'AND date(F.Startzeit) BETWEEN ? AND ?'
                     'AND date(F.Startzeit) < ?',
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['end_date']]
                 )
@@ -156,7 +158,7 @@ class Sessions(Resource):
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
-                    'WHERE lower(P.Vorname) LIKE lower(?) OR lower(P.Nachname) LIKE lower(?)',
+                    'WHERE (instr(lower(P.Vorname), lower(?)) > 0 OR instr(lower(P.Nachname), lower(?)) > 0)',
                     [name_list[0], name_list[0]]
                 )
             if len(name_list) == 2:
@@ -166,9 +168,12 @@ class Sessions(Resource):
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
                     'LEFT JOIN Gast G on G.GastID = F.GastID '
-                    'WHERE (lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?)) '
+                    'WHERE ('
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0) '
                     'OR '
-                    '(lower(P.Vorname) LIKE lower(?) AND lower(P.Nachname) LIKE lower(?))',
+                    '(instr(lower(P.Vorname), lower(?)) > 0 AND instr(lower(P.Nachname), lower(?)) > 0)'
+                    ')'
+                    'AND date(F.Startzeit) BETWEEN ? AND ?',
                     [name_list[0], name_list[1], name_list[1], name_list[0]]
                 )
 
