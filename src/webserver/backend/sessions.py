@@ -49,7 +49,7 @@ class Sessions(Resource):
             # z.B. 'Mustermann' -> in Vor- und Nachname suchen
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -61,7 +61,7 @@ class Sessions(Resource):
             # z.B. 'Max Mustermann' -> vor(Max), nach(Mustermann) oder vor(Mustermann) nach(Max)
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -80,7 +80,7 @@ class Sessions(Resource):
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -92,7 +92,7 @@ class Sessions(Resource):
 
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -106,11 +106,11 @@ class Sessions(Resource):
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['start_date']]
                 )
 
-        elif 'name' in args.keys() and 'end_datum' in args.keys():
+        elif 'name' in args.keys() and 'end_date' in args.keys():
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -122,7 +122,7 @@ class Sessions(Resource):
 
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -136,9 +136,9 @@ class Sessions(Resource):
                     [name_list[0], name_list[1], name_list[1], name_list[0], args['end_date']]
                 )
         # GET sessions?start_date&end_date
-        elif 'start_date' in args.keys() and 'end_datum' in args.keys():
+        elif 'start_date' in args.keys() and 'end_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -151,7 +151,7 @@ class Sessions(Resource):
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -161,7 +161,7 @@ class Sessions(Resource):
                 )
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -174,7 +174,7 @@ class Sessions(Resource):
 
         elif 'start_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -185,7 +185,7 @@ class Sessions(Resource):
 
         elif 'end_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -196,7 +196,7 @@ class Sessions(Resource):
 
         else:
             select_stmt = cursor.execute(
-                'SELECT P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -204,22 +204,31 @@ class Sessions(Resource):
             )
 
         return_dict = {
-            'sessions': []
+            'sessions': [],
+            'session_count': 0
         }
+
+        row_count = 0
+
         # alle ergebnisse von 'from' bis 'to'
-        for row in select_stmt.fetchall()[from_:to]:
-            session = {
-                'pilot_name': row[0] + " " + row[1],
-                'date': row[2],
-                'start_time': row[3],
-                'end_time': row[4],
-                'flugleiter': row[5],
-                'gast': {
-                    'name': row[6],
-                    'text': row[7]
+        for row in select_stmt.fetchall():
+            row_count += 1
+            if (row[0] >= from_ and row[0] <= to):
+                session = {
+                    'session_id': row[0],
+                    'pilot_name': row[1] + " " + row[2],
+                    'date': row[3],
+                    'start_time': row[4],
+                    'end_time': row[5],
+                    'session_leader': row[6],
+                    'guest': {
+                        'name': row[7],
+                        'text': row[8]
+                    }
                 }
-            }
-            return_dict['sessions'].append(session)
+                return_dict['sessions'].append(session)
+
+        return_dict['session_count'] = row_count
         connection.close()
         return return_dict
 
