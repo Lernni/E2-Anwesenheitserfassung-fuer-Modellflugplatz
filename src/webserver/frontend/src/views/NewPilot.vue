@@ -15,7 +15,7 @@
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
           Pilot wurde erfolgreich angelegt!<br/><br/>
-          <b-button variant="success" @click="newPilot()">Weiteren Piloten erstellen</b-button>
+          <b-button variant="success" @click="resetPilot()">Weiteren Piloten erstellen</b-button>
         </b-alert>
 
         <b-alert variant="info" :show="rfidList.noRfid">
@@ -36,21 +36,26 @@
 import axios from 'axios'
 import Pilot from '@/components/Pilot.vue'
 import { formPilot } from '@/scripts/pilot'
+import { formValidation } from '@/scripts/formValidation'
 
 export default {
   name: "NewPilot",
-  mixins: [formPilot],
+  mixins: [formPilot, formValidation],
   components: {
     Pilot
   },
 
   methods: {
-    newPilot() {
+    resetPilot() {
       this.submit.submitState = null
       this.$v.$reset()
     },
 
-    async pilotRequest() {
+    onSubmit() {
+      if (this.validateSubmit()) this.newPilot()
+    },
+
+    async newPilot() {
       this.submit.submitLoader = true
 
       const newPilot = {

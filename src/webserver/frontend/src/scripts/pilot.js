@@ -69,11 +69,6 @@ export const formPilot = {
     }
   },
   methods: {
-    validateState(name) {
-      const { $dirty, $error } = this.$v.form[name];
-      return $dirty ? !$error : null;
-    },
-
     validateAll() {
       var states = {}
 
@@ -102,14 +97,6 @@ export const formPilot = {
         }
 
         this.form.pilotUsername = username
-      }
-    },
-
-    onSubmit(event) {
-      event.preventDefault()
-      this.$v.form.$touch()
-      if (!this.$v.form.$anyError) {
-        this.pilotRequest()
       }
     },
 

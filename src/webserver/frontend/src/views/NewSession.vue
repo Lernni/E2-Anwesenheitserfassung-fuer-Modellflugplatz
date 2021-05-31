@@ -90,12 +90,13 @@
 <script>
 import axios from 'axios'
 import { required, helpers } from 'vuelidate/lib/validators'
+import { formValidation } from '@/scripts/formValidation'
 
 const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+) )*([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/) 
 
 export default {
   name: "NewSession",
-  // TODO: Submit: POST /sessions
+  mixins: [formValidation],
   data() {
     return {
       form: {
@@ -149,20 +150,10 @@ export default {
     }
   },
   methods: {
-    validateState(name) {
-      const { $dirty, $error } = this.$v.form[name];
-      return $dirty ? !$error : null;
-    },
     onSubmit(event) {
-      event.preventDefault()
-      this.$v.form.$touch()
-      if (!this.$v.form.$anyError) {
-        this.postNewSession()
-      }
+      if (this.validateSubmit()) {this.postNewSession() }
     },
-    onReset(event) {
-      event.preventDefault()
-    },
+
     async postNewSession() {
       this.submitLoader = true
 
