@@ -11,13 +11,15 @@
     "@popperjs/core": "^2.9.2",
     "@vue/compiler-sfc": "^3.0.11",
     "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "postcss": "^8.2.14",
     "vue": "^2.6.12",
     "vue-router": "^3.2.0",
-    "vuelidate": "^0.7.6"
+    "vuelidate": "^0.7.6",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

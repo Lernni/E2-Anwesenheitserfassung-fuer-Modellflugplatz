@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/login">Login</router-link> | 
-      <router-link to="/signin">Registrieren</router-link> | 
+      <router-link to="/signup">Registrieren</router-link> | 
       <router-link to="/pilots">Pilotenübersicht</router-link> | 
       <router-link to="/session/new">Flugsession nachtragen</router-link> | 
       <router-link to="/session/edit">Flugsession bearbeiten</router-link> | 

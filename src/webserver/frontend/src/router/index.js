@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
-import Signin from '../views/Signin.vue'
+import Signup from '../views/Signup.vue'
 import PilotOverview from '../views/PilotOverview.vue'
 import NewSession from '../views/NewSession.vue'
 import ProtocolOverview from '../views/ProtocolOverview.vue'
@@ -24,9 +24,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/signin',
-    name: 'Signin',
-    component: Signin
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
   },
   {
     path: '/pilots',
