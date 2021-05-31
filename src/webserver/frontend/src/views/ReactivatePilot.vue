@@ -80,9 +80,9 @@ export default {
     });
   },
   methods: {
-    onSubmit() {
-      if (this.validateSubmit()) this.reactivatePilot()
-    }
+    onSubmit(event) {
+      if (this.validateSubmit(event)) this.reactivatePilot()
+    },
 
     async reactivatePilot() {
       this.submit.submitLoader = true

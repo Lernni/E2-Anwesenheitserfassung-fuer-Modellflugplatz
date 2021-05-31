@@ -51,8 +51,8 @@ export default {
       this.$v.$reset()
     },
 
-    onSubmit() {
-      if (this.validateSubmit()) this.newPilot()
+    onSubmit(event) {
+      if (this.validateSubmit(event)) this.newPilot()
     },
 
     async newPilot() {

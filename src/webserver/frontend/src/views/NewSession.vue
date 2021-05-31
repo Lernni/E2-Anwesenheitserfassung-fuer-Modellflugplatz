@@ -151,7 +151,7 @@ export default {
   },
   methods: {
     onSubmit(event) {
-      if (this.validateSubmit()) {this.postNewSession() }
+      if (this.validateSubmit(event)) {this.postNewSession() }
     },
 
     async postNewSession() {

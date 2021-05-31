@@ -85,8 +85,8 @@ export default {
   },
 
   methods: {
-    onSubmit() {
-      if (this.validateSubmit()) this.editPilot()
+    onSubmit(event) {
+      if (this.validateSubmit(event)) this.editPilot()
     },
 
     async editPilot() {
