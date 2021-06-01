@@ -14,7 +14,7 @@
     >
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
-          Pilot wurde erfolgreich angelegt!<br/><br/>
+          Pilot wurde erfolgreich angelegt!<br><br>
           <b-button variant="success" @click="resetPilot()">Weiteren Piloten erstellen</b-button>
         </b-alert>
 

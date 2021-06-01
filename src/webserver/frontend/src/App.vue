@@ -39,7 +39,7 @@
   color: #42b983;
 }
 
-h2, .last-ping-info {
+h2, h4, .last-ping-info {
   text-align: center;
 }
 
@@ -49,7 +49,7 @@ h2, .last-ping-info {
 }
 
 @media (min-width: 576px) {
-  h2 {
+  h2, h4 {
     text-align: start;
   }
 
