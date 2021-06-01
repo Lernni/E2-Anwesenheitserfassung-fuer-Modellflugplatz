@@ -15,13 +15,13 @@
     </b-alert>
 
     <b-row class="text-center no-gutters mb-2">
-      <b-col>
+      <b-col class="mb-2 mb-md-0">
         <b-input-group prepend="Suche">
           <b-form-input type="search" v-model="filterCriteria.pilot_name" placeholder="Name"></b-form-input>
         </b-input-group>
       </b-col>
       <b-col cols="12" md="auto">
-        <b-button variant="primary" class="ml-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
+        <b-button variant="primary" class="ml-md-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
         <b-button variant="success" class="ml-2" to="pilot/new">
           <b-icon icon="plus" scale="1.5"></b-icon>
           Pilot erstellen
@@ -43,7 +43,7 @@
     </b-modal>
 
     <b-overlay :show="pilotsLoader" spinner-type="grow">
-      <b-table striped :items="items" :fields="fields" :filter="filterCriteria" :filter-function="filterTable">
+      <b-table stacked="sm" striped :items="items" :fields="fields" :filter="filterCriteria" :filter-function="filterTable">
         <template #cell(pilot_name)="row">
           {{ row.item.pilot_name }} {{ row.item.pilot_surname }}
         </template>
@@ -51,13 +51,16 @@
         <template #cell(actions)="row">
           <b-button v-if="!row.item.is_active" :href="'/pilot/reactivate?id=' + row.item.pilot_id" size="sm" variant="outline-success" v-b-tooltip.hover title="Reaktivieren">
             <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
+            <span class="d-block d-sm-none">Reaktivieren</span>
           </b-button>
           <b-button-group v-else size="sm">
             <b-button variant="outline-primary" :href="'/pilot/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
               <b-icon-pencil-square></b-icon-pencil-square>
+                <span class="d-block d-sm-none">Bearbeiten</span>
             </b-button>
             <b-button variant="outline-danger" @click="showDeactivateModal(row.item)" v-b-tooltip.hover title="Deaktivieren">
               <b-icon-dash-circle-fill></b-icon-dash-circle-fill>
+              <span class="d-block d-sm-none">Deaktivieren</span>
             </b-button>
           </b-button-group>
         </template>
@@ -91,7 +94,7 @@ export default {
             return (value == "null") ? "nicht vergeben" : value
           }
         },
-        {key: "actions", label: ""}
+        {key: "actions", label: "", class: "text-center"}
       ],
       toggleActivePilotsButton: "Zeige deaktive Piloten",
 
