@@ -43,7 +43,7 @@ h2, .last-ping-info {
   text-align: center;
 }
 
-.submit-button-group {
+.footer-buttons {
   display: flex;
   justify-content: center;
 }
@@ -57,8 +57,9 @@ h2, .last-ping-info {
     text-align: right;
   }
 
-  .submit-button-group {
+  .footer-buttons {
     display: block;
+    justify-content: start;
   }
 }
 </style>

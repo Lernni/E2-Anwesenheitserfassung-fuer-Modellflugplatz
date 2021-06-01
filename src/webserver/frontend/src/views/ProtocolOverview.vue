@@ -1,6 +1,11 @@
 <template>
   <div class="protocol-overview">
     <h2>Protokolldaten</h2>
+
+    <b-alert variant="danger" :show="sessionState == false">
+      Protokolldaten konnten nicht geladen werden
+    </b-alert>
+
     <b-container fluid class="mb-3">
       <b-row align-h="center">
         <b-col lg="6">
@@ -57,11 +62,15 @@
       </b-row>
     </b-container>
 
+    <b-pagination class="d-md-none" v-model="currentPage" :total-rows="sessionCount" :per-page="perPage"></b-pagination>
+
     <b-overlay :show="sessionLoader" spinner-type="grow">
       <b-table
+        class="d-none d-md-table"
+        stacked="sm"
         striped
         :items="items"
-        :fields="fields"
+        :fields="fieldsDesktop"
         :current-page="currentPage"
       >
         <template #cell(guest_details)="row">
@@ -75,24 +84,42 @@
         </template>
 
         <template #cell(actions)="row">
-            <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
-              <b-icon-pencil-square></b-icon-pencil-square>
-            </b-button>
+          <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
+            <b-icon-pencil-square></b-icon-pencil-square>
+          </b-button>
+        </template>
+      </b-table>
+
+      <b-table stacked class="d-md-none" striped :items="items" :fields="fieldsMobile">
+        <template #cell(session_time)="row">
+          {{ row.item.start_time }} - {{ row.item.end_time == null ? "offen" : row.item.end_time }}
+        </template>
+
+        <template #cell(guest)="row">
+          {{ row.item.guest.name != null ? row.item.guest.name : "Kein Gast"}}<br/>
+          {{ row.item.guest.name != null ? row.item.guest.text : ""}}
+        </template>
+
+        <template #cell(actions)="row">
+          <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
+            <b-icon-pencil-square></b-icon-pencil-square>
+            <span class="d-block d-sm-none">Bearbeiten</span>
+          </b-button>
         </template>
       </b-table>
     </b-overlay>
 
     <b-pagination v-model="currentPage" :total-rows="sessionCount" :per-page="perPage"></b-pagination>
 
-    <p class="font-italic text-right">Letzte Aktualisierung: --:--</p>
+    <p class="font-italic last-ping-info">Letzte Aktualisierung: --:--</p>
 
     <b-container>
-      <b-row>
-        <b-button variant="primary">Protokolldaten herunterladen</b-button>
-      </b-row>
-      <b-row class="mt-3">
-        <b-button variant="primary" to="session/new">Flugsession nachtragen</b-button>
-      </b-row>
+        <b-row class="footer-buttons">
+          <b-button variant="primary">Protokolldaten herunterladen</b-button>
+        </b-row>
+        <b-row class="mt-3 footer-buttons">
+          <b-button variant="primary" to="session/new">Flugsession nachtragen</b-button>
+        </b-row>
     </b-container>
   </div>
 </template>
@@ -105,7 +132,7 @@ export default {
   data() {
     return {
       items: [],
-      fields: [
+      fieldsDesktop: [
         {key: "session_id", label: "ID"},
         {key: "pilot_name", label: "Pilot"},
         {
@@ -126,6 +153,26 @@ export default {
         },
         {key: "guest_details", label: "Gast"},
         {key: "actions", label: ""}
+      ],
+      fieldsMobile: [
+        {key: "pilot_name", label: "Pilot"},
+        {
+          key: "date",
+          label: "Datum",
+          formatter: (value) => {
+            return new Date(value).toLocaleDateString()
+          }
+        },
+        {key: "session_time", label: "Zeitraum"},
+        {
+          key: "session_leader",
+          label: "Flugleiter",
+          formatter: (value) => {
+            return value ? "Ja" : "Nein"
+          }
+        },
+        {key: "guest", label: "Gast"},
+        {key: "actions", label: "", class: "text-center"}
       ],
 
       startDate: new Date(),

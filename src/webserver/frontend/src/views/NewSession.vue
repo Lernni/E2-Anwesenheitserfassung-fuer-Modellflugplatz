@@ -79,7 +79,7 @@
           </b-form-group>
         </b-col>
       </b-row>
-      <div class="submit-button-group">
+      <div class="footer-buttons">
         <b-button type="submit" variant="primary" :disabled="submitLoader">
           <b-spinner v-show="submitLoader" small></b-spinner>
           Speichern
