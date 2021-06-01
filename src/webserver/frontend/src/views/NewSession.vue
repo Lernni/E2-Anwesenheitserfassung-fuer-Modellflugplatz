@@ -1,5 +1,5 @@
 <template>
-  <div class="add-session">
+  <div class="new-session">
     <h2>Flugsession nachtragen</h2>
 
     <b-alert variant="danger" :show="pilotListState == false">
@@ -14,9 +14,9 @@
       Flugsession wurde erfolgreich nachgetragen!
     </b-alert>
 
-    <b-form @submit="onSubmit" @reset="onReset" :novalidate="true">
+    <b-form @submit="onSubmit" :novalidate="true">
       <b-row>
-        <b-col cols="8">
+        <b-col cols="lg-8">
           <b-form-group id="pilot-name-group" label="Pilot" label-for="pilot-name-input">
             <b-overlay :show="pilotListLoader" spinner-type="grow" spinner-small>
               <b-form-input id="pilot-name-input" class="mb-3" placeholder="Name" v-model="pilotSearch" type="search" autocomplete="off"></b-form-input>
@@ -28,7 +28,7 @@
           </b-form-group>
 
           <b-row>
-            <b-col>
+            <b-col cols="12" md="6">
               <b-form-group id="session-start-group" label="Startzeit" label-for="session-start-time-input">
                 <b-form-input id="session-start-time-input" v-model.trim="$v.form.startTime.$model" :state="validateState('endTime') && validateState('startTime')" type="time"></b-form-input>
                 <b-form-invalid-feedback>
@@ -61,9 +61,9 @@
           </b-container>
         </b-col>
         <b-col>
-          <b-form-group id="session_date" label="Datum" label-for="sessionDatePicker">
+          <b-form-group id="session-date" label="Datum" label-for="session-date-picker">
             <b-calendar
-              id="sessionDatePicker"
+              id="session-date-picker"
               v-model.trim="$v.form.date.$model"
               locale="de-DE"
               :start-weekday="1"
@@ -79,10 +79,12 @@
           </b-form-group>
         </b-col>
       </b-row>
-      <b-button type="submit" variant="primary" :disabled="submitLoader">
-        <b-spinner v-show="submitLoader" small></b-spinner>
-        Speichern
-      </b-button>
+      <div class="submit-button-group">
+        <b-button type="submit" variant="primary" :disabled="submitLoader">
+          <b-spinner v-show="submitLoader" small></b-spinner>
+          Speichern
+        </b-button>
+      </div>
     </b-form>
   </div>
 </template>
@@ -91,22 +93,18 @@
 import axios from 'axios'
 import { required, helpers } from 'vuelidate/lib/validators'
 import { formValidation } from '@/scripts/formValidation'
+import { formSession } from '@/scripts/session'
 
 const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+) )*([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/) 
 
 export default {
   name: "NewSession",
-  mixins: [formValidation],
+  mixins: [formValidation, formSession],
   data() {
     return {
       form: {
-        startTime: "",
-        endTime: "",
-        date: null,
         sessionLeader: false,
         guest: false,
-        guestName: null,
-        guestText: null,
         pilot: null,
       },
 
@@ -223,5 +221,15 @@ export default {
 .form_error {
   border: 1px #dc3545 solid !important;
   border-radius: 5px;
+}
+
+#session-date {
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  #session-date {
+    text-align: start;
+  }
 }
 </style>

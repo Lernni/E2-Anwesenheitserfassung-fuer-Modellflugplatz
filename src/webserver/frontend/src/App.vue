@@ -43,12 +43,22 @@ h2, .last-ping-info {
   text-align: center;
 }
 
+.submit-button-group {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 576px) {
   h2 {
     text-align: start;
   }
+
   .last-ping-info {
     text-align: right;
+  }
+
+  .submit-button-group {
+    display: block;
   }
 }
 </style>
