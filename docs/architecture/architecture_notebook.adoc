@@ -156,8 +156,8 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 . Wie aus *NFAF-2: Datensynchronisierung* und *NFAR-1: Korrektheit* hervorgeht, muss der Raspberry Pi bei bestehender Internetverbindung auf externe Informationsquellen zugreifen. Man kann hierbei unterteilen in:
 * die triviale Aktualisierung der Uhrzeit des Raspis (zeitgesetuert)
 * den beiderseitigen Austausch von Piloten- und Protokolldaten zwischen Webserver und Terminal (ereignisgesteuerte Synchronisation)
-** Hinzufügen eines neuen Piloten am Webserver, der dem Terminal erst bekannt gemacht werden muss
-** Lokal gehaltene Protokolländerungen am Terminal, müssen den Webserver erreichen. 
+** Synchronisierung neu hinzugefügter Piloten und RFID-Ausweise vom Webserver an das Terminal
+** Synchronisierung lokal gehaltener Sessions vom Terminal an der Webserver 
 * den beiderseitigen Austausch von Befehlen zwischen Terminal und Webserver (ereignisgesteuert/zeitgesteuert)
 ** Die Aktion "Alle Piloten abmelden (UC06)" kann sowohl vom Terminal als auch vom Webserver ausgelöst werden und muss auf beiden Seiten wahrgenommen werden
 * Die Schaffung der Schnittstellen streben wir über Flask-Server an, die über REST API miteinander kommunizieren. Wir haben bereits mit einem Backend-Prototypen des Webservers erste Requests realisiert.
