@@ -14,7 +14,7 @@
     >
       <template v-slot:alerts>
         <b-alert variant="success" :show="submit.submitState">
-          Pilot wurde erfolgreich bearbeitet!<br/><br/>
+          Pilot wurde erfolgreich bearbeitet!<br><br>
           Weiterleitung zur Pilotenübersicht...
         </b-alert>
 

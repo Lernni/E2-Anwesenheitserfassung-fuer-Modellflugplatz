@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import PilotOverview from '../views/PilotOverview.vue'
 import NewSession from '../views/NewSession.vue'
+import EditSession from '../views/EditSession.vue'
 import ProtocolOverview from '../views/ProtocolOverview.vue'
 import NewPilot from '../views/NewPilot.vue'
 import EditPilot from '../views/EditPilot.vue'
@@ -37,6 +38,11 @@ const routes = [
     path: '/session/new',
     name: 'NewSession',
     component: NewSession
+  },
+  {
+    path: '/session/edit',
+    name: 'EditSession',
+    component: EditSession
   },
   {
     path: '/protocol',

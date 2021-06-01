@@ -1,12 +1,18 @@
 <template>
   <div class="admin-panel">
     <h2>Aktive Flugsessions</h2>
-    <b-table class="d-none d-sm-table" striped :items="items" :fields="fieldsDesktop"></b-table>
-    <b-table class="d-sm-none" striped :items="items" :fields="fieldsMobile">
-      <template #cell(session_leader)="row">
-        <b>{{ row.item.session_leader ? "F" : "" }}</b>
-      </template>
-    </b-table>
+      <b-alert variant="danger" :show="sessionsState == false">
+        Flugsessions konnten nicht geladen werden!
+      </b-alert>
+
+    <b-overlay :show="sessionsLoader">
+      <b-table class="d-none d-sm-table" striped :items="items" :fields="fieldsDesktop"></b-table>
+      <b-table class="d-sm-none" striped :items="items" :fields="fieldsMobile">
+        <template #cell(session_leader)="row">
+          <b>{{ row.item.session_leader ? "F" : "" }}</b>
+        </template>
+      </b-table>
+    </b-overlay>
 
     <b-alert :show="noSessions" variant="info">
       Zurzeit keine Piloten auf dem Flugplatz
@@ -94,16 +100,24 @@ export default {
         }
       ],
 
-      noSessions: true
+      noSessions: false,
+      sessionsLoader: false,
+      sessionsState: null
     }
   },
   async mounted() {
-    await axios.get("http://localhost:5000/sessions/running").then(result => {
+    this.sessionsLoader = true
+
+    await axios.get("http://localhost:5000/sessions/running")
+    .then(result => {
       this.items = result.data['sessions'];
       this.noSessions = (this.items.length == 0)
-
+      this.sessionsLoader = false
+      this.sessionsState = true
     }, error => {
       console.error(error);
+      this.sessionsLoader = false
+      this.sessionsState = false
     });
   }
 }

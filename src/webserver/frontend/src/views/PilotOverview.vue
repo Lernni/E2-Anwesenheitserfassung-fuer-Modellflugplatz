@@ -56,7 +56,7 @@
           <b-button-group v-else size="sm">
             <b-button variant="outline-primary" :href="'/pilot/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
               <b-icon-pencil-square></b-icon-pencil-square>
-                <span class="d-block d-sm-none">Bearbeiten</span>
+              <span class="d-block d-sm-none">Bearbeiten</span>
             </b-button>
             <b-button variant="outline-danger" @click="showDeactivateModal(row.item)" v-b-tooltip.hover title="Deaktivieren">
               <b-icon-dash-circle-fill></b-icon-dash-circle-fill>
