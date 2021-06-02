@@ -26,13 +26,14 @@ CREATE TABLE IF NOT EXISTS Pilot
     Ist_Aktiv      bool,
     Nutzername     varchar(20),
 --     integer, da kein hex datentyp
-    Passwort       integer,
+    Passwort       varchar(200),
     Ist_Admin      bool DEFAULT FALSE,
 
 -- ok so?!
     PRIMARY KEY (PilotID),
     FOREIGN KEY (RFID_Code) references RFID_Ausweis (RFID_Code) ON DELETE SET NULL,
-    UNIQUE (RFID_Code)
+    UNIQUE (RFID_Code),
+    UNIQUE (Nutzername)
 );
 
 CREATE TABLE IF NOT EXISTS Flugsession
