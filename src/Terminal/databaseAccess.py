@@ -62,6 +62,7 @@ def create_session(RFID_Code):
 
     connection.commit()
     connection.close()
+    serverConnection.sync_sessions()
     return ret
 
 
@@ -88,7 +89,7 @@ def get_session(SessionID):
     return return_dict
 
 
-# gibt Liste aktiver Sessions eines Piloten mit RFID_Code, [] falls keine gefunden
+# gibt Liste aktiver Sessions eines Piloten mit RFID_Code zurück, [] falls keine gefunden
 def get_active_sessions(RFID_Code):
     connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
@@ -116,6 +117,41 @@ def get_active_sessions(RFID_Code):
     connection.close()
     return sessions
 
+# gibt Liste unsynchronisierter Sessions zurück, [] falls keine gefunden
+def get_unsynced_sessions():
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    select_stmt = cursor.execute(
+        'SELECT SessionID, PilotID, Startzeit, Endzeit, Ist_Flugleiter FROM Flugsession WHERE Synced = 0')
+
+    sessions = []
+    return_dict = -1
+    for row in select_stmt:
+        return_dict = {
+            'session_id': row[0],
+            'pilot_id': row[1],
+            'start_time': row[2],
+            'end_time': row[3],
+            'is_controller': row[4]
+        }
+        sessions.append(return_dict)
+
+    connection.close()
+    return sessions
+
+# markiert Session mit SessionID als synchronisiert
+def set_synced(SessionID):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "UPDATE Flugsession SET Synced = 1 WHERE SessionID = ?",
+        (SessionID,))
+
+    connection.commit()
+    connection.close()
+    return
 
 # setzt Endzeit einer Session auf aktuelle Zeit
 def end_session(SessionID):
@@ -123,11 +159,12 @@ def end_session(SessionID):
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now') WHERE SessionID = ?",
+        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE SessionID = ?",
         (SessionID,))
 
     connection.commit()
     connection.close()
+    serverConnection.sync_sessions()
     return
 
 
@@ -137,10 +174,11 @@ def end_all_sessions():
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now') WHERE Endzeit IS NULL")
+        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE Endzeit IS NULL")
 
     connection.commit()
     connection.close()
+    serverConnection.sync_sessions()
     return
 
 
@@ -150,29 +188,13 @@ def set_flugleiter(SessionID):
     cursor = connection.cursor()
 
     cursor.execute(
-        'UPDATE Flugsession SET Ist_Flugleiter = 1 WHERE SessionID = ?',
+        'UPDATE Flugsession SET Ist_Flugleiter = 1, Synced = 0 WHERE SessionID = ?',
         (SessionID,))
 
     connection.commit()
     connection.close()
+    serverConnection.sync_sessions()
     return
-
-
-def sync_session(SessionID):
-    session = get_session(SessionID)
-    serverConnection.syncSession()
-    return
-
-
-def sync_rfid():
-    # TODO: implement POST request for server to sync new rfid codes
-    return
-
-
-def sync_pilot():
-    # TODO: implement POST request for server to sync new pilot data
-    return
-
 
 # zu Testzwecken
 if __name__ == '__main__':

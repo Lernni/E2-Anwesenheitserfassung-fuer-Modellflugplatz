@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS Flugsession
     Endzeit        date,
     -- Not NULL sinnvoll?!
     Ist_Flugleiter bool NOT NULL DEFAULT FALSE,
+    Synced         bool NOT NULL DEFAULT FALSE,
 
     PRIMARY KEY (SessionID),
 --     TODO
