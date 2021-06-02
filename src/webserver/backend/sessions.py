@@ -9,6 +9,13 @@ class TimeFormat(fields.String):
         return time.strftime(value, "%H:%M")
 
 
+get_parser = api.parser()
+get_parser.add_argument('name', type=str)
+get_parser.add_argument('start_date', type=inputs.date)
+get_parser.add_argument('end_date', type=inputs.date)
+get_parser.add_argument('from', type=int, required=True)
+get_parser.add_argument('to', type=int, required=True)
+
 session_post_model = api.model('session_post_model', {
     'pilot_id': fields.Integer(description='ID of Pilot', required=True),
     'session_date': fields.Date(required=True),
@@ -19,22 +26,22 @@ session_post_model = api.model('session_post_model', {
     'guest_info': fields.String()
 })
 
-sessions_parser = api.parser()
-sessions_parser.add_argument('name', type=str)
-sessions_parser.add_argument('start_date', type=inputs.date)
-sessions_parser.add_argument('end_date', type=inputs.date)
-sessions_parser.add_argument('from', type=int, required=True)
-sessions_parser.add_argument('to', type=int, required=True)
+session_put_model = api.model('session_put_model', {
+    'guest_name': fields.String(required=True),
+    'guest_info': fields.String()
+})
+put_parser = api.parser()
+put_parser.add_argument('id', type=int, required=True)
 
 
 class Sessions(Resource):
-    @api.expect(sessions_parser)
+    @api.expect(get_parser)
     def get(self):
         '''get Session info'''
         select_stmt = None
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
-        args = sessions_parser.parse_args()
+        args = get_parser.parse_args()
         from_ = args['from']
         to = args['to']
 
@@ -258,7 +265,6 @@ class Sessions(Resource):
             cursor.execute(
                 'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [guest_name, guest_info]
             )
-            connection.commit()
             guest_row_nr = cursor.lastrowid
             guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
 
@@ -274,3 +280,33 @@ class Sessions(Resource):
         connection.commit()
         connection.close()
         return {}
+
+    # @api.expect(session_put_model)
+    @api.expect(put_parser, session_put_model)
+    # @api.doc('Example description.', parser=put_parser, body=session_put_model)
+    def put(self):
+        '''add guest name and info to session'''
+        connection = get_connection("database_server.db")
+        cursor = connection.cursor()
+
+        payload = api.payload
+        args = put_parser.parse_args()
+
+        guest_name = payload['guest_name']
+        if 'guest_info' not in payload.keys():
+            guest_info = None
+        else:
+            guest_info = payload['guest_info']
+
+        cursor.execute(
+            'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [guest_name, guest_info]
+        )
+
+        guest_row_nr = cursor.lastrowid
+        guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
+
+        cursor.execute(
+            'UPDATE Flugsession SET GastID = ? WHERE SessionID = ?', [guest_id, args['id']]
+        )
+
+        connection.commit()

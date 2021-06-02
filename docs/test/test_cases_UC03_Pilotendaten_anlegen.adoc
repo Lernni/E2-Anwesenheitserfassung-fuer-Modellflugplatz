@@ -1,0 +1,71 @@
+== Test Cases: UC03 - Pilotendaten anlegen
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+a|* *Pilot* ist *noch nicht* im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Erstellung eines Piloten mit verschiedensten Attributen
+a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
+* die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
+|
+|
+
+|2
+|Positiv, manuell
+a|* *Pilot* ist *noch nicht* im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Erstellung eines Piloten und Zustimmung zum Erhalt von Adminrechten
+a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
+* die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
+* der erstellte Pilot hat nun Adminrechte
+* der erstellte Pilot kann sich einloggen und gelangt zur Startseite
+|
+|
+
+|3
+|Negativ, manuell
+a|*Pilot* wurde erfolgreich mit zugewiesner RFID-Kennung erstellt
+|Erstellung eines neuen *Piloten*
+a|Die RFID-Kennung des vorherig erstellten Piloten ist nicht mehr verfügbar
+|
+|
+
+|4
+|Negativ, manuell
+a|*Pilot* mit gewissen Attributen wurde erfolgreich erstellt
+|Erstellung eines neuen *Piloten* mit dem selben Vor- und Nachnamen
+a|* Das System hat speichert den Piloten korrekt ab (zweimal der gleiche Vor- und Nachname in der DB)
+* Jeder der beiden *Piloten* hat einen eindeutigen Nutzernamen für den Login des Systems erhalten
+* Beide *Piloten* können ohne Einschränkung das System vollumfänglich benutzen
+|
+|
+
+|5
+|Positiv, manuell
+a|*Pilot* wurde erfolgreich erstellt
+|Der Pilot gibt seine Daten im Login-Fenster ein mit dem Ziel sich anzumelden
+a|* Das System macht auf die einmalige Festlegung auf ein Passwort aufmerksam (da Erst-Login)
+* Das Passwort konnte eingegeben und in der DB eingetragen werden
+* Der *Pilot* konnte sich anmelden
+|
+|
+
+|===

@@ -1,0 +1,59 @@
+== Test Cases: UC04 - Pilot deaktivieren
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+a|* *Pilot* ist im _System_ angelegt
+* *Pilot* ist nicht am Terminal angemeldet
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|*Administrator* deaktiviert einen Piloten
+a|* Der Pilot ist deaktiviert
+* Die RFID-Kennung ist wieder frei verfügbar (siehe Pilotendaten anlegen oder Pilotendaten modifizieren)
+* Der Pilot kann sich nicht mehr am Terminal an-/abmelden oder sich zum Flugleiter ernennen
+* Der Pilot kann sich nicht mehr auf der Website anmelden
+* Die Protokolldaten sind unverändert verfügbar
+* Der Pilot ist nur unter dem Filter "Deaktivierte Piloten" in der Pilotenübersicht sichtbar
+|
+|
+
+|Spezialfall 1
+|Negativ, manuell
+a|* *Pilot* ist im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Pilot ist derzeit am Terminal angemeldet
+|*Administrator* deaktiviert einen Piloten
+a|* Der Pilot ist kann nicht deaktiviert werden
+* Fehlermeldung erscheint: Pilot ist derzeit aktiv
+|
+|
+
+|Spezialfall 2
+|Negativ, manuell
+a|* *Pilot* ist im _System_ angelegt
+* Pilot ist nicht am Terminal angemeldet
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Pilot ist derzeit auf der Website angemeldet
+|*Administrator* deaktiviert einen Piloten
+a|* Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
+* Der Pilot wird abgemeldet bzw. kann keine Aktionen mehr ausführen
+|
+|
+
+|===

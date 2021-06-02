@@ -38,4 +38,28 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+h2, h4, .last-ping-info {
+  text-align: center;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  h2, h4 {
+    text-align: start;
+  }
+
+  .last-ping-info {
+    text-align: right;
+  }
+
+  .footer-buttons {
+    display: block;
+    justify-content: start;
+  }
+}
 </style>
