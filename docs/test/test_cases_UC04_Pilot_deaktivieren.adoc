@@ -8,6 +8,16 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 === TestCases
 
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
 |1
 |Positiv, manuell
 a|* *Pilot* ist im _System_ angelegt
@@ -45,3 +55,5 @@ a|* Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 * Der Pilot wird abgemeldet bzw. kann keine Aktionen mehr ausführen
 |
 |
+
+|===
