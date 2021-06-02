@@ -63,7 +63,7 @@ export default {
 
       var loginCredentials = {
         username: this.form.username,
-        password: this.encryptPassword(this.form.password)
+        password: this.form.password
       }
 
       await axios.post("http://localhost:5000/login", loginCredentials)
