@@ -1,10 +1,9 @@
 @startuml component_diagram
 
-package "<<subsysten>> Terminal" {
+node "Terminal" {
     [databaseAccess] ..> [userInterface]
     [serverConnection] <..> [databaseAccess]
-    database "Cache" {
-        [SQLite] as db1
+    database "Cache" as db1 {
     }
     db1 <.> [databaseAccess] : <<local>>
 }
@@ -13,14 +12,12 @@ package "<<subsysten>> Terminal" {
 Taste -> [userInterface]
 [userInterface] <- Scanner
 
-package "<<subsysten>> Webserver" {
+node "Webserver" {
+    REST <..> [Frontend]
     REST - [Backend]
-    REST <..> [Frontend]  : <<local>>
-    database "Piloten/Protokollspeicher" {
-        [SQLite] as db2
+    database "Piloten/Protokollspeicher" as db2 {
     }
-    db2 <.> [Backend]  : <<local>>
-    
+    [Backend] <.> db2  : <<local>>
 }
 
 [serverConnection] <-> REST  : <<http>>
