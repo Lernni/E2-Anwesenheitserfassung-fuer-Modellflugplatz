@@ -102,7 +102,7 @@ export default {
         .then(() => {
           this.submitSuccess()
           this.resetPassword = false
-          setTimeout(() => {this.$router.go(-1)}, 3000)
+          setTimeout(() => {this.$router.push("/pilots")}, 3000)
         })
         .catch(error => {this.submitFailure(error)});
     }
