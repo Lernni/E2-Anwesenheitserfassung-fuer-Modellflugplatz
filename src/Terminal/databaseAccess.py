@@ -215,13 +215,4 @@ if __name__ == '__main__':
     connection.close()
 
     id = create_session(346352)
-    set_flugleiter(id)
-    # end_session(id)
-    # end_all_sessions()
-
-    print(get_session(id))
-    print(get_active_sessions(346352))
-    print(get_pilot(346352))
-    print(get_session(32462))
-    print(get_pilot(342347))
-    print(get_active_sessions(343454652))
+    end_all_sessions()
