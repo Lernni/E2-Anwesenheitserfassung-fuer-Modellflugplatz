@@ -20,7 +20,7 @@ session_post_model = api.model('session_post_model', {
     'pilot_id': fields.Integer(description='ID of Pilot', required=True),
     'session_date': fields.Date(required=True),
     'start_time': TimeFormat(description='Time in 24 hour HH:MM format', required=True, default='HH:MM'),
-    'end_time': TimeFormat(description='Time in 24 hour HH:MM format', required=True, default='HH:MM'),
+    'end_time': TimeFormat(description='Time in 24 hour HH:MM format', default='HH:MM'),
     'is_leader': fields.Boolean(required=True),
     'guest_name': fields.String(),
     'guest_info': fields.String()
