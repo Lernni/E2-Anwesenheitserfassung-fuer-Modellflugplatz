@@ -255,8 +255,12 @@ class Sessions(Resource):
         payload = api.payload
         start_time = datetime.combine(date.fromisoformat(payload['session_date']),
                                       datetime.strptime(payload['start_time'], "%H:%M").time())
-        end_time = datetime.combine(date.fromisoformat(payload['session_date']),
-                                    datetime.strptime(payload['end_time'], "%H:%M").time())
+
+        try:
+            end_time = datetime.combine(date.fromisoformat(payload['session_date']),
+                                        datetime.strptime(payload['end_time'], "%H:%M").time())
+        except KeyError:
+            end_time = None
 
         try:
             guest_name = payload['guest_name']
