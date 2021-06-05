@@ -1,15 +1,24 @@
 from flask_restx import Resource
-from globals import get_connection
+from globals import api, get_connection, auth_parser, is_pilot
 
 
+# diese request dürfen alle piloten ausführen
 # GET /sessions/running
 class RunningSessions(Resource):
     # für das frontend - ausgabe aller laufenden sessions auf startseite
+    @api.expect(auth_parser)
     def get(self):
         '''all active sessions'''
-
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
+
+        p_id = is_pilot(cursor)
+        if p_id == -1:
+            return {}, 404
+
+        return_dict = {
+            'sessions': []
+        }
 
         select_stmt = cursor.execute(
             'SELECT P.PilotID, P.Vorname, P.Nachname, time(F.Startzeit), F.Ist_Flugleiter '
@@ -17,10 +26,6 @@ class RunningSessions(Resource):
             'JOIN Pilot P on P.PilotID = F.PilotID '
             'WHERE F.Endzeit IS NULL'
         )
-
-        return_dict = {
-            'sessions': []
-        }
 
         for row in select_stmt:
             session = {

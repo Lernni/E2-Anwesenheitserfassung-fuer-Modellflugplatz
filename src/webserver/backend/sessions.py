@@ -1,6 +1,6 @@
 from datetime import date, time, datetime
 from flask_restx import Resource, inputs, fields
-from globals import api, get_connection
+from globals import api, get_connection, auth_parser, is_pilot, is_admin
 
 
 # für session_post_model - input Zeit
@@ -35,12 +35,18 @@ put_parser.add_argument('id', type=int, required=True)
 
 
 class Sessions(Resource):
-    @api.expect(get_parser)
+    # jeder pilot darf diese request ausführen
+    @api.expect(get_parser, auth_parser)
     def get(self):
         '''get Session info'''
         select_stmt = None
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
+
+        p_id = is_pilot(cursor)
+        if p_id == -1:
+            return {}, 404
+
         args = get_parser.parse_args()
         from_ = args['from']
         to = args['to']
@@ -225,7 +231,7 @@ class Sessions(Resource):
         # alle ergebnisse von 'from' bis 'to'
         for row in select_stmt.fetchall():
             row_count += 1
-            if (row[0] >= from_ and row[0] <= to):
+            if from_ <= row[0] <= to:
                 session = {
                     'session_id': row[0],
                     'pilot_name': row[1] + " " + row[2],
@@ -246,11 +252,15 @@ class Sessions(Resource):
 
     # Flugsession nachtragen
     # POST /sessions
-    @api.expect(session_post_model)
+    # nur admins dürfen diese request ausführen
+    @api.expect(session_post_model, auth_parser)
     def post(self):
         '''add session'''
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
+
+        if not is_admin(cursor):
+            return {}, 401
 
         payload = api.payload
         start_time = datetime.combine(date.fromisoformat(payload['session_date']),
@@ -285,18 +295,25 @@ class Sessions(Resource):
         connection.close()
         return {}
 
-    # @api.expect(session_put_model)
-    @api.expect(put_parser, session_put_model)
-    # @api.doc('Example description.', parser=put_parser, body=session_put_model)
+    # jeder pilot darf nur seine eigenen sessions bearbeiten
+    @api.expect(put_parser, session_put_model, auth_parser)
     def put(self):
         '''add guest name and info to session'''
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
 
         payload = api.payload
+        guest_name = payload['guest_name']
         args = put_parser.parse_args()
 
-        guest_name = payload['guest_name']
+        p_id = cursor.execute(
+            'SELECT PilotID FROM Flugsession WHERE SessionID = ?', [args['id']]
+        ).fetchone()[0]
+
+        # wenn der pilot kein admin ist und die p_id nicht übereinstimmt, return 401
+        if p_id != is_pilot(cursor) and not is_admin(cursor):
+            return {}, 401
+
         if 'guest_info' not in payload.keys():
             guest_info = None
         else:

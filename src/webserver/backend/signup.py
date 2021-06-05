@@ -32,5 +32,6 @@ class signup(Resource):
             'UPDATE Pilot SET Passwort = ? WHERE Nutzername LIKE ?', [password, username]
         )
         connection.commit()
+        connection.close()
 
         return {}, 200

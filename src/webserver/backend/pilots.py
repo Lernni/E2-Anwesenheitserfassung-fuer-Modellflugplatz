@@ -1,5 +1,5 @@
 from flask_restx import Resource, inputs, fields
-from globals import api, get_connection
+from globals import api, get_connection, auth_parser, is_admin
 
 pilots_parser = api.parser()
 pilots_parser.add_argument('id', type=int)
@@ -24,16 +24,22 @@ pilot_put_model = api.model('pilot_put_model', {
 })
 
 
+# nur admins dürfen diese requests ausführen
 class Pilots(Resource):
     # GET /pilots?id=1&is_active=true
-    @api.expect(pilots_parser)
+    @api.expect(pilots_parser, auth_parser)
     def get(self):
         '''get pilots'''
+        connection = get_connection("database_server.db")
+        cursor = connection.cursor()
+
+        if not is_admin(cursor):
+            return {}, 401
+
         args = pilots_parser.parse_args()
         p_id = args['id']
         is_active = args['is_active']
-        connection = get_connection("database_server.db")
-        cursor = connection.cursor()
+
         return_dict = {
             'pilots': []
         }
@@ -85,34 +91,52 @@ class Pilots(Resource):
 
     # neuen Piloten anlegen
     # POST /pilots
-    @api.expect(pilot_post_model)
+    @api.expect(pilot_post_model, auth_parser)
     def post(self):
         '''create pilot'''
+        connection = get_connection("database_server.db")
+        cursor = connection.cursor()
+
+        if not is_admin(cursor):
+            return {}, 401
+
         payload = api.payload
         first_name = payload['pilot_name']
         last_name = payload['pilot_surname']
         rfid = int(payload['rfid'], 16)
         username = payload['pilot_username']
-        is_admin = bool(payload['is_admin'])
+        admin = bool(payload['is_admin'])
 
-        connection = get_connection("database_server.db")
-        cursor = connection.cursor()
+        # erzeuge token
+        token = abs(hash(username))
+        select_stmt = cursor.execute(
+            'SELECT Token FROM Pilot'
+        ).fetchall()
+
+        all_tokens = [t[0] for t in select_stmt]
+        # wenn token vergeben, inkrementiere und prüfe erneut
+        while token in all_tokens:
+            token += 1
+
         cursor.execute(
-            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Nutzername, Passwort, Ist_Admin) '
-            'VALUES(?, ?, ?, date(), ?, NULL, ?)', [rfid, last_name, first_name, username, is_admin]
+            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Nutzername, Passwort, Ist_Admin, Token) '
+            'VALUES(?, ?, ?, date(), ?, NULL, ?, ?)', [rfid, last_name, first_name, username, admin, token]
         )
         connection.commit()
         connection.close()
         return {}
 
-    @api.expect(pilot_put_model)
+    @api.expect(pilot_put_model, auth_parser)
     def put(self):
         '''update pilot'''
-        payload = api.payload
-        p_id = payload['pilot_id']
-
         connection = get_connection("database_server.db")
         cursor = connection.cursor()
+
+        if not is_admin(cursor):
+            return {}, 401
+
+        payload = api.payload
+        p_id = payload['pilot_id']
 
         if 'pilot_name' in payload.keys():
             new_first_name = payload['pilot_name']
