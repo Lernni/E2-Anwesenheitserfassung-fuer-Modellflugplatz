@@ -291,3 +291,20 @@ image::Startseite_Admin_V3.png[Startseite Admin, width=70%, align="center"]
 .Wireframe: Startseite (Mitglied), zeigt aktuell aktive Piloten auf dem Flugplatz
 image::Startseite_Mitglied_V3.png[Startseite Admin, width=70%, align="center"]
 
+Im folgendem Abschnitt sind mögliche Einstellungen verfügbar.
+
+.Wireframe: Einstellungen-Übersicht
+image::Einstellungen_uebersicht.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Uhrzeit
+image::Einstellung_1_Uhrzeit.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Tasten & Bedienkonfigurationen
+image::Einstellung_2_Tasten_Bedienkonfig.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Toleranzzeit
+image::Einstellung_3_Toleranzzeit.png[Startseite Admin, width=70%, align="center"]
+
+.Wireframe: Toleranzzeit
+image::Einstellung_4_RFID_Ausweis_verwalten.png[Startseite Admin, width=70%, align="center"]
+
