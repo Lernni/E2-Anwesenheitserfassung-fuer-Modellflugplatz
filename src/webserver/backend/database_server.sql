@@ -23,23 +23,25 @@ CREATE TABLE IF NOT EXISTS Pilot
     Nachname       varchar(20) NOT NULL,
     Vorname        varchar(20) NOT NULL,
     Eintrittsdatum date        NOT NULL,
-    Ist_Aktiv      bool,
+
     Nutzername     varchar(20),
---     integer, da kein hex datentyp
     Passwort       varchar(200),
+
     Ist_Admin      bool DEFAULT FALSE,
+    Token          integer     NOT NULL,
+
 
 -- ok so?!
     PRIMARY KEY (PilotID),
     FOREIGN KEY (RFID_Code) references RFID_Ausweis (RFID_Code) ON DELETE SET NULL,
     UNIQUE (RFID_Code),
-    UNIQUE (Nutzername)
+    UNIQUE (Nutzername),
+    UNIQUE (Token)
 );
 
 CREATE TABLE IF NOT EXISTS Flugsession
 (
     SessionID      integer,
-    -- Not NULL sinnvoll?! TODO
     PilotID        integer,
     GastID         integer,
     Startzeit      datetime NOT NULL,
@@ -56,9 +58,12 @@ CREATE TABLE IF NOT EXISTS Flugsession
 
 CREATE TABLE IF NOT EXISTS Gast
 (
-    GastID integer,
+    GastID   integer,
     Gastname varchar(20) NOT NULL,
     Freitext varchar(100),
 
     PRIMARY KEY (GastID)
 );
+
+-- initialen admin erzeugen
+INSERT INTO Pilot(Nachname, Vorname, Eintrittsdatum, Nutzername, Ist_Admin, Token) VALUES ('admin', 'admin', date(), 'admin', true, 2568695077352081093);
