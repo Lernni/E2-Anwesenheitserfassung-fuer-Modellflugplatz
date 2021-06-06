@@ -62,7 +62,7 @@ class Sessions(Resource):
             # z.B. 'Mustermann' -> in Vor- und Nachname suchen
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -74,7 +74,7 @@ class Sessions(Resource):
             # z.B. 'Max Mustermann' -> vor(Max), nach(Mustermann) oder vor(Mustermann) nach(Max)
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -93,7 +93,7 @@ class Sessions(Resource):
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -105,7 +105,7 @@ class Sessions(Resource):
 
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -124,7 +124,7 @@ class Sessions(Resource):
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -136,7 +136,7 @@ class Sessions(Resource):
 
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -153,7 +153,7 @@ class Sessions(Resource):
         # GET sessions?start_date&end_date
         elif 'start_date' in args.keys() and 'end_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -166,7 +166,7 @@ class Sessions(Resource):
             name_list = args['name'].split()
             if len(name_list) == 1:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -176,7 +176,7 @@ class Sessions(Resource):
                 )
             if len(name_list) == 2:
                 select_stmt = cursor.execute(
-                    'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                    'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                     'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                     'FROM Flugsession F '
                     'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -192,7 +192,7 @@ class Sessions(Resource):
 
         elif 'start_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -203,7 +203,7 @@ class Sessions(Resource):
 
         elif 'end_date' in args.keys():
             select_stmt = cursor.execute(
-                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -214,7 +214,7 @@ class Sessions(Resource):
 
         else:
             select_stmt = cursor.execute(
-                'SELECT F.SessionID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
+                'SELECT F.SessionID, P.PilotID, P.Vorname, P.Nachname, date(F.Startzeit), time(F.Startzeit), '
                 'time(F.Endzeit), F.Ist_Flugleiter, G.Gastname, G.Freitext '
                 'FROM Flugsession F '
                 'JOIN Pilot P on P.PilotID = F.PilotID '
@@ -234,14 +234,15 @@ class Sessions(Resource):
             if from_ <= row[0] <= to:
                 session = {
                     'session_id': row[0],
-                    'pilot_name': row[1] + " " + row[2],
-                    'date': row[3],
-                    'start_time': row[4],
-                    'end_time': row[5],
-                    'session_leader': row[6],
+                    'pilot_id': row[1],
+                    'pilot_name': row[2] + " " + row[3],
+                    'date': row[4],
+                    'start_time': row[5],
+                    'end_time': row[6],
+                    'session_leader': row[7],
                     'guest': {
-                        'name': row[7],
-                        'text': row[8]
+                        'name': row[8],
+                        'text': row[9]
                     }
                 }
                 return_dict['sessions'].append(session)

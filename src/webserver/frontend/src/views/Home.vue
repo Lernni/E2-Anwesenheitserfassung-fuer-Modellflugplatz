@@ -19,48 +19,49 @@
     </b-alert>
 
     <p class="font-italic last-ping-info">Letzte Aktualisierung: --:--</p>
-    <hr>
-    <h2>Quicklinks</h2>
-    <div class="d-none d-sm-block">
-      <b-row cols="2" class="align-items-center text-center">
-        <b-col class="py-2">
-          <b-button variant="primary" to="pilots/new">Pilot erstellen</b-button>
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary" to="protocol">Protokoll ansehen</b-button>
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary" to="rfid">RFID-Tag hinzufügen</b-button>          
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary" to="session/new">Flüge nachtragen</b-button>
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary" to="pilots">Pilotenübersicht</b-button>
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary">Alle Piloten abmelden</b-button>
-        </b-col>
-        <b-col class="py-2">
-          <b-button variant="primary">Einstellungen</b-button>
-        </b-col>
-      </b-row>
+    <div v-if="isAdmin">
+      <hr>
+      <h2>Quicklinks</h2>
+      <div class="d-none d-sm-block">
+        <b-row cols="2" class="align-items-center text-center">
+          <b-col class="py-2">
+            <b-button variant="primary" to="pilots/new">Pilot erstellen</b-button>
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary" to="sessions">Protokoll ansehen</b-button>
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary" to="settings#rfid">RFID-Tag hinzufügen</b-button>          
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary" to="sessions/new">Flüge nachtragen</b-button>
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary" to="pilots">Pilotenübersicht</b-button>
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary">Alle Piloten abmelden</b-button>
+          </b-col>
+          <b-col class="py-2">
+            <b-button variant="primary" to="settings">Einstellungen</b-button>
+          </b-col>
+        </b-row>
+      </div>
+      <b-list-group class="text-center d-sm-none">
+        <b-list-group-item to="sessions">Protokoll ansehen</b-list-group-item>
+        <b-list-group-item to="sessions/new">Flüge nachtragen</b-list-group-item>
+        <b-list-group-item to="pilots">Pilotenübersicht</b-list-group-item>
+        <b-list-group-item to="pilots/new">Pilot erstellen</b-list-group-item>
+        <b-list-group-item to="settings#rfid">RFID-Tag hinzufügen</b-list-group-item>
+        <b-list-group-item to="settings">Einstellungen</b-list-group-item>
+        <b-list-group-item variant="danger">Alle Piloten abmelden</b-list-group-item>
+      </b-list-group>
     </div>
-    <b-list-group class="text-center d-sm-none">
-      <b-list-group-item to="protocol">Protokoll ansehen</b-list-group-item>
-      <b-list-group-item to="session/new">Flüge nachtragen</b-list-group-item>
-      <b-list-group-item to="pilots">Pilotenübersicht</b-list-group-item>
-      <b-list-group-item to="pilots/new">Pilot erstellen</b-list-group-item>
-      <b-list-group-item to="rfid">RFID-Tag hinzufügen</b-list-group-item>
-      <b-list-group-item to="settings">Einstellungen</b-list-group-item>
-      <b-list-group-item variant="danger">Alle Piloten abmelden</b-list-group-item>
-    </b-list-group>
   </div>
 </template>
 
 <script>
 // TODO: letzte Aktualisierung bekommen -> Einstellungen?
-// TODO: conditional rendering des Admin-Panels
 // TODO: POST /sessions?checkout-all
 
 export default {
@@ -101,13 +102,15 @@ export default {
 
       noSessions: false,
       sessionsLoader: false,
-      sessionsState: null
+      sessionsState: null,
+      isAdmin: false
     }
   },
   async mounted() {
     this.sessionsLoader = true
+    var userInfo = JSON.parse(this.$store.getters.userInfo)
+    this.isAdmin = userInfo.is_admin
 
-    console.log(this.$axios.defaults)
     await this.$axios.get("http://localhost:5000/sessions/running")
     .then(result => {
       this.items = result.data['sessions'];

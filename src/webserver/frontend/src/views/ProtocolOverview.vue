@@ -1,5 +1,5 @@
 <template>
-  <div class="protocol-overview">
+  <div class="sessions">
     <h2>Protokolldaten</h2>
 
     <b-alert variant="danger" :show="sessionState == false">
@@ -84,7 +84,7 @@
         </template>
 
         <template #cell(actions)="row">
-          <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
+          <b-button v-if="canEdit(row.item.pilot_id)" :href="'/sessions/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
             <b-icon-pencil-square></b-icon-pencil-square>
           </b-button>
         </template>
@@ -101,7 +101,7 @@
         </template>
 
         <template #cell(actions)="row">
-          <b-button :href="'/session/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
+          <b-button v-if="canEdit(row.item.pilot_id)" :href="'/sessions/edit?id=' + row.item.session_id" size="sm" variant="outline-primary" v-b-tooltip.hover title="Bearbeiten">
             <b-icon-pencil-square></b-icon-pencil-square>
             <span class="d-block d-sm-none">Bearbeiten</span>
           </b-button>
@@ -118,7 +118,7 @@
           <b-button variant="primary">Protokolldaten herunterladen</b-button>
         </b-row>
         <b-row class="mt-3 footer-buttons">
-          <b-button variant="primary" to="session/new">Flugsession nachtragen</b-button>
+          <b-button variant="primary" to="sessions/new">Flugsession nachtragen</b-button>
         </b-row>
     </b-container>
   </div>
@@ -126,7 +126,7 @@
 
 <script>
 export default {
-  name: "ProtocolOverview",
+  name: "Sessions",
   data() {
     return {
       items: [],
@@ -185,6 +185,8 @@ export default {
 
       sessionLoader: false,
       sessionState: null,
+
+      userInfo: null
     }
   },
 
@@ -209,8 +211,8 @@ export default {
         }
       }
 
-      await this.$axios.get(requestURL
-      ).then(result => {
+      await this.$axios.get(requestURL)
+      .then(result => {
         this.items = result.data['sessions']
         this.sessionCount = result.data['session_count']
 
@@ -222,6 +224,10 @@ export default {
         this.sessionState = false
       });
     },
+    canEdit(pilotId) {
+      if (this.userInfo.is_admin) return true
+      return (this.userInfo.id == pilotId)
+    }
   },
   watch: {
     currentPage: function() {
@@ -229,6 +235,7 @@ export default {
     }
   },
   async mounted() {
+    this.userInfo = JSON.parse(this.$store.getters.userInfo)
     this.getSessions()
   }
 }

@@ -38,7 +38,7 @@ class login(Resource):
             return {}, 513
 
         user_stmt = cursor.execute(
-            'SELECT Vorname, Nachname, Nutzername, Ist_Admin, Token FROM Pilot WHERE Nutzername LIKE ?', [username]
+            'SELECT PilotID, Vorname, Nachname, Nutzername, Ist_Admin, Token FROM Pilot WHERE Nutzername LIKE ?', [username]
         )
 
         if checkpw(password.encode('utf8'), pwd_db.encode('utf8')):
@@ -49,11 +49,12 @@ class login(Resource):
             connection.close()
             # return token in header
             return {
-                'token': user[4],
+                'token': user[5],
                 'user': {
-                    'name': user[0] + ' ' + user[1],
-                    'username': user[2],
-                    'is_admin': user[3]
+                    'id': user[0],
+                    'name': user[1] + ' ' + user[2],
+                    'username': user[3],
+                    'is_admin': user[4]
                 }
             }
         else:
