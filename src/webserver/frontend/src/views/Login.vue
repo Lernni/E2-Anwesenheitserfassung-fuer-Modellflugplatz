@@ -19,7 +19,7 @@
               <b-form-invalid-feedback>
                 Kein Passwort angegeben!
               </b-form-invalid-feedback>
-              Noch kein Passwort festgelegt? - <b-link to="signup">Registrieren</b-link>
+              Noch kein Passwort festgelegt? - <b-link to="/signup">Registrieren</b-link>
             </b-form-group>
             <b-button class="float-right" type="submit" variant="primary" :disabled="loginLoader">
               <b-spinner v-show="loginLoader" small></b-spinner>

@@ -50,7 +50,7 @@ const routes = [
     }
   },
   {
-    path: '/session/new',
+    path: '/sessions/new',
     name: 'NewSession',
     component: NewSession,
     meta: {
@@ -59,7 +59,7 @@ const routes = [
     }
   },
   {
-    path: '/session/edit',
+    path: '/sessions/edit',
     name: 'EditSession',
     component: EditSession,
     meta: {
@@ -68,7 +68,7 @@ const routes = [
     }
   },
   {
-    path: '/protocol',
+    path: '/sessions',
     name: 'ProtocolOverview',
     component: ProtocolOverview,
     meta: {
@@ -77,7 +77,7 @@ const routes = [
     }
   },
   {
-    path: '/pilot/new',
+    path: '/pilots/new',
     name: 'NewPilot',
     component: NewPilot,
     meta: {
@@ -86,7 +86,7 @@ const routes = [
     }
   },
   {
-    path: '/pilot/edit',
+    path: '/pilots/edit',
     name: 'EditPilot',
     component: EditPilot,
     meta: {
@@ -95,7 +95,7 @@ const routes = [
     }
   },
   {
-    path: '/pilot/reactivate',
+    path: '/pilots/reactivate',
     name: 'ReactivatePilot',
     component: ReactivatePilot,
     meta: {
@@ -119,7 +119,7 @@ router.beforeEach((to, from, next) => {
     if (userInfo.is_admin) return next()
     if (to.meta.roles.includes('pilot')) return next()
   }
-  
+
   return next("/login")
 })
 

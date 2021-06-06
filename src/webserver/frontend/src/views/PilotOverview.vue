@@ -1,5 +1,5 @@
 <template>
-  <div class="pilot-overview">
+  <div class="pilots">
     <h2>Pilotenübersicht</h2>
 
     <b-alert variant="success" :show="deactivateState" dismissible>
@@ -17,12 +17,12 @@
     <b-row class="text-center no-gutters mb-2">
       <b-col class="mb-2 mb-md-0">
         <b-input-group prepend="Suche">
-          <b-form-input type="search" v-model="filterCriteria.pilot_name" placeholder="Name"></b-form-input>
+          <b-form-input type="search" v-model="pilotName" placeholder="Name"></b-form-input>
         </b-input-group>
       </b-col>
       <b-col cols="12" md="auto">
         <b-button variant="primary" class="ml-md-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
-        <b-button variant="success" class="ml-2" to="pilot/new">
+        <b-button variant="success" class="ml-2" to="pilots/new">
           <b-icon icon="plus" scale="1.5"></b-icon>
           Pilot erstellen
         </b-button>
@@ -43,18 +43,18 @@
     </b-modal>
 
     <b-overlay :show="pilotsLoader" spinner-type="grow">
-      <b-table stacked="sm" striped :items="items" :fields="fields" :filter="filterCriteria" :filter-function="filterTable">
+      <b-table stacked="sm" striped :items="items" :fields="fields" :filter="pilotName">
         <template #cell(pilot_name)="row">
           {{ row.item.pilot_name }} {{ row.item.pilot_surname }}
         </template>
 
         <template #cell(actions)="row">
-          <b-button v-if="!row.item.is_active" :href="'/pilot/reactivate?id=' + row.item.pilot_id" size="sm" variant="outline-success" v-b-tooltip.hover title="Reaktivieren">
+          <b-button v-if="!isActive" :href="'/pilots/reactivate?id=' + row.item.pilot_id" size="sm" variant="outline-success" v-b-tooltip.hover title="Reaktivieren">
             <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
             <span class="d-block d-sm-none">Reaktivieren</span>
           </b-button>
           <b-button-group v-else size="sm">
-            <b-button variant="outline-primary" :href="'/pilot/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
+            <b-button variant="outline-primary" :href="'/pilots/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
               <b-icon-pencil-square></b-icon-pencil-square>
               <span class="d-block d-sm-none">Bearbeiten</span>
             </b-button>
@@ -71,7 +71,7 @@
 
 <script>
 export default {
-  name: 'PilotOverview',
+  name: 'Pilots',
   data() {
     return {
       items: [],
@@ -94,12 +94,10 @@ export default {
         },
         {key: "actions", label: "", class: "text-center"}
       ],
-      toggleActivePilotsButton: "Zeige deaktive Piloten",
+      toggleActivePilotsButton: "Zeige inaktive Piloten",
 
-      filterCriteria: {
-        pilot_name: null,
-        is_active: true
-      },
+      pilotName: null,
+      isActive: true,
       searchInput: null,
 
       toDeactivatePilot: [],
@@ -114,14 +112,6 @@ export default {
     };
   },
   methods: {
-      filterTable(row, filter) {
-        if (filter.pilot_name != null) {
-          if (!row.pilot_name.includes(filter.pilot_name)) return false
-        }
-
-        return (row.is_active == filter.is_active)
-    },
-
     showDeactivateModal(pilot) {
       this.toDeactivatePilot = pilot
       this.showModal = true
@@ -152,7 +142,6 @@ export default {
         });
       }).then(() => {
         // pilot has no running session and can be deactivated
-        this.toDeactivatePilot.is_active = false
         this.toDeactivatePilot.rfid = null
 
         this.$axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
@@ -175,12 +164,12 @@ export default {
     },
 
     toggleActivePilots() {
-      if (this.filterCriteria.is_active) {
-        this.filterCriteria.is_active = false
+      if (this.isActive) {
+        this.isActive = false
         this.toggleActivePilotsButton = "Zeige aktive Piloten"
       } else {
-        this.filterCriteria.is_active = true
-        this.toggleActivePilotsButton = "Zeige deaktive Piloten"
+        this.isActive = true
+        this.toggleActivePilotsButton = "Zeige inaktive Piloten"
       }
 
       this.getPilots()
@@ -189,8 +178,9 @@ export default {
     async getPilots() {
       this.pilotsLoader = true
 
-      await this.$axios.get("http://localhost:5000/pilots?is_active=" + this.filterCriteria.is_active).then(result => {
+      await this.$axios.get("http://localhost:5000/pilots?is_active=" + this.isActive).then(result => {
         this.items = result.data["pilots"]
+        console.log(this.items)
         this.pilotsLoader = false
       }, error => {
         console.error(error)

@@ -29,10 +29,11 @@
               </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group label="Passwort bestätigen" label-for="passwordInput">
-              <b-form-input type="password" id="passwordRepeatInput" v-model.trim="$v.form.repeatPassword.$model" :state="validateState('repeatPassword')"></b-form-input>
+              <b-form-input type="password" id="passwordRepeatInput" class="mb-2" v-model.trim="$v.form.repeatPassword.$model" :state="validateState('repeatPassword')"></b-form-input>
               <b-form-invalid-feedback>
                 Die Passwörter müssen identisch sein!
               </b-form-invalid-feedback>
+              Bereits Passwort vergeben? - <b-link to="/login">Anmelden</b-link>
             </b-form-group>
             <b-button class="float-right" type="submit" variant="primary" :disabled="signupLoader">
               <b-spinner v-show="signupLoader" small></b-spinner>

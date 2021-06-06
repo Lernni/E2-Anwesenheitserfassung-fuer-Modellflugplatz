@@ -4,9 +4,9 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav v-if="isLoggedIn">
-        <b-nav-item to="protocol">Flugprotokoll</b-nav-item>
-        <b-nav-item v-if="user.is_admin" to="pilots">Pilotenübersicht</b-nav-item>
-        <b-nav-item v-if="user.is_admin" to="settings">Einstellungen</b-nav-item>
+        <b-nav-item to="/sessions">Flugprotokoll</b-nav-item>
+        <b-nav-item v-if="user.is_admin" to="/pilots">Pilotenübersicht</b-nav-item>
+        <b-nav-item v-if="user.is_admin" to="/settings">Einstellungen</b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
