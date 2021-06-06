@@ -2,7 +2,7 @@
   <b-container fluid class="mb-3">
 
     <b-alert variant="success" :show="signupState">
-      Pilot wurde erfolgreich registriert!<br/><br/>
+      Pilot wurde erfolgreich registriert!<br><br>
       <b-button variant="success" to="login">
         Weiter zum Login
       </b-button>

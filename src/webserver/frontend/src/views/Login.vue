@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { formValidation } from '@/scripts/formValidation'
 import { authService } from '@/scripts/auth'
 import { required } from 'vuelidate/lib/validators'
@@ -66,17 +65,9 @@ export default {
         password: this.form.password
       }
 
-      await axios.post("http://localhost:5000/login", loginCredentials)
-      .then(() => {
-        // login successful
-        this.$router.push("/") // go to homepage
-      }).catch(error => {
-        // login failed (either network error or wrong credentials)
-        console.log(error)
-        this.$v.$reset()
-        this.loginState = false
-        this.loginLoader = false
-      });
+      this.$store.dispatch("login", loginCredentials)
+      .then(() => this.$router.push("/"))
+      .catch(err => console.log(err))
     }
   }
 }

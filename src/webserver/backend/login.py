@@ -37,17 +37,25 @@ class login(Resource):
             connection.close()
             return {}, 513
 
-        token_stmt = cursor.execute(
-            'SELECT Token FROM Pilot WHERE Nutzername LIKE ?', [username]
+        user_stmt = cursor.execute(
+            'SELECT Vorname, Nachname, Nutzername, Ist_Admin, Token FROM Pilot WHERE Nutzername LIKE ?', [username]
         )
 
         if checkpw(password.encode('utf8'), pwd_db.encode('utf8')):
             # salt = gensalt()
-            token = token_stmt.fetchone()[0]
+
+            user = user_stmt.fetchone()
             # hashed_token = hashpw(str(token).encode('utf8'), salt)
             connection.close()
             # return token in header
-            return {}, 200, {'token': token}
+            return {
+                'token': user[4],
+                'user': {
+                    'name': user[0] + ' ' + user[1],
+                    'username': user[2],
+                    'is_admin': user[3]
+                }
+            }
         else:
             connection.close()
             return {}, 403
