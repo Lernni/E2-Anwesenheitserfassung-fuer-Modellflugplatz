@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS Pilot
     Passwort       varchar(200),
 
     Ist_Admin      bool DEFAULT FALSE,
-    Token          integer     NOT NULL,
+    Token          varchar(20) NOT NULL,
 
 
 -- ok so?!
@@ -66,4 +66,4 @@ CREATE TABLE IF NOT EXISTS Gast
 );
 
 -- initialen admin erzeugen
-INSERT INTO Pilot(Nachname, Vorname, Eintrittsdatum, Nutzername, Ist_Admin, Token) VALUES ('admin', 'admin', date(), 'admin', true, 2568695077352081093);
+INSERT INTO Pilot(Nachname, Vorname, Eintrittsdatum, Nutzername, Ist_Admin, Token) VALUES ('admin', 'admin', date(), 'admin', true, '2568695077352081093');

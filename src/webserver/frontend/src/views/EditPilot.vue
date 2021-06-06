@@ -39,7 +39,6 @@
 
 <script>
 // TODO: Überprüfe, ob man einen deaktivierten Piloten bearbeiten kann
-import axios from 'axios'
 import Pilot from '@/components/Pilot.vue'
 import { formPilot } from '@/scripts/pilot'
 import { formValidation } from '@/scripts/formValidation'
@@ -63,7 +62,7 @@ export default {
     await this.getRfidList()
     await this.getPilotUsernames()
 
-    await axios.get("http://localhost:5000/pilots?id=" + this.pilotId)
+    await this.$axios.get("http://localhost:5000/pilots?id=" + this.pilotId)
       .then(response => {
         this.pilot.pilotLoader = false
 
@@ -102,7 +101,7 @@ export default {
         is_admin: this.form.isAdmin,
       }
 
-      await axios.put("http://localhost:5000/pilots", newPilot)
+      await this.$axios.put("http://localhost:5000/pilots", newPilot)
         .then(() => {
           this.submitSuccess()
           this.resetPassword = false

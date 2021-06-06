@@ -9,9 +9,8 @@
         <b-nav-item v-if="user.is_admin" to="settings">Einstellungen</b-nav-item>
       </b-navbar-nav>
 
-      <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown id="user-info" right>
+        <b-nav-item-dropdown :disabled="!isLoggedIn" id="user-info" right>
           <template #button-content>
             <b-avatar class="avatar" :variant="isLoggedIn ? 'primary' : 'secondary'"></b-avatar>
             <b-nav-text v-if="isLoggedIn" class="mx-2">{{ user.name }}</b-nav-text>
@@ -19,9 +18,7 @@
           <b-dropdown-item disabled>Nutzername: {{ user.username }}</b-dropdown-item>
           <b-dropdown-item disabled>Rolle: {{ user.is_admin ? 'Admin' : 'Pilot' }}</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item @click="logout">
-            Abmelden
-          </b-dropdown-item>
+          <b-dropdown-item @click="logout">Abmelden</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>

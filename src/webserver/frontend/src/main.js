@@ -13,11 +13,15 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(Vuelidate)
 
-Vue.prototype.$http = axios
+export const $axios = axios
+
 const token = localStorage.getItem('token')
+console.log(token)
 if (token) {
-  Vue.prototype.$http.defaults.headers.common["Authorization"] = token
+  $axios.defaults.headers.common['token'] = token
 }
+
+Vue.prototype.$axios = $axios
 
 new Vue({
   router, store,

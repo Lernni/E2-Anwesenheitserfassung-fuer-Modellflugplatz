@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { $axios } from '../main'
 
 Vue.use(Vuex)
 
@@ -24,7 +25,7 @@ export default new Vuex.Store({
           localStorage.setItem('token', token)
           localStorage.setItem('user', JSON.stringify(user))
           console.log(localStorage.getItem('user'))
-          axios.defaults.headers.common['Authorization'] = token
+          $axios.defaults.headers.common['token'] = token
           commit('auth_success', {token, user})
           resolve(response)
         }).catch(error => {
@@ -39,7 +40,7 @@ export default new Vuex.Store({
         commit('logout')
         localStorage.removeItem('token')
         localStorage.removeItem('user')
-        delete axios.defaults.headers.common['Authorization']
+        delete $axios.defaults.headers.common['token']
         resolve()
         reject()
       })

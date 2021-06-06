@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Pilot from '@/components/Pilot.vue'
 import { formPilot } from '@/scripts/pilot'
 import { formValidation } from '@/scripts/formValidation'
@@ -61,12 +60,12 @@ export default {
       const newPilot = {
         pilot_name: this.form.pilotName,
         pilot_surname: this.form.pilotSurname,
-        rfid_code: this.form.rfid,
+        rfid: this.form.rfid,
         pilot_username: this.form.pilotUsername,
         is_admin: this.form.isAdmin
       }
 
-      await axios.post("http://localhost:5000/pilots", newPilot)
+      await this.$axios.post("http://localhost:5000/pilots", newPilot)
         .then(() => {
           this.submitSuccess()
           this.getRfidList()

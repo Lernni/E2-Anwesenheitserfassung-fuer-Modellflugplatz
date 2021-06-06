@@ -125,8 +125,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: "ProtocolOverview",
   data() {
@@ -211,7 +209,7 @@ export default {
         }
       }
 
-      await axios.get(requestURL
+      await this.$axios.get(requestURL
       ).then(result => {
         this.items = result.data['sessions']
         this.sessionCount = result.data['session_count']

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { required, helpers } from 'vuelidate/lib/validators'
 
 const surnameRegex = helpers.regex("surnameRegex", /^([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/)
@@ -122,7 +121,7 @@ export const formPilot = {
       return new Promise((resolve, reject) => {
         this.rfidList.rfidListLoader = true
 
-        axios.get("http://localhost:5000/rfid")
+        this.$axios.get("http://localhost:5000/rfid")
           .then(response => {
             var rfidList = response.data['rfid_list']
             this.rfidList.rfidList = []
@@ -148,7 +147,7 @@ export const formPilot = {
       return new Promise((resolve, reject) => {
         this.username.pilotUsernameLoader = true
   
-        axios.get("http://localhost:5000/pilot-list")
+        this.$axios.get("http://localhost:5000/pilot-list")
           .then(response => {
             this.username.pilotUsernames = response.data['pilots'].map(
               (pilot) => (pilot.pilot_id == this.pilotId) ? null : pilot.pilot_username

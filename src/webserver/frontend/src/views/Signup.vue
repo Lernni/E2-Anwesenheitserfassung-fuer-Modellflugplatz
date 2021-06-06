@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { authService } from '@/scripts/auth'
 import { formValidation } from '@/scripts/formValidation'
 import { required, sameAs } from 'vuelidate/lib/validators'
@@ -87,7 +86,7 @@ export default {
         password: this.encryptPassword(this.form.password)
       }
 
-      await axios.post("http://localhost:5000/signup", signupCredentials)
+      await this.$axios.post("http://localhost:5000/signup", signupCredentials)
       .then(() => {
         // signup successful
         this.signupLoader = false

@@ -62,7 +62,6 @@
 // TODO: letzte Aktualisierung bekommen -> Einstellungen?
 // TODO: conditional rendering des Admin-Panels
 // TODO: POST /sessions?checkout-all
-import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -108,7 +107,8 @@ export default {
   async mounted() {
     this.sessionsLoader = true
 
-    await axios.get("http://localhost:5000/sessions/running")
+    console.log(this.$axios.defaults)
+    await this.$axios.get("http://localhost:5000/sessions/running")
     .then(result => {
       this.items = result.data['sessions'];
       this.noSessions = (this.items.length == 0)

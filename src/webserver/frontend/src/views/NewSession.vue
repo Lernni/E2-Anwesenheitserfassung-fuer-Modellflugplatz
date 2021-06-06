@@ -90,7 +90,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { required, helpers } from 'vuelidate/lib/validators'
 import { formValidation } from '@/scripts/formValidation'
 import { formSession } from '@/scripts/session'
@@ -170,7 +169,7 @@ export default {
 
       console.log(session)
 
-      await axios.post("http://localhost:5000/sessions", session)
+      await this.$axios.post("http://localhost:5000/sessions", session)
         .then(() => {
           this.submitLoader = false
           this.submitState = true
@@ -197,7 +196,7 @@ export default {
   async mounted() {
     this.pilotListLoader = true
 
-    await axios.get("http://localhost:5000/pilot-list")
+    await this.$axios.get("http://localhost:5000/pilot-list")
       .then(response => {
         var pilotList = response.data['pilots'].map((pilot) => ({
           value: pilot.pilot_id,

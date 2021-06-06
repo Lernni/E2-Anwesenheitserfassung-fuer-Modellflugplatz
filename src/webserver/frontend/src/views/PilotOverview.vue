@@ -70,8 +70,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'PilotOverview',
   data() {
@@ -134,7 +132,7 @@ export default {
 
       // check if pilot has a running session
       new Promise((resolve, reject) => {
-        axios.get("http://localhost:5000/sessions/running").then(result => {
+        this.$axios.get("http://localhost:5000/sessions/running").then(result => {
           var sessions = result.data["sessions"]
 
           for (var i = 0; i < sessions.length; i++) {
@@ -157,7 +155,7 @@ export default {
         this.toDeactivatePilot.is_active = false
         this.toDeactivatePilot.rfid = null
 
-        axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
+        this.$axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
           this.items = result.data["pilots"]
           this.deactivateState = true
           this.getPilots()
@@ -191,7 +189,7 @@ export default {
     async getPilots() {
       this.pilotsLoader = true
 
-      await axios.get("http://localhost:5000/pilots?is_active=" + this.filterCriteria.is_active).then(result => {
+      await this.$axios.get("http://localhost:5000/pilots?is_active=" + this.filterCriteria.is_active).then(result => {
         this.items = result.data["pilots"]
         this.pilotsLoader = false
       }, error => {

@@ -112,16 +112,15 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
- if(to.matched.some(record => record.meta.requiresAuth)) {
-    if (store.getters.isLoggedIn) {
-      console.log(store.getters.userInfo)
-      next()
-      return
-    }
-    next('/login')
-  } else {
-    next()
+  if (!to.meta.requiresAuth) return next()
+
+  if (store.getters.isLoggedIn) {
+    var userInfo = JSON.parse(store.getters.userInfo)
+    if (userInfo.is_admin) return next()
+    if (to.meta.roles.includes('pilot')) return next()
   }
+  
+  return next("/login")
 })
 
 export default router
