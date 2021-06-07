@@ -18,6 +18,23 @@ def get_connection(filename):
     cursor.execute("PRAGMA FOREIGN_KEYS=ON")
     return connection
 
+# fügt neuen RFID Ausweis ein
+def insert_rfid(insert_dict):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    select_stmt = cursor.execute(
+        'SELECT RFID_Code FROM RFID_Ausweis WHERE RFID_Code = ?',
+        (insert_dict['rfid_code'],))
+
+    if(select_stmt.fetchone() is None):
+        cursor.execute(
+            'INSERT INTO RFID_Ausweis(RFID_Code) VALUES(?)',
+            (insert_dict['rfid_code'],))
+
+    connection.commit()
+    connection.close()
+    return
 
 # gibt Details eines Piloten mit RFID_Code zurück, -1 falls keiner gefunden
 def get_pilot(RFID_Code):
@@ -41,6 +58,23 @@ def get_pilot(RFID_Code):
     connection.close()
     return return_dict
 
+# fügt neuen Piloten ein
+def insert_pilot(insert_dict):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    try:
+        cursor.execute(
+            'INSERT INTO Pilot(PilotID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES(?, ?, ?, ?, ?, ?)',
+            (insert_dict['pilot_id'], insert_dict['rfid_code'], insert_dict['pilot_name'], insert_dict['pilot_surname'], insert_dict['entry_date'], insert_dict['is_active'],))
+    except:
+        cursor.execute(
+            'UPDATE Pilot SET RFID_Code = ?, Nachname = ?, Vorname = ?, Eintrittsdatum = ?, Ist_Aktiv = ? WHERE PilotID = ?',
+            (insert_dict['rfid_code'], insert_dict['pilot_name'], insert_dict['pilot_surname'], insert_dict['entry_date'], insert_dict['is_active'], insert_dict['pilot_id'],))
+
+    connection.commit()
+    connection.close()
+    return
 
 # erstellt neue Session mit aktueller Uhrzeit, gibt SessionID der neuen Session zurück, -1 wenn RFID_Code nicht existiert
 def create_session(RFID_Code):
@@ -65,7 +99,6 @@ def create_session(RFID_Code):
     serverConnection.sync_sessions()
     return ret
 
-
 # gibt Details einer Session mit SessionID zurück, -1 falls keine gefunden
 def get_session(SessionID):
     connection = get_connection('database_terminal.db')
@@ -87,7 +120,6 @@ def get_session(SessionID):
 
     connection.close()
     return return_dict
-
 
 # gibt Liste aktiver Sessions eines Piloten mit RFID_Code zurück, [] falls keine gefunden
 def get_active_sessions(RFID_Code):
@@ -196,8 +228,16 @@ def set_flugleiter(SessionID):
     serverConnection.sync_sessions()
     return
 
+# startet api zur Synchronisierung von RFID-Ausweisen und Piloten
+def run_api():
+    serverConnection.run_api()
+    return
+
 # zu Testzwecken
 if __name__ == '__main__':
+    run_api()
+    import requests
+
     connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
 
@@ -205,14 +245,12 @@ if __name__ == '__main__':
     rfidcode = 0
     for row in select_stmt:
         rfidcode = row[0]
-
-    if rfidcode != 346352:
-        cursor.execute("INSERT INTO RFID_Ausweis(RFID_Code) VALUES (346352)")
-        cursor.execute(
-            'INSERT INTO Pilot(PilotID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES(123, 346352, "Mustermann", "Max", date("2017-05-15"), 0)')
-
-    connection.commit()
     connection.close()
 
-    id = create_session(346352)
+    if rfidcode != 23434:
+        requests.post('http://127.0.0.1:5000/rfid', data = {'rfid_code': 23434})
+        requests.post('http://127.0.0.1:5000/pilot', data ={'pilot_id': 123, 'rfid_code': 23434, 'pilot_name': 'Mustermann', 'pilot_surname': 'Max', 'entry_date': '2019-04-12', 'is_active': 1})
+
+    id = create_session(23434)
     end_all_sessions()
+    print(get_session(id))
