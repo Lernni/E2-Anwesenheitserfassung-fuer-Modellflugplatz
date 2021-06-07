@@ -10,6 +10,7 @@ import ProtocolOverview from '../views/ProtocolOverview.vue'
 import NewPilot from '../views/NewPilot.vue'
 import EditPilot from '../views/EditPilot.vue'
 import ReactivatePilot from '../views/ReactivatePilot.vue'
+import Settings from '../views/Settings.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -98,6 +99,15 @@ const routes = [
     path: '/pilots/reactivate',
     name: 'ReactivatePilot',
     component: ReactivatePilot,
+    meta: {
+      requiresAuth: true,
+      roles: ['admin']
+    }
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
     meta: {
       requiresAuth: true,
       roles: ['admin']
