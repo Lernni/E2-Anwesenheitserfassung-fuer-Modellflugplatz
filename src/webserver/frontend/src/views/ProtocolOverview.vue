@@ -113,7 +113,7 @@
 
     <p class="font-italic last-ping-info">Letzte Aktualisierung: --:--</p>
 
-    <b-container>
+    <b-container v-if="userInfo.is_admin">
         <b-row class="footer-buttons">
           <b-button variant="primary">Protokolldaten herunterladen</b-button>
         </b-row>

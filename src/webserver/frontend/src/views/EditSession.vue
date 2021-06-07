@@ -15,8 +15,6 @@
       Die angeforderte Flugsession konnte nicht geladen werden!
     </b-alert>
 
-    
-
     <b-overlay :show="sessionLoader">
       <b-form v-show="sessionState" @submit="onSubmit" :novalidate="true">
         <b-container>
@@ -145,7 +143,7 @@ export default {
         .then(() => {
           this.submitLoader = false
           this.submitState = true
-          setTimeout(() => {this.$router.push("/protocol")}, 3000)
+          setTimeout(() => {this.$router.push("/sessions")}, 3000)
         })
         .catch(error => {
           console.log(error)

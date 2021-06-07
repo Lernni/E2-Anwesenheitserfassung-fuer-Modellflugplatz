@@ -5,7 +5,7 @@
         Flugsessions konnten nicht geladen werden!
       </b-alert>
 
-    <b-overlay :show="sessionsLoader">
+    <b-overlay :show="sessionsLoader" spinner-type="grow">
       <b-table class="d-none d-sm-table" striped :items="items" :fields="fieldsDesktop"></b-table>
       <b-table class="d-sm-none" striped :items="items" :fields="fieldsMobile">
         <template #cell(session_leader)="row">
