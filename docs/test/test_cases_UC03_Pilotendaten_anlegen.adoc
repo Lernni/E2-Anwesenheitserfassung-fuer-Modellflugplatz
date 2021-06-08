@@ -26,7 +26,8 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
 |
-|
+a| 
+*Falls kein freier RFID-Tag verfügbar ist -> Man gelangt nicht zur RFID Übersicht beim betätigen des Buttons 
 
 |2
 |Positiv, manuell
