@@ -332,3 +332,6 @@ class Sessions(Resource):
         )
 
         connection.commit()
+        connection.close()
+
+        return {}

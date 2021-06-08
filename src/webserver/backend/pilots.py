@@ -120,7 +120,7 @@ class Pilots(Resource):
 
         cursor.execute(
             'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Nutzername, Passwort, Ist_Admin, Token) '
-            'VALUES(?, ?, ?, date(), ?, NULL, ?, ?)', [rfid, last_name, first_name, username, admin, token]
+            'VALUES(?, ?, ?, date(), ?, NULL, ?, ?)', [rfid, last_name, first_name, username, admin, str(token)]
         )
         connection.commit()
         connection.close()

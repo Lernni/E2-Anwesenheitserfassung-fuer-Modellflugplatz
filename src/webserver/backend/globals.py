@@ -27,7 +27,7 @@ def get_connection(filename):
 
 
 auth_parser = api.parser()
-auth_parser.add_argument('token', type=int, location='headers', required=True)
+auth_parser.add_argument('token', type=str, location='headers', required=True)
 
 
 def is_admin(cursor):
@@ -37,7 +37,7 @@ def is_admin(cursor):
         token = auth_parser.parse_args()['token']
 
         is_admin_db = cursor.execute(
-            'SELECT Ist_Admin FROM Pilot WHERE Token = ?', [token]
+            'SELECT Ist_Admin FROM Pilot WHERE Token LIKE ?', [token]
         ).fetchone()[0]
 
         if not is_admin_db:
@@ -54,7 +54,7 @@ def is_pilot(cursor):
         token = auth_parser.parse_args()['token']
 
         p_id = cursor.execute(
-            'SELECT Ist_Admin FROM Pilot WHERE Token = ?', [token]
+            'SELECT PilotID FROM Pilot WHERE Token LIKE ?', [token]
         ).fetchone()[0]
 
         return p_id
