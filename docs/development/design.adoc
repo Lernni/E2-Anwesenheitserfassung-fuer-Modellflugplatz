@@ -127,12 +127,21 @@ a|* Frontend -> Backend
 | Attribute
 | Start -> Ziel
 
+| /login
+| Anmeldung eines Piloten
+a| * "username": "string"
+  * "password": "string"
+a|
+* Frontend -> Backend
+
 | /pilots
 | Hinzufügen eines neuen Piloten zur Tabelle Pilot
 a|
-* "name": "Mustermann",
-* "rfid": "24572"
-* ...
+* "pilot_name": "string",
+* "pilot_surname": "string"
+* "rfid": "string"
+* "pilot_username": "string"
+* "is_admin": true
 a|
 * Frontend -> Backend
 
@@ -154,6 +163,13 @@ a|
 | Alle Piloten abmelden
 |No parameters
 a|* Terminal -> Backend
+* Frontend -> Backend
+
+| /signup 
+| Erstelle Anmeldung für Pilot 
+a| * "username": "string"
+* "password": "string"
+a|
 * Frontend -> Backend
 
 | /ping
@@ -218,6 +234,16 @@ a|
 JSON
 a|
 * Frontend -> Backend
+
+| /sessions
+| Gastnamen & Gastinformation hinzufügen
+a| * "guest_name": "string"
+* "guest_info": "string"
+a|
+* Frontend -> Backend
+
+
+
 |===
 
 ==== DELETE
