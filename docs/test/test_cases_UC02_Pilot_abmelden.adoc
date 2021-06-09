@@ -38,4 +38,15 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |
 |
 
+|4
+|Positiv, manuell
+|Pilot ist angemeldet, das Terminal hat keinen Internetzugang
+|Pilot meldet sich am Terminal mit der RFID-Karte ab.
+|*Der Pilot erhält ein positives Feedback über die LED.
+*Die Endzeit der Flugsession wird in der lokalen DB des Terminals gestartet
+*Bei funktionierendem Internetzugang wird das Ende der Flugsession an die DB auf dem Webserver gesendet
+|
+|
+
+
 |===
