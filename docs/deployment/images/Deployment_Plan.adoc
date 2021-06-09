@@ -24,11 +24,11 @@ Eine hohe Priorität an das neue System besitzt das exakte zeitliche Erfassen de
 
 === Wann müssen die Funktionen verfügbar sein?
 
-Ein vom Themensteller festgelegtes Datum, wann die Funktionen verfügbar sein sollen, gibt es nicht. Das Projektteam plant mit einer Fertigstellung aller Funktionen spätestens Mitte Juni. Für eine reibungslose Übergabe wünschen sich die Themensteller ein bereits eingerichteten Administrator.
+Ein vom Themensteller festgelegtes Datum, wann die Funktionen verfügbar sein sollen, gibt es nicht. Das Projektteam plant mit einer Fertigstellung aller Funktionen spätestens Mitte Juni. Für eine reibungslose Übergabe wünschen sich die Themensteller ein bereits eingerichteten Administrator. Zu Testzwecken wird der Webserver dem Auftraggeber schon vor der fertigen Veröffentlichung übergeben, um unter anderem die Kommunikation zwischen Terminal und Webserver zu testen.
 
 === Wo befinden sich die Endbenutzer?
 
-Die Endbenutzer werden je nach der zu verwendenden Funktion an unterschiedlichen Orten sein. Möchte sich ein Pilot an- oder abmelden, dann wird dies immer am gleichen Ort auf dem Flugplatz geschehen. Es wird dabei nicht zwischen Pilot und Administrator unterschieden. Auf die Web-Site hingegen kann jeder Endbenutzer von seinem Smartphone oder Computer aus zugreifen. Um die Web-Site aufrufen zu können, benötigen die Endbenutzer lediglich ein Gerät, welches Internetfähig ist.
+Die Endbenutzer werden je nach der zu verwendenden Funktion an unterschiedlichen Orten sein. Möchte sich ein Pilot an- oder abmelden, dann wird dies immer am gleichen Ort auf dem Flugplatz geschehen. Es wird dabei nicht zwischen Pilot und Administrator unterschieden. Auf die Web-Site hingegen kann jeder Endbenutzer von seinem Smartphone oder Computer aus zugreifen. Um die Web-Site aufrufen zu können, benötigen die Endbenutzer lediglich ein Gerät, welches Internetfähig ist und einen Webbrowser der java.script aktiviert hat. Die Administratoren benötigen zusätzlich noch einen RFID-Scanner um die RFID-Ausweise konfigurieren zu können. 
 
 === Warum findet die Veröffentlichung statt?
 
