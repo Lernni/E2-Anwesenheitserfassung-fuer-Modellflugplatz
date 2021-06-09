@@ -1,0 +1,72 @@
+== Test Cases: Einstellungen
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+=== Beschreibung
+
+In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
+
+=== TestCases
+
+[%header, cols=7*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+|Erfolgreich?
+|Nachgebessert
+
+|1
+|Positiv, manuell
+|
+|* Einstellungen zu Tasten-/Bedienkonfigurationen werden mit gültigen Werten belegt
+* Anmeldung am Terminal
+|LED-Rückmeldungen, Dauern, Kombinationen funktionieren wie eingetragen
+|
+|
+
+|2
+|Positiv, manuell
+| -
+|Änderung der Uhrzeit der täglichen Pilotenabmeldung wird mit gültigen Werten verändert
+|Alle noch aktiven Piloten werden nun zu dieser Zeit abgemeldet
+|
+|
+
+|3
+|Positiv, manuell
+| -
+|* Änderung der Toleranzzeit für das Terminal
+* An- und Abmeldung am Terminal innerhalb der neuen Toleranzzeit
+|Die Flugsession wird nicht eingetragen
+|
+|
+
+|4
+|Positiv, manuell
+|-
+|RFID-Karten hinzufügen
+|Die RFID-Karten sind nun im System eingetragen und können den Piloten zugewiesen werden
+|
+|
+
+|5
+|Negativ, manuell
+|Ein Pilot besitzt eine konkrete RFID-Karte
+|Diese RFID-Karte wird deaktiviert
+|Es erscheint ein Fehler, dass die Karte nicht deaktiviert werden kann, da in Benutzung
+|
+|
+
+|6
+|Positiv, manuell
+|Ein Pilot besitzt eine konkrete RFID-Karte
+|* Diese RFID-Karte wird vom Piloten entfernt
+* Diese RFID-Karte wird deaktiviert
+|Die RFID-Karte wurde erfolgreich entfernt
+|
+|
+
+|===
