@@ -69,4 +69,14 @@ a|* Das System macht auf die einmalige Festlegung auf ein Passwort aufmerksam (d
 |
 |
 
+|6
+|Positiv, manuell
+a|* *Pilot* wurde erfolgreich erstellt
+* Das Terminal hat eine aktive Internetverbindung
+|Internetverbindung des Terminals wird unterbrochen 
+a|* Der erstellte Pilot wurde in der lokalen DB des Terminals eingetragen
+* Eine Anmeldung des Piloten am Terminal ist erfolgreich möglich
+|
+|
+
 |===
