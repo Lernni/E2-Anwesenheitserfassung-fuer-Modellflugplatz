@@ -128,6 +128,7 @@ def get_active_sessions(RFID_Code):
 
     pilot = get_pilot(RFID_Code)
     if pilot == -1:
+        connection.close()
         return []
 
     select_stmt = cursor.execute(
@@ -252,5 +253,5 @@ if __name__ == '__main__':
         requests.post('http://127.0.0.1:5000/pilot', data ={'pilot_id': 123, 'rfid_code': 23434, 'pilot_name': 'Mustermann', 'pilot_surname': 'Max', 'entry_date': '2019-04-12', 'is_active': 1})
 
     id = create_session(23434)
-    end_all_sessions()
+    print(get_active_sessions(23434))
     print(get_session(id))

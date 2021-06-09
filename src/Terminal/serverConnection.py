@@ -52,7 +52,10 @@ def sync_sessions():
             continue
 
         databaseAccess.set_synced(session['session_id'])
+    
+    return
 
+# minimale REST-API zur Synchronisierung von Piloten, RFID-Ausweisen und Einstellungen
 def run_api():
     app = Flask(__name__)
 
@@ -79,3 +82,5 @@ def run_api():
 
     t = threading.Thread(target = app.run)
     t.start()
+
+    return
