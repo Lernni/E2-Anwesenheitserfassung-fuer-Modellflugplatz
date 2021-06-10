@@ -20,41 +20,49 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 |1
 |Positiv, manuell
-a|* *Pilot* ist bereits im _System_ angelegt worden
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Plausible Veränderung der `Pilotendaten` in der _Mitgliederverwaltung_ (z.B. Nachnamen ändern)
-a|* Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht
-* geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-|
-|
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* *Pilot* ist bereits im _System_ angelegt worden
+a|* Plausible Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. Durch _Speichern_ bestätigt man die Eingabe. 
+* *(Testdaten: Beim Piloten "Lisa Mustermann" wird der Nachname im _Bearbeitungsfeld: Nachname_ in Musterfrau geändert)*
+a|* Der Nutzername passt sich der entsprechenden Veränderung an. 
+* Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht
+* Geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
+| Ja, erfolgreich.
+| /
 
 |2
 |Negativ, manuell
-a|* *Pilot* ist bereits im _System_ angelegt worden
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Unlogische Veränderung der `Pilotendaten` in der _Mitgliederverwaltung_ (z.B. Zahlen/Sonderzeichen im Namen enthalten)
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* *Pilot* ist bereits im _System_ angelegt worden
+a|* Unlogische Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. 
+* *(Testdaten: Beim Piloten Max Mustermann wird im _Bearbeitungsfeld: Vorname_ die Nummer 10 angefügt.)*
 a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
 * das Speichern ist nicht möglich
-|
-|
+| Ja, erfolgreich.
+| /
 
 |3
 |Positiv, manuell
-a|* *Pilot* ist bereits im _System_ angelegt worden
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Dem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben 
-|Der jeweilige *Pilot* muss Zugriff für die _Admin-Seite_ haben
-|
-|
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* *Pilot* ist bereits im _System_ angelegt worden 
+* *Pilot* ist noch kein *Admin*
+a|* Einem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben 
+* *(Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ ein Haken gesetzt.)*
+a|* Der jeweilige *Pilot* hat jetzt Zugriff auf die _Admin-Seite_ 
+* In der _User Information_ ändert sich die Rolle in *Admin* 
+| Ja, erfolgreich.
+| /
 
 |4
 |Positiv, manuell
-a|* *Pilot* ist bereits im _System_ angelegt worden
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Das Passwort vom *Pilot* wird zurückgesetzt 
-|Beim erneute Anmelden, ist es dem *Pilot* möglich, ein neues beliebiges Passwort zu wählen  
-|
-|
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* *Pilot* ist bereits im _System_ angelegt worden
+a|* Das Passwort von einem *Pilot* wird zurückgesetzt 
+* *(Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Passwort zurücksetzen_ ein Haken gesetzt.)*
+a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelden. 
+* Dem *Pilot* ist es möglich, sich mit einem neuen Passwort zu registrieren.
+|Ja, erfolgreich.
+| Sehr gut wäre: Bei einer fehlgeschlagenden Anmeldung eine Rückmeldung zu bekommen.
 
 |===
 
