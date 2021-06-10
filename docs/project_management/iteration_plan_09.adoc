@@ -43,23 +43,23 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 | 
 
-706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-9 | Lenny, Dirk | 2 | 2 |
+706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-10 | Lenny, Dirk | 2 | 2 |
 
 707 | Domainmodell überarbeiten |  | 2 | 100% | 7-9 | Richard | 2 | 0 |
 
 708 | REST-API umsetzen |  | 24 | 95% | 7-9 | Implementierung | 25 | 5 |
 
-801 | Komponentendiagramm erstellen |  | 24 | 75% | 8 | Jakob, Dirk | 3 | 1 |
+801 | Komponentendiagramm erstellen |  | 24 | 100% | 8-9 | Jakob, Dirk | 4 | 0 |
 
-802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 80% | 8-9 | Max, Dirk | 2 | 1 |
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 90% | 8-10 | Max, Dirk | 3 | 2 |
 
-803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 6 | 90% | 8-9 | Jakob | 4 | 1 |
+803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 6 | 100% | 8-9 | Jakob | 5 | 0 |
 
-804 | Synchronisation Webserver - Terminal implementieren |  | 24 | 20% | 8-9 | Implementierung | 10 | 20 |
+804 | Synchronisation Webserver - Terminal implementieren |  | 24 | 65% | 8-10 | Implementierung | 20 | 10 |
 
-806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-9 | Max, Dirk | 10 | 25 |
+806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-10 | Max, Dirk | 10 | 25 |
 
-808 | Erstellung spezifischer Test-Cases |  | 24 | 70% | 8-10 | Alex, Analyse | 8 | 5 |
+808 | Erstellung spezifischer Test-Cases |  | 24 | 90% | 8-10 | Alex, Analyse | 14 | 5 |
 
 809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 0% | 8-9 | Richard | 0 | 2 |
 
@@ -67,13 +67,15 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 902 | Durchführung der Test-Cases |  | 24 | 0% | 9 | Alex, Jakob | 0 | 11 |
 
-903 | Frontend responsive gestalten |  | 24 | 75% | 9 | Lenny | 6 | 4 |
+903 | Frontend responsive gestalten |  | 24 | 100% | 9 | Lenny | 10 | 0 |
 
-903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 75% | 9 | Lenny | 10 | 5 |
+903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 13 | 2 |
 
-904 | Frontend Login erstellen |  | 6 | 50% | 9 | Lenny | 2 | 2 |
+904 | Frontend Login erstellen |  | 6 | 90% | 9-10 | Lenny | 3 | 1 |
 
 905 | Dokumentation überprüfen |  | 24 | 90% | 9-10 | Jakob, Richard | 8 | 2 |
+
+// Deployment ergänzen , Iteration 9, 100% 
 
 |===
 
