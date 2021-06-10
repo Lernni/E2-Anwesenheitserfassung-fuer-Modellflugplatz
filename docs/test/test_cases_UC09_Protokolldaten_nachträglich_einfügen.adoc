@@ -21,32 +21,36 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |1
 |Positiv, manuell
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
-|Über die _Admin-Seite_ beim _Formular_ existierenden Pilotennamen und plausible Start-Endzeit nachtragen.
-a| * Nach dem erfolgreichen speichern, gelangt man .....
-* Neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt & im Bereich der _Flugsession bearbeiten_ angezeigt und bearbeitbar sein 
-|
-|
+* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
+a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen.
+* *(Testdaten: Eine normale `Flugsession` vom Piloten: "Max Mustermann" am Datum: "03.06.2021" mit der Startzeit: "15:00" und Endzeit: "19:00" in den jeweiligen _Bearbeitungsfeldern_ eintragen.)*
+a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
+* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein 
+* Die neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt 
+| Ja, erfolgreich.
+| /
 
 |2
 |Negativ, manuell
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
-| Über die _Admin-Seite_ beim _Formular_ nicht existierenden Pilotennamen und plausible Start-Endzeit nachtragen.
-a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
+* Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
+a|* `Flugsession` über _Flüge nachtragen_ mit nicht plausiblen `Flugdaten` nachtragen.
+* *(Testdaten: Eine normale `Flugsession` vom Piloten: "Max10 Mustermann" am Datum: "03.06.2021" mit der Startzeit: "15:00" und Endzeit: "19:00" in den jeweiligen _Bearbeitungsfeldern_ eintragen.)*
+a|* Fehlerhafte Eingabe (*Pilot* existiert nicht) muss dem *Administrator* kenntlich gemacht werden
 * das Speichern ist nicht möglich
-|
-|
+| Ja, erfolgreich.
+| /
 
 |3
 |Negativ, manuell
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere Flugsessions).
-| Über die _Admin-Seite_ beim _Formular_  existierenden Pilotennamen und nicht plausible Start-Endzeit nachtragen. (z.B. Endzeit ist vor der Startzeit)
-a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
+a|* `Flugsession` über _Flüge nachtragen_ mit nicht plausiblen `Flugdaten` nachtragen.
+* *(Testdaten: Eine normale `Flugsession` vom Piloten: "Lisa Musterfrau" am Datum: "04.06.2021" mit der Startzeit: "19:00" und Endzeit: "15:00" in den jeweiligen _Bearbeitungsfeldern_ eintragen.)*
+a|* Fehlerhafte Eingabe (Ungültige Zeitangabe) muss dem *Administrator* kenntlich gemacht werden
 * das Speichern ist nicht möglich
-|
-|
+| Ja, erfolgreich.
+| /
 
 
 |===
