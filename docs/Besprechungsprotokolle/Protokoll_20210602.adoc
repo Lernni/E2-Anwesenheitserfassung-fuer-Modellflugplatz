@@ -1,0 +1,60 @@
+= Protokoll vom 02.06.2021
+1.0 02.06.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Fortschritte Frontend -> Lenny
+- Terminal, Synchronisation -> Dirk
+- TestCases, Iterationsplanung -> Alex, Jakob
+- Wireframes -> Alex
+- Deployment -> Richard
+- Terminal, Backend -> Max
+- Dokumentation -> Jakob, Richard
+
+== Schwerpunkte
+- Frontend durchgegangen
+- Backend: Update Datenmodell -> Ist_aktiv Spalte entfernen aus Tabelle Pilot
+- Reflexion Praktikum Entwurf:
+* Klärung Komponenten-/Paketdiagramm
+* Inhalt des Projektberichts
+* Deployment -> Nutzergruppen
+- Deployment planen
+* Herr Brenner involvieren -> Webserver SSH Zugang
+* Flugleiterknopf anfordern
+- Planung Fachaustausch Test
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Test-Cases erstellen (Issue #63) -> Alex, Jakob
+
+=== vom 05.05.
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Komponentendiagramm entwerfen (Issue #79) -> Dirk, Jakob
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+
+=== vom 12.05.
+- Test-Case 1 erstellen (Issue #84) -> Team Analyse, Max und Alex
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Bilder verlinken und einpflegen (Issue #86) -> Jakob
+- Recherche: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+=== vom 19.05.
+- Paketdiagramm/Komponentendiagramm korrigieren -> Lenny, Dirk, Jakob
+
+=== vom 25.05.
+- Frontend -> Lenny
+* Responsive gestalten (Issue #90)
+* Vervollständigen (Issue #91)
+* Login implementieren (Issue #92)
+- Dokumentation auf Aktualität prüfen -> Jakob, Richard
+
+=== aktuell
+- Design/Architecture-Notebook aktualisieren -> Team Implementierung
+- Projektbericht erstellen/Ideen sammeln -> Jakob, Richard
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 09.06.21, 17 Uhr
+- nächstes Kundenmeeting: vorraussichtlich Mi 09.06.21, 17:30 Uhr

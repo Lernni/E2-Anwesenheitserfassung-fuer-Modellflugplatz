@@ -1,0 +1,65 @@
+= Protokoll vom 09.06.2021
+1.0 09.06.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Frontend -> Lenny
+- Terminal, Synchronisation -> Dirk
+- TestCases, Iterationsplanung -> Alex, Jakob
+- Wireframes -> Alex
+- Deploymentdiagramm -> Richard
+- Dokumentation, Projektbericht -> Jakob, Richard
+- Terminal, Backend -> Max
+
+== Schwerpunkte
+- Iterationswechsel: Iteration 9 -> Iteration 10
+* Construction Phase beendet
+- Fortschritte Frontend, Anmeldung Nutzerverwaltung möglich
+- Reflexion SE Praktkium Test:
+* Fokus soll auf automatisierte Tests, UnitTests legen -> Selenium, Mockup Module
+* Schwer umsetzbar, für die verbleibende Zeit nicht zielführend -> Weiter fortfahren mit Integrationstests
+- SSH Zugang von Herr Brenner funktioniert
+- Meeting zu Fragen zum Deployment und Einrichtung des Webservers am kommenden Samstag
+- Planung Deploymentdiagramm -> Meeting Deployment + Entwicklung
+- Planung Fachaustausch Dokumentation -> nach Kundenmeeting am Samstag
+- Fortschritte Projektbericht (Ausformulierte Teile und Ideen) -> Vorstellung nächste Woche Mittwoch
+- Diskussion Synchronisationsvorgang
+- Fehlende Requests für Backend bestimmt
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Test-Cases korrigieren (Issue #63) -> Alex, Jakob
+
+=== vom 05.05.
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Deploymentdiagramm entwerfen (Issue #80) -> Richard
+
+=== vom 12.05.
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Recherche: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+=== vom 19.05.
+- Paketdiagramm Terminal korrigieren -> Lenny, Dirk, Jakob
+
+=== vom 25.05.
+- Frontend -> Lenny
+* Vervollständigen (Issue #91)
+* Login implementieren (Issue #92)
+- Dokumentation auf Aktualität prüfen -> Jakob, Richard
+
+=== vom 02.06.
+- Design/Architecture-Notebook aktualisieren -> Team Implementierung
+- Projektbericht erstellen/Ideen sammeln -> Jakob, Richard
+
+=== aktuell
+- Synchronisation vervollständigen (Issue #97) -> Max, Dirk
+- Webserver aufstzen (Issue #98) -> Lenny
+- Datenmodell aktualisieren (Issue #99)
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 16.06.21, 17 Uhr
+- nächstes Kundenmeeting: Sa 12.06.21, 16 Uhr
+- Meeting Deployment + Entwicklung: Di 15.06.21, 15 Uhr
