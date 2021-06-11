@@ -122,7 +122,7 @@ export default {
 
       // check if pilot has a running session
       new Promise((resolve, reject) => {
-        this.$axios.get("http://localhost:5000/sessions/running").then(result => {
+        this.$axios.get("/sessions/running").then(result => {
           var sessions = result.data["sessions"]
 
           for (var i = 0; i < sessions.length; i++) {
@@ -144,7 +144,7 @@ export default {
         // pilot has no running session and can be deactivated
         this.toDeactivatePilot.rfid = null
 
-        this.$axios.put("http://localhost:5000/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
+        this.$axios.put("/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
           this.items = result.data["pilots"]
           this.deactivateState = true
           this.getPilots()
@@ -178,7 +178,7 @@ export default {
     async getPilots() {
       this.pilotsLoader = true
 
-      await this.$axios.get("http://localhost:5000/pilots?is_active=" + this.isActive).then(result => {
+      await this.$axios.get("/pilots?is_active=" + this.isActive).then(result => {
         this.items = result.data["pilots"]
         console.log(this.items)
         this.pilotsLoader = false

@@ -169,7 +169,7 @@ export default {
 
       console.log(session)
 
-      await this.$axios.post("http://localhost:5000/sessions", session)
+      await this.$axios.post("/sessions", session)
         .then(() => {
           this.submitLoader = false
           this.submitState = true
@@ -196,7 +196,7 @@ export default {
   async mounted() {
     this.pilotListLoader = true
 
-    await this.$axios.get("http://localhost:5000/pilot-list")
+    await this.$axios.get("/pilot-list")
       .then(response => {
         var pilotList = response.data['pilots'].map((pilot) => ({
           value: pilot.pilot_id,

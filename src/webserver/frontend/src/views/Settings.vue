@@ -230,7 +230,7 @@ export default {
   methods: {
     async getRfidList() {
 
-      this.$axios.get("http://localhost:5000/rfid")
+      this.$axios.get("/rfid")
       .then(response => {
         this.freeRfidList = response.data['rfid_list']
         console.log(this.freeRfidList)

@@ -104,7 +104,7 @@ export default {
     this.sessionId = this.$route.query.id
     this.sessionLoader = true
 
-    await this.$axios.get("http://localhost:5000/sessions?from=" + this.sessionId + "&to=" + this.sessionId)
+    await this.$axios.get("/sessions?from=" + this.sessionId + "&to=" + this.sessionId)
       .then(response => {
         this.sessionLoader = false
 
@@ -139,7 +139,7 @@ export default {
         guest_info: this.form.guestText
       }
 
-      await this.$axios.put("http://localhost:5000/sessions?id=" + this.sessionId, newSession)
+      await this.$axios.put("/sessions?id=" + this.sessionId, newSession)
         .then(() => {
           this.submitLoader = false
           this.submitState = true

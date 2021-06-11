@@ -65,7 +65,7 @@ export default {
         is_admin: this.form.isAdmin
       }
 
-      await this.$axios.post("http://localhost:5000/pilots", newPilot)
+      await this.$axios.post("/pilots", newPilot)
         .then(() => {
           this.submitSuccess()
           this.getRfidList()

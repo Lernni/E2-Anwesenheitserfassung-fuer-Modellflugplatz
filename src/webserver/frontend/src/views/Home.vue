@@ -111,7 +111,7 @@ export default {
     var userInfo = JSON.parse(this.$store.getters.userInfo)
     this.isAdmin = userInfo.is_admin
 
-    await this.$axios.get("http://localhost:5000/sessions/running")
+    await this.$axios.get("/sessions/running")
     .then(result => {
       this.items = result.data['sessions'];
       this.noSessions = (this.items.length == 0)

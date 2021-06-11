@@ -61,7 +61,7 @@ export default {
     await this.getRfidList()
     await this.getPilotUsernames()
 
-    await this.$axios.get("http://localhost:5000/pilots?id=" + this.pilotId + "&is_active=false")
+    await this.$axios.get("/pilots?id=" + this.pilotId + "&is_active=false")
       .then(response => {
         this.pilot.pilotLoader = false
 
@@ -97,7 +97,7 @@ export default {
         is_active: true
       }
 
-      await this.$axios.put("http://localhost:5000/pilots", newPilot)
+      await this.$axios.put("/pilots", newPilot)
         .then(() => {
           this.submitSuccess()
           this.resetPassword = false

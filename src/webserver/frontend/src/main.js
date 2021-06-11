@@ -21,6 +21,8 @@ if (token) {
   $axios.defaults.headers.common['token'] = token
 }
 
+$axios.defaults.baseURL = process.env.VUE_APP_BACKEND_API
+
 Vue.prototype.$axios = $axios
 
 new Vue({

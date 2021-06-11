@@ -87,7 +87,7 @@ export default {
         password: this.encryptPassword(this.form.password)
       }
 
-      await this.$axios.post("http://localhost:5000/signup", signupCredentials)
+      await this.$axios.post("/signup", signupCredentials)
       .then(() => {
         // signup successful
         this.signupLoader = false

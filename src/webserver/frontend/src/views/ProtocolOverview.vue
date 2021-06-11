@@ -201,7 +201,7 @@ export default {
       var from = ((this.currentPage - 1) * this.perPage) + 1
       var to = from + this.perPage - 1
 
-      var requestURL = "http://localhost:5000/sessions?from=" + from + "&to=" + to
+      var requestURL = "/sessions?from=" + from + "&to=" + to
 
       if (this.filteredSessions) {
         requestURL += "&start_date=" + new Date(this.startDate).toISOString().split('T')[0] + "&end_date=" + new Date(this.endDate).toISOString().split('T')[0]
