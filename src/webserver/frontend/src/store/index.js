@@ -15,13 +15,10 @@ export default new Vuex.Store({
     login({commit}, loginCredentials) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
-        axios.post("http://localhost:5000/login", loginCredentials)
+        axios.post(process.env.VUE_APP_BACKEND_API + "/login", loginCredentials)
         .then(response => {
-          console.log(response)
           const token = response.data.token
           const user = response.data.user
-          console.log(token)
-          console.log(user)
           localStorage.setItem('token', token)
           localStorage.setItem('user', JSON.stringify(user))
           console.log(localStorage.getItem('user'))

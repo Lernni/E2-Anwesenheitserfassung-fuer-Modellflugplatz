@@ -16,7 +16,6 @@ Vue.use(Vuelidate)
 export const $axios = axios
 
 const token = localStorage.getItem('token')
-console.log(token)
 if (token) {
   $axios.defaults.headers.common['token'] = token
 }
