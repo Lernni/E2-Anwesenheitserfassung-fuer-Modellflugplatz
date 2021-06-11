@@ -67,7 +67,12 @@ export default {
 
       this.$store.dispatch("login", loginCredentials)
       .then(() => this.$router.push("/"))
-      .catch(err => console.log(err))
+      .catch(error => {
+        console.log(error)
+        this.loginLoader = false
+        this.loginState = false
+        this.$v.$reset()
+      })
     }
   }
 }

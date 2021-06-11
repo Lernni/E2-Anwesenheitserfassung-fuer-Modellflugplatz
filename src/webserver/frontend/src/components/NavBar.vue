@@ -27,6 +27,8 @@
 
 <script>
 import store from '../store'
+import VueRouter from 'vue-router'
+const { isNavigationFailure, NavigationFailureType } = VueRouter
 
 export default {
   name: "NavBar",
@@ -54,7 +56,11 @@ export default {
     logout: function () {
       store.dispatch('logout')
       .then(() => {
-        this.$router.push('/login')
+        this.$router.push('/login').catch(failure => {
+          if (isNavigationFailure(failure, NavigationFailureType.duplicated)) {
+            this.$router.go()
+          }
+        })
       })
     }
   },
