@@ -22,34 +22,14 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |Positiv, manuell
 a|* *Pilot* ist bereits im _System_ angelegt und deaktiviert worden
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Auf der _Admin-Seite_ über die _Mitgliederverwaltung_ alle deaktivierten Piloten anzeigen lassen (über _Zeige deaktivierte Piloten_). In der Übersicht den  
-deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zu ordenen und die hinterlegten `Pilotendaten` bestätigen.
-a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur Pilotenübersicht
+a|* In der _Pilotenübersicht_ über _Zeige inaktive Piloten_ die `Pilotendaten` aller deaktivierten *Piloten* anzeigen lassen.
+In der Übersicht den  
+deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zu ordenen. 
+Diese mit den `Pilotendaten` durch _Reaktivieren_ bestätigen.
+* *(Testdaten: Den Pilot Maxi Musti über _Reaktivieren_ reaktivieren. Die _RFID-Kennung: 0x8235_ auswählen und `Pilotendaten` und `Login_Informationen` bestätigen durch _Reaktivieren_. )*
+a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur _Pilotenübersicht_
 * der *Pilot* erscheint bei den aktiven Piloten. (über _Zeige aktive Piloten_)
-|
-|
-
-|2
-|Negativ, manuell
-a|* *Pilot* ist bereits im _System_ angelegt und deaktiviert worden
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Auf der _Admin-Seite_ über die _Mitgliederverwaltung_ alle deaktivierten Piloten anzeigen lassen (über _Zeige deaktivierte Piloten_). In der Übersicht den  
-deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine ungültige RFID-Kennung zu ordenen und die hinterlegten `Pilotendaten` bestätigen.
-a|* Das bestätigen ist nicht möglich. 
-* Fehlermeldung erscheint, das die RFID-Kennung ungültig ist.
-|
-|
-
-
-|3
-|
-|
-|
-|
-|
-|
-
-
-
+| Ja, erfolgreich.
+| /
 
 |===
