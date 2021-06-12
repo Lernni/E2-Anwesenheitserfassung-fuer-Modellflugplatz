@@ -43,7 +43,7 @@ def sync_sessions():
             }
 
         try:
-         response = requests.post(url = serverURL + '/sessions', json = payload, timeout = 2)
+            response = requests.post(url = serverURL + '/sessions', json = payload, timeout = 2)
         except:
             print('Server temporarily unavailable')
             return
@@ -67,7 +67,8 @@ def run_api():
             'pilot_name': request.form['pilot_name'],
             'pilot_surname': request.form['pilot_surname'],
             'entry_date': request.form['entry_date'],
-            'is_active': request.form['is_active']
+            'is_active': request.form['is_active'],
+            'token': request.form['token']
         }
         databaseAccess.insert_pilot(insert_dict)
         return insert_dict

@@ -200,7 +200,6 @@ def end_session(SessionID):
     serverConnection.sync_sessions()
     return
 
-
 # setzt Endzeit aller aktiven Sessions auf aktuelle Zeit
 def end_all_sessions():
     connection = get_connection('database_terminal.db')
@@ -213,7 +212,6 @@ def end_all_sessions():
     connection.close()
     serverConnection.sync_sessions()
     return
-
 
 # setzt Flugleiterstatus
 def set_flugleiter(SessionID):

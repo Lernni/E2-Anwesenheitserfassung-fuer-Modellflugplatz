@@ -89,12 +89,12 @@ Mögliche Änderungen auf Seite des Webservers:
 
 * Neue Einträge in die Tabelle Pilot (neuen Pilot anlegen)
 * Modifizierte Einträge in der Tabelle Pilot (Pilotendaten modifizieren, Pilot deaktivieren, ...)
-* Neue Einträge in die Tabelle Flugsession (Flüge nachtragen)
 * Neue Einträge in die Tabelle RFID-Ausweis (RFID-Ausweis hinzufügen)
 
 Mögliche Änderungen auf Seite des Terminals:
 
 * Neue Einträge in die Tabelle Flugsession (An-/Abmeldung, Flugleiter bestimmen)
+* Modifizierte Einträge in der Tabelle Flugsession (Flugleiter setzen, Endzeit hinzufügen)
 
 Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen.
 Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Daten nicht mit synchronisiert. 
