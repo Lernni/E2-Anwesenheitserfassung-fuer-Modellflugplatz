@@ -64,10 +64,6 @@ def run_api():
         insert_dict = {
             'pilot_id': request.form['pilot_id'],
             'rfid_code': request.form['rfid_code'],
-            'pilot_name': request.form['pilot_name'],
-            'pilot_surname': request.form['pilot_surname'],
-            'entry_date': request.form['entry_date'],
-            'is_active': request.form['is_active'],
             'token': request.form['token']
         }
         databaseAccess.insert_pilot(insert_dict)

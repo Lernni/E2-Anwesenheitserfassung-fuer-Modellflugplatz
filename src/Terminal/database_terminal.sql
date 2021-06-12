@@ -10,10 +10,7 @@ CREATE TABLE IF NOT EXISTS Pilot
 (
     PilotID        integer,
     RFID_Code      integer,
-    Nachname       varchar(20) NOT NULL,
-    Vorname        varchar(20) NOT NULL,
-    Eintrittsdatum date        NOT NULL,
-    Ist_Aktiv      bool,
+    Token          varchar(20),
 
 -- TODO
     PRIMARY KEY (PilotID),

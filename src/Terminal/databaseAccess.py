@@ -42,7 +42,7 @@ def get_pilot(RFID_Code):
     cursor = connection.cursor()
 
     select_stmt = cursor.execute(
-        'SELECT PilotID, RFID_code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv FROM Pilot WHERE RFID_Code = ?',
+        'SELECT PilotID, RFID_code, Token FROM Pilot WHERE RFID_Code = ?',
         (RFID_Code,))
 
     return_dict = -1
@@ -50,9 +50,7 @@ def get_pilot(RFID_Code):
         return_dict = {
             'pilot_id': row[0],
             'rfid_code': row[1],
-            'pilot_name': row[3] + " " + row[2],
-            'entry_date': row[4],
-            'active': row[5]
+            'token': row[2]
         }
 
     connection.close()
@@ -65,12 +63,12 @@ def insert_pilot(insert_dict):
 
     try:
         cursor.execute(
-            'INSERT INTO Pilot(PilotID, RFID_Code, Nachname, Vorname, Eintrittsdatum, Ist_Aktiv) VALUES(?, ?, ?, ?, ?, ?)',
-            (insert_dict['pilot_id'], insert_dict['rfid_code'], insert_dict['pilot_name'], insert_dict['pilot_surname'], insert_dict['entry_date'], insert_dict['is_active'],))
+            'INSERT INTO Pilot(PilotID, RFID_Code, Token) VALUES(?, ?, ?)',
+            (insert_dict['pilot_id'], insert_dict['rfid_code'], insert_dict['token'],))
     except:
         cursor.execute(
-            'UPDATE Pilot SET RFID_Code = ?, Nachname = ?, Vorname = ?, Eintrittsdatum = ?, Ist_Aktiv = ? WHERE PilotID = ?',
-            (insert_dict['rfid_code'], insert_dict['pilot_name'], insert_dict['pilot_surname'], insert_dict['entry_date'], insert_dict['is_active'], insert_dict['pilot_id'],))
+            'UPDATE Pilot SET RFID_Code = ?, Token = ? WHERE PilotID = ?',
+            (insert_dict['rfid_code'], insert_dict['token'], insert_dict['pilot_id'],))
 
     connection.commit()
     connection.close()
@@ -248,8 +246,9 @@ if __name__ == '__main__':
 
     if rfidcode != 23434:
         requests.post('http://127.0.0.1:5000/rfid', data = {'rfid_code': 23434})
-        requests.post('http://127.0.0.1:5000/pilot', data ={'pilot_id': 123, 'rfid_code': 23434, 'pilot_name': 'Mustermann', 'pilot_surname': 'Max', 'entry_date': '2019-04-12', 'is_active': 1})
+        requests.post('http://127.0.0.1:5000/pilot', data ={'pilot_id': 123, 'rfid_code': 23434, 'token': 'edth'})
 
     id = create_session(23434)
+    print(get_pilot(23434))
     print(get_active_sessions(23434))
     print(get_session(id))
