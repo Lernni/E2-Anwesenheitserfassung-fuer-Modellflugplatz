@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS Pilot
 (
     PilotID        integer,
     RFID_Code      integer,
-    Token          varchar(20),
+    Token          varchar(20) NOT NULL,
 
 -- TODO
     PRIMARY KEY (PilotID),
