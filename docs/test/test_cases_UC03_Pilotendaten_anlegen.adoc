@@ -22,14 +22,51 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 |Positiv, manuell
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Erstellung eines Piloten mit verschiedensten Attributen
+|Erstellung eines Piloten mit gültigen Attributen (inkl. Sonderzeichen)
+Verwendete Daten:
+*Alexander Heiß
+*RFID-Kennung: 0xaae0cf
+*Adminrechte: Ja
 a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-|
+|Erfolgreich
 a| 
-*Falls kein freier RFID-Tag verfügbar ist -> Man gelangt nicht zur RFID Übersicht beim betätigen des Buttons 
 
 |2
+|Negativ, manuell
+a|* *Pilot* ist *noch nicht* im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Erstellung eines Piloten mit kritischen Wertenkurzem Namen, kleingeschriebenen Namen, sehr langen Namen, Sonderzeichen, Zahlen
+Verwendete Daten:
+* 1) A He
+* 2) Al H
+* 3) Aléx $$$$)
+* 4) Alexsdfs...[weitere 200 Zeichen]...ffdd Heiß
+* 5) ____ A_____
+* 6) (leer)
+* 7) Alex Alex Heiß
+* 8) Aléx Heiß
+a| * Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
+* die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
+|
+a| 1), 2), 3), 5), 6) erfolgreich verhindert, 7) erfolgreich zugelassen; Nicht erfolgreich: 4) wird zugelassen und 8) wird nicht zugelassen
+|
+
+|3
+|Positiv, manuell
+a|* *Pilot* ist *noch nicht* im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* Kein RFID-Ausweis verfügbar
+|Erstellung eines Piloten mit gültigen Attributen (inkl. Sonderzeichen)
+Verwendete Daten:
+*Alexander Heiß
+*RFID-Kennung: keiner verfügbar
+*Adminrechte: Ja
+a|* Es erscheint ein Fehler mit Erklärung
+| Das kann ich gerade nur schwer testen
+a| *Falls kein freier RFID-Tag verfügbar ist -> Man gelangt nicht zur RFID Übersicht beim betätigen des Buttons 
+
+|4
 |Positiv, manuell
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
@@ -38,38 +75,38 @@ a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
 * der erstellte Pilot hat nun Adminrechte
 * der erstellte Pilot kann sich einloggen und gelangt zur Startseite
-|
+| Erfolgreich
 |
 
-|3
-|Negativ, manuell
-a|*Pilot* wurde erfolgreich mit zugewiesner RFID-Kennung erstellt
+|5
+|Positiv, manuell
+a|*Pilot* wurde erfolgreich mit zugewiesener RFID-Kennung erstellt
 |Erstellung eines neuen *Piloten*
 a|Die RFID-Kennung des vorherig erstellten Piloten ist nicht mehr verfügbar
-|
+| Erfolgreich
 |
 
-|4
+|6
 |Negativ, manuell
 a|*Pilot* mit gewissen Attributen wurde erfolgreich erstellt
 |Erstellung eines neuen *Piloten* mit dem selben Vor- und Nachnamen
 a|* Das System hat speichert den Piloten korrekt ab (zweimal der gleiche Vor- und Nachname in der DB)
 * Jeder der beiden *Piloten* hat einen eindeutigen Nutzernamen für den Login des Systems erhalten
 * Beide *Piloten* können ohne Einschränkung das System vollumfänglich benutzen
-|
+|Erfolgreich
 |
 
-|5
+|7
 |Positiv, manuell
 a|*Pilot* wurde erfolgreich erstellt
 |Der Pilot gibt seine Daten im Login-Fenster ein mit dem Ziel sich anzumelden
 a|* Das System macht auf die einmalige Festlegung auf ein Passwort aufmerksam (da Erst-Login)
 * Das Passwort konnte eingegeben und in der DB eingetragen werden
 * Der *Pilot* konnte sich anmelden
-|
+|Könnte besser gekennzeichnet sein (Überforderung eines neuen Piloten)
 |
 
-|6
+|8
 |Positiv, manuell
 a|* *Pilot* wurde erfolgreich erstellt
 * Das Terminal hat eine aktive Internetverbindung
