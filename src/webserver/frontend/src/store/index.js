@@ -15,7 +15,7 @@ export default new Vuex.Store({
     login({commit}, loginCredentials) {
       return new Promise((resolve, reject) => {
         commit('auth_request')
-        axios.post(process.env.VUE_APP_BACKEND_API + "/login", loginCredentials)
+        axios.post("/login", loginCredentials)
         .then(response => {
           const token = response.data.token
           const user = response.data.user

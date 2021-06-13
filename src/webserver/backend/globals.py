@@ -1,12 +1,14 @@
 import os.path
 import sqlite3
 
-from flask import Flask
+from flask import Flask, Blueprint
 from flask_restx import Api, fields
 from flask_cors import CORS
 
 app = Flask(__name__)
-api = Api(app)
+api_bp = Blueprint("api", __name__, url_prefix="/api/")
+api = Api(api_bp)
+app.register_blueprint(api_bp)
 cors = CORS(app)
 
 login_post_model = api.model('signup_post_model', {
