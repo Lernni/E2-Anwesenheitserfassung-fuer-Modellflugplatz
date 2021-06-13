@@ -115,4 +115,13 @@ a|* Der erstellte Pilot wurde in der lokalen DB des Terminals eingetragen
 |
 |
 
+|8
+|Negativ, manuell
+a|* *Pilot* ist *noch nicht* im _System_ angelegt
+* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+|Es werden zwei Tabs geöffnet und die gleichen Namen und RFID-Tags ausgewählt 
+a|Das System lässt das Hinzufügen eines Piloten zu, beim Zweiten erfolgt ein Fehler
+|Erfolgreich
+|
+
 |===
