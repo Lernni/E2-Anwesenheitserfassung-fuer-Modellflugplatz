@@ -48,9 +48,8 @@ Verwendete Daten:
 * 8) Aléx Heiß
 a| * Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-|
-a| 1), 2), 3), 5), 6) erfolgreich verhindert, 7) erfolgreich zugelassen; Nicht erfolgreich: 4) wird zugelassen und 8) wird nicht zugelassen
-|
+| 1), 2), 3), 5), 6) erfolgreich verhindert, 7) erfolgreich zugelassen; Nicht erfolgreich: 4) wird zugelassen und 8) wird nicht zugelassen
+a|
 
 |3
 |Positiv, manuell
