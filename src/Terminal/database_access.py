@@ -4,7 +4,7 @@ import importlib
 import os
 import sqlite3
 
-serverConnection = importlib.import_module('serverConnection')
+serverConnection = importlib.import_module('server_connection')
 
 
 # baut Verbindung zur Datenbank auf
@@ -84,7 +84,7 @@ def create_session(RFID_Code):
         raise ValueError('RFID Code nicht vorhanden oder keinem Piloten zugewiesen')
 
     cursor.execute(
-        'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime("now"), NULL, 0)',
+        'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime("now", "localtime"), NULL, 0)',
         (pilot['pilot_id'],))
 
     select_stmt = cursor.execute('SELECT SessionID FROM Flugsession WHERE ROWID = last_insert_rowid()')
@@ -190,7 +190,7 @@ def end_session(SessionID):
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE SessionID = ?",
+        "UPDATE Flugsession SET Endzeit = datetime('now', 'localtime'), Synced = 0 WHERE SessionID = ?",
         (SessionID,))
 
     connection.commit()
@@ -204,7 +204,7 @@ def end_all_sessions():
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE Endzeit IS NULL")
+        "UPDATE Flugsession SET Endzeit = datetime('now', 'localtime'), Synced = 0 WHERE Endzeit IS NULL")
 
     connection.commit()
     connection.close()
@@ -233,7 +233,7 @@ def run_api():
 # zu Testzwecken
 if __name__ == '__main__':
     run_api()
-    import requests
+    import requests, json
 
     connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
@@ -251,4 +251,5 @@ if __name__ == '__main__':
     id = create_session(23434)
     print(get_pilot(23434))
     print(get_active_sessions(23434))
-    print(get_session(id))
+    requests.post('http://127.0.0.1:5000/end_sessions')
+    print(get_active_sessions(23434))
