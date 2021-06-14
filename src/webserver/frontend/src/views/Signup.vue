@@ -18,14 +18,23 @@
           <b-form @submit="onSubmit" :novalidate="true">
             <b-form-group label="Nutzername" label-for="userInput">
               <b-form-input type="text" id="userInput" v-model.trim="$v.form.username.$model" :state="validateState('username')"></b-form-input>
+              <b-form-invalid-feedback v-if="!$v.form.username.maxLength">
+                Nutzername zu lang!
+              </b-form-invalid-feedback>
               <b-form-invalid-feedback>
-                Kein Nutzername angegeben!
+                Ungültiger Nutzername!
               </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group label="Passwort" label-for="passwordInput">
               <b-form-input type="password" id="passwordInput" v-model.trim="$v.form.password.$model" :state="validateState('password')"></b-form-input>
+              <b-form-invalid-feedback v-if="!$v.form.password.minLength">
+                Passwort zu kurz!
+              </b-form-invalid-feedback>
+              <b-form-invalid-feedback v-if="!$v.form.password.maxLength">
+                Passwort zu lang!
+              </b-form-invalid-feedback>
               <b-form-invalid-feedback>
-                Kein Passwort angegeben!
+                Ungültiges Passwort!
               </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group label="Passwort bestätigen" label-for="passwordInput">
@@ -49,7 +58,7 @@
 <script>
 import { authService } from '@/scripts/auth'
 import { formValidation } from '@/scripts/formValidation'
-import { required, sameAs } from 'vuelidate/lib/validators'
+import { required, sameAs, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   name: "Signup",
@@ -66,11 +75,20 @@ export default {
   },
   validations: {
     form: {
-      username: { required },
-      password: { required },
+      username: {
+        required,
+        maxLength: maxLength(100)
+      },
+      password: {
+        required,
+        minLength: minLength(6),
+        maxLength: maxLength(50)
+      },
       repeatPassword: {
         required,
-        sameAsPassword: sameAs('password')
+        sameAsPassword: sameAs('password'),
+        minLength: minLength(6),
+        maxLength: maxLength(50)
       }
     }
   },

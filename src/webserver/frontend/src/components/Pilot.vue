@@ -26,8 +26,11 @@
                       autocomplete="off"
                     >
                     </b-form-input>
+                    <b-form-invalid-feedback v-if="!value.pilotUsername.maxLength">
+                      Vorname zu lang!
+                    </b-form-invalid-feedback>
                     <b-form-invalid-feedback>
-                      Ungültiger Vorname
+                      Ungültiger Vorname!
                     </b-form-invalid-feedback>
                   </b-form-group>
                 </b-col>
@@ -42,8 +45,11 @@
                       autocomplete="off"
                     >
                     </b-form-input>
+                    <b-form-invalid-feedback v-if="!value.pilotSurname.maxLength">
+                      Nachname zu lang!
+                    </b-form-invalid-feedback>
                     <b-form-invalid-feedback>
-                      Ungültiger Nachname
+                      Ungültiger Nachname!
                     </b-form-invalid-feedback>
                   </b-form-group>
                 </b-col>

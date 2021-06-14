@@ -50,12 +50,18 @@
               <h4>Gast</h4>
               <b-form-group id="guest-name-group" label="Gastname" label-for="guest-input">
                 <b-form-input id="guest-input" v-model.trim="$v.form.guestName.$model" :state="validateState('guestName')"></b-form-input>
+                <b-form-invalid-feedback v-if="!$v.form.guestName.maxLength">
+                  Gastname zu lang!
+                </b-form-invalid-feedback>
                 <b-form-invalid-feedback>
-                  Ungültiger Gastname
+                  Ungültiger Gastname!
                 </b-form-invalid-feedback>
               </b-form-group>
               <b-form-group id="guest-info-group" label="Gastinformationen" label-for="guest-textarea">
-                <b-form-textarea id="guest-textarea" v-model="form.guestText" rows="3"></b-form-textarea>
+                <b-form-textarea id="guest-textarea" v-model="$v.form.guestText.$model" :state="validateState('guestText')" rows="3"></b-form-textarea>
+                <b-form-invalid-feedback v-if="!$v.form.guestText.maxLength">
+                  Gastinformation zu lang!
+                </b-form-invalid-feedback>
               </b-form-group>
             </b-col>
           </b-row>
@@ -73,11 +79,11 @@
 </template>
 
 <script>
-import { required, helpers } from 'vuelidate/lib/validators'
+import { required, helpers, maxLength } from 'vuelidate/lib/validators'
 import { formValidation } from '@/scripts/formValidation'
 import { formSession } from '@/scripts/session'
 
-const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+) )*([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/) 
+const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-záàéèöäüß]+)([- ]([A-Z][a-záàéèöäüß]+))* ([a-z]+ )*([A-Z][a-záàéèöäüß]+)([-]([A-Z][a-záàéèöäüß]+))*$/) 
 
 export default {
   name: "EditSession",
@@ -96,7 +102,11 @@ export default {
     form: {
       guestName: {
         required,
-        guestNameRegex
+        guestNameRegex,
+        maxLength: maxLength(100)
+      },
+      guestText: {
+        maxLength: maxLength(300)
       }
     }
   },

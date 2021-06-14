@@ -22,7 +22,7 @@
               <b-form-input id="pilot-name-input" class="mb-3" placeholder="Name" v-model="pilotSearch" type="search" autocomplete="off"></b-form-input>
               <b-form-select v-model.trim="$v.form.pilot.$model" :options="filteredPilotList" :select-size="5" :state="validateState('pilot')"></b-form-select>
               <b-form-invalid-feedback :state="validateState('pilot')">
-                Kein Pilot ausgewählt
+                Kein Pilot ausgewählt!
               </b-form-invalid-feedback>
             </b-overlay>
           </b-form-group>
@@ -32,7 +32,7 @@
               <b-form-group id="session-start-group" label="Startzeit" label-for="session-start-time-input">
                 <b-form-input id="session-start-time-input" v-model.trim="$v.form.startTime.$model" :state="validateState('endTime') && validateState('startTime')" type="time"></b-form-input>
                 <b-form-invalid-feedback>
-                  Ungültige Zeitangabe
+                  Ungültige Zeitangabe!
                 </b-form-invalid-feedback>
               </b-form-group>
             </b-col>
@@ -51,12 +51,18 @@
           <b-container v-show="form.guest">
             <b-form-group id="guest-name-group" label="Gastname" label-for="guest-input">
               <b-form-input id="guest-input" v-model.trim="$v.form.guestName.$model" :state="validateState('guestName')"></b-form-input>
+              <b-form-invalid-feedback v-if="!$v.form.guestName.maxLength">
+                Gastname zu lang!
+              </b-form-invalid-feedback>
               <b-form-invalid-feedback>
-                Ungültiger Gastname
+                Ungültiger Gastname!
               </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group id="guest-info-group" label="Gastinformationen" label-for="guest-textarea">
-              <b-form-textarea id="guest-textarea" v-model="form.guestText" rows="3"></b-form-textarea>
+              <b-form-textarea id="guest-textarea" v-model="$v.form.guestText.$model" :state="validateState('guestText')" rows="3"></b-form-textarea>
+              <b-form-invalid-feedback v-if="!$v.form.guestText.maxLength">
+                Gastinformation zu lang!
+              </b-form-invalid-feedback>
             </b-form-group>
           </b-container>
         </b-col>
@@ -74,7 +80,7 @@
             >
             </b-calendar>
             <b-form-invalid-feedback :state="validateState('date')">
-              Kein Datum ausgewählt
+              Kein Datum ausgewählt!
             </b-form-invalid-feedback>
           </b-form-group>
         </b-col>
@@ -90,11 +96,11 @@
 </template>
 
 <script>
-import { required, helpers } from 'vuelidate/lib/validators'
+import { required, helpers, maxLength } from 'vuelidate/lib/validators'
 import { formValidation } from '@/scripts/formValidation'
 import { formSession } from '@/scripts/session'
 
-const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+) )*([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/) 
+const guestNameRegex = helpers.regex("guestNameRegex", /^([A-Z][a-záàéèöäüß]+)([- ]([A-Z][a-záàéèöäüß]+))* ([a-z]+ )*([A-Z][a-záàéèöäüß]+)([-]([A-Z][a-záàéèöäüß]+))*$/) 
 
 export default {
   name: "NewSession",
@@ -132,13 +138,18 @@ export default {
           return new Date().setHours(splitEndTime[0], splitEndTime[1]) > new Date().setHours(splitStartTime[0], splitStartTime[1])
         }
       },
-      guestName: {}
+      guestName: {},
+      guestText: {}
     }
 
     if (this.form.guest) {
       form.guestName = {
         required,
-        guestNameRegex
+        guestNameRegex,
+        maxLength: maxLength(100)
+      },
+      form.guestText = {
+        maxLength: maxLength(300)
       }
     }
 
@@ -148,7 +159,7 @@ export default {
   },
   methods: {
     onSubmit(event) {
-      if (this.validateSubmit(event)) {this.postNewSession() }
+      if (this.validateSubmit(event)) { this.postNewSession() }
     },
 
     async postNewSession() {

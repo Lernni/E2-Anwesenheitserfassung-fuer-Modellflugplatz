@@ -10,14 +10,23 @@
           <b-form @submit="onSubmit" :novalidate="true">
             <b-form-group label="Nutzername" label-for="userInput">
               <b-form-input type="text" id="userInput" v-model.trim="$v.form.username.$model" :state="validateState('username')"></b-form-input>
+              <b-form-invalid-feedback v-if="!$v.form.username.maxLength">
+                Nutzername zu lang!
+              </b-form-invalid-feedback>
               <b-form-invalid-feedback>
-                Kein Nutzername angegeben!
+                Ungültiger Nutzername!
               </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group label="Passwort" label-for="passwordInput">
               <b-form-input type="password" id="passwordInput" class="mb-2" v-model.trim="$v.form.password.$model" :state="validateState('password')"></b-form-input>
+              <b-form-invalid-feedback v-if="!$v.form.password.minLength">
+                Passwort zu kurz!
+              </b-form-invalid-feedback>
+              <b-form-invalid-feedback v-if="!$v.form.password.maxLength">
+                Passwort zu lang!
+              </b-form-invalid-feedback>
               <b-form-invalid-feedback>
-                Kein Passwort angegeben!
+                Ungültiges Passwort!
               </b-form-invalid-feedback>
               Noch kein Passwort festgelegt? - <b-link to="/signup">Registrieren</b-link>
             </b-form-group>
@@ -35,7 +44,7 @@
 <script>
 import { formValidation } from '@/scripts/formValidation'
 import { authService } from '@/scripts/auth'
-import { required } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   name: "Login",
@@ -48,8 +57,15 @@ export default {
   },
   validations: {
     form: {
-      username: { required },
-      password: { required }
+      username: {
+        required,
+        maxLength: maxLength(100)
+      },
+      password: {
+        required,
+        minLength: minLength(6),
+        maxLength: maxLength(50)
+      }
     }
   },
   methods: {

@@ -1,7 +1,7 @@
-import { required, helpers } from 'vuelidate/lib/validators'
+import { required, helpers, maxLength } from 'vuelidate/lib/validators'
 
-const surnameRegex = helpers.regex("surnameRegex", /^([a-z]+ )*([A-Z][a-zöäüß]+)([-]([A-Z][a-zöäüß]+))*$/)
-const nameRegex = helpers.regex("nameRegex", /^([A-Z][a-zöäüß]+)([- ]([A-Z][a-zöäüß]+))*$/)
+const surnameRegex = helpers.regex("surnameRegex", /^([a-z]+ )*([A-Z][a-záàéèöäüß]+)([-]([A-Z][a-záàéèöäüß]+))*$/)
+const nameRegex = helpers.regex("nameRegex", /^([A-Z][a-záàéèöäüß]+)([- ]([A-Z][a-záàéèöäüß]+))*$/)
 
 export const formPilot = {
   data() {
@@ -43,11 +43,13 @@ export const formPilot = {
     form: {
       pilotSurname: {
         required,
-        surnameRegex
+        surnameRegex,
+        maxLength: maxLength(50),
       },
       pilotName: {
         required,
-        nameRegex
+        nameRegex,
+        maxLength: maxLength(50)
       },
       pilotUsername: {},
       rfid: {
