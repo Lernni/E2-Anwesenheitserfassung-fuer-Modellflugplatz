@@ -4,7 +4,7 @@ import importlib
 import os
 import sqlite3
 
-serverConnection = importlib.import_module('serverConnection')
+serverConnection = importlib.import_module('server_connection')
 
 
 # baut Verbindung zur Datenbank auf
@@ -251,4 +251,7 @@ if __name__ == '__main__':
     id = create_session(23434)
     print(get_pilot(23434))
     print(get_active_sessions(23434))
-    print(get_session(id))
+    requests.post('http://127.0.0.1:5000/end_sessions')
+    print(get_active_sessions(23434))
+
+    requests.post('http://127.0.0.1:5000/settings', json = {})

@@ -1,13 +1,12 @@
 import importlib
-import json
 from flask import Flask, request
 import os
 import requests
 import threading
 
-serverURL = 'http://127.0.0.1:5000'
+serverURL = 'http://79.254.2.242:15080'
 
-databaseAccess = importlib.import_module('databaseAccess')
+databaseAccess = importlib.import_module('database_access')
 
 # synchronisiere Sessions
 def sync_sessions():
@@ -76,6 +75,18 @@ def run_api():
         }
         databaseAccess.insert_rfid(insert_dict)
         return insert_dict
+
+    @app.route('/settings', methods=['POST'])
+    def update_settings():
+        file = open('settings.json', 'w')
+        file.write(str(request.get_json()))
+        file.close
+        return request.get_json()
+
+    @app.route('/end_sessions', methods=['POST'])
+    def end_all_sessions():
+        databaseAccess.end_all_sessions()
+        return 'a'
 
     t = threading.Thread(target = app.run)
     t.start()

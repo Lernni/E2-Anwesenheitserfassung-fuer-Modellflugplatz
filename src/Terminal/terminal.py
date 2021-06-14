@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import sys
 
-from databaseAccess import create_session, end_session, get_active_sessions
+from database_access import create_session, end_session, get_active_sessions
 
 sys.path.append('/home/pi/MFRC522-python')
 from mfrc522 import SimpleMFRC522
