@@ -1,1 +1,38 @@
-{}
+{
+    "checkout-time": "00:00",
+    "terminal-config": [
+        {
+            "id": 0,
+            "name": "Anmeldung",
+            "duration": 3,
+            "button": false,
+            "color": "#58f4d3",
+            "blinking": true
+        },
+        {
+            "id": 1,
+            "name": "Abmeldung",
+            "duration": 3,
+            "button": false,
+            "color": "#58f4d3",
+            "blinking": true
+        },
+        {
+            "id": 2,
+            "name": "Flugleiter",
+            "duration": 3,
+            "button": false,
+            "color": "#58f4d3",
+            "blinking": true
+        },
+        {
+            "id": 3,
+            "name": "Alle Piloten abmelden",
+            "duration": 10,
+            "button": false,
+            "color": "#58f4d3",
+            "blinking": true
+        }
+    ],
+    "tolerance": 5
+}

@@ -233,7 +233,7 @@ def run_api():
 # zu Testzwecken
 if __name__ == '__main__':
     run_api()
-    import requests
+    import requests, json
 
     connection = get_connection('database_terminal.db')
     cursor = connection.cursor()
@@ -254,4 +254,8 @@ if __name__ == '__main__':
     requests.post('http://127.0.0.1:5000/end_sessions')
     print(get_active_sessions(23434))
 
-    requests.post('http://127.0.0.1:5000/settings', json = {})
+    settings = {
+        "a": "a",
+        "b": "b"
+    }
+    requests.post('http://127.0.0.1:5000/settings', json = settings)

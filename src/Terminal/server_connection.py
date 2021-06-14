@@ -1,6 +1,6 @@
-import importlib
 from flask import Flask, request
-import os
+import importlib
+import json
 import requests
 import threading
 
@@ -79,8 +79,8 @@ def run_api():
     @app.route('/settings', methods=['POST'])
     def update_settings():
         file = open('settings.json', 'w')
-        file.write(str(request.get_json()))
-        file.close
+        file.write(json.dumps(request.get_json()))
+        file.close()
         return request.get_json()
 
     @app.route('/end_sessions', methods=['POST'])
