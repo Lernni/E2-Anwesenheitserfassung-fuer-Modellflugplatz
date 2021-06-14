@@ -84,7 +84,7 @@ def create_session(RFID_Code):
         raise ValueError('RFID Code nicht vorhanden oder keinem Piloten zugewiesen')
 
     cursor.execute(
-        'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime("now"), NULL, 0)',
+        'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES(?, datetime("now", "localtime"), NULL, 0)',
         (pilot['pilot_id'],))
 
     select_stmt = cursor.execute('SELECT SessionID FROM Flugsession WHERE ROWID = last_insert_rowid()')
@@ -190,7 +190,7 @@ def end_session(SessionID):
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE SessionID = ?",
+        "UPDATE Flugsession SET Endzeit = datetime('now', 'localtime'), Synced = 0 WHERE SessionID = ?",
         (SessionID,))
 
     connection.commit()
@@ -204,7 +204,7 @@ def end_all_sessions():
     cursor = connection.cursor()
 
     cursor.execute(
-        "UPDATE Flugsession SET Endzeit = datetime('now'), Synced = 0 WHERE Endzeit IS NULL")
+        "UPDATE Flugsession SET Endzeit = datetime('now', 'localtime'), Synced = 0 WHERE Endzeit IS NULL")
 
     connection.commit()
     connection.close()
@@ -253,9 +253,3 @@ if __name__ == '__main__':
     print(get_active_sessions(23434))
     requests.post('http://127.0.0.1:5000/end_sessions')
     print(get_active_sessions(23434))
-
-    settings = {
-        "a": "a",
-        "b": "b"
-    }
-    requests.post('http://127.0.0.1:5000/settings', json = settings)

@@ -1,6 +1,6 @@
 {
-    "checkout-time": "00:00",
-    "terminal-config": [
+    "checkout_time": "00:00",
+    "terminal_config": [
         {
             "id": 0,
             "name": "Anmeldung",
