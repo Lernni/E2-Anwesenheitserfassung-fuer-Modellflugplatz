@@ -3,7 +3,7 @@ from flask_restx import Resource
 from globals import api, get_connection, auth_parser, is_admin
 
 
-# GET /rfid
+# GET /rfid_available
 # nur admins dürfen diese request ausführen
 class RfidAvailable(Resource):
     @api.expect(auth_parser)
