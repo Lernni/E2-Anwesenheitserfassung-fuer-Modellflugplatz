@@ -1,13 +1,6 @@
 from datetime import date, time, datetime
 from flask_restx import Resource, inputs, fields
-from globals import api, get_connection, auth_parser, is_pilot, is_admin
-
-
-# für session_post_model - input Zeit
-class TimeFormat(fields.String):
-    def format(self, value):
-        return time.strftime(value, "%H:%M")
-
+from globals import api, get_connection, auth_parser, is_pilot, is_admin, TimeFormat
 
 get_parser = api.parser()
 get_parser.add_argument('name', type=str)
@@ -340,7 +333,7 @@ class Sessions(Resource):
                 guest_info = payload['guest_info']
 
             cursor.execute(
-                'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [guest_name, guest_info]
+                'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [payload['guest_name'], guest_info]
             )
 
             guest_row_nr = cursor.lastrowid
@@ -350,7 +343,7 @@ class Sessions(Resource):
                 'UPDATE Flugsession SET GastID = ? WHERE SessionID = ?', [guest_id, args['id']]
             )
 
-        if'is_leader' in payload.keys():
+        if 'is_leader' in payload.keys():
             cursor.execute(
                 'UPDATE Flugsession SET Ist_Flugleiter = ? WHERE SessionID = ?', [payload['is_leader'], args['id']]
             )

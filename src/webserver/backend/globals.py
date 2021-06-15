@@ -1,5 +1,6 @@
 import os.path
 import sqlite3
+import time
 
 from flask import Flask, Blueprint
 from flask_restx import Api, fields
@@ -10,6 +11,13 @@ api_bp = Blueprint("api", __name__, url_prefix="/api/")
 api = Api(api_bp)
 app.register_blueprint(api_bp)
 cors = CORS(app)
+
+
+# für session_post_model - input Zeit
+class TimeFormat(fields.String):
+    def format(self, value):
+        return time.strftime(value, "%H:%M")
+
 
 login_post_model = api.model('signup_post_model', {
     'username': fields.String(description='username'),

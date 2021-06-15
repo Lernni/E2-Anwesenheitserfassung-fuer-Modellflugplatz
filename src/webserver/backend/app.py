@@ -9,6 +9,7 @@ import signup
 import login
 import rfid_assigned
 import rfid
+import sessions_terminal
 
 from globals import api, app
 
@@ -23,6 +24,7 @@ api.add_resource(signup.signup, '/signup')
 api.add_resource(login.login, '/login')
 api.add_resource(rfid_assigned.RfidAssigned, '/rfid_assigned')
 api.add_resource(rfid.Rfid, '/rfid')
+api.add_resource(sessions_terminal.SessionsTerminal, '/sessions/terminal')
 
 
 
