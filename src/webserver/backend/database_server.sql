@@ -13,7 +13,8 @@ PRAGMA FOREIGN_KEYS = ON;
 
 CREATE TABLE IF NOT EXISTS RFID_Ausweis
 (
-    RFID_Code integer PRIMARY KEY
+    RFID_Code integer PRIMARY KEY,
+    Synced bool NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Pilot
@@ -29,6 +30,8 @@ CREATE TABLE IF NOT EXISTS Pilot
 
     Ist_Admin      bool DEFAULT FALSE,
     Token          varchar(20) NOT NULL,
+    Synced bool NOT NULL,
+
 
 
 -- ok so?!
