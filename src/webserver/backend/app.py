@@ -7,6 +7,7 @@ import running_sessions
 import checkout_all
 import signup
 import login
+import rfid_assigned
 from globals import api, app
 
 # Ressourcen mit gewünschtem Pfad verknüpfen
@@ -18,6 +19,7 @@ api.add_resource(running_sessions.RunningSessions, '/sessions/running')
 api.add_resource(checkout_all.CheckoutAll, '/sessions/checkout-all')
 api.add_resource(signup.signup, '/signup')
 api.add_resource(login.login, '/login')
+api.add_resource(rfid_assigned.RfidAssigned, '/rfid_assigned')
 
 
 
