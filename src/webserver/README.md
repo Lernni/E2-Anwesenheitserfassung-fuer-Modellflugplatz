@@ -85,18 +85,14 @@ Vue CLI v4.5.12
 ```
 sudo apt install apache2
 ```
-2. Apache konfigurieren:
+2.
 ```
 sudo mkdir /var/www/vue
 sudo chown -R $USER:$USER /var/www/vue
 sudo chmod -R 755 /var/www/vue
-
-sudo a2enmod proxy
-sudo a2ensite vue.conf
-sudo a2dissite 000-default.conf
 ```
 
-vue.conf erstellen
+3. vue.conf erstellen
 ```
 sudo nano /etc/apache2/sites-available/vue.conf
 ```
@@ -125,8 +121,17 @@ sudo nano /etc/apache2/sites-available/vue.conf
   </Directory>
 </VirtualHost>
 ```
+4.
+```
+sudo a2enmod proxy proxy_http rewrite
+sudo a2ensite vue.conf
+sudo a2dissite 000-default.conf
+```
 
-
+5. Apache neustarten
+```
+sudo systemctl restart apache2
+```
 ### Frontend überführen
 1. Build Frontend
 ```
@@ -175,4 +180,30 @@ python make_server_db.py
 7. Backend starten
 ```
 sudo ~/backend/.venv/bin/python -m flask run &
+```
+
+8. Testen des Backends
+
+Lokal
+```
+curl -X 'POST' \
+  'http://localhost:5000/api/login' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "username",
+  "password": "******"
+}'
+```
+
+Entfernt
+```
+curl -X 'POST' \
+  'http://79.254.2.242:15080/api/login' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "username",
+  "password": "******"
+}'
 ```
