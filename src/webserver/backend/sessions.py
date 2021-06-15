@@ -29,7 +29,8 @@ session_post_model = api.model('session_post_model', {
 session_put_model = api.model('session_put_model', {
     'guest_name': fields.String(),
     'guest_info': fields.String(),
-    'end_time': fields.DateTime()
+    'end_time': fields.DateTime(),
+    'is_leader': fields.Boolean()
 })
 put_parser = api.parser()
 put_parser.add_argument('id', type=int, required=True)
@@ -313,6 +314,11 @@ class Sessions(Resource):
             'SELECT PilotID FROM Flugsession WHERE SessionID = ?', [args['id']]
         ).fetchone()[0]
 
+        # wenn der pilot kein admin ist und die p_id nicht übereinstimmt, return 401
+        if p_id != is_pilot(cursor) and not is_admin(cursor):
+            connection.close()
+            return {}, 401
+
         # wenn die endzeit mitgeschickt wurde, darf diese nur geändert werden, wenn die vorherige NULL war.
         if 'end_time' in payload.keys():
             end_time = cursor.execute(
@@ -326,11 +332,6 @@ class Sessions(Resource):
             else:
                 connection.close()
                 return {}, 401
-
-        # wenn der pilot kein admin ist und die p_id nicht übereinstimmt, return 401
-        if p_id != is_pilot(cursor) and not is_admin(cursor):
-            connection.close()
-            return {}, 401
 
         if 'guest_name' in payload.keys():
             if 'guest_info' in payload.keys():
@@ -347,6 +348,11 @@ class Sessions(Resource):
 
             cursor.execute(
                 'UPDATE Flugsession SET GastID = ? WHERE SessionID = ?', [guest_id, args['id']]
+            )
+
+        if'is_leader' in payload.keys():
+            cursor.execute(
+                'UPDATE Flugsession SET Ist_Flugleiter = ? WHERE SessionID = ?', [payload['is_leader'], args['id']]
             )
 
         connection.commit()
