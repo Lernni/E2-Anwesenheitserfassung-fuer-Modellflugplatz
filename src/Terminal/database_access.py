@@ -74,6 +74,22 @@ def insert_pilot(insert_dict):
     connection.close()
     return
 
+# gibt Token eines Piloten mit PilotID zurück, -1 falls Pilot gefunden
+def get_token(PilotID):
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    token = -1
+    select_stmt = cursor.execute(
+        'SELECT Token FROM Pilot WHERE PilotID = ?',
+        (PilotID,))
+
+    for row in select_stmt:
+        token = row[0]
+
+    connection.close()
+    return token
+
 # erstellt neue Session mit aktueller Uhrzeit, gibt SessionID der neuen Session zurück, -1 wenn RFID_Code nicht existiert
 def create_session(RFID_Code):
     connection = get_connection('database_terminal.db')
