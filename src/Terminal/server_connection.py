@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from flask import Flask, request
+from flask_cors import CORS
 import importlib
 import json
 import pandas
@@ -68,8 +69,12 @@ def sync_sessions():
                 'is_leader': session['is_controller']
             }
 
+        token = databaseAccess.get_token(session['pilot_id'])
+        if token == -1:
+            continue
+
         try:
-            response = requests.post(url = serverURL + '/sessions/terminal', json = payload, timeout = 2)
+            response = requests.post(url = serverURL + '/sessions/terminal', headers = {'Authorization': 'TOK:' + token}, json = payload, timeout = 2)
         except:
             print('Server temporarily unavailable')
             return
@@ -85,6 +90,8 @@ def sync_sessions():
 # minimale REST-API zur Synchronisierung von Piloten, RFID-Ausweisen und Einstellungen
 def run_api():
     app = Flask(__name__)
+    cors = CORS(app, resources = {r"*": {"origins": serverURL}})
+
 
     # Pilot einfügen oder aktualisieren
     @app.route('/pilot', methods=['POST'])
@@ -95,7 +102,7 @@ def run_api():
             'token': request.form['token']
         }
         databaseAccess.insert_pilot(insert_dict)
-        return insert_dict
+        return {}
 
     # RFID-Ausweis einfügen
     @app.route('/rfid', methods=['POST'])
@@ -104,7 +111,7 @@ def run_api():
             'rfid_code': request.form['rfid_code']
         }
         databaseAccess.insert_rfid(insert_dict)
-        return insert_dict
+        return {}
 
     # Einstellungen aktualisieren
     @app.route('/settings', methods=['POST'])
@@ -112,13 +119,13 @@ def run_api():
         file = open('settings.json', 'w')
         file.write(json.dumps(request.get_json()))
         file.close()
-        return request.get_json()
+        return {}
 
     # alle Sessions beendens
     @app.route('/end_sessions', methods=['POST'])
     def end_all_sessions():
         databaseAccess.end_all_sessions()
-        return 'a'
+        return ''
 
     t = threading.Thread(target = app.run)
     t.start()
