@@ -1,0 +1,158 @@
+= Iterationsplan 09
+Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Jakob Laufer <jakob.laufer@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>
+// Platzhalter für weitere Dokumenten-Attribute
+
+:imagesdir: {docs-project-management}/images/project_status
+
+== Meilensteine
+//Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
+
+[%header, cols="3,1"]
+|===
+| Meilenstein
+| Kalendarwoche
+
+| Beginn der Iteration | KW 21 (Mittwoch, 12.05)
+| Ende der Iteration | KW 23 (Dienstag, 25.05)
+|===
+
+
+== Wesentliche Ziele
+//Nennen Sie 1-5 wesentliche Ziele für die Iteration.
+
+* Vue-Komponenten erstellt
+* Erfolgreiche Synchronisation zwischen Webserver und Terminal
+* Datenbanken, Terminal und Website als Prototyp dem Kunden präsentierbar
+
+== Aufgabenzuordnung
+//Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
+
+Die in dieser Iteration geplanten Aufgaben sind in vereinfachter Form in der Work Items List auf GitHub dargestellt: https://github.com/simonherbstrith/E2-Anwesenheitserfassung-fuer-Modellflugplatz/projects/1.
+
+Hinweise zur Darstellung:
+
+* Priorität 1 = hoch
+* Priorität zeigt vor allem zeitliche Reihenfolge
+* WIDs mit Priorität n! müssen zwingend innerhalb der Iteration fertiggestellt werden
+* AM ... Allgemeines Meeting mit Themensteller
+
+Diese Aufgaben werden in dieser Iteration bearbeitet:
+[%header, cols="1,3,1,1,1,2,1,1,1"]
+|===
+|WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+
+| 
+
+706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-10 | Lenny, Dirk | 2 | 2 |
+
+708 | REST-API umsetzen |  | 24 | 95% | 7-9 | Implementierung | 25 | 5 |
+
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 90% | 8-10 | Max, Dirk | 3 | 2 |
+
+804 | Synchronisation Webserver - Terminal implementieren & dokumentieren |  | 24 | 65% | 8-10 | Implementierung | 20 | 10 |
+
+806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-10 | Max, Dirk | 10 | 25 |
+
+808 | Erstellung spezifischer Test-Cases |  | 24 | 90% | 8-10 | Alex, Analyse | 14 | 5 |
+
+809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 0% | 8-9 | Richard | 0 | 2 |
+
+902 | Durchführung der Test-Cases |  | 24 | 0% | 9-10 | Alex, Jakob | 0 | 11 |
+
+903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 13 | 2 |
+
+904 | Frontend Login erstellen |  | 6 | 90% | 9-10 | Lenny | 3 | 1 |
+
+905 | Dokumentation überprüfen |  | 24 | 90% | 9-10 | Jakob, Richard | 8 | 2 |
+
+1001 | Datenmodell aktualisieren |  | x | 0% | 10 | Jakob, Richard | 0 | 0 |
+
+1002 | Kundenwebserver aufsetzen |  | x | 0% | 10 | Lenny | 0 | 0 |
+
+1003 | Datenmodell aktualisieren |  | x | 0% | 10 | Jakob, Richard | 0 | 0 |
+
+1004 | Design/Architecture Notebook aktualisieren |  | x | 0% | 10 | Lenny, Dirk, Max | 8 | 2 |
+
+1005 | Projektbericht schreiben |  | x | 0% | 10 | Jakob, Richard | o | 0 |
+
+1006 | Datenmodell aktualisieren |  | x | 0% | 10 | Jakob, Richard | 8 | 2 |
+
+1007 | TestCases korrigieren |  | x | 0% | 10 | Alex, Jakob | 0 | 0 |
+
+|===
+
+*Aufgaben Team-TS-Meeting:*
+
+* Aufgetretene Fragen stellen
+
+== Aufgetretene Probleme
+//Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
+* Bislang keine Probleme aufgetreten
+
+//[%header, cols="2,1,3"]
+//|===
+//| Problem | Status | Notizen
+//| x | x | x
+//|===
+
+
+== Bewertungskriterien
+//Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
+* Alle Work Items mit ! erreicht
+* Dem Themensteller angekündigte Änderungen/Ziele erfüllt und präsentiert
+* Fragen dokumentiert & Antwort erhalten
+* Mindestens 90% der Work Items wurden mit mindestens 80% Vollständigkeit bearbeitet. Ausgenommen sind die Aufgaben, die planmäßig in die nächste Iteration übertragen werden. Sprich, maximal 10% der Aufgaben wurden mit weniger als 80% bearbeitet
+
+//* 97% der Testfälle auf Systemebene sind erfolgreich.
+//* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
+//* Technische Präsentation / Demo erhält positive Rückmeldungen.
+
+
+== Assessment
+//In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommunziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
+
+=== Kundengespräch
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Iteration 7
+| Assessment Datum | noch unbekannt
+| Teilnehmer | Entwurf, Implementierung (weitere Teilnehmer bei freien Kapazitäten)
+| Projektstatus	| Grün
+|===
+
+=== Teammeeting
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Iteration 7
+| Assessment Datum | 12.05.2021
+| Teilnehmer | Gesamtes Team
+| Projektstatus	| Grün
+|===
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Iteration 3
+| Assessment Datum | 19.04.2021
+| Teilnehmer | Gesamtes Team
+| Projektstatus	| Grün
+|===
+
+*Beurteilung im Vergleich zu den Zielen*
+
+//Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
+
+*Geplante vs. erledigte Aufgaben*
+
+//Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
+
+*Projektfortschritt*
+
+Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
+
+.Projektfortschritt: Iteration 3
+image::Iteration3.png[]
+
+//* Andere Belange und Abweichungen
+//Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
