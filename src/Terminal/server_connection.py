@@ -43,7 +43,7 @@ def sync_sessions():
             if timeDiff > end - start:
                 databaseAccess.set_synced(session['session_id'])
                 continue
-            
+             
             payload = {
                 'pilot_id': session['pilot_id'],
                 'session_date': sessionDate,
@@ -69,7 +69,7 @@ def sync_sessions():
             }
 
         try:
-            response = requests.post(url = serverURL + '/sessions', json = payload, timeout = 2)
+            response = requests.post(url = serverURL + '/sessions/terminal', json = payload, timeout = 2)
         except:
             print('Server temporarily unavailable')
             return

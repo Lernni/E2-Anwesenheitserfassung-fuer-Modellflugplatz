@@ -229,27 +229,3 @@ def set_flugleiter(SessionID):
 def run_api():
     serverConnection.run_api()
     return
-
-# zu Testzwecken
-if __name__ == '__main__':
-    run_api()
-    import requests, json
-
-    connection = get_connection('database_terminal.db')
-    cursor = connection.cursor()
-
-    select_stmt = cursor.execute("SELECT RFID_Code FROM RFID_Ausweis")
-    rfidcode = 0
-    for row in select_stmt:
-        rfidcode = row[0]
-    connection.close()
-
-    if rfidcode != 23434:
-        requests.post('http://127.0.0.1:5000/rfid', data = {'rfid_code': 23434})
-        requests.post('http://127.0.0.1:5000/pilot', data ={'pilot_id': 123, 'rfid_code': 23434, 'token': 'edth'})
-
-    id = create_session(23434)
-    print(get_pilot(23434))
-    print(get_active_sessions(23434))
-    requests.post('http://127.0.0.1:5000/end_sessions')
-    print(get_active_sessions(23434))
