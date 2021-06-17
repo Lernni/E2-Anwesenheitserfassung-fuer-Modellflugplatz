@@ -69,4 +69,4 @@ CREATE TABLE IF NOT EXISTS Gast
 );
 
 -- initialen admin erzeugen
-INSERT INTO Pilot(Nachname, Vorname, Eintrittsdatum, Nutzername, Ist_Admin, Token) VALUES ('admin', 'admin', date(), 'admin', true, '2568695077352081093');
+INSERT INTO Pilot(Nachname, Vorname, Eintrittsdatum, Nutzername, Ist_Admin, Token, Synced) VALUES ('admin', 'admin', date(), 'admin', true, '2568695077352081093', true);
