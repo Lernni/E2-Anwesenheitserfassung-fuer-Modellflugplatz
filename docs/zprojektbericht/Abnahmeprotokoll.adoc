@@ -1,0 +1,142 @@
+= Abnahmeprotokoll <Anwesenheitserfassung des Modellflugplatzes>
+:icons: font
+:lang: de
+//:sectnums: short
+
+//:source-highlighter: highlightjs
+//:imagesdir: img
+//Platzhalter für weitere Dokumenten-Attribute
+
+//Autor: {author}, Version {revnumber}, {revdate}
+== Projektangaben
+Thema: Anwesenheitserfassung des Modellflugplatzes
+
+Zeitraum:  30. November 2020 bis zum 04. Juli 2021
+
+GitHub Repository: https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz.git
+
+
+== Abnahmedokumentation 
+=== Abnahme
+Datum: ?
+
+Zeit: ?
+
+Abnahmeumgebung: Auf dem Vereinsflugplatz des Mfc-Rossendorf
+
+=== Lieferumfang
+
+* Software in folgender Form:
+* Benutzeranleitung
+* Betriebsanleitung
+* Anforderungsspezifikation
+* Entwicklerdokumentation
+* Testdokumentation
+
+=== Funktionalität
+[cols="4,1,5"]
+|===
+|Use Case | erfüllt | Anmerkung
+
+|Use-Case: UC01 Pilot anmelden
+| 
+|
+
+|Use-Case: UC02 Pilot abmelden
+| 
+|
+
+|Use-Case: UC03: Pilotendaten anlegen
+|
+|
+
+|Use-Case: UC04: Pilot deaktivieren
+|
+|
+
+|Use-Case: UC05: Pilotendaten modifizieren
+|
+|
+
+|Use-Case: UC06: Alle Piloten abmelden
+|
+|
+
+|Use-Case: UC07: Flugleiter bestimmen
+|
+|
+
+|Use-Case: UC08: Protokoll einsehen
+|
+|
+
+|Use-Case: UC09: Protokolldaten nachträglich einfügen
+|
+|
+
+|Use-Case: UC10: Handhabung Gastflüge
+|
+|
+
+|Use-Case: UC11: Pilot reaktivieren
+|
+|
+
+|===
+
+===  Systemweite Anforderungen
+[cols="4,1,5"]
+|===
+|Anforderung | erfüllt | Anmerkung
+
+|NFAF-1: Zugriffsschutz
+| 
+|
+
+|NFAF-2: Datensynchronisierung (ereignisgesteuert)
+|
+|
+
+|NFAF-3: Überwachung der Synchronisation
+|
+|
+
+|NFAU-1: Aufgabeneffizienz
+|
+|
+
+|NFAU-2: Online-Hilfe
+|
+|
+
+|NFAU-3: Benutzerfreundlichkeit
+|
+|
+
+|NFAR-1: Korrektheit
+|
+|
+
+|NFAP-1: Antwortzeiten
+|
+|
+
+|NFAP-2: Durchsatz
+|
+|
+
+|===
+
+== Unterschriften
+
+Hiermit wird die Abnahme vollständig / mit Mängeln bestätigt.
+
+Bemerkungen:
+
+[cols="1,1"]
+|===
+|> 
+|>
+|Unterschrift Themensteller*in
+|Unterschrift Projektleiter*in
+|===
