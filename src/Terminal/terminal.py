@@ -1,6 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
 import RPi.GPIO as GPIO
-import sys
+import sys, datetime
+from server_connection import run_api
 
 from database_access import create_session, end_session, get_active_sessions
 
@@ -27,10 +29,19 @@ def eval_rfid(rfid):
 if __name__ == "__main__":
     reader = SimpleMFRC522()
     print("Now place tag next to the scanner to read")
-
+    run_api()
+    print("api done !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     try:
-        rfid_c, text = reader.read()
-        print(rfid_c)
-        eval_rfid(rfid_c)
+        time_old = datetime.datetime.now()
+        while True:
+            rfid_c, text = reader.read()
+            time_new = datetime.datetime.now()
+            # rfid scanner entprellen
+            # rfid karte wird frühstens nach 2 sek. wieder ausgewertet.
+            if (time_new - time_old).total_seconds() >= 2:
+                time_old = time_new
+
+                eval_rfid(rfid_c)
+                print(rfid_c)
     finally:
         GPIO.cleanup()
