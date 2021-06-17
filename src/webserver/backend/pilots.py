@@ -1,3 +1,4 @@
+from sync import sync_pilots
 from flask_restx import Resource, inputs, fields
 from globals import api, get_connection, auth_parser, is_admin
 
@@ -119,11 +120,14 @@ class Pilots(Resource):
             token += 1
 
         cursor.execute(
-            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Nutzername, Passwort, Ist_Admin, Token) '
-            'VALUES(?, ?, ?, date(), ?, NULL, ?, ?)', [rfid, last_name, first_name, username, admin, str(token)]
+            'INSERT INTO Pilot(RFID_Code, Nachname, Vorname, Eintrittsdatum, Nutzername, Passwort, Ist_Admin, Token, Synced) '
+            'VALUES(?, ?, ?, date(), ?, NULL, ?, ?, FALSE)', [rfid, last_name, first_name, username, admin, str(token)]
         )
         connection.commit()
         connection.close()
+        # piloten mit terminal synchronisieren
+        sync_pilots()
+
         return {}
 
     @api.expect(pilot_put_model, auth_parser)
@@ -151,7 +155,7 @@ class Pilots(Resource):
                 new_rfid = None
             else:
                 new_rfid = int(payload['rfid'], 16)
-            cursor.execute('UPDATE Pilot SET RFID_Code = ? WHERE PilotID = ?', [new_rfid, p_id])
+            cursor.execute('UPDATE Pilot SET RFID_Code = ?, Synced = FALSE WHERE PilotID = ?', [new_rfid, p_id])
 
         if 'pilot_username' in payload.keys():
             new_user_name = payload['pilot_username']
@@ -168,4 +172,7 @@ class Pilots(Resource):
 
         connection.commit()
         connection.close()
+        # piloten mit terminal synchronisieren
+        sync_pilots()
+
         return {}

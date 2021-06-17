@@ -1,5 +1,5 @@
 from flask_restx import Resource, fields
-
+from sync import sync_rfids
 from globals import api, get_connection, auth_parser, is_admin
 
 rfid_post_model = api.model('rfid_post_model', {
@@ -22,9 +22,12 @@ class Rfid(Resource):
             return {}, 401
 
         cursor.execute(
-            'INSERT INTO RFID_Ausweis (RFID_Code) VALUES (?)', [payload['rfid']]
+            'INSERT INTO RFID_Ausweis (RFID_Code, Synced) VALUES (?, FALSE)', [payload['rfid']]
         )
 
         connection.commit()
         connection.close()
+
+        sync_rfids()
+
         return {}
