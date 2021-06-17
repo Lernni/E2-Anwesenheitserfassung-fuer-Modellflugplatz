@@ -1,0 +1,37 @@
+= Projektbericht 
+:toc:
+:toc-title: Inhaltsverzeichnis
+
+== Verwendete Namenskürzel 
+
+|===
+
+|*Name*|*Namenskürzel*
+
+|Jakob Laufer 
+|JL
+
+|Richard Kleint
+|RK
+
+|Max Haufe
+|MH
+
+|Alexander Heiß
+|AH
+
+|Lenny Reitz
+|LR
+
+|Dirk Zimmermann
+|DZ
+
+|===
+
+
+
+include::1projektplanung.adoc[]
+<<<
+include::2projektdurchfuehrung.adoc[]
+<<<
+include::3projektergebnisse.adoc[]
