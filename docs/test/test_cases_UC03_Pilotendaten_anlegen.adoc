@@ -8,48 +8,28 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Erstellung eines Piloten mit gültigen Attributen (inkl. Sonderzeichen)
-Verwendete Daten:
-*Alexander Heiß
-*RFID-Kennung: 0xaae0cf
-*Adminrechte: Ja
 a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-|Erfolgreich
-a| 
 
 |2
 |Negativ, manuell
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Erstellung eines Piloten mit kritischen Wertenkurzem Namen, kleingeschriebenen Namen, sehr langen Namen, Sonderzeichen, Zahlen
-Verwendete Daten:
-* 1) A He
-* 2) Al H
-* 3) Aléx $$$$)
-* 4) Alexsdfs...[weitere 200 Zeichen]...ffdd Heiß
-* 5) ____ A_____
-* 6) (leer)
-* 7) Alex Alex Heiß
-* 8) Aléx Heiß
-a| * Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
-* die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-| 1), 2), 3), 5), 6) erfolgreich verhindert, 7) erfolgreich zugelassen; Nicht erfolgreich: 4) wird zugelassen und 8) wird nicht zugelassen
-a|
+|Versuch der Erstellung eines Piloten mit ungültigen Werten
+|Das Speichern wird verhindert und der Nutzer auf den Fehler aufmerksam gemacht
 
 |3
 |Positiv, manuell
@@ -57,71 +37,240 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Kein RFID-Ausweis verfügbar
 |Erstellung eines Piloten mit gültigen Attributen (inkl. Sonderzeichen)
-Verwendete Daten:
-*Alexander Heiß
-*RFID-Kennung: keiner verfügbar
-*Adminrechte: Ja
-a|* Es erscheint ein Fehler mit Erklärung
-| Das kann ich gerade nur schwer testen
-a| *Falls kein freier RFID-Tag verfügbar ist -> Man gelangt nicht zur RFID Übersicht beim betätigen des Buttons 
+|Es erscheint ein Fehler mit Erklärung
 
 |4
 |Positiv, manuell
-a|* *Pilot* ist *noch nicht* im _System_ angelegt
-* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
-|Erstellung eines Piloten und Zustimmung zum Erhalt von Adminrechten
-a|* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
-* die `Pilotendaten` werden semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-* der erstellte Pilot hat nun Adminrechte
-* der erstellte Pilot kann sich einloggen und gelangt zur Startseite
-| Erfolgreich
-|
+|*Pilot* wurde erfolgreich mit zugewiesener RFID-Kennung erstellt
+|Erstellung eines neuen *Piloten*
+|Die RFID-Kennung des vorherig erstellten Piloten ist nicht mehr verfügbar
 
 |5
-|Positiv, manuell
+|Negativ, manuell
 a|*Pilot* wurde erfolgreich mit zugewiesener RFID-Kennung erstellt
-|Erstellung eines neuen *Piloten*
-a|Die RFID-Kennung des vorherig erstellten Piloten ist nicht mehr verfügbar
-| Erfolgreich
-|
+|Erstellung eines neuen *Piloten* mit dem selben Vor- und Nachnamen
+a|* Das System speichert den Piloten korrekt ab (zweimal der gleiche Vor- und Nachname in der DB)
+* Jeder der beiden *Piloten* hat einen eindeutigen Nutzernamen für den Login des Systems erhalten (vorname_nachnameNUMMER)
+* Beide *Piloten* können ohne Einschränkung das System vollumfänglich benutzen
 
 |6
-|Negativ, manuell
-a|*Pilot* mit gewissen Attributen wurde erfolgreich erstellt
-|Erstellung eines neuen *Piloten* mit dem selben Vor- und Nachnamen
-a|* Das System hat speichert den Piloten korrekt ab (zweimal der gleiche Vor- und Nachname in der DB)
-* Jeder der beiden *Piloten* hat einen eindeutigen Nutzernamen für den Login des Systems erhalten
-* Beide *Piloten* können ohne Einschränkung das System vollumfänglich benutzen
-|Erfolgreich
-|
+|Positiv, manuell
+|*Pilot* wurde erfolgreich erstellt
+|Der Pilot gibt seine Daten im Login-Fenster ein, mit dem Ziel sich anzumelden
+a|* Das System macht auf die einmalige Festlegung auf ein Passwort aufmerksam (da Erst-Login)
+* Das Passwort konnte im Registierungsfenster eingegeben und in der DB eingetragen werden
+* Der *Pilot* konnte sich anmelden
 
 |7
-|Positiv, manuell
-a|*Pilot* wurde erfolgreich erstellt
-|Der Pilot gibt seine Daten im Login-Fenster ein mit dem Ziel sich anzumelden
-a|* Das System macht auf die einmalige Festlegung auf ein Passwort aufmerksam (da Erst-Login)
-* Das Passwort konnte eingegeben und in der DB eingetragen werden
-* Der *Pilot* konnte sich anmelden
-|Könnte besser gekennzeichnet sein (Überforderung eines neuen Piloten)
-|
-
-|8
 |Positiv, manuell
 a|* *Pilot* wurde erfolgreich erstellt
 * Das Terminal hat eine aktive Internetverbindung
 |Internetverbindung des Terminals wird unterbrochen 
 a|* Der erstellte Pilot wurde in der lokalen DB des Terminals eingetragen
 * Eine Anmeldung des Piloten am Terminal ist erfolgreich möglich
-|
-|
 
 |8
 |Negativ, manuell
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Es werden zwei Tabs geöffnet und die gleichen Namen und RFID-Tags ausgewählt 
-a|Das System lässt das Hinzufügen eines Piloten zu, beim Zweiten erfolgt ein Fehler
+|Das System lässt das Hinzufügen eines Piloten zu, beim Zweiten erfolgt ein Fehler
+
+|===
+
+
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Alexander Heiß
+*RFID-Kennung: 0xaae0cf
+*Adminrechte: Nein
+|Erfoglreich
+|/
 |Erfolgreich
+
+a| *Alexander Heiß
+*RFID-Kennung: 0xaae0cf
+*Adminrechte: Ja
+|Erfoglreich
+|/
+|Erfolgreich
+
+|Aléx Heiß
+|Fehlgeschlagen (darf nicht verhindert werden)
+|Ausstehend
+|
+
+|Alex Alex Heiß
+|Erfoglreich
+|/
 |
 
 |===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| A He
+|Erfoglreich (verhindert)
+|/
+|
+
+| Al H
+|Erfoglreich (verhindert)
+|/
+|
+
+|Aléx $$$$)
+|Erfoglreich (verhindert)
+|/
+|
+
+|Alexsdfs...[weitere 200 Zeichen]...ffdd Heiß
+|Fehlgeschlagen (nicht verhindert)
+|Ausstehend
+|
+
+|____ A_____
+|Erfoglreich (verhindert)
+|/
+|
+
+|(leer)
+|Erfoglreich (verhindert)
+|/
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Alexander Heiß
+*RFID-Kennung: keiner verfügbar
+*Adminrechte: Ja
+|Konnte noch nicht getestet werden
+|?
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Alexander Heiß
+*RFID-Kennung: 0xaae0cf
+*Adminrechte: Nein
+|Erfolgreich
+|/
+|Erfolgreich
+
+|===
+
+==== TID 5
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Pilot 1:
+*Alexander Heiß
+*RFID-Kennung: 0x6af0ff
+*Adminrechte: Nein
+
+*Pilot 2:
+*Alexander Heiß
+*RFID-Kennung: 0x8b80cc
+*Adminrechte: Nein
+|Erfolgreich
+|/
+|Erfolgreich
+
+|===
+
+==== TID 6
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Nutzername: alexander.heiß
+*Passwort: admin1
+|Könnte besser gekennzeichnet sein (Überforderung eines neuen Piloten)
+|Ausstehend
+|
+
+|===
+
+==== TID 7
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Alexander Heiß
+*RFID-Kennung: 0x6af0ff
+*Adminrechte: Nein
+|Konnte noch nicht getestet werden
+|?
+|
+
+|===
+
+==== TID 8
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+a| *Alexander Heiß
+*RFID-Kennung: 0x6af0ff
+*Adminrechte: Nein
+*(Diese Daten auf beiden Tabs)
+|Erfolgreich (nur erste Anmeldung möglich, zweite wird blockiert)
+|/
+|
+
+|===
+
+
+
