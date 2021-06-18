@@ -18,7 +18,7 @@ sudo a2ensite vue.conf
 sudo a2dissite 000-default.conf
 
 sudo mkdir /var/www/vue
-sudo chown -R $dir:$dir /var/www/vue
+sudo chown -R $USER:$USER /var/www/vue
 sudo chmod -R 755 /var/www/vue
 
 cd $dir/E2-Anwesenheitserfassung-fuer-Modellflugplatz/
@@ -28,7 +28,7 @@ sudo rm -rf /var/www/vue/*.*
 cp -r -v * /var/www/vue
 
 sudo mkdir $dir/backend
-sudo chown -R $dir:$dir $dir/backend
+sudo chown -R $USER:$USER $dir/backend
 sudo chmod -R 755 $dir/backend
 
 cd $dir/E2-Anwesenheitserfassung-fuer-Modellflugplatz/
