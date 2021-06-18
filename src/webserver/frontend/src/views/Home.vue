@@ -31,7 +31,7 @@
             <b-button variant="primary" to="sessions">Protokoll ansehen</b-button>
           </b-col>
           <b-col class="py-2">
-            <b-button variant="primary" to="settings#rfid">RFID-Tag hinzufügen</b-button>          
+            <b-button variant="primary" to="settings?rfid_tags">RFID-Tag hinzufügen</b-button>          
           </b-col>
           <b-col class="py-2">
             <b-button variant="primary" to="sessions/new">Flüge nachtragen</b-button>
@@ -52,7 +52,7 @@
         <b-list-group-item to="sessions/new">Flüge nachtragen</b-list-group-item>
         <b-list-group-item to="pilots">Pilotenübersicht</b-list-group-item>
         <b-list-group-item to="pilots/new">Pilot erstellen</b-list-group-item>
-        <b-list-group-item to="settings#rfid">RFID-Tag hinzufügen</b-list-group-item>
+        <b-list-group-item to="settings?rfid_tags">RFID-Tag hinzufügen</b-list-group-item>
         <b-list-group-item to="settings">Einstellungen</b-list-group-item>
         <b-list-group-item variant="danger">Alle Piloten abmelden</b-list-group-item>
       </b-list-group>

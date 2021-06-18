@@ -266,6 +266,9 @@ export default {
     }
   },
   mounted() {
+    var showRfid = this.$route.query.rfid_tags
+    if (showRfid !== undefined) this.$bvModal.show('rfid-tag-modal')
+
     this.getFreeRfidList()
     this.getUsedRfidList()
   },
