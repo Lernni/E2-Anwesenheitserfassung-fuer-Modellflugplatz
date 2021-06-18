@@ -123,7 +123,7 @@ export const formPilot = {
       return new Promise((resolve, reject) => {
         this.rfidList.rfidListLoader = true
 
-        this.$axios.get("/rfid")
+        this.$axios.get("/rfid_available")
           .then(response => {
             var rfidList = response.data['rfid_list']
             this.rfidList.rfidList = []

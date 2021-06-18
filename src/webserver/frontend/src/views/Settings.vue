@@ -20,28 +20,48 @@
         <b-form>
           <b-row class="justify-content-center">
             <b-col>
-              <b-form-group id="rfid-input-group" label="RFID-Tag hinzufügen" label-for="rfid-input">
-                <b-input-group id="rfid-input" prepend="0x">
-                  <b-form-input></b-form-input>
-                  <b-input-group-append>
-                    <b-button variant="success">
-                      <b-icon-plus scale="1.5"></b-icon-plus>
-                      Hinzufügen
-                    </b-button>
-                  </b-input-group-append>
-                </b-input-group>
-              </b-form-group>
+              <b-alert variant="success" :show="addRfidState">
+                RFID-Tag wurde erfolgreich hinzugefügt
+              </b-alert>
+              <b-alert variant="danger" :show="addRfidState == false">
+                RFID-Tag konnte nicht hinzugefügt werden!
+              </b-alert>
+              <b-form @submit="onSubmitRfidTag" :novalidate="true">
+                <b-form-group id="rfid-input-group" label="RFID-Tag hinzufügen" label-for="rfid-input">
+                  <b-input-group id="rfid-input" prepend="0x">
+                    <b-form-input v-model.trim="$v.form.rfidTag.$model" :state="validateState('rfidTag')"></b-form-input>
+                    <b-input-group-append>
+                      <b-button variant="success" type="submit" :disabled="addRfidLoader">
+                        <b-spinner v-show="addRfidLoader" small></b-spinner>
+                        <b-icon-plus v-show="!addRfidLoader" scale="1.5"></b-icon-plus>
+                        Hinzufügen
+                      </b-button>
+                    </b-input-group-append>
+                  </b-input-group>
+                  <b-form-invalid-feedback :state="validateState('rfidTag')">
+                    Ungültiger RFID-Tag! RFID-Tag muss hexadezimal angegeben werden!
+                  </b-form-invalid-feedback>
+                </b-form-group>
+              </b-form>
             </b-col>
           </b-row>
           <b-row class="justify-content-center">
             <b-col cols="12" md="6">
               <b-form-group id="free-rfid-group" label="Frei" label-for="free-rfid-table">
-                <b-table sticky-header :items="freeRfidList" :fields="freeRfidFields" head-variant="light"></b-table>
+                <b-overlay :show="freeRfidLoader" spinner-type="grow">
+                  <b-table sticky-header :items="freeRfidList" :fields="freeRfidFields" head-variant="light">
+                    <template #cell()="row">
+                      {{ row.item }}
+                    </template>
+                  </b-table>
+                </b-overlay>
               </b-form-group>
             </b-col>
             <b-col>
               <b-form-group id="used-rfid-group" label="Vergeben" label-for="used-rfid-table">
-                <b-table sticky-header :items="usedRfidList" :fields="usedRfidFields" head-variant="light"></b-table>
+                <b-overlay :show="usedRfidLoader" spinner-type="grow">
+                  <b-table sticky-header :items="usedRfidList" :fields="usedRfidFields" head-variant="light"></b-table>
+                </b-overlay>
               </b-form-group>
             </b-col>
           </b-row>
@@ -49,8 +69,7 @@
       </b-container>
 
       <template #modal-footer>
-        <b-button :disabled="submitLoader" variant="primary" @click="setRFIDList()">
-          <b-spinner v-show="submitLoader" small></b-spinner>
+        <b-button variant="primary" @click="$bvModal.hide('rfid-tag-modal')">
           OK
         </b-button>
       </template>
@@ -161,22 +180,32 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
+import { formValidation } from '@/scripts/formValidation'
+
 export default {
   name: "Settings",
+  mixins: [formValidation],
   data() {
     return {
+      form: {
+        rfidTag: null
+      },
       // pilot checkout
       pilotCheckoutTime: 0,
 
       // rfid tags
+      addRfidLoader: false,
+      freeRfidLoader: false,
+      usedRfidLoader: false,
+      addRfidState: null,
+
       freeRfidList: [],
-      freeRfidFields: [
-        {key: "rfid", label: "RFID-Tag"},
-        {key: "actions", label: ""}
-      ],
+      freeRfidFields: ["RFID-Tags"],
+
       usedRfidList: [],
       usedRfidFields: [
-        {key: "pilot_id", label: ""},
+        {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Pilot"},
         {key: "rfid", label: "RFID-Tag"}
       ],
@@ -224,18 +253,73 @@ export default {
       submitLoader: false,
     }
   },
+  validations: {
+    form: {
+      rfidTag: {
+        required,
+        isHex(value) {
+          if (value == null) return false
+          var checkNumber = parseInt(value, 16);
+          return (checkNumber.toString(16) === value.toLowerCase())
+        }
+      }
+    }
+  },
   mounted() {
-    this.getRfidList()
+    this.getFreeRfidList()
+    this.getUsedRfidList()
   },
   methods: {
-    async getRfidList() {
+    onSubmitRfidTag(event) {
+      if (this.validateSubmit(event)) { this.addRfidTag() }
+    },
 
-      this.$axios.get("/rfid")
+    async addRfidTag() {
+      this.addRfidLoader = true
+
+      //check if rfid exists
+
+      const payload = {
+        rfid: this.form.rfidTag
+      }
+
+      this.$axios.post("/rfid", payload)
+      .then(() => {
+        this.addRfidLoader = false
+        this.addRfidState = true
+        this.form.rfidTag = null
+        this.$v.$reset()
+
+        this.getFreeRfidList()
+      }).catch(() => {
+        this.addRfidLoader = false
+        this.addRfidState = false
+      })
+    },
+
+    async getFreeRfidList() {
+      this.freeRfidLoader = true
+
+      this.$axios.get("/rfid_available")
       .then(response => {
         this.freeRfidList = response.data['rfid_list']
-        console.log(this.freeRfidList)
+        this.freeRfidLoader = false
       }).catch(error => {
         console.error(error);
+        this.freeRfidLoader = false
+      });
+    },
+
+    async getUsedRfidList() {
+      this.usedRfidLoader = true
+
+      this.$axios.get("/rfid_assigned")
+      .then(response => {
+        this.usedRfidList = response.data['rfid_list']
+        this.usedRfidLoader = false
+      }).catch(error => {
+        console.error(error);
+        this.usedRfidLoader = false
       });
     },
   }

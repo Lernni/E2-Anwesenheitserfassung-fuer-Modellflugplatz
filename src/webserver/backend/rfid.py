@@ -22,7 +22,7 @@ class Rfid(Resource):
             return {}, 401
 
         cursor.execute(
-            'INSERT INTO RFID_Ausweis (RFID_Code, Synced) VALUES (?, FALSE)', [payload['rfid']]
+            'INSERT INTO RFID_Ausweis (RFID_Code, Synced) VALUES (?, FALSE)', [int(payload['rfid'], 16)]
         )
 
         connection.commit()

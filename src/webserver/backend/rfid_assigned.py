@@ -19,10 +19,15 @@ class RfidAssigned(Resource):
         return_dict = {
             'rfid_list': []
         }
+
         for row in cursor.execute(
-                'SELECT RFID_Code FROM RFID_Ausweis '
-                'WHERE RFID_Code IN (SELECT RFID_Code FROM Pilot WHERE RFID_Code NOT NULL)'):
-            rfid_tag = hex(row[0])
-            return_dict['rfid_list'].append(rfid_tag)
+                'SELECT PilotID, RFID_Code, Vorname, Nachname '
+                'FROM Pilot WHERE RFID_CODE IS NOT NULL'):
+            list_item = {
+                'pilot_id': row[0],
+                'pilot_name': row[2] + ' ' + row[3],
+                'rfid': hex(row[1])
+            }
+            return_dict['rfid_list'].append(list_item)
         connection.close()
         return return_dict
