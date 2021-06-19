@@ -6,63 +6,117 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
 a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * *Pilot* ist bereits im _System_ angelegt worden
-a|* Plausible Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. Durch _Speichern_ bestätigt man die Eingabe. 
-* *(Testdaten: Beim Piloten "Lisa Mustermann" wird der Nachname im _Bearbeitungsfeld: Nachname_ in Musterfrau geändert)*
+a|* Plausible Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. Durch _Speichern_ bestätigt man die Eingabe.
 a|* Der Nutzername passt sich der entsprechenden Veränderung an. 
 * Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht
 * Geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
-| Ja, erfolgreich.
-| /
 
 |2
 |Negativ, manuell
 a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * *Pilot* ist bereits im _System_ angelegt worden
 a|* Unlogische Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. 
-* *(Testdaten: Beim Piloten Max Mustermann wird im _Bearbeitungsfeld: Vorname_ die Nummer 10 angefügt.)*
 a|* Fehlerhafte Eingabe muss dem *Administrator* kenntlich gemacht werden
 * das Speichern ist nicht möglich
-| Ja, erfolgreich.
-| /
 
 |3
 |Positiv, manuell
 a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * *Pilot* ist bereits im _System_ angelegt worden 
 * *Pilot* ist noch kein *Admin*
-a|* Einem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben 
-* *(Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ ein Haken gesetzt.)*
+a|* Einem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben
 a|* Der jeweilige *Pilot* hat jetzt Zugriff auf die _Admin-Seite_ 
-* In der _User Information_ ändert sich die Rolle in *Admin* 
-| Ja, erfolgreich.
-| /
+* In der _User Information_ ändert sich die Rolle in *Admin*
 
 |4
 |Positiv, manuell
 a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * *Pilot* ist bereits im _System_ angelegt worden
 a|* Das Passwort von einem *Pilot* wird zurückgesetzt 
-* *(Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Passwort zurücksetzen_ ein Haken gesetzt.)*
 a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelden. 
 * Dem *Pilot* ist es möglich, sich mit einem neuen Passwort zu registrieren.
-|Ja, erfolgreich.
-| Sehr gut wäre: Bei einer fehlgeschlagenden Anmeldung eine Rückmeldung zu bekommen.
 
 |===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+|Testdaten: Beim Piloten "Lisa Mustermann" wird der Nachname im _Bearbeitungsfeld: Nachname_ in Musterfrau geändert
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+|Testdaten: Beim Piloten Max Mustermann wird im _Bearbeitungsfeld: Vorname_ die Nummer 10 angefügt.
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+|Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ ein Haken gesetzt.
+|
+|
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+|Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Passwort zurücksetzen_ ein Haken gesetzt.
+|
+|Sehr gut wäre: Bei einer fehlgeschlagenden Anmeldung eine Rückmeldung zu bekommen.
+|
+
+|===
+
 

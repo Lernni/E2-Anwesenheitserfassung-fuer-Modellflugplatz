@@ -8,15 +8,13 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
@@ -26,8 +24,6 @@ a|* *Pilot* hat sich vergessen abzumelden
 a|* _LED_ leuchtet nicht mehr dauerhaft 
 * _System_ erfasst und protokolliert die Abmeldung
 * Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
-|
-|
 
 |2
 |Positiv, automatisch
@@ -37,8 +33,6 @@ a|* *Pilot* hat sich vergessen abzumelden
 a|* _LED_ leuchtet nicht mehr dauerhaft
 * _System_ erfasst und protokolliert die Abmeldung
 * Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
-|
-|
 
 |3
 |Positiv, manuell
@@ -49,8 +43,57 @@ a|* *Pilot* hat sich vergessen abzumelden
 a|* _LED_ leuchtet nicht mehr dauerhaft
 * _System_ erfasst und protokolliert die Abmeldung
 * Bei _Aktive Flugsessions_ des Webservers ist kein *Pilot* mehr aufgelistet
-|
-|
-
 
 |===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| / 
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Betätigen der Schaltfläche _Alle Piloten abmelden_  
+|
+|
+|
+
+|===
+
+

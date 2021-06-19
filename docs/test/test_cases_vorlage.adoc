@@ -1,0 +1,68 @@
+
+=== TestCases
+
+[%header, cols=5*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+
+
+|===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+
+
+
+

@@ -6,17 +6,16 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
@@ -26,8 +25,6 @@ a|* *Pilot* ist bereits angemeldet
 |*Pilot* hällt _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
 a|* _LED_ leuchtet auf; _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters
 * Bei _Protokoll ansehen_ des Webservers erscheint in der Zeile des *Piloten* in der Spalte "Flugleiter" ein "F" 
-|
-|
 
 |2
 |Positiv, manuell
@@ -38,8 +35,6 @@ a|* *Pilot* ist noch nicht angemeldet
 a|* _LED_ leuchtet auf
 * _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters * _System_ erfasst und protokolliert die Anmeldung des *Piloten*
 * Bei _Protokoll ansehen_ des Webservers erscheint der *Pilot* und in dessen Zeile in der Spalte "Flugleiter" ein "F" 
-|
-|
 
 |3
 |Negativ, manuell
@@ -48,8 +43,6 @@ a|* _LED_ leuchtet auf
 a|* _LED_ leuchtet nicht auf
 * _System_ erfasst und protokolliert die Rollenzuweisung des Flugleiters nicht
 * Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
-|
-|
 
 |4
 |Negativ, manuell
@@ -60,8 +53,6 @@ a|* *Pilot* ist bereits angemeldet
 a|* _LED_ leuchtet nicht auf
 * _System_ erfasst und protokolliert die Rollenzuweisung/Rollenabgabe des Flugleiters nicht
 * Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten* in dessen Zeile in der Spalte "Flugleiter" kein "F"
-|
-|
 
 |5
 |Positiv, manuell
@@ -72,8 +63,91 @@ a|* *Pilot* ist bereits angemeldet und Flugleiter
 a|* _LED_ leuchtet nicht auf
 * _System_ erfasst und protokolliert die Rollenabgabe des Flugleiters
 * Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten 2* in dessen Zeile in der Spalte "Flugleiter" ein "F"
+
+|===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
 |
 |
 
 |===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+==== TID 5
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+|
+|
+|
+
+|===
+
+
+
 
