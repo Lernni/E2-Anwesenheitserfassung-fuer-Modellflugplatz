@@ -6,17 +6,16 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
@@ -24,12 +23,9 @@ a|* *Pilot* ist bereits im _System_ angelegt worden
 * *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 * das Filtern der `Protokolldaten` über _Flüge nachtragen_ funktioniert und wird korrekt ausgeführt
-a|* Nach dem erfolgreichen _Filtern_ nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt. 
-* *(Testdaten: Bei einer Flugsession vom Piloten Max Mustermann wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast Mustermann hinzugefügt.")*
+a|* Nach dem erfolgreichen _Filtern_ nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt.
 a|* Der hinzugefügte Name des Gastes wird semantisch korrekt in der Datenbank hinterlegt
-* Der Name es Gastes erscheint in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast
-|
-|
+* Der Name es Gastes erscheint in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast 
 
 |2
 |Negat, manuell
@@ -37,12 +33,52 @@ a|* *Pilot* ist bereits im _System_ angelegt worden
 * *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 * das Filtern der `Protokolldaten` in der _Protokollansicht_ funktioniert & wird korrekt ausgeführt
-a|* Nach dem erfolgreichen _Filtern_ nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt. 
-* *(Testdaten: Bei einer Flugsession vom Piloten 	
-Lisa Musterfrau wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast10 Mustermann hinzugefügt.")*
+a|* Nach dem erfolgreichen _Filtern_ nach dem passenden 
 a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich gemacht werden
 * Der Name es Gastes erscheint nicht in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast
+
+|===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Bei einer Flugsession vom Piloten Max Mustermann wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast Mustermann hinzugefügt.")
+|
 |
 |
 
 |===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Bei einer Flugsession vom Piloten 	
+Lisa Musterfrau wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast10 Mustermann hinzugefügt."
+|
+|
+|
+
+|===
+
+
+
+
+
+
+
+
+

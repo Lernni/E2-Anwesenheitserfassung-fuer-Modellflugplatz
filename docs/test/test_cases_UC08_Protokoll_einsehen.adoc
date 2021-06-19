@@ -6,28 +6,24 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
 a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 a|* Eine normale Suche nach einer existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-* *(Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".)*
 a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in der folgenden _Protokollansicht_
 * Es besteht die Möglichkeit die `Protokolldaten` zu bearbeiten und  herrunterzuladen.
-| Nein, noch nicht erfolgreich.
-| 
 
 |2
 |Positiv, manuell
@@ -35,12 +31,8 @@ a|* *Pilot* ist auf dem _Webserver_ eingeloggt
 * hat Zugriffsrechte für die _Protokollansicht_
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 a|* Eine normale Suche nach einer existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-* *(Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".)*
 a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in der folgenden _Protokollansicht_
 * Es besteht die Möglichkeit die `Protokolldaten` zu bearbeiten und  herrunterzuladen.
-| Nein, noch nicht erfolgreich.
-| 
-
 
 |3
 |Negativ, manuell
@@ -48,23 +40,89 @@ a|* *Administrator* ist auf dem _Webserver_ eingeloggt
 * hat Zugriffsrechte für die _Protokollansicht_
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-* *(Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich) )*
 a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 * Die Eingabe vom nicht möglichen Zeitraum ist nicht möglich.
 *  Das _Filtern_ ist nicht möglich
-|Ja, erfolgreich.
-| Beim Namen -> Rückmeldung, dass es am nNmen liegt.
 
 |4
 |Negativ, manuell
+a|* *Administrator* ist auf dem _Webserver_ eingeloggt
+* hat Zugriffsrechte für die _Protokollansicht_
 a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-* *(Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich) )*
 a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 * Die Eingabe vom nicht möglichen Zeitraum ist nicht möglich.
 *  Das _Filtern_ ist nicht möglich
-|Ja, erfolgreich.
-| Beim Namen -> Rückmeldung, dass es am nNmen liegt.
-
-
 
 |===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich)
+|
+| Beim Namen -> Rückmeldung, dass es am Namen liegt.
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich)
+|
+|Beim Namen -> Rückmeldung, dass es am Namen liegt.
+|
+
+|===
+
+
+
+
+
+

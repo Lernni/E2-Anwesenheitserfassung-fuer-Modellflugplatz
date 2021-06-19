@@ -23,7 +23,7 @@
 |Nachgebessert
 |Akzeptanztest
 
-| /
+| 
 |
 |
 |
@@ -61,6 +61,24 @@
 |
 
 |===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+
 
 
 

@@ -6,17 +6,16 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
@@ -26,10 +25,31 @@ a|* In der _Pilotenübersicht_ über _Zeige inaktive Piloten_ die `Pilotendaten`
 In der Übersicht den  
 deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zu ordenen. 
 Diese mit den `Pilotendaten` durch _Reaktivieren_ bestätigen.
-* *(Testdaten: Den Pilot Maxi Musti über _Reaktivieren_ reaktivieren. Die _RFID-Kennung: 0x8235_ auswählen und `Pilotendaten` und `Login_Informationen` bestätigen durch _Reaktivieren_. )*
 a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur _Pilotenübersicht_
 * der *Pilot* erscheint bei den aktiven Piloten. (über _Zeige aktive Piloten_)
-| Ja, erfolgreich.
-| /
 
 |===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| Testdaten: Den Pilot Maxi Musti über _Reaktivieren_ reaktivieren. Die _RFID-Kennung: 0x8235_ auswählen und `Pilotendaten` und `Login_Informationen` bestätigen durch _Reaktivieren_.
+|
+|
+|
+
+|===
+
+
+
+
+
+
