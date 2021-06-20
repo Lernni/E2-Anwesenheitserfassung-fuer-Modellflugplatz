@@ -28,7 +28,7 @@ def set_synced_pilot(pilot_id, is_synced):
 # synchronisiert alle neuen/geänderten Piloten
 def sync_pilots():
     if not is_online():
-        print("Server temporarily not available")
+        print("Terminal if offline")
         return
 
     connection = get_connection("database_server.db")
