@@ -99,7 +99,9 @@ def run_api():
 
     # todo: static host
     def start_app_with_params():
-        app.run(host='192.168.1.115', debug=False, use_reloader=False)
+        # app.run(host='192.168.1.115', debug=False, use_reloader=False)
+        # localhost:6000
+        app.run(port='6000')
 
     # Pilot einfügen oder aktualisieren
     @app.route('/pilot', methods=['POST'])
