@@ -9,7 +9,7 @@ settings_post_model = api.model('settings_post_model', {})
 
 # nur admins dürfen diese request ausführen
 class Settings(Resource):
-    @api.expect(settings_post_model)
+    @api.expect(settings_post_model, auth_parser)
     def post(self):
         '''post settings to server'''
 
