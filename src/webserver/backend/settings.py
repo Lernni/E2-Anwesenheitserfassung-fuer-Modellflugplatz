@@ -35,6 +35,8 @@ class Settings(Resource):
             connection.close()
             return {}, 401
 
+        settings = {}
+
         with open('settings.json') as settings_file:
-            return json.load(settings_file)
-        
+            settings['settings'] = json.load(settings_file)
+            return settings   
