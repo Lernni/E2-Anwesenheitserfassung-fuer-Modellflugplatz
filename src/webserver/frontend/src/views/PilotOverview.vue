@@ -127,7 +127,6 @@ export default {
 
           for (var i = 0; i < sessions.length; i++) {
             if (sessions[i].pilot_id == this.toDeactivatePilot.pilot_id) {
-              console.log(sessions[i])
               // pilot has active session
               this.deactivateMsg = "Pilot konnte nicht deaktiviert werden, da er zurzeit eine Flugsession hat!"
               reject()
@@ -180,7 +179,6 @@ export default {
 
       await this.$axios.get("/pilots?is_active=" + this.isActive).then(result => {
         this.items = result.data["pilots"]
-        console.log(this.items)
         this.pilotsLoader = false
       }, error => {
         console.error(error)

@@ -186,7 +186,9 @@ export default {
       sessionLoader: false,
       sessionState: null,
 
-      userInfo: null
+      userInfo: {
+        is_admin: false
+      }
     }
   },
 

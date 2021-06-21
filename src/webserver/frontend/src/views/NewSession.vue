@@ -178,8 +178,6 @@ export default {
         session['guest_info'] = this.form.guestText
       }
 
-      console.log(session)
-
       await this.$axios.post("/sessions", session)
         .then(() => {
           this.submitLoader = false
