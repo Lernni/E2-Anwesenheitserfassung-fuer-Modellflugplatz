@@ -1,4 +1,4 @@
-= Abnahmeprotokoll <Anwesenheitserfassung des Modellflugplatzes>
+= Abnahmeprotokoll < E2 Anwesenheitserfassung des Modellflugplatzes >
 :icons: font
 :lang: de
 //:sectnums: short
@@ -9,20 +9,20 @@
 
 //Autor: {author}, Version {revnumber}, {revdate}
 == Projektangaben
-Thema: Anwesenheitserfassung des Modellflugplatzes
+Thema: *Anwesenheitserfassung des Modellflugplatzes*
 
-Zeitraum:  30. November 2020 bis zum 04. Juli 2021
+Zeitraum:  30. November 2020 - 04. Juli 2021
 
 GitHub Repository: https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz.git
 
 
 == Abnahmedokumentation 
 === Abnahme
-Datum: ?
+Datum: 29.06.2021
 
 Zeit: ?
 
-Abnahmeumgebung: Auf dem Vereinsflugplatz des Mfc-Rossendorf
+Abnahmeumgebung: *Vereinsflugplatz des Mfc-Rossendorf* (Bautzner Landstraße 26, 01454 Radeberg)
 
 === Lieferumfang
 
@@ -38,47 +38,47 @@ Abnahmeumgebung: Auf dem Vereinsflugplatz des Mfc-Rossendorf
 |===
 |Use Case | erfüllt | Anmerkung
 
-|Use-Case: UC01 Pilot anmelden
+|UC01 Pilot anmelden
 | 
 |
 
-|Use-Case: UC02 Pilot abmelden
+|UC02 Pilot abmelden
 | 
 |
 
-|Use-Case: UC03: Pilotendaten anlegen
+|UC03: Pilotendaten anlegen
 |
 |
 
-|Use-Case: UC04: Pilot deaktivieren
+|UC04: Pilot deaktivieren
 |
 |
 
-|Use-Case: UC05: Pilotendaten modifizieren
+|UC05: Pilotendaten modifizieren
 |
 |
 
-|Use-Case: UC06: Alle Piloten abmelden
+|UC06: Alle Piloten abmelden
 |
 |
 
-|Use-Case: UC07: Flugleiter bestimmen
+|UC07: Flugleiter bestimmen
 |
 |
 
-|Use-Case: UC08: Protokoll einsehen
+|UC08: Protokoll einsehen
 |
 |
 
-|Use-Case: UC09: Protokolldaten nachträglich einfügen
+|UC09: Protokolldaten nachträglich einfügen
 |
 |
 
-|Use-Case: UC10: Handhabung Gastflüge
+|UC10: Handhabung Gastflüge
 |
 |
 
-|Use-Case: UC11: Pilot reaktivieren
+|UC11: Pilot reaktivieren
 |
 |
 
@@ -89,7 +89,7 @@ Abnahmeumgebung: Auf dem Vereinsflugplatz des Mfc-Rossendorf
 |===
 |Anforderung | erfüllt | Anmerkung
 
-|NFAF-1: Zugriffsschutz
+|NFAF-1: Zugriffsschutz (Einsicht des Flugprotokolls nur für Admins und Piloten)
 | 
 |
 
@@ -97,31 +97,28 @@ Abnahmeumgebung: Auf dem Vereinsflugplatz des Mfc-Rossendorf
 |
 |
 
-|NFAF-3: Überwachung der Synchronisation
+|NFAF-3: Überwachung der Synchronisation (Admin kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde)
 |
 |
 
-|NFAU-1: Aufgabeneffizienz
+|NFAU-1: Aufgabeneffizienz (Simple und intuitive Kombinationen am Terminal)
 |
 |
 
-|NFAU-2: Online-Hilfe
+|NFAU-2: Online-Hilfe (Bedeutung der Statusmeldungen der LED erkennbar)
 |
 |
 
-|NFAU-3: Benutzerfreundlichkeit
+|NFAU-3: Benutzerfreundlichkeit (Responsive Webdesign)
 |
 |
 
-|NFAR-1: Korrektheit
+
+|NFAP-1: Antwortzeiten (Konfigurierbare Antwortzeiten durch Admins)
 |
 |
 
-|NFAP-1: Antwortzeiten
-|
-|
-
-|NFAP-2: Durchsatz
+|NFAP-2: Durchsatz (Piloten können sich hintereinander (innerhalb von 30 Sekunden) an- und abmelden)
 |
 |
 
