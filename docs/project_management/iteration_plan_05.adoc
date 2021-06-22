@@ -42,7 +42,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3,1,1,1,2,1,1,1"]
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
-
+|
 302 | Erstellung Test-Cases |  | 6 | 70% | 3-7 | Alex, Max | 6 | 0.5 |
 
 501 | Detaillierte Projektplanung für Semester 4 |  | 2 | 100% | 5 | Alex | 2 | 0 |
