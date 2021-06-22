@@ -42,7 +42,7 @@ def sync_sessions():
             # prüfe ob Session jünger als Toleranzzeit 
             end = pandas.to_datetime(endTime)
             start = pandas.to_datetime(startTime)
-            timeDiff = timedelta(minutes=tolerance)
+            timeDiff = timedelta(minutes=int(tolerance))
 
             if timeDiff > end - start:
                 databaseAccess.set_synced(session['session_id'])
@@ -60,7 +60,7 @@ def sync_sessions():
             # prüfe ob Session jünger als Toleranzzeit
             now = datetime.now()
             start = pandas.to_datetime(startTime)
-            timeDiff = timedelta(minutes=tolerance)
+            timeDiff = timedelta(minutes=int(tolerance))
 
             if timeDiff > now - start:
                 continue
