@@ -6,66 +6,152 @@
 
 In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
 
+
 === TestCases
 
-[%header, cols=7*]
+[%header, cols=5*]
 |===
 |TID
 |Testart
 |Vorbedingung
 |Durchführung
 |Nachbedingung
-|Erfolgreich?
-|Nachgebessert
 
 |1
 |Positiv, manuell
-|
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |* Einstellungen zu Tasten-/Bedienkonfigurationen werden mit gültigen Werten belegt
 * Anmeldung am Terminal
 |LED-Rückmeldungen, Dauern, Kombinationen funktionieren wie eingetragen
-|
-|
 
 |2
 |Positiv, manuell
-| -
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |Änderung der Uhrzeit der täglichen Pilotenabmeldung wird mit gültigen Werten verändert
 |Alle noch aktiven Piloten werden nun zu dieser Zeit abgemeldet
-|
-|
 
 |3
 |Positiv, manuell
-| -
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |* Änderung der Toleranzzeit für das Terminal
 * An- und Abmeldung am Terminal innerhalb der neuen Toleranzzeit
 |Die Flugsession wird nicht eingetragen
-|
-|
 
 |4
 |Positiv, manuell
-|-
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 |RFID-Karten hinzufügen
 |Die RFID-Karten sind nun im System eingetragen und können den Piloten zugewiesen werden
-|
-|
 
 |5
 |Negativ, manuell
-|Ein Pilot besitzt eine konkrete RFID-Karte
+a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Diese RFID-Karte wird deaktiviert
 |Es erscheint ein Fehler, dass die Karte nicht deaktiviert werden kann, da in Benutzung
-|
-|
 
 |6
 |Positiv, manuell
-|Ein Pilot besitzt eine konkrete RFID-Karte
+a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |* Diese RFID-Karte wird vom Piloten entfernt
 * Diese RFID-Karte wird deaktiviert
 |Die RFID-Karte wurde erfolgreich entfernt
+
+
+|===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 5
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 6
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
 |
 |
 
