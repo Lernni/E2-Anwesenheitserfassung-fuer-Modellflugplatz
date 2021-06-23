@@ -45,21 +45,21 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-10 | Lenny, Dirk | 2 | 2 |
 
-708 | REST-API umsetzen |  | 24 | 95% | 7-10 | Implementierung | 30 | 5 |
+708 | REST-API umsetzen |  | 24 | 99% | 7-10 | Implementierung | 34 | 2 |
 
 802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 100% | 8-10 | Max, Dirk | 5 | 0 |
 
-804 | Synchronisation Webserver - Terminal implementieren & dokumentieren |  | 24 | 65% | 8-10 | Implementierung | 25 | 10 |
+804 | Synchronisation Webserver - Terminal implementieren & dokumentieren |  | 24 | 80% | 8-10 | Implementierung | 30 | 5 |
 
-806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-10 | Max, Dirk | 10 | 25 |
+806 | Terminalfunktionalität implementieren |  | 24 | 80% | 8-10 | Max, Dirk | 20 | 1 |
 
-808 | Erstellung spezifischer Test-Cases |  | 24 | 95% | 8-10 | Alex, Analyse | 18 | 3 |
+808 | Erstellung spezifischer Test-Cases |  | 24 | 100% | 8-10 | Alex, Analyse | 21 | 0 |
 
-809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 80% | 8-10 | Richard, Lenny | 1 | 1 |
+809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 95% | 8-10 | Richard, Lenny | 1 | 1 |
 
-902 | Durchführung der Test-Cases |  | 24 | 30% | 9-10 | Alex, Jakob, Max | 3 | 8 |
+902 | Durchführung der Test-Cases |  | 24 | 60% | 9-10 | Alex, Jakob, Max | 9 | 2 |
 
-903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 14 | 3 |
+903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 17 | 3 |
 
 904 | Frontend Login erstellen |  | 6 | 100% | 9-10 | Lenny | 4 | 0 |
 
@@ -67,13 +67,13 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 1001 | Datenmodell aktualisieren |  | x | 0% | 10 | Max | 0 | 1 |
 
-1002 | Kundenwebserver aufsetzen |  | x | 90% | 10 | Lenny | 0 | 5 |
+1002 | Kundenwebserver aufsetzen |  | x | 95% | 10 | Lenny | 3 | 2 |
 
 1004 | Design/Architecture Notebook aktualisieren |  | x | 30% | 10 | Lenny, Dirk, Max | 9 | 4 |
 
 1005 | Projektbericht schreiben |  | x | 0% | 10 | Jakob, Richard | 0 | 0 |
 
-1007 | TestCases korrigieren |  | x | 0% | 10 | Alex, Jakob | 0 | 4 |
+1007 | TestCases korrigieren |  | x | 60% | 10 | Alex, Jakob | 2 | 4 |
 
 |===
 
