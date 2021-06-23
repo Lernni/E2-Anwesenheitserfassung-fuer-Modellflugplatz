@@ -1,0 +1,37 @@
+== 2.2 - Iterationen 5 (29.03.21 - 11.04.21)  
+
+Bevor das neue Semester und damit die Iteration 5 bei uns begann, hatten wir in den Semesterferien noch ein langes Meeting mit den Ansprechpartnern des Vereins.   
+In dem Meeting ging es haupsächlich darum, das wir Ihnen unsere ersten Entwürfe der logischen und physichen Sicht präsentierten und Feedback einholten. *(Verweis auf 7. Architektursichten im AN)*. 
+Wir Konkretisierten unsere ausgearbeiteten Qualitätsanforderungen und zeigten Ihnen unsere Ziele für die nächsten Monate auf. 
+Damit wollten wir sicher gehen, ob sie mit den Zielen des Kunden übereinstimmen.
+Da die wesentliche Funktionalität der Gastflüge noch ziemlich unklar war, klärten wir unsere Fragen zu diesem Thema auch. Die Antworten dienten als Basis für die weiteren Arbeiten an diesem Use-Case. *(Verweis auf UC10)*.
+Das Team der Implementierung entschied vom Webframework Angular auf Vue.js umzusteigen und fragten nach möglichen Einwenden von Seiten des Kunden.
+Gründe für den Wechsel waren, das Vue.js einsteigerfreundlicher ist und auf Wissen bzw. Ressourcen von Kommilitonen zurückgegriefen werden konnte.
+Außerdem ging es um die Beschaffung der Hardware bzw. der Zugänge. Unter anderen fragten wir nach dem Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis und Taster für den Bau von einem ersten Prototypen und einem Zugang zum Webserver zum Testen der Funktionen und Aufbau einer Datenbank.
+Obwohl uns der Versand der Sachen schon in der kommenden Woche zugesagt wurde, sollten wir fast 1 1/2 Monate warten. 
+
+//Gründe der kommunikation ? Email etc. 
+
+Mit vielen geklärten Fragen und einen positiven Eindruck starteten wir in die 5. Iteration.
+Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen. *(Verweis auf Projektplanung)*
+
+//// zum ersten mal aktuell ... sonst immer nachgearbeitet
+
+
+Commits on Mar 15, 2021
+
+26.03 -> Meeting mit Anke 
+* Analyse Korrekturen 
+
+* Neue Rollen zugeteilt 
+* Deployment zu Dokumentation hinzufügen Richard
+- Iterationspläne, Projektplan und Test-Cases erweitern (Issue #63) -> Alex
+ - Systementwurf erweitern (Issue #64) -> Team Implementierung, Test
+
+* Backend + Frontend implementierung
+- Grundstruktur Webserver erstellen -> Lenny
+ - Datenbank aufsetzten mittels SQLite testen -> Max -> DB in SQLite initialisiert? Dürfen wir verwenden?
+ -Webserver: Frontend und Backend Verbindung mittels axios hergestellt -> Lenny
+ - Überlegungen zum Terminalaufbau -> Dirk
+
+ -->  Weiterarbeit erfordert Rücksprache mit Themenstellern -> erreicht nichts ////
