@@ -227,6 +227,21 @@ def end_all_sessions():
     serverConnection.sync_sessions()
     return
 
+# gibt SessionID des aktiven Flugleiters zurück, -1 falls keiner vorhanden
+def get_flugleiter():
+    connection = get_connection('database_terminal.db')
+    cursor = connection.cursor()
+
+    select_stmt = cursor.execute(
+        'SELECT SessionID FROM Flugsession WHERE Ist_Flugleiter = 1 AND Endzeit IS NULL')
+
+    ret = -1
+    for row in select_stmt:
+        ret = row[0]
+
+    connection.close()
+    return ret
+
 # setzt Flugleiterstatus
 def set_flugleiter(SessionID):
     connection = get_connection('database_terminal.db')
