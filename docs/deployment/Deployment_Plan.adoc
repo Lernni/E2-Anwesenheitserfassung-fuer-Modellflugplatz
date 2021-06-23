@@ -41,3 +41,8 @@ Falls es nach der erfolgreichen Übergabe des Systems kompliziertere Probleme gi
 === Wann gilt die Veröffentlichung als fertig?
 
 Die Veröffentlichung gilt als fertig, sobald alle gewünschten Funktionen implementiert sind und dem Auftraggeber übergeben wurde.
+
+=== Deployment Diagram
+
+
+image::deployment_diagram.png[deployment_diagram]
