@@ -26,32 +26,33 @@ a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in
 * Es besteht die Möglichkeit die `Protokolldaten` zu bearbeiten und  herrunterzuladen.
 
 |2
-|Positiv, manuell
-a|* *Pilot* ist auf dem _Webserver_ eingeloggt
+|Negativ, manuell
+a|* *Administrator* ist auf dem _Webserver_ eingeloggt
 * hat Zugriffsrechte für die _Protokollansicht_
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
-a|* Eine normale Suche nach einer existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in der folgenden _Protokollansicht_
-* Es besteht die Möglichkeit die `Protokolldaten` zu bearbeiten und  herrunterzuladen.
+a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe. (Falsche Zeiten)
+a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden 
+* Die Eingabe vom nicht möglichen Zeitraum ist nicht möglich.
+*  Das _Filtern_ ist nicht möglich
 
 |3
 |Negativ, manuell
 a|* *Administrator* ist auf dem _Webserver_ eingeloggt
 * hat Zugriffsrechte für die _Protokollansicht_
-* die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
-a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
+a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe. (Falscher Namen)
 a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 * Die Eingabe vom nicht möglichen Zeitraum ist nicht möglich.
 *  Das _Filtern_ ist nicht möglich
 
 |4
-|Negativ, manuell
-a|* *Administrator* ist auf dem _Webserver_ eingeloggt
-* hat Zugriffsrechte für die _Protokollansicht_
-a|* Eine normale Suche nach einer nicht existierenden Flugsession über _Protokoll ansehen_. Durch das betätigen von _Filtern_ bestätigt man die Eingabe.
-a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
-* Die Eingabe vom nicht möglichen Zeitraum ist nicht möglich.
-*  Das _Filtern_ ist nicht möglich
+|Positiv, manuell
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
+a|* Eine normale Suche nach einer existierenden Flugsession über _Protokoll ansehen_. Dabei wird ein größerer Zeitabschnitt geählt. Durch das betätigen von _Filtern_ bestätigt man die Eingabe. 
+a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in der folgenden _Protokollansicht_
+* Es besteht die Möglichkeit die `Protokolldaten` zu bearbeiten und  herrunterzuladen.
+
+
 
 |===
 
@@ -66,10 +67,10 @@ a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".
-|
-|
-|
+|Eine normale Suche, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Jakob Laufer" im Zeitraum vom Startdatum: "02.06.2021" und Enddatum: "04.06.2021".
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -82,10 +83,10 @@ a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Eine normale Such,durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "03.06.2021" und Enddatum: "04.06.2021".
-|
-|
-|
+|Eine normale Suche, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Mustermann" im Zeitraum vom Startdatum: "06.06.2021" und Enddatum: "02.06.2021". (Zeitraum ist nicht möglich)
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -98,10 +99,10 @@ a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich)
-|
-| Beim Namen -> Rückmeldung, dass es am Namen liegt.
-|
+|Eine normale Suche, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "02.06.2021" und Enddatum: "04.06.2021". 
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -114,9 +115,9 @@ a|* Fehlerhafte Suche muss dem *Administrator* muss kenntlich gemacht werden
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Max Test" (existiert nicht) im Zeitraum vom Startdatum: "04.06.2021" und Enddatum: "03.06.2021". (Zeitraum ist nicht möglich)
-|
-|Beim Namen -> Rückmeldung, dass es am Namen liegt.
+|Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Lisa Musterfrau" (existiert nicht) im Zeitraum vom Startdatum: "02.06.2021" und Enddatum: "23.06.2021". 
+|Nicht erfolgreich
+| -> erkennt Namen auf der 2. Ansicht nicht
 |
 
 |===

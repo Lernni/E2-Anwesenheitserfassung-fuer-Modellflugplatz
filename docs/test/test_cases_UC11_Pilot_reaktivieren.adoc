@@ -41,10 +41,10 @@ a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur _Pilotenübersic
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Den Pilot Maxi Musti über _Reaktivieren_ reaktivieren. Die _RFID-Kennung: 0x8235_ auswählen und `Pilotendaten` und `Login_Informationen` bestätigen durch _Reaktivieren_.
-|
-|
-|
+|Den Pilot "Max Muster" über _Reaktivieren_ reaktivieren. Die _RFID-Kennung: 0x789_ auswählen und `Pilotendaten` und `Login_Informationen` bestätigen durch _Reaktivieren_.
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 

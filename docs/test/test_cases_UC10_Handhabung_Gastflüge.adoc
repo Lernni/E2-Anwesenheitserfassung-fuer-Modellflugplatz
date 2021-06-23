@@ -33,7 +33,7 @@ a|* *Pilot* ist bereits im _System_ angelegt worden
 * *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 * das Filtern der `Protokolldaten` in der _Protokollansicht_ funktioniert & wird korrekt ausgeführt
-a|* Nach dem erfolgreichen _Filtern_ nach dem passenden 
+a|* Nach dem erfolgreichen _Filtern_ nach dem passenden nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt.
 a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich gemacht werden
 * Der Name es Gastes erscheint nicht in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast
 
@@ -50,10 +50,11 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Bei einer Flugsession vom Piloten Max Mustermann wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast Mustermann hinzugefügt.")
+|Bei einer Flugsession vom Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast Mustermann hinzugefügt."
+|Nicht erfolgreich 
+|-> Ungültiger Gastname 
 |
-|
-|
+
 
 |===
 
@@ -66,11 +67,11 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 |Nachgebessert
 |Akzeptanztest
 
-| Testdaten: Bei einer Flugsession vom Piloten 	
-Lisa Musterfrau wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast10 Mustermann hinzugefügt."
+|Bei einer Flugsession vom Piloten "Lisa Musterfrau" wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast10 Mustermann hinzugefügt."
+|Nicht erfolgreich 
+|-> Ungültiger Gastname 
 |
-|
-|
+
 
 |===
 

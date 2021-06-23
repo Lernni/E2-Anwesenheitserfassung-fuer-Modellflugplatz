@@ -51,6 +51,15 @@ a|* Das Passwort von einem *Pilot* wird zurückgesetzt
 a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelden. 
 * Dem *Pilot* ist es möglich, sich mit einem neuen Passwort zu registrieren.
 
+|5
+|Positiv, manuell
+a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
+* *Pilot* ist bereits im _System_ angelegt worden 
+* *Pilot* ist ein *Admin*
+a|* Einem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ entzogen
+a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_ 
+* In der _User Information_ ändert sich die Rolle in *Pilot*
+
 |===
 
 === TestCases
@@ -64,10 +73,10 @@ a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelde
 |Nachgebessert
 |Akzeptanztest
 
-|Testdaten: Beim Piloten "Lisa Mustermann" wird der Nachname im _Bearbeitungsfeld: Nachname_ in Musterfrau geändert
-|
-|
-|
+|Beim Piloten "Lisa Mustermann" wird der Nachname im _Bearbeitungsfeld: Nachname_ in Musterfrau geändert
+|Erfolgreich 
+|/
+|Erfolgreich
 
 |===
 
@@ -80,10 +89,10 @@ a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelde
 |Nachgebessert
 |Akzeptanztest
 
-|Testdaten: Beim Piloten Max Mustermann wird im _Bearbeitungsfeld: Vorname_ die Nummer 10 angefügt.
-|
-|
-|
+|Beim Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Vorname_ die Nummer 10 angefügt.
+|Erfolgreich 
+|/
+|Erfolgreich
 
 |===
 
@@ -96,10 +105,10 @@ a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelde
 |Nachgebessert
 |Akzeptanztest
 
-|Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ ein Haken gesetzt.
-|
-|
-|
+|Beim Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ ein Haken gesetzt.
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -112,10 +121,26 @@ a|* Der jeweilige *Pilot* kann sich nicht mehr mit seinem alten Passwort anmelde
 |Nachgebessert
 |Akzeptanztest
 
-|Testdaten: Dem Piloten Max Mustermann wird im _Bearbeitungsfeld: Passwort zurücksetzen_ ein Haken gesetzt.
-|
-|Sehr gut wäre: Bei einer fehlgeschlagenden Anmeldung eine Rückmeldung zu bekommen.
-|
+|Beim Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Passwort zurücksetzen_ ein Haken gesetzt.
+|Erfolgreich
+|/
+|Erfolgreich
+
+|===
+
+==== TID 5
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+|Beim Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Pilot hat Adminrechte_ der Haken entzogen.
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
