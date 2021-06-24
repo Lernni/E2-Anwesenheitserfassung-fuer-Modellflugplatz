@@ -9,6 +9,7 @@ rfid_post_model = api.model('rfid_post_model', {
 
 # POST /rfid
 # nur admins dürfen diese request ausführen
+# der rfid tag ist als string (hex) im body enthalten
 class Rfid(Resource):
     @api.expect(auth_parser, rfid_post_model)
     def post(self):
