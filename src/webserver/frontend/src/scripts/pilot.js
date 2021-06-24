@@ -1,3 +1,10 @@
+/*
+  *** pilot.js ***
+  - Mixin für Verwaltung der gemeinsam genutzten Funktionen der Piloten-Formulare
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+*/
+
 import { required, helpers, maxLength } from 'vuelidate/lib/validators'
 
 const surnameRegex = helpers.regex("surnameRegex", /^([a-z]+ )*([A-Z][a-záàéèöäüß]+)([-]([A-Z][a-záàéèöäüß]+))*$/)
@@ -51,11 +58,13 @@ export const formPilot = {
         nameRegex,
         maxLength: maxLength(50)
       },
-      pilotUsername: {},
       rfid: {
         required
       },
-      isAdmin: {}
+      // keine Anforderung an isAdmin, pilotUsername
+      // muss aber trotzdem aufgeführt werden, da es in form enthalten ist und form an Pilot.vue weitergegeben wird
+      isAdmin: {},
+      pilotUsername: {},
     }
   },
   watch: {
@@ -80,6 +89,8 @@ export const formPilot = {
       return states
     },
 
+    // Bestimmung des Nutzernamen anhand des Vor- und Nachnamen
+    // Bsp: Max Muster -> max_muster
     setUsername() {
       var name = this.form.pilotName
       var surname = this.form.pilotSurname
@@ -145,6 +156,7 @@ export const formPilot = {
       })
     },
 
+    // Laden aller Nutzernamen zum Überprüfen auf Namensgleichheit
     async getPilotUsernames() {
       return new Promise((resolve, reject) => {
         this.username.pilotUsernameLoader = true

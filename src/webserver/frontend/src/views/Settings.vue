@@ -1,6 +1,15 @@
+<!--
+  *** Settings.vue ***
+  - Allgemeine und Terminal-Einstellungen
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="settings">
-
+    
+    <!-- Dialogfenster: https://bootstrap-vue.org/docs/components/modal -->
+    <!-- Dialog: Uhrzeit der täglichen Pilotenabmeldung -->
     <b-modal id="pilot-checkout-modal" title="Uhrzeit der täglichen Pilotenabmeldung">
       <b-form-group id="pilot-checkout-group" label="Uhrzeit auswählen" label-for="pilot-checkout-time-input">
         <b-form-input id="pilot-checkout-time-input" v-model="settings.checkout_time" type="time"></b-form-input>
@@ -15,6 +24,7 @@
       </template>
     </b-modal>
 
+    <!-- Dialog: RFID-Tags verwalten -->
     <b-modal id="rfid-tag-modal" size="lg" title="RFID-Tags verwalten">
       <b-container fluid>
         <b-form>
@@ -49,7 +59,13 @@
             <b-col cols="12" md="6">
               <b-form-group id="free-rfid-group" label="Frei" label-for="free-rfid-table">
                 <b-overlay :show="freeRfidLoader" spinner-type="grow">
+                  <!-- Attribut sticky-header legt eine feste Höhe für die Tabelle fest und verhindert, dass der Header beim Scrollen verschwindet -->
                   <b-table sticky-header :items="freeRfidList" :fields="freeRfidFields" head-variant="light">
+                    <!-- Da die items der Tabelle nur aus einem einfachen Array besteht, gibt es keinen Key, an dem die Tabelle festmachen kann,
+                        in welche Spalte die Informationen geschrieben werden sollen. Deshalb wird definiert, dass in der ersten Spalte (#cell())
+                        alle Informationen aufgelistet werden sollen, also jeweils die Elemente im Array -->
+                    <!-- Die Realisierung in einer b-table biete die Möglichkeit der Erweiterung auf Aktionsbuttons in der Tabelle , z.B. die 
+                        Möglichkeit eine Aktionsspalte mit Entfernen-Buttons einzuführen, um freie RFID-Tags aus dem System zu löschen -->
                     <template #cell()="row">
                       {{ row.item }}
                     </template>
@@ -75,8 +91,12 @@
       </template>
     </b-modal>
 
+
+    <!-- Dialog: Tasten- & Bedienkonfiguration -->
     <b-modal id="terminal-config-modal" size="lg" title="Tasten- & Bedienkonfiguration">
       <b-container>
+        <!-- Einstellungen für die Aktionen am Terminal werden dynamisch geladen. Es ist also möglich mehr oder weniger Aktionen 
+            am Terminal einzuführen und die Bedienkonfiguration passt sich daran automatisch an -->
         <b-row cols="3" class="align-items-center" v-for="config in settings.terminal_config" :key="config.name">
           <b-col cols="12" lg="2" class="pl-0">
             {{ config.name }}:
@@ -109,6 +129,7 @@
       </template>
     </b-modal>
 
+    <!-- Dialog: Toleranzzeit bei An- & Abmeldung -->
     <b-modal id="tolerance-time-modal" title="Toleranzzeit bei An- & Abmeldung">
       <b-form-group id="tolerance-time-group" label="Toleranzzeit auswählen" label-for="tolerance-time-input">
         <b-input-group append="Min">
@@ -125,6 +146,7 @@
       </template>
     </b-modal>
 
+    <!-- Einstellungsseite -->
     <h2>Einstellungen</h2>
 
     <b-alert variant="success" :show="submitState">
@@ -145,6 +167,7 @@
                 Uhrzeit der täglichen Pilotenabmeldung
               </b-col>
               <b-col cols="2" md="4" class="py-2 text-center">
+                <!-- Dialogaufruf siehe: https://bootstrap-vue.org/docs/components/modal#using-v-b-modal-directive -->
                 <b-button variant="primary" v-b-modal.pilot-checkout-modal>
                   <b-icon-pencil-square></b-icon-pencil-square>
                   <span class="ml-1 d-none d-md-inline">Bearbeiten</span>
@@ -198,11 +221,12 @@ export default {
   mixins: [formValidation],
   data() {
     return {
+      // Verwaltung RFID-Tags
       form: {
+        // neuer RFID-Tag
         rfidTag: null
       },
 
-      // rfid tags
       addRfidLoader: false,
       freeRfidLoader: false,
       usedRfidLoader: false,
@@ -218,7 +242,7 @@ export default {
         {key: "rfid", label: "RFID-Tag"}
       ],
 
-      // settings
+      // Einstellungen
       settingsLoader: false,
       settingsState: null,
       settings: {},
@@ -231,6 +255,7 @@ export default {
     form: {
       rfidTag: {
         required,
+        // Überprüfung, ob der neu eingegebene RFID-Tag hexadezimal ist
         isHex(value) {
           if (value == null) return false
           var checkNumber = parseInt(value, 16);
@@ -240,6 +265,8 @@ export default {
     }
   },
   mounted() {
+    /* Wird die Einstellungsseite mit dem Parameter ?rfid_tags aufgerufen, erscheint das Dialogfenster
+     * für die Verwaltung der RFID-Tags sofort */
     var showRfid = this.$route.query.rfid_tags
     if (showRfid !== undefined) this.$bvModal.show('rfid-tag-modal')
 
@@ -250,6 +277,7 @@ export default {
   methods: {
     async submitSetttings(modal) {
       await this.postSettings()
+      // Schließe das aufrufende Dialogfenster, nachdem die Einstellungen verarbeitet wurden
       this.$bvModal.hide(modal)
     },
 
@@ -337,7 +365,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

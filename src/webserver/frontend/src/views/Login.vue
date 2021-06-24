@@ -1,3 +1,10 @@
+<!--
+  *** Login.vue ***
+  - Seite zum Anmelden für registrierte Nutzer
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <b-container fluid class="mb-3">
     <b-alert variant="danger" :show="loginState == false">
@@ -76,17 +83,24 @@ export default {
     async postLogin() {
       this.loginLoader = true
 
+      // Passwort muss hier im Plaintext verschickt werden
+      // siehe https://security.stackexchange.com/questions/4957/how-can-i-avoid-sending-passwords-in-plain-text-when-logging-into-a-website
       var loginCredentials = {
         username: this.form.username,
         password: this.form.password
       }
 
+      // Login wird vom Store ausgeführt
+      // siehe store/index.js
       this.$store.dispatch("login", loginCredentials)
+      // War die Anmeldung erfolgreich, Weiterleitung zur Startseite
       .then(() => this.$router.push("/"))
       .catch(error => {
         console.log(error)
         this.loginLoader = false
         this.loginState = false
+        // Zurücksetzen der State-Markierungen im Formular
+        // siehe https://stackoverflow.com/questions/64512752/vuelidate-set-dirty-false-for-all-properties-when-form-is-submitted
         this.$v.$reset()
       })
     }

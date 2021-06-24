@@ -1,13 +1,23 @@
+<!--
+  *** Home.vue ***
+  - Startseite, Übersicht über aktive Flugsessions, Quicklinks für Admins
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
-  <div class="admin-panel">
+  <div class="home">
     <h2>Aktive Flugsessions</h2>
       <b-alert variant="danger" :show="sessionsState == false">
         Flugsessions konnten nicht geladen werden!
       </b-alert>
 
     <b-overlay :show="sessionsLoader" spinner-type="grow">
+      <!-- Desktopansicht -->
       <b-table class="d-none d-sm-table" striped :items="items" :fields="fieldsDesktop"></b-table>
+      <!-- Mobile Ansicht -->
       <b-table class="d-sm-none" striped :items="items" :fields="fieldsMobile">
+        <!-- siehe https://bootstrap-vue.org/docs/components/table#custom-data-rendering -->
         <template #cell(session_leader)="row">
           <b>{{ row.item.session_leader ? "F" : "" }}</b>
         </template>
@@ -18,10 +28,12 @@
       Zurzeit keine Piloten auf dem Flugplatz
     </b-alert>
 
+    <!-- TODO -->
     <p class="font-italic last-ping-info">Letzte Aktualisierung: --:--</p>
     <div v-if="isAdmin">
       <hr>
       <h2>Quicklinks</h2>
+      <!-- nur Desktop -->
       <div class="d-none d-sm-block">
         <b-row cols="2" class="align-items-center text-center">
           <b-col class="py-2">
@@ -47,6 +59,7 @@
           </b-col>
         </b-row>
       </div>
+      <!-- nur Mobil -->
       <b-list-group class="text-center d-sm-none">
         <b-list-group-item to="sessions">Protokoll ansehen</b-list-group-item>
         <b-list-group-item to="sessions/new">Flüge nachtragen</b-list-group-item>
@@ -61,7 +74,7 @@
 </template>
 
 <script>
-// TODO: letzte Aktualisierung bekommen -> Einstellungen?
+// TODO: letzte Aktualisierung bekommen
 // TODO: POST /sessions?checkout-all
 
 export default {
@@ -69,6 +82,7 @@ export default {
   data() {
     return {
       items: [],
+      // siehe https://bootstrap-vue.org/docs/components/table#complete-example
       fieldsDesktop: [
         {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Pilot"},

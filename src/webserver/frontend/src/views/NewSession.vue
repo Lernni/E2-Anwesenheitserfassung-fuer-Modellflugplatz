@@ -1,3 +1,10 @@
+<!--
+  *** NewSession.vue ***
+  - Nachtragen einer Flugsession
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="new-session">
     <h2>Flugsession nachtragen</h2>
@@ -20,6 +27,7 @@
           <b-form-group id="pilot-name-group" label="Pilot" label-for="pilot-name-input">
             <b-overlay :show="pilotListLoader" spinner-type="grow" spinner-small>
               <b-form-input id="pilot-name-input" class="mb-3" placeholder="Name" v-model="pilotSearch" type="search" autocomplete="off"></b-form-input>
+              <!-- Liste der verfügbaren Piloten, für die eine Flugsession nachgetragen werden kann -->
               <b-form-select v-model.trim="$v.form.pilot.$model" :options="filteredPilotList" :select-size="5" :state="validateState('pilot')"></b-form-select>
               <b-form-invalid-feedback :state="validateState('pilot')">
                 Kein Pilot ausgewählt!
@@ -29,6 +37,7 @@
 
           <b-row>
             <b-col cols="12" md="6">
+              <!-- Validierung für ein Zeit-Input benötigt validateState() beider Inputs, da diese im Kontext stehen -->
               <b-form-group id="session-start-group" label="Startzeit" label-for="session-start-time-input">
                 <b-form-input id="session-start-time-input" v-model.trim="$v.form.startTime.$model" :state="validateState('endTime') && validateState('startTime')" type="time"></b-form-input>
                 <b-form-invalid-feedback>
@@ -68,6 +77,9 @@
         </b-col>
         <b-col>
           <b-form-group id="session-date" label="Datum" label-for="session-date-picker">
+            <!-- b-calendar besitzt kein state Attribut, daher Umsetzung der Darstellung der Validierung über CSS Klasse -->
+            <!-- Mögliche Verbesserung: https://getbootstrap.com/docs/4.6/utilities/borders/#border-color -->
+            <!-- siehe https://bootstrap-vue.org/docs/components/calendar -->
             <b-calendar
               id="session-date-picker"
               v-model.trim="$v.form.date.$model"
@@ -124,6 +136,8 @@ export default {
       filteredPilotList: []
     }
   },
+  // validations sind dynamisch, da die Option einen Gast festzulegen, vom Nutzer aus- oder abgewählt werden kann
+  // entsprechend muss Vuelidate die Gastfelder beachten, oder nicht
   validations() {
     var form = {
       pilot: {required},
@@ -191,6 +205,7 @@ export default {
     }
   },
   watch: {
+    // Filtern aus der Pilotenliste
     pilotSearch: function() {
       this.filteredPilotList = []
 

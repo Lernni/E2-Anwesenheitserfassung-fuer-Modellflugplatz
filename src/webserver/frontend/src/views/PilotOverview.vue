@@ -1,3 +1,10 @@
+<!--
+  *** PilotOverview.vue ***
+  - Übersicht über alle aktiven und inaktiven Piloten
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="pilots">
     <h2>Pilotenübersicht</h2>
@@ -21,6 +28,7 @@
         </b-input-group>
       </b-col>
       <b-col cols="12" md="auto">
+        <!-- Toggle-Button, Wechsel zwischen aktiven und inaktiven Piloten -->
         <b-button variant="primary" class="ml-md-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
         <b-button variant="success" class="ml-2" to="pilots/new">
           <b-icon icon="plus" scale="1.5"></b-icon>
@@ -28,7 +36,8 @@
         </b-button>
       </b-col>
     </b-row>
-
+    
+    <!-- Dialogfenster zur Bestätigung der Deaktivierung eines Piloten -->
     <b-modal disabled v-model="showModal" title="Pilot deaktivieren" header-bg-variant="danger" header-text-variant="light">
       Soll {{ toDeactivatePilot.pilot_name }} {{ toDeactivatePilot.pilot_surname }} wirklich deaktiviert werden?<br/><br/>
       Die Zuweisung des RFID-Ausweises zum Piloten wird aufgehoben und der Ausweis wird als frei markiert.
@@ -48,11 +57,16 @@
           {{ row.item.pilot_name }} {{ row.item.pilot_surname }}
         </template>
 
+        <!-- siehe https://bootstrap-vue.org/docs/components/table#custom-data-rendering -->
         <template #cell(actions)="row">
+          <!-- Unterscheidung der Anzeige von Aktionsbuttons je nachdem, ob aktive oder inaktive Piloten angezeigt werden -->
+          <!-- inaktiv -->
+          <!-- Tooltips: https://bootstrap-vue.org/docs/components/tooltip -->
           <b-button v-if="!isActive" :href="'/pilots/reactivate?id=' + row.item.pilot_id" size="sm" variant="outline-success" v-b-tooltip.hover title="Reaktivieren">
             <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
             <span class="d-block d-sm-none">Reaktivieren</span>
           </b-button>
+          <!-- aktiv -->
           <b-button-group v-else size="sm">
             <b-button variant="outline-primary" :href="'/pilots/edit?id=' + row.item.pilot_id" v-b-tooltip.hover title="Bearbeiten">
               <b-icon-pencil-square></b-icon-pencil-square>
@@ -75,6 +89,7 @@ export default {
   data() {
     return {
       items: [],
+      // siehe https://bootstrap-vue.org/docs/components/table#complete-example
       fields: [
         {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Name"},
@@ -120,19 +135,20 @@ export default {
     async deactivatePilot() {
       this.deactivateLoader = true
 
-      // check if pilot has a running session
+      // Zunächst wird überprüft, ob der zu deaktivierende Pilot eine aktive Flugsession hat
       new Promise((resolve, reject) => {
         this.$axios.get("/sessions/running").then(result => {
           var sessions = result.data["sessions"]
 
           for (var i = 0; i < sessions.length; i++) {
             if (sessions[i].pilot_id == this.toDeactivatePilot.pilot_id) {
-              // pilot has active session
+              // Der Pilot hat eine aktive Flugsession
               this.deactivateMsg = "Pilot konnte nicht deaktiviert werden, da er zurzeit eine Flugsession hat!"
               reject()
             }
           }
           
+          // Pilot hat keine aktive Flugsession
           resolve()
         }, error => {
           console.error(error)
@@ -140,7 +156,7 @@ export default {
           reject()
         });
       }).then(() => {
-        // pilot has no running session and can be deactivated
+        // Pilot hat keine aktive Flugsession, kann also deaktiviert werden
         this.toDeactivatePilot.rfid = null
 
         this.$axios.put("/pilots?id=" + this.toDeactivatePilot.pilot_id, this.toDeactivatePilot).then(result => {
@@ -153,7 +169,6 @@ export default {
           this.deactivateState = false
         });
       }, error => {
-        // pilot has active session, or get request failed
         console.error(error)
         this.deactivateState = false
       });

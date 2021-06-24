@@ -1,5 +1,13 @@
+<!--
+  *** ReactivatePilot.vue ***
+  - implementiert Pilot.vue zum Reaktivieren eines Piloten
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="reactivate-pilot">
+    <!-- Weiterleitung von Events in Pilot an eigene Methoden: @formSubmit = "onSubmit" -->
     <Pilot
       header="Pilot reaktivieren"
       submitText="Reaktivieren"
@@ -55,6 +63,7 @@ export default {
     }
   },
   async mounted() {
+    // zu reaktivierender Piloten kommt über den Parameter id in der URL
     this.pilotId = this.$route.query.id
     this.pilot.pilotLoader = true 
 
@@ -101,6 +110,7 @@ export default {
         .then(() => {
           this.submitSuccess()
           this.resetPassword = false
+          // Nach erfolgreicher Bearbeitung, Weiterleitung zur Pilotenübersicht
           setTimeout(() => {this.$router.push("/pilots")}, 3000)
         })
         .catch(error => {this.submitFailure(error)});

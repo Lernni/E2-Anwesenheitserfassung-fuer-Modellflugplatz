@@ -1,3 +1,10 @@
+<!--
+  *** Navbar.vue ***
+  - Navigationsleiste der Webseite
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary">
     <b-navbar-brand href="/">Modellflugplatz</b-navbar-brand>
@@ -39,6 +46,9 @@ export default {
     }
   },
   watch:  {
+    // Beim Ausführen von logout() durch den Store wird die Seite nicht neu geladen
+    // Zusätzlich zu mounted() müssen also Änderungen in der URL betrachtet werden
+    // Folgende Zeile ist notwendig, damit beim serve nicht der Fehler no-unused-vars geworfen wird
     // eslint-disable-next-line no-unused-vars
     $route(to, from) {
       this.isLoggedIn = store.getters.isLoggedIn
@@ -53,9 +63,13 @@ export default {
     this.user = (user == '{}') ? {} : JSON.parse(user)
   },
   methods: {
+    // store.dispatch() -> Aufruf der Funktion im Store
     logout: function () {
       store.dispatch('logout')
       .then(() => {
+        // Duplication Route Error verhindern:
+        // Wenn sich der Nutzer bereits auf /login befindet, wird die Seite nur neugeladen
+        // siehe https://router.vuejs.org/guide/advanced/navigation-failures.html#detecting-navigation-failures
         this.$router.push('/login').catch(failure => {
           if (isNavigationFailure(failure, NavigationFailureType.duplicated)) {
             this.$router.go()

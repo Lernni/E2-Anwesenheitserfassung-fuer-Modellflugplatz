@@ -1,7 +1,15 @@
+<!--
+  *** App.vue ***
+  - Startseite der Vue App
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="app">
     <NavBar/>
     <div class="container pt-4">
+      <!-- router-view wird vom Vue Router als Einstiegspunkt für die Darstellung der Seiten verwendet -->
       <router-view/>
     </div>
   </div>
@@ -17,7 +25,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 #app {

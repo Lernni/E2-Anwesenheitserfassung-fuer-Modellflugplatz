@@ -1,3 +1,11 @@
+<!--
+  *** Pilot.vue ***
+  - Vue Komponente zum Erstellen der Piloten-Formulare
+  - Genutzt von: NewPilot.vue, EditPilot.vue, ReactivatePilot.vue
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="pilot">
     <h2>{{ header }}</h2>
@@ -6,6 +14,7 @@
       RFID-Kennungen konnten nicht geladen werden!
     </b-alert>
 
+    <!-- Formularspezifische Meldungen -->
     <slot name="alerts"></slot>
 
     <b-container fluid="md">
@@ -21,7 +30,6 @@
                       id="pilot-name-input"
                       v-model.trim="value.pilotName.$model"
                       :state="states.pilotName"
-                      debounce="500"
                       @change="onChange()"
                       autocomplete="off"
                     >
@@ -40,7 +48,6 @@
                       id="pilot-surname-input"
                       v-model.trim="value.pilotSurname.$model"
                       :state="states.pilotSurname"
-                      decounce="500"
                       @change="onChange()"
                       autocomplete="off"
                     >
@@ -102,8 +109,10 @@
 <script>
 export default {
   name: "Pilot",
+  // props werden von den jeweiligen Views geliefert
   props: ["header", "submitText", "value", "states", "submit", "rfidList", "pilot", "username"],
   methods: {
+    // events werden von den jeweiligen Views ausgewertet
     onSubmit(event) {
       event.preventDefault()
       this.$emit("formSubmit", event)

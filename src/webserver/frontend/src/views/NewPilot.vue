@@ -1,5 +1,13 @@
+<!--
+  *** NewPilot.vue ***
+  - implementiert Pilot.vue zum Erstellen eines Piloten
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="new-pilot">
+    <!-- Weiterleitung von Events in Pilot an eigene Methoden: @formSubmit = "onSubmit" -->
     <Pilot
       header="Pilot erstellen"
       submitText="Speichern"
@@ -47,6 +55,8 @@ export default {
   methods: {
     resetPilot() {
       this.submit.submitState = null
+      // Zurücksetzen der State-Markierungen im Formular
+      // siehe https://stackoverflow.com/questions/64512752/vuelidate-set-dirty-false-for-all-properties-when-form-is-submitted
       this.$v.$reset()
     },
 
@@ -68,6 +78,7 @@ export default {
       await this.$axios.post("/pilots", newPilot)
         .then(() => {
           this.submitSuccess()
+          // Vorbereitung für die Erstellung weiterer Piloten
           this.getRfidList()
           this.getPilotUsernames()
         })

@@ -1,5 +1,13 @@
+<!--
+  *** EditPilot.vue ***
+  - implementiert Pilot.vue zum Bearbeiten eines Piloten
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
-  <div class="modify-pilot">
+  <div class="edit-pilot">
+    <!-- Weiterleitung von Events in Pilot an eigene Methoden: @formSubmit = "onSubmit" -->
     <Pilot
       header="Pilot bearbeiten"
       submitText="Speichern"
@@ -20,7 +28,6 @@
 
         <b-alert variant="danger" :show="submit.submitState == false" dismissible>
           Pilot konnte nicht bearbeitet werden!<br>
-          {{ submit.submitErrorMsg }}
         </b-alert>
 
         <b-alert variant="danger" :show="pilot.pilotState == false">
@@ -38,7 +45,6 @@
 </template>
 
 <script>
-// TODO: Überprüfe, ob man einen deaktivierten Piloten bearbeiten kann
 import Pilot from '@/components/Pilot.vue'
 import { formPilot } from '@/scripts/pilot'
 import { formValidation } from '@/scripts/formValidation'
@@ -56,6 +62,7 @@ export default {
     }
   },
   async mounted() {
+    // zu bearbeitender Pilot kommt über den Parameter id in der URL
     this.pilotId = this.$route.query.id
     this.pilot.pilotLoader = true 
 
@@ -73,6 +80,8 @@ export default {
         this.form.pilotUsername = pilot.pilot_username
         this.form.isAdmin = pilot.is_admin
 
+        // RFID-Tag des Piloten zur Liste der RFID-Tags hinzufügen
+        // implizite Vorauswahl des RFID-Tags durch unshift()
         this.rfidList.rfidList.unshift(pilot.rfid)
         this.form.rfid = pilot.rfid
       })
@@ -105,6 +114,7 @@ export default {
         .then(() => {
           this.submitSuccess()
           this.resetPassword = false
+          // Nach erfolgreicher Bearbeitung, Weiterleitung zur Pilotenübersicht
           setTimeout(() => {this.$router.push("/pilots")}, 3000)
         })
         .catch(error => {this.submitFailure(error)});

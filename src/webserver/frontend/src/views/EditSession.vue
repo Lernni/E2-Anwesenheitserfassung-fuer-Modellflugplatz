@@ -1,3 +1,10 @@
+<!--
+  *** EditSession.vue ***
+  - Übersicht über eine Flugsession, Möglichkeit einen Gast hinzuzufügen
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <div class="edit-session">
     <h2>Flugsession bearbeiten</h2>
@@ -114,6 +121,7 @@ export default {
     this.sessionId = this.$route.query.id
     this.sessionLoader = true
 
+    // Auswahl genau einer Session
     await this.$axios.get("/sessions?from=" + this.sessionId + "&to=" + this.sessionId)
       .then(response => {
         this.sessionLoader = false
@@ -141,6 +149,7 @@ export default {
       if (this.validateSubmit(event)) { this.editSession() }
     },
 
+    // Hinzufügen des Gastes + Gastinformation
     async editSession() {
       this.submitLoader = true
 
@@ -153,6 +162,7 @@ export default {
         .then(() => {
           this.submitLoader = false
           this.submitState = true
+          // Nach erfolgreicher Bearbeitung, Weiterleitung zur Protokollübersicht
           setTimeout(() => {this.$router.push("/sessions")}, 3000)
         })
         .catch(error => {

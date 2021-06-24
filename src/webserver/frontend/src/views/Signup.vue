@@ -1,3 +1,10 @@
+<!--
+  *** Signup.vue ***
+  - Seite zur erstmaligen PAsswortvergabe eines Nutzers
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+-->
+
 <template>
   <b-container fluid class="mb-3">
 
@@ -102,16 +109,15 @@ export default {
 
       var signupCredentials = {
         username: this.form.username,
+        // Passwort wird verschlüsselt
         password: this.encryptPassword(this.form.password)
       }
 
       await this.$axios.post("/signup", signupCredentials)
       .then(() => {
-        // signup successful
         this.signupLoader = false
         this.signupState = true
       }).catch(error => {
-        // signup failed (either network error or password already set)
         console.log(error)
         this.$v.$reset()
         this.signupLoader = false

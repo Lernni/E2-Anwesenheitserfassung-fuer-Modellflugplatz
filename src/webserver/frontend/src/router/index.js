@@ -1,3 +1,10 @@
+/*
+  *** router/index.js ***
+  - VueRouter Verwaltung der Routen und Zugriffsrechte
+  - Autor: Lenny Reitz
+  - Mail: lenny.reitz@htw-dresden.de
+*/
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -20,7 +27,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    // Zugriffsbedingungen
+    // siehe https://medium.com/@manojkumar_88220/role-based-authentication-using-vue-js-2-f54e18498019
+    // siehe https://kelin2025.medium.com/a-few-thoughts-about-that-87c617408489
     meta: {
+      // Nutzer muss angemeldet sein als
+      // Nutzer muss entweder Admin oder Pilot sein
       requiresAuth: true,
       roles: ['admin', 'pilot']
     }
@@ -121,6 +133,8 @@ const router = new VueRouter({
   routes
 })
 
+// Vor dem Seitenwechsel überprüfen, ob der Nutzer die gewünschten Berechtigungen hat
+// Wenn nicht, Weiterleitung zum Login
 router.beforeEach((to, from, next) => {
   if (!to.meta.requiresAuth) return next()
 
