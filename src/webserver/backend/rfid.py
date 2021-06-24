@@ -3,7 +3,7 @@ from sync import sync_rfids
 from globals import api, get_connection, auth_parser, is_admin
 
 rfid_post_model = api.model('rfid_post_model', {
-    'rfid': fields.Integer()
+    'rfid': fields.String()
 })
 
 
