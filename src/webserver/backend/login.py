@@ -8,9 +8,7 @@ class login(Resource):
 
     # return header
     @api.doc(body=login_post_model, responses={
-        403: 'Wrong password',
-        513: 'Pilot does not exist',
-        514: 'Pilot does not have a Password',
+        403: 'Error',
         200: 'Success'
     })
     def post(self):
@@ -27,25 +25,22 @@ class login(Resource):
         )
 
         try:
-            # wenn der pilot kein passwort hat, return 514
+            # wenn der pilot kein passwort hat, return 403
             pwd_db = select_stmt.fetchone()[0]
             if pwd_db is None:
                 connection.close()
-                return {}, 514
+                return {}, 403
         # falls es keine ergebnisse gibt -> pilot existiert nicht
         except TypeError:
             connection.close()
-            return {}, 513
+            return {}, 403
 
         user_stmt = cursor.execute(
             'SELECT PilotID, Vorname, Nachname, Nutzername, Ist_Admin, Token FROM Pilot WHERE Nutzername LIKE ?', [username]
         )
 
         if checkpw(password.encode('utf8'), pwd_db.encode('utf8')):
-            # salt = gensalt()
-
             user = user_stmt.fetchone()
-            # hashed_token = hashpw(str(token).encode('utf8'), salt)
             connection.close()
             # return token in header
             return {
