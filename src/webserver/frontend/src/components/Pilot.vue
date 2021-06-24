@@ -34,7 +34,7 @@
                       autocomplete="off"
                     >
                     </b-form-input>
-                    <b-form-invalid-feedback v-if="!value.pilotUsername.maxLength">
+                    <b-form-invalid-feedback v-if="!value.pilotName.maxLength">
                       Vorname zu lang!
                     </b-form-invalid-feedback>
                     <b-form-invalid-feedback>

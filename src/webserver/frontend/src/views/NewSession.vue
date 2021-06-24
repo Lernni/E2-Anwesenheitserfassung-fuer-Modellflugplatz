@@ -242,7 +242,7 @@ export default {
 
 <style scoped>
 .form_error {
-  border: 1px #dc3545 solid !important;
+  border: 1px var(--red) solid !important;
   border-radius: 5px;
 }
 
