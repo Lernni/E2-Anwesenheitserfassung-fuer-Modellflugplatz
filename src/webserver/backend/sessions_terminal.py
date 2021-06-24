@@ -24,24 +24,38 @@ class SessionsTerminal(Resource):
         start_time = datetime.combine(date.fromisoformat(payload['session_date']),
                                       datetime.strptime(payload['start_time'], "%H:%M").time())
 
-        # neue session
+        # erst wird geschaut, ob der datensatz bereits existiert (ret > 0)
+        ret = cursor.execute(
+            'SELECT PilotID FROM Flugsession '
+            'WHERE PilotID = ? AND Startzeit = ?',
+            [payload['pilot_id'], start_time]
+        ).fetchall()
+
+
+        # case: neue session
         if 'end_time' not in payload.keys():
             cursor.execute(
                 'INSERT INTO Flugsession(PilotID, Startzeit, Ist_Flugleiter) VALUES (?,?,?)',
                 [payload['pilot_id'], start_time, payload['is_leader']]
             )
         # vorhandene session updaten
-        else:
-
+        # case: session ohne endzeit vorhanden
+        # ret ist None, wenn es keine Sessions (mit PilotID, und Startzeit) gibt
+        elif ret:
             end_time = datetime.combine(date.fromisoformat(payload['session_date']),
                                         datetime.strptime(payload['end_time'], "%H:%M").time())
             cursor.execute(
-                'UPDATE Flugsession SET Endzeit = ? WHERE PilotID = ? AND Startzeit = ? AND Ist_Flugleiter = ?',
-                [end_time, payload['pilot_id'], start_time, payload['is_leader']]
+                'UPDATE Flugsession SET Endzeit = ?, Ist_Flugleiter = ? WHERE PilotID = ? AND Startzeit = ?',
+                [end_time, payload['is_leader'], payload['pilot_id'], start_time]
             )
-            # abbrechen, wenn nix eingefügt wurde - aka keine flugsession existiert hat
-            if cursor.rowcount == 0:
-                return {}, 500
+        # case: session wird jetzt zum ersten mal synchronisiert (mit endzeit)
+        else:
+            end_time = datetime.combine(date.fromisoformat(payload['session_date']),
+                                        datetime.strptime(payload['end_time'], "%H:%M").time())
+            cursor.execute(
+                'INSERT INTO Flugsession(PilotID, Startzeit, Endzeit, Ist_Flugleiter) VALUES (?,?,?,?)',
+                [payload['pilot_id'], start_time, end_time, payload['is_leader']]
+            )
 
         connection.commit()
         connection.close()
