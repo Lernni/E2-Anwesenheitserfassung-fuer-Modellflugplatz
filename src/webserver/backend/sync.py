@@ -1,3 +1,4 @@
+import json
 import os, requests
 from globals import get_connection
 
@@ -56,6 +57,7 @@ def sync_pilots():
 
         set_synced_pilot(pilot[0], True)
 
+    connection.close()
     return
 
 
@@ -100,9 +102,28 @@ def sync_rfids():
 
         set_synced_rfid(rfid[0], True)
 
+    connection.close()
     return
+
+
+def sync_settings():
+    if not is_online():
+        print("Terminal offline")
+        return
+    connection = get_connection("database_server.db")
+    cursor = connection.cursor()
+
+    with open('settings.json') as settings_file:
+        settings = json.load(settings_file)
+
+    try:
+        response = requests.post(url=RASPI_URL + '/settings', data=settings, timeout=2)
+    except:
+        print('Post failed')
+        return
 
 
 if __name__ == '__main__':
     sync_rfids()
     sync_pilots()
+    sync_settings()

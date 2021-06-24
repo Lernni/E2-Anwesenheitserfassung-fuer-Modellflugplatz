@@ -2,6 +2,7 @@ import json
 
 from flask_restx import Resource
 
+from sync import sync_settings
 from globals import api, get_connection, is_admin, auth_parser
 
 settings_post_model = api.model('settings_post_model', {})
@@ -23,6 +24,11 @@ class Settings(Resource):
         file = open('settings.json', 'w')
         file.write(json.dumps(api.payload))
         file.close()
+
+        sync_settings()
+
+        # todo: prüfen, ob erfolgreich synchronisiert, ggf. neu synchronisieren
+
         return {}
 
     @api.expect(auth_parser)
