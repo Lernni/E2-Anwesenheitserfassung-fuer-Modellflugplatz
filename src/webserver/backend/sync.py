@@ -2,8 +2,8 @@ import os, requests
 from globals import get_connection
 
 # todo: make IP static
-RASPI_IP = '192.168.1.115'
-RASPI_URL = 'http://192.168.1.115:5000'
+RASPI_IP = '127.0.0.1'
+RASPI_URL = 'http://127.0.0.1:6000'
 
 
 # prüft ob raspi über netzwerk erreichbar
@@ -28,7 +28,7 @@ def set_synced_pilot(pilot_id, is_synced):
 # synchronisiert alle neuen/geänderten Piloten
 def sync_pilots():
     if not is_online():
-        print("Terminal if offline")
+        print("Terminal is offline")
         return
 
     connection = get_connection("database_server.db")
@@ -75,7 +75,7 @@ def set_synced_rfid(rfid_code, is_synced):
 # synchronisiert alle neuen rfids
 def sync_rfids():
     if not is_online():
-        print("Server temporarily not available")
+        print("Terminal offline")
         return
     connection = get_connection("database_server.db")
     cursor = connection.cursor()
