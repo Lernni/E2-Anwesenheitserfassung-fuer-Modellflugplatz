@@ -59,11 +59,11 @@
         <b-col lg="6">
           <b-button-group class="float-right">
             <!-- Toggle Button -->
-            <b-button :pressed="filteredSessions" variant="primary" @click="filteredSessions = true; getSessions()">
+            <b-button :pressed="filteredSessions" variant="primary" @click="filterSessions()">
               <b-icon-filter :flip-v="filteredSessions"></b-icon-filter>
               Filtern
             </b-button>
-            <b-button v-if="filteredSessions" variant="danger" v-b-tooltip.hover title="Filter aufheben" @click="filteredSessions = false; getSessions()">
+            <b-button v-if="filteredSessions" variant="danger" v-b-tooltip.hover title="Filter aufheben" @click="filterSessions()">
               <b-icon-x scale="1.2"></b-icon-x>
             </b-button>
           </b-button-group>
@@ -215,6 +215,12 @@ export default {
   // TODO: GET /sessions?csv
 
   methods: {
+    filterSessions() {
+      this.filteredSessions = !this.filteredSessions
+      this.currentPage = 1
+      this.getSessions()
+    },
+
     async getSessions() {
       this.sessionLoader = true
 
