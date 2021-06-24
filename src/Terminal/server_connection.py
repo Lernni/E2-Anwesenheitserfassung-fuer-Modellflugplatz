@@ -7,7 +7,7 @@ import pandas
 import requests
 import threading
 
-serverURL = 'http://79.254.2.242:15080'
+serverURL = 'http://79.254.2.242:15080/api'
 
 databaseAccess = importlib.import_module('database_access')
 
@@ -95,6 +95,9 @@ def sync_sessions():
 # minimale REST-API zur Synchronisierung von Piloten, RFID-Ausweisen und Einstellungen
 def run_api():
     app = Flask(__name__)
+    # todo: test ob cors funktioniert beim deployment
+    # gerade eben klappt das nicht, wie es soll
+    # => liegt möglicherweise daran, dass alle requests von localhost:6000 kommen und daher nicht geprüft werden (idk)
     cors = CORS(app, resources={r"*": {"origins": serverURL}})
 
     # todo: static host
