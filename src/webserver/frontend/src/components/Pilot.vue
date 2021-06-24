@@ -61,6 +61,17 @@
                   </b-form-group>
                 </b-col>
                 <b-col cols="12" md="6"> 
+                  <b-form-group label="e-ID" label-for="e-id-input">
+                    <b-form-input
+                      id="e-id-input"
+                      v-model.trim="value.eID.$model"
+                      :state="states.eID"
+                      autocomplete="off"
+                    >
+                    </b-form-input>
+                  </b-form-group>
+                </b-col>
+                <b-col cols="12" md="6"> 
                   <b-form-group label="RFID-Kennung" label-for="rfid-select">
                     <b-overlay :show="rfidList.rfidListLoader" spinner-type="grow" spinner-small>
                       <b-form-select required id="rfid-select" v-model.trim="value.rfid.$model" :state="states.rfid" :options="rfidList.rfidList"></b-form-select>

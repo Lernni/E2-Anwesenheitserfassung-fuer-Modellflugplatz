@@ -22,18 +22,27 @@
     </b-alert>
 
     <b-row class="text-center no-gutters mb-2">
+      <b-col cols="12" md="auto">
+        <b-button variant="success" to="pilots/new">
+          <b-icon icon="plus" scale="1.5"></b-icon>
+          Pilot erstellen
+        </b-button>
+        <!-- TODO -->
+        <b-button variant="success" class="ml-2">
+          <b-icon icon="box-arrow-in-right"></b-icon>
+          Piloten importieren
+        </b-button>
+      </b-col>
+    </b-row>
+    <b-row class="text-center no-gutters mb-2">
       <b-col class="mb-2 mb-md-0">
         <b-input-group prepend="Suche">
-          <b-form-input type="search" v-model="pilotName" placeholder="Name"></b-form-input>
+          <b-form-input type="search" v-model="pilotName" placeholder="Name/e-ID"></b-form-input>
         </b-input-group>
       </b-col>
       <b-col cols="12" md="auto">
         <!-- Toggle-Button, Wechsel zwischen aktiven und inaktiven Piloten -->
         <b-button variant="primary" class="ml-md-2" @click="toggleActivePilots()">{{ toggleActivePilotsButton }}</b-button>
-        <b-button variant="success" class="ml-2" to="pilots/new">
-          <b-icon icon="plus" scale="1.5"></b-icon>
-          Pilot erstellen
-        </b-button>
       </b-col>
     </b-row>
     
@@ -52,7 +61,7 @@
     </b-modal>
 
     <b-overlay :show="pilotsLoader" spinner-type="grow">
-      <b-table stacked="sm" striped :items="items" :fields="fields" :filter="pilotName">
+      <b-table stacked="md" striped :items="items" :fields="fields" :filter="pilotName">
         <template #cell(pilot_name)="row">
           {{ row.item.pilot_name }} {{ row.item.pilot_surname }}
         </template>
@@ -93,6 +102,7 @@ export default {
       fields: [
         {key: "pilot_id", label: "ID"},
         {key: "pilot_name", label: "Name"},
+        {key: "e_id", label: "e-ID"},
         {
           key: "entry_date",
           label: "Eintrittsdatum",
@@ -192,6 +202,7 @@ export default {
     async getPilots() {
       this.pilotsLoader = true
 
+      // TODO: GET /pilots gibt auch e-ID zurück
       await this.$axios.get("/pilots?is_active=" + this.isActive).then(result => {
         this.items = result.data["pilots"]
         this.pilotsLoader = false

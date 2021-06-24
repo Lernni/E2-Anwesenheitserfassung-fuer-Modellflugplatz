@@ -17,6 +17,7 @@ export const formPilot = {
         pilotSurname: null,
         pilotName: null,
         pilotUsername: null,
+        eID: null,
         rfid: null,
         isAdmin: false,
       },
@@ -57,6 +58,10 @@ export const formPilot = {
         required,
         nameRegex,
         maxLength: maxLength(50)
+      },
+      // TODO: required setzen, wenn eID implementiert wurde
+      eID: {
+        // required
       },
       rfid: {
         required
@@ -119,6 +124,7 @@ export const formPilot = {
       this.form.pilotSurname = null
       this.form.pilotName = null
       this.form.pilotUsername = null
+      this.form.eID = null
       this.form.rfid = null
       this.form.isAdmin = false
     },

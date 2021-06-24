@@ -70,6 +70,8 @@ export default {
       const newPilot = {
         pilot_name: this.form.pilotName,
         pilot_surname: this.form.pilotSurname,
+        // TODO: Auskommentieren, wenn e-ID implementiert wurde
+        // e_id: this.form.eID,
         rfid: this.form.rfid,
         pilot_username: this.form.pilotUsername,
         is_admin: this.form.isAdmin

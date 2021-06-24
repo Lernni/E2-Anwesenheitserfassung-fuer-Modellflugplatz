@@ -84,6 +84,9 @@ export default {
         // implizite Vorauswahl des RFID-Tags durch unshift()
         this.rfidList.rfidList.unshift(pilot.rfid)
         this.form.rfid = pilot.rfid
+
+        // TODO: Auskommentieren, wenn e-ID implementiert wurde
+        // this.form.eID = pilot.e_id
       })
       .catch(error => {
         this.pilot.pilotLoader = false
@@ -104,6 +107,8 @@ export default {
         pilot_id: this.pilotId,
         pilot_name: this.form.pilotName,
         pilot_surname: this.form.pilotSurname,
+        // TODO: Auskommentieren, wenn e-ID implementiert wurde
+        // e_id: this.form.eID,
         rfid: this.form.rfid,
         pilot_username: this.form.pilotUsername,
         reset_password: this.resetPassword,
