@@ -117,13 +117,13 @@ def sync_settings():
         settings = json.load(settings_file)
 
     try:
-        response = requests.post(url=RASPI_URL + '/settings', data=settings, timeout=2)
+        response = requests.post(url=RASPI_URL + '/settings', json=settings, timeout=2)
     except:
         print('Post failed')
         return
 
 
 if __name__ == '__main__':
-    sync_rfids()
-    sync_pilots()
+    # sync_rfids()
+    # sync_pilots()
     sync_settings()
