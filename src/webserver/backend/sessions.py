@@ -221,31 +221,28 @@ class Sessions(Resource):
             'session_count': 0
         }
 
-        row_count = 0
-        diff = to - from_
+        sessions_count = 0
+
         # alle ergebnisse von 'from' bis 'to'
         for row in select_stmt.fetchall():
-
-            if row_count >= diff:
-                break
-
-            row_count += 1
-            session = {
-                'session_id': row[0],
-                'pilot_id': row[1],
-                'pilot_name': row[2] + " " + row[3],
-                'date': row[4],
-                'start_time': row[5],
-                'end_time': row[6],
-                'session_leader': row[7],
-                'guest': {
-                    'name': row[8],
-                    'text': row[9]
+            sessions_count += 1
+            if from_ <= sessions_count <= to:
+                session = {
+                    'session_id': row[0],
+                    'pilot_id': row[1],
+                    'pilot_name': row[2] + " " + row[3],
+                    'date': row[4],
+                    'start_time': row[5],
+                    'end_time': row[6],
+                    'session_leader': row[7],
+                    'guest': {
+                        'name': row[8],
+                        'text': row[9]
+                    }
                 }
-            }
-            return_dict['sessions'].append(session)
+                return_dict['sessions'].append(session)
 
-        return_dict['session_count'] = row_count
+        return_dict['session_count'] = sessions_count
         connection.close()
         return return_dict
 
