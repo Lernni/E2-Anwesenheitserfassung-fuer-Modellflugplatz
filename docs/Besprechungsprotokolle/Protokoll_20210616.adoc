@@ -1,0 +1,76 @@
+= Protokoll vom 16.06.2021
+1.0 16.06.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Frontend -> Lenny
+- Terminal, Synchronisation -> Dirk
+- Terminal, Backend -> Max
+- TestCases, Iterationsplanung -> Alex, Jakob
+- Deployment -> Richard
+- Dokumentation, Projektbericht -> Jakob, Richard
+
+== Schwerpunkte
+- Deploymentdiagramm:
+* Rückmeldung und Änderungsvorschläge von Herrn Zirkelbach
+- Einschreibung in Präsentation (01.07. 13:25 Uhr)
+* zweiter Teilnehmer noch zu bestimmen (Zweiteilung: Einleitung mit Bildern vom Terminal, Vorstellung des Frontends)
+- Implementierung:
+* Webserver soll sicher aufgesetzt werden -> HTTPS
+* Frontend: Einstellungen, RFID-Tags hinzufügen noch offen
+* Terminalumgebung: Logging, Neustart offen
+* Terminalentwicklung: Flugleiterknopf offen
+* Terminal und Webserver müssen Zugriff auf interne Requests beschränken: Abfrage, ob richtige IP vergeben
+* Synchronisation: Problem bei ereignisgesteuerter Synchronisation aufgetreten
+- Tests:
+* Testdurchführung soll extra aufgelistet werden
+* Durchführung von Integrationstests: Synchronisation, An- und Abmelden übers Terminal
+* Entwurf des Abnahmeprotokolls
+- Dokumentieren:
+* Projektbericht (enthält Projektverlauf) lesen und Ideen sammeln
+* Weitere Dokumentationen durchgegangen
+* Imeplementierung dokumentieren -> Design Dokument, Kommentare aus Code generieren?
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Test-Cases korrigieren (Issue #63) -> Alex, Jakob
+
+=== vom 05.05.
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Deploymentdiagramm korrigieren (Issue #80) -> Richard, Lenny
+
+=== vom 12.05.
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Recherche & Dokumentation: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+=== vom 19.05.
+- Paketdiagramm Terminal korrigieren -> Lenny, Dirk, Jakob
+
+=== vom 25.05.
+- Frontend -> Lenny
+* Vervollständigen (Issue #91)
+- Dokumentation auf Aktualität prüfen -> Jakob, Richard
+
+=== vom 02.06.
+- Design/Architecture-Notebook aktualisieren -> Team Implementierung
+- Projektbericht erstellen/Ideen sammeln -> Jakob, Richard
+
+=== vom 09.06.
+- Synchronisation vervollständigen (Issue #97) -> Max, Dirk
+- Webserver aufsetzen (Issue #98) -> Lenny
+- Datenmodell aktualisieren (Issue #99)
+
+=== aktuell
+- Produktpräsentation vorbereiten (Issue #100) -> Lenny
+- Abnahmeprotokoll erstellen (Issue #101) -> Jakob, Richard
+- Lizenzen prüfen (Issue #102) -> Analyse, Lenny, Dirk
+- Betriebsdokumentation (Issue #103) -> Entwicklung
+- Testdokumentation (Issue #104) -> Alex, Jakob
+- Anwenderdokumentation (Issue #105) -> Alex
+- Entwicklerdokumentation (Issue #106) -> Entwicklung
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 23.06.21, 17 Uhr

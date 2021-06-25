@@ -44,7 +44,7 @@
 
 === aktuell
 - Synchronisation vervollständigen (Issue #97) -> Max, Dirk
-- Webserver aufstzen (Issue #98) -> Lenny
+- Webserver aufsetzen (Issue #98) -> Lenny
 - Datenmodell aktualisieren (Issue #99)
 
 == Terminplanung

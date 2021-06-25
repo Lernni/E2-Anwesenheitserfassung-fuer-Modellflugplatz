@@ -1,0 +1,98 @@
+= Protokoll vom 23.06.2021
+1.0 23.06.2021
+
+- alle anwesend
+
+== Aktueller Stand
+
+- Frontend fertig -> Lenny
+- Terminal, Synchronisation -> Dirk
+- Terminal, Backend, Synchronisation erfolgreich getestet -> Max
+- TestCases, Iterationsplanung -> Alex, Jakob
+- Deployment -> Richard
+- Dokumentation, Projektbericht -> Jakob, Richard
+
+== Schwerpunkte
+- Iterationswechsel: Iteration 10 -> Iteration 11
+- Kundenmeeting
+* Vorstellung der Änderungen im Frontend
+* Vorstellung des Synchronisationsproblems:
+** Einigung: Raspi holt sich noch nicht synchronisierte Daten vom Webserver, wenn er verfügbar wird
+* Modalitäten fürs Deployment klären
+** Herr Brenner kann 3 Mitglieder mitnehmen
+** Deployment vor Ort im Verein
+** Ablauf siehe Abnahmeprotokoll
+* Feedback mit Herr Iwe
+** Änderungswünsche am Frontend (e-ID, aus Excel importieren) nur noch als Click-Dummy implementierbar
+- Implementierung
+* Implementierungsstopp heute -> keine neuen Funktionen, nur noch Bugfixes
+* Backend
+** Synchronisation der Settings
+** Backend muss empfangene Sessions abspeichern, wenn Fehler dann 500, sonst 200 -> Überprüfen, ob die Session exsitiert beim Update
+** Backend muss Terminal-Requests beschränken
+** Backend gibt keinen Fehler ans Frontend, wenn Synchronisation nicht erfolgreich
+** Fehlerhaftes Login soll nur einen Fehlercode werfen
+** Fehlerbehandlung fehlgeschlagene Synchronisation
+* Terminal
+** Terminal liefert Info, ob bereits ein Flugleiter auf dem Platz
+** Terminal alle Piloten abmelden (zeitlich, durch Ausweis (10s))
+- Deployment -> Weiter Entwurf des Abnahmeprotokolls
+- Tests
+* Verbleibende Integrationstests -> Max
+* Testen nichtfunktionaler Anforderungen -> in Testdokumentation beschrieben
+- Dokumentieren -> jetzt Fokus
+* Projektbericht
+** Iterationen aufgeteilt
+** SOLID-Prinzipien nutzen
+** Protokolle und Github zur Hilfe nehmen
+* Weitere Dokumentationen (Entwicklerdokumentation von besonderem Wert für die TS)
+* alte Dokumente aus SE1 aktualisieren
+* Lizenzen prüfen
+
+== Aufgabenverteilung
+=== vom 31.03.
+- Test-Cases korrigieren (Issue #63) -> Alex, Jakob
+
+=== vom 05.05.
+- Terminalfunktionalität herstellen (Issue #78) -> Max
+- Deploymentdiagramm korrigieren (Issue #80) -> Richard, Lenny
+
+=== vom 12.05.
+- Requests im Backend einpflegen (Issue #85) -> Team Implementierung
+- Recherche & Dokumentation: Möglichkeiten der Synchronisation zwischen Terminal und Webserver -> Max, Dirk
+
+=== vom 19.05.
+- Paketdiagramm Terminal korrigieren -> Lenny, Dirk, Jakob
+
+=== vom 25.05.
+- Frontend -> Lenny
+* Vervollständigen (Issue #91)
+- Dokumentation auf Aktualität prüfen -> Jakob, Richard
+
+=== vom 02.06.
+- Design/Architecture-Notebook aktualisieren -> Team Implementierung
+- Projektbericht erstellen/Ideen sammeln -> Jakob, Richard
+
+=== vom 09.06.
+- Synchronisation vervollständigen (Issue #97) -> Max, Dirk
+- Webserver aufsetzen (Issue #98) -> Lenny
+- Datenmodell aktualisieren (Issue #99)
+
+=== vom 16.06.
+- Produktpräsentation vorbereiten (Issue #100) -> Lenny
+- Abnahmeprotokoll erstellen (Issue #101) -> Jakob, Richard
+- Lizenzen prüfen (Issue #102) -> Analyse, Lenny, Dirk
+- Betriebsdokumentation (Issue #103) -> Entwicklung
+- Testdokumentation (Issue #104) -> Alex, Jakob
+- Anwenderdokumentation (Issue #105) -> Alex
+- Entwicklerdokumentation (Issue #106) -> Entwicklung
+
+=== aktuell
+- Ausbesserung Backend (Issue #107) -> Max
+- Ausbesseurng Terminal (Issue #108) -> Max, Dirk
+
+== Terminplanung
+
+- nächstes Teammeeting: Mi 30.06.21, 17 Uhr
+- Deployment: Di 29.06.21, 16 Uhr
+- Präsentation: Do, 01.07.21, 13:25 Uhr
