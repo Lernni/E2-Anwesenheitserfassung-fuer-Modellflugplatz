@@ -1,3 +1,9 @@
+#   *** sessions_terminal.py ***
+#   - implementiert das Anlegen und Aktualisieren der Flugsessions vom Terminal aus (POST) für die Synchronisation
+#   - diese Request wird ausschließlich vom Terminal gerufen
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from datetime import date, time, datetime
 from flask_restx import Resource, inputs, fields
 from globals import api, get_connection, auth_parser, is_pilot, is_admin, TimeFormat
@@ -30,7 +36,6 @@ class SessionsTerminal(Resource):
             'WHERE PilotID = ? AND Startzeit = ?',
             [payload['pilot_id'], start_time]
         ).fetchall()
-
 
         # case: neue session
         if 'end_time' not in payload.keys():

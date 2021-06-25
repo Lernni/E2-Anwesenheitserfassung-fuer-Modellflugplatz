@@ -1,3 +1,8 @@
+#   *** pilot_list.py ***
+#   - implementiert die Abfrage aller Piloten
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from flask_restx import Resource
 
 from globals import api, get_connection, auth_parser, is_admin

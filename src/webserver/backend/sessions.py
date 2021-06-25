@@ -1,3 +1,10 @@
+#   *** sessions.py ***
+#   - implementiert das Abrufen von Sessions (GET)
+#   - implementiert das Anlegen von Sessions (POST)
+#   - implementiert das Aktualisieren von Sessions (PUT)
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from datetime import date, time, datetime
 from flask_restx import Resource, inputs, fields
 from globals import api, get_connection, auth_parser, is_pilot, is_admin, TimeFormat
@@ -29,7 +36,13 @@ put_parser = api.parser()
 put_parser.add_argument('id', type=int, required=True)
 
 
+# GET PUT POST /sessions
 class Sessions(Resource):
+    # GET Request
+    # PARAMETER:
+    #     - siehe get_parser
+    #     - "from" und "to" sind required
+    # gibt session info zurück
     # jeder pilot darf diese request ausführen
     @api.expect(get_parser, auth_parser)
     def get(self):
@@ -247,110 +260,116 @@ class Sessions(Resource):
         return return_dict
 
 
-# Flugsession nachtragen
-# POST /sessions
-# nur admins dürfen diese request ausführen
-@api.expect(session_post_model, auth_parser)
-def post(self):
-    '''add session'''
-    connection = get_connection("database_server.db")
-    cursor = connection.cursor()
+    # POST Request
+    # für inhalt des bodies siehe: session_post_model
+    # legt eine Flugsession an - Flugsession nachtragen
+    # nur admins dürfen diese request ausführen
+    @api.expect(session_post_model, auth_parser)
+    def post(self):
+        '''add session'''
+        connection = get_connection("database_server.db")
+        cursor = connection.cursor()
 
-    if not is_admin(cursor):
-        return {}, 401
+        if not is_admin(cursor):
+            return {}, 401
 
-    payload = api.payload
-    start_time = datetime.combine(date.fromisoformat(payload['session_date']),
-                                  datetime.strptime(payload['start_time'], "%H:%M").time())
+        payload = api.payload
+        start_time = datetime.combine(date.fromisoformat(payload['session_date']),
+                                      datetime.strptime(payload['start_time'], "%H:%M").time())
 
-    try:
-        end_time = datetime.combine(date.fromisoformat(payload['session_date']),
-                                    datetime.strptime(payload['end_time'], "%H:%M").time())
-    except KeyError:
-        end_time = None
+        try:
+            end_time = datetime.combine(date.fromisoformat(payload['session_date']),
+                                        datetime.strptime(payload['end_time'], "%H:%M").time())
+        except KeyError:
+            end_time = None
 
-    try:
-        guest_name = payload['guest_name']
-        guest_info = payload['guest_info']
-        # gast einfügen
+        try:
+            guest_name = payload['guest_name']
+            guest_info = payload['guest_info']
+            # gast einfügen
+            cursor.execute(
+                'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [guest_name, guest_info]
+            )
+            guest_row_nr = cursor.lastrowid
+            guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
+
+        except KeyError:
+            guest_id = None
+
+        # session einfügen
         cursor.execute(
-            'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [guest_name, guest_info]
+            'INSERT INTO Flugsession(PilotID, GastID, Startzeit, Endzeit, Ist_Flugleiter) VALUES (?,?,?,?,?)',
+            [payload['pilot_id'], guest_id, start_time, end_time, payload['is_leader']]
         )
-        guest_row_nr = cursor.lastrowid
-        guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
 
-    except KeyError:
-        guest_id = None
-
-    # session einfügen
-    cursor.execute(
-        'INSERT INTO Flugsession(PilotID, GastID, Startzeit, Endzeit, Ist_Flugleiter) VALUES (?,?,?,?,?)',
-        [payload['pilot_id'], guest_id, start_time, end_time, payload['is_leader']]
-    )
-
-    connection.commit()
-    connection.close()
-    return {}
-
-
-# jeder pilot darf nur seine eigenen sessions bearbeiten
-# 401 bei fehler - pilot ist kein admin, pilot versuch session von wem anders zu bearbeiten oder pilot versucht
-# endzeit hinzuzufügen, wo endzeit nicht NULL ist.
-@api.expect(put_parser, session_put_model, auth_parser)
-def put(self):
-    '''add guest name and info to session'''
-    connection = get_connection("database_server.db")
-    cursor = connection.cursor()
-
-    payload = api.payload
-    args = put_parser.parse_args()
-
-    p_id = cursor.execute(
-        'SELECT PilotID FROM Flugsession WHERE SessionID = ?', [args['id']]
-    ).fetchone()[0]
-
-    # wenn der pilot kein admin ist und die p_id nicht übereinstimmt, return 401
-    if p_id != is_pilot(cursor) and not is_admin(cursor):
+        connection.commit()
         connection.close()
-        return {}, 401
+        return {}
 
-    # wenn die endzeit mitgeschickt wurde, darf diese nur geändert werden, wenn die vorherige NULL war.
-    if 'end_time' in payload.keys():
-        end_time = cursor.execute(
-            'SELECT Endzeit FROM Flugsession WHERE SessionID = ?', [args['id']]
+
+# PUT Request
+    # PARAMETER
+    #   - id (int) - required
+    # für inhalt des bodies siehe: put_parser
+    # jeder pilot darf nur seine eigenen sessions bearbeiten
+
+    # 401 bei fehler - pilot ist kein admin, pilot versucht session von wem anders zu bearbeiten oder pilot versucht
+    # endzeit hinzuzufügen, wo endzeit nicht NULL ist.
+    @api.expect(put_parser, session_put_model, auth_parser)
+    def put(self):
+        '''add guest name and info to session'''
+        connection = get_connection("database_server.db")
+        cursor = connection.cursor()
+
+        payload = api.payload
+        args = put_parser.parse_args()
+
+        p_id = cursor.execute(
+            'SELECT PilotID FROM Flugsession WHERE SessionID = ?', [args['id']]
         ).fetchone()[0]
 
-        if end_time is None:
-            cursor.execute(
-                'UPDATE Flugsession SET Endzeit = ? WHERE SessionID = ?', [payload['end_time'], args['id']]
-            )
-        else:
+        # wenn der pilot kein admin ist und die p_id nicht übereinstimmt, return 401
+        if p_id != is_pilot(cursor) and not is_admin(cursor):
             connection.close()
             return {}, 401
 
-    if 'guest_name' in payload.keys():
-        if 'guest_info' in payload.keys():
-            guest_info = None
-        else:
-            guest_info = payload['guest_info']
+        # wenn die endzeit mitgeschickt wurde, darf diese nur geändert werden, wenn die vorherige NULL war.
+        if 'end_time' in payload.keys():
+            end_time = cursor.execute(
+                'SELECT Endzeit FROM Flugsession WHERE SessionID = ?', [args['id']]
+            ).fetchone()[0]
 
-        cursor.execute(
-            'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [payload['guest_name'], guest_info]
-        )
+            if end_time is None:
+                cursor.execute(
+                    'UPDATE Flugsession SET Endzeit = ? WHERE SessionID = ?', [payload['end_time'], args['id']]
+                )
+            else:
+                connection.close()
+                return {}, 401
 
-        guest_row_nr = cursor.lastrowid
-        guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
+        if 'guest_name' in payload.keys():
+            if 'guest_info' in payload.keys():
+                guest_info = None
+            else:
+                guest_info = payload['guest_info']
 
-        cursor.execute(
-            'UPDATE Flugsession SET GastID = ? WHERE SessionID = ?', [guest_id, args['id']]
-        )
+            cursor.execute(
+                'INSERT INTO Gast(Gastname, Freitext) VALUES (?,?)', [payload['guest_name'], guest_info]
+            )
 
-    if 'is_leader' in payload.keys():
-        cursor.execute(
-            'UPDATE Flugsession SET Ist_Flugleiter = ? WHERE SessionID = ?', [payload['is_leader'], args['id']]
-        )
+            guest_row_nr = cursor.lastrowid
+            guest_id = cursor.execute('SELECT GastID FROM Gast WHERE ROWID = ?', [guest_row_nr]).fetchone()[0]
 
-    connection.commit()
-    connection.close()
+            cursor.execute(
+                'UPDATE Flugsession SET GastID = ? WHERE SessionID = ?', [guest_id, args['id']]
+            )
 
-    return {}
+        if 'is_leader' in payload.keys():
+            cursor.execute(
+                'UPDATE Flugsession SET Ist_Flugleiter = ? WHERE SessionID = ?', [payload['is_leader'], args['id']]
+            )
+
+        connection.commit()
+        connection.close()
+
+        return {}

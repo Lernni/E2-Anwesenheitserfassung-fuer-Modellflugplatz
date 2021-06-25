@@ -1,9 +1,14 @@
+#   *** running_sessions.py ***
+#   - implementiert das Abrufen aller aktiven Sessions (GET) für die Startseite
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from flask_restx import Resource
 from globals import api, get_connection, auth_parser, is_pilot
 
 
-# diese request dürfen alle piloten ausführen
 # GET /sessions/running
+# diese request dürfen alle piloten ausführen
 class RunningSessions(Resource):
     # für das frontend - ausgabe aller laufenden sessions auf startseite
     @api.expect(auth_parser)

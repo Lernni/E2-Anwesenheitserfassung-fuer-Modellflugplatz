@@ -1,3 +1,8 @@
+#   *** make_server_db.py ***
+#   - erstellt die Datenbank des Servers basierend auf database_server.sql
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 import sqlite3
 import os.path
 

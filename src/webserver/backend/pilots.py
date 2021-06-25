@@ -1,3 +1,11 @@
+#   *** pilots.py ***
+#   - implementiert das Abrufen von Pilotendaten (GET)
+#   - implementiert das Anlegen von Pilotendaten (POST)
+#   - implementiert das Ändern von Pilotendaten (PUT)
+#   - nach POST oder PUT werden Piloten mit Terminal synchronisiert
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from sync import sync_pilots
 from flask_restx import Resource, inputs, fields
 from globals import api, get_connection, auth_parser, is_admin
@@ -25,9 +33,15 @@ pilot_put_model = api.model('pilot_put_model', {
 })
 
 
-# nur admins dürfen diese requests ausführen
+# GET POST PUT /pilots
+
 class Pilots(Resource):
-    # GET /pilots?id=1&is_active=true
+    # GET Request
+    # PARAMETER:
+    #     - pilot_id (int) - optional
+    #     - is_active (bool) - optional
+    # gibt Daten des Piloten zurück
+    # nur admins dürfen diese request ausführen
     @api.expect(pilots_parser, auth_parser)
     def get(self):
         '''get pilots'''
@@ -90,8 +104,10 @@ class Pilots(Resource):
         connection.close()
         return return_dict
 
-    # neuen Piloten anlegen
-    # POST /pilots
+    # POST Request
+    # für Inhalt des bodies: siehe swagger API
+    # legt einen neuen Piloten an
+    # nur Admins dürfen diese Request ausführen
     @api.expect(pilot_post_model, auth_parser)
     def post(self):
         '''create pilot'''
@@ -130,6 +146,10 @@ class Pilots(Resource):
 
         return {}
 
+    # PUT Request
+    # für Inhalt des bodies: siehe swagger API
+    # modifiziert bestehenden Piloten
+    # nur admins dürfen diese Request ausführen
     @api.expect(pilot_put_model, auth_parser)
     def put(self):
         '''update pilot'''

@@ -1,3 +1,8 @@
+#   *** rfid_assigned.py ***
+#   - implementiert das Abrufen aller vergebenen RFID Tags (GET)
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from flask_restx import Resource
 
 from globals import api, get_connection, auth_parser, is_admin

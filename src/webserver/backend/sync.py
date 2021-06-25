@@ -1,3 +1,8 @@
+#   *** sync.py ***
+#   - implementiert die Synchronisation von Piloten, RFID Tags und den Settings zum Terminal
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 import json
 import os, requests
 from globals import get_connection
@@ -7,7 +12,7 @@ RASPI_IP = '127.0.0.1'
 RASPI_URL = 'http://127.0.0.1:6000'
 
 
-# prüft ob raspi über netzwerk erreichbar
+# prüft ob <RASPI_IP> verfügbar ist (Ping)
 def is_online():
     is_up = True if os.system("ping -c 1 " + RASPI_IP) == 0 else False
     return is_up
@@ -26,7 +31,10 @@ def set_synced_pilot(pilot_id, is_synced):
     return
 
 
-# synchronisiert alle neuen/geänderten Piloten
+# synchronisiert alle neuen/geänderten Piloten mit dem Terminal
+# wenn das Terminal nicht online ist, bleibt "Synced" = false
+# wird gerufen in: POST /pilots
+# wird gerufen in: PUT /pilots
 def sync_pilots():
     if not is_online():
         print("Terminal is offline")
@@ -74,7 +82,9 @@ def set_synced_rfid(rfid_code, is_synced):
     return
 
 
-# synchronisiert alle neuen rfids
+# synchronisiert alle neuen rfids mit dem Terminal
+# wenn das Terminal nicht online ist, bleibt "Synced" = false
+# wird gerufen in: POST /rfid
 def sync_rfids():
     if not is_online():
         print("Terminal offline")
@@ -106,6 +116,9 @@ def sync_rfids():
     return
 
 
+# synchronisiert die Settings mit dem Terminal,
+# wenn das Terminal nicht online ist, passiert nichts
+# wird gerufen in: POST /settings
 def sync_settings():
     if not is_online():
         print("Terminal offline")
@@ -121,9 +134,3 @@ def sync_settings():
     except:
         print('Post failed')
         return
-
-
-if __name__ == '__main__':
-    # sync_rfids()
-    # sync_pilots()
-    sync_settings()

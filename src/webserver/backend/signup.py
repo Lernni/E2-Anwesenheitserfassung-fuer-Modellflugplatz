@@ -1,11 +1,18 @@
+#   *** signup.py ***
+#   - implementiert das anlegen eines Passworts für einen Piloten
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 from flask_restx import Resource
 from globals import api, get_connection, login_post_model
 
 
+# POST /signup
+# der body enthält das verschlüsselte Passwort und Username
+# wenn der pilot nicht existiert oder schon ein passwort hat, return 512 (Fehler)
 class signup(Resource):
     @api.doc(body=login_post_model, responses={
-        512: 'Pilot already has a password',
-        513: 'Pilot does not exist',
+        512: 'Pilot already has a password or does not exist',
         200: 'Success'
     })
     def post(self):
@@ -26,7 +33,7 @@ class signup(Resource):
                 return {}, 512
         # falls es keine ergebnisse gibt -> pilot existiert nicht
         except TypeError:
-            return {}, 513
+            return {}, 512
 
         cursor.execute(
             'UPDATE Pilot SET Passwort = ? WHERE Nutzername LIKE ?', [password, username]

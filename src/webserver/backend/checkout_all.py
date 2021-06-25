@@ -1,3 +1,10 @@
+#   *** checkout_all.py ***
+#   - implementiert das Abmelden aller aktiven Piloten per Request
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
+# NOTE: diese Funktion wurde zur Abgabe des Projekts zwar implementiert, aber nie genutzt.
+
 from flask_restx import Resource
 from globals import get_connection
 
