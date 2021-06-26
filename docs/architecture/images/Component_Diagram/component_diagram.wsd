@@ -1,16 +1,16 @@
 @startuml component_diagram
 
 node "Terminal" {
-    [databaseAccess] ..> [userInterface]
-    [serverConnection] <..> [databaseAccess]
+    [database_access] ..> [terminal]
+    [server_connection] <..> [database_access]
     database "Cache" as db1 {
     }
-    db1 <.> [databaseAccess] : <<local>>
+    db1 <.> [database_access] : <<local>>
 }
 
-[userInterface] --> LED
-Taste -> [userInterface]
-[userInterface] <- Scanner
+[terminal] --> LED
+Taste -> [terminal]
+[terminal] <- Scanner
 
 node "Webserver" {
     REST <..> [Frontend]
@@ -20,6 +20,6 @@ node "Webserver" {
     [Backend] <.> db2  : <<local>>
 }
 
-[serverConnection] <-> REST  : <<http>>
+[server_connection] <-> REST  : <<http>>
 
 @enduml
