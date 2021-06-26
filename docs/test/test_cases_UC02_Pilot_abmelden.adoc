@@ -1,0 +1,107 @@
+
+
+=== TestCases
+
+[%header, cols=5*]
+|===
+|TID
+|Testart
+|Vorbedingung
+|Durchführung
+|Nachbedingung
+
+|1
+|Positiv, Manuell
+|Pilot angemeldet, Pilot aktives Mitglied, gültige RFID-Karte
+|Pilot hält RFID-Karte an Terminal
+|Pilot kann sich abmelden, LED-Rückmeldung: Grün blinken
+
+|2
+|Negativ, Manuell
+|Pilot abgemeldet
+|Pilot hält RFID-Karte an Terminal
+|Pilot kann sich nicht erneut abmelden, LED-Rückmeldung: Grün (da Anmeldung), Pilot angemeldet in System
+
+|3
+|Positiv, Manuell
+|Pilot ist angemeldet
+|Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
+|Das System meldet den Piloten korrekt abwechselnd an und ab, die Sessions werden aber nicht aufgrund der geringen Zeit in die Datenbank eingetragen
+
+|4
+|Positiv, manuell
+|Pilot ist angemeldet, das Terminal hat keinen Internetzugang
+|Pilot meldet sich am Terminal mit der RFID-Karte ab.
+a| * Der Pilot erhält ein positives Feedback über die LED.
+* Die Endzeit der Flugsession wird in der lokalen DB des Terminals gestartet
+* Bei funktionierendem Internetzugang wird das Ende der Flugsession an die DB auf dem Webserver gesendet
+
+|===
+
+=== TestCases
+
+==== TID 1
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 3
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+==== TID 4
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| 
+|
+|
+|
+
+|===
+
+
