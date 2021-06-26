@@ -34,7 +34,7 @@ rectangle "Anwesenheitserfassung des Modellflugplatzes" {
 
 
 Pilot --> (UC01: Pilot anmelden)
-(UC01: Piloten anmelden) <.down. (UC07: Flugleiter bestimmen) : extends
+(UC01: Pilot anmelden) <.down. (UC07: Flugleiter bestimmen) : extends
 
 Pilot --> (UC02: Pilot abmelden)
 
