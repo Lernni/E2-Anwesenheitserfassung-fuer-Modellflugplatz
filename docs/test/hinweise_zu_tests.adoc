@@ -1,0 +1,30 @@
+== Hinweise zum Testen
+
+=== Kurzer Hinweis zu den Tests
+
+Im Repository findet ihr die Vorlagen zum Einfüllen der Testergebnisse. Diese sind bei den jeweiligen Test-Dateien unten zu finden. Bitte die genauen Daten der Durchführung eintragen (z.B. welcher RFID-Tag), da Herr Anke darauf besonders viel Wert legt.
+Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex oder Jakob melden 😊
+
+=== Aufgabenverteilung:
+
+==== Max:
+
+* Test Cases UC01
+** TID 1 bis 5 durchführen
+
+*	Test Cases UC02
+**	TID 1 bis 4 durchführen 
+
+*	Test Cases UC04
+**	Spezialfall 1 durchführen
+
+==== Lenny:
+
+*	Test Cases UC03
+**	TID 3 durchführen
+**	TID 6 ignorieren (niedrige Priorität)
+**	TID 7 durchführen
+
+*	Test Cases UC04
+**	Spezialfall 2 nachbessern
+
