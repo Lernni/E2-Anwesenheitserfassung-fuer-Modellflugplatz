@@ -18,6 +18,12 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 *	Test Cases UC04
 **	Spezialfall 1 durchführen
 
+* Test Cases UC06 - Alle Piloten abmelden
+** TID 1
+
+* Test Cases UC07 
+** TID 1-5
+
 ==== Lenny:
 
 *	Test Cases UC03
@@ -27,4 +33,7 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 
 *	Test Cases UC04
 **	Spezialfall 2 nachbessern
+
+* Test Cases UC06 - Alle Piloten abmelden
+** TID 2 und 3
 
