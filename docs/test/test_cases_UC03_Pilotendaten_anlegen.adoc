@@ -36,7 +36,7 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Kein RFID-Ausweis verfügbar
-|Erstellung eines Piloten mit gültigen Attributen (inkl. Sonderzeichen)
+|Erstellung eines *Piloten* mit gültigen Attributen (inkl. Sonderzeichen)
 |Es erscheint ein Fehler mit Erklärung
 
 |4
@@ -91,16 +91,18 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 |Nachgebessert
 |Akzeptanztest
 
-a| *Alexander Heiß
-*RFID-Kennung: 0xaae0cf
-*Adminrechte: Nein
+a|
+* Alexander Heiß
+* RFID-Kennung: 0xaae0cf
+* Adminrechte: Nein
 |Erfoglreich
 |/
 |Erfolgreich
 
-a| *Alexander Heiß
-*RFID-Kennung: 0xaae0cf
-*Adminrechte: Ja
+a|
+* Alexander Heiß
+* RFID-Kennung: 0xaae0cf
+* Adminrechte: Ja
 |Erfoglreich
 |/
 |Erfolgreich
@@ -167,9 +169,10 @@ a| *Alexander Heiß
 |Nachgebessert
 |Akzeptanztest
 
-a| *Alexander Heiß
-*RFID-Kennung: keiner verfügbar
-*Adminrechte: Ja
+a|
+* Alexander Heiß
+* RFID-Kennung: keiner verfügbar
+* Adminrechte: Ja
 |Konnte noch nicht getestet werden
 |?
 |
@@ -185,9 +188,10 @@ a| *Alexander Heiß
 |Nachgebessert
 |Akzeptanztest
 
-a| *Alexander Heiß
-*RFID-Kennung: 0xaae0cf
-*Adminrechte: Nein
+a|
+* Alexander Heiß
+* RFID-Kennung: 0xaae0cf
+* Adminrechte: Nein
 |Erfolgreich
 |/
 |Erfolgreich
@@ -203,15 +207,16 @@ a| *Alexander Heiß
 |Nachgebessert
 |Akzeptanztest
 
-a| *Pilot 1:
-*Alexander Heiß
-*RFID-Kennung: 0x6af0ff
-*Adminrechte: Nein
+a|
+* Pilot 1:
+** Alexander Heiß
+** RFID-Kennung: 0x6af0ff
+** Adminrechte: Nein
 
-*Pilot 2:
-*Alexander Heiß
-*RFID-Kennung: 0x8b80cc
-*Adminrechte: Nein
+* Pilot 2:
+** Alexander Heiß
+** RFID-Kennung: 0x8b80cc
+** Adminrechte: Nein
 |Erfolgreich
 |/
 |Erfolgreich
@@ -227,8 +232,9 @@ a| *Pilot 1:
 |Nachgebessert
 |Akzeptanztest
 
-a| *Nutzername: alexander.heiß
-*Passwort: admin1
+a|
+* Nutzername: alexander.heiß
+* Passwort: admin1
 |Könnte besser gekennzeichnet sein (Überforderung eines neuen Piloten)
 |Ausstehend
 |
@@ -244,9 +250,10 @@ a| *Nutzername: alexander.heiß
 |Nachgebessert
 |Akzeptanztest
 
-a| *Alexander Heiß
-*RFID-Kennung: 0x6af0ff
-*Adminrechte: Nein
+a|
+* Alexander Heiß
+* RFID-Kennung: 0x6af0ff
+* Adminrechte: Nein
 |Konnte noch nicht getestet werden
 |?
 |
@@ -262,15 +269,13 @@ a| *Alexander Heiß
 |Nachgebessert
 |Akzeptanztest
 
-a| *Alexander Heiß
-*RFID-Kennung: 0x6af0ff
-*Adminrechte: Nein
-*(Diese Daten auf beiden Tabs)
+a|
+* Alexander Heiß
+* RFID-Kennung: 0x6af0ff
+* Adminrechte: Nein
+* (Diese Daten auf beiden Tabs)
 |Erfolgreich (nur erste Anmeldung möglich, zweite wird blockiert)
 |/
 |
 
 |===
-
-
-
