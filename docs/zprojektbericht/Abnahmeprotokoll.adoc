@@ -13,23 +13,23 @@ Thema: *Anwesenheitserfassung des Modellflugplatzes*
 
 Zeitraum:  30. November 2020 - 04. Juli 2021
 
-GitHub Repository: https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz.git
-
+GitHub Repository: https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz
 
 == Abnahmedokumentation 
 === Abnahme
-Datum: 29.06.2021
+Datum: 30.06.2021
 
-Zeit: ?
+Zeit: 15 Uhr
 
-Abnahmeumgebung: *Vereinsflugplatz des Mfc-Rossendorf* (Bautzner Landstraße 26, 01454 Radeberg)
+Abnahmeumgebung: *Vereinsgebäude und -flugplatz des Mfc-Rossendorf* (Bautzner Landstraße 26, 01454 Radeberg)
 
 === Lieferumfang
 
 * Software in folgender Form:
-* Benutzeranleitung
-* Betriebsanleitung
-* Anforderungsspezifikation
+** Vorkonfigurierter Raspberry Pi als Terminal und dazugehörige Komponenten (RFID-Ausweise, RFID-Scanner)
+** Vorkonfigurierter Webserver mit Frontend und Backend
+* Anwenderdokumentation
+* Betriebsdokumentation
 * Entwicklerdokumentation
 * Testdokumentation
 
@@ -105,7 +105,7 @@ Abnahmeumgebung: *Vereinsflugplatz des Mfc-Rossendorf* (Bautzner Landstraße 26,
 |
 |
 
-|NFAU-2: Online-Hilfe (Bedeutung der Statusmeldungen der LED erkennbar)
+|NFAU-2: Intuitives Bedienen (Bedeutung der Statusmeldungen der LED erkennbar)
 |
 |
 
