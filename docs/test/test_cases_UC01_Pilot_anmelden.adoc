@@ -104,6 +104,13 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
+| 
+|
+|
+|
+
+|===
+
 ==== TID 5
 
 [%header, cols=4*]
