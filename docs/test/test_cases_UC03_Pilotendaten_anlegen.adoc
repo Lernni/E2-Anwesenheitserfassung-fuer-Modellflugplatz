@@ -107,7 +107,7 @@ a| *Alexander Heiß
 
 |Aléx Heiß
 |Fehlgeschlagen (darf nicht verhindert werden)
-|Ausstehend
+|Korrigiert von Lenny
 |
 
 |Alex Alex Heiß
@@ -143,7 +143,7 @@ a| *Alexander Heiß
 
 |Alexsdfs...[weitere 200 Zeichen]...ffdd Heiß
 |Fehlgeschlagen (nicht verhindert)
-|Ausstehend
+|Korrigiert von Lenny
 |
 
 |____ A_____
