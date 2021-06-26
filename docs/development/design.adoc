@@ -96,8 +96,12 @@ Mögliche Änderungen auf Seite des Terminals:
 * Neue Einträge in die Tabelle Flugsession (An-/Abmeldung, Flugleiter bestimmen)
 * Modifizierte Einträge in der Tabelle Flugsession (Flugleiter setzen, Endzeit hinzufügen)
 
-Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen.
-Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Daten nicht mit synchronisiert. 
+Das einzige "Konfliktpotenzial" bei der Synchronisierung besteht durch die Tabelle Flugsession, wenn Änderungen am Webserver und am Terminal vorliegen. Dies ist allerdings vernachlässigbar, da nur beendete Flugsessions bearbeitet werden können, die für das Terminal nicht mehr relevant sind.
+Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Daten nicht mit synchronisiert.
+
+==== Umsetzung auf dem Terminal
+
+Auf dem Terminal läuft eine minimale REST-API, welche RFID-Ausweise, Piloten und Einstellungen entgegennimmt. Im Falle, dass ein Pilot synchronisiert wird, prüft das Terminal, ob dieser bereits existiert. Ist dies der Fall, wird der bestehende Pilot aktualisiert, andernfalls wird er neu eingefügt. Geplant war noch eine CORS-Policy, die nur Anfragen vom Webserver zulässt, allerdings war dies nicht mehr komplett zeitlich umsetzbar. Für jede Flugsession gibt es ein Synced Flag, das angibt, ob die aktuelle Version der Flugsession bereits mit dem Webserver synchronisiert wurde. Sobald sich etwas an einer Flugsession ver;ndert, etwa wenn der Flugleiterstatus gesetzt wird, werden alle Sessions mit ungesetztem Flag synchronisiert, wenn sie die Toleranzzeit nicht unterschreiten. Die Toleranzzeit gibt dabei an, wie lange nach der Erstellung eine Session frühestens synchronisert werden darf. Dies ist wichtig, damit Anmeldungen, die aus Versehen passiert sind, nicht auf dem Webserver erscheinen.
 
 === Aufbau der REST-API
 In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Webserver (Frontend & Backend) und Terminal benutzt werden, um Informationen und Befehle untereinander auszutauschen. Die Unterteilung der URLs erfolgt nach HTTP-Methode:

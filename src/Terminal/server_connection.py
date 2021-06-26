@@ -1,3 +1,8 @@
+#   *** server_connection.py ***
+#   - implementiert Synchronisation von RFID-Ausweisen, Piloten, Sessions und Einstellungen mit dem Webserver
+#   - Autor: Dirk Zimmermann
+#   - Mail: dirk.zimmermann@htw-dresden.de
+
 from datetime import datetime, timedelta
 from flask import Flask, request
 from flask_cors import CORS

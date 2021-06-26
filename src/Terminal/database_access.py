@@ -1,3 +1,8 @@
+#   *** database_access.py ***
+#   - implementiert Datenbankzugriffe auf dem Terminal
+#   - Autor: Dirk Zimmermann
+#   - Mail: dirk.zimmermann@htw-dresden.de
+
 # coding=utf-8
 
 import importlib
