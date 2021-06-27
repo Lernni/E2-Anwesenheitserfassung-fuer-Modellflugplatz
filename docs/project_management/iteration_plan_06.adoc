@@ -40,34 +40,33 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3,1,1,1,2,1,1,1"]
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+| 
+503 | Anforderung der Technik | 1 | 1 | 50% | 5 | Dirk | 1 | 1 |
 
+506 | Systementwurf erweitern | 2 | 6 | 100% | 5-7 | Entwurf, Implementierung | 8 | 0 |
 
-| 302 | Erstellung allgemeiner Test-Cases |  |  | 90% | 3-7 | Alex |  |  |
+508 | Datenbankprototyp erstellen | 3 | 6 | 100% | 5-7 | Dirk | 11 | 0 |
 
-503 | Anforderung der Technik |  |  | 50% | 5 | Dirk |  |  |
+601 | Vue-Komponenten für Website umsetzen | 4 | 128 | 5% | 6-9 | Lenny | 3 | 14 |
 
-504 | Korrektur Dokumentation |  |  | 60% | 5-7 |  |  |  |
+602 | Entwurf REST-API-Anfragen | 5 | 6 | 100% | 6 | Lenny | 3 | 0 |
 
-505 | Deployment planen |  | 24 | 30% | 5-8 | Richard |  |  |
+603 | Architecture-Notebook erweitern | 6 | 6 | 50% | 6-9 | Entwurf | 2 | 3 |
 
-506 | Systementwurf erweitern |  |  | 100% | 5-7 |  |  |  |
+302 | Erstellung allgemeiner Test-Cases | 7 | 24 | 90% | 3-7 | Alex, Max | 6.5 | 0.5 |
 
-507 | Datenschutzkritische Elemente ermitteln |  | 2 | 100% | 5-6 | Alex |  |  | 
+505 | Deployment planen | 8 | 24 | 30% | 5-9 | Richard | 2 | 6 |
 
-508 | Datenbankprototyp erstellen |  |  | 100% | 5-7 |  |  |  |
+507 | Datenschutzkritische Elemente ermitteln | 9 | 2 | 100% | 5-6 | Alex | 3.5 | 0 | 
 
-601 | Vue-Komponenten für Website umsetzen |  |  | 5% | 6-9 | Lenny |  |  |
-
-602 | Entwurf REST-API-Anfragen |  |  | 100% |  | Lenny | x | x |
-
-603 | Architecture-Notebook erweitern |  |  | 50% | 6-9 |  |  |  |
+504 | Korrektur Dokumentation | 10 | 24 | 60% | 5-8 | Jakob, Richard | 6 | 4 |
 
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
 * Datum für Techniklieferung erfragen 
-* Prototyp vorstellen
+* Prototyp Websiteelemente vorstellen
 * Aufgetretene Fragen stellen
 
 == Aufgetretene Probleme
@@ -80,6 +79,8 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 //| x | x | x
 //|===
 
+== Änderungen
+Ab sofort findet jeden Mittwoch um 17 Uhr ein Teemmeeting statt. Damit wird die bislang komplizierte Terminfindung vereinfacht und eine Regelmäßigkeit der Aufgabenbesprechung geschaffen.
 
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
@@ -100,7 +101,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 7
+| Assessment Ziel | Iteration 6
 | Assessment Datum | *
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
@@ -110,27 +111,29 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 7
-| Assessment Datum | ?
+| Assessment Ziel | Iteration 6
+| Assessment Datum | 17.04.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 3
-| Assessment Datum | ?
+| Assessment Ziel | Iteration 6
+| Assessment Datum | 21.04.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
+Die REST-API sowie die datenschutzkiritischen Elemente wurden gemäß der Ziele bearbeitet. Die Technik ist noch nicht angekommen, dies muss auf die nächste Iteration übergehen
+
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
-//Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
+Es wurden alle Bewertungskriterien erfüllt, bis auf den Technikempfang.
 
 *Projektfortschritt*
 
