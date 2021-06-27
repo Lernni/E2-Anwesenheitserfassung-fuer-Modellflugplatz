@@ -4,7 +4,7 @@
 
 Bevor das neue Semester und damit die Iteration 5 bei uns begann, hatten wir in den Semesterferien noch ein langes Meeting mit den Ansprechpartnern des Vereins.   
 In dem Meeting ging es haupsächlich darum, das wir Ihnen unsere ersten Architektur-Entwürfe (logischen und physichen Sicht) präsentierten und Feedback einholten. 
-Wir Konkretisierten unsere ausgearbeiteten Qualitätsanforderungen und zeigten Ihnen unsere Ziele für die nächsten Monate auf. Zum einen die zeitlichen Ziele, und zum anderen die Ziele vom System. 
+Wir konkretisierten unsere ausgearbeiteten Qualitätsanforderungen und stellten unseren Zeitplan und Zielstellung für die nächsten Monate vor.
 Damit wollten wir zum Ende noch einmal sicher gehen, ob sie mit den Zielen des Kunden übereinstimmen.
 
 .Logische Sicht
@@ -12,53 +12,51 @@ image::domain_model.png[width=90%, align="left"]
 .Physische Sicht
 image::C4_Level2.png[width=90%, align="right"]
 
-Da es im vorherigen Semester, bei der wesentliche Funktionalität der Gastflüge der genaue Ablauf noch offen war, fragten wir diesbezüglich auch noch mal nach. Da die Frage Flugplatzintern geregelt werden konnte, klärten sich die offenen Frage. Die Antworten dienten als Basis für die weiteren Arbeiten an diesem Use-Case.   
+Da es im vorherigen Semester, bei der wesentlichen Funktionalität der Gastflüge, der genaue Ablauf noch offen war, fragten wir diesbezüglich auch noch mal nach. Die Antworten dienten als Basis für die weiteren Arbeiten an diesem Use-Case.   
 
 :hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/requirements/use_case_10.inc.adoc#use-case-uc10-handhabung-gastflüge[UC:10 Handhabung Gastflüge]
 
-Das Team der Implementierung entschied vom Webframework Angular auf Vue.js umzusteigen und fragten nach möglichen Einwenden von Seiten des Kunden.
-Gründe für den Wechsel waren, das Vue.js einsteigerfreundlicher ist und auf Wissen bzw. Ressourcen von Kommilitonen zurückgegriefen werden konnte.
-Außerdem ging es um die Beschaffung der Hardware bzw. der Zugänge. Unter anderen bemühten wir uns nach dem Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis und Taster für den Bau von einem ersten Prototypen und einem Zugang zum Webserver zum Testen der Funktionen und Aufbau einer Datenbank.
+Das Team der Implementierung entschied vom Webframework Angular auf Vue.js umzusteigen und fragte nach möglichen Einwänden von Seiten des Kunden.
+Der Grund für den Wechsel war, dass Vue.js einsteigerfreundlicher ist und auf Wissen bzw. Ressourcen von Kommilitonen zurückgegriffen werden konnte.
+Außerdem ging es um die Beschaffung der Hardware bzw. der Zugänge. Unter anderen bemühten wir uns nach einem Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis und Taster für den Bau eines ersten Prototypen Zugriff zu erlangen und einem Zugang zum Webserver zum Testen der Funktionen und Aufbau einer Datenbank.
  
 Mit vielen geklärten Fragen und einen positiven Eindruck starteten wir in das neue Semester und in die 5. Iteration.
-Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen und wir beschlossen den Mittwoch als festen Termin unserer Gruppenmeeting. 
-Da der Fokus jetzt eher auf der Implementierung lag, waren unsere Ziele auch dementsprechend gesetzt. Diese Iteration sollte mit der Backend und Frontend implementierung starten. Die Entwickler machten sich in zusätzlichen Meetings erste Überlegungen zu der Umsetzung und begannen schließlich mit der Arbeit. 
+Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen und wir beschlossen den Mittwoch als festen Termin unseres Gruppenmeetings. 
+Da der Fokus jetzt eher auf der Implementierung lag, waren unsere Ziele auch dementsprechend gesetzt. Diese Iteration sollte mit der Implementierung von Backend und Frontend starten. Die Entwickler machten sich in zusätzlichen Meetings erste Überlegungen zur Umsetzung und begannen schließlich mit der Arbeit. 
 
-So konnte die Grundstruktur des Webservers erstellt und der erste Entwurf der Datenbank aufgesetzt werden. Da die Entwickler sich nicht sicher waren, ob SQLite für die Datenbank genutz werden durfte bzw. vom Kunden gewünscht war, wurde die Weiterarbeit erstmal gestoppt.   
-Dennoch konnte am ende der Iteration sogar schon eine Verbindung ziwschen Backend und Frontend herrgestellt werden. 
+So konnte die Grundstruktur des Webservers erstellt und der erste Entwurf der Datenbank aufgesetzt werden. Da die Entwickler sich nicht sicher waren, ob SQLite für die Datenbank genutzt werden durfte bzw. vom Kunden gewünscht war, wurde die Weiterarbeit erstmal gestoppt.   
+Dennoch konnte am Ende der Iteration bereits eine Verbindung zwischen Backend und Frontend hergestellt werden. 
 
-Zwischenzeitig hatten wir eine Auswertung der Arbeit aus SE1 mit Professor Anke. Dort bekahmen wir, abgesehen von der Korrektur und den Verbesserungsvorschlägen, ein sehr positives Feedback. Auf der einen Seite freuten wir uns sehr darüber und auf der anderen Seite motivierte es uns, an der Stelle genau so weiter zu machen.  
-Für die Korrekturen war das Team der Analyse zuständig. 
-Da der Haupteil der Analyse-Dokumentation bereits in SE1 gemacht wurde, arbeiteten sich die Mitglieder zusätzlich in die Themengebiete Deployment und Test ein und versuchten sich dort unterstützend einzubringen. 
-Bei der Dokumentation, lässt sich noch ein kleines Problem beschreiben, welches sich bis zum Ende lang ziehen sollte. Es gab nähmlich Probleme beim Einbinden mancher Diagramme. Obwohl uns unser Betreuer Herr Zirkelbach schon einiges korrigieren konnte, ging es bei einigen Mitgliedern immer noch nicht. Nach langen Suchen, haben wir beschlossen, den Fokus erstmal auf die weiterarbeit des Projektes zu setzten. 
+Zwischenzeitlich hatten wir ein Meeting mit Prof. Anke zur Auswertung der Arbeit aus SE1. Dort bekamen wir, abgesehen von kleineren Korrekturen und Verbesserungsvorschlägen, ein sehr positives Feedback. Wir freuten uns sehr darüber und es motivierte uns, an der Stelle genau so weiter zu machen.  
+Für die genannten Korrekturen war das Team der Analyse zuständig. 
+Da der Hauptteil der Analyse-Dokumentation bereits in SE1 erbracht wurde, arbeiteten sich die Mitglieder dre Analyse zusätzlich in die Themengebiete Deployment und Test ein und versuchten sich dort unterstützend einzubringen. 
+Bei der Dokumentation lässt sich noch ein kleines Problem beschreiben, welches sich bis zum Ende lang ziehen sollte. Es gab Probleme beim Einbinden mancher Diagramme. Obwohl uns unser Betreuer Herr Zirkelbach schon einiges korrigieren konnte, ging es bei einigen Mitgliedern immer noch nicht. Nach langem Suchen nach der Fehlerursache haben wir beschlossen, den Fokus erstmal auf die Weiterarbeit des Projekts zu setzten. 
  
 Es wurde eine erste Ordnerstruktur für das Deployment erstellt und erste Überlegungen skizziert und dem Kunden vorgeschlagen. 
-Skizziert wurden auch die ersten Test-Cases und es wurde eine erste Vorlage (eine Art Template) erstellt, worauf wir jeden Test-Case anwenden wollten. 
+Außerdem wurden erste Test-Cases und eine erste Vorlage (eine Art Template) erstellt, worauf wir jeden Test-Case anwenden wollten.
 
 :hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/test/test_cases_vorlage.adoc[Vorlage vom Test-Case]
 
-Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen stand. Anders als im vergangenen Semester, wo wir sehr viel in den einzelnen Iterationen nachtragen mussten, 
+Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen Stand.
 
-Da wir im vergangenen Semester sehr viel in den einzelnen Iterationen nachtragen mussten, hatten wir uns in diesem Semester das Ziel gesetzt , die Iterationen im vorraus gemeinsam zu planen und konsistent den Fortschritt einzutragen. 
-Inspiriert wurden wir von dem angebotenen Fachaustauch zum Thema Projektenturf, in welchen ein Austausch mit Professor Anke und den anderen Gruppen statt fand.   
-So fingen wir an, in unseren wöchentlichen Mittwoch-Meetings, den Iterationsplan mit einzubeziehen.
+Da wir im vergangenen Semester sehr viel in den einzelnen Iterationen nachtragen mussten, hatten wir uns in diesem Semester das Ziel gesetzt, die Iterationen im Voraus gemeinsam zu planen und konsistent den Fortschritt einzutragen. 
+Inspiriert wurden wir durch den angebotenen Fachaustauch zum Thema Projektenturf, in welchem ein Austausch mit Professor Anke und anderen Gruppen statt fand.   
+Daraufhin haben wir den Iterationsplan in unsere wöchentlichen Meetings mit einbezogen.
 
-Neben der ständigen Erweiterung des Entwurfrs vom System, erstellten zum einen das Package-Diagramm und zum anderen das Komponenten-Diagramm. Wie auch die bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert. 
-Durch Feedback von unserem Betreuer und Professor konnten wir es immer wieder verbessern. 
-Außerdem begann das Team der Entwicklung noch am Ende der Iteration damit, die ersten Wireframes umzusetzen. Dabei ist erwähnenswert, dass wir von der Vue Version 3., auf Version 2 gewechselt sind. Obwohl es zu Beginn Sinn gemacht hat eine aktuelle Version zu nutzen, sprach am Ende mehr für einen Wechsel. 
-Da Version 3 immer noch in der Entwicklung war, gab es wenige Frameworks. Gerade die vielen Gestaltungsvorlagen vom Framework Bootstrap, erleichterten uns die Arbeit enorm. 
+Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.
 
-Neben einem guten Start in die Iteration, wo wir mit vielen Dingen beginnen konnten, gab es aber auch einige Probleme.  
-Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesagt wurde, sollten wir fast 1 1/2 Monate warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
-Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Email. Als wir einen längeren Zeitraum keine Antworteten erhilten, schlugen wir in einem Teammeeting andere mögliche Kommunikationswege als Lösung vor. Dazu kahm es aber nicht, denn wir bekahmen eine neue Emailadresse vom Kunden und von da an besserte sich die Kommunikation. 
+Das team Entwicklung begann noch am Ende der Iteration damit, die ersten Wireframes umzusetzen. Dabei ist erwähnenswert, dass wir im Frontend von Vue Version 3, auf Version 2 gewechselt sind. Obwohl es zu Beginn den Anschein machte es wäre sinnvoll die aktuelle Version zu nutzen, sprach am Ende mehr für einen Wechsel. 
+Da Version 3 immer noch in Entwicklung ist, gab es hier weniger nutzbare Frameworks. Gerade die vielen Gestaltungsvorlagen vom Framework BootstrapVue in Vue Version 2, erleichterten uns die Arbeit enorm.
 
-Abgesehen von den Kommunikationsproblemen, war es alles in allem eine gute Iteration.
-Wir hatten durch das feste Gruppenmeeting am Mittwoch eine gewisse Struktur bekommen und versuchten Fehler (u.a. mangelnde Iterationsplanung) aus der Vergangenheit diesmal zu vermeiden. Wir teilten uns die Arbeit ausgewogen auf und versuchten eine konstante Arbeitsweise durchzusetzten. 
+Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
+Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast 1 1/2 Monate warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
+Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. Als wir einen längeren Zeitraum keine Antworten erhielten, schlugen wir in einem Teammeeting andere mögliche Kommunikationswege als Lösung vor. Wir informierten auch Herrn Zirkelbach über das Problem. Letztendlich konnten wir in einem Kundenmeeting das Problem klären, Herr Brenner hatte vergessen uns seine neue Mail-Adresse zukommen zu lassen.
 
-
+Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produktiv und konnten einige Fortschritte vermelden.
+Wir hatten durch das feste Gruppenmeeting am Mittwoch eine gewisse Struktur bekommen und versuchten Fehler (u.a. mangelnde Iterationsplanung) aus der Vergangenheit jetzt zu vermeiden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise durchzusetzten.
