@@ -43,25 +43,25 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |===
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 |
-302 | Erstellung Test-Cases |  | 6 | 70% | 3-7 | Alex, Max | 6 | 0.5 |
+501 | Detaillierte Projektplanung für Semester 4 | 1 | 2 | 100% | 5 | Alex | 2 | 0 |
 
-501 | Detaillierte Projektplanung für Semester 4 |  | 2 | 100% | 5 | Alex | 2 | 0 |
+502 | Designentschlüsse treffen (Framework, Datenbank u.ä.) | 2 | 6 | 100% | 5 | Entwurf, Implementierung | 5 | 0 |
 
-502 | Designentschlüsse treffen (Framework, Datenbank u.ä.) |  | 6 | 100% | 5 | Entwurf, Implementierung | 5 | 0 |
+503 | Anforderung der Technik | 3 | 1 | 50% | 5 | Max | 1 | 1 |
 
-503 | Anforderung der Technik |  | 1 | 50% | 5 | Max | 1 | 1 |
+506 | Systementwurf erweitern | 4 | 6 | 10% | 5-7 | Entwurf, Implementierung | 1 | 9 |
 
-504 | Korrektur Dokumentation |  | 24 | 10% | 5-8 | Jakob, Richard | 2 | 10 |
+508 | Datenbankprototyp erstellen | 5 | 6 | 20% | 5-7 | Dirk | 2 | 8 |
 
-505 | Deployment planen |  | 24 | 10% | 5-9 | Richard | 1 | 8 |
+509 | Qualitätsanforderungen, technische & organisatorische Randbedingungen erweitern | 6 | 2 | 100% | 5 | Gesamtes Team | 3 | 0 |
 
-506 | Systementwurf erweitern |  | 6 | 10% | 5-7 | Entwurf, Implementierung | 1 | 9 |
+507 | Datenschutzkritische Elemente ermitteln | 7 | 6 | 50% | 5-6 | Alex | 2 | 2 |
 
-507 | Datenschutzkritische Elemente ermitteln |  | 6 | 50% | 5-6 | Alex | 2 | 2 |
+505 | Deployment planen | 8 | 24 | 10% | 5-9 | Richard | 1 | 8 |
 
-508 | Datenbankprototyp erstellen |  | 6 | 20% | 5-7 | Dirk | 2 | 8 |
+302 | Erstellung Test-Cases | 9 | 6 | 70% | 3-7 | Alex, Max | 6 | 0.5 |
 
-509 | Qualitätsanforderungen, technische & organisatorische Randbedingungen erweitern |  | 2 | 100% | 5 | Gesamtes Team | 3 | 0 |
+504 | Korrektur Dokumentation | 10 | 24 | 10% | 5-8 | Jakob, Richard | 2 | 10 |
 
 |===
 
@@ -125,7 +125,8 @@ Die bearbeiteten Dokumente wurden inhaltlich vom Kunden abgenommen. Die Technik 
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. 
+Es wurden alle Bewertungskriterien erfüllt.
+
 *Projektfortschritt*
 
 Veranschaulichung des Projektfortschritts an einer graphischen Darstellung der erreichten Alphas im Essence-Modell durch den "Sim4Seed-Navigator":
