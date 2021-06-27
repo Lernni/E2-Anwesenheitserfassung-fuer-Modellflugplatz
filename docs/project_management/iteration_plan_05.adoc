@@ -47,7 +47,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 502 | Designentschlüsse treffen (Framework, Datenbank u.ä.) | 2 | 6 | 100% | 5 | Entwurf, Implementierung | 5 | 0 |
 
-503 | Anforderung der Technik | 3 | 1 | 50% | 5 | Max | 1 | 1 |
+503 | Anforderung der Technik | 3 | 1 | 50% | 5 | Dirk | 1 | 1 |
 
 506 | Systementwurf erweitern | 4 | 6 | 10% | 5-7 | Entwurf, Implementierung | 1 | 9 |
 
