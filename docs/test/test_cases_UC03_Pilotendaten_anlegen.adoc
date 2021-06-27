@@ -234,7 +234,7 @@ a|
 * Nutzername: alexander.heiß
 * Passwort: admin1
 |Könnte besser gekennzeichnet sein (Überforderung eines neuen Piloten)
-|Ausstehend
+|Korrigiert von Lenny (Fehlermeldung ist jetzt deskriptiver)
 |
 
 |===

@@ -9,6 +9,9 @@
   <b-container fluid class="mb-3">
     <b-alert variant="danger" :show="loginState == false">
       Nutzername oder Passwort falsch!
+      <br><br>
+      Haben Sie noch kein Passwort für diesen Nutzer vergeben, müssen Sie sich zunächst 
+      <b-link to="/signup">registrieren</b-link>
     </b-alert>
 
     <b-row align-h="center">
