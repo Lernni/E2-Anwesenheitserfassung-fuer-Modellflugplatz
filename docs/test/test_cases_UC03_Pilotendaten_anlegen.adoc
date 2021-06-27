@@ -36,8 +36,8 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Kein RFID-Ausweis verfügbar
-|Erstellung eines *Piloten* mit gültigen Attributen (inkl. Sonderzeichen)
-|Es erscheint ein Fehler mit Erklärung
+|Versuch der Erstellung eines *Piloten* mit gültigen Attributen 
+|Es erscheint ein Hinweis, dass zunächst ein RFID-Tag erstellt werden muss, um fortfahren zu können. Das Erstellen des Piloten ist somit nicht möglich.
 
 |4
 |Positiv, manuell
@@ -170,11 +170,9 @@ a|
 |Akzeptanztest
 
 a|
-* Alexander Heiß
-* RFID-Kennung: keiner verfügbar
-* Adminrechte: Ja
-|Konnte noch nicht getestet werden
-|?
+/
+|Erfolgreich (verhindert)
+|
 |
 
 |===
