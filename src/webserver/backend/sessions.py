@@ -348,7 +348,7 @@ class Sessions(Resource):
                 return {}, 401
 
         if 'guest_name' in payload.keys():
-            if 'guest_info' in payload.keys():
+            if 'guest_info' not in payload.keys():
                 guest_info = None
             else:
                 guest_info = payload['guest_info']
