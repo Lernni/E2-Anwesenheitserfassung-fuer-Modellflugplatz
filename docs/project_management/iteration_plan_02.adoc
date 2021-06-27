@@ -16,6 +16,7 @@ Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Max Haufe 
 | Ende der Iteration | KW 53
 |===
 
+Die Iterationsverlängerung auf drei Wochen wird aufgrund von Weihnachten und der deshalb stattfindenden Arbeitspause veranlasst.
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
@@ -37,23 +38,23 @@ Hinweise zur Darstellung:
 * AM ... Allgemeines Meeting mit Themensteller
 
 Diese Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="1,3,1,1,1,2,1,1,1,1"]
+[%header, cols="1,3,1,1,2,1,1,1,1"]
 |===
 |WID
-| Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status | Referenzen |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+| Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 201 | Bearbeitung Use-Cases | 1 | 120 | 50% | link:../requirements[Use Cases] | 2-3 | Analyse + Entwurf | 15 | 15 | 
+| 201 | Bearbeitung Use-Cases | 1 | 120 | 50% | 2-3 | Analyse + Entwurf | 15 | 15 | 
 
-6 | Bearbeitung Vision | 2 | 120 | 100% | link:../requirements/vision.adoc[Vision] | 1-2 | Analyse | 25 | 0 |
+6 | Bearbeitung Vision | 2 | 120 | 100% | 1-2 | Analyse | 25 | 0 |
 
-3 | Entwicklung Projektplan | 3 | 6 | 100% | link:project_plan.adoc[Projektplan] | 1 | Alex | 5 | 0 |
+3 | Entwicklung Projektplan | 3 | 6 | 100% | 1 | Alex | 5 | 0 |
 
-2 | Einarbeitung in verschiendene fachliche Bereiche des OpenUP | 4 | 120 | 100% |  | 1-2 | Alle | 23 | 0 |
+2 | Einarbeitung in verschiendene fachliche Bereiche des OpenUP | 4 | 120 | 100% | 1-2 | Alle | 23 | 0 |
 
-7 | Bearbeitung Risikoanalyse | 5 | 24 | 70% | link:risk_list.adoc[Risk List] | 1-4 | Analyse, Simon | 8 | 5 |
+7 | Bearbeitung Risikoanalyse | 5 | 24 | 70% | 1-4 | Analyse, Simon | 8 | 5 |
 
-12 | Bearbeitung Glossary | 6 | 24 | 80% | link:../requirements/glossary.adoc[Glossary] | 1-2 | Analyse | 9 | 2 |
+12 | Bearbeitung Glossary | 6 | 24 | 80% | 1-2 | Analyse | 9 | 2 |
 
 |===
 
@@ -93,7 +94,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 1
-| Assessment Datum | 03.12.2020
+| Assessment Datum | 17.12.2020
 | Teilnehmer | Analyse, Leiter, TS
 | Projektstatus	ggü. TS | Grün
 |===
@@ -103,7 +104,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 1
-| Assessment Datum | 09.12.2020
+| Assessment Datum | 15.12.2020
 | Teilnehmer | Gesamtes Team
 | Projektstatus im Team	| Grün
 |===
