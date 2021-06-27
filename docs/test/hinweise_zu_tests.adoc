@@ -7,7 +7,7 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 
 === Aufgabenverteilung:
 
-==== Max:
+==== Max (benötigt Terminal):
 
 * Test Cases UC01
 ** TID 1 bis 5 durchführen
@@ -15,11 +15,14 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 *	Test Cases UC02
 **	TID 1 bis 4 durchführen 
 
+* Test Cases UC03
+** TID 7 durchführen
+
 *	Test Cases UC04
 **	Spezialfall 1 durchführen
 
 * Test Cases UC06 - Alle Piloten abmelden
-** TID 1
+** TID 1 bis 3
 
 * Test Cases UC07 
 ** TID 1-5
@@ -29,11 +32,6 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 *	Test Cases UC03
 **	TID 3 durchführen
 **	TID 6 ignorieren (niedrige Priorität)
-**	TID 7 durchführen
 
 *	Test Cases UC04
 **	Spezialfall 2 nachbessern
-
-* Test Cases UC06 - Alle Piloten abmelden
-** TID 2 und 3
-
