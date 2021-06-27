@@ -43,29 +43,31 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 201 | Bearbeitung Use-Cases |  | 120 | 100% | 2-4 | Analyse (+Hilfe Entwurf) | 25 | 0 |
+| 201 | Bearbeitung Use-Cases | 1 | 120 | 100% | 2-4 | Analyse (+Hilfe Entwurf) | 25 | 0 |
 
-302 | Erstellung Test-Cases |  | 6 | 60% | 3-7 | Alex, Max | 5 | 1 |
+405 | Domänenmodell erstellen | 2 | 6 | 100% | 4 | Analyse, Entwurf | 6 | 0 |
 
-305 | Bearbeitung System-Wide-Requirements |  | 6 | 100% | 3-4 | Analyse, Entwurf | 7 | 0 |
+305 | Bearbeitung System-Wide-Requirements | 3 | 6 | 100% | 3-4 | Analyse, Entwurf | 7 | 0 |
 
-306 | Bearbeitung Architecture Notebook |  | 24 | 100% | 3-4 | Entwurf | 8 | 0 |
+306 | Bearbeitung Architecture Notebook | 4 | 24 | 100% | 3-4 | Entwurf | 8 | 0 |
 
-307 | Bedienungsplan für Terminal erstellen |  | 6 | 100% | 3 | Lenny, Alex | 6 | 0 |
+307 | Bedienungsplan für Terminal erstellen | 5 | 6 | 100% | 3 | Lenny, Alex | 6 | 0 |
 
-301 | Wireframes erstellen |  | 24 | 100% | 3-4 | Alex | 11 | 0 | 
+301 | Wireframes erstellen | 6 | 24 | 100% | 3-4 | Alex | 11 | 0 | 
 
-7 | Bearbeitung Risikoanalyse |  | 24 | 100% | 1-4 | Analyse, Simon | 13 | 0 |
+7 | Bearbeitung Risikoanalyse | 7 | 24 | 100% | 1-4 | Analyse, Simon | 13 | 0 |
 
-401 | Erstellung Dokumentation zur Belegabgabe |  | 6 | 100% | 4 | Lenny | 5 | 0 |
+403 | Datenbankmodell erstellen | 8 | 2 | 100% | 4 | Entwurf | 3 | 0 |
 
-402 | Korrektur Dokumentation |  | 6 | 100% | 4 | Gesamtes Team | 6 | 0 |
+404 | Use-Cases 03, 07, 01, 04 korrigieren | 9 | 2 | 100% | 4 | Jakob | 3 | 0 |
 
-403 | Datenbankmodell erstellen |  | 2 | 100% | 4 | Entwurf | 3 | 0 |
+302 | Erstellung Test-Cases | 10 | 6 | 60% | 3-7 | Alex, Max | 5 | 1 |
 
-404 | Use-Cases 03, 07, 01, 04 korrigieren |  | 2 | 100% | 4 | Jakob | 3 | 0 |
+402 | Korrektur Dokumentation | 11! | 6 | 100% | 4 | Gesamtes Team | 6 | 0 |
 
-405 | Domänenmodell erstellen |  | 6 | 100% | 4 | Analyse, Entwurf | 6 | 0 |
+401 | Erstellung Dokumentation zur Belegabgabe | 12! | 6 | 100% | 4 | Lenny | 5 | 0 |
+
+
 
 |===
 
