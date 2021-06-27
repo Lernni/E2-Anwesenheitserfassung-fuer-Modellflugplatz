@@ -11,7 +11,7 @@
       Nutzername oder Passwort falsch!
       <br><br>
       Haben Sie noch kein Passwort für diesen Nutzer vergeben, müssen Sie sich zunächst 
-      <b-link to="/signup">registrieren</b-link>
+      <b-link to="signup">registrieren</b-link>
     </b-alert>
 
     <b-row align-h="center">
@@ -38,7 +38,7 @@
               <b-form-invalid-feedback>
                 Ungültiges Passwort!
               </b-form-invalid-feedback>
-              Noch kein Passwort festgelegt? - <b-link to="/signup">Registrieren</b-link>
+              Noch kein Passwort festgelegt? - <b-link to="signup">Registrieren</b-link>
             </b-form-group>
             <b-button class="float-right" type="submit" variant="primary" :disabled="loginLoader">
               <b-spinner v-show="loginLoader" small></b-spinner>
