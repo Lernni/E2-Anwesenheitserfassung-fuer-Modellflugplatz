@@ -10,7 +10,7 @@
 
     <b-alert variant="success" :show="signupState">
       Pilot wurde erfolgreich registriert!<br><br>
-      <b-button variant="success" to="login">
+      <b-button variant="success" to="/login">
         Weiter zum Login
       </b-button>
     </b-alert>

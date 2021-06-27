@@ -28,7 +28,7 @@
 
         <b-alert variant="info" :show="rfidList.noRfid">
           Kein freier RFID-Tag verfügbar! Fügen Sie dem System einen neuen RFID-Tag hinzu, bevor Sie einen Piloten erstellen.<br/><br/>
-          <b-button variant="info" to="settings?rfid_tags">RFID-Tag hinzufügen</b-button>
+          <b-button variant="info" to="/settings?rfid_tags">RFID-Tag hinzufügen</b-button>
         </b-alert>
 
         <b-alert variant="danger" :show="submit.submitState == false" dismissible>
