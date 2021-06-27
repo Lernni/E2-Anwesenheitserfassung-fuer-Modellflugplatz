@@ -10,10 +10,11 @@
     <b-navbar-brand href="/">Modellflugplatz</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav v-if="isLoggedIn">
-        <b-nav-item to="/sessions">Flugprotokoll</b-nav-item>
-        <b-nav-item v-if="user.is_admin" to="/pilots">Pilotenübersicht</b-nav-item>
-        <b-nav-item v-if="user.is_admin" to="/settings">Einstellungen</b-nav-item>
+      <b-navbar-nav>
+        <b-nav-item v-if="isLoggedIn" to="/sessions">Flugprotokoll</b-nav-item>
+        <b-nav-item v-if="isLoggedIn && user.is_admin" to="/pilots">Pilotenübersicht</b-nav-item>
+        <b-nav-item v-if="isLoggedIn && user.is_admin" to="/settings">Einstellungen</b-nav-item>
+        <b-nav-item to="/imprint_privacy">Impressum & Datenschutz</b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">

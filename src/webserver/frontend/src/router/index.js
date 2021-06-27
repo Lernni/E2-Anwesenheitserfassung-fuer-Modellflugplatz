@@ -18,6 +18,7 @@ import NewPilot from '../views/NewPilot.vue'
 import EditPilot from '../views/EditPilot.vue'
 import ReactivatePilot from '../views/ReactivatePilot.vue'
 import Settings from '../views/Settings.vue'
+import ImprintPrivacy from '../views/ImprintPrivacy.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -35,6 +36,14 @@ const routes = [
       // Nutzer muss entweder Admin oder Pilot sein
       requiresAuth: true,
       roles: ['admin', 'pilot']
+    }
+  },
+  {
+    path: '/imprint_privacy',
+    name: 'ImprintPrivacy',
+    component: ImprintPrivacy,
+    meta: {
+      requiresAuth: false
     }
   },
   {

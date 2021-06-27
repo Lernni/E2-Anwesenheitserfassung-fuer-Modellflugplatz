@@ -95,7 +95,7 @@ export default {
 
       // Login wird vom Store ausgeführt
       // siehe store/index.js
-      this.$store.dispatch("/login", loginCredentials)
+      this.$store.dispatch("login", loginCredentials)
       // War die Anmeldung erfolgreich, Weiterleitung zur Startseite
       .then(() => this.$router.push("/"))
       .catch(error => {
