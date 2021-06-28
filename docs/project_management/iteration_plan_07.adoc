@@ -60,7 +60,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 707 | Domainmodell überarbeiten | 8 | 2 | 60% | 7-8 | Richard | 1 | 1 |
 
-708 | REST-API umsetzen | 9 | 24 | 80% | 7-8 | Implementierung | 5 | 2 |
+708 | REST-API umsetzen | 9 | 128 | 40% | 7-9 | Implementierung | 5 | 20 |
 
 302 | Erstellung allgemeiner Test-Cases | 10 | 24 | 100% | 3-7 | Alex, Max | 7.5 | 0 |
 
@@ -129,13 +129,13 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 *Beurteilung im Vergleich zu den Zielen*
 
-Die Ziele wurden vollständig erreicht
+Die Ziele wurden bis auf die REST-API erreicht (siehe Geplante vs erledigte Aufgaben).
 
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. Die Korrektur der Dokumentation konnte eine Iteration früher als geplant abgeschlossen werden.
+Es wurden alle Bewertungskriterien erfüllt. Die Korrektur der Dokumentation konnte eine Iteration früher als geplant abgeschlossen werden. Die Umsetzung der REST-API stellt sich als deutlich komplizierter und umfangreicher heraus als angenommen. Diese Aufgabe wurde deshalb neu bewertet und auf die 9. Iteration verlängert.
 
 *Projektfortschritt*
 
