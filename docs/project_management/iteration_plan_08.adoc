@@ -46,38 +46,39 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 601 | Vue-Komponenten für Website erstellen |  | 128 | 100% | 6-8 | Lenny | 15 | 0 |
 
-// -> Iteration 7
-//603 | Architecture-Notebook erweitern |  | 128 | 60% | 6-9 | Entwurf, Implementierung |  |  |
+603 | Architecture-Notebook erweitern |  | 6 | 100% | 6-8 | Entwurf | 6 | 0 |
 
-706 | Paketdiagramm entwerfen |  | 64 | 50% | 7-9 | Lenny, Dirk | 2 | 2 |
+706 | Paketdiagramm entwerfen |  | 64 | 50% | 7-9 | Lenny, Dirk | 3 | 2 |
 
-707 | Domainmodell überarbeiten |  | 2 | 80% | 7-8 | Richard | 1 | 1 |
+707 | Domainmodell überarbeiten |  | 2 | 80% | 7-8 | Richard | 1.5 | 1 |
 
-708 | REST-API umsetzen |  | 24 | 95% | 7-9 | Implementierung | 20 | 5 |
+708 | REST-API umsetzen |  | 128 | 95% | 7-9 | Implementierung | 20 | 5 |
 
-801 | Komponentendiagramm erstellen |  | 24 | 50% | 8 | Jakob, Dirk | 2 | 2 |
+801 | Komponentendiagramm erstellen |  | 6 | 50% | 8 | Jakob, Dirk | 2 | 2 |
 
-802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 50% | 8-9 | Max, Dirk | 1 | 1 |
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 2 | 50% | 8-9 | Max, Dirk | 1 | 1 |
 
-803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 6 | 60% | 8 | Jakob | 2 | 1 |
+803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 2 | 60% | 8 | Jakob | 2 | 1 |
 
-804 | Synchronisation Webserver - Terminal implementieren |  | 24 | 0% | 8 | Implementierung | 0 | 20 |
+804 | Synchronisation Webserver - Terminal implementieren |  | 128 | 0% | 8-9 | Implementierung | 0 | 20 |
 
 805 | Webserver lokal einrichten |  | 6 | 100% | 8 | Lenny | 3 | 0 |
 
-806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-9 | Max, Dirk | 10 | 25 |
+806 | Terminalfunktionalität implementieren |  | 128 | 40% | 8-9 | Max, Dirk | 10 | 25 |
 
-807 | Datenbank für Terminal erstellen |  | 24 | 100% | 8 | Max | 1 | 0 |
+807 | Datenbank für Terminal erstellen |  | 2 | 100% | 8 | Max | 1 | 0 |
 
 808 | Erstellung spezifischer Test-Cases |  | 24 | 20% | 8-10 | Alex, Analyse | 3 | 11 |
 
 809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 0% | 8-9 | Richard | 0 | 2 |
 
-// 810 Wireframes erstellen (Einstellungen/RFID-Tag) -> Alex
+810 | Wireframes für Einstellungen erstellen |  | 6 | 100% | 8 | Alex | 3 | 0 |
+
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
+* Datenbank, Terminalstand und Website dem Kunden präsentieren
 * Aufgetretene Fragen stellen
 
 == Aufgetretene Probleme
@@ -110,9 +111,9 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 7
-| Assessment Datum | noch unbekannt
-| Teilnehmer | Entwurf, Implementierung (weitere Teilnehmer bei freien Kapazitäten)
+| Assessment Ziel | Iteration 8
+| Assessment Datum | 26.05.2021 (nachgelagert)
+| Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
@@ -136,11 +137,13 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 *Beurteilung im Vergleich zu den Zielen*
 
+Es wurden alle Ziele erreicht.
+
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
-//Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
+Es wurden alle Bewertungskriterien erfüllt. Die Deployment-Planung wurde bereits eine Iteration früher als geplant fertiggstellt, ebenso die Vue-Komponenten und die Bearbeitung des Architecture Notebooks.
 
 *Projektfortschritt*
 
