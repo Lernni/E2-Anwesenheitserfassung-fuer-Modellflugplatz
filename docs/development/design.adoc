@@ -1,12 +1,7 @@
-= Design: {project-name}
+= Design
 
-:imagesdir: images
-
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
-// Platzhalter für weitere Dokumenten-Attribute
-
+ifndef::docs-development[:docs-development: ../../docs/development]
+:imagesdir: {docs-development}/images
 
 == Allgemeine Informationen
 Dieses Dokument enthält Modelle/Beschreibungen zu diskreten Entwurfsentscheidungen, die aus einzelnen Use-Cases und den Konzepten des Architecture-Notebooks hervorgehen.
@@ -26,6 +21,7 @@ image::Datenmodell_Terminal.png[Datenbankmodell, width=70%, align="center"]
 === Webserver
 
 ==== Aufbau
+
 Der Webserver ist in zwei voneinander abhängige Module geteilt. Auf der einen Seite das Vue.js Frontend als UI und auf der anderen das Python Flask Backend als REST-Endpunkt.
 
 Das Frontend wird durch ein Login geschützt und beinhaltet Sichten auf das Flugprotokoll, Pilotenverwaltung und Einstellungen. Die technische Umsetzung des Frontends wird größtenteils durch "Bootstrap" und "BootstrapVue" ermöglicht. BootstrapVue bietet einen perfekten Zusammenschluss zwischen vordefinierten HTML Elementen aus Bootstrap und der dazugehörigen Funktionalität für Vue.
@@ -33,6 +29,7 @@ Das Frontend wird durch ein Login geschützt und beinhaltet Sichten auf das Flug
 // Backend
 
 ==== Authentifizierung im Browser
+
 Die Nutzerauthentifzierung erfolgt über zwei Sichten Login und Signup. Nachdem zuvor ein Pilot von einem Admin erstellt wurde, kann sich dieser Pilot nun mit einem Nutzernamen "vorname_nachname" und einem Passwort authentifzieren.
 
 Dazu muss der Pilot zunächst ein Passwort für seinen Nutzer vergeben. Im Anschluss kann er sich mit seinen Logindaten anmelden und gelangt auf die Startseite. Je nachdem, ob der Pilot die Rolle "Admin" oder "Pilot" besitzt, hat er entsprechende Zugriffsrechte auf der Webseite.
@@ -55,6 +52,7 @@ Bei der Erstellung eines neuen Piloten wird intern ein eindeutiger Nutzertoken f
 Das Backend kann so bei jeder ankommenden Anfrage herausfinden, welcher Nutzer angemeldet ist und ob dieser Nutzer Zugriffsrechte auf die eingehende Anfrage hat. Wenn nicht, dann wird das Backend eine Fehlermeldung (401 UNAUTHORIZED) zurückschicken und so den Zugriff verweigern.
 
 ==== Auslagerung von Funkionalität via Mixins
+
 Einige Komponenten des Frontends teilen sich gemeinsame Funktionen. Die Piloten-Formulare (Pilot erstellen/bearbeiten/reaktivieren) sind zum Großteil identisch aufgebaut. Es wäre ineffizient die entsprechende Funktionalität für jedes Formular extra auszuführen.
 
 Um den entsprechenden Code nur einmal schreiben zu müssen, kann man Mixins verwenden. Ein Mixin kann als kann als Schnittmenge der Funktionalität aller beteiligten ähnlichen Komponenten betrachtet werden. In einem Mixin wird die gemeinsame Funktionalität aller Komponenten zusammengefasst. Die Komponenten müssen dann jeweils dieses Mixin (ähnlich einer Library) importieren, um die Funktionalität nutzen zu können. Das Besondere hierbei ist, dass das Mixin beim Import mit dem restlichen lokalen Script der Komponente "verschmilzt". Es ist in etwa so wie die Vererbung von Funktionalität einer abstrakten Klasse.
@@ -68,6 +66,7 @@ Das Frontend ist durchgehend "responsive" gestaltet. Die Darstellungsweise der W
 Außerdem wird in der mobilen Ansicht der Webseite vermehrt auf die Verwendung von Icons und größeren Buttons geachtet und Informationen werden verkürzt dargestellt, um die Nutzerfreundlichkeit zu erhöhen. Der Zugriff auf alle Funktionen wird dabei bei jeder Displaygröße gewährleistet.
 
 ==== Validierung von Formularen
+
 Die Eingabemöglichkeit von Formularen im Frontend muss stark eingeschränkt werden auf die gewünschten Daten und Datenformate, damit die entstehende Datensätze in der Datenbank konsistent und fehlerfrei sind. Um die Validierung von Formularen möglichst einfach zu gestalten, wird im Backend "Vuelidate" verwendet. Mit Vuelidate können Eingabemasken und Regeln für jedes Eingabefeld festgelegt werden. Erst wenn alle Bedingungen der Eingabe erfüllt sind, kann ein Formular an das Backend übergeben werden. Die Funktionalität von Vuelidate wird über ein Mixin allen Formularen zur Verfügung gestellt.
 
 Weitere Möglichkeiten für die Einschränkung von Eingaben bieten Elemente aus HTML5, mit denen beispielsweise in Inputs nur Zahlen oder Zeiteingaben zugelassen werden. "Bootstrap" und "BootstrapVue" bieten weitere Varianten dieser Elemente. 
@@ -90,6 +89,7 @@ Mögliche Änderungen auf Seite des Webservers:
 * Neue Einträge in die Tabelle Pilot (neuen Pilot anlegen)
 * Modifizierte Einträge in der Tabelle Pilot (Pilotendaten modifizieren, Pilot deaktivieren, ...)
 * Neue Einträge in die Tabelle RFID-Ausweis (RFID-Ausweis hinzufügen)
+* Modifizierte Terminal-Einstellungen
 
 Mögliche Änderungen auf Seite des Terminals:
 
@@ -101,7 +101,7 @@ Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Dat
 
 ==== Umsetzung auf dem Terminal
 
-Auf dem Terminal läuft eine minimale REST-API, welche RFID-Ausweise, Piloten und Einstellungen entgegennimmt. Im Falle, dass ein Pilot synchronisiert wird, prüft das Terminal, ob dieser bereits existiert. Ist dies der Fall, wird der bestehende Pilot aktualisiert, andernfalls wird er neu eingefügt. Geplant war noch eine CORS-Policy, die nur Anfragen vom Webserver zulässt, allerdings war dies nicht mehr komplett zeitlich umsetzbar. Für jede Flugsession gibt es ein Synced Flag, das angibt, ob die aktuelle Version der Flugsession bereits mit dem Webserver synchronisiert wurde. Sobald sich etwas an einer Flugsession ver;ndert, etwa wenn der Flugleiterstatus gesetzt wird, werden alle Sessions mit ungesetztem Flag synchronisiert, wenn sie die Toleranzzeit nicht unterschreiten. Die Toleranzzeit gibt dabei an, wie lange nach der Erstellung eine Session frühestens synchronisert werden darf. Dies ist wichtig, damit Anmeldungen, die aus Versehen passiert sind, nicht auf dem Webserver erscheinen.
+Auf dem Terminal läuft eine minimale REST-API, welche RFID-Ausweise, Piloten und Einstellungen entgegennimmt. Im Falle, dass ein Pilot synchronisiert wird, prüft das Terminal, ob dieser bereits existiert. Ist dies der Fall, wird der bestehende Pilot aktualisiert, andernfalls wird er neu eingefügt. Für jede Flugsession gibt es ein Synced Flag, das angibt, ob die aktuelle Version der Flugsession bereits mit dem Webserver synchronisiert wurde. Sobald sich etwas an einer Flugsession verändert, etwa wenn der Flugleiterstatus gesetzt wird, werden alle Sessions mit ungesetztem Flag synchronisiert, wenn sie die Toleranzzeit nicht unterschreiten. Die Toleranzzeit gibt dabei an, wie lange nach der Erstellung eine Session frühestens synchronisert werden darf. Dies ist wichtig, damit Anmeldungen, die aus Versehen passiert sind, nicht auf dem Webserver erscheinen.
 
 === Aufbau der REST-API
 In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Webserver (Frontend & Backend) und Terminal benutzt werden, um Informationen und Befehle untereinander auszutauschen. Die Unterteilung der URLs erfolgt nach HTTP-Methode:
@@ -335,9 +335,9 @@ image::Statusmeldungen.png[Statusmeldungen Terminal, width=60%, align="center"]
 
 === Webserver
 
-==== Wireframe
+==== Wireframes
 
-Großteilig sind die Wireframes in den dazu passenden Use-Cases eingefügt. Sämtliche Wireframes sind zudem unter https://github.com/simonherbstrith/E2-Anwesenheitserfassung-fuer-Modellflugplatz/tree/master/docs/requirements/images/Wireframes zu finden.
+Großteilig sind die Wireframes in den dazu passenden Use-Cases eingefügt. Sämtliche Wireframes sind zudem im https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/tree/master/docs/requirements/images/Wireframes[GitHub Repository] zu finden.
 
 Weitere Festlegungen zur Darstellung und Bedienung der Website:
 
@@ -388,4 +388,3 @@ image::Einstellung_3_Toleranzzeit.png[Startseite Admin, width=70%, align="center
 
 .Wireframe: Toleranzzeit
 image::Einstellung_4_RFID_Ausweis_verwalten.png[Startseite Admin, width=70%, align="center"]
-
