@@ -42,40 +42,43 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 |WID | Aufgabe bzw. Beschreibung | Priorität |Schätzung der Größe (Punkte) |Status |geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
 
-| 302 | Erstellung allgemeiner Test-Cases |  | 24 | 100% | 7-9 | Alex |  |  |
+|
 
-503 | Anforderung der Technik |  |  | 100% | 5 | Dirk |  |  |
+503 | Anforderung der Technik | 1 | 1 | 100% | 5 | Dirk | 2 | 0 |
 
-504 | Korrektur Dokumentation |  | 64 | 100% | 5-7 | Analyse |  | 0 |
+601 | Vue-Komponenten für Website erstellen | 2 | 128 | 20% | 6-9 | Lenny | 7 | 12 |
 
-505 | Deployment planen |  | 24 | 90% | 5-8 | Richard |  |  |
+603 | Architecture-Notebook erweitern | 3 | 6 | 60% | 6-9 | Entwurf | 4 | 2 |
 
-601 | Vue-Komponenten für Website erstellen | x | 128 | 20% | 6-9 | Lenny |  |  |
+701 | Überprüfung NFAs | 4 | 6 | 100% | 7 | Gesamtes Team | 4 | 0 |
 
-603 | Architecture-Notebook erweitern |  | 128 | 60% | 6-9 | Entwurf, Implementierung |  |  |
+702 | REST-API-Request überlegen | 5 | 6 | 100% | 7 | Entwurf, Implementierung | 3 | 0 |
 
-701 | Überprüfung NFAs |  | 6 | 100% | 7 | Gesamtes Team |  |  |
+705 | Datenbankmodell überarbeiten | 6 | 2 | 100% | 7 | Max | 1.5 | 0 |
 
-702 | REST-API-Request überlegen |  | 6 | 100% | 7 | Entwurf, Implementierung |  |  |
+706 | Paketdiagramm entwerfen | 7 | 64 | 20% | 7-9 | Lenny, Dirk | 2 | 7 |
 
-703 | Datenschutz-Erkenntnisse in Dokumentation einbringen |  | 2 | 100% | 7 | Alex |  |  | 
+707 | Domainmodell überarbeiten | 8 | 2 | 60% | 7-8 | Richard | 1 | 1 |
 
-704 | Wireframes aktualisieren |  | 6 | 100% | 7 | Alex |  |  |
+708 | REST-API umsetzen | 9 | 24 | 80% | 7-8 | Implementierung | 5 | 2 |
 
-705 | Datenbankmodell überarbeiten |  | 2 | 100% | 7 | Max |  |  |
+302 | Erstellung allgemeiner Test-Cases | 10 | 24 | 100% | 3-7 | Alex, Max | 7.5 | 0 |
 
-706 | Paketdiagramm entwerfen |  | 64 | 20% | 7-9 | Lenny, Dirk |  |  |
+504 | Korrektur Dokumentation | 11 | 24 | 100% | 5-7 | Analyse | 9 | 0 |
 
-707 | Domainmodell überarbeiten |  | 2 | 60% | 7-8 | Richard |  |  |
+703 | Datenschutz-Erkenntnisse in Dokumentation einbringen | 12 | 2 | 100% | 7 | Alex | 2 | 0 | 
 
-708 | REST-API umsetzen |  | 24 | 80% | 7-8 | Implementierung |  |  |
+704 | Wireframes aktualisieren | 13 | 6 | 100% | 7 | Alex | 4 | 0 |
+
+505 | Deployment planen | 14 | 24 | 90% | 5-9 | Richard | 4 | 1 |
 
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
-* Datum für Techniklieferung erfragen 
-* Prototyp vorstellen
+* Neues Datenbankmodell vorstellen
+* Datenschutz besprechen
+* Akutalisierten Website-Prototypen vorstellen
 * Aufgetretene Fragen stellen
 
 == Aufgetretene Probleme
@@ -109,8 +112,8 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 7
-| Assessment Datum | noch unbekannt
-| Teilnehmer | Entwurf, Implementierung (weitere Teilnehmer bei freien Kapazitäten)
+| Assessment Datum | 05.05.2021
+| Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
@@ -119,26 +122,20 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 7
-| Assessment Datum | 28.04.2021
-| Teilnehmer | Gesamtes Team
-| Projektstatus	| Grün
-|===
-
-[%header, cols="1,3"]
-|===
-| Assessment Ziel | Iteration 3
-| Assessment Datum | 28.04.2021
+| Assessment Datum | 12.05.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
+Die Ziele wurden vollständig erreicht
+
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
 
-//Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
+Es wurden alle Bewertungskriterien erfüllt. Die Korrektur der Dokumentation konnte eine Iteration früher als geplant abgeschlossen werden.
 
 *Projektfortschritt*
 
