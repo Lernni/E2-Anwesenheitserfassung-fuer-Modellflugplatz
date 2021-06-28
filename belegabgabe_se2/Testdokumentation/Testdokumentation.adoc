@@ -1,6 +1,36 @@
-= Testdokumentation 
+// --- 1. Projektthema -------------------------
+= SE II - Testdokumentation
+// --- 2. Teammitglieder -----------------------
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>;
+// --- 3. Abgabedatum --------------------------
+04. Juli 2021
+// ---------------------------------------------
+:docs: ../../docs
+include::{docs}/_includes/default-attributes.inc.adoc[]
+
+:doctype: book
 :toc:
+:toclevels: 2
 :toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+// Folders
+:imagesdir-reset: {imagesdir}
+:docs-test: {docs}/test
+:docs-requirements: {docs}/requirements
+:docs-project-management: {docs}/project_management
+:docs-architecture: {docs}/architecture
+:docs-test: {docs}/test
+:docs-development: {docs}/development
+
 
 
 == Testkonzept
@@ -41,44 +71,44 @@
 
 * Test der Use-Cases
 
-include::test_cases_UC01_Pilot_anmelden.adoc[]
+include::{docs-test}/test_cases_UC01_Pilot_anmelden.adoc[]
 <<<
-include::test_cases_UC02_Pilot_abmelden.adoc[]
+include::{docs-test}/test_cases_UC02_Pilot_abmelden.adoc[]
 <<<
-include::test_cases_UC03_Pilotendaten_anlegen.adoc[]
+include::{docs-test}/test_cases_UC03_Pilotendaten_anlegen.adoc[]
 <<<
-include::test_cases_UC04_Pilot_deaktivieren.adoc[]
+include::{docs-test}/test_cases_UC04_Pilot_deaktivieren.adoc[]
 <<<
-include::test_cases_UC05_Pilotendaten_modifizieren.adoc[]
+include::{docs-test}/test_cases_UC05_Pilotendaten_modifizieren.adoc[]
 <<<
-include::test_cases_UC06_Alle_Piloten_abmelden.adoc[]
+include::{docs-test}/test_cases_UC06_Alle_Piloten_abmelden.adoc[]
 <<<
-include::test_cases_UC07_Flugleiter_bestimmen.adoc[]
+include::{docs-test}/test_cases_UC07_Flugleiter_bestimmen.adoc[]
 <<<
-include::test_cases_UC08_Protokoll_einsehen.adoc[]
+include::{docs-test}/test_cases_UC08_Protokoll_einsehen.adoc[]
 <<<
-include::test_cases_UC09_Protokolldaten_nachträglich_einfügen.adoc[]
+include::{docs-test}/test_cases_UC09_Protokolldaten_nachträglich_einfügen.adoc[]
 <<<
-include::test_cases_UC10_Handhabung_Gastflüge.adoc[]
+include::{docs-test}/test_cases_UC10_Handhabung_Gastflüge.adoc[]
 <<<
-include::test_cases_UC11_Pilot_reaktivieren.adoc[]
+include::{docs-test}/test_cases_UC11_Pilot_reaktivieren.adoc[]
 <<<
 
 
 * Test der Use-Case übergreifende Vorgänge
 
 <<<
-include::test_cases_configurations.adoc[]
+include::{docs-test}/test_cases_configurations.adoc[]
 <<<
-include::test_case_01.inc.adoc[]
+include::{docs-test}/test_case_01.inc.adoc[]
 <<<
-include::test_case_02.inc.adoc[]
+include::{docs-test}/test_case_02.inc.adoc[]
 <<<
-include::test_case_03.inc.adoc[]
+include::{docs-test}/test_case_03.inc.adoc[]
 <<<
-include::test_case_04.inc.adoc[]
+include::{docs-test}/test_case_04.inc.adoc[]
 <<<
-include::test_case_05.inc.adoc[]
+include::{docs-test}/test_case_05.inc.adoc[]
 <<<
 
 
