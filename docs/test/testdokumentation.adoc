@@ -9,11 +9,32 @@
 === Testobjekte
 //Was sind die wichtigsten Komponenten, die getestet wurden?
 
+//Komponenten in 2 Gruppen gegliedert  
+//1. Test für Use-Cases -> Hauptfunktionen 
+//2. Test von übergreifende Vorgänge  
+//Verweis auf Testbeschreibung
+//Warum nicht UNIT-Tests verwendet? 
+
 === Testmethoden
 //Wie wurde die Erfüllung der Anforderungen an diese Komponenten getestet?
 
+//Prüftechnik -> Dynamischer Test -> lauffähige SW-Bestandteile nacheinander testen
+//Arten von Testfällen -> Positivtest & Negativtest werden hauptsächlich manuell durchgeführt 
+//„Concurrent Testing“ -> testen parallel zur Entwicklung
+
+
 === Testdurchführungsplanung 
 //Wann hat wer welche Tests durchgeführt?
+
+//Iteration 5 -> Start der skizzierung von Test-Cases
+//Iteration 8-10 -> intensives Testen 
+//Test-Praktik -> „Concurrent Testing“ -> testen parallel zur Entwicklung
+
+//Modultest bereits bei der Entwicklung -> Beteiligt Entwickler
+//Integrationstests -> Beteiligt Tester
+//Systemtest & Akzeptanztest Beteiligt Tester, Entwickler (in Anwesenheit des Kunden)
+
+
 
 
 == Testfallbeschreibung & Testergebnisse
@@ -22,14 +43,44 @@
 
 include::test_cases_UC01_Pilot_anmelden.adoc[]
 <<<
+include::test_cases_UC02_Pilot_abmelden.adoc[]
+<<<
+include::test_cases_UC03_Pilotendaten_anlegen.adoc[]
+<<<
+include::test_cases_UC04_Pilot_deaktivieren.adoc[]
+<<<
+include::test_cases_UC05_Pilotendaten_modifizieren.adoc[]
+<<<
+include::test_cases_UC06_Alle_Piloten_abmelden.adoc[]
+<<<
+include::test_cases_UC07_Flugleiter_bestimmen.adoc[]
+<<<
+include::test_cases_UC08_Protokoll_einsehen.adoc[]
+<<<
+include::test_cases_UC09_Protokolldaten_nachträglich_einfügen.adoc[]
+<<<
+include::test_cases_UC10_Handhabung_Gastflüge.adoc[]
+<<<
+include::test_cases_UC11_Pilot_reaktivieren.adoc[]
+<<<
 
-** ......
 
 * Test der Use-Case übergreifende Vorgänge
 
+<<<
+include::test_cases_configurations.adoc[]
+<<<
 include::test_case_01.inc.adoc[]
 <<<
+include::test_case_02.inc.adoc[]
+<<<
+include::test_case_03.inc.adoc[]
+<<<
+include::test_case_04.inc.adoc[]
+<<<
+include::test_case_05.inc.adoc[]
+<<<
 
-** ......
+
 
 === Abnahmetest
