@@ -1,0 +1,42 @@
+== Iteration 7 (26.04.21 - 09.05.21) [LR] 
+
+Iterationsbeginn:
+
+- Erstellung der Datenbank
+* Gast hinzufügen
+- Max wartet auf Hardware, hat an neue Mail geschrieben
+- Frontend erstellen
+* Vue-Komponenten umsetzen
+
+- Deployment weiterführen (Issue #76) -> Richard
+- Domainmodell aktualisieren (Issue #71) -> Richard
+- Nicht benötigte NFAs entfernen (Issue #68) -> Jakob
+- Wireframes überarbeiten (Issue #69) -> Alex
+- Datenbankmodell aktualisieren/Datenbank erstellen (Issue #73) -> Max
+- Vue-Komponenten aus Wireframes erstellen (Issue #74) -> Lenny
+
+Iteration:
+
+- von Dokumentation aufarbeiten zu Entwicklung
+- Paketdiagramm entworfen
+- Login, Startseite erstellt
+- Wechsel von Vue v3 zu v2
+- Fachaustausch Projektmanagement
+* Mehr Fokus auf Iterationspläne legen
+- Genauere Informationen von Herr Brenner über Zugriffsrechte am Webserver
+
+Iterationsende:
+
+- Max hat Hardware und Einführung von Herr Brenner erhalten (04.05.21)
+- Projektplanung und Test-Cases fortgesetzt -> Alex
+- REST-API dokumentiert und angefangen Vue-Komponenten zu implementieren -> Lenny
+- Package Diagramm für Terminal entworfen -> Dirk
+
+
+Schwerpunkte:
+- Erhalt der Hardware
+- Entwurf der REST-API, Paketdiagramm, Wireframes
+* Am Ende der Iteration bereits mit 80% geschätzt
+- stärkerer Fokus auf Iterationsplanung durch Fachaustausch
+- Start der Entwicklung des Frontends: Login, Startseite entworfen
+* Wechsel von v3 zu v2

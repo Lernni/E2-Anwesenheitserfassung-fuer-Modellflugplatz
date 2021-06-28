@@ -1,0 +1,67 @@
+= SE II - Projektbericht
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
+// --- 3. Abgabedatum --------------------------
+04. Juli 2021
+// ---------------------------------------------
+:docs: ../../docs
+include::{docs}/_includes/default-attributes.inc.adoc[]
+
+:doctype: book
+:toc:
+:toclevels: 2
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+// Folders
+:imagesdir-reset: {imagesdir}
+:docs-test2: {docs}/test2
+:docs-requirements: {docs}/requirements
+:docs-project-management: {docs}/project_management
+:docs-architecture: {docs}/architecture
+:docs-test: {docs}/test
+:docs-development: {docs}/development
+
+<<<
+
+= Verwendete Namenskürzel 
+
+|===
+
+|*Name*|*Namenskürzel*
+
+|Jakob Laufer 
+|JL
+
+|Richard Kleint
+|RK
+
+|Max Haufe
+|MH
+
+|Alexander Heiß
+|AH
+
+|Lenny Reitz
+|LR
+
+|Dirk Zimmermann
+|DZ
+
+|===
+
+<<<
+include::1_Projektplanung.adoc[]
+
+<<<
+include::2_Projektdurchfuehrung.adoc[]
+
+<<<
+include::3_Projektergebnisse.adoc[]

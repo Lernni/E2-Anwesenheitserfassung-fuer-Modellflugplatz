@@ -1,0 +1,62 @@
+// --- 1. Projektthema -------------------------
+= SE II - Anforderungsspezifikation
+// --- 2. Teammitglieder -----------------------
+Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
+// --- 3. Abgabedatum --------------------------
+04. Juli 2021
+// ---------------------------------------------
+:docs: ../docs
+include::{docs}/_includes/default-attributes.inc.adoc[]
+
+:doctype: book
+:toc:
+:toclevels: 2
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+// Folders
+:imagesdir-reset: {imagesdir}
+:docs-test2: {docs}/test2
+:docs-requirements: {docs}/requirements
+:docs-project-management: {docs}/project_management
+:docs-architecture: {docs}/architecture
+:docs-test: {docs}/test
+:docs-development: {docs}/development
+
+<<<
+
+= Anforderungsspezifikation
+* Vision
+* Use Case Model (inkl. Wireframes, sofern vorhanden)
+* System-wide Requirements
+* Glossar
+* Domänenmodel
+
+:imagesdir: {docs-requirements}/images
+
+// Vision
+include::{docs-requirements}/Vision.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+<<<
+// Use Case Model (inkludiert selbst die einzelnen usecase_spec_x.adoc Dateien)
+include::{docs-requirements}/use-case_model.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+<<<
+// System-wide Requirements
+include::{docs-requirements}/system-wide_requirements.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+<<<
+// Glossar
+include::{docs-requirements}/glossary.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+<<<
+// Domänenmodell
+include::{docs-requirements}/domain_model.adoc[lines=1..1;4..-1,leveloffset=+1]

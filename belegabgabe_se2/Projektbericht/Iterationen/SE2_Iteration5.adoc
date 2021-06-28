@@ -1,6 +1,5 @@
-== 2.2 - Iterationen 5 (29.03.21 - 11.04.21) [JL] 
+== Iteration 5 (29.03.21 - 11.04.21) [JL] 
 
-:imagesdir: images
 
 Bevor das neue Semester und damit die Iteration 5 bei uns begann, hatten wir in den Semesterferien noch ein langes Meeting mit den Ansprechpartnern des Vereins.   
 In dem Meeting ging es haupsächlich darum, das wir Ihnen unsere ersten Architektur-Entwürfe (logischen und physichen Sicht) präsentierten und Feedback einholten. 
@@ -8,8 +7,13 @@ Wir konkretisierten unsere ausgearbeiteten Qualitätsanforderungen und stellten 
 Damit wollten wir zum Ende noch einmal sicher gehen, ob sie mit den Zielen des Kunden übereinstimmen.
 
 .Logische Sicht
+ifndef::docs-requirements[:docs-requirements: ../../../docs/requirements]
+:imagesdir: {docs-requirements}/images/Domainmodell
 image::domain_model.png[width=90%, align="left"]
+
 .Physische Sicht
+ifndef::docs-architecture[:docs-architecture: ../../../docs/architecture]
+:imagesdir: {docs-architecture}/images/C4_Model
 image::C4_Level2.png[width=90%, align="right"]
 
 Da es im vorherigen Semester, bei der wesentlichen Funktionalität der Gastflüge, der genaue Ablauf noch offen war, fragten wir diesbezüglich auch noch mal nach. Die Antworten dienten als Basis für die weiteren Arbeiten an diesem Use-Case.   

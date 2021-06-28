@@ -1,7 +1,7 @@
-= 1.Projektplanung
+= Projektplanung
 
 
-=== 1.1 - Aufgabenstellung & Auftraggeber 
+== Aufgabenstellung & Auftraggeber 
 
 Im Rahmen unserer studentischen Projektarbeit im Modul "Software Engineering" hat uns der Verein "Mfc-Rossendorf" die Möglichkeit gegeben, eine Anwesenheitserfassung des Modellflugplatzes zu entwickeln. 
 Das System soll es dem "Vereinsflugplatz des Mfc-Rossendorf" in Zukunft erlauben, eine digitalisierte Anwesenheitserfassung/Protokollierung der Piloten zu nutzen, um damit eine nachvollziehbare und kontrollierte Übersicht über den Praxisbetrieb des Vereinsflugplatzes gewährleisten zu können.
@@ -16,7 +16,7 @@ Zusätzlich wird, unter anderem, Herr Brenner das System in Zukunft verwalten.
 *Herr Prof. Dr. Heino Iwe* ist ebenfalls unser Ansprechpartner. Als langjähriges Mitglied des Vereins Mfc-Rossendorf gibt er uns einen tiefen Einblick in das aktuelle bestehende System und deren Nachteile und überwacht ebenfalls den Projektfortschritt.
 Beide Themensteller sind im ständigen Austausch mit Team "E2". Da beide Ansprechpartner im vorherigen Jahr bereits eine studentischen Projektarbeit betreuten, war ihnen das Vorgehen bereits bekannt. 
 
-=== 1.2 - Situation zum Semesterbeginn 
+== Situation zum Semesterbeginn 
 
 Zu Beginn des Moduls SE 2 hatten wir einen umfassenden Überblick in das System und die nötigen funktionalen Anforderungen gewonnen. (Verweis auf 1. Semester-Iteration)
 Da einige Mitglieder aus dem Studiengang Wirtschaftsingenieurwesen (W72) nur im Rahmen eines Ergänzungsmoduls Teil des Projekts waren, wurde unsere Gruppe nach Ablauf des ersten Semesters kleiner. Dadurch veränderten sich die Rollen in unser Gruppe und mussten deshalb in einem der ersten Meetings des zweiten Semesters neu verteilt werden. 
@@ -24,7 +24,7 @@ Unter anderen wurde Simon Herbstrith durch Lenny Reitz vom Posten des Teamleiter
 //Gespräch mit Professor Anke -> extra Iteration oder hier ausführen?
 //Verweis auf Iteration 
 
-===  1.3 - Team & Rollen
+== Team & Rollen
 
 Unser Team umfasst, durch die oben beschriebene Verkleinerung der Gruppe (Verweis auf Situation zum Semesterbeginn), 6 Mitgliedern. Die Ansprechpartner des Vereins "Mfc-Rossendorf" und Herrn Zirkelbach blieben unverändert.
 Da in dem zweiten Semester der Fokus nicht mehr ausschließlich auf der theoretischen Analyse lag, haben wir beschlossen, die Teammitglieder der Gruppe Analyse zur Unterstützung mit auf andere Rollen zu verteilen.    
@@ -68,7 +68,7 @@ a|* Richard Kleint
 |===
 
 
-=== 1.3 - Kommunikation & eingesetzte Tools
+== Kommunikation & eingesetzte Tools
 
 Anders als im vergangenen Semester gab es in SE 2 einen vorgegebenen Terminfür Meetings, welcher im Stundenplan festgelegt wurde. 
 Da dieser Zeitpunkt für jedes Teammitglied passte, wurde mittwochs, 17 Uhr zu unseren wöchentlichen Termin für Gruppenmeetings.
@@ -82,7 +82,7 @@ Bei dringenden und kurzen Fragen oder Benachrichtigungen kommunizierten wir per 
 
 
 
-=== 1.4 - Dokumentation & eingesetzte Tools
+== Dokumentation & eingesetzte Tools
 
 Für die Dokumentation übernahmen wir die vorgefertigte Ordnerstrukur aus dem vergangenen Semester und führten diese weiter. Wir erweiterten sie, indem wir zusätzliche Verzeichnisse wie Deployment, Test oder Projektbericht einführten. 
 Obwohl es bei einigen Dokumenten bei der Formatierung Probleme gab, empfanden wir AsciiDoc als ideales Dokumentationsformat. Einschließlich nutzten wir AsciiDoc -PDF und AsciiDoc -Diagramm für die Konvertierung ins PDF-Format. 
@@ -102,21 +102,6 @@ In Gruppenmeetings wurden notwendige Issues gemeinsam erstellt und zugeteilt, ge
 
 //Programm für Fortschritt (Essence Navigator) -> nutzen wir nicht mehr 
 
-=== 1.5 - Way of Working?
+== Way of Working?
 
 //extra Absatz?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

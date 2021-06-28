@@ -1,0 +1,24 @@
+= Projektdurchführung
+
+//Alle Iterationen aus dem ersten Semester zusammenfassen -> 1-2 Seiten zusammenfassen 
+//Zu jeder Iteration aus dem zweiten Semester 1-3 Seiten schreiben 
+
+:iterationen: Iterationen
+<<<
+
+include::{iterationen}/SE1_Iterationen.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration5.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration6.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration7.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration8.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration9.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration10.adoc[]
+<<<
+include::{iterationen}/SE2_Iteration11.adoc[]
+<<<
