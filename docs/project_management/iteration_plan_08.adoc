@@ -91,6 +91,9 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 //| x | x | x
 //|===
 
+== Veränderungen
+
+Es wurde einheitlich beschlossen, die Iterationszyklus terminlich anzupassen. So starten diese immer mittwochs und enden dienstags. Damit beginnt eine Iterations immer mit einem Meeting.
 
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
