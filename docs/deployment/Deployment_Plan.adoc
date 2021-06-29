@@ -1,18 +1,17 @@
-= Deployment Plan: {project-name}
+= Deployment Plan
 Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+ifndef::docs-deployment[:docs-deployment: ../../docs/deployment]
+:imagesdir: {docs-deployment}/images
 
 ////
 == Allgemeine Informationen
 
 Dieses Dokument enthält die Beantwortung einer Reihe allgemeiner Fragen in Bezug auf die erfolgreiche Bereitstellung des Systems.
 ////
-
-
-== Deployment Plan
 
 === Wer sind die Endbenutzer des Systems?
 
@@ -42,7 +41,7 @@ Falls es nach der erfolgreichen Übergabe des Systems kompliziertere Probleme gi
 
 Die Veröffentlichung gilt als fertig, sobald alle gewünschten Funktionen implementiert sind und dem Auftraggeber übergeben wurde.
 
-=== Deployment Diagram
+=== Deployment Diagramm
 
 
 image::deployment_diagram.png[deployment_diagram]
