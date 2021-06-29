@@ -1,1 +1,461 @@
 = Softwaredokumentation
+
+== Allgemeine Informationen
+
+Die Softwaredokumentation enthält Namen und Beschreibung aller Klassen, sowie die Beschreibung aller Funktionen pro Klasse. Ergänzend enthalten die einzelnen Dokumente selbst noch hilfreiche Kommentare im Code.
+
+== Webserver
+
+=== Frontend
+
+Der Aufbau und die Funktionalität des Frontends lässt sich aus dem standardmäßigen Aufbau eines Vue-Projekts ableiten. Relativ komplex ist dagegen nur der Aufbau der einzelnen Piloten-Formulare, was sich nicht direkt aus dem Code erschließen lässt. Eine schematische Darstellung der wichtigsten Abhängigkeiten soll den Aufbau erklären:
+
+.Schematische Darstellung des Aufbaus der 3 Piloten-Formulare
+:imagesdir: images
+image::piloten_formulare.png[width=100%, align="center"]
+
+==== Vue-Sichten (Views)
+
+[%header, cols=2*]
+|===
+|Sicht
+|Beschreibung
+
+|EditPilot
+|Seite zum Bearbeiten von Piloten, implementiert `Pilot.vue`
+
+|EditSession
+|Übersicht über eine Flugsession mit der Möglichkeit einen Gast hinzuzufügen
+
+|Home
+|Startseite; Übersicht über aktive Flugsessions; Quicklinks für Admins
+
+|ImprintPrivacy
+|Impressum & Datenschutz
+
+|Login
+|Seite zum Anmelden für registrierte Nutzer
+
+|NewPilot
+|Seite zum Erstellen von Piloten, implementiert `Pilot.vue`
+
+|NewSession
+|Seite zum Nachtragen einer Flugsession
+
+|PilotOverview
+|Übersicht über alle aktiven und inaktiven Piloten
+
+|ProtocolOverview
+|Übersicht über alle Flugsessions
+
+|ReactivatePilot
+|Seite zum Reaktivieren von Piloten, implementiert `Pilot.vue`
+
+|Settings
+|Seite für allgemeine und Terminal-Einstellungen
+
+|Signup
+|Seite zur erstmaligen Passwortvergabe eines Nutzers
+
+|===
+
+.Geteilte Funktionen
+[%header, cols=4*]
+|===
+|ID
+|Funktion
+|Parameter
+|Beschreibung
+
+|1
+|onSubmit(event)
+|event - wird durch aufrufende Form vergeben
+|wird bei Submit des Formulars ausgeführt und überprüft vie Vuelidate, ob es abgeschickt werden darf
+
+|===
+
+.EditPilot
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|editPilot()
+|/
+|Sendet einen bearbeiteten Piloten an das Backend
+
+|===
+
+.EditSession
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|editSession()
+|/
+|Sendet Gastinformationen zu einer bereits existierenden Session an das Backend
+
+|===
+
+.Login
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|postLogin()
+|/
+|Sendet Logininformationen an das Backend
+
+|===
+
+.NewPilot
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|resetPilot()
+|/
+|Zurücksetzen der State-Markierkungen im Formular, um die Erstellung eines neuen Piloten vorzubereiten
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|newPilot()
+|/
+|Sendet einen neuen Piloten an das Backend
+
+|===
+
+.NewSession
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|postNewSession()
+|/
+|Sendet einen neue (nachgetragene) Flugsession an das Backend
+
+|===
+
+.PilotOverview
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|showDeactivateModal(pilot)
+|pilot - enthält den zu deaktivierenden Piloten
+|öffnet den Warndialog zur Bestätigung den ausgewählten Piloten zu deaktivieren
+
+|deactivatePilot()
+|/
+|deaktiviert den ausgewählten Piloten und sendet ein entsprechendes Update an das Backend. Zuvor wird jedoch überprüft, ob der Pilot überhaupt deaktiviert werden darf. Dies ist nur möglich, wenn er nicht in dem Zeitpunkt eine aktive Flugsession hat.
+
+|toggleActivePilots()
+|/
+|Funktionalität des Toggle-Buttons zum Wechseln zwischen aktiven und inaktiven Piloten
+
+|getPilots()
+|/
+|holt die alle aktiven oder inaktiven Piloten vom Backend, je nachdem, ob `ìsActive` true oder false ist
+
+|===
+
+.ProtocolOverview
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|filterSessions(mode)
+|mode - true (Filter anwenden) oder false (Filter aufheben)
+|wendet einen Filter auf die Tabelle Flugprotokoll an oder hebt ihn wieder auf
+
+|getSessions()
+|/
+|baut je nach eingestelltem Filter ein GET Request für Flugsessions zurecht, welches dann an das Backend gesendet wird, um die zutreffenden Flugsessions zu bekommen
+
+|canEdit(pilotId)
+|pilotId - ID eines Piloten
+|überprüft, ober der angemeldete Nutzer berechtigt ist, eine Flugsession aus dem Flugprotokoll zu bearbeiten
+
+|===
+
+.ReactivatePilot
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|reactivatePilot()
+|/
+|Sendet ein Update an das Backend, einen bestimmten Piloten zu reaktivieren
+
+|===
+
+.Settings
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmitRFIDTag(event)
+|siehe ID 1
+|siehe ID 1
+
+|submitSettings(modal)
+|modal - ID des Dialogfensters, dass nach Abschließen des Submits geschlossen werden soll
+|schickt die geänderten Settings an das Backend (`postSettings`) und schließt danach das ausführende Dialogfenster
+
+|addRfidTag()
+|/
+|sendet einen neuen RFID-Tag an das Backend
+
+|getSettings()
+|/
+|holt sich die Einstellungen vom Backend
+
+|postSettings()
+|/
+|sendet die Einstellungen an das Backend
+
+|getFreeRfidList()
+|/
+|holt alle noch nicht vergebenen RFID-Tags vom Backend
+
+|getUsedRfidList()
+|/
+|holt alle vergebenen RFID-Tags vom Backend
+
+|===
+
+.Signup
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|siehe ID 1
+
+|postSignup()
+|/
+|sendet neue Logininformationen an das Backend
+
+|===
+
+==== Andere Vue-Komponenten
+
+[%header, cols=2*]
+|===
+|Komponente
+|Beschreibung
+
+|Navbar
+|Navigationsleiste der Webseite
+
+|Pilot
+|Vue-Komponente zum Erstellen der Piloten-Formulare
+
+|===
+
+.Navbar
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|logout()
+|/
+|führt die `logout` Action des Vuex Stores aus und leitet danach auf `/login` weiter
+
+|===
+
+.Pilot
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|onSubmit(event)
+|siehe ID 1
+|löst ein Event aus, was den Submit des Formulars an eine andere Komponente weiterleitet
+
+|onChange()
+|/
+|löst ein Event aus, was das Ändern von Vorname oder Nachname-Input an eine andere Komponente weiterleitet
+
+|formShow()
+|/
+|überprüft anhand mehrerer Parameter, ob das Formular angezeigt werden soll oder nicht; gibt einen entsprechenden Boolean-Wert zurück
+
+|===
+
+==== Mixins
+
+[%header, cols=2*]
+|===
+|Mixin
+|Beschreibung
+
+|auth
+|Mixin für Passwortverschlüsselung und Eingabedaten im Login und Signup
+
+|formValidation
+|Mixin für Formvalidierung durch Vuelidate
+
+|pilot
+|Mixin für Verwaltung der gemeinsam genutzten Funktionen der Piloten-Formulare
+
+|session
+|Mixin für Verwaltung der Session-Daten
+
+|===
+
+.auth
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|encryptPassword(password)
+|password - zu verschlüsselndes Passwort
+|gibt das (via bcrypt) verschlüsselte Passwort zurück
+
+|===
+
+.formValidation
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|validateState(name)
+|name - Name des zu validierenden Parameters; Diese Parameter sind in den Formularen im Objekt `form` zu finden
+|überprüft anhand vorgegebender Bedingungen in den Vue-Komponenten (siehe `validations: {}`), ob ein Parameter die Bedingungen erfüllt oder nicht. Die Korrektheit aller Parameter bestimmt darüber, ob ein entsprechendes Formular abgeschickt werden darf 
+
+|validateSubmit(event)
+|siehe ID 1
+|entscheidet über die Korrektheit eines gesamten Formulars
+
+|onReset(event)
+|siehe ID 1
+|das implizite reset-Event von Formularen wird abgefangen. Vuelidate nutzt einen eigenen reset-Aufruf 
+
+|===
+
+.pilot
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|validateAll()
+|/
+|Validierung aller Formularelemente auf einmal; wird in dieser Form benötigt, um über Vue-Komponenten hinweg Validierungen auszutauschen
+
+|setUsername()
+|/
+|Bestimmung des Nutzernamen anhand des Vor- und Nachnamen; Bsp: Max Muster -> max_muster
+
+|submitSuccess()
+|/
+|Zurücksetzen des Formulars nach erfolgreichem Submit
+
+|submitFailure()
+|/
+|Anzeigen von Fehlern nach fehlerhaftem Submit
+
+|getRfidList()
+|/
+|hole alle noch nicht vergebenen RFID-Tags vom Backend (zur Auswahlmöglichkeit beim Bearbeiten/Erstellen/Reaktivieren von Piloten)
+
+|getPilotUsernames()
+|/
+|hole alle Nutzernamen vom Backend zum Überprüfen auf Namensgleichheit bei Bestimmung des Nutzernamens eines Piloten
+
+|===
+
+==== Vuex Store
+Vuex Store verwaltet Nutzerdaten während einer Browsersession und An- und Abmeldefunktion
+
+[%header, cols=3*]
+|===
+|Action
+|Parameter
+|Beschreibung
+
+|login({commit}, loginCredentials)
+a|
+* {commit} - enthält auszuführende `mutations`
+* loginCredentials - Logininformationen eines anzumeldenden Nutzers
+|meldet einen Nutzer auf der Webseite an und hinterlegt den Anmeldetoken im Browser
+
+|logout({commit})
+|{commit} - enthält auszuführende `mutations`
+|meldet einen Nutzer von der Webseite ab und löscht den Anmeldetoken im Browser
+
+|===
+
+==== Vue Router
+Verwaltung der Routen und Zugriffsrechte
+
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|beforeEach(to, from, next)
+a|
+* to - Seite, zu der navigiert werden soll
+* from - aktuelle Seite
+* next - Funktion, die zur nächsten Seite navigiert
+|greift Seitenwechsel ab und überprüft jeweils, ob der Nutzer die erforderlichen Berechtigungen hat, um auf die nächste Seite zuzugreifen. Wenn nicht, wird er zum Login weitergeleitet.
+
+|===
+
+=== Backend
+
+== Terminal

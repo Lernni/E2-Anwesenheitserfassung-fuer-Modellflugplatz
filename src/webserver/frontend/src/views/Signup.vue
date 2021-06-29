@@ -1,6 +1,6 @@
 <!--
   *** Signup.vue ***
-  - Seite zur erstmaligen PAsswortvergabe eines Nutzers
+  - Seite zur erstmaligen Passwortvergabe eines Nutzers
   - Autor: Lenny Reitz
   - Mail: lenny.reitz@htw-dresden.de
 -->
