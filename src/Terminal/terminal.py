@@ -1,15 +1,26 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+
+#   *** terminal.py ***
+#   - implementiert die das an- und abmelden der Piloten, sowie das bestimmen des Flugleiters
+#   - Wenn der Flugleiterknopf gedrückt wird, dann wird der nächste Pilot, der seine Karte an den Scanner hält automatisch
+#     Flugleiter, sofern nicht schon vorhanden
+#   - TODO: alle Piloten abmelden, (rfid chip 10 sec an scanner halten)
+#   - TODO: logging inn Fehlerfällen
+#   - TODO: robustere Gestaltung
+#   - Autor: Max Haufe
+#   - Mail: max.haufe@htw-dresden.de
+
 import RPi.GPIO as GPIO
 import sys, datetime
 from server_connection import run_api
 
-from database_access import create_session, end_session, get_active_sessions, set_flugleiter
+from database_access import create_session, end_session, get_active_sessions, set_flugleiter, get_flugleiter
 
 sys.path.append('/home/pi/MFRC522-python')
 from mfrc522 import SimpleMFRC522
 
-# button zeugs
+# variablen für den Flugleiterknopf
 # globale Flag, welche jedes mal, nachdem ein RFID chip an den scanner gehalten wird, zurück auf False gesetzt wird
 # button wird gedrückt -> nächster RFID wird Flugleiter
 button_was_pressed = False
@@ -21,6 +32,8 @@ buttonPin = 19
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
+# wird gerufen, wenn der Flugleiterknopf gedrückt wurde
+# setzt die Flag auf True
 def button_pressed(pin):
     global button_was_pressed
     button_was_pressed = True
@@ -31,9 +44,7 @@ GPIO.add_event_detect(buttonPin, GPIO.BOTH, bouncetime=700)
 GPIO.add_event_callback(buttonPin, button_pressed)
 
 
-# rfid zeugs
-
-
+# wird gerufen, wenn der Knopf nicht gedrückt wurde und der rfid chip an den scanner gehalten wurde
 def eval_rfid(rfid):
     ret = get_active_sessions(rfid)
 
@@ -43,19 +54,20 @@ def eval_rfid(rfid):
         try:
             create_session(rfid)
         except ValueError as e:
-            # todo: logging?
             print('ERROR: ' + str(e))
     else:
         # session beenden
         end_session(ret[0]['session_id'])
 
 
+# wird gerufen, wenn butten_was_pressed == True und ein rfid chip an den scanner gehalten wurde
 def eval_rfid_button(rfid):
     ret = get_active_sessions(rfid)
 
-    # todo: dirk: funktion, ob es bereits anderen flugleiter auf platz gibt
-    # if flugleiter_exists():
-    # raise error oder return oder sowas
+    # wenn es bereits einen Flugleiter gibt, return
+    if get_flugleiter() != -1:
+        print("flugleiter bereits vorhanden")
+        return
 
     # wenn keine aktive session vorhanden
     # -> neue anlegen und flugleiter ernennne
@@ -63,7 +75,6 @@ def eval_rfid_button(rfid):
         try:
             session_id = create_session(rfid)
         except ValueError as e:
-            # todo: logging?
             print('ERROR: ' + str(e))
         set_flugleiter(session_id)
     else:
