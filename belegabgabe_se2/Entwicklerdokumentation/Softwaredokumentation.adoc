@@ -459,3 +459,89 @@ a|
 === Backend
 
 == Terminal
+
+.database_access
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|get_connection(filename)
+|filename - Dateiname der Datenbank
+|Stellt eine Verbindung zur Datenbank her.
+
+|insert_rfid(insert_dict)
+|insert_dict - Dictionary mit dem einzufügenden RFID-Code
+|Fügt neuen RFID-Code in die Datenbank ein.
+
+|get_pilot(RFID_Code)
+|RFID_Code - RFID-Code eines Piloten
+|Gibt Dictionary mit Informationen eines Piloten zurück. Ist der RFID-Code nicht vergeben oder existiert nicht, wird -1 zurückgegeben.
+
+|insert_pilot(insert_dict)
+|insert_dict - Dictionary mit Informationen des einzufügenden Piloten
+|Fügt neuen Piloten in die Datenbank ein. Existiert er bereits, werden die Daten des Piloten geupdatet.
+
+|get_token(PilotID)
+|PilotID - eindeutige ID eines Piloten
+|Gibt Token eines Piloten zurück. Existiert der Pilot nicht, wird -1 zurückgegeben.
+
+|create_session(RFID_Code)
+|RFID_Code - RFID-Code eines Piloten
+|Erstellt neue Flugsession eines Piloten mit aktueller Uhrzeit als Startzeit. Fehlermeldung, falls RFID-Code nicht vorhanden oder keinem Piloten zugewiesen.
+
+|get_session(SessionID)
+|SessionID - eindeutige ID einer Flugsession
+|Gibt Dictionary mit Informationen einer Flugsession zurück. Falls sie nicht existiert, wird -1 zurückgegeben.
+
+|get_active_sessions(RFID_Code)
+|RFID_Code - RFID-Code eines Piloten
+|Gibt Dictionary mit Informationen einer aktiven Flugsession zurück. Falls sie keine existiert, wird [] zurückgegeben.
+
+|get_unsynced_sessions()
+|/
+|Gibt Liste aller unsychronisierten Sessions zurück.
+
+|set_synced(SessionID)
+|SessionID - eindeutige ID einer Flugsession
+|Markiert eine Session als synchronisiert.
+
+|end_session(SessionID)
+|SessionID - eindeutige ID einer Flugsession
+|Setzt Endzeit einer Flugsession auf aktuelle Uhrzeit.
+
+|end_all_sessions()
+|/
+|Setzt Endzeit aller aktiven Flugsessions auf aktuelle Uhrzeit.
+
+|get_flugleiter()
+|/
+|Gibt SessionID des aktiven Flugleiters zurück.
+
+|set_flugleiter(SessionID)
+|SessionID - eindeutige ID einer Flugsession
+|Setzt Flugleiterstatus einer Flugsession.
+
+|run_api()
+|/
+|Startet REST-API in server_connection.
+
+|===
+
+.server_connection
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|sync_sessions()
+|/
+|Synchronisiert alle unsynchronisierten Flugsessions mit dem Webserver.
+
+|run_api()
+|/
+|Startet REST-API zur Synchronisierung von RFID-Ausweisen, Piloten und Einstellungen sowie zum beenden aller Sessions.
+
+|===
