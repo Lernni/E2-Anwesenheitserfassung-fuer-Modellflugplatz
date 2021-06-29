@@ -56,10 +56,10 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+| RFID Tag C72C483E9D des Piloten "Max Muster" an den RFID Scanner gehalten
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
@@ -72,10 +72,10 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+| Pilot "Max Muster" deaktiviert (RFID ist NULL)
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
@@ -88,10 +88,10 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+| Pilot "Max Muster" hat eine bestehende Flugsession
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
@@ -104,10 +104,10 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+| RFID Tag von Pilot "Max Muster" 2x schnell hintereinander an Scanner gehalten
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
@@ -120,10 +120,10 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+| Port-forwarding zwischen Terminal und Webserver unterbrochen
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
