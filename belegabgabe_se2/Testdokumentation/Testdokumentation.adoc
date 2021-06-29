@@ -37,6 +37,11 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 
 === Testobjekte
+
+Die Grundlage unserer Tests bilden die Use-Case-orientierten Testfälle erstellt. Das beudetet, dass zu den primären zehn Use-Cases zahlreiche Testfälle aufgelistet und bearbeitet wurden. Ergänzt werden diese durch Use-Case-übergreifende Tests, die beispielsweise die Einstellungen der Website betreffen.
+
+Der Fokus des Testing lag gleichmäßig verteilt auf den Websitekomponenten, den Terminalfunktionalitäten und der Synchronisation zwischen diesesn.
+
 //Was sind die wichtigsten Komponenten, die getestet wurden?
 
 //Komponenten in 2 Gruppen gegliedert  
@@ -46,6 +51,21 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 //Warum nicht UNIT-Tests verwendet? 
 
 === Testmethoden
+
+Als grundlegende Prüftechnik wurde der dynamische Test umgesetzt. Somit wurden die lauffähigen Software-Bestandteile nacheinander getestet. Es fanden sowohl Positiv- als auch Negativtets zur Überprüfung der korrekten Funktionalität statt.
+
+==== Modultests
+
+Es wurde sich im Team ausführlich über die Verwendung von Modultests ausgetauscht und nach einiger Überlegung dagegen die umfassende Verwendung dieser entschieden. Dies hat als Begründung, dass unser System kaum Komplexität in einem einzelnen Modul selbst besitzt, sondern durch die Konnektivität zu anderen Modulen an dieser gewinnt. Deshalb wurde der Fokus auf die folgenden Testarten gesetzt. Einzelne Modultests, wie zum Beispiel die Überprüfung des Textes in Eingabemasken (Überprüfung innerhalb des Moduls), sowie Responsive-Tests wurden durchgeführt.
+
+==== Intetgrationstest
+
+In unserem Testvorgang stand insbesondere der Integrationstest im Vordergrund. So wurde Use-Case-orienitiert die Integration vieler Module überprüft und deren Synchronisation kontrolliert
+
+==== Systemtest
+
+
+
 //Wie wurde die Erfüllung der Anforderungen an diese Komponenten getestet?
 
 //Prüftechnik -> Dynamischer Test -> lauffähige SW-Bestandteile nacheinander testen
