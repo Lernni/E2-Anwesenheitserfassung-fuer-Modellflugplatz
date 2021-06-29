@@ -49,9 +49,9 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
+| Pilot "Max Mustermann" hat gültigen RFID-Ausweis und eine offene Flugsession
+| Erfolgreich
+| /
 |
 
 |===
@@ -65,9 +65,9 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
+| Pilot "Max Mustermann" hat gültigen RFID-Ausweis und keine offene Flugsession
+| Erfolgreich
+| /
 |
 
 |===
@@ -81,9 +81,9 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
+| Pilot "Max Mustermann" hat gültigen RFID-Ausweis und eine offene Flugsession
+| Erfolgreich
+| /
 |
 
 |===
@@ -97,9 +97,9 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
+| Internetverbindung des Terminals unterbrochen
+| Erfolgreich
+| /
 |
 
 |===

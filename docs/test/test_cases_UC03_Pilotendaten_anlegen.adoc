@@ -252,8 +252,8 @@ a|
 * Alexander Heiß
 * RFID-Kennung: 0x6af0ff
 * Adminrechte: Nein
-|Konnte noch nicht getestet werden
-|?
+| Erfolgreich
+| /
 |
 
 |===

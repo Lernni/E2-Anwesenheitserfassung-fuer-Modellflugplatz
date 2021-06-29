@@ -58,8 +58,8 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | / 
-|
-|
+| Kann nicht getestet werden, da nicht implementiert.
+| Ausstehend
 |
 
 |===
@@ -74,8 +74,8 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | /
-|
-|
+| Kann nicht getestet werden, da nicht implementiert.
+| Ausstehend
 |
 
 |===
@@ -90,8 +90,8 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | Betätigen der Schaltfläche _Alle Piloten abmelden_  
-|
-|
+| Kann nicht getestet werden, da nicht implementiert.
+| Ausstehend
 |
 
 |===

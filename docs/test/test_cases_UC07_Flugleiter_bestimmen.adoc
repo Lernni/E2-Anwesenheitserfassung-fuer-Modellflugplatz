@@ -78,8 +78,8 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-|
-|
+| Erfolgreich
+| /
 |
 
 |===
@@ -94,8 +94,8 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-|
-|
+| Erfolgreich (Nach Abwarten der Toleranzzeit)
+| /
 |
 
 |===
@@ -110,7 +110,7 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-|
+| Nicht erfolgreich, da nicht hinreichend gut implementiert
 |
 |
 
@@ -126,7 +126,7 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-|
+| Nicht erfolgreich, da nicht hinreichend gut implementiert, Pilot 1 bleibt weiterhin Flugleiter
 |
 |
 
@@ -142,7 +142,7 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-|
+| Nicht erfolgreich, da nicht hinreichend gut implementiert
 |
 |
 
