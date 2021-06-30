@@ -79,7 +79,7 @@ a|* _LED_ leuchtet nicht auf
 
 | /
 | Erfolgreich
-| /
+| Es wird erst der Taster gedrückt, dann die RFID-Karte drangehalten
 |
 
 |===
@@ -95,7 +95,7 @@ a|* _LED_ leuchtet nicht auf
 
 | /
 | Erfolgreich (Nach Abwarten der Toleranzzeit)
-| /
+| Es wird erst der Taster gedrückt, dann die RFID-Karte drangehalten
 |
 
 |===
