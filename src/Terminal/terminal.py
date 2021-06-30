@@ -6,7 +6,7 @@
 #   - Wenn der Flugleiterknopf gedrückt wird, dann wird der nächste Pilot, der seine Karte an den Scanner hält automatisch
 #     Flugleiter, sofern nicht schon vorhanden
 #   - TODO: alle Piloten abmelden, (rfid chip 10 sec an scanner halten)
-#   - TODO: logging inn Fehlerfällen
+#   - TODO: logging in Fehlerfällen
 #   - TODO: robustere Gestaltung
 #   - Autor: Max Haufe
 #   - Mail: max.haufe@htw-dresden.de
@@ -37,7 +37,7 @@ GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 def button_pressed(pin):
     global button_was_pressed
     button_was_pressed = True
-    print("Button pressed!")
+    print("Button pressed")
 
 
 GPIO.add_event_detect(buttonPin, GPIO.BOTH, bouncetime=700)
@@ -52,11 +52,13 @@ def eval_rfid(rfid):
         # keine aktive session mit rfid code vorhanden
         # -> neue session
         try:
+            print('creating session...')
             create_session(rfid)
         except ValueError as e:
             print('ERROR: ' + str(e))
     else:
         # session beenden
+        print('ending session...')
         end_session(ret[0]['session_id'])
 
 
@@ -66,24 +68,26 @@ def eval_rfid_button(rfid):
 
     # wenn es bereits einen Flugleiter gibt, return
     if get_flugleiter() != -1:
-        print("flugleiter bereits vorhanden")
+        print("flugleiter bereits vorhanden, returning...")
         return
 
     # wenn keine aktive session vorhanden
     # -> neue anlegen und flugleiter ernennne
     if ret == []:
         try:
+            print('creating session...')
             session_id = create_session(rfid)
         except ValueError as e:
             print('ERROR: ' + str(e))
+        print('setting flugleiter...')
         set_flugleiter(session_id)
     else:
         set_flugleiter(ret[0]['session_id'])
+        print('setting flugleiter...')
 
 
 if __name__ == "__main__":
     reader = SimpleMFRC522()
-    print("Now place tag next to the scanner to read")
     run_api()
     try:
         time_old = datetime.datetime.now()
@@ -99,7 +103,7 @@ if __name__ == "__main__":
                     eval_rfid_button(rfid_c)
                 else:
                     eval_rfid(rfid_c)
-                print(rfid_c)
+                print(hex(rfid_c))
 
             button_was_pressed = False
 
