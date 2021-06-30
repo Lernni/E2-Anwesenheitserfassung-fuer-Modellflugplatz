@@ -28,7 +28,7 @@ class TimeFormat(fields.String):
         return time.strftime(value, "%H:%M")
 
 
-login_post_model = api.model('signup_post_model', {
+login_post_model = api.model('login_post_model', {
     'username': fields.String(description='username'),
     'password': fields.String(description='password hash')
 })
