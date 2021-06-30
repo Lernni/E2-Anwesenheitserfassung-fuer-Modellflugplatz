@@ -456,7 +456,385 @@ a|
 
 |===
 
-=== Backend
+== Backend
+
+=== Models für POST und PUT Requests
+
+.globals
+[%header, cols=3*]
+|===
+|Name
+|Parameter
+|Datei
+
+| login_post_model
+a|
+* username (String)
+* password(String)
+| login.py, signup.py
+
+|pilot_post_model
+a|
+* pilot_name (String)
+* pilot_surname (String)
+* rfid (int)
+* pilot_username (String)
+* is_admin (bool)
+| pilots.py
+
+| pilot_put_model
+a|
+* pilot_id (int)
+* pilot_name (String)
+* pilot_surname (String)
+* rfid (int)
+* pilot_username (String)
+* reset_password (bool)
+* is_admin (bool)
+| pilots.py
+
+| rfid_post_model
+a|
+* rfid (String)
+| rfid.py
+
+|session_post_model
+a|
+* pilot_id (int)
+* session_date (date)
+* start_time (String mit "HH:MM")
+* end_time (String mit "HH:MM")
+* is_leader (bool)
+* guest_name (String)
+* guest_info (String)
+| sessions.py
+
+| session_put_model
+a|
+* guest_name (String)
+* guest_info (String)
+* end_time (DateTime)
+* is_leader (bool)
+| sessions.py
+
+|sessions_term_post_model
+a|
+* pilot_id (int)
+* session_date (date)
+* start_time (String mit "HH_MM")
+* end_time (String mit "HH_MM")
+* is_leader (bool)
+| sessions_terminal.py
+
+
+|===
+
+=== REST API Klassen
+
+Anmerkung: für viele der Requests wird ein ```auth_parser``` benötigt. Dieser erwartet den Token eines Piloten im Header. Funktionen, welche diese Authentifizierung wahrnehmen, müssen mit dem Decorator ```@api.expect(auth_parser)``` gekennzeichnet werden.
+
+.checkout_all (/api/checkout-all)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| post
+| /
+| /
+| meldet alle Piloten ab – setzt Endzeit auf datetime(), wo Endzeit gleich NULL – nicht verwendet
+
+|===
+
+.login (/api/login)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| post
+| body: login_post_model
+| /
+a| wenn login erfolgreich, return token und Pilotendaten:
+
+* id
+* name
+* username
+* is_admin
+
+|===
+
+.pilot_list (/api/pilot-list)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+| /
+| nur admins
+| liefert pilot_id, pilot_name, pilot_username aller Piloten
+
+|===
+
+.pilots (/api/pilots)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+a| Query Parameter:
+
+* pilot_id(int, optional)
+* is_active(bool, optional)
+| nur admins
+a| Liefert Pilotendaten:
+
+* pilot_id
+* pilot_name
+* pilot_surname
+* entry_date
+* rfid
+* pilot_username
+* is_admin
+
+| post
+| body: pilot_post_model
+| nur admins
+| Fügt Piloten in Datenbank ein und synchronisiert mit Terminal
+
+| put
+| body: pilot_put_model
+| nur admins
+| Aktualisiert Pilot und synchronisiert mit Terminal
+
+|===
+
+.rfid (/api/rfid)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| post
+| body: rfid_post_model
+| nur admins
+| Trägt neuen RFID Tag in Datenbank ein und synchronisiert mit Terminal
+
+|===
+
+.rfid_assigned (/api/rfid_assigned)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+| /
+| nur admins
+a| liefert liste von Pilotendaten mit einem vergebenen RFID-Ausweis:
+
+* pilot_id
+* pilot_name
+* rfid
+
+|===
+
+.rfid_available (/api/rfid_available)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+| /
+| nur admins
+a| liefert eine liste von RFID-Ausweisen:
+
+* rfid
+
+|===
+
+.running_sessions (/api/sessions/running)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+| /
+| jeder Pilot
+a| liefert eine Liste mit Sessiondaten zurück:
+
+* pilot_id
+* pilot_name
+* start_time
+* session_leader
+
+|===
+
+.sessions (/api/sessions)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+| get
+a| Query Parameters:
+
+* name (String)
+* start_date (date)
+* end_date (date)
+* from (int, required)
+* to (int, required)
+| jeder Pilot
+a| liefert Liste von Sessiondaten, bzgl Parameter und zwischen From und To:
+
+* session_id
+* pilot_id
+* pilot_name
+* date
+* start_time
+* end_time
+* session_leader
+* guest
+* name
+* text
+
+|post
+|body: session_post_model
+|nur admins
+|Trägt eine Flugsession nach.
+
+|put
+|body: session_put_model
+|jeder Pilot darf für seine eigenen Sessions diese Request ausführen
+|aktualisiert Flugsession
+|===
+
+.sessions_terminal (api/sessions/terminal)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+|post
+|body: session_term_post_model
+|/
+|trägt eine Session in die Datenbank ein. Entweder wird die Session neu erstellt oder eine bestehende aktualisiert
+
+|===
+
+.signup (/signup/signup)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+|post
+|body: login_post_model
+|/
+|wenn erfolgreich, wird ein neues Passwort für den Piloten angelegt.
+
+|===
+
+.settings (/api/settings)
+[%header, cols=4*]
+|===
+|Funktion
+|Parameter
+|Berechtigung
+|Beschreibung
+
+|post
+|body: settings.json
+|nur admins
+|überschreibt die lokale settings.json mit dem Inhalt des bodies
+
+|get
+|/
+|/
+|liefert die lokale settings.json
+
+|===
+
+=== Sonstige Funktionen für den Webserver
+
+.sync
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|is_online
+|/
+|ping an Terminal - return true oder false, je nachdem ob Terminal online
+
+|set_synced_pilot
+|pilot_id, is_synced
+|setzt ```Synced``` von Pilot mit pilod_it auf is_synced
+
+|sync_pilots
+|/
+|versucht, alle Piloten mit ```Synced = FALSE``` mit dem Terminal zu synchronisieren
+
+|set_synced_rfid
+|rfid, is_synced
+|setzt ```Synced``` von RFID-Ausweis mit rfid auf is_synced
+
+|sync_rfids
+|/
+|versucht, alle RIFD-Ausweise mit ```Synced = FALSE``` mit dem Terminal zu synchronisieren
+
+|sync_settings
+|/
+|versucht, die ```settings.json``` mit dem Terminal zu synchronisieren. Wenn das fehlschlägt, gibt es keine Fehlerbehandlung, wie etwa bei sync_pilots() und sync_rfids()
+|===
+
+.globals
+[%header, cols=3*]
+|===
+|Funktion
+|Parameter
+|Beschreibung
+
+|get_connection
+|filename
+|prüft, ob datei mit name ```filename``` existiert. Wenn ja wird ein Fehler geworfen. Wenn nicht, werden Foreign Key aktiviert und das connection-objekt auf die sqlite-Datenbank zurückgegeben
+
+|is_admin
+|cursor und implizit den token vom auth_parser
+|return true, wenn der token einem Admin gehört, sonst false
+
+|is_pilot
+|cursor und implizit den token vom auth_parser
+|return true, wenn der token einem Piloten gehört, sonst false
+
+|===
 
 == Terminal
 
