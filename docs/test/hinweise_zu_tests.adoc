@@ -27,7 +27,7 @@ Falls ihr Fragen oder Unterstützung wünscht, könnt ihr euch gerne bei Alex od
 * Test Cases UC07 
 ** TID 1-5
 
-* Use Case configurations bearbeiten+
+* Test Cases Configurations bearbeiten
 
 ==== Lenny:
 
