@@ -45,3 +45,8 @@ Die Veröffentlichung gilt als fertig, sobald alle gewünschten Funktionen imple
 
 
 image::deployment_diagram.png[deployment_diagram]
+
+
+=== Übergabe
+
+Die Übergabe des Systems fand am 30.06.2021 im Vereinsgebäude des Mfc-Rossendorf statt. Gemeinsam mit den Themenstellern arbeiteten die drei anwesenden Teammitglieder das Abnahmeprotokoll ab und stellten dabei das entwickelte System vor. Aufgetretene Anmerkungen wurden im Abnahmeprotokoll vermerkt und nach zirka zwei Stunden, die bereitgestellten Materialien der Themensteller wie zum Beispiel der Raspberry Pi, final übergeben.
