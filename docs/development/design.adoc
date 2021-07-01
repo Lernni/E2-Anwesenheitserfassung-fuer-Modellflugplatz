@@ -296,24 +296,6 @@ a|
 
 |===
 
-//delete ?
-==== DELETE
-
-[%header, cols="1,1,2,2"]
-|===
-| URL
-| Beschreibung
-| Attribute
-| Start -> Ziel
-
-| /pilots
-| Löschen eines Piloten aus der Tabelle Pilot
-a|
-* /id/2 (ID des Piloten)
-a|
-* Frontend -> Backend
-|===
-
 
 == Graphische Designaspekte
 Garphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
