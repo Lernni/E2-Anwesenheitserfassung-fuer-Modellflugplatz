@@ -131,15 +131,22 @@ a|
 
 | /pilots
 | Erwarte alle Piloten der Tabelle Pilot
-a|
-* ?from=0?to=20 (die ersten 20)
+a| 
 * /id/2 (Pilot mit Id = 2)
 * ?active=false (alle deaktiven)
+* ?from=0?to=20 (die ersten 20)
+//nicht sicher?
 a|
 * Frontend -> Backend
 * Terminal -> Backend
 
-| /rfid
+| /rfid_assigned
+|zugewiesene RFID tags
+|No parameters
+a|* Frontend -> Backend
+* Terminal -> Backend
+
+| /rfid_available
 |verfügbare RFID tags
 |No parameters
 a|* Frontend -> Backend
@@ -155,6 +162,7 @@ a|
 * /filterById/5 (Session mit Id = 5)
 a|* Frontend -> Backend
 * Terminal -> Backend
+// nicht sicher?
 
 | /sessions/running
 |alle aktiven Sessions
@@ -171,7 +179,6 @@ a|* Frontend -> Backend
 
 |===
 
-// setting ist noch nicht vorhanden
 
 ==== POST
 
@@ -200,7 +207,14 @@ a|
 a|
 * Frontend -> Backend
 
-| /sessions (alterntaiv: /sessions/check_in)
+|/rfid
+|Hinzufügen der RFID-Tags zur Tabelle
+a|
+* "rfid": "string"
+a|
+* Frontend -> Backend
+
+| /sessions 
 | Hinzufügen einer neuen Session
 a|
 * "pilot_id": "3",
@@ -208,8 +222,6 @@ a|
 * "start_time": "23.06.2021 15:43:12"
 * "end_time": "HH:MM",
 * "is_leader": true,
-* "guest_name": "string",
-*  "guest_info": "string"
 a|
 * Terminal -> Backend
 // Return Session Id?
@@ -220,6 +232,23 @@ a|
 a|* Terminal -> Backend
 * Frontend -> Backend
 
+| /sessions/terminal 
+| post abgeschlossene und nicht abgeschlossene Sitzungen vom Terminal zum Backend 
+a|* "pilot_id": "3",
+* "session_date": "2021-05-29"
+* "start_time": "23.06.2021 15:43:12"
+* "end_time": "HH:MM",
+* "is_leader": true,
+a|* Terminal -> Backend
+
+
+| /settings 
+| post Einstellungen zum Server 
+| No parameters
+a|
+* Frontend -> Backend
+* Terminal -> Backend
+
 | /signup 
 | Erstelle Anmeldung für Pilot 
 a| * "username": "string"
@@ -227,14 +256,7 @@ a| * "username": "string"
 a|
 * Frontend -> Backend
 
-| /ping
-| Sende "Lebenszeichen" des Terminals
-a|
-a|
-* Terminal -> Backend
 |===
-
-// ping ist noch nicht vorhanden
 
 ==== PUT
 
@@ -259,48 +281,22 @@ a|
 a|
 * Frontend -> Backend
 
-| /sessions/check_out
-| Beenden einer Session oder aller Sessions
-a|
-* "session_id": "18",
-* "end_time": "23.06.2021 17:09:12"
-* ...
-* ?all
-a|
-* Terminal -> Backend
-* Frontend -> Backend
-* Backend -> Terminal
 
-| /sessions/flags
-| Flugleiter bestimmen, Gast hinzufügen
-a|
-* ?leader
-* "session_id": "18",
-* ?guest
-* "guest_name": "Max Muster",
-* "guest_info": "..."
-a|
-* Terminal -> Backend
-* Frontend -> Backend
-
-| /settings
-| Ändere Einstellungen für den Terminalablauf
-a|
-JSON
-a|
-* Frontend -> Backend
 
 | /sessions
 | Gastnamen & Gastinformation hinzufügen
-a| * "guest_name": "string"
-* "guest_info": "string"
+a|
+* guest_name": "string",
+* "guest_info": "string",
+* "end_time": "2021-06-29T20:53:40.627Z",
+* "is_leader": true
 a|
 * Frontend -> Backend
-
 
 
 |===
 
+//delete ?
 ==== DELETE
 
 [%header, cols="1,1,2,2"]
