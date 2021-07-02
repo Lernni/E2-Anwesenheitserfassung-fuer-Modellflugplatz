@@ -105,7 +105,6 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 |*Construction* & *Tests*
 |Feinschliff Website und Synchronisation, Test-Cases anwenden
 |KW 23-24
-|===
 
 |It. Nr. 11
 |*Transition* & *Tests*
