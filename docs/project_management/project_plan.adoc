@@ -12,13 +12,15 @@ Die Durchführung des Projektes geschieht im Zeitraum von November 2020 bis zum 
 
 Den Projektteilhabern werden folgende Aufgabenbereiche zugeteilt:
 
-* Projektmanagement: Simon
-* Analyse: Jakob, Richard, Tsatsra
+* Projektmanagement: Simon Herbstrith
+* Analyse: Jakob Laufer, Richard Kleint, Tsatsralterdene Batchimeg
 * Entwurf:
-** Technisch: Max, Dirk, Lenny
-** Webdesign: Alexander
-* Implementierung: Max, Dirk, Lenny
-* Test: Alexander
+** Technisch: Max Haufe, Dirk Zimmermann, Lenny Reitz
+** Webdesign: Alexander Heiß
+* Implementierung: Max Haufe, Dirk Zimmermann, Lenny Reitz
+* Test: Alexander Heiß
+
+Die Zuteilung erfolgt größtenteils auf der Einschätzung der eigenen Stärken sowie auf Erfahrungen. Des Weiteren spielt die Studiengangzugehörigkeit eine Rolle, so dass Simon Herbstrith und Tsatsralterdene Batchimeg ihre Aufgaben bereits im ersten Semester umsetzen können.
 
 Die Kommunikation findet über eine für dieses Projekt erstellte WhatsApp- und Discord-Gruppe statt. Teammeetings finden nach gemeinsamer Terminfindung per WhatsApp und Doodle auf Discord statt. Der Discord-Server bietet die Möglichkeit des einfachen Transfers von Dateien, die nicht für das im Folgenden erläuterte GitHub-Repository geeignet oder lediglich temporär zur teaminternen Bearbeitung notwendig sind.
 
@@ -43,14 +45,14 @@ Zudem wird eine Risikoanalyse zur Feststellung der wichtigsten Schwierigkeiten, 
 Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet. 
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
 
-== Meilesteine und Ziele
+== Meilesteine und Phasen
 //Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
 
 
 [%header, cols=4*]
 |===
 |Iteration
-|Ziel
+|Phase
 |Inhalte
 |Zeitraum
 
@@ -60,17 +62,17 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 |KW 49-50
 
 |It. Nr. 2
-|Vorläufige Fertigstellung *Inception*, Beginn *Elaboration*
-|Vorläufige Fertigstellung der Analyse, Start des Entwurfs, Start des Designentwurfs, Use-Case-Entwicklung
+|*Inception*, Beginn *Elaboration*
+|Bearbeitung Analyse, Start des Entwurfs, Wireframes, Use-Case-Entwicklung
 |KW 51-53
 
 |It. Nr. 3
-|Fortführung *Elaboration*
+|*Elaboration*
 |Weitere Bearbeitung  Use-Cases, Wireframes, System-Wide-Requirements, Architecture Notebook, Bedienungsplan, Use-Case-Diagramm, Test-Cases
 |KW 1-2
 
 |It. Nr. 4
-|Vorläufige Fertigstellung *Elaboration*
+|*Elaboration*
 |Domänenmodell, Weitere Bearbeitung/Anpassungen der It. Nr. 3 Aufgaben
 |KW 3-5
 
@@ -80,38 +82,76 @@ Zum Festhalten des Status der Projektarbeit wird das Essence-Modell verwendet.
 |KW 13-14
 
 |It. Nr. 6
-|Construction
+|*Construction*
 |Datenbank umsetzen, Erweiterung Dokumentation zu Design und Entwurf, REST-API entwerfen
 |KW 15-16
 
 |It. Nr. 7
-|Construction
+|*Construction*
 |REST-API umsetzen, Datenbank erweitern, Vue.js Komponenten umsetzen, Paketdiagramm entwerfen 
 |KW 17-18
 
 |It. Nr. 8
-|Construction
+|*Construction*
 |Zusätzliche Test-Cases entwerfen, Vue.js Komponenten umsetzen, Terminal umsetzen
 |KW 19-20
 
 |It. Nr. 9
-|Construction & Tests
+|*Construction* & *Tests*
 |Verbindung der Komponenten schaffen, Website responsive gestalten, Test-Cases anwenden 
 |KW 21-22
 
 |It. Nr. 10
-|Transition & Tests
-|Einbindung System vor Ort, Tests, Einführung in das System 
+|*Construction* & *Tests*
+|Feinschliff Website und Synchronisation, Test-Cases anwenden
 |KW 23-24
 |===
 
-//== Deployment
-//Outline the strategy for deploying the software (and its updates) into the production environment.
+|It. Nr. 11
+|*Transition* & *Tests*
+|Einbindung System vor Ort, Tests, Einführung in das System 
+|KW 25-26
+|===
+
+== Deployment
+
+Das Deployment findet im Rahmen der letzten Iteration statt. Dabei wird die Hardware auf dem Flugplatz in Anwesenheit der Themensteller installiert und vollständig eingerichtet. Des Weiteren wird die Website sowie das Backend direkt auf dem Webserver des Themenstellers installiert, hier ist kein weitere Handlungsbedarf nötig. Es werden die Entwickler-, Betriebs-, Anwender- sowie Testdokumentation an den Themensteller auf einem elektronischen Weg zugesendet.
+
+Detaillierte Informationen sind im Deployment-Plan unter docs -> deployment zu finden.
 
 == Erkenntnisse (Lessons learned)
-* Bessere Meetingstrukturierung
-* Frühzeitigere Bearbeitung der Dokumentationen
-* Dokumentationsvorlagen nicht als Lückentext verstehen; auf die wesentlich benötigten Aspekte begrenzen
-* Fertigstellung eines Work Items (bspw. Use-Cases) kann und soll nicht innerhalb einer Iteration bewerkstelligt werden (iteratives Arbeiten vertiefen)
-* Häufigere Teilnahme an SE Praktika für Feedback & Tipps
-* Einheitliche Begrifflichkeiten verwenden
+
+=== Meetings
+
+Die Meetings mit dem Kunden müssen sinnvoller strukturiert werden. Die Länge der Meetings, insbesondere mit dem Themensteller, sind deutlich zu lang.
+Lösung: Genauere Inhaltsbeschreibungen der Meetings anfertigen und ein zeitliches Limit setzen.
+
+=== Dokumentation
+
+Die Dokuemntation muss frühzeitiger bearbeitet werden. Zu viele Elemente werden erst zu einem zu späten Zeitpunkt dokumentiert/angepasst und müssen deshalb zeitintensiv wieder aufgearbeitet werden.
+Lösung: Verpflichtung zur rechtzeitigen Dokumentation 
+
+=== Anforderungen
+
+Zahlreiche Anforderungen wurden unnötigerweise zu viel angenommen. So wurden Nicht-funktionale-Anforderungen festgelegt, die für den Kunden keine bedeutsame Rolle spielen (z.B. Reaktionszeit Terminal)
+Lösung: Überarbeitung der Anforderungen und nur auf das Wesentliche konzentrieren
+
+=== Forderungen an den Themensteller
+
+Forderungen an den Themensteller halten den Bearbeitungsprozess zu lange auf. Beispielsweise die Techniklieferung (Scanner, Raspi u.ä.) dauerte mehrere Wochen.
+Lösung: Frühzeitiger bei den Themensteller Fragen oder Wünsche äußern, am besten bevor es für uns relevant wird, so dass eine Reaktionszeit für die Themensteller einkalkuliert ist
+
+=== Tipps und Feedback
+
+Es wurden zu selten SE Praktika besucht, um Feedback und Tipps einzuholen. So wurde einiges falsch umgesetzt und musste korrigiert werden (z.B. Domänenmodell)
+Lösung: Häufigeres Besuchen der Praktika
+
+=== Begrifflichkeiten
+
+In der Dokumentation wurden für gleiche Bestandteile zahlreiche verschiedene Begriffe verwendet. Dies führte zu Undurchsichtigkeit
+Lösung: Begriffe definieren (Glossar) und zukünftig verwenden. Bereits vorhandenen Dokumente müssen überarbeitet werden.
+
+=== Iteratives Arbeiten
+
+Viele Aufgaben wurden nicht nach dem iterativen Prinzip bearbeitet. So wurde Nacharbeit und das Löschen bereits Vorhandenem notwendig (Beispiel: Zu viele UseCsaes direkt vollständig ausformuliert).
+Lösung: Dokuemnte nicht direkt vollständig berarbeiten, sondern über mehrere Iterationen verteilen. Häufiger Feedback einholen!
