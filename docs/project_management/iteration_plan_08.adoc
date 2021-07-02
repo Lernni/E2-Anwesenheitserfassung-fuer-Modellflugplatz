@@ -49,11 +49,11 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 706 | Paketdiagramm entwerfen | 3 | 64 | 50% | 7-9 | Lenny, Dirk | 3 | 2 |
 
-707 | Domainmodell überarbeiten | 4 | 2 | 80% | 7-8 | Richard | 1.5 | 1 |
+707 | Domainmodell überarbeiten | 4 | 2 | 80% | 7-9 | Richard | 1.5 | 1 |
 
 708 | REST-API umsetzen | 5 | 128 | 95% | 7-9 | Implementierung | 20 | 5 |
 
-801 | Komponentendiagramm erstellen | 6 | 6 | 50% | 8 | Jakob, Dirk | 2 | 2 |
+801 | Komponentendiagramm erstellen | 6 | 6 | 50% | 8-9 | Jakob, Dirk | 2 | 2 |
 
 802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen | 7 | 2 | 50% | 8-9 | Max, Dirk | 1 | 1 |
 
@@ -71,7 +71,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 505 | Deployment planen | 14 | 24 | 100% | 5-8 | Richard | 6 | 0 |
 
-803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen | 15 | 2 | 60% | 8 | Jakob | 2 | 1 |
+803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen | 15 | 2 | 60% | 8-9 | Jakob | 2 | 1 |
 
 810 | Wireframes für Einstellungen erstellen | 16 | 6 | 100% | 8 | Alex | 3 | 0 |
 
@@ -147,7 +147,7 @@ Es wurden alle Ziele erreicht.
 
 *Geplante vs. erledigte Aufgaben*
 
-Es wurden alle Bewertungskriterien erfüllt. Die Deployment-Planung wurde bereits eine Iteration früher als geplant fertiggstellt, ebenso die Vue-Komponenten und die Bearbeitung des Architecture Notebooks.
+Es wurden alle Bewertungskriterien erfüllt. Die Deployment-Planung wurde bereits eine Iteration früher als geplant fertiggstellt, ebenso die Vue-Komponenten und die Bearbeitung des Architecture Notebooks. Einige Aufgaben wurden auf die nächste Iteration verlängert.
 
 *Projektfortschritt*
 
