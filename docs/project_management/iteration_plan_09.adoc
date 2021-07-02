@@ -12,17 +12,16 @@ Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresd
 | Meilenstein
 | Kalendarwoche
 
-| Beginn der Iteration | KW 21 (Mittwoch, 12.05)
-| Ende der Iteration | KW 23 (Dienstag, 25.05)
+| Beginn der Iteration | KW 21 (Mittwoch, 26.05)
+| Ende der Iteration | KW 23 (Dienstag, 08.06)
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* Vue-Komponenten erstellt
-* Erfolgreiche Synchronisation zwischen Webserver und Terminal
-* Datenbanken, Terminal und Website als Prototyp dem Kunden präsentierbar
+* Frontend-Komponentenerstellung abschließen
+* Wireframes für Einstellungen erstellen
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -43,49 +42,46 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 | 
 
-706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-10 | Lenny, Dirk | 2 | 2 |
+706 | Paketdiagramm entwerfen | 1 | 64 | 75% | 7-10 | Lenny, Dirk | 5 | 1 |
 
-707 | Domainmodell überarbeiten |  | 2 | 100% | 7-9 | Richard | 2 | 0 |
+707 | Domainmodell überarbeiten | 2 | 2 | 100% | 7-8 | Richard | 2 | 0 |
 
-708 | REST-API umsetzen |  | 24 | 95% | 7-9 | Implementierung | 25 | 5 |
+708 | REST-API umsetzen | 3 | 128 | 95% | 7-9 | Implementierung | 25 | 5 |
 
-801 | Komponentendiagramm erstellen |  | 24 | 100% | 8-9 | Jakob, Dirk | 4 | 0 |
+801 | Komponentendiagramm erstellen | 4 | 6 | 100% | 8-9 | Jakob, Dirk | 4 | 0 |
 
-802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 90% | 8-10 | Max, Dirk | 3 | 2 |
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen | 5 | 6 | 90% | 8-10| Max, Dirk | 3 | 2 |
 
-803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen |  | 6 | 100% | 8-9 | Jakob | 5 | 0 |
+804 | Synchronisation Webserver - Terminal implementieren | 6 | 128 | 65% | 8-10 | Implementierung | 20 | 10 |
 
-804 | Synchronisation Webserver - Terminal implementieren |  | 24 | 65% | 8-10 | Implementierung | 20 | 10 |
+806 | Terminalfunktionalität implementieren | 7 | 128 | 40% | 8-10 | Max, Dirk | 10 | 25 |
 
-806 | Terminalfunktionalität implementieren |  | 24 | 40% | 8-10 | Max, Dirk | 10 | 25 |
+809 | Deploymentdiagramm entwerfen/erstellen | 8 | 6 | 0% | 8-10 | Richard | 0 | 2 |
 
-808 | Erstellung spezifischer Test-Cases |  | 24 | 90% | 8-10 | Alex, Analyse | 14 | 5 |
+903 | Frontend responsive gestalten | 9 | 24 | 100% | 9 | Lenny | 10 | 0 |
 
-809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 0% | 8-9 | Richard | 0 | 2 |
+904 | Frontend Login erstellen | 10 | 6 | 90% | 9-10 | Lenny | 3 | 1 |
 
-901 | Wireframes für Einstellungen & RFID-Tags erstellen |  | 6 | 100% | 9 | Alex | 3 | 0 |
+905 | Dokumentation überprüfen | 11 | 24 | 90% | 9-10 | Jakob, Richard | 8 | 2 |
 
-902 | Durchführung der Test-Cases |  | 24 | 0% | 9 | Alex, Jakob | 0 | 11 |
+901 | Wireframes für Einstellungen & RFID-Tags erstellen | 12 | 6 | 100% | 9 | Alex | 3 | 0 |
 
-903 | Frontend responsive gestalten |  | 24 | 100% | 9 | Lenny | 10 | 0 |
+803 | Wireframes / aktualisierte Diagramme in Dokumentation einpflegen | 13 | 2 | 100% | 8-9| Jakob | 5 | 0 |
 
-903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 13 | 2 |
+808 | Erstellung spezifischer Test-Cases | 14 | 24 | 90% | 8-10 | Alex, Analyse | 14 | 5 |
 
-904 | Frontend Login erstellen |  | 6 | 90% | 9-10 | Lenny | 3 | 1 |
+902 | Durchführung der Test-Cases | 15 | 24 | 0% | 9-10 | Alex, Jakob | 0 | 11 |
 
-905 | Dokumentation überprüfen |  | 24 | 90% | 9-10 | Jakob, Richard | 8 | 2 |
+903 | Frontend Vue-Komponenten verbinden (Website aufbauen) | 16! | 6 | 90% | 9-10 | Lenny | 13 | 2 |
 
 // Deployment ergänzen , Iteration 9, 100% 
 
 |===
 
-*Aufgaben Team-TS-Meeting:*
-
-* Aufgetretene Fragen stellen
-
 == Aufgetretene Probleme
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
-* Bislang keine Probleme aufgetreten
+* Einige Aufgaben müssen auf die nächste Iteration verlängert werden, da die Kapazitäten innerhalb dieser Iteration ausgeschöpft sind (zu viel Arbeitsumfang)
+* Ansonsten keine Probleme aufgetreten
 
 //[%header, cols="2,1,3"]
 //|===
@@ -111,37 +107,35 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 === Kundengespräch
 
-[%header, cols="1,3"]
-|===
-| Assessment Ziel | Iteration 7
-| Assessment Datum | noch unbekannt
-| Teilnehmer | Entwurf, Implementierung (weitere Teilnehmer bei freien Kapazitäten)
-| Projektstatus	| Grün
-|===
+In dieser Iteration fand kein Kundenmeeting statt. Der Grund hierfür ist das nachgelagerte Meeting aus Iteration 8 und wenige Neuerungen. Kontakt per E-Mail bei Fragen wurde gehalten.
 
 === Teammeeting
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 7
-| Assessment Datum | 12.05.2021
+| Assessment Ziel | Iteration 9
+| Assessment Datum | 36.05.2021
 | Teilnehmer | Gesamtes Team
-| Projektstatus	| Grün
+| Projektstatus	| Grün-Gelb
 |===
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 3
-| Assessment Datum | 19.04.2021
+| Assessment Ziel | Iteration 9
+| Assessment Datum | 02.06.2021
 | Teilnehmer | Gesamtes Team
-| Projektstatus	| Grün
+| Projektstatus	| Grün-Gelb
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
+Die festgelegten Ziele für diese Iteration wurden erreicht.
+
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
+
+Einige Aufgaben müssen in die nächste Iteration übernommen werden (siehe Probleme). Der Projektstatus ist nun Grün-Gelb, da voraussichtlich einige wenige geplante Work Items nicht mehr vollumfänglich abgeschlossen werden können.
 
 //Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
 
