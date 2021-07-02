@@ -51,9 +51,9 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 |Akzeptanztest
 
 |Bei einer Flugsession vom Piloten "Jakob Laufer" wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast Mustermann hinzugefügt."
-|Nicht erfolgreich 
-|-> Ungültiger Gastname 
-|
+|Erfolgreich 
+|/
+|Erfolgreich
 
 
 |===
@@ -68,9 +68,9 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 |Akzeptanztest
 
 |Bei einer Flugsession vom Piloten "Lisa Musterfrau" wird im _Bearbeitungsfeld: Gast hinzufügen_ der Gast "Gast10 Mustermann hinzugefügt."
-|Nicht erfolgreich 
-|-> Ungültiger Gastname 
-|
+|Erfolgreich 
+|/
+|Erfolgreich
 
 
 |===

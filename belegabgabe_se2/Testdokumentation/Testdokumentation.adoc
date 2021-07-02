@@ -32,23 +32,13 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :docs-development: {docs}/development
 
 
-
 == Testkonzept
-
 
 === Testobjekte
 
-Die Grundlage unserer Tests bilden die Use-Case-orientierten Testfälle erstellt. Das beudetet, dass zu den primären zehn Use-Cases zahlreiche Testfälle aufgelistet und bearbeitet wurden. Ergänzt werden diese durch Use-Case-übergreifende Tests, die beispielsweise die Einstellungen der Website betreffen.
+Die Grundlage unserer Tests bilden die Use-Case-orientierten Testfälle. Das beudetet, dass zu den primären zehn Use-Cases zahlreiche Testfälle aufgelistet und bearbeitet wurden. Ergänzt werden diese durch Use-Case-übergreifende Tests, die beispielsweise die Einstellungen der Website betreffen.
 
 Der Fokus des Testing lag gleichmäßig verteilt auf den Websitekomponenten, den Terminalfunktionalitäten und der Synchronisation zwischen diesen. Eine Auflistung der Komponenten ist in den jeweiligen TestCases zu finden.
-
-//Was sind die wichtigsten Komponenten, die getestet wurden?
-
-//Komponenten in 2 Gruppen gegliedert  
-//1. Test für Use-Cases -> Hauptfunktionen 
-//2. Test von übergreifende Vorgänge  
-//Verweis auf Testbeschreibung
-//Warum nicht UNIT-Tests verwendet? 
 
 === Testmethoden
 
@@ -58,7 +48,7 @@ Als Test-Praktik wurde Concurrent Testing verwendet. So wurden bereits Teilergeb
 
 ==== Modultests
 
-Es wurde sich im Team ausführlich über die Verwendung von Modultests ausgetauscht und nach einiger Überlegung dagegen die umfassende Verwendung dieser entschieden. Dies hat als Begründung, dass unser System kaum Komplexität in einem einzelnen Modul selbst besitzt, sondern durch die Konnektivität zu anderen Modulen an dieser gewinnt. Deshalb wurde der Fokus auf die folgenden Testarten gesetzt. Einzelne Modultests, wie zum Beispiel die Überprüfung des Textes in Eingabemasken (Überprüfung innerhalb des Moduls), sowie Responsive-Tests wurden durchgeführt.
+Es wurde sich im Team ausführlich über die Verwendung von Modultests ausgetauscht und nach einiger Überlegung gegen die umfassende Verwendung dieser entschieden. Dies hat als Begründung, dass unser System kaum Komplexität in einem einzelnen Modul selbst besitzt, sondern durch die Konnektivität zu anderen Modulen an dieser gewinnt. Deshalb wurde der Fokus auf die folgenden Testarten gesetzt. Einzelne Modultests, wie zum Beispiel die Überprüfung des Textes in Eingabemasken (Überprüfung innerhalb des Moduls), sowie Responsive-Tests wurden durchgeführt.
 
 ==== Integrationstest
 
@@ -72,13 +62,6 @@ Der Systemtest fand aufgrund der späten Hardware-Lieferung erst wenige Tage vor
 
 Dem Kunde wurde iterativ die einzelnen Systemteile zur Abnahme vorgestellt und vor dem Deployment das Gesamtsystem vorgestellt. Aufgrund der Hardware-Komponente mussten wir diesen Teil verbal erklären. Die Themensteller konnte ca. zwei Wochen vor dem Deployment selbstständig die Website bedienen und die Funktionen ausprobieren. Das Feedback erhielten wir zügig und konnten das System erfolgreich validieren. Des Weiteren wurden die nicht-funktionalen Anforderungen sowie alle Softwarebestandteile während des Deployments durch die Themensteller abgenommen.
                           
-//Wie wurde die Erfüllung der Anforderungen an diese Komponenten getestet?
-
-//Prüftechnik -> Dynamischer Test -> lauffähige SW-Bestandteile nacheinander testen
-//Arten von Testfällen -> Positivtest & Negativtest werden hauptsächlich manuell durchgeführt 
-//„Concurrent Testing“ -> testen parallel zur Entwicklung
-
-
 === Testdurchführungsplanung 
 
 Zuständig für die Tests ist gemäß Projektplan Alexander Heiß.
@@ -90,16 +73,6 @@ Die Erstellung der TestCases für die UseCases begann in Iteration 8. Bis zur It
 Unterstützt wurde Alexander Heiß bei der Erstellung der allgemeinen TestCases durch Max Haufe, ab Iteration 8 übernahm Jakob Laufer die Mitarbeit.
 
 Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen Kapiteln oben beschrieben.
-
-//Wann hat wer welche Tests durchgeführt?
-
-//Iteration 5 -> Start der skizzierung von Test-Cases
-//Iteration 8-10 -> intensives Testen 
-//Test-Praktik -> „Concurrent Testing“ -> testen parallel zur Entwicklung
-
-//Modultest bereits bei der Entwicklung -> Beteiligt Entwickler
-//Integrationstests -> Beteiligt Tester
-//Systemtest & Akzeptanztest Beteiligt Tester, Entwickler (in Anwesenheit des Kunden)
 
 
 == Interner Test der nicht-funktionalen Anforderungen

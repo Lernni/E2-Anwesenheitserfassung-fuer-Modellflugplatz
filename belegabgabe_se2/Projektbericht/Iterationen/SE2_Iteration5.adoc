@@ -55,9 +55,6 @@ Daraufhin haben wir den Iterationsplan in unsere wöchentlichen Meetings mit ein
 
 Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.
 
-Das team Entwicklung begann noch am Ende der Iteration damit, die ersten Wireframes umzusetzen. Dabei ist erwähnenswert, dass wir im Frontend von Vue Version 3, auf Version 2 gewechselt sind. Obwohl es zu Beginn den Anschein machte es wäre sinnvoll die aktuelle Version zu nutzen, sprach am Ende mehr für einen Wechsel. 
-Da Version 3 immer noch in Entwicklung ist, gab es hier weniger nutzbare Frameworks. Gerade die vielen Gestaltungsvorlagen vom Framework BootstrapVue in Vue Version 2, erleichterten uns die Arbeit enorm.
-
 Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
 Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast 1 1/2 Monate warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
 Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. Als wir einen längeren Zeitraum keine Antworten erhielten, schlugen wir in einem Teammeeting andere mögliche Kommunikationswege als Lösung vor. Wir informierten auch Herrn Zirkelbach über das Problem. Letztendlich konnten wir in einem Kundenmeeting das Problem klären, Herr Brenner hatte vergessen uns seine neue Mail-Adresse zukommen zu lassen.

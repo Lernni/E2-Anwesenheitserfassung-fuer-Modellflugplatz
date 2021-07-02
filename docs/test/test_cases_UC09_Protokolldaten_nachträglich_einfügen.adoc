@@ -57,7 +57,7 @@ a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _
 * Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
 a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen. (inkl. Flugleiter)
 a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
-* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein (inkl. ein F für Flugleiter)
+* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein (inkl. der Name des Gastes)
 * Die neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt 
 
 |===
@@ -140,9 +140,9 @@ a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flu
 |Akzeptanztest
 
 |Eine normale `Flugsession` vom Piloten: "Lisa Musterfrau" am Datum: "03.06.2021" mit der Startzeit: "10:00" und Endzeit: "15:00" in den jeweiligen _Bearbeitungsfeldern_ eintragen. Ein Haken bei _Gast_ setzten und den Namen des Gastes eintragen. 
-|Nicht erfolgreich
-| Beim eintragen des Gastes kommt eine Fehlermeldung -> Gast lässt sich nicht eintragen 
-|/
+|Erfolgreich
+|/  
+|Erfolgreich
 
 
 |===

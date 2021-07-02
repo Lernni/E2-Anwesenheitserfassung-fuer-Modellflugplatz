@@ -70,7 +70,7 @@ a|* Richard Kleint
 
 == Kommunikation & eingesetzte Tools
 
-Anders als im vergangenen Semester gab es in SE 2 einen vorgegebenen Terminfür Meetings, welcher im Stundenplan festgelegt wurde. 
+Anders als im vergangenen Semester gab es in SE 2 einen vorgegebenen Termin für Meetings, welcher im Stundenplan festgelegt wurde. 
 Da dieser Zeitpunkt für jedes Teammitglied passte, wurde mittwochs, 17 Uhr zu unseren wöchentlichen Termin für Gruppenmeetings.
 Obwohl wir uns auch im letzten Semester regelmäßig getroffen haben, gab uns der feste Termin eine gewisse Struktur. 
 Als Tool für die Kommunikation nutzten wir den Onlinedienst Discord und für alle weiteren alltäglichen Nachrichten bzw. Informationen WhatsApp. 
@@ -91,17 +91,22 @@ Für Diagramme, Übersichten und Wireframes nutzten wir zusätzlich Tools wie Vi
 
 Für die einheitliche Strukturierung entwickelten wir Templates bzw. Vorlagen für bestimmte Teile in unserer Dokumentation. 
 So konnten wir unter anderen im Projektmanagment die Iterationspläne einheitlich gestalten und hatten bei den Test-Cases, ähnlich wie bei den Use-Cases, ein einheitliches Format. 
-//Verweis bzw. Ausschnitt von Templates
+
+:hide-uri-scheme:
+[example]
+
+https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/project_management/TEMPLATE%20Iteration%20Plan[Template für Iterationsplanung]
+
+//Bild für Test einfügen 
+
+
 Dadurch ging die Bearbeitung oft schneller, da man einen vorgefertigten Rahmen hatte, den man beispielsweise in der jeweiligen Iteration nur noch anpassen musste. Allgemein war die Dokumentation dadurch deutlich besser organisiert und einfacher zu erfassen.
 
 Die Ablaufpläne und Protokolle aus Gruppenmeetings oder Kundenmeetings bereiteten wir mittels Microsoft OneNote vor. Danach haben wir es in unsere Ascii-Dokumentation überführt, damit sie an dieser Stelle vollständig ist. 
 Wir haben Microsoft OneNote für Ablaufpläne und Protokolle verwendet, da wir in Kundenmeetings meist den Bildschirm geteilt haben und die Ansicht von Microsoft OneNote präsentierbarer empfanden, als eine halbe PDF Vorschau in Visual Studio Code.
 
 Als Tool der Planung, Verteilung und Iterierung von Aufgaben nutzten wir GitHub Issues. Obwohl das Tool zu Beginn nicht allen bekannt war, gehörte es am Ende zu den wichtigsten Werkzeugen. 
-In Gruppenmeetings wurden notwendige Issues gemeinsam erstellt und zugeteilt, geschlossene Issues besprochen und der Fortschritt wurde im Iterationsplan notiert. Dieser Vorgang wurde routiniert wöchentlich durchlaufen.  
+In Gruppenmeetings wurden notwendige Issues gemeinsam erstellt und zugeteilt, geschlossene Issues besprochen und der Fortschritt wurde im Iterationsplan notiert. Dieser Vorgang wurde routiniert wöchentlich durchlaufen. Zusätzlich nutzen wir den Iterationsplan als zeitlichen Orientierung und Planung der nächsten Aufgaben.
 
-//Programm für Fortschritt (Essence Navigator) -> nutzen wir nicht mehr 
+Wie auch im vergangenen Semester orientierten wir uns an dem OpenUP. Speziell bei den neu geforderten Rollen wie Test und Deployment nutzen wir die dazugehörigen "Work Products" und "Tasks". 
 
-== Way of Working?
-
-//extra Absatz?

@@ -116,9 +116,9 @@ a|* Nach der erfolgreichen Suche, erscheinen die gefilterten `Protokolldaten` in
 |Akzeptanztest
 
 |Eine normale Such, durch das eintragen in den jeweiligen _Bearbeitungsfeldern_, nach dem Piloten: "Lisa Musterfrau" (existiert nicht) im Zeitraum vom Startdatum: "02.06.2021" und Enddatum: "23.06.2021". 
-|Nicht erfolgreich
-| -> erkennt Namen auf der 2. Ansicht nicht
-|
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
