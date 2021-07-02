@@ -1,7 +1,7 @@
 // --- 1. Projektthema -------------------------
 = SE II - Betriebsdokumentation
 // --- 2. Teammitglieder -----------------------
- Max Haufe <max.haufe@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
+Max Haufe <max.haufe@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 // --- 3. Abgabedatum --------------------------
 04. Juli 2021
 // ---------------------------------------------
@@ -32,3 +32,211 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :docs-development: {docs}/development
 
 <<<
+
+= Allgemeine Informationen
+Die Betriebsdokumentation enthält Anleitungen und Hilfestellungen zum Einrichten, Konfigurieren und Betreuen des Systems. Dieses Dokument ist für Administratoren vorgesehen.
+
+= Systemvoraussetzungen
+
+== Webserver
+
+=== Hardwareanforderungen
+
+* CPU: AMD EPYC 7452 (empfohlen)
+* RAM: 8 GB (empfohlen)
+* Speicherbedarf: ca. 150 MB
+* Internetverbindung: notwendig
+
+=== Softwareanforderungen
+
+* Betriebssystem: Ubuntu 20.04.2 LTS (empfohlen)
+* Genutzter Browser fürs Frontend: Google Chrome (Version 91)
+
+== Terminal
+
+=== Hardwareanforderungen
+
+=== Softwareanforderungen
+
+= Systemeinrichtung
+
+== Webserver
+
+. Es wird ein Install-Skript zum einfachen Einrichten des Webservers bereitgestellt. Nach Ausführen dieses Skripts sollte Frontend und Backend funktionsfähig sein und automatisch starten.
++
+WARNING: Achtung: Um Datenverlust zu vermeiden, empfiehlt es sich vor dem Ausführen der nächsten Befehle ein Backup durchzuführen (siehe unten).
++
+Folgende Befehle holen das Install-Skript:
+
+  cd ~
+  sudo apt-get install curl dos2unix
+  curl https://raw.githubusercontent.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/master/src/webserver/install.sh > install.sh
+  dos2unix install.sh
+  sudo chmod +x install.sh
+
+. Im Install-Skript muss der Pfad zum Home-Verzeichnis `~` entsprechend angepasst werden, beispielsweise mit `sudo nano install.sh`:
+
+  dir="/home/ubuntu"
+
+. Im Anschluss kann das Skript ausgeführt werden:
+
+  sudo ./install.sh
+
+Nachdem das Install-Skript ausgeführt wurde, sollte das Frontend unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
+
+Initial wird ein Admin-Nutzer angelegt. Dieser muss zunächst unter dem Nutzernamen `admin` registriert werden. Danach kann das System weiter über das Frontend konfiguriert werden.
+
+== Terminal
+
+= Systembetreuung
+
+== Physische Verteilung
+Das folgende Deploymentdiagramm soll eine Übersicht über die physische Verteilung der Systembestandteile bzw. -artefakte geben.
+
+ifndef::docs-deployment[:docs-deployment: ../../docs/deployment]
+:imagesdir: {docs-deployment}/images
+.Deploymentdiagramm
+image::deployment_diagram.png[deployment_diagram]
+
+== Webserver
+
+
+=== Speicherpfade
+Der Webserver besteht aus folgenden Artefakten:
+
+[%header, cols=2*]
+|===
+|Systembestandteil
+|Speicherpfad
+
+|Frontend
+|/var/www/vue
+
+|Apache-Konfiguration
+|/etc/apache2/sites-available/vue.conf
+
+|Backend
+|~/backend
+
+|Install- & Build-Skript (standardmäßig)
+|~
+
+|===
+
+=== Manuelles Starten/Stoppen
+Frontend und Backend können manuell gestartet und gestoppt werden, was im Falle einer Wartung des Systems hilfreich sein kann:
+
+.Frontend
+Frontend starten:
+
+  sudo systemctl restart apache2
+
+Frontend stoppen:
+
+  sudo systemctl stop apache2
+
+.Backend
+Backend starten:
+
+  cd ~/backend
+  sudo .venv/bin/python -m flask run &
+
+Backend stoppen:
+
+  sudo killall python
+
+=== Fehlerbehandlung
+
+// Fehlercodes grob erklären: Was bedeutet Erfolg (200), Fehler (403), Interner Fehler (500)
+// Fehlermeldungen trennen aus Perspektive des Frontends und des Backends
+// Fehlermeldung Synchronisation im Backend
+
+=== Reparatur
+Sollte das Frontend oder das Backend nicht mehr wie gewohnt funktionieren, kann eine Reparatur des Webservers ausgeführt werden. Die Datenbank des Webservers wird bei der Reparatur nicht mit einbezogen.
+
+WARNING: Achtung: Beim Ausführen der folgenden Befehle werden die Einstellungen `settings.json` des Systems überschrieben. Es ist sinnvoll zunächst ein Backup anzufertigen (siehe unten), um Datenverlust zu vermeiden.
+
+. Folgende Befehle können zur Reparatur des Webservers ausgeführt werden:
+
+  cd ~
+  sudo apt-get install curl dos2unix
+  curl https://raw.githubusercontent.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/master/src/webserver/build.sh > build.sh
+  dos2unix build.sh
+  sudo chmod +x build.sh
+
+. Im Build-Skript muss der Pfad zum Home-Verzeichnis `~` entsprechend angepasst werden, beispielsweise mit `sudo nano build.sh`:
+
+  dir="/home/ubuntu"
+
+. Im Anschluss kann das Skript ausgeführt werden:
+
+  sudo ./build.sh
+
+Nachdem das Skript ausgeführt wurde, sollte das Frontend wieder unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.  
+
+Sollte der Fehler noch nicht behoben sein, dann kann ein erneutes Ausführen des Install-Skripts (siehe Systemeinrichtung) hilfreich sein.
+
+=== Datenbank zurücksetzen
+
+WARNING: Achtung:
+  +
+  Die folgenden Befehle können nicht rückgängig gemacht werden und löschen die in der Datenbank enthalten Datensätze unwiederbringlich!
+  +
+  +
+  Die Datenbank auf dem Terminal muss ebenfalls zurückgesetzt werden (siehe unten)
+
+. Zunächst sollte das Backend gestoppt werden:
+
+  sudo killall python
+
+. Folgende Befehle löschen die Datenbank und legen eine neue Datenbank an:
+
+  cd ~/backend
+  sudo rm database_server.db
+  sudo python3 make_server_db.py
+
+. Die Datenbank auf dem Terminal muss nun ebenfalls zurückgesetzt werden (siehe unten)
+
+. Im Anschluss kann das Backend wieder gestartet werden:
+
+  cd ~/backend
+  sudo .venv/bin/python -m flask run &
+
+NOTE: Hinweis:
+  +
+  Alle Nutzer der Webseite sollten sich nach einem Datenbank-Reset von der Webseite abmelden. Im Fall des initialen Admin-Nutzers sollte sich dieser Nutzer darüber hinaus nach dem Abmelden direkt mit einem neuen Passwort registrieren.
+  +
+  +
+  Erläuterung: Da angemeldete Nutzer des Frontends angemeldet bleiben, solange sie sich nicht explizit abmelden und Nutzertoken nicht verfallen, wird der Nutzertoken permanent im Browser hinterlegt und bleibt gültig. Im Falle eines Datenbank-Resets existiert der entsprechende Nutzer zunächst nicht mehr und dementsprechend werden Fehlermeldungen auf der Webseite angezeigt werden, auf der er anscheinend noch "angemeldet" ist.
+
+=== Backup
+
+.Einfaches Backup
+Ein einfaches Backup des Webservers sollte folgende Dateien umfassen:
+
+* `~/backend/database_server.db`
+* `~/backend/settings.json`
+
+Die Dateien können nach einer Neuinstallation einfach überschrieben werden. Dann sollte der Backup-Zustand wiederhergestellt sein. Das Backend sollte danach neugestartet werden.
+
+.Erweitertes Backup
+Ein erweitertes Backup umfasst alle Dateien die vom Webserver erstellt wurden. Dafür können einfach alle Verzeichnisse und Dateien (siehe Speicherpfade) kopiert werden.
+
+=== Weitere Informationen
+Weiterführende Links und Informationen zum Einrichtungs- und Entwicklungsprozess des Webservers bzw. zum Aufbau des Install-Skripts sind im https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/src/webserver/README.md#deployment[GitHub Repository] hinterlegt.
+
+== Terminal
+
+=== Speicherpfade
+
+=== Manuelles Starten/Stoppen
+
+=== Verbindung testen
+
+=== Fehlerbehandlung
+
+=== Reparatur
+
+=== Datenbank zurücksetzen
+
+=== Backup
