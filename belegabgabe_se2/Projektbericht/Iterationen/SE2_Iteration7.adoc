@@ -8,11 +8,11 @@ Im wesentlichen begann Lenny Reitz mit der Erstellung erster Seiten für das Fro
 
 Die Erstellung des Frontends führte aber dennoch zu einem Problem. Zunächst wurde Vue.js in der neusten Version 3 eingesetzt, da sich diese Version langfristig etablieren wird und somit in Zukunft eine gute Wartbarkeit ermöglichen sollte. Nach kurzer Zeit und Recherche mussten wir allerdings feststellen, dass die neue Version für unsere Zwecke ungeeignet ist, da es im Internet nur spärliche Informationen und kaum verwendbare Frameworks gibt, die die Arbeit erleichtert hätten. Weil niemand in unserer Gruppe zuvor Erfahrung mit Vue.js oder allgemein JavaScript hatte, hätte das zusätzliche Einarbeitungszeit bedeutet.
 
-Beispielsweise war im Wireframe zum Nachtragen einer Flugsession ein Kalendar auf der Webseite vorgesehen, um das Datum auszuwählen. Nach mehreren Stunden Suche nach einer passenden Vue-Komponente war immer noch kein zufriedenstellendes Ergebnis gefunden.
+Beispielsweise war im Wireframe zum Nachtragen einer Flugsession ein Kalender auf der Webseite vorgesehen, um das Datum auszuwählen. Nach mehreren Stunden Suche nach einer passenden Vue-Komponente war immer noch kein zufriedenstellendes Ergebnis gefunden.
 
 Deshalb haben wir dann beschlossen, Vue Version 2 zu verwenden, was im Nachhinein betrachtet eine sehr gute Entscheidung war. Für Vue Version 2 gibt es unzählige Frameworks, die wir nutzen konnten. Am meisten geholfen hat dabei der Einsatz von https://bootstrap-vue.org/[BoostrapVue], einem Framework, dass die Designelemente von Bootstrap mit der Funktionalität von Vue verknüpft. Dadurch konnte der Entwicklungsaufwand extrem vereinfacht werden und im Frontend konnten relativ schnell große Fortschritte erzielt werden.
 
-Hier nochmal das Beispiel des Kalendars auf der Seite "Flugsession nachtragen", zunächst das entsprechende Wireframe aus dem Entwurf und dann die tatsächliche Umsetzung mit Codebeispiel:
+Hier nochmal das Beispiel des Kalenders auf der Seite "Flugsession nachtragen", zunächst das entsprechende Wireframe aus dem Entwurf und dann die tatsächliche Umsetzung mit Codebeispiel:
 
 .Wireframe "Flugession nachtragen"
 ifndef::docs-requirements[:docs-requirements: ../../../docs/requirements]
@@ -20,13 +20,14 @@ ifndef::docs-requirements[:docs-requirements: ../../../docs/requirements]
 image::Flugzeit_nachtragen_V3.png[width=70%, align="center"]
 
 .Umsetzung "Flugession nachtragen"
-:imagesdir: ../images
+ifndef::local-images[:local-images: ../images]
+:imagesdir: {local-images}
 image::Umsetzung_Flugsession_nachtragen.png[width=100%, align="center"]
 
 :hide-uri-scheme:
 [example]
 
-https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/ce9224d81bbc2e39366590eb2833b87c3a59417a/src/webserver/frontend/src/views/NewSession.vue#L83[Codebeispiel Kalendar]
+https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/ce9224d81bbc2e39366590eb2833b87c3a59417a/src/webserver/frontend/src/views/NewSession.vue#L83[Codebeispiel Kalender]
 
 === Beschaffung der Hardware
 
@@ -36,7 +37,7 @@ Leider fehlte bei der Übergabe der Flugleiterknopf und die RGB-LED. In dem Mome
 
 === Entwurf der REST-API
 
-Zeitgleich mit der Erstellung des Frontends wurden auch erste Schritte zur Umsetzung von Backend und Datenbank des Webservers vorgenommen. Zuerst war es uns wichtig den Aufbau der Schnittstelle festzulegen. Das bedeutete in unserem Fall, wir mussten uns über die Requests klar werden, die das Frontend an das Backend senden wird, um Zugriff auf die Datenbank zu bekommen. Dazu überlegten das Team Entwurf und Alexander Heiß gemeinsam, welche Requests unbedingt in Frage kommen und wie diese struktiert werden sollen. Diese Requests wurden dann in einem ersten Entwurf als Tabelle in das Design-Dokument vermerkt und konnten so als Grundlage für das Backend verwendet werden:
+Zeitgleich mit der Erstellung des Frontends wurden auch erste Schritte zur Umsetzung von Backend und Datenbank des Webservers vorgenommen. Zuerst war es uns wichtig den Aufbau der Schnittstelle festzulegen. Das bedeutete in unserem Fall, wir mussten uns über die Requests klar werden, die das Frontend an das Backend senden wird, um Zugriff auf die Datenbank zu bekommen. Dazu überlegten das Team Entwurf und Alexander Heiß gemeinsam, welche Requests unbedingt in Frage kommen und wie diese strukturiert werden sollen. Diese Requests wurden dann in einem ersten Entwurf als Tabelle in das Design-Dokument vermerkt und konnten so als Grundlage für das Backend verwendet werden:
 
 :hide-uri-scheme:
 [example]

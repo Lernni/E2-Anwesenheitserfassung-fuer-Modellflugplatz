@@ -2,7 +2,7 @@
 
 
 Bevor das neue Semester und damit die Iteration 5 bei uns begann, hatten wir in den Semesterferien noch ein langes Meeting mit den Ansprechpartnern des Vereins.   
-In dem Meeting ging es haupsächlich darum, das wir Ihnen unsere ersten Architektur-Entwürfe (logischen und physichen Sicht) präsentierten und Feedback einholten. 
+In dem Meeting ging es hauptsächlich darum, das wir Ihnen unsere ersten Architektur-Entwürfe (logischen und physischen Sicht) präsentierten und Feedback einholten. 
 Wir konkretisierten unsere ausgearbeiteten Qualitätsanforderungen und stellten unseren Zeitplan und Zielstellung für die nächsten Monate vor.
 Damit wollten wir zum Ende noch einmal sicher gehen, ob sie mit den Zielen des Kunden übereinstimmen.
 
@@ -50,7 +50,7 @@ https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/mas
 Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen Stand.
 
 Da wir im vergangenen Semester sehr viel in den einzelnen Iterationen nachtragen mussten, hatten wir uns in diesem Semester das Ziel gesetzt, die Iterationen im Voraus gemeinsam zu planen und konsistent den Fortschritt einzutragen. 
-Inspiriert wurden wir durch den angebotenen Fachaustauch zum Thema Projektenturf, in welchem ein Austausch mit Professor Anke und anderen Gruppen statt fand.   
+Inspiriert wurden wir durch den angebotenen Fachaustauch zum Thema Projektentwurf, in welchem ein Austausch mit Professor Anke und anderen Gruppen statt fand.   
 Daraufhin haben wir den Iterationsplan in unsere wöchentlichen Meetings mit einbezogen.
 
 Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.

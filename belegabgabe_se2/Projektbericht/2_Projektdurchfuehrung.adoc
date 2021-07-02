@@ -8,17 +8,24 @@
 
 include::{iterationen}/SE1_Iterationen.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration5.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration6.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration7.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration8.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration9.adoc[]
 <<<
+
 include::{iterationen}/SE2_Iteration10.adoc[]
 <<<
+  
 include::{iterationen}/SE2_Iteration11.adoc[]
 <<<

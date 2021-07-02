@@ -84,13 +84,13 @@ Bei dringenden und kurzen Fragen oder Benachrichtigungen kommunizierten wir per 
 
 == Dokumentation & eingesetzte Tools
 
-Für die Dokumentation übernahmen wir die vorgefertigte Ordnerstrukur aus dem vergangenen Semester und führten diese weiter. Wir erweiterten sie, indem wir zusätzliche Verzeichnisse wie Deployment, Test oder Projektbericht einführten. 
+Für die Dokumentation übernahmen wir die vorgefertigte Ordnerstruktur aus dem vergangenen Semester und führten diese weiter. Wir erweiterten sie, indem wir zusätzliche Verzeichnisse wie Deployment, Test oder Projektbericht einführten. 
 Obwohl es bei einigen Dokumenten bei der Formatierung Probleme gab, empfanden wir AsciiDoc als ideales Dokumentationsformat. Einschließlich nutzten wir AsciiDoc -PDF und AsciiDoc -Diagramm für die Konvertierung ins PDF-Format. 
 Als Entwicklungsumgebung wurde Visual Studio Code genutzt.
 Für Diagramme, Übersichten und Wireframes nutzten wir zusätzlich Tools wie VisualParadigm, PUML, Draw.io und Adobe Photoshop.
 
 Für die einheitliche Strukturierung entwickelten wir Templates bzw. Vorlagen für bestimmte Teile in unserer Dokumentation. 
-So konnten wir unter anderen im Projektmanagment die Iterationspläne einheitlich gestalten und hatten bei den Test-Cases, ähnlich wie bei den Use-Cases, ein einheitliches Format. 
+So konnten wir unter anderen im Projektmanagement die Iterationspläne einheitlich gestalten und hatten bei den Test-Cases, ähnlich wie bei den Use-Cases, ein einheitliches Format. 
 
 :hide-uri-scheme:
 [example]
@@ -105,7 +105,7 @@ Dadurch ging die Bearbeitung oft schneller, da man einen vorgefertigten Rahmen h
 Die Ablaufpläne und Protokolle aus Gruppenmeetings oder Kundenmeetings bereiteten wir mittels Microsoft OneNote vor. Danach haben wir es in unsere Ascii-Dokumentation überführt, damit sie an dieser Stelle vollständig ist. 
 Wir haben Microsoft OneNote für Ablaufpläne und Protokolle verwendet, da wir in Kundenmeetings meist den Bildschirm geteilt haben und die Ansicht von Microsoft OneNote präsentierbarer empfanden, als eine halbe PDF Vorschau in Visual Studio Code.
 
-Als Tool der Planung, Verteilung und Iterierung von Aufgaben nutzten wir GitHub Issues. Obwohl das Tool zu Beginn nicht allen bekannt war, gehörte es am Ende zu den wichtigsten Werkzeugen. 
+Als Tool der Planung und Verteilung von Aufgaben nutzten wir GitHub Issues. Obwohl das Tool zu Beginn nicht allen bekannt war, gehörte es am Ende zu den wichtigsten Werkzeugen. 
 In Gruppenmeetings wurden notwendige Issues gemeinsam erstellt und zugeteilt, geschlossene Issues besprochen und der Fortschritt wurde im Iterationsplan notiert. Dieser Vorgang wurde routiniert wöchentlich durchlaufen. Zusätzlich nutzen wir den Iterationsplan als zeitlichen Orientierung und Planung der nächsten Aufgaben.
 
 Wie auch im vergangenen Semester orientierten wir uns an dem OpenUP. Speziell bei den neu geforderten Rollen wie Test und Deployment nutzen wir die dazugehörigen "Work Products" und "Tasks". 
