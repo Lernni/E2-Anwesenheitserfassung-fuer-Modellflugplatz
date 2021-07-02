@@ -12,17 +12,17 @@ Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiss@htw-dresd
 | Meilenstein
 | Kalendarwoche
 
-| Beginn der Iteration | KW 21 (Mittwoch, 12.05)
-| Ende der Iteration | KW 23 (Dienstag, 25.05)
+| Beginn der Iteration | KW 23 (Mittwoch, 09.06)
+| Ende der Iteration | KW 25 (Dienstag, 22.06)
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* Vue-Komponenten erstellt
-* Erfolgreiche Synchronisation zwischen Webserver und Terminal
-* Datenbanken, Terminal und Website als Prototyp dem Kunden präsentierbar
+* Spezifische Test-Cases erstellen
+* Frontend-Login erstellen
+* RESTP-API umsetzen
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -43,47 +43,50 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 | 
 
-706 | Paketdiagramm entwerfen |  | 64 | 75% | 7-10 | Lenny, Dirk | 2 | 2 |
+802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen | 1 | 6 | 100% | 8-10 | Max, Dirk | 5 | 0 |
 
-708 | REST-API umsetzen |  | 24 | 99% | 7-10 | Implementierung | 34 | 2 |
+708 | REST-API umsetzen | 2 | 128 | 99% | 7-11 | Implementierung | 34 | 2 |
 
-802 | Synchronisationsmöglichkeiten Webserver - Terminal überlegen |  | 6 | 100% | 8-10 | Max, Dirk | 5 | 0 |
+706 | Paketdiagramm entwerfen | 3 | 6 | 100% | 7-10 | Lenny, Dirk | 4 | 0 |
 
-804 | Synchronisation Webserver - Terminal implementieren & dokumentieren |  | 24 | 80% | 8-10 | Implementierung | 30 | 5 |
+804 | Synchronisation Webserver - Terminal implementieren & dokumentieren | 4 | 128 | 80% | 8-11 | Implementierung | 30 | 5 |
 
-806 | Terminalfunktionalität implementieren |  | 24 | 80% | 8-10 | Max, Dirk | 20 | 1 |
+808 | Erstellung spezifischer Test-Cases | 5 | 24 | 100% | 8-10 | Alex, Analyse | 21 | 0 |
 
-808 | Erstellung spezifischer Test-Cases |  | 24 | 100% | 8-10 | Alex, Analyse | 21 | 0 |
+806 | Terminalfunktionalität implementieren | 6 | 128 | 80% | 8-10 | Max, Dirk | 20 | 1 |
 
-809 | Deploymentdiagramm entwerfen/erstellen |  | 6 | 95% | 8-10 | Richard, Lenny | 1 | 1 |
+809 | Deploymentdiagramm entwerfen/erstellen | 7 | 6 | 95% | 8-10 | Richard, Lenny | 1 | 1 |
 
-902 | Durchführung der Test-Cases |  | 24 | 60% | 9-10 | Alex, Jakob, Max | 9 | 2 |
+902 | Durchführung der Test-Cases | 8 | 24 | 60% | 9-11 | Alex, Jakob, Max | 9 | 2 |
 
-903 | Frontend Vue-Komponenten verbinden (Website aufbauen) |  | 6 | 90% | 9-10 | Lenny | 17 | 3 |
+903 | Frontend Vue-Komponenten verbinden (Website aufbauen) | 9 | 24 | 90% | 9-11 | Lenny | 17 | 3 |
 
-904 | Frontend Login erstellen |  | 6 | 100% | 9-10 | Lenny | 4 | 0 |
+904 | Frontend Login erstellen | 10 | 6 | 100% | 9-10 | Lenny | 4 | 0 |
 
-905 | Dokumentation überprüfen |  | 24 | 90% | 9-10 | Jakob, Richard | 8 | 2 |
+1002 | Kundenwebserver aufsetzen | 11 | 6 | 95% | 10-11 | Lenny | 3 | 2 |
 
-1001 | Datenmodell aktualisieren |  | x | 0% | 10 | Max | 0 | 1 |
+1007 | TestCases korrigieren | 12 | 6 | 60% | 10 | Alex, Jakob | 4 | 2 |
 
-1002 | Kundenwebserver aufsetzen |  | x | 95% | 10 | Lenny | 3 | 2 |
+1004 | Design/Architecture Notebook aktualisieren | 13 | 24 | 30% | 10-11 | Lenny, Dirk, Max | 9 | 4 |
 
-1004 | Design/Architecture Notebook aktualisieren |  | x | 30% | 10 | Lenny, Dirk, Max | 9 | 4 |
+1005 | Projektbericht schreiben | 14 | 128 | 40% | 10-11 | Jakob, Richard | 12 | 20 |
 
-1005 | Projektbericht schreiben |  | x | 0% | 10 | Jakob, Richard | 0 | 0 |
+1001 | Datenmodell aktualisieren | 15 | 1 | 0% | 10-11 | Max | 0 | 1 |
 
-1007 | TestCases korrigieren |  | x | 60% | 10 | Alex, Jakob | 2 | 4 |
+905 | Dokumentation überprüfen | 16 | 24 | 90% | 9-11 | Jakob, Richard | 8 | 2 |
 
 |===
 
 *Aufgaben Team-TS-Meeting:*
 
 * Aufgetretene Fragen stellen
+* Webserver vorstellen
+* Deployment besprechen
+* Einschränkungen der Funktionalität besprechen
 
 == Aufgetretene Probleme
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
-* Bislang keine Probleme aufgetreten
+* Der Gesetzgeber hat die Richtlinien geändert: Nun ist zu jedem Piloten eine e-ID notwendig, die im Protokoll aufgeführt sein muss. Diese Änderung kann aber aus Zeit- und Kapazitätsgründen nicht mehr vollständig umgesetzt werden. Es wird eine Grundstruktur für diese ID gelegt und für spätere Entwickler dokumentiert. Dies ist vom TS akzeptiert.
 
 //[%header, cols="2,1,3"]
 //|===
@@ -111,9 +114,9 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Iteration 7
-| Assessment Datum | noch unbekannt
-| Teilnehmer | Entwurf, Implementierung (weitere Teilnehmer bei freien Kapazitäten)
+| Assessment Ziel | Iteration 10
+| Assessment Datum | 12.06.2021
+| Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
@@ -122,7 +125,7 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 7
-| Assessment Datum | 12.05.2021
+| Assessment Datum | 09.06.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
@@ -130,16 +133,20 @@ Diese Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="1,3"]
 |===
 | Assessment Ziel | Iteration 3
-| Assessment Datum | 19.04.2021
+| Assessment Datum | 16.06.2021
 | Teilnehmer | Gesamtes Team
 | Projektstatus	| Grün
 |===
 
 *Beurteilung im Vergleich zu den Zielen*
 
+Die Ziele dieser Iteration wurden fast erfüllt. Lediglich die REST-API muss noch geringfügig in der nächsten Iteration angepasst werden
+
 //Die Wireframes wurden vollständig erstellt und wurden vom TS bis auf Kleinigkeiten akzeptiert. Die Use-Cases sowie der Bedienungsplan müssen gemäß der Problembeschreibung erneut bearbeteitet werden. Die System-Wide-Requirements sind in Ordnung und werden in die nächste Iteration übernommen.
 
 *Geplante vs. erledigte Aufgaben*
+
+Einige Aufgaben mussten erneut in die nächste Iteration übernommen werden. Da die wichtigen Aufgaben jedoch planmäßig fertiggestellt werden können, ist der Projektstatus wieder grün. Irrelevantere Aufgaben müssen ausgelassen werden.
 
 //Es wurden alle Bewertungskriterien erfüllt. Einige Aufgaben müssen gemäß der beschriebenen Probleme zur Nachbesserung in die nächste Iteration übernommen werden.
 
