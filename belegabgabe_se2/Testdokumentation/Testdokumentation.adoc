@@ -119,7 +119,7 @@ Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen
 
 == Testfallbeschreibung & Testergebnisse
 
-* Test der Use-Cases
+* Test der Use-Cases sowie der übergreifenden Vorgänge
 
 include::{docs-test}/test_cases_UC01_Pilot_anmelden.adoc[]
 <<<
@@ -145,21 +145,12 @@ include::{docs-test}/test_cases_UC11_Pilot_reaktivieren.adoc[]
 <<<
 
 
-* Test der Use-Case übergreifende Vorgänge
+* Test der Configurations
 
-<<<
 include::{docs-test}/test_cases_configurations.adoc[]
-<<<
-include::{docs-test}/test_case_01.inc.adoc[]
-<<<
-include::{docs-test}/test_case_02.inc.adoc[]
-<<<
-include::{docs-test}/test_case_03.inc.adoc[]
-<<<
-include::{docs-test}/test_case_04.inc.adoc[]
-<<<
-include::{docs-test}/test_case_05.inc.adoc[]
 <<<
 
 
 === Abnahmetest
+
+Der Abnahmetest ist im Abnahmeprotkoll aufgeführt.
