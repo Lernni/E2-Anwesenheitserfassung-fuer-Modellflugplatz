@@ -1,5 +1,5 @@
-== Reflexion Dirk Zimmermann
-=== Teamrollen: Entwurf/Architekt
+== Dirk Zimmermann
+.Teamrollen: Entwurf/Architekt
 
 In dem Projekt war ich in der ersten Hälfte vor allem im Entwurf tätig und danach fast ausschließlich in der Implementierung. Meine wichtigste Erkenntnis war dabei, dass die Kommunikation das wichtiger als alles andere ist. Damit ist nicht nur die Kommunikation mit den Themenstellern gemeint, sondern vor allem auch innerhalb des Teams. Es gab eine Vielzahl von Problemen, die ich alleine nicht hätte lösen können, die im Team jedoch leicht zu klären waren. Genauso konnte ich auch dabei helfen, Probleme meiner Teammitglieder zu lösen. Zuvor war ich meistens mit meinen Problemen alleingestellt und konnte sie auch selber beherrschen, doch bei einem Projekt dieser Größe war ich gezwungen, sie mit dem Team zu kommunizieren. Das Erklären der Probleme selber hat dabei bereits geholfen, ein besseres Verständnis zu entwickeln.
 

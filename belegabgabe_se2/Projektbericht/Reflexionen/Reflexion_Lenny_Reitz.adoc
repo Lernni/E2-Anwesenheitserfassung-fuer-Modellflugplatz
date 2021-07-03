@@ -1,4 +1,5 @@
-=== Lenny Reitz (Teamleiter)
+=== Lenny Reitz
+.Teamrollen: Teamleiter/Implementation
 
 // Was habe ich gelernt?
 // Worauf bin ich stolz?
