@@ -56,7 +56,13 @@ Die Betriebsdokumentation enthält Anleitungen und Hilfestellungen zum Einrichte
 
 === Hardwareanforderungen
 
+* Raspberry Pi 4B (empfohlen)
+* Speicherkarte: 8 GB (minimum)
+* Internetverbindung: notwendig
+
 === Softwareanforderungen
+
+* Betriebssystem: Linux (minimum), Raspbian (empfohlen)
 
 = Systemeinrichtung
 
@@ -111,8 +117,8 @@ Der Webserver besteht aus folgenden Artefakten:
 
 |Frontend
 |/var/www/vue
-
 |Apache-Konfiguration
+
 |/etc/apache2/sites-available/vue.conf
 
 |Backend
@@ -172,7 +178,7 @@ WARNING: Achtung: Beim Ausführen der folgenden Befehle werden die Einstellungen
 
   sudo ./build.sh
 
-Nachdem das Skript ausgeführt wurde, sollte das Frontend wieder unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.  
+Nachdem das Skript ausgeführt wurde, sollte das Frontend wieder unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
 
 Sollte der Fehler noch nicht behoben sein, dann kann ein erneutes Ausführen des Install-Skripts (siehe Systemeinrichtung) hilfreich sein.
 
@@ -227,16 +233,88 @@ Weiterführende Links und Informationen zum Einrichtungs- und Entwicklungsprozes
 
 == Terminal
 
+NOTE: Solang, wie das Terminal und der Webserver nicht im selben Netzwerk sind und die IPs in src/webserver/backend/sync.py
+und die Addresse der REST-API des Terminals (src/Terminal/server_connection.py) nicht angepasst wurde, muss auf dem Terminal folgende
+Instruktion ausgeführt werden:
+
+
+  ssh -L 5000:localhost:5000 -R 6000:localhost:6000 ubuntu@79.254.2.242 -p 15022
+
+``sync.py`` , Zeile 11:
+
+  RASPI_IP = '127.0.0.1'
+  RASPI_URL = 'http://127.0.0.1:6000'
+
+``server_connection.py``, Zeile 109:
+
+  def start_app_with_params():
+      # app.run(host='192.168.1.115', debug=False, use_reloader=False)
+      # localhost:6000
+      app.run(port='6000')
+
+=== Einrichtung
+
+WARNING: Das Ausführen des build-scripts löscht alle Dateien in ~/Terminal. Daher ist es ratsam,
+vor dem Ausführen ein Backup der Datenbank anzufertigen.
+
+WARNING: Wenn die Datenbank des Webservers zurückgesetzt wird, die des Terminals aber nicht (oder andersherum),
+dann werden vermutlich Fehler auftreten.
+
+  curl https://raw.githubusercontent.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/master/src/Terminal/build.sh > build.sh
+  sudo ./build.sh
+  cd Terminal
+  python3 make_terminal_db.py
+
 === Speicherpfade
+
+[%header, cols=2*]
+|===
+|Systembestandteil
+|Speicherpfad
+
+|terminal.py, make_terminal_db.py, build.sh
+|~/Terminal
+
+|===
 
 === Manuelles Starten/Stoppen
 
+Starten:
+
+  cd ~/Terminal/
+  sudo python3 terminal.py &
+
+Backend stoppen:
+
+  sudo killall python
+
+
 === Verbindung testen
+
+Das Backend muss hierfür laufen.
+
+  curl localhost:5000/api/
+
+Wenn hier folgende Fehlermeldung erscheint, dann ist *keine* Verbindung möglich:
+
+  Failed to connect to localhost port 5000: Connection refused
+
+Steht stattdessen ein html-dump oder ähnliches im Konsolenfenster, dann besteht
+die Verbindung.
 
 === Fehlerbehandlung
 
 === Reparatur
 
+Es empfielt sich, eine Neuinstallation des Terminals mit `build.sh` zu machen.
+Dabei wird die Datenbak gelöscht, es empfielt sich daher, ein Backup anzufertigen
+
 === Datenbank zurücksetzen
 
+  cd ~/Terminal
+  sudo rm database_terminal.db
+  python3 make_terminal_db.py
+
 === Backup
+
+Die Datei `database_terminal.db` sollte an einen sicheren Ort gespeichert werden.
