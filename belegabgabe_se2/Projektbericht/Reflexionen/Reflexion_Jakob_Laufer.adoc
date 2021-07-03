@@ -1,0 +1,23 @@
+=== Persöhnliche Reflexion Jakob Laufer
+.Teamrollen: Analyse/Testing
+
+In den folgenden Absätzen würde ich gerne versuchen, die Projektarbeit im Ramhen des Moduls Software Engineering im Fachsemester 3 und 4. des Studiengangs „Wirtschaftsinformatik“ rückwirkend noch einmal zu betrachten und „Revue“ passieren lassen. 
+Zum einen möchte ich auf die positiven Seiten des Projektes eingehen, wo ich insbesondere meine persöhnlichen Lernfortschritte und gut laufende Aspekte beschreibe. Aber zum anderen möchte ich auch auf Aspekte eingehen, die nicht so gut gelafen sind und man nächstes mal besser machen könnte. 
+
+Obwohl man schon des öfteren in Gruppen gearbeitet hat, war es für mich persöhnlich eine ganz neue Erfahrung über so einen langen Zeitraum gemeinsam an einem Projekt zu arbeiten. Auch die Gedanken im Vorfeld, welchen Teil man in dem Projekt beisteuern könnte und wo man glaubt, die eigenen Stärken bzw. Schwächen zu sehen, waren für mich in diesem Umfang neu. 
+Was ich gelernt bzw. erkannt habe, das ich in gewisserweise Verantwortung für die bearbeiteten Teilaufgaben  übernehmen muss und meine Gruppe mit Lösungen rechnet. 
+Ich hab gelernt, wie man sich die Zeit besser einteilt, um Aufgaben rechtzeitig zu bearbeiten und  zusätzliche Meetings optimal einzuplanen. Auch die Arbeit mit externen Kunden, war eine ganz neue Erfahrung.
+Ich konnte in einen kleinen Rahmen erkennen, wie man ein größeres Projekt in einer etwas größeren Gruppe strukturiert und gliedert, und welche Tools man dafür nutzen könnte. 
+Um beispielsweise „AsciiDoc“ für die Dokumentation zu nennen. Unabhängig davon, das unsere Dokumentation fast ausschließlich aus „AsciiDoc“ bestand, habe ich es hauptsächlich im privaten Bereich sehr gut nutzen können.
+Obwohl ich die einheitliche Ordnerstruktur und Nutzung von „AsciiDoc“ sehr gut fand, könnte man hier zu einem negativen Aspekt kommen. Und zwar war es zwischenzeitlich ziemlich schwer, die Übersicht über alle Ordner zu halten. 
+Bei einem zukünftigen Projekt, könnte man das aufjedenfall im Hinterkopf haben und mit einplanen. So könnte man gleich zu Beginn, unwichtige Dinge filtern und aussortieren.  
+
+Für die Nutzung von "GitHub" als Versionsverwaltung, konnte man eine gewisse Sicherheit und Routine entwickelt. Auch für die vielen Vorteile (z.B. Issues etc.) die GitHub, gerade für die Teamarbeit bietet, konnte man nach und nach ein Gefühl bekommen und anwenden. Zwar hat man längst nicht alle Möglichkeiten gesehen bzw. anwenden können, aber für eine erste Übersicht hat es vollkommen ausgereicht.
+
+Neben einer überschaubareren Ordnerstruktur, hätte ich an einigen stellen öfter den Kontakt zu anderen Gruppen suchen können. Ähnlich wie es beim Fachaustausch versucht wurde, hätte man auch in einem persöhnlichen Gespräch Inspirationen aus anderen Gruppen finden können.
+
+Man hätte auch deutllich eher Skizzen für den Projektbericht machen können, hätte man sich nur früher damit beschäftigt.  
+Gerade für die direkt vergangenen Iterationen hätte man schon anfangen können, Teile zusammenzufassen und aus zu formulieren.
+Jetzt erst im Nachhinein alles zusammenzutragen und zu wiederholen war doch ziemlich mühsam und zeitaufwendig. 
+
+Abschließend kann ich sagen, das es eine besondere Erfahrung war, und sich meine Kenntnisse und Fähigkeiten deutlich erweitern konnten.
