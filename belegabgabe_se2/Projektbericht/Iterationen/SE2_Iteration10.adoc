@@ -37,4 +37,4 @@ https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/mas
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
 :imagesdir: {docs-project-management}/images/project_status
-image::Iteration10.png[width=100%]
+image::Iteration10V2.png[width=100%]
