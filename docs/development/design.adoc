@@ -15,7 +15,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Auweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:c-Beziehung zwischen den entsprechenden Tabellen (Es kann mehr hinterlegte RFID-Ausweise als Piloten geben, daher die konditionale Beziehung). Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
 
-.Datenbankmodell vom Terminal 
+.Datenbankmodell vom Terminal
 image::Datenmodell_Terminal.png[Datenbankmodell, width=70%, align="center"]
 
 === Webserver
@@ -69,20 +69,20 @@ Außerdem wird in der mobilen Ansicht der Webseite vermehrt auf die Verwendung v
 
 Die Eingabemöglichkeit von Formularen im Frontend muss stark eingeschränkt werden auf die gewünschten Daten und Datenformate, damit die entstehende Datensätze in der Datenbank konsistent und fehlerfrei sind. Um die Validierung von Formularen möglichst einfach zu gestalten, wird im Backend "Vuelidate" verwendet. Mit Vuelidate können Eingabemasken und Regeln für jedes Eingabefeld festgelegt werden. Erst wenn alle Bedingungen der Eingabe erfüllt sind, kann ein Formular an das Backend übergeben werden. Die Funktionalität von Vuelidate wird über ein Mixin allen Formularen zur Verfügung gestellt.
 
-Weitere Möglichkeiten für die Einschränkung von Eingaben bieten Elemente aus HTML5, mit denen beispielsweise in Inputs nur Zahlen oder Zeiteingaben zugelassen werden. "Bootstrap" und "BootstrapVue" bieten weitere Varianten dieser Elemente. 
+Weitere Möglichkeiten für die Einschränkung von Eingaben bieten Elemente aus HTML5, mit denen beispielsweise in Inputs nur Zahlen oder Zeiteingaben zugelassen werden. "Bootstrap" und "BootstrapVue" bieten weitere Varianten dieser Elemente.
 
 ==== Datenbankmodell
 
 Zu den 3 relationalen Tabellen vom Terminal, kommt beim Datenbankmodell vom Webserver noch eine Gasttabelle hinzu. Sie steht mit der Menge von Flugsessions (dem Protokoll) in einer nc:c beziehung.
-So kann ein Pilot in einer Flugsession entweder einen oder keinen Gast haben,  und eine Flugsession könnte keinen, einen oder mehrere Gäste beinhalten. 
-Für den Login am Webserver wurden in der Tabelle Pilot außerdem noch drei zusätzlichen Spalten (Nutzername, Passwort, Ist_Admin) hinzugefügt. 
+So kann ein Pilot in einer Flugsession entweder einen oder keinen Gast haben,  und eine Flugsession könnte keinen, einen oder mehrere Gäste beinhalten.
+Für den Login am Webserver wurden in der Tabelle Pilot außerdem noch drei zusätzlichen Spalten (Nutzername, Passwort, Ist_Admin) hinzugefügt.
 
 .Datenbankmodell vom Webserver
 image::Datenmodell.png[Datenbankmodell, width=70%, align="center"]
 
 
 === Synchronisation
-Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind. 
+Da sich die Datenhaltung auf dem Webserver und am Terminal unabhängig voneinander ändern kann, ist es notwendig bei einem periodisch Abgleichen der Daten gezielt zu synchronisieren, sodass keine Informationen verloren gehen und beide Systemkomponenten auf dem aktuellen Stand sind.
 
 Mögliche Änderungen auf Seite des Webservers:
 
@@ -109,9 +109,10 @@ In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Web
 * GET - Anfordern von Daten
 * POST - Übermitteln neuer Daten
 * PUT - Verändern bestehender Daten
-* DELETE - Löschen bestehender Daten
 
 // Im Laufe der Entwicklung diesen Abschnitt um Screenshots von Swagger.io ergänzen
+Es empfielt sich, das backend zu starten und dann unter http://127.0.0.1:5000/api/ die API doc anzuschauen.
+
 
 ==== GET
 
@@ -127,55 +128,44 @@ In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Web
 |No parameters
 a|
 * Frontend -> Backend
-* Terminal -> Backend
 
 | /pilots
 | Erwarte alle Piloten der Tabelle Pilot
-a| 
+a|
 * /id/2 (Pilot mit Id = 2)
 * ?active=false (alle deaktiven)
-* ?from=0?to=20 (die ersten 20)
-//nicht sicher?
 a|
 * Frontend -> Backend
-* Terminal -> Backend
 
 | /rfid_assigned
 |zugewiesene RFID tags
 |No parameters
 a|* Frontend -> Backend
-* Terminal -> Backend
 
 | /rfid_available
 |verfügbare RFID tags
 |No parameters
 a|* Frontend -> Backend
-* Terminal -> Backend
 
 | /sessions
 | Erwarte alle Sessions der Tabelle Flugsession
 a|
 * ?from=0?to=20 (die ersten 20)
 * ?running=true (alle derzeitigen)
-* /filterByTime?from=23.04.2021?to=25.04.2021
-* /filterByPilot/2 (alle Sessions von Pilot 2)
-* /filterById/5 (Session mit Id = 5)
+* ?start_date
+* ?end_date
+* ?name
 a|* Frontend -> Backend
-* Terminal -> Backend
-// nicht sicher?
 
 | /sessions/running
 |alle aktiven Sessions
 |No parameters
 a|* Frontend -> Backend
-* Terminal -> Backend
 
 | /settings
-| Erwarte alle Einstellungen für den Terminalablauf
-a|
-JSON
+| Return settings
+|No parameters
 a|* Frontend -> Backend
-* Terminal -> Backend
 
 |===
 
@@ -214,26 +204,24 @@ a|
 a|
 * Frontend -> Backend
 
-| /sessions 
+| /sessions
 | Hinzufügen einer neuen Session
 a|
-* "pilot_id": "3",
+* ?id=2
 * "session_date": "2021-05-29"
 * "start_time": "23.06.2021 15:43:12"
 * "end_time": "HH:MM",
 * "is_leader": true,
 a|
-* Terminal -> Backend
-// Return Session Id?
+* Frontend -> Backend
 
 | /sessions/checkout-all
 | Alle Piloten abmelden
 |No parameters
-a|* Terminal -> Backend
-* Frontend -> Backend
+a| implementiert, aber nie gerufen
 
-| /sessions/terminal 
-| post abgeschlossene und nicht abgeschlossene Sitzungen vom Terminal zum Backend 
+| /sessions/terminal
+| post abgeschlossene und nicht abgeschlossene Sitzungen vom Terminal zum Backend
 a|* "pilot_id": "3",
 * "session_date": "2021-05-29"
 * "start_time": "23.06.2021 15:43:12"
@@ -242,15 +230,14 @@ a|* "pilot_id": "3",
 a|* Terminal -> Backend
 
 
-| /settings 
-| post Einstellungen zum Server 
-| No parameters
+| /settings
+| post Einstellungen zum Server
+| settings.json im body
 a|
 * Frontend -> Backend
-* Terminal -> Backend
 
-| /signup 
-| Erstelle Anmeldung für Pilot 
+| /signup
+| Erstelle Anmeldung für Pilot
 a| * "username": "string"
 * "password": "string"
 a|
@@ -270,7 +257,7 @@ a|
 | /pilots
 | Ändern eines Piloten in der Tabelle Pilot
 a|
-* /id/2 (ID des Piloten)
+* "pilot_id": 1 (ID des Piloten)
 * "pilot_name": "string"
 * "pilot_surname": "string"
 * "rfid": "24572"
