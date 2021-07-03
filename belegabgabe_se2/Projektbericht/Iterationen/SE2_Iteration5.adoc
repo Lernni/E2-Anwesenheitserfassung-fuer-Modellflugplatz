@@ -57,7 +57,16 @@ Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerd
 
 Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
 Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast 1 1/2 Monate warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
-Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. Als wir einen längeren Zeitraum keine Antworten erhielten, schlugen wir in einem Teammeeting andere mögliche Kommunikationswege als Lösung vor. Wir informierten auch Herrn Zirkelbach über das Problem. Letztendlich konnten wir in einem Kundenmeeting das Problem klären, Herr Brenner hatte vergessen uns seine neue Mail-Adresse zukommen zu lassen.
+Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. In der darauffolgenden Iteration wird beschrieben, wie wird dieses Problem klären konnten.
+
 
 Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produktiv und konnten einige Fortschritte vermelden.
 Wir hatten durch das feste Gruppenmeeting am Mittwoch eine gewisse Struktur bekommen und versuchten Fehler (u.a. mangelnde Iterationsplanung) aus der Vergangenheit jetzt zu vermeiden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise durchzusetzten.
+
+
+=== Essence - Aktueller Stand
+
+.Essence
+ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
+:imagesdir: {docs-essence}/project_status
+image::Iteration5.png[width=90%, align="left"]
