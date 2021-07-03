@@ -1,0 +1,26 @@
+=== Max Haufe
+.Teamrollen: Entwurf/Implementierung
+
+Ich war erst im Entwurf und danach den größten Teil in der Implementierung tätig. Ich habe durchaus eine Menge gelernt,
+vor allem war es interessant, zu sehen wie genau eine Website aufgebaut ist, wie Sie funktioniert und vor allem
+welche Maßnahmen zu beachten sind, wenn es um die Sicherheit geht. All diese Erkenntnisse um die Website und API
+haben mir auch schon an anderer Stelle geholfen.
+
+Meiner Meinung nach hat die Kommunikation im Team sehr gut geklappt, an dieser Stelle ein großes Dankeschön an
+den Projektleiter. Es gab nur wenige male, an denen wir aneinander vorbei geredet haben und auch der Austausch
+mit den Teammitgliedern bei Problemen lief reibungslos, sodass in der Regel schnell eine Lösung gefunden wurde.
+
+Nicht so gut geklappt hat (zumindest für mich) das Zeitmanagement. Ich habe mich persönlich sehr überschätzt,
+da manche Aspekte der API im Backend doch komplexer waren, als ursprünglich gedacht. Somit fühlte sich das
+programmieren manchmal so an, als würden zwei neue Probleme auftauchen, wenn man eins gelöst hatte - ähnlich wie
+bei Herkules und der Hydra. Daher konnte ich nicht alle Funktionen am Terminal implementieren, da das Backend des
+Webservers zu zeitaufwändig war.
+
+Ich habe so direkt keinen Teil, auf den ich sehr stolz bin, allerdings betrachte ich die Tatsache, dass die REST-API
+des Webservers funktioniert und das macht, was sie soll, als einen Erfolg.
+
+Ein weiterer Aspekt, wo es Probleme gab, war die Kommunikation mit den Themenstellern. Wir mussten teilweise sehr lang
+auf die Hardware und Rückmeldungen warten, sodass uns teilweise die Hände gebunden waren, da wir nicht weiterarbeiten konnten.
+
+Alles in allem denke ich aber trotzdem, dass wir gute Arbeit geleistet haben und wenn noch ein paar wenige Wochen mehr Zeit
+da gewesen wäre, wären wir sicherlich auch fertig geworden.
