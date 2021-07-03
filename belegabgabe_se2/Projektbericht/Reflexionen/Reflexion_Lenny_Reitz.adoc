@@ -1,5 +1,5 @@
 === Lenny Reitz
-.Teamrollen: Teamleiter/Implementation
+.Teamrollen: Teamleiter/Implementierung
 
 // Was habe ich gelernt?
 // Worauf bin ich stolz?
