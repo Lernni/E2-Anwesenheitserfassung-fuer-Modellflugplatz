@@ -43,4 +43,4 @@ Einige Modelle und Dokumente, wie zum Beispiel das Datenmodell oder der Deployme
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
 :imagesdir: {docs-project-management}/images/project_status
-image::Iteration11.png[width=100%]
+image::Iteration11V2.png[width=100%]
