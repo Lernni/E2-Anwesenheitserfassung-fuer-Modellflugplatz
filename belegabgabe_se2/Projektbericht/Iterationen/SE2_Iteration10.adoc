@@ -17,8 +17,8 @@ In der Iteration 10 wurden hautpsächlich die Synchronisation zwischen Webserver
 
 Des Weiteren wurde das Deployment-Diagramm erstellt:
 
-.Deployment-Diagramm
-ifndef::docs-deployment[:docs-architecture: ../../../docs/deployment]
+.Deployment_Diagramm
+ifndef::docs-deployment[:docs-deployment: ../../../docs/deployment]
 :imagesdir: {docs-deployment}/images
 image::deployment_diagram.png[width=90%, align="left"]
 
