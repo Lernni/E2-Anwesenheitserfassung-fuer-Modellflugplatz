@@ -2,6 +2,80 @@
 
 == Softwaresystem [LR]
 
+// Projektergebnisse mit Bezug auf die Aufgabenstellung
+// Was haben wir erreicht und was nicht?
+// Was waren Gründe für die Abweichungen?
+
+=== Motivation
+
+Für den kontrollierten Betrieb eines Modellflugplatzes gibt es gesetzlich vorgeschriebene Maßnahmen einzuhalten. Eine davon ist die Protokollierung der anwesenden Piloten auf dem Flugplatz zur Absicherung und späteren Nachvollziehbarkeit im Schadensfall oder bei möglichen Beschwerden über Lärm oder Sachbeschädigung. Die bisherige Umsetzung dieser gesetzlichen Vorgaben gestaltete sich über ein analoges Flugbuch.
+
+Der "Mfc Rossendorf" gab uns die Möglichkeit, im Rahmen der 2 Module Software Engineering, den genannten Vorgang zu digitalisieren.
+
+(Weitere Details zur Motivation siehe Vision)
+
+=== Produktergebnis
+
+Das Produkt ermöglicht eine zeitlich genaue Protokollierung von Flugsessions der Piloten auf dem Flugplatz, die durch ein autarkes Terminal registriert werden können. Die Piloten können sich hier mit einem eigenen RFID-Ausweis authentifizieren, um verschiedene Aktionen auszuführen (Anmelden, Abmelden, Flugleiter bestimmten).
+
+Hinterlegte Flugsessions werden in einem Flugprotokoll gespeichert und können über eine Webseite von registrierten Nutzern eingesehen werden. Über die gleiche Webseite können die Administratoren das System verwalten. Dazu zählt u.a. das Erstellen von Piloten, das Einsehen und Nachtragen von Flugsessions und das Konfigurieren des Systems.
+
+Terminal und Webserver sind physisch voneinander getrennt und synchronisieren sich gegenseitig ereignisgesteuert, um die Daten konsistent zu halten. Das Terminal ist offlinefähig, d.h. es ist immer gewährleistet, dass sich Piloten auf dem Flugplatz an- und abmelden können, auch wenn der Webserver gerade nicht erreichbar ist.
+
+=== Bewertung
+
+Ein Großteil der analysierten Hauptanforderungen an das System (Use-Cases) aus SE 1 konnte erfüllt werden. Einzig Use-Case 06 (Alle Piloten abmelden) wurde nicht vollständig umgesetzt. Das lag vor allem daran, dass dieser Use-Case eine niedrige Priorität hatte und die Umsetzung einen großen zeitlichen Aufwand bedeutet hätte. Daher wurden zunächst wichtigere Use-Cases umgesetzt. Letztendlich hat es zeitlich nicht mehr gereicht Use-Case 06 umzusetzen.
+
+.Endzustand der Umsetzung des Projekts anhand des Use-Case-Models
+ifndef::local-images[:local-images: images]
+:imagesdir: {local-images}
+image::Use_Case_Model_Endzustand.png[width=80%, align="center"]
+
+Weitere vorgesehene aber nicht mehr umgesetzte Funktionen sind in der folgenden Tabelle aufgeführt:
+
+[%header, cols=2*]
+|===
+
+|Funktion
+|Grund für die unvollständige Umsetzung
+
+|Umstellen des Webservers auf HTTPS
+|Das hätte einen zu hohen Zeitaufwand gegen Ende der Projektarbeit bedeutet. Man hätte den Webserver direkt mit HTTPS aufsetzen müssen.
+
+|Zeitliche Begrenzung der Gültigkeit von Nutzertokens
+|Diese Funktion wurde zu spät erkannt und hätte sehr viel Umstrukturierung bedeutet, da im Code von fixen Nutzertokens ausgegangen wird
+
+|Webserver zeigt Zeitpunkt der letzten Synchronisation mit dem Terminal
+|Es war keine Zeit mehr für die Umsetzung dieser Funktion niedriger Priorität.
+
+|Möglichkeit das Flugprotokoll als CSV zu exportieren
+|Es war keine Zeit mehr für die Umsetzung dieser Funktion niedriger Priorität.
+
+|Möglichkeit Piloten aus einer Excel-Tabelle zu importieren
+|Diese Anforderung des Kunden kam im letzten Kundenmeeting auf, daher war keine Zeit mehr für die Umsetzung dieser Funktion.
+
+|Jeder Pilot besitzt ein Attribut e-ID als digitaler Authentifizierungscode
+|Diese Anforderung des Gesetzgebers kam im letzten Kundenmeeting auf, daher war keine Zeit mehr für die Umsetzung dieser Funktion. Die Anforderung gab es jedoch zu Beginn des Projekts noch nicht.
+
+|Implementierung der Einstellungen am Terminal
+|Es war keine Zeit mehr für die Umsetzung dieser Funktion. Zudem fehlt die RGB-LED, wodurch eine vollständige Implementierung der Einstellungen nicht möglich ist.
+
+|visuelle Statusausgaben am Terminal
+|Die RGB-LED war zur Entwicklung nicht vorhanden.
+
+|Wenn sich ein Pilot als Flugleiter anmeldet und es existiert bereits ein Flugleiter auf dem Platz, wird der Flugleiter automatisch neu vergeben
+|Es war keine Zeit mehr für die Umsetzung dieser Funktion.
+
+|Ausführen von Aktionen am Terminal, wenn der RFID-Ausweis eine gewisse Zeit angehalten wurde
+|Es war keine Zeit mehr für die Umsetzung dieser Funktion.
+
+|===
+
+Trotz der fehlenden Funktionen an einigen Stelle waren die Themensteller bei der Übergabe mit unserem Resultat zufrieden, da alle implementierten Use-Cases auch fehlerfrei vorgeführt werden konnten. Da die Themensteller planen, die fehlende Funktionalität selbst umzusetzen, haben wir in den letzten Iterationen viel Wert auf die Ausarbeitung der Dokumentationen gelegt, um die Weiterarbeit zu erleichtern. Beispielsweise konnten die Anforderungen aus dem letzten Kundenmeeting (siehe Tabelle) schon ansatzweise im Code vorbereitet werden, sodass die Umsetzung hier gut gelingen sollte.
+
+=== Fazit
+
+Die Projektarbeit und das entstandene Produkt können als Erfolg verbucht werden. Neben kleineren Problemen war die Resonanz im Team und mit den Themenstellern oftmals positiv. Das Produkt erfüllt die Erwartungen der Themensteller und kann mit finalen Anpassungen im Verein verwendet werden. Die Aufgabenstellung konnte also durch unser Softwareprodukt gelöst werden. 
 
 == Reflexionen der Teammitglieder
 
