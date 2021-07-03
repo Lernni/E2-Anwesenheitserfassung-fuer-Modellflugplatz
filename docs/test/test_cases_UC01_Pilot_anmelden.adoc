@@ -32,7 +32,7 @@
 |Negativ, manuell
 |Pilot ist abgemeldet
 |Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
-|Das System meldet den Piloten korrekt abwechselnd an und ab (evtl. hier schon relevant: Der Eintrag wird nicht ins Protokoll übernommen da Zeit < x Minuten)
+|Das System meldet den Piloten korrekt abwechselnd an und ab, speichert die Sessions aber aufgrund der kurzen Dauer nicht ab
 
 |5
 |Positiv, manuell
@@ -59,7 +59,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | RFID Tag C72C483E9D des Piloten "Max Muster" an den RFID Scanner gehalten
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -75,7 +75,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Pilot "Max Muster" deaktiviert (RFID ist NULL)
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -91,7 +91,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Pilot "Max Muster" hat eine bestehende Flugsession
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -107,7 +107,12 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | RFID Tag von Pilot "Max Muster" 2x schnell hintereinander an Scanner gehalten
 | Erfolgreich
 | /
-|
+| Erfolgreich
+
+| RFID Tag von Pilot "Max Muster" 4x schnell hintereinander an Scanner gehalten
+| Erfolgreich
+| /
+| Erfolgreich
 
 |===
 
@@ -123,7 +128,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Internetverbindung des Terminals unterbrochen
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
