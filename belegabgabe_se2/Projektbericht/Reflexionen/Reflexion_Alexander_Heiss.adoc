@@ -1,4 +1,4 @@
-=== Alexander Heiß
+==== Alexander Heiß
 .Teamrollen: Testing/Management
 
 Bereits im ersten Semester stellte sich für mich heraus, dass ich nicht nur im Bereich des Testings zuständig bin, sondern auch zahlreiche Aufgaben im Projektmanagement mit übernehmen werde. So erstellte ich, wie schon in SE I, auch in diesem Semester die Iterationspläne, erweiterte den Projektplan und aktualisierte das Essence-Modell.

@@ -8,7 +8,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 :doctype: book
 :toc:
-:toclevels: 2
+:toclevels: 1
 :toc-title: Inhaltsverzeichnis
 :sectnums:
 :icons: font
@@ -28,11 +28,12 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :docs-architecture: {docs}/architecture
 :docs-test: {docs}/test
 :docs-development: {docs}/development
+:docs-deployment: {docs}/deployment
 :local-images: images
 
 <<<
 
-= Verwendete Namenskürzel 
+.Verwendete Namenskürzel 
 
 |===
 
@@ -58,7 +59,6 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 |===
 
-<<<
 include::1_Projektplanung.adoc[]
 
 <<<

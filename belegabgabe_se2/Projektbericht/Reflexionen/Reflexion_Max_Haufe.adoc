@@ -1,13 +1,13 @@
-=== Max Haufe
+==== Max Haufe
 .Teamrollen: Entwurf/Implementierung
 
 Ich war erst im Entwurf und danach den größten Teil in der Implementierung tätig. Ich habe durchaus eine Menge gelernt,
-vor allem war es interessant, zu sehen wie genau eine Website aufgebaut ist, wie Sie funktioniert und vor allem
+vor allem war es interessant, zu sehen wie genau eine Website aufgebaut ist, wie sie funktioniert und vor allem
 welche Maßnahmen zu beachten sind, wenn es um die Sicherheit geht. All diese Erkenntnisse um die Website und API
 haben mir auch schon an anderer Stelle geholfen.
 
 Meiner Meinung nach hat die Kommunikation im Team sehr gut geklappt, an dieser Stelle ein großes Dankeschön an
-den Projektleiter. Es gab nur wenige male, an denen wir aneinander vorbei geredet haben und auch der Austausch
+den Projektleiter. Es gab nur wenige Male, an denen wir aneinander vorbei geredet haben und auch der Austausch
 mit den Teammitgliedern bei Problemen lief reibungslos, sodass in der Regel schnell eine Lösung gefunden wurde.
 
 Nicht so gut geklappt hat (zumindest für mich) das Zeitmanagement. Ich habe mich persönlich sehr überschätzt,

@@ -1,12 +1,12 @@
-= Projektergebnisse 
+== Projektergebnisse 
 
-== Softwaresystem [LR]
+=== Softwaresystem [LR]
 
 // Projektergebnisse mit Bezug auf die Aufgabenstellung
 // Was haben wir erreicht und was nicht?
 // Was waren Gründe für die Abweichungen?
 
-=== Motivation
+==== Motivation
 
 Für den kontrollierten Betrieb eines Modellflugplatzes gibt es gesetzlich vorgeschriebene Maßnahmen einzuhalten. Eine davon ist die Protokollierung der anwesenden Piloten auf dem Flugplatz zur Absicherung und späteren Nachvollziehbarkeit im Schadensfall oder bei möglichen Beschwerden über Lärm oder Sachbeschädigung. Die bisherige Umsetzung dieser gesetzlichen Vorgaben gestaltete sich über ein analoges Flugbuch.
 
@@ -14,7 +14,7 @@ Der "Mfc Rossendorf" gab uns die Möglichkeit, im Rahmen der 2 Module Software E
 
 (Weitere Details zur Motivation siehe Vision)
 
-=== Produktergebnis
+==== Produktergebnis
 
 Das Produkt ermöglicht eine zeitlich genaue Protokollierung von Flugsessions der Piloten auf dem Flugplatz, die durch ein autarkes Terminal registriert werden können. Die Piloten können sich hier mit einem eigenen RFID-Ausweis authentifizieren, um verschiedene Aktionen auszuführen (Anmelden, Abmelden, Flugleiter bestimmten).
 
@@ -22,7 +22,7 @@ Hinterlegte Flugsessions werden in einem Flugprotokoll gespeichert und können �
 
 Terminal und Webserver sind physisch voneinander getrennt und synchronisieren sich gegenseitig ereignisgesteuert, um die Daten konsistent zu halten. Das Terminal ist offlinefähig, d.h. es ist immer gewährleistet, dass sich Piloten auf dem Flugplatz an- und abmelden können, auch wenn der Webserver gerade nicht erreichbar ist.
 
-=== Bewertung
+==== Bewertung
 
 Ein Großteil der analysierten Hauptanforderungen an das System (Use-Cases) aus SE 1 konnte erfüllt werden. Einzig Use-Case 06 (Alle Piloten abmelden) wurde nicht vollständig umgesetzt. Das lag vor allem daran, dass dieser Use-Case eine niedrige Priorität hatte und die Umsetzung einen großen zeitlichen Aufwand bedeutet hätte. Daher wurden zunächst wichtigere Use-Cases umgesetzt. Letztendlich hat es zeitlich nicht mehr gereicht Use-Case 06 umzusetzen.
 
@@ -73,22 +73,33 @@ Weitere vorgesehene aber nicht mehr umgesetzte Funktionen sind in der folgenden 
 
 Trotz der fehlenden Funktionen an einigen Stelle waren die Themensteller bei der Übergabe mit unserem Resultat zufrieden, da alle implementierten Use-Cases auch fehlerfrei vorgeführt werden konnten. Da die Themensteller planen, die fehlende Funktionalität selbst umzusetzen, haben wir in den letzten Iterationen viel Wert auf die Ausarbeitung der Dokumentationen gelegt, um die Weiterarbeit zu erleichtern. Beispielsweise konnten die Anforderungen aus dem letzten Kundenmeeting (siehe Tabelle) schon ansatzweise im Code vorbereitet werden, sodass die Umsetzung hier gut gelingen sollte.
 
-=== Fazit
+==== Fazit
 
 Die Projektarbeit und das entstandene Produkt können als Erfolg verbucht werden. Neben kleineren Problemen war die Resonanz im Team und mit den Themenstellern oftmals positiv. Das Produkt erfüllt die Erwartungen der Themensteller und kann mit finalen Anpassungen im Verein verwendet werden. Die Aufgabenstellung konnte also durch unser Softwareprodukt gelöst werden. 
 
-== Reflexionen der Teammitglieder
+<<<
+=== Reflexionen der Teammitglieder
 
 :reflexionen: Reflexionen
 
 include::{reflexionen}/Reflexion_Lenny_Reitz.adoc[]
 
+<<<
+
 include::{reflexionen}/Reflexion_Alexander_Heiss.adoc[]
+
+<<<
 
 include::{reflexionen}/Reflexion_Max_Haufe.adoc[]
 
+<<<
+
 include::{reflexionen}/Reflexion_Dirk_Zimmermann.adoc[]
 
+<<<
+
 include::{reflexionen}/Reflexion_Jakob_Laufer.adoc[]
+
+<<<
 
 include::{reflexionen}/Reflexion_Richard_Kleint.adoc[]

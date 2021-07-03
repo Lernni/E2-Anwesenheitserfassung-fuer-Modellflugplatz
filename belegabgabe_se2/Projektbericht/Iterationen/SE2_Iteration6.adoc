@@ -1,22 +1,22 @@
-== Iteration 6 (12.04.21 - 25.04.21) [RK]
+=== Iteration 6 (12.04.21 - 25.04.21) [RK]
 
-In der zweiten Iteration des Semesters, und der damit 6. Iteration, war vor allem das Ziel alle datenschutzkritischen Elemente zu ermitteln und den Entwurf der REST-API abzuschließen. 
-Ebenfalls ein wesentliches Ziel war der Erhalt der Technik, also des Raspberry-Pi und der dazugehörigen Teile, wie beispielsweise der RGB-LED, der RFID-Scanner, die RFID-Ausweise und dem Taster. Dies gestaltete sich weiterhin als schwierig, da der betroffene Themensteller Herr Brenner für uns nicht erreichbar war. Aufgrund der fehlenden Hardware mussten wir das Prokjekt zwischenzeitlich anderweitig fortführen. Wir informierten auch Herrn Zirkelbach über das Problem. Mit Hilfe des anderen Themenstellers, Herrn Prof. Dr. Iwe, gelang es uns ein weiteres gemeinsames Kundenmeeting zu organisieren, bei dem die Fragen zur fehlenden Technik beantwortet werden konnte. Über eine neue Email-Addresse war Herr Brenner fortan für uns besser ereichbar.
+In der zweiten Iteration des Semesters war vor allem das Ziel alle datenschutzkritischen Elemente zu ermitteln und den Entwurf der REST-API abzuschließen. 
+Ebenfalls ein wesentliches Ziel war der Erhalt der Technik, also des Raspberry-Pi und der dazugehörigen Teile, wie beispielsweise der RGB-LED, der RFID-Scanner, die RFID-Ausweise und dem Taster. Dies gestaltete sich weiterhin als schwierig, da der betroffene Themensteller Herr Brenner für uns nicht erreichbar war. Aufgrund der fehlenden Hardware mussten wir das Projekt zwischenzeitlich anderweitig fortführen. Wir informierten auch Herrn Zirkelbach über das Problem. Mit Hilfe des anderen Themenstellers, Herrn Prof. Dr. Iwe, gelang es uns ein weiteres gemeinsames Kundenmeeting zu organisieren, bei dem die Fragen zur fehlenden Technik beantwortet werden konnte. Über eine neue Email-Adresse war Herr Brenner fortan für uns besser erreichbar.
 
 Einige Tage vor dem Kundenmeeting erließ der Gesetzgeber neue offizielle Vordrucke für die Führung eines Flugbuches. Diese hätten ein neuen Entwurf für fast das ganze System zur Folge gehabt, jedoch klärte sich im Meeting mit den Themenstellern auf, dass dieses neue Formular für uns keine Relevanz besäße. Als Folge dessen wurde dieses Szenario als neues Risiko in der Risk List nachgetragen.
 
-Organisatorisch wurde die Entscheidung getroffen, dass ab der nächsten Iteration nur noch ein Teammeeting pro Woche zu halten. Dies hat zur Folge, dass die Meeting nun etwas länger dauern, jedoch vereinfacht es die bislang komplizierte Terminfindung. Der grundsätzlich feste Termin für die Teammeetings war von nun an immer Mittwochs um 17:00 Uhr.
+Organisatorisch wurde die Entscheidung getroffen, dass ab der nächsten Iteration nur noch ein Teammeeting pro Woche gehalten wird. Dies hat zur Folge, dass die Meeting nun etwas länger dauern, jedoch vereinfacht es die bislang komplizierte Terminfindung an anderen Tagen außer Mittwoch. Der grundsätzlich feste Termin für die Teammeetings bleib daher Mittwoch, 17:00 Uhr.
 
-Neben den wesentlichen Zielen, also die REST-API und die datenschutzkritischen Elemente, wurde außerdem die Erweiterung des Systementwurfs und die Erstellung eines Datenbankprototypen fertig gestellt. Zudem begann das Team Entwurf beziehungsweise Implementierung für den Webserver die Frontend und Backend Verbindung mittels aoxis herzustellen, eine entsprechende Datenbank in SQLite zu initialisieren und Überlegungen zum Terminalaufbau zusammen zu tragen. Bei einigen Punkten erforderte die Weiterarbeit eine Rücksprache mit den Themenstellern, so dass das Weiterarbeiten erst nach Absprache mit diesen als sinnvoll betrachtet wurde. Nach dem entsprechenden Kundenmeeting konnten so beispielsweise die technischen Rahmenbedingungen weiter konkretisiert werden. 
+Neben den wesentlichen Zielen, also die REST-API und die datenschutzkritischen Elemente auszuarbeiten, wurde außerdem die Erweiterung des Systementwurfs und die Erstellung eines Datenbankprototypen fertig gestellt. Zudem begann Team Entwurf bzw. Implementierung für den Webserver die Frontend und Backend Verbindung mittels axios herzustellen, eine entsprechende Datenbank in SQLite zu initialisieren und Überlegungen zum Terminalaufbau zusammenzutragen. Bei einigen Punkten erforderte die Weiterarbeit eine Rücksprache mit den Themenstellern, so dass das Weiterarbeiten erst nach Absprache mit diesen als sinnvoll betrachtet wurde. Nach dem entsprechenden Kundenmeeting konnten so beispielsweise die technischen Rahmenbedingungen weiter konkretisiert werden. 
 Außerdem entschied sich das Team mit der Weiterarbeit am Architecture-Notebook bis zur nächsten Iteration zu warten, da erst dann das Architecture-Notebook ausführlich in der Vorlesung behandelt wurde.
 
-Das Team Analyse begann mit der Korrektur der entwurfsunabhängigen Dokumentation, welche bis auf die Bedienungselemente, abgeschlossen werden konnte. 
+Das Team Analyse begann mit der Korrektur der entwurfsunabhängigen Dokumentation, welche, bis auf die Bedienungselemente, abgeschlossen werden konnte. 
 
 Ebenfalls nach dem Kundenmeeting konnte ein erster Entwurf des Deployment Plans erstellt werden, welcher in den folgenden Iterationen immer wieder ergänzt wurde.
 
-Trotz der erschwerten Kommunikation mit den Themenstellern konnten viele Aufgaben abgeschlossen werden und auch viele neue Aufgaben angefangen werden. 
+Trotz der erschwerten Kommunikation mit den Themenstellern konnten viele Aufgaben abgeschlossen werden. 
 
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]

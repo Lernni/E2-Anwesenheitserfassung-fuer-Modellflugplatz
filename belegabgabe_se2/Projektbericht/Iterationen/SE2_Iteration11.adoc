@@ -1,44 +1,44 @@
-== Iteration 11 (23.06.21 - 04.07.21) [RK]
+=== Iteration 11 (23.06.21 - 04.07.21) [RK]
 
-In der 11. Iteration, und somit letzten, konzentrierten wir uns hauptsächlich auf Übergabe des Projektes und die Fertigstellung der Belegabgabe, speziell auf die diversen Dokumentationen und den Projektbericht.
-
-
-=== Deployment
-
-Am 30.06.2021 fand die Übergabe des Systems, inklusive der uns übergebenen Hardware, im Vereinsgebäude des Mfc-Rossendorf statt. Nach anfangs kleineren technischen Problemen bezüglich der Vorführung des Systems, konnten diese mit Hilfe der Themensteller schnell gelöst werden. Zusammen wurde die zuvor erstellte Vorlage des Abnahmeprotokolls abgearbeitet, dass heißt, die entsprechenden Funktionalitäten und Anforderungen wurden von den anwesenden Teammitgliedern vorgestellt und durch die Themensteller abgenommen, gegebenenfalls mit Anmerkungen.
+In der 11. Iteration konzentrierten wir uns hauptsächlich auf die Übergabe des Projektes und die Fertigstellung der Belegabgabe, speziell auf die diversen Dokumentationen und den Projektbericht.
 
 
-=== Dokumentation
+==== Deployment
+
+Am 30.06.2021 fand die Übergabe des Systems, inklusive der uns übergebenen Hardware, im Vereinsgebäude des Mfc-Rossendorf statt. Nach anfangs kleineren technischen Problemen bezüglich der Vorführung des Systems, konnten diese mit Hilfe der Themensteller schnell gelöst werden. Zusammen wurde die zuvor erstellte Vorlage des Abnahmeprotokolls abgearbeitet, d.h., die entsprechenden Funktionalitäten und Anforderungen wurden von den anwesenden Teammitgliedern vorgestellt und durch die Themensteller abgenommen, gegebenenfalls mit Anmerkungen.
+
+
+==== Dokumentation
 
 Für die Abgabe des Belegs richtete sich unser Fokus in der letzten Iteration unter anderem auf die verschiedenen erforderlichen Dokumentationen. Das Team Entwurf/Implementierung konzentrierte sich hauptsächlich auf die Erstellung der Entwicklerdokumentation und damit verbunden auch um die Aktualisierung des Architecture-Notebook und des Designs. Ebenfalls erstellten sie die Betriebsdokumentation für die Administratoren, in welchem beispielsweise beschrieben wird, was zu tun ist, wenn das System Fehler wirft.
-Das Team Test erstellte die Testdokumentation. Um diese auch abschließen zu können wurden die erstellten TestCases korrigiert, aktualisiert und ergänzt.
-Lenny Reitz und Alexander Heiß erstellten außerdem die Anwenderdokumentation
+Das Team Test erstellte die Testdokumentation. Um diese auch abschließen zu können, wurden die erstellten TestCases korrigiert, aktualisiert und ergänzt.
+Alexander Heiß erstellte außerdem die Anwenderdokumentation.
 
 Für den Projektbericht erarbeitete das Team Analyse die Projektplanung. Die Dokumentation der einzelnen Iterationen wurde auf das gesamte Team aufgeteilt, so dass jedes Teammitglied mindestens eine Iteration bearbeitet hat. 
 Wie auch für die Projektdurchführung schrieb jedes Teammitglied eine eigene Reflexion für das Dokument "Projektergebnisse".
 
 
-=== Implementierung
+==== Implementierung
 
 Mit Anfang der Iteration trat der Implementierungsstopp in Kraft, dass heißt, in das System werden keine neuen Funktionen mehr implementiert, nur noch letzte Fehler wurden ausgebessert.
 
 
-=== Produktpräsentation
+==== Produktpräsentation
 
 Am 01.07.2021 stellten Lenny Reitz und Jakob Laufer unser Projekt, in Form einer kleinen Produktpräsentation, interessierten Kommilitonen und Prof. Anke sowie Herrn Zirkelbach, vor. Nach der kurzen Vorstellung unserer Vision, der Umsetzung und des Frontends hatten die anwesenden Zuschauer die Möglichkeit Fragen zu stellen.
 
 
-=== Aufgetretene Probleme
+==== Aufgetretene Probleme
 
-Im letzten Kundenmeeting teilte uns Herr Prof. Dr. Iwe mit, dass der Gesetzgeber eine neue Spalte "e-ID" im Flugbuch fordert. Außerdem äußerte der Themensteller den Wunsch, Spalten aus Excel importieren zu können. Leider war die Umsetzung der beiden Änderungswünsche für uns nicht mehr möglich, da wir uns bereits im Implementierungsstopp befanden und es zeitlich nicht mehr ausreichte neue Funktionen zu implementieren. Wir einigten uns mit dem Themensteller beide Änderungswünsche als Click-Dummy zu implementieren. 
+Im letzten Kundenmeeting teilte uns Herr Prof. Dr. Iwe mit, dass der Gesetzgeber eine neue Spalte "e-ID" im Flugbuch fordert. Außerdem äußerte der Themensteller den Wunsch, Piloten aus Excel-Tabellen importieren zu können. Leider war die Umsetzung der beiden Änderungswünsche für uns nicht mehr möglich, da wir uns bereits im Implementierungsstopp befanden und es zeitlich nicht mehr ausreichte neue Funktionen zu implementieren. Wir einigten uns mit dem Themensteller beide Änderungswünsche als Click-Dummy zu implementieren. 
 
 
-=== Weitere Fortschritte
+==== Weitere Fortschritte
 
 Einige Modelle und Dokumente, wie zum Beispiel das Datenmodell oder der Deployment Plan, wurden final aktualisiert. Zudem wurden, wie bereits erwähnt, die TestCases final korrigiert.
 
 
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]

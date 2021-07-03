@@ -1,9 +1,9 @@
-=== Richard Kleint
+==== Richard Kleint
 .Teamrollen: Analyse/Deployment
 
 
-Wie schon im vorherigen Semester befasste ich mich anfangs hauptsächlich mit der Analyse. Da es relativ schnell weniger Aufgaben im Bereich Analyse gab, übernahm ich noch den Bereich Deployment. Speziell bei dem Bereich Deployment habe ich gelernt wie wichtig bei solch einem Projekt die Kommunikation ist. Für viele Fragen benötigte ich die Absprache mit den Themenstellern, ohne diese hätte ich kein Deployment Plan erstellen können. Aber auch innerhalb des Teams empfand ich die Kommunikation als sehr wichtig. Falls ich eine Frage hatte gab es immer jemanden, der mir diese beantworten konnte.
-Da dieses Projekt mein erstes größeres Projekt ist konnte ich auch viel über die Zusammenarbeit in einem Team lernen, beispielsweise wie ich meine Stärken am besten einbringe um mein Team zu helfen.
+Wie schon im vorherigen Semester befasste ich mich anfangs hauptsächlich mit der Analyse. Da es relativ schnell weniger Aufgaben im Bereich Analyse gab, übernahm ich noch den Bereich Deployment. Speziell bei dem Bereich Deployment habe ich gelernt wie wichtig bei solch einem Projekt die Kommunikation ist. Für viele Fragen benötigte ich die Absprache mit den Themenstellern, ohne diese hätte ich kein Deployment Plan erstellen können. Aber auch innerhalb des Teams empfand ich die Kommunikation als sehr wichtig. Falls ich eine Frage hatte, gab es immer jemanden, der mir diese beantworten konnte.
+Da dieses Projekt mein erstes größeres Projekt ist, konnte ich auch viel über die Zusammenarbeit in einem Team lernen, beispielsweise wie ich meine Stärken am besten einbringe um mein Team zu helfen.
 Ebenfalls neu für mich war das Arbeiten mit iterativer Entwicklung. Schon bei früheren Projekten hätten mir die Kenntnisse weitergeholfen, beispielsweise bei der Zeitplanung.
 Neben diesen neuen Erkenntnissen konnte ich aber auch den Umgang mit neuen Tools erlernen, beispielsweise AsciiDoc und GitHub. Vor allem der erlernte Umgang mit Systemen wie GitHub könnte mir bei späteren Projekten sehr nützlich sein.
 

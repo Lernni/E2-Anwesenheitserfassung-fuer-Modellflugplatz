@@ -1,5 +1,4 @@
-== Iteration 5 (29.03.21 - 11.04.21) [JL] 
-
+=== Iteration 5 (29.03.21 - 11.04.21) [JL] 
 
 Bevor das neue Semester und damit die Iteration 5 bei uns begann, hatten wir in den Semesterferien noch ein langes Meeting mit den Ansprechpartnern des Vereins.   
 In dem Meeting ging es hauptsächlich darum, das wir Ihnen unsere ersten Architektur-Entwürfe (logischen und physischen Sicht) präsentierten und Feedback einholten. 
@@ -18,7 +17,6 @@ image::C4_Level2.png[width=90%, align="right"]
 
 Da es im vorherigen Semester, bei der wesentlichen Funktionalität der Gastflüge, der genaue Ablauf noch offen war, fragten wir diesbezüglich auch noch mal nach. Die Antworten dienten als Basis für die weiteren Arbeiten an diesem Use-Case.   
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/requirements/use_case_10.inc.adoc#use-case-uc10-handhabung-gastflüge[UC:10 Handhabung Gastflüge]
@@ -31,40 +29,32 @@ Mit vielen geklärten Fragen und einen positiven Eindruck starteten wir in das n
 Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen und wir beschlossen den Mittwoch als festen Termin unseres Gruppenmeetings. 
 Da der Fokus jetzt eher auf der Implementierung lag, waren unsere Ziele auch dementsprechend gesetzt. Diese Iteration sollte mit der Implementierung von Backend und Frontend starten. Die Entwickler machten sich in zusätzlichen Meetings erste Überlegungen zur Umsetzung und begannen schließlich mit der Arbeit. 
 
-So konnte die Grundstruktur des Webservers erstellt und der erste Entwurf der Datenbank aufgesetzt werden. Da die Entwickler sich nicht sicher waren, ob SQLite für die Datenbank genutzt werden durfte bzw. vom Kunden gewünscht war, wurde die Weiterarbeit erstmal gestoppt.   
-Dennoch konnte am Ende der Iteration bereits eine Verbindung zwischen Backend und Frontend hergestellt werden. 
+So konnte die Grundstruktur des Webservers erdacht und der erste Entwurf der Datenbank aufgesetzt werden. Da die Entwickler sich nicht sicher waren, ob SQLite für die Datenbank genutzt werden durfte bzw. vom Kunden gewünscht war, wurde die Weiterarbeit erstmal gestoppt.   
+Dennoch konnte am Ende der Iteration bereits eine Verbindung zwischen Backend- und Frontend-Prototyp hergestellt werden. 
 
 Zwischenzeitlich hatten wir ein Meeting mit Prof. Anke zur Auswertung der Arbeit aus SE1. Dort bekamen wir, abgesehen von kleineren Korrekturen und Verbesserungsvorschlägen, ein sehr positives Feedback. Wir freuten uns sehr darüber und es motivierte uns, an der Stelle genau so weiter zu machen.  
 Für die genannten Korrekturen war das Team der Analyse zuständig. 
-Da der Hauptteil der Analyse-Dokumentation bereits in SE1 erbracht wurde, arbeiteten sich die Mitglieder dre Analyse zusätzlich in die Themengebiete Deployment und Test ein und versuchten sich dort unterstützend einzubringen. 
+Da der Hauptteil der Analyse-Dokumentation bereits in SE1 erbracht wurde, arbeiteten sich die Mitglieder der Analyse zusätzlich in die Themengebiete Deployment und Test ein und versuchten sich dort unterstützend einzubringen. 
 Bei der Dokumentation lässt sich noch ein kleines Problem beschreiben, welches sich bis zum Ende lang ziehen sollte. Es gab Probleme beim Einbinden mancher Diagramme. Obwohl uns unser Betreuer Herr Zirkelbach schon einiges korrigieren konnte, ging es bei einigen Mitgliedern immer noch nicht. Nach langem Suchen nach der Fehlerursache haben wir beschlossen, den Fokus erstmal auf die Weiterarbeit des Projekts zu setzten. 
  
 Es wurde eine erste Ordnerstruktur für das Deployment erstellt und erste Überlegungen skizziert und dem Kunden vorgeschlagen. 
 Außerdem wurden erste Test-Cases und eine erste Vorlage (eine Art Template) erstellt, worauf wir jeden Test-Case anwenden wollten.
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/test/test_cases_vorlage.adoc[Vorlage vom Test-Case]
 
 Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen Stand.
 
-Da wir im vergangenen Semester sehr viel in den einzelnen Iterationen nachtragen mussten, hatten wir uns in diesem Semester das Ziel gesetzt, die Iterationen im Voraus gemeinsam zu planen und konsistent den Fortschritt einzutragen. 
-Inspiriert wurden wir durch den angebotenen Fachaustauch zum Thema Projektentwurf, in welchem ein Austausch mit Professor Anke und anderen Gruppen statt fand.   
-Daraufhin haben wir den Iterationsplan in unsere wöchentlichen Meetings mit einbezogen.
-
 Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.
 
 Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
-Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast 1 1/2 Monate warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
+Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast anderthalb Monate darauf warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
 Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. In der darauffolgenden Iteration wird beschrieben, wie wird dieses Problem klären konnten.
 
+Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produktiv und konnten einige Fortschritte vermelden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise für das Semester durchzusetzten.
 
-Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produktiv und konnten einige Fortschritte vermelden.
-Wir hatten durch das feste Gruppenmeeting am Mittwoch eine gewisse Struktur bekommen und versuchten Fehler (u.a. mangelnde Iterationsplanung) aus der Vergangenheit jetzt zu vermeiden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise durchzusetzten.
-
-
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]

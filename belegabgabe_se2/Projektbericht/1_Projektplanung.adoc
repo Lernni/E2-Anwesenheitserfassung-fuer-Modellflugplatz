@@ -1,7 +1,7 @@
-= Projektplanung
+== Projektplanung
 
 
-== Aufgabenstellung & Auftraggeber 
+=== Aufgabenstellung & Auftraggeber 
 
 Im Rahmen unserer studentischen Projektarbeit im Modul "Software Engineering" hat uns der Verein "Mfc-Rossendorf" die Möglichkeit gegeben, eine Anwesenheitserfassung des Modellflugplatzes zu entwickeln. 
 Das System soll es dem "Vereinsflugplatz des Mfc-Rossendorf" in Zukunft erlauben, eine digitalisierte Anwesenheitserfassung/Protokollierung der Piloten zu nutzen, um damit eine nachvollziehbare und kontrollierte Übersicht über den Praxisbetrieb des Vereinsflugplatzes gewährleisten zu können.
@@ -16,16 +16,18 @@ Zusätzlich wird, unter anderem, Herr Brenner das System in Zukunft verwalten.
 *Herr Prof. Dr. Heino Iwe* ist ebenfalls unser Ansprechpartner. Als langjähriges Mitglied des Vereins Mfc-Rossendorf gibt er uns einen tiefen Einblick in das aktuelle bestehende System und deren Nachteile und überwacht ebenfalls den Projektfortschritt.
 Beide Themensteller sind im ständigen Austausch mit Team "E2". Da beide Ansprechpartner im vorherigen Jahr bereits eine studentischen Projektarbeit betreuten, war ihnen das Vorgehen bereits bekannt. 
 
-== Situation zum Semesterbeginn 
+=== Situation zum Semesterbeginn 
 
 Zu Beginn des Moduls SE 2 hatten wir einen umfassenden Überblick in das System und die nötigen funktionalen Anforderungen gewonnen. (Verweis auf 1. Semester-Iteration)
+// TODO
 Da einige Mitglieder aus dem Studiengang Wirtschaftsingenieurwesen (W72) nur im Rahmen eines Ergänzungsmoduls Teil des Projekts waren, wurde unsere Gruppe nach Ablauf des ersten Semesters kleiner. Dadurch veränderten sich die Rollen in unser Gruppe und mussten deshalb in einem der ersten Meetings des zweiten Semesters neu verteilt werden. 
 Unter anderen wurde Simon Herbstrith durch Lenny Reitz vom Posten des Teamleiters abgelöst, und Tsatsralterdene Batchimeg verließ das Team der Analyse.
 //Gespräch mit Professor Anke -> extra Iteration oder hier ausführen?
 //Verweis auf Iteration 
 
-== Team & Rollen
+=== Team & Rollen
 
+// TODO
 Unser Team umfasst, durch die oben beschriebene Verkleinerung der Gruppe (Verweis auf Situation zum Semesterbeginn), 6 Mitgliedern. Die Ansprechpartner des Vereins "Mfc-Rossendorf" und Herrn Zirkelbach blieben unverändert.
 Da in dem zweiten Semester der Fokus nicht mehr ausschließlich auf der theoretischen Analyse lag, haben wir beschlossen, die Teammitglieder der Gruppe Analyse zur Unterstützung mit auf andere Rollen zu verteilen.    
 So übernahm Richard Kleint die zusätzlich neu hinzugekommende Rolle Deployment und Jakob Laufer unterstützte Alexander Heiß in der Rolle des Testers. Außerdem übernahm Alexander Heiß den Entwurf der Weboberfläche und andere Entwurfsaufgaben. Für technischere Entwurfsdetails und die Entwicklung waren Max Haufe, Dirk Zimmermann und Lenny Reitz verantwortlich. 
@@ -68,7 +70,7 @@ a|* Richard Kleint
 |===
 
 
-== Kommunikation & eingesetzte Tools
+=== Kommunikation & eingesetzte Tools
 
 Anders als im vergangenen Semester gab es in SE 2 einen vorgegebenen Termin für Meetings, welcher im Stundenplan festgelegt wurde. 
 Da dieser Zeitpunkt für jedes Teammitglied passte, wurde mittwochs, 17 Uhr zu unseren wöchentlichen Termin für Gruppenmeetings.
@@ -82,7 +84,7 @@ Bei dringenden und kurzen Fragen oder Benachrichtigungen kommunizierten wir per 
 
 
 
-== Dokumentation & eingesetzte Tools
+=== Dokumentation & eingesetzte Tools
 
 Für die Dokumentation übernahmen wir die vorgefertigte Ordnerstruktur aus dem vergangenen Semester und führten diese weiter. Wir erweiterten sie, indem wir zusätzliche Verzeichnisse wie Deployment, Test oder Projektbericht einführten. 
 Obwohl es bei einigen Dokumenten bei der Formatierung Probleme gab, empfanden wir AsciiDoc als ideales Dokumentationsformat. Einschließlich nutzten wir AsciiDoc -PDF und AsciiDoc -Diagramm für die Konvertierung ins PDF-Format. 
@@ -92,7 +94,6 @@ Für Diagramme, Übersichten und Wireframes nutzten wir zusätzlich Tools wie Vi
 Für die einheitliche Strukturierung entwickelten wir Templates bzw. Vorlagen für bestimmte Teile in unserer Dokumentation. 
 So konnten wir unter anderen im Projektmanagement die Iterationspläne einheitlich gestalten und hatten bei den Test-Cases, ähnlich wie bei den Use-Cases, ein einheitliches Format. 
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/docs/project_management/TEMPLATE%20Iteration%20Plan[Template für Iterationsplanung]
@@ -108,5 +109,4 @@ Wir haben Microsoft OneNote für Ablaufpläne und Protokolle verwendet, da wir i
 Als Tool der Planung und Verteilung von Aufgaben nutzten wir GitHub Issues. Obwohl das Tool zu Beginn nicht allen bekannt war, gehörte es am Ende zu den wichtigsten Werkzeugen. 
 In Gruppenmeetings wurden notwendige Issues gemeinsam erstellt und zugeteilt, geschlossene Issues besprochen und der Fortschritt wurde im Iterationsplan notiert. Dieser Vorgang wurde routiniert wöchentlich durchlaufen. Zusätzlich nutzen wir den Iterationsplan als zeitlichen Orientierung und Planung der nächsten Aufgaben.
 
-Wie auch im vergangenen Semester orientierten wir uns an dem OpenUP. Speziell bei den neu geforderten Rollen wie Test und Deployment nutzen wir die dazugehörigen "Work Products" und "Tasks". 
-
+Wie auch im vergangenen Semester orientierten wir uns an dem OpenUP. Speziell bei den neu geforderten Rollen wie Test und Deployment nutzen wir die dazugehörigen "Work Products" und "Tasks".

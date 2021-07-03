@@ -1,35 +1,27 @@
-== Iteration 8 (12.05.21 - 25.05.21) [MH]
+=== Iteration 8 (12.05.21 - 25.05.21) [MH]
 
-=== REST-API
+==== REST-API
 
 Die Iteration 8 beinhaltete zum Großteil die Implementierung des Webservers,
-sowohl vom Frontend, wie auch vom Backend. Max Haufe begann, die REST-API für das bereits
-teiwleise vorhandene Frontend umzusetzen. Wie so oft stellten wir dabei fest, dass das Datenmodell
-erneut überarbeitet werden müsse. Es sollte nicht das letzte mal bleiben. Damit waren aber nun Requests
-möglich, welche Piloten anlegen und abrufen konnten. Desweiteren konnten unter anderem auch Sessions
-nachgetragen und abgerufen werden. Diese Requests wurde mit dem bereits bestehenden Frontend
+sowohl vom Frontend, wie auch vom Backend. Max Haufe begann, die REST-API für das bereits teilweise vorhandene Frontend umzusetzen. Dabei stellten wir relativ schnell fest, dass das zuvor erdachte Datenmodell überarbeitet werden muss. Es sollte nicht das letzte mal bleiben. Damit waren aber nun Requests
+möglich, welche Piloten anlegen und abrufen konnten. Des Weiteren konnten unter anderem auch Sessions nachgetragen und abgerufen werden. Diese Requests wurden mit dem bereits bestehenden Frontend
 verknüpft.
 
-Weiterhin hat Lenny Reitz neue Sichten für das Frontend hinzugefügt. Diese beinhalten das Bearbeiten
-und Reaktivieren eines Piloten. Über die Felder können nun Name, RFID-Kennung und die Rechte bearbeitet werden.
+Weiterhin hat Lenny Reitz neue Sichten für das Frontend hinzugefügt. Diese beinhalten das Bearbeiten und Reaktivieren eines Piloten. Über die Felder konnten nun Name, RFID-Kennung und die Rechte bearbeitet werden.
 
 .Pilot bearbeiten
 ifndef::local-images[:local-images: ../images]
 :imagesdir: {local-images}
 image::Pilot_bearbeiten.png[width=100%, align="center"]
 
-=== Terminal
+==== Terminal
 
-Dirk Zimmermann erstellte die wesentlichen Funktionen zum Zugriff auf das Terminal.
-Dadurch war es am Ende der Iteration möglich, einen Piloten lokal auf dem Terminal an- und
-abzumelden.
+Dirk Zimmermann erstellte die wesentlichen Funktionen zum Zugriff auf das Terminal. Dadurch war es am Ende der Iteration möglich, einen Piloten lokal auf dem Terminal an- und abzumelden.
 
-=== Komponentendiagramm, Test Cases und Deployment
+==== Komponentendiagramm, Test Cases und Deployment
 
-Es wurden Test cases zum An- und Abmelden der Piloten erstellt. Dies geschah durch Alexander Heiß
-und Jakob Laufer.
+Es wurden Test-Cases zum An- und Abmelden der Piloten erstellt. Dies geschah durch Alexander Heiß und Jakob Laufer.
 
-Dirk Zimmermann entwarf mehrere Varianten für das Komponentendiagramm, welche in der nächsten Iteration
-genauer eingeschätzt und diskutiert werden sollten.
+Dirk Zimmermann entwarf mehrere Varianten für das Komponentendiagramm, welche in der nächsten Iteration genauer eingeschätzt und diskutiert werden sollten.
 
 Richard Kleint arbeitete weiter am Deployment.

@@ -108,14 +108,14 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 * momentan befindet sich ein zentrales Flugbuch vor Ort (Vereinsflugplatz des Mfc-Rossendorf), in welches sich manuell eingetragen wird
 * problematisch dabei ist, dass es schwierig unter Verschluss zu halten ist, um es nur autorisierten Mitgliedern zugänglich zu machen
 
-.Zukunftige Systemplattform:
+.Zukünftige Systemplattform:
 * zukünftig soll ein digitales System das physische System ersetzen
 * es soll über ein Terminal Daten einlesen, verarbeiten und sicher über einen Webserver einsehbar und verwaltbar machen
 
 ==== zu integrierende Anwendungen:
 
 // auch Anbindung an Webserver
-* in einem vorausgegangenen Projekt (SE-Projekt: "Wetterstation") enstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Readers ermöglichen sollte
+* in einem vorausgegangenen Projekt (SE-Projekt: "Wetterstation") entstand eine wetterfeste Infrastruktur, die eine Anbindung eines RFID-Scanners ermöglichen sollte
 * zusätzlich existiert bereits ein vereinseigener Webserver, welcher genutzt werden soll
 
 ==== Administratoren
@@ -123,7 +123,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 * sind Vereinsmitglieder des Mfc-Rossendorf
 ** es gibt ca. 3-4 Administratoren 
 ** Anzahl der Admins ändert sich im Laufe der Zeit selten
-* aus rechlichen Gründen, muss die Anwesenheit der Piloten erfasst & protokolliert werden
+* aus rechtlichen Gründen, muss die Anwesenheit der Piloten erfasst & protokolliert werden
 * sind autorisiert auf diese Protokolldaten bzw. Pilotendaten zuzugreifen und sie einzusehen
 * besitzen besondere Zugangsrechte und Bearbeitungsmöglichkeiten: 
 ** Bearbeitung von Pilotendaten (Hinzufügen, Ändern, Deaktivieren)

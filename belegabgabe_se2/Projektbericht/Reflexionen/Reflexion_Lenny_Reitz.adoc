@@ -1,4 +1,4 @@
-=== Lenny Reitz
+==== Lenny Reitz
 .Teamrollen: Teamleiter/Implementierung
 
 // Was habe ich gelernt?

@@ -1,19 +1,19 @@
-== Iteration 10 (09.06.21 - 22.06.21) [AH]
+=== Iteration 10 (09.06.21 - 22.06.21) [AH]
 
 Die 10. Iteration war ursprünglich als Transition und Testphase deklariert, musste jedoch, wie in der Iterationsübersicht 9 beschrieben, auch zur Construction genutzt werden. Das Deployment wurde deshalb in die 11. Iteration gesetzt.
 
-=== Construction
+==== Construction
 
-Im Vordergrund der 10. Iteration stand die Einrichtung des Webserver und die Synchronisation zwischen diesem und dem Terminal. Nachdem das Zusenden nicht mehr in Iteration 9 geschah, erhielten wir nun die Zugangsdaten.
+Im Vordergrund der 10. Iteration stand die Einrichtung des Webserver und die Synchronisation zwischen diesem und dem Terminal. Die Zugangsdaten zum Webserver erhielten wir von Herrn Brenner.
 
 Die bis dato lokal eingerichtete Website sowie das Backend konnten ohne Zwischenfälle auf den Webserver installiert werden.
 
 Des Weiteren wurden Anpassungen der REST-API vorgenommen und weitere Terminalfunktionalitäten implementiert. Aufgrund der Komplexität der Synchronisation wurden einzelne Funktionalitäten, die als nicht-essentiell eingestuft wurden, aus dem Umsetzungsplan entfernt. Insbesondere sind hier die Einstellungen zur Terminalbedienung und die Funktion "Abmelden aller Piloten" zu nennen.
 
 
-=== Dokumentation
+==== Dokumentation
 
-In der Iteration 10 wurden hautpsächlich die Synchronisation zwischen Webserver und Terminal dokumenteirt und das Designdokument aktualisiert.
+In der Iteration 10 wurden hauptsächlich die Synchronisation zwischen Webserver und Terminal dokumentiert und das Designdokument aktualisiert.
 
 Des Weiteren wurde das Deployment-Diagramm erstellt:
 
@@ -24,15 +24,14 @@ image::deployment_diagram.png[width=70%, align="left"]
 
 Auch wurde die Erstellung des Projektberichts durch Jakob Laufer sowie Richard Kleint fortgeführt. Den anderen Teammitgliedern wurden Aufgaben bezüglich der Dokumentationen zugeteilt, die in Iteration 11 umgesetzt wurden (siehe Iterationsübersicht 11).
 
+==== Tests
 
-=== Tests
+Das finale Erstellen von TestCases sowie das tatsächliche Testen wurde innerhalb dieser Iteration ausgiebig ausgeführt und dokumentiert (weitere Informationen siehe Testdokumentation). Aufgrund des nun aufgesetzten Webservers konnte der Kunde die auch Website selbsständig ausprobieren. Im Kundenmeeting wurden deshalb vorab die aktuelle Website sowie die mittlerweile implementieren Funktionen präsentiert.
 
-Das finale Erstellen von TestCases sowie das tatsächliche Testing wurde innerhalb dieser Iteration ausgiebig ausgeführt und dokumentiert. Weitere Informationen finden Sie in der Testdokumentation. Aufgrund des nun aufgesetzten Webserver konnte der Kunde die Website selbsständig ausprobieren. Im Kundenmeeting wurden deshalb vorab die aktuelle Website sowie die mittlerweile implementieren Funktionen präsentiert.
-:hide-uri-scheme:
 [example]
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/belegabgabe_se2/Testdokumentation/Testdokumentation.adoc[Testdokumentation]
 
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]

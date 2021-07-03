@@ -1,9 +1,8 @@
-== Iteration 9 (26.05.21 - 08.06.21) [DZ]
+=== Iteration 9 (26.05.21 - 08.06.21) [DZ]
 
-Iteration 9 war die letzte der vorgesehenen Iterationen der Construction Phase, als solche hatte sie das
-primäre Ziel, die Implementierung großteilig abzuschließen. Es war allerdings abzusehen, dass dieses Ziel nicht erreicht wird, weshalb wir entschieden haben auch die folgende Iteration 10 auch für die Implementierung zu nutzen.
+Iteration 9 war die letzte der vorgesehenen Iterationen der Construction Phase, als solche hatte sie das primäre Ziel, die Implementierung zum großen Teil abzuschließen. Es war allerdings abzusehen, dass dieses Ziel nicht erreicht wird, weshalb wir entschieden haben auch die folgende Iteration 10 auch für die Implementierung zu nutzen.
 
-=== Erstellung von Modellen
+==== Erstellung von Modellen
 
 In dieser Iteration haben wir final nach einem Meeting Prof. Anke das Komponentendiagramm fertiggestellt. Zu klären war, wo der Unterschied zu den Paketdiagrammen war, da sie aus unserer Sicht sehr ähnliche Sachverhalten darstellen.
 
@@ -14,28 +13,27 @@ image::component_diagram.png[width=90%, align="left"]
 
 Das Domainmodell wurde aktualisiert, um neue Erkenntnisse in der Analyse abzubilden, außerdem sollte das Deploymentdiagramm erstellt werden, was jedoch nicht mehr in dieser Iteration umgesetzt werden konnte.
 
-=== Implementierung
+==== Implementierung
 
-Das Team Implementierung hat auf dem Webserver das Frontend vervollständigt und es responsive gestaltet. Außerdem wurde der Login implementiert. Die Synchronisationsmöglichkeiten für das Terminal wurden fertig erforscht und für Flugsessions bereits umgesetzt. Da noch Anpassungen im Backend des Webservers nötig waren, ging die Terminalfunktionalität jedoch langsamer voran. Wir haben festgestellt, dass wir den Zugang zum Webserver benötigen, da wir nur so die die Synchronisierung komplettieren konnten. Entsprechende haben wir die Themensteller kontaktiert, den Zugang sollten wir jedoch erst in Iteration 10 bekommen.
+Das Team Implementierung hat auf dem Webserver das Frontend vervollständigt und es responsive gestaltet. Außerdem wurde Login und Zugriffsschutz implementiert. Die Synchronisationsmöglichkeiten für das Terminal wurden wurden recherchiert und für Flugsessions bereits umgesetzt. Da noch Anpassungen im Backend des Webservers nötig waren, ging die Terminalfunktionalität jedoch langsamer voran. Wir stellten fest, dass wir den Zugang zu einem frei zugänglichen Webserver benötigen, da wir nur so die die Synchronisierung komplettieren konnten. Entsprechend haben wir die Themensteller kontaktiert, den Zugang sollten wir jedoch erst in Iteration 10 bekommen.
 
-=== Weitere Fortschritte
+==== Weitere Fortschritte
 
 Die Test-Cases wurden von Jakob Laufer komplett erstellt, mussten jedoch noch einmal korrigiert werden.
 
-Zudem hat Alexander Heiß die Wireframes fertig erstellt.
+Zudem hat Alexander Heiß die Wireframes fertiggestellt.
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/tree/master/docs/requirements/images/Wireframes[Wireframes]
 
 In der Dokumentation mussten noch Bilder und Verlinkungen nachträglich eingefügt werden. Wir haben ebenfalls damit begonnen, für den Projektbericht Ideen zu sammeln.
 
-=== Kontakt mit den Themenstellern
+==== Kontakt mit den Themenstellern
 
 Die Kommunikationsprobleme mit den Themenstellern bestanden noch immer, waren jedoch weniger stark ausgeprägt. Ein Meeting fand in dieser Iteration nicht statt.
 
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]

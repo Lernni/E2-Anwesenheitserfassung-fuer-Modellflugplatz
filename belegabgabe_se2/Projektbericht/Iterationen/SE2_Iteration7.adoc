@@ -1,8 +1,8 @@
-== Iteration 7 (26.04.21 - 09.05.21) [LR]
+=== Iteration 7 (26.04.21 - 09.05.21) [LR]
 
 Iteration 7 markiert den Beginn der Entwicklung von Frontend und Backend. Allmählich verlagert sich die Verteilung der Aufgaben auf das Team Entwicklung, da nun die grundlegenden Entwurfsentscheidungen getroffen wurden und erste Umsetzungsaufgaben verteilt sind. Durch die Erfahrung eines ersten Prototypen aus Iteration 6, welcher das Zusammenspiel von Datenbank, Vue Frontend und Python Backend gezeigt hatte, konnte nun mit der Umsetzung der eigentlichen Aufgabenstellung begonnen werden. Wichtig für den fortlaufenden Prozess des Projekts war auch der Erhalt der Hardware und die Umstrukturierung der Projektorganisation.
 
-=== Erstellung des Frontends
+==== Erstellung des Frontends
 
 Im wesentlichen begann Lenny Reitz mit der Erstellung erster Seiten für das Frontend, wobei zunächst die Realisierung der im Entwurf beschlossenen Wireframes im Vordergrund stand. Die Funktionalität der Webseite war erstmal nebensächlich. Es ging um die reine Umsetzbarkeit unserer erdachten Designelemente und Strukturen. Da die Wireframes bereits Designvorgaben vorsahen, war es nicht notwendig über Kleinigkeiten im Design nachzudenken, was die Entwicklungsarbeit sonst deutlich in die Länge gezogen hätte.
 
@@ -24,39 +24,37 @@ ifndef::local-images[:local-images: ../images]
 :imagesdir: {local-images}
 image::Umsetzung_Flugsession_nachtragen.png[width=100%, align="center"]
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/ce9224d81bbc2e39366590eb2833b87c3a59417a/src/webserver/frontend/src/views/NewSession.vue#L83[Codebeispiel Kalender]
 
-=== Beschaffung der Hardware
+==== Beschaffung der Hardware
 
 Am Anfang der Iteration hatte Max Haufe noch einmal eine Mail an Herrn Brenner geschickt, nun an die neue Mailadresse, bezüglich Beschaffung des Raspis. Nach vielen Kommunikationsschwierigkeiten der vergangenen Iterationen sollte es jetzt zu einer Übergabe der Hardware kommen. Max Haufe und Herr Brenner vereinbarten telefonisch einen Übergabetermin an der HTW. Am 04.05. konnte Max Haufe dann bestätigen, dass er die Hardware erhalten hat, mehr als 8 Wochen nach dem zunächst mit den Themenstellern abgesprochenen Termin. Jetzt konnte auch die Arbeit am Terminal beginnen. 
 
 Leider fehlte bei der Übergabe der Flugleiterknopf und die RGB-LED. In dem Moment haben wir das erstmal so hingenommen. Im Nachhinein betrachtet hätte man an dieser Stelle schon nachfragen müssen, wann wir diese Komponenten bekommen, da die LED und der Knopf noch bis zur Belegabgabe fehlten.
 
-=== Entwurf der REST-API
+==== Entwurf der REST-API
 
 Zeitgleich mit der Erstellung des Frontends wurden auch erste Schritte zur Umsetzung von Backend und Datenbank des Webservers vorgenommen. Zuerst war es uns wichtig den Aufbau der Schnittstelle festzulegen. Das bedeutete in unserem Fall, wir mussten uns über die Requests klar werden, die das Frontend an das Backend senden wird, um Zugriff auf die Datenbank zu bekommen. Dazu überlegten das Team Entwurf und Alexander Heiß gemeinsam, welche Requests unbedingt in Frage kommen und wie diese strukturiert werden sollen. Diese Requests wurden dann in einem ersten Entwurf als Tabelle in das Design-Dokument vermerkt und konnten so als Grundlage für das Backend verwendet werden:
 
-:hide-uri-scheme:
 [example]
 
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/9ed3a3f8855c6e7cf3b19bf2c02195f70bab5a32/docs/development/design.adoc#aufbau-der-rest-api[Erster Entwurf der REST-API]
 
 Ein Großteil der Requests aus dem ersten Entwurf wurde genauso umgesetzt.
 
-=== Veränderungen in der Projektorganisation
+==== Veränderungen in der Projektorganisation
 
 Bis zur 7. Iteration war das Schreiben von Iterationsplänen für uns eher eine Last als ein Gewinn in der Projektorganisation. Der erste Fachaustausch zum Thema Projektmanagement hat uns jedoch umgestimmt. Eines der anderen Teams hatte uns in diesem Meeting inspiriert, die Iterationspläne stärker in unsere Arbeit einzubeziehen. Erstmals in Iteration 8 haben wir dann in jedem Team-Meeting den Fortschritt unserer Aufgaben anhand des Iterationsplans geschätzt. Das hat uns im Nachhinein betrachtet sehr bei der Aufgabenverteilung und Struktur der Projektorganisation geholfen. Missverständnisse zu Aufgaben konnten so vermieden werden und es wurde deutlich, welche Aufgaben am meisten Zeit in Anspruch nehmen.
 
-=== Weitere Entwurfsaufgaben
+==== Weitere Entwurfsaufgaben
 
 * Das Team Analyse war mit kleineren Anpassungen des Entwurfs in der Dokumentation beschäftigt
 * Alexander Heiß überarbeitete noch einige Wireframes nachträglich, da beim Erstellen des Frontends noch einige Ungenauigkeiten in den Wireframes aufgefallen waren. Außerdem erstellte er die ersten konkreten TestCases.
 * Dirk Zimmermann erstellte den ersten Entwurf eines Paketdiagramms für den Aufbau des Terminals
 
-=== Essence-Diagramm - Aktueller Stand
+==== Essence-Diagramm - Aktueller Stand
 
 .Aktueller Stand im Essence-Diagramm
 ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
