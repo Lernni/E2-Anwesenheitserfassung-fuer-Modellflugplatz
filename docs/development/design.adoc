@@ -338,17 +338,9 @@ Im oberen Teil des Wireframes "Startseite Admin" sind die aktuell aktiven Pilote
 Unterhalb dieses Bereiches sind weitere Funktionalitäten für angemeldete Admins verfügbar.
 
 
-.Wireframe: Login
-image::Login_V3.png[Startseite Admin, width=70%, align="center"]
-
 .Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
 image::Startseite_Admin_V3.png[Startseite Admin, width=70%, align="center"]
 
-.Wireframe: Startseite (Admin), zeigt aktuell aktive Piloten auf dem Flugplatz
-image::Startseite_Admin_V3.png[Startseite Admin, width=70%, align="center"]
-
-.Wireframe: Startseite (Mitglied), zeigt aktuell aktive Piloten auf dem Flugplatz
-image::Startseite_Mitglied_V3.png[Startseite Admin, width=70%, align="center"]
 
 Im folgendem Abschnitt sind mögliche Einstellungen verfügbar.
 
