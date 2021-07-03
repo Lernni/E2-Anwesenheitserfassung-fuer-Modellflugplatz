@@ -3,6 +3,8 @@
 Iteration 9 war die letzte der vorgesehenen Iterationen der Construction Phase, als solche hatte sie das
 primäre Ziel, die Implementierung großteilig abzuschließen. Es war allerdings abzusehen, dass dieses Ziel nicht erreicht wird, weshalb wir entschieden haben auch die folgende Iteration 10 auch für die Implementierung zu nutzen.
 
+=== Erstellung von Modellen
+
 In dieser Iteration haben wir final nach einem Meeting Prof. Anke das Komponentendiagramm fertiggestellt. Zu klären war, wo der Unterschied zu den Paketdiagrammen war, da sie aus unserer Sicht sehr ähnliche Sachverhalten darstellen.
 
 .Komponentendiagramm
@@ -12,7 +14,11 @@ image::component_diagram.png[width=90%, align="left"]
 
 Das Domainmodell wurde aktualisiert, um neue Erkenntnisse in der Analyse abzubilden, außerdem sollte das Deploymentdiagramm erstellt werden, was jedoch nicht mehr in dieser Iteration umgesetzt werden konnte.
 
+=== Implementierung
+
 Das Team Implementierung hat auf dem Webserver das Frontend vervollständigt und es responsive gestaltet. Außerdem wurde der Login implementiert. Die Synchronisationsmöglichkeiten für das Terminal wurden fertig erforscht und für Flugsessions bereits umgesetzt. Da noch Anpassungen im Backend des Webservers nötig waren, ging die Terminalfunktionalität jedoch langsamer voran. Wir haben festgestellt, dass wir den Zugang zum Webserver benötigen, da wir nur so die die Synchronisierung komplettieren konnten. Entsprechende haben wir die Themensteller kontaktiert, den Zugang sollten wir jedoch erst in Iteration 10 bekommen.
+
+=== Weitere Fortschritte
 
 Die Test-Cases wurden von Jakob Laufer komplett erstellt, mussten jedoch noch einmal korrigiert werden.
 
@@ -25,5 +31,14 @@ https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/tree/mas
 
 In der Dokumentation mussten noch Bilder und Verlinkungen nachträglich eingefügt werden. Wir haben ebenfalls damit begonnen, für den Projektbericht Ideen zu sammeln.
 
-Die Kommunikationsprobleme mit den Themenstellern bestanden noch immer, waren jedoch weniger stark ausgeprägt.
+=== Kontakt mit den Themenstellern
+
+Die Kommunikationsprobleme mit den Themenstellern bestanden noch immer, waren jedoch weniger stark ausgeprägt. Ein Meeting fand in dieser Iteration nicht statt.
+
+=== Essence - Aktueller Stand
+
+.Essence
+ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
+:imagesdir: {docs-essence}/project_status
+image::Iteration9.png[width=90%, align="left"]
 
