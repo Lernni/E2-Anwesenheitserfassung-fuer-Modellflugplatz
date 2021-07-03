@@ -64,9 +64,9 @@ Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produkt
 Wir hatten durch das feste Gruppenmeeting am Mittwoch eine gewisse Struktur bekommen und versuchten Fehler (u.a. mangelnde Iterationsplanung) aus der Vergangenheit jetzt zu vermeiden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise durchzusetzten.
 
 
-=== Essence - Aktueller Stand
+=== Essence-Diagramm - Aktueller Stand
 
-.Essence
-ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
-:imagesdir: {docs-essence}/project_status
-image::Iteration5.png[width=90%, align="left"]
+.Aktueller Stand im Essence-Diagramm
+ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
+:imagesdir: {docs-project-management}/images/project_status
+image::Iteration5.png[width=100%]

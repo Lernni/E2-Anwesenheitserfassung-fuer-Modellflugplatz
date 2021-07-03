@@ -16,9 +16,9 @@ Ebenfalls nach dem Kundenmeeting konnte ein erster Entwurf des Deployment Plans 
 
 Trotz der erschwerten Kommunikation mit den Themenstellern konnten viele Aufgaben abgeschlossen werden und auch viele neue Aufgaben angefangen werden. 
 
-=== Essence - Aktueller Stand
+=== Essence-Diagramm - Aktueller Stand
 
-.Essence
-ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
-:imagesdir: {docs-essence}/project_status
-image::Iteration6.png[width=90%, align="left"]
+.Aktueller Stand im Essence-Diagramm
+ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
+:imagesdir: {docs-project-management}/images/project_status
+image::Iteration6.png[width=100%]

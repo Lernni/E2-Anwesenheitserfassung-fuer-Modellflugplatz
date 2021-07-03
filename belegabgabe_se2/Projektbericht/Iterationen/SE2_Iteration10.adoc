@@ -32,12 +32,9 @@ Das finale Erstellen von TestCases sowie das tatsächliche Testing wurde innerha
 [example]
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/belegabgabe_se2/Testdokumentation/Testdokumentation.adoc[Testdokumentation]
 
-=== Essence - Aktueller Stand
+=== Essence-Diagramm - Aktueller Stand
 
-.Essence
-ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
-:imagesdir: {docs-essence}/project_status
-image::Iteration10.png[width=90%, align="left"]
-
-
-
+.Aktueller Stand im Essence-Diagramm
+ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
+:imagesdir: {docs-project-management}/images/project_status
+image::Iteration10.png[width=100%]

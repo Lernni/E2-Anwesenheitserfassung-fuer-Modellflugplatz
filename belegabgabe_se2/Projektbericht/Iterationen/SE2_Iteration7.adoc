@@ -55,3 +55,10 @@ Bis zur 7. Iteration war das Schreiben von Iterationsplänen für uns eher eine 
 * Das Team Analyse war mit kleineren Anpassungen des Entwurfs in der Dokumentation beschäftigt
 * Alexander Heiß überarbeitete noch einige Wireframes nachträglich, da beim Erstellen des Frontends noch einige Ungenauigkeiten in den Wireframes aufgefallen waren. Außerdem erstellte er die ersten konkreten TestCases.
 * Dirk Zimmermann erstellte den ersten Entwurf eines Paketdiagramms für den Aufbau des Terminals
+
+=== Essence-Diagramm - Aktueller Stand
+
+.Aktueller Stand im Essence-Diagramm
+ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
+:imagesdir: {docs-project-management}/images/project_status
+image::Iteration7.png[width=100%]

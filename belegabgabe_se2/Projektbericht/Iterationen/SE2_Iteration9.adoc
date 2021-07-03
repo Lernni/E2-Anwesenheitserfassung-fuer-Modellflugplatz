@@ -35,10 +35,9 @@ In der Dokumentation mussten noch Bilder und Verlinkungen nachträglich eingefü
 
 Die Kommunikationsprobleme mit den Themenstellern bestanden noch immer, waren jedoch weniger stark ausgeprägt. Ein Meeting fand in dieser Iteration nicht statt.
 
-=== Essence - Aktueller Stand
+=== Essence-Diagramm - Aktueller Stand
 
-.Essence
-ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
-:imagesdir: {docs-essence}/project_status
-image::Iteration9.png[width=90%, align="left"]
-
+.Aktueller Stand im Essence-Diagramm
+ifndef::docs-project-management[:docs-project-management: ../../../docs/project_management]
+:imagesdir: {docs-project-management}/images/project_status
+image::Iteration9.png[width=100%]
