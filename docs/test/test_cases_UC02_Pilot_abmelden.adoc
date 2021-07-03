@@ -19,11 +19,11 @@
 |2
 |Negativ, Manuell
 |Pilot abgemeldet
-|Pilot hält RFID-Karte an Terminal
+|Pilot hält RFID-Karte an Terminal und möchte sich abmelden
 |Pilot kann sich nicht erneut abmelden, LED-Rückmeldung: Grün (da Anmeldung), Pilot angemeldet in System
 
 |3
-|Positiv, Manuell
+|Negativ, Manuell
 |Pilot ist angemeldet
 |Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
 |Das System meldet den Piloten korrekt abwechselnd an und ab, die Sessions werden aber nicht aufgrund der geringen Zeit in die Datenbank eingetragen
@@ -52,7 +52,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Pilot "Max Mustermann" hat gültigen RFID-Ausweis und eine offene Flugsession
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -68,7 +68,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Pilot "Max Mustermann" hat gültigen RFID-Ausweis und keine offene Flugsession
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -84,7 +84,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Pilot "Max Mustermann" hat gültigen RFID-Ausweis und eine offene Flugsession
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -100,7 +100,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Internetverbindung des Terminals unterbrochen
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
