@@ -44,12 +44,6 @@ a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _W
 |Die RFID-Karten sind nun im System eingetragen und können den Piloten zugewiesen werden
 
 |5
-|Negativ, manuell
-a|* Ein Pilot besitzt eine konkrete RFID-Karte
-|Diese RFID-Karte wird deaktiviert
-|Es erscheint ein Fehler, dass die Karte nicht deaktiviert werden kann, da in Benutzung
-
-|6
 |Positiv, manuell
 a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |* Diese RFID-Karte wird vom Piloten entfernt
@@ -61,6 +55,8 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 
 === TestCases
 
+Achtung: Die Einstellungen wurden nicht am Terminal implementiert, es wird bei den entsprechenden TestCases lediglich die Synchronisation zwischen Website - Backend - Terminal überprüft
+
 ==== TID 1
 
 [%header, cols=4*]
@@ -70,10 +66,13 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
+*Abmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Nein
+*Flugleiter: 1 Sek; Taster: Ja; LED: Gelb; Blinken Ja
+*Alle Piloten abmelden: 7 Sek; Taster: Nein; LED: Grün; Blinken Nein
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -86,10 +85,10 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+|13:00 Uhr
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -102,10 +101,10 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+|10 Min
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -118,10 +117,10 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
+|0x12345678A
+|Erfolgreich
+|/
+|Erfolgreich
 
 |===
 
@@ -134,25 +133,9 @@ a|* Ein Pilot besitzt eine konkrete RFID-Karte
 |Nachgebessert
 |Akzeptanztest
 
-| 
-|
-|
-|
-
-|===
-
-==== TID 6
-
-[%header, cols=4*]
-|===
-|Eingegebene Werte
-|Erfolgreich?
-|Nachgebessert
-|Akzeptanztest
-
-| 
-|
-|
-|
+|Nicht implementiert (wurde vom Kunden nicht als relevant eingestuft)
+|/
+|/
+|/
 
 |===
