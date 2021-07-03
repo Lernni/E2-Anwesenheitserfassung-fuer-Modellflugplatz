@@ -312,7 +312,7 @@ Weitere Festlegungen zur Darstellung und Bedienung der Website:
 Für eine Übersicht der verschiedenen Wireframes und deren Beziehungen wurde folgendes Diagramm erstellt:
 
 .Verlinkung/Zusammenhänge zwischen Wireframes
-image::wireframe_overview.png[Übersicht Wireframes, width=70%, align="center"]
+image::wireframe_overviewV2.png[Übersicht Wireframes, width=70%, align="center"]
 
 Das Wireframe "Startseite Admin" ist nicht in Use-Cases platziert und wird deshalb im Folgenden erläutert. Aus diesem Wireframe lässt sich ebenso das Wireframe "Startseite" für Nicht-Admins ableiten, bei welchem lediglich die Admin- sowie der Pilotenbereiche nicht vorhanden sind (siehe Startseite bei Wireframes). Beide Seiten sind nur durch einen Login mit Nutzername und Passwort erreichbar (siehe Login-Seite bei Wireframes).
 
