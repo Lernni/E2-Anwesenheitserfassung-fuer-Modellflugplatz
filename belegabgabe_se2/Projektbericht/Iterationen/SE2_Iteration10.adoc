@@ -20,7 +20,7 @@ Des Weiteren wurde das Deployment-Diagramm erstellt:
 .Deployment_Diagramm
 ifndef::docs-deployment[:docs-deployment: ../../../docs/deployment]
 :imagesdir: {docs-deployment}/images
-image::deployment_diagram.png[width=90%, align="left"]
+image::deployment_diagram.png[width=70%, align="left"]
 
 Auch wurde die Erstellung des Projektberichts durch Jakob Laufer sowie Richard Kleint fortgeführt. Den anderen Teammitgliedern wurden Aufgaben bezüglich der Dokumentationen zugeteilt, die in Iteration 11 umgesetzt wurden (siehe Iterationsübersicht 11).
 
@@ -32,10 +32,12 @@ Das finale Erstellen von TestCases sowie das tatsächliche Testing wurde innerha
 [example]
 https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/master/belegabgabe_se2/Testdokumentation/Testdokumentation.adoc[Testdokumentation]
 
+=== Essence - Aktueller Stand
+
 .Essence
 ifndef::docs-essence[:docs-essence: ../../../docs/project_management/images]
-:imagesdir: {docs-deployment}/project_status
-image::"Iteration 10.png"[width=90%, align="left"]
+:imagesdir: {docs-essence}/project_status
+image::Iteration10.png[width=90%, align="left"]
 
 
 
