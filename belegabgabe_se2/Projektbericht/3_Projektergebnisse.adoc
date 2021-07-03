@@ -1,3 +1,27 @@
-= Projektergebnisse
+= Projektergebnisse 
+
+== Softwaresystem [LR]
+
+
+== Reflexionen der Teammitglieder
 
 :reflexionen: Reflexionen
+<<<
+
+include::{reflexionen}/Reflexion_Lenny_Reitz.adoc[]
+<<<
+
+include::{reflexionen}/Reflexion_Alexander_Heiß.adoc[]
+<<<
+
+include::{reflexionen}/Reflexion_Max_Haufe.adoc[]
+<<<
+
+include::{reflexionen}/Reflexion_Dirk_Zimmermann.adoc[]
+<<<
+
+include::{reflexionen}/Reflexion_Jakob_Laufer.adoc[]
+<<<
+
+include::{reflexionen}/Reflexion_Richard_Kleint.adoc[]
+<<<

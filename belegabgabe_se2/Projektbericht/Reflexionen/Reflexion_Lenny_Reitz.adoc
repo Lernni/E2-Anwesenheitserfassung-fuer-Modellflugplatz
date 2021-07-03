@@ -1,0 +1,18 @@
+=== Lenny Reitz (Teamleiter)
+
+// Was habe ich gelernt?
+// Worauf bin ich stolz?
+// Was hat gut funktioniert?
+// Was würde ich beim nächsten Projekt anders machen?
+
+Als Ende letztes Semester die Frage nach einem neuen Teamleiter aufkam, habe ich mich freiwillig für diese Aufgabe gemeldet. Ich hatte zuvor noch kein Team geleitet und an keinem vergleichsweise umfangreichen Softwareprojekt mitgewirkt. Deshalb war die Rolle des Teamleiters Neuland und eine Herausforderung für mich. Da mir die Aufgabenstellung und das Arbeiten im Team in SE 1 sehr gefallen hat, habe ich die Herausforderung angenommen und das Projekt auch als Chance gesehen, mich persönlich weiterzuentwickeln.
+
+Zu Beginn von SE 2 musste ich mich erstmal an die neue Rolle gewöhnen. Wir mussten im Team eine neue Struktur finden und die genaue Umsetzung planen. Das war ziemlich aufwendig und es wirkte für mich zunächst so, als würde das Projekt nicht vorankommen. Als wir dann jedoch die Hardware da hatten und wir mit der Construction-Phase beginnen konnten, war der stetige Projektfortschritt für alle sichtbar, was die Motivation des Teams gesteigert und mich in der Rolle des Teamleiters bestätigt hat.
+
+Im Laufe der 2 Semester SE und vor allem als Teamleiter habe ich gelernt, wie wichtig gute Kommunikation im Team ist. Es ist sehr wichtig verstanden zu werden und auch andere zu verstehen. Das sollte nicht nur auf genaue Aufgabenstellungen und konkrete Organisation bezogen werden, sondern auch auf die Gespräche untereinander und mit dem Kunden. Ich habe versucht, bei allen Projekt-Entscheidungen das gesamte Team mit einzubeziehen und bei allen Diskussionen und Aufgabenstellungen Feedback zu geben und einzuholen, um die Projektplanung und den Projektstand ständig zu verbessern. 
+
+Ich denke, das ist mir ganz gut gelungen. Ein Großteil der Ziele, die wir für unser Projekt gesetzt haben, konnten wir umsetzen und das Resultat der Gruppe ist durchaus beeindruckend. Es hat sehr viel Spaß gemacht und mich wirklich gefreut, zu sehen, wie aus der vielen geleisteten Arbeit aller Teammitglieder Stück für Stück ein funktionierendes Produkt entstanden ist. Ich hätte gerne noch weiter an dem Projekt gearbeitet, wenn es der Zeitrahmen erlaubt hätte.
+
+Aus Sicht des Entwicklers habe ich auch viele Erkenntnisse gewinnen können. Mit JavaScript und Webframeworks hatte ich zu Beginn des Semesters kaum Erfahrung. Das Frontend mit Vue.js umzusetzen, war zunächst eine große Herausforderung, aber es hat mir sehr viel Spaß gemacht, mich in dieses Framework einzuarbeiten. Ich denke, auf Vue.js und andere Frameworks werde ich in Zukunft auf jeden Fall zurückgreifen.
+
+Im Nachhinein betrachtet würde ich viele Entscheidungen genauso treffen, wie ich es in diesem Semester getan habe. In einem neuen Projekt würde ich allerdings versuchen, das Projektmanagement mit mehr Weitsicht zu gestalten. Es war oftmals schwierig den Projektfortschritt zeitlich zu messen. Der Übergang von Elaboration- in Construction-Phase und die Vorbereitungen auf die Endabgabe hätten vermutlich früher beginnen können. Wir haben natürlich versucht, den zeitlichen Rahmen abzugrenzen und aus auch intern im Team Deadlines gesetzt. Aber ich denke, hätten wir den Fokus bereits früh im Semester mehr auf die Endabgabe gelegt, hätten wir wahrscheinlich einige Features mehr umsetzen können.
