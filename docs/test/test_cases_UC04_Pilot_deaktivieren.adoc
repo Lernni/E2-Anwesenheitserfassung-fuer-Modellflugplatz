@@ -72,13 +72,13 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 | Flugsession ist noch nicht mit Webserver Synchronisiert
 | Nicht Erfolgreich, da Synchronisation nicht hinreichend gut implementiert
-| Ausstehend
-|
+| Wird nicht mehr innerhalb dieser Projektphase implementiert
+| X
 
 | Flugsession ist mit Webserver Synchronisiert
 | Erfolgreich
 | /
-|
+| Erfolgreich
 
 |===
 
@@ -93,8 +93,8 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 | Pilot: alexander_heiss
 | Nicht erfolgreich
-| Ausstehend
-|
+| Wird nicht mehr innerhalb dieser Projektphase implementiert
+| X
 
 |===
 
