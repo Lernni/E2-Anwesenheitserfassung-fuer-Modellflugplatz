@@ -88,7 +88,7 @@ Folgende Befehle holen das Install-Skript:
 
   sudo ./install.sh
 
-Nachdem das Install-Skript ausgeführt wurde, sollte das Frontend unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
+Nachdem das Install-Skript ausgeführt wurde, sollte das Frontend unter http://localhost:8080 und das Backend unter http://localhost:5000/api//api/ erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
 
 Initial wird ein Admin-Nutzer angelegt. Dieser muss zunächst unter dem Nutzernamen `admin` registriert werden. Danach kann das System weiter über das Frontend konfiguriert werden.
 
@@ -178,7 +178,7 @@ WARNING: Achtung: Beim Ausführen der folgenden Befehle werden die Einstellungen
 
   sudo ./build.sh
 
-Nachdem das Skript ausgeführt wurde, sollte das Frontend wieder unter http://localhost:8080 und das Backend unter http://localhost:5000 erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
+Nachdem das Skript ausgeführt wurde, sollte das Frontend wieder unter http://localhost:8080 und das Backend unter http://localhost:5000/api/ erreichbar sein. Das Konsolenfenster kann geschlossen werden, das aufgerufene Backend wird im Hintergrund laufen.
 
 Sollte der Fehler noch nicht behoben sein, dann kann ein erneutes Ausführen des Install-Skripts (siehe Systemeinrichtung) hilfreich sein.
 
@@ -306,8 +306,8 @@ die Verbindung.
 
 === Reparatur
 
-Es empfielt sich, eine Neuinstallation des Terminals mit `build.sh` zu machen.
-Dabei wird die Datenbak gelöscht, es empfielt sich daher, ein Backup anzufertigen
+Es empfiehlt sich, eine Neuinstallation des Terminals mit `build.sh` zu machen.
+Dabei wird die Datenbank gelöscht, es empfiehlt sich daher, ein Backup anzufertigen
 
 === Datenbank zurücksetzen
 
