@@ -24,6 +24,8 @@ image::deployment_diagram.png[width=70%, align="left"]
 
 Auch wurde die Erstellung des Projektberichts durch Jakob Laufer sowie Richard Kleint fortgeführt. Den anderen Teammitgliedern wurden Aufgaben bezüglich der Dokumentationen zugeteilt, die in Iteration 11 umgesetzt wurden (siehe Iterationsübersicht 11).
 
+Mit Blick auf die Dokumentation der Software in der nächsten Iteration entschieden wir uns gegen eine Generation der Dokumentation aus dem Code mit JSDoc oder ähnlichen Tools. Das Team Entwicklung versuchte die Dokumentation mit JSDoc zu erstellen. Jedoch war das Ergebnis der generierten Dokumentation nicht sehr aufschlussreich, unübersichtlich und für unsere Zwecke zu sehr von der eigentlich Codebasis entkoppelt. Außerdem ist die Menge an Code aus unserer Sicht zu klein für ein Tool wie JSDoc oder ähnliches. Daher entschieden wir die Dokumentation im Code selbst ausführlicher zu gestalten und die Softwaredokumentation manuell anzufertigen.
+
 ==== Tests
 
 Das finale Erstellen von TestCases sowie das tatsächliche Testen wurde innerhalb dieser Iteration ausgiebig ausgeführt und dokumentiert (weitere Informationen siehe Testdokumentation). Aufgrund des nun aufgesetzten Webservers konnte der Kunde die auch Website selbsständig ausprobieren. Im Kundenmeeting wurden deshalb vorab die aktuelle Website sowie die mittlerweile implementieren Funktionen präsentiert.

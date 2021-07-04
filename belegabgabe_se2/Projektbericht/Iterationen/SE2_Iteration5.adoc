@@ -43,10 +43,8 @@ https://github.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/blob/mas
 
 Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen Stand.
 
-Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.
-
 Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
-Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, bekahmen wir die Sie zu diesem Zeitpunkt nicht.
+Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, bekamen wir die Sie zu diesem Zeitpunkt nicht.
 So verzögerte sich unsere Arbeitsplanung etwas nach hinten hinten und musste etwas überarbeitet werden. 
 Schwierigkeiten gab es leider nicht nur beim Versenden der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. In der darauffolgenden Iteration wird beschrieben, wie wird dieses Problem klären konnten.
 
