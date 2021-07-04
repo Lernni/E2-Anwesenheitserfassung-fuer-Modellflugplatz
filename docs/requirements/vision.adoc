@@ -146,7 +146,7 @@ So soll ein digitales System entstehen, welches frei von Unsicherheiten und bür
 ** in der Vergangenheit: 
 *** manuelles Eintragen in ein physisches Flugbuch vor Ort
 *** war für jeden einsehbar und durch äußere Einflüsse (Wetter, Vandalisten) ungeschützt  
-** zukünflich mit unserem System:  
+** zukünftig mit unserem System:  
 *** kann sich über einen RFID-Ausweis am Terminal identifizieren (An-/Abmeldung)
 *** bekommt vom Terminal ein visuelles Feedback in Form einer LED
 *** kann das derzeitige Aufkommen der auf dem Flugplatz über eine Webanwendung einsehen

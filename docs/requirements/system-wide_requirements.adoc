@@ -1,4 +1,4 @@
-= System-Wide Requirements: {project-name}
+= System-Wide Requirements
 Jakob Laufer <jakob.laufer@htw-dresden.de>; Tsatsralterdene Batchimeg <tsatsralterdene.batchimeg@htw-dresden.de>; Richard Kleint <richard.kleint@htw-dresden.de>; Max Haufe <max.haufe@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>; Simon Herbstrith <simon.herbstrith@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -45,7 +45,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 *** Antwort: Leuchten der LED
 *** Antwortmetrik: nach festgelegten Statusmeldungen
 
-* *NFAU-2*: Online-Hilfe: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
+* *NFAU-2*: Bedienungsanleitung: Bedeutung der Statusmeldungen der LED als Bedienungsanleitung für Piloten sichtbar machen
 
 // tag::nfau3[]
 * *NFAU-3*: Benutzerfreundlichkeit: Verwendung der gleichen Weboberfläche für den Webserver auf Smartphone und Desktop-PC verlangt eine Anpassung der Webseite an die Fenstergröße (responsive).

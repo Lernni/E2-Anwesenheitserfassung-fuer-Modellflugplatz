@@ -35,7 +35,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |Mitglied
 
 |Pilot
-|ein Mitglied, welches den Flugplatz nutzt und sich über einen RFID-Ausweis identifzieren kann
+|ein Mitglied, welches den Flugplatz nutzt und sich über einen RFID-Ausweis identifizieren kann
 |-
 
 |Administrator
@@ -128,7 +128,7 @@ a|
 |Knopf, Reset-Taste, Flugleiter-Knopf
 
 |RGB-LED
-|ein Systembestandteil zur Ausgabe, das den Piloten beim An- und Abmelden verschiedene Rekationen/Zustände des Systems durch verschiedene Farben, Signale verdeutlicht
+|ein Systembestandteil zur Ausgabe, das den Piloten beim An- und Abmelden verschiedene Reaktionen/Zustände des Systems durch verschiedene Farben, Signale verdeutlicht
 |LED, Meldeleuchte
 
 |RFID-Ausweis
@@ -136,7 +136,7 @@ a|
 |RFID-Tag, Ausweis, RFID-Karte
 
 |RFID-Scanner
-|ein Systembestanteil zur Eingabe, das dem System zur Identifizierung eines Piloten am Flugplatz dient
+|ein Systembestandteil zur Eingabe, das dem System zur Identifizierung eines Piloten am Flugplatz dient
 |Scanner, RFID-Reader, Reader
 
 |Raspberry Pi
@@ -156,7 +156,7 @@ a|
 |Abkürzung|Bedeutung|Erläuterung
 
 |RFID
-|engl.: "radio-frequency idenfication", Identifikation mittels elektromagnetischer Wellen
+|engl.: "radio-frequency identification", Identifikation mittels elektromagnetischer Wellen
 |Kommunikationsart zwischen Ausweis und Scanner
 
 |Raspi
@@ -198,5 +198,3 @@ a|
 |Kennung
 
 |===
-
-
