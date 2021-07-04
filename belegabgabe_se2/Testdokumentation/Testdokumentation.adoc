@@ -1,5 +1,5 @@
 // --- 1. Projektthema -------------------------
-= SE II - Testdokumentation
+= Testdokumentation
 // --- 2. Teammitglieder -----------------------
 Jakob Laufer <jakob.laufer@htw-dresden.de>; Alexander Heiß <alexander.heiß@htw-dresden.de>;
 // --- 3. Abgabedatum --------------------------
@@ -116,6 +116,9 @@ Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen
 |/
 
 |===
+
+[.landscape]
+<<<
 
 == Testfallbeschreibung & Testergebnisse
 

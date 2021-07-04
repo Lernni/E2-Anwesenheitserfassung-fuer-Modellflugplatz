@@ -1,5 +1,5 @@
 // --- 1. Projektthema -------------------------
-= SE II - Entwicklerdokumentation
+= Entwicklerdokumentation
 // --- 2. Teammitglieder -----------------------
  Max Haufe <max.haufe@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>; Dirk Zimmermann <dirk.zimmermann@htw-dresden.de>;
 // --- 3. Abgabedatum --------------------------

@@ -210,6 +210,7 @@ image::C4_Level2.png[C4-Modell (Level 2), width=70%, align="center"]
 In einem gesonderten Paketdiagrammen soll die hierarchische Struktur des Webservers auf physischer Ebene besser sichtbar werden:
 
 .Paketdiagramm Webserver
+:imagesdir: {docs-architecture}/images/Package_Diagram
 image::package_diagram_webserver.png[Paketdiagramm Webserver, align="center"]
 
 === Use Cases
