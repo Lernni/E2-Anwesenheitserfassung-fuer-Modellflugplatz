@@ -1,5 +1,4 @@
-= Architecture Notebook: {project-name}
-Alexander Heiß <alexander.heiß@htw-dresden.de>; Lenny Reitz <lenny.reitz@htw-dresden.de>
+= Architecture Notebook
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 
@@ -25,9 +24,9 @@ Da das Terminal im Freien steht, wird auf eine *robuste Installation* gesetzt, u
 
 Darüber hinaus soll sich die Anlage möglichst *nahtlos in die Flugaktivitäten der Piloten eingliedern*. Das bedeutet, dass ein möglichst reibungsloser und schneller Ablauf der Prozesse am Terminal gewährleistet sein muss, um die Nutzungsbereitschaft hochzuhalten. Darüber hinaus soll sich das Terminal die meiste Zeit über nicht bemerkbar machen, d.h. solange niemand mit der Anlage interagiert oder Piloten auf dem Platz sind, gibt die Anlage auch kein visuelles Feedback.
 
-Um die oberen Aspekte, insbesondere die der Widerstandsfähigkeit gegenüber Vandalismus, zu erfüllen, wird auf eine *minimalisitische Ausgabe* als Feedback für den Benutzer des Terminals gesetzt (einfache RGB-LED). Da viele der Piloten keine umfangreichen Kentnisse bezüglich der Funktionsweise der Anlage haben, stellt eine einfache und verständliche Lichtrückmeldung eine zentrale Umsetzungsrolle dar. Das selbe gilt auch für die Verwendung des RFID-Scanners und der Benutzung des Flugleiter-Knopfes.
+Um die oberen Aspekte, insbesondere die der Widerstandsfähigkeit gegenüber Vandalismus, zu erfüllen, wird auf eine *minimalistische Ausgabe* als Feedback für den Benutzer des Terminals gesetzt (einfache RGB-LED). Da viele der Piloten keine umfangreichen Kenntnisse bezüglich der Funktionsweise der Anlage haben, stellt eine einfache und verständliche Lichtrückmeldung eine zentrale Umsetzungsrolle dar. Das selbe gilt auch für die Verwendung des RFID-Scanners und der Benutzung des Flugleiter-Knopfes.
 
-Der Webserver soll durch eine *moderne Oberfläche* eine einfache Übersicht und Verwaltungsoption für die Administratoren bieten und für die Mitglieder eine beschränkte Übersicht über aktuelle Aktivitäten auf dem Flugplatz. Der Zugang für Administratoren und Mitglieder wird seperat *durch Logins gesichert*.
+Der Webserver soll durch eine *moderne Oberfläche* eine einfache Übersicht und Verwaltungsoption für die Administratoren bieten und für die Mitglieder eine beschränkte Übersicht über aktuelle Aktivitäten auf dem Flugplatz. Der Zugang für Administratoren und Mitglieder wird separat *durch Logins gesichert*.
 
 Das System muss *skalierbar* sein, da davon auszugehen ist, dass zusätzlich zur Anwesenheitserfassung der Piloten, in Zukunft auch eine Anwesenheitserfassung in der Werkstatt des Vereins geplant ist.
 
@@ -37,12 +36,12 @@ Das System muss *skalierbar* sein, da davon auszugehen ist, dass zusätzlich zur
 
 *Annahmen:*
 
-* Es exitsieren ausreichend RFID-Ausweise, sodass sich jeder Pilot am Terminal eindeutig identifizieren kann.
+* Es existieren ausreichend RFID-Ausweise, sodass sich jeder Pilot am Terminal eindeutig identifizieren kann.
 //* Die Solarkollektoren am Terminal liefern ausreichend Strom für die dauerhafte Betreibung des Raspberry Pis.
 
 *Abhängigkeiten:*
 
-* Es besteht eine gegenseitige Abhängigkeit zwischen Webserver und Terminal. Beide Teile des Systems müssen miteinander kommunizieren können. Fällt ein Teil des Systems langfrisitg aus, oder fehlt der Kommunikationskanal, dann ist das System nicht mehr zielführend.
+* Es besteht eine gegenseitige Abhängigkeit zwischen Webserver und Terminal. Beide Teile des Systems müssen miteinander kommunizieren können. Fällt ein Teil des Systems langfristig aus, oder fehlt der Kommunikationskanal, dann ist das System nicht mehr zielführend.
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -79,7 +78,7 @@ include::../requirements/system-wide_requirements.adoc[tag=nfas2]
 
 . Um den Aufwand gering und die Kommunikation effizient zu gestalten, bietet es sich an dieselben Frameworks auf dem Terminal und Webserver zu benutzen:
 .. Die relationale Datenbank auf dem Webserver und dem Terminal wird mit SQLite realisiert.
-.. Das Backend des Webservers wird mit dem Webframework Flask in Python realsiert, genauso das Web-Interface des Terminals.
+.. Das Backend des Webservers wird mit dem Webframework Flask in Python realisiert, genauso das Web-Interface des Terminals.
 
 === Webserver
 . Wir haben uns entschieden bei der Umsetzung des Webservers auf Vue.js als Frontend-Framework zu setzen, da
@@ -89,13 +88,13 @@ include::../requirements/system-wide_requirements.adoc[tag=nfas2]
 . Für Testzwecke haben wir das Backend mit der Weboberfläche Swagger.io ausgestattet, die einen guten Überblick über die vorhandenen Requests der REST API bietet.
 
 === Terminal
-. Bei der Enstscheidung über die Rückmeldevarianten am Terminal haben wir uns gegen ein Display und für eine RGB-LED entschieden, da der Aufwand einer speziellen Nutzeroberfläche und die Auswahl und Einrichtung eines Displays dem relativ kleinen Funktionsumfang des Terminals nicht gerecht wird. Man kann die Rückmeldung aller Ereignisse ebenso gut mit einer RGB-LED realisieren, die unterschiedlich oft und in verschiedenen Farbkombinationen aufblinkt.
+. Bei der Entscheidung über die Rückmeldevarianten am Terminal haben wir uns gegen ein Display und für eine RGB-LED entschieden, da der Aufwand einer speziellen Nutzeroberfläche und die Auswahl und Einrichtung eines Displays dem relativ kleinen Funktionsumfang des Terminals nicht gerecht wird. Man kann die Rückmeldung aller Ereignisse ebenso gut mit einer RGB-LED realisieren, die unterschiedlich oft und in verschiedenen Farbkombinationen aufblinkt.
 
 . Die Skriptprogrammierung des Raspberry Pi erfolgt mit Python, da es auch hier bereits Erfahrungswerte gibt und eine Skriptsprache von den Themenstellern verlangt wird.
 
 === Organisatorische Randbedingungen
 
-. Anprechpartner
+. Ansprechpartner
 .. Thomas Brenner, Themensteller, info@nandev.de
 .. Heino Iwe, Themensteller, h.iwe@t-online.de
 .. Christoph Zirkelbach, Projektbetreuer, christoph.zirkelbach@htw-dresden.de
@@ -146,27 +145,24 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 . Um die Protokollverwaltung und systemkritische Einstellungen vor Fremdzugriff zu schützen, ist es sinnvoll das System mittels Authentifizierung zu schützen (siehe *NFAF-1: Zugriffsschutz*).
 
 * Es ist sinnvoll, dass Admins und Piloten Anmeldedaten erhalten, um sich auf dem Webserver einzuloggen zu können.
-* Im Gespräch mit den Themenstellern hat sich ergeben, dass es jeweils ein Zugang für die Rollen Administrator und einen Zugang für die Rolle Pilot geben soll. Jeder Pilot loggt sich dann also über den Piloten-Zugang ein mit beschränkter Funktionalität und jeder Admin über den Admin-Zugang mit vollem Funktionsumfang ein. Dadurch wird ein versehentlicher Eingriff in den systemkritischen Bereich umgangen.
-* Die konkrete technische Realisierung dieser getrennten Logins steht noch nicht fest.
+* Im Gespräch mit den Themenstellern hat sich ergeben, dass es zwei Rollen (Admin und Pilot) geben soll mit unterschiedlichen Berechtigungen. Jeder Pilot und jeder Admin erhält seinen eigenen Login, wird aber durch die entsprechenden Rollen vom System im Zugriff beschränkt. Dadurch wird ein versehentlicher Eingriff in den systemkritischen Bereich umgangen.
 
 . Für die Gestaltung des Frontends des Webservers wird sich ein _Responsive Design_ eignen (siehe *NFAU-3: Benutzerfreundlichkeit*), da die Webseiten sowohl auf einem Smartphone als auch auf einem Desktop-PC ausgegeben werden
 * Die Administratoren werden die Verwaltung der Piloten wahrscheinlich hauptsächlich am Desktop-PC durchführen, während die Piloten den Status am Flugplatz auch vom Smartphone aus verfolgen wollen.
-* Zunächst steht die Ausgestaltung des Frontends für den Desktop-PC zu Testzwecken im Vordergrund
 
 . Wie aus *NFAF-2: Datensynchronisierung* und *NFAR-1: Korrektheit* hervorgeht, muss der Raspberry Pi bei bestehender Internetverbindung auf externe Informationsquellen zugreifen. Man kann hierbei unterteilen in:
-* die triviale Aktualisierung der Uhrzeit des Raspis (zeitgesetuert)
+* die triviale Aktualisierung der Uhrzeit des Raspis
 * den beiderseitigen Austausch von Piloten- und Protokolldaten zwischen Webserver und Terminal (ereignisgesteuerte Synchronisation)
 ** Synchronisierung neu hinzugefügter Piloten und RFID-Ausweise vom Webserver an das Terminal
 ** Synchronisierung lokal gehaltener Sessions vom Terminal an der Webserver 
 * den beiderseitigen Austausch von Befehlen zwischen Terminal und Webserver (ereignisgesteuert/zeitgesteuert)
 ** Die Aktion "Alle Piloten abmelden (UC06)" kann sowohl vom Terminal als auch vom Webserver ausgelöst werden und muss auf beiden Seiten wahrgenommen werden
-* Die Schaffung der Schnittstellen streben wir über Flask-Server an, die über REST API miteinander kommunizieren. Wir haben bereits mit einem Backend-Prototypen des Webservers erste Requests realisiert.
+* Die Schaffung der Schnittstellen wurde durch Flask-Server realisiert, die über REST API miteinander kommunizieren.
 
 . Für den Testbetrieb in der Praxis ist es sinnvoll, die einzelnen Parameter für die Befehle am Terminal nicht festzuschreiben. Im Vordergrund steht hier vor allem die Zeitdauer, die für die An- bzw. Abmeldung angesetzt wird (3s) und die Zeitdauer für die Abmeldung aller Piloten (10s). Diese Parameter sollen durch den Administrator konfigurierbar sein (siehe *NFAP-1: Antwortzeiten* und *NFAS-2: Konfigurierbarkeit*), um Erfahrungswerte aus der Praxis leicht einstellen zu können. 
-* Es steht noch aus, ob die Konfiguration sich ausschließlich um die Zeitdauern dreht, oder ob auch weitere Parameter (LED-Farbe, LED-Blink-Rhythmus, Befehlsreihenfolge) konfigurierbar sein sollen.
+* Die Konfiguration des Terminals umfasst Zeitdauern zum Ausführen der Befehle dreht, LED-Farbe, LED-Blinken und das Drücken eines Flugleiterknopfs
 
-. Das Anlernen neuer RFID-Ausweise zum System ist bisher noch nicht technisch spezifiert. Wir gehen jedoch von beschreibbaren RFID-Ausweisen aus, die über einen einfachen Code identifiziert und auch händisch in das System eingetragen werden können.
-* Es wird sich beim Bau eines Prototypen des Terminals zeigen, wie der Umgang mit den RFID-Ausweisen zu implementieren ist
+. Neue RFID-Ausweise werden mit einer eindeutigen hexadezimalen Kennung auf dem Webserver von Admins hinterlegt
 
 ////
 
@@ -195,19 +191,31 @@ ifndef::docs-architecture[:docs-architecture: ../architecture]
 :imagesdir: {docs-requirements}/images/Domainmodell
 image::domain_model.png[Domainmodell, width=70%, align="center"]
 
+Für Terminal und Webserver soll ein Komponentendiagramm die logische Struktur noch einmal mehr verdeutlichen. Hier ist gut zu erkennen welche Abhängigkeiten und Schnittstellen die beiden Systembestandteile besitzen.
+
+.Komponentendiagramm
+:imagesdir: {docs-architecture}/images/Component_Diagram
+image::component_diagram.png[Komponentendiagramm, align="center"]
+
+
 === Physische Sicht
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
-Auf physischer Sicht werden die Komponenten der logischen Sicht auf physische Knoten verteilt. Dabei ist eine klare Zweiteilung der Funktionalitäten erkennbar. Man kann gut erkennen, wie Informationen in das System gelangen und ausgegeben werden.
+Auf physischer Sicht werden die Komponenten der logischen Sicht auf physische Knoten verteilt. Dabei ist eine klare Zweiteilung der Funktionalitäten erkennbar.
 
 .C4-Modell (Level 2)
 :imagesdir: {docs-architecture}/images/C4_Model
 image::C4_Level2.png[C4-Modell (Level 2), width=70%, align="center"]
 
+In einem gesonderten Paketdiagrammen soll die hierarchische Struktur des Webservers auf physischer Ebene besser sichtbar werden:
+
+.Paketdiagramm Webserver
+image::package_diagram_webserver.png[Paketdiagramm Webserver, align="center"]
+
 === Use Cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.
 
-Im Vergleich zum vollständigen Use-Case-Diagramm fallen hier einige Use-Cases weg, die nicht zur Architektur des Systems beitragen. Die An- und Abmeldung der Piloten auf dem Flugplatz rechtfertigt das Bestehen eines Terminals mit lokaler Datenverwaltung. Die Pilotenverwaltung auf dem Webserver rechtfertigt eine direkten Anschluss zur Datenbank. Die Möglichkeit das Protokoll einzusehen und alle Piloten vom Webserver aus abzumelden, rechtfertigt die beidseitge Synchronisation zwischen Terminal und Webserver.
+Im Vergleich zum vollständigen Use-Case-Diagramm fallen hier einige Use-Cases weg, die nicht zur Architektur des Systems beitragen. Die An- und Abmeldung der Piloten auf dem Flugplatz rechtfertigt das Bestehen eines Terminals mit lokaler Datenverwaltung. Die Pilotenverwaltung auf dem Webserver rechtfertigt eine direkten Anschluss zur Datenbank. Die Möglichkeit das Protokoll einzusehen und alle Piloten vom Webserver aus abzumelden, rechtfertigt die beidseitige Synchronisation zwischen Terminal und Webserver.
 
 :imagesdir: {docs-requirements}/images
 .Use-Case-Diagramm, beschränkt auf architektur-relevante Use Cases

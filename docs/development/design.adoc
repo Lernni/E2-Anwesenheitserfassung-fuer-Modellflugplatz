@@ -13,7 +13,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 ==== Datenbankmodell
 
-Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Auweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:c-Beziehung zwischen den entsprechenden Tabellen (Es kann mehr hinterlegte RFID-Ausweise als Piloten geben, daher die konditionale Beziehung). Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
+Pilotendaten und das Protokoll, sowie die verfügbaren RFID-Ausweise werden in einer Datenbank gehalten. Es ergeben sich so genau 3 relationale Tabellen, die miteinander in Beziehung stehen und diese Objekte repräsentieren. Jeder Pilot wird eindeutig über einen RFID-Ausweis identifiziert, somit besteht eine 1:c-Beziehung zwischen den entsprechenden Tabellen (Es kann mehr hinterlegte RFID-Ausweise als Piloten geben, daher die konditionale Beziehung). Das Protokoll wird als eine Menge von Flugsessions dargestellt, von denen jeder Pilot mehrere haben kann.
 
 .Datenbankmodell vom Terminal
 image::Datenmodell_Terminal.png[Datenbankmodell, width=70%, align="center"]
@@ -30,7 +30,7 @@ Das Frontend wird durch ein Login geschützt und beinhaltet Sichten auf das Flug
 
 ==== Authentifizierung im Browser
 
-Die Nutzerauthentifzierung erfolgt über zwei Sichten Login und Signup. Nachdem zuvor ein Pilot von einem Admin erstellt wurde, kann sich dieser Pilot nun mit einem Nutzernamen "vorname_nachname" und einem Passwort authentifzieren.
+Die Nutzer-Authentifizierung erfolgt über zwei Sichten Login und Signup. Nachdem zuvor ein Pilot von einem Admin erstellt wurde, kann sich dieser Pilot nun mit einem Nutzernamen "vorname_nachname" und einem Passwort authentifizieren.
 
 Dazu muss der Pilot zunächst ein Passwort für seinen Nutzer vergeben. Im Anschluss kann er sich mit seinen Logindaten anmelden und gelangt auf die Startseite. Je nachdem, ob der Pilot die Rolle "Admin" oder "Pilot" besitzt, hat er entsprechende Zugriffsrechte auf der Webseite.
 
@@ -101,7 +101,16 @@ Außerdem ist zu beachten, dass der Webserver die Tabelle Gast und die Login-Dat
 
 ==== Umsetzung auf dem Terminal
 
-Auf dem Terminal läuft eine minimale REST-API, welche RFID-Ausweise, Piloten und Einstellungen entgegennimmt. Im Falle, dass ein Pilot synchronisiert wird, prüft das Terminal, ob dieser bereits existiert. Ist dies der Fall, wird der bestehende Pilot aktualisiert, andernfalls wird er neu eingefügt. Für jede Flugsession gibt es ein Synced Flag, das angibt, ob die aktuelle Version der Flugsession bereits mit dem Webserver synchronisiert wurde. Sobald sich etwas an einer Flugsession verändert, etwa wenn der Flugleiterstatus gesetzt wird, werden alle Sessions mit ungesetztem Flag synchronisiert, wenn sie die Toleranzzeit nicht unterschreiten. Die Toleranzzeit gibt dabei an, wie lange nach der Erstellung eine Session frühestens synchronisert werden darf. Dies ist wichtig, damit Anmeldungen, die aus Versehen passiert sind, nicht auf dem Webserver erscheinen.
+Auf dem Terminal läuft eine minimale REST-API, welche RFID-Ausweise, Piloten und Einstellungen entgegennimmt. Im Falle, dass ein Pilot synchronisiert wird, prüft das Terminal, ob dieser bereits existiert. Ist dies der Fall, wird der bestehende Pilot aktualisiert, andernfalls wird er neu eingefügt. Für jede Flugsession gibt es ein Synced Flag, das angibt, ob die aktuelle Version der Flugsession bereits mit dem Webserver synchronisiert wurde. Sobald sich etwas an einer Flugsession verändert, etwa wenn der Flugleiterstatus gesetzt wird, werden alle Sessions mit ungesetztem Flag synchronisiert, wenn sie die Toleranzzeit nicht unterschreiten. Die Toleranzzeit gibt dabei an, wie lange nach der Erstellung eine Session frühestens synchronisiert werden darf. Dies ist wichtig, damit Anmeldungen, die aus Versehen passiert sind, nicht auf dem Webserver erscheinen.
+
+=== Physische Verteilung
+
+Das Deploymentdiagramm soll den physischen Aufbau des Systems erklären. Es spiegelt die physische Trennung von Terminal und Webserver wieder:
+
+.Deploymentdiagramm
+ifndef::docs-deployment[:docs-deployment: ../../docs/deployment]
+:imagesdir: {docs-deployment}/images
+image::deployment_diagram.png[Deploymentdiagramm, align="center"]
 
 === Aufbau der REST-API
 In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Webserver (Frontend & Backend) und Terminal benutzt werden, um Informationen und Befehle untereinander auszutauschen. Die Unterteilung der URLs erfolgt nach HTTP-Methode:
@@ -111,7 +120,12 @@ In der folgenden Übersicht sind alle URLs der REST-API aufgelistet, die von Web
 * PUT - Verändern bestehender Daten
 
 // Im Laufe der Entwicklung diesen Abschnitt um Screenshots von Swagger.io ergänzen
-Es empfielt sich, das backend zu starten und dann unter http://127.0.0.1:5000/api/ die API doc anzuschauen.
+Es empfiehlt sich, das Backend zu starten und dann unter http://localhost:5000/api/ die API doc anzuschauen.
+
+:imagesdir: {docs-development}/images
+
+.Aufbau der REST-API im Swagger UI unter localhost:5000/api/
+image::swagger_ui.png[Swagger UI, align="center"]
 
 
 ==== GET
@@ -125,7 +139,7 @@ Es empfielt sich, das backend zu starten und dann unter http://127.0.0.1:5000/ap
 
 | /pilot-list
 | Erwarte die ID und Namen aller Piloten
-|No parameters
+|/
 a|
 * Frontend -> Backend
 
@@ -133,18 +147,18 @@ a|
 | Erwarte alle Piloten der Tabelle Pilot
 a|
 * /id/2 (Pilot mit Id = 2)
-* ?active=false (alle deaktiven)
+* ?active=false (alle inaktiven)
 a|
 * Frontend -> Backend
 
 | /rfid_assigned
 |zugewiesene RFID tags
-|No parameters
+|/
 a|* Frontend -> Backend
 
 | /rfid_available
 |verfügbare RFID tags
-|No parameters
+|/
 a|* Frontend -> Backend
 
 | /sessions
@@ -159,12 +173,12 @@ a|* Frontend -> Backend
 
 | /sessions/running
 |alle aktiven Sessions
-|No parameters
+|/
 a|* Frontend -> Backend
 
 | /settings
 | Return settings
-|No parameters
+|/
 a|* Frontend -> Backend
 
 |===
@@ -217,7 +231,7 @@ a|
 
 | /sessions/checkout-all
 | Alle Piloten abmelden
-|No parameters
+|/
 a| implementiert, aber nie gerufen
 
 | /sessions/terminal
@@ -285,7 +299,7 @@ a|
 
 
 == Graphische Designaspekte
-Garphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
+Graphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
 
 Das System unterscheidet sich in zwei physisch getrennte Bereiche:
 
