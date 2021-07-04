@@ -94,6 +94,17 @@ Initial wird ein Admin-Nutzer angelegt. Dieser muss zunächst unter dem Nutzerna
 
 == Terminal
 
+WARNING: Das Ausführen des build-scripts löscht alle Dateien in ~/Terminal. Daher ist es ratsam,
+vor dem Ausführen ein Backup der Datenbank anzufertigen.
+
+WARNING: Wenn die Datenbank des Webservers zurückgesetzt wird, die des Terminals aber nicht (oder andersherum),
+dann werden vermutlich Fehler auftreten.
+
+  curl https://raw.githubusercontent.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/master/src/Terminal/build.sh > build.sh
+  sudo ./build.sh
+  cd Terminal
+  python3 make_terminal_db.py
+
 = Systembetreuung
 
 == Physische Verteilung
@@ -153,9 +164,43 @@ Backend stoppen:
 
 === Fehlerbehandlung
 
-// Fehlercodes grob erklären: Was bedeutet Erfolg (200), Fehler (403), Interner Fehler (500)
-// Fehlermeldungen trennen aus Perspektive des Frontends und des Backends
-// Fehlermeldung Synchronisation im Backend
+==== Fehlercodes bei Requests
+[%header, cols=2*]
+|===
+
+|Fehlercode
+|Bedeutung
+
+|200
+|Erfolg
+
+|401
+|Token fehlerhaft (z.B. Pilot ist kein Admin)
+
+|403
+|Fehler beim Login (Pilot existiert nicht, falsches Passwort, Pilot hat kein Passwort, ...)
+
+|512
+|Fehler beim Erstellen des Passworts
+
+|500 (Internal Server Error)
+|Eine unbehandelte Exception oder fehlerhafte Request
+
+|===
+
+==== Fehler bei der Synchronisation.
+
+Beim anlegen eines neuen Piloten, beim eintragen eines RFID-Tags und beim Aktualisieren der settings wird ermittelt, ob das Terminal erreichbar ist.
+Erscheint folgende Meldung in der Konsole
+
+  Post failed
+
+oder
+
+  Terminal offline
+
+so ist die Synchronisation fehlgeschlagen.
+
 
 === Reparatur
 Sollte das Frontend oder das Backend nicht mehr wie gewohnt funktionieren, kann eine Reparatur des Webservers ausgeführt werden. Die Datenbank des Webservers wird bei der Reparatur nicht mit einbezogen.
@@ -252,19 +297,6 @@ Instruktion ausgeführt werden:
       # localhost:6000
       app.run(port='6000')
 
-=== Einrichtung
-
-WARNING: Das Ausführen des build-scripts löscht alle Dateien in ~/Terminal. Daher ist es ratsam,
-vor dem Ausführen ein Backup der Datenbank anzufertigen.
-
-WARNING: Wenn die Datenbank des Webservers zurückgesetzt wird, die des Terminals aber nicht (oder andersherum),
-dann werden vermutlich Fehler auftreten.
-
-  curl https://raw.githubusercontent.com/Lernni/E2-Anwesenheitserfassung-fuer-Modellflugplatz/master/src/Terminal/build.sh > build.sh
-  sudo ./build.sh
-  cd Terminal
-  python3 make_terminal_db.py
-
 === Speicherpfade
 
 [%header, cols=2*]
@@ -303,6 +335,10 @@ Steht stattdessen ein html-dump oder ähnliches im Konsolenfenster, dann besteht
 die Verbindung.
 
 === Fehlerbehandlung
+
+Auf der Konsole werden print-statements ausgegeben, sowie "ending session...". Dadurch lässt sich herausfinden, was gerade passiert, wenn der RFID Tag angehalten wird.
+
+Eine Konkrete Fehlerbehandlung gibt es aber nicht.
 
 === Reparatur
 

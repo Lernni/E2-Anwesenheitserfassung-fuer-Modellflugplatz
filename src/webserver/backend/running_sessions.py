@@ -19,7 +19,7 @@ class RunningSessions(Resource):
 
         p_id = is_pilot(cursor)
         if p_id == -1:
-            return {}, 404
+            return {}, 401
 
         return_dict = {
             'sessions': []
