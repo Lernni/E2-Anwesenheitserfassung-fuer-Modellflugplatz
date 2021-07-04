@@ -5,10 +5,6 @@
 
 :iterationen: Iterationen
 
-include::{iterationen}/SE1_Iterationen.adoc[]
-
-<<<
-
 include::{iterationen}/SE2_Iteration5.adoc[]
 
 <<<
