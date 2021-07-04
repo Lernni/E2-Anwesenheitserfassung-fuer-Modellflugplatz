@@ -62,6 +62,7 @@ a|* Max Haufe
 
 |Test
 a|* Alexander Heiß
+* Max Haufe
 * Jakob Laufer
 
 |Deployment
