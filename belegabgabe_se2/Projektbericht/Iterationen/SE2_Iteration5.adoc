@@ -26,18 +26,15 @@ Der Grund für den Wechsel war, dass Vue.js einsteigerfreundlicher ist und auf W
 Außerdem ging es um die Beschaffung der Hardware bzw. der Zugänge. Unter anderen bemühten wir uns nach einem Raspberry Pi, RGB-LED, RFID-Scanner, RFID-Ausweis und Taster für den Bau eines ersten Prototypen Zugriff zu erlangen und einem Zugang zum Webserver zum Testen der Funktionen und Aufbau einer Datenbank.
  
 Mit vielen geklärten Fragen und einen positiven Eindruck starteten wir in das neue Semester und in die 5. Iteration.
-Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen und wir beschlossen den Mittwoch als festen Termin unseres Gruppenmeetings. 
-Da der Fokus jetzt eher auf der Implementierung lag, waren unsere Ziele auch dementsprechend gesetzt. Diese Iteration sollte mit der Implementierung von Backend und Frontend starten. Die Entwickler machten sich in zusätzlichen Meetings erste Überlegungen zur Umsetzung und begannen schließlich mit der Arbeit. 
-
-So konnte die Grundstruktur des Webservers erdacht und der erste Entwurf der Datenbank aufgesetzt werden. Da die Entwickler sich nicht sicher waren, ob SQLite für die Datenbank genutzt werden durfte bzw. vom Kunden gewünscht war, wurde die Weiterarbeit erstmal gestoppt.   
-Dennoch konnte am Ende der Iteration bereits eine Verbindung zwischen Backend- und Frontend-Prototyp hergestellt werden. 
-
+Wie in der Projektplanung beschrieben und begründet, kam es zu einigen Änderungen der Rollen.
+Da der Fokus jetzt eher auf der Implementierung lag, waren unsere Ziele auch dementsprechend gesetzt. 
+Diese Iteration sollte mit den ersten groben Entwürfen zur Implementierung von Backend und Frontend starten. Die Entwickler machten sich in zusätzlichen Meetings erste Überlegungen zur Umsetzung.
+   
 Zwischenzeitlich hatten wir ein Meeting mit Prof. Anke zur Auswertung der Arbeit aus SE1. Dort bekamen wir, abgesehen von kleineren Korrekturen und Verbesserungsvorschlägen, ein sehr positives Feedback. Wir freuten uns sehr darüber und es motivierte uns, an der Stelle genau so weiter zu machen.  
 Für die genannten Korrekturen war das Team der Analyse zuständig. 
 Da der Hauptteil der Analyse-Dokumentation bereits in SE1 erbracht wurde, arbeiteten sich die Mitglieder der Analyse zusätzlich in die Themengebiete Deployment und Test ein und versuchten sich dort unterstützend einzubringen. 
 Bei der Dokumentation lässt sich noch ein kleines Problem beschreiben, welches sich bis zum Ende lang ziehen sollte. Es gab Probleme beim Einbinden mancher Diagramme. Obwohl uns unser Betreuer Herr Zirkelbach schon einiges korrigieren konnte, ging es bei einigen Mitgliedern immer noch nicht. Nach langem Suchen nach der Fehlerursache haben wir beschlossen, den Fokus erstmal auf die Weiterarbeit des Projekts zu setzten. 
  
-Es wurde eine erste Ordnerstruktur für das Deployment erstellt und erste Überlegungen skizziert und dem Kunden vorgeschlagen. 
 Außerdem wurden erste Test-Cases und eine erste Vorlage (eine Art Template) erstellt, worauf wir jeden Test-Case anwenden wollten.
 
 [example]
@@ -49,8 +46,9 @@ Im Bereich der Projektplanung, waren wir erfreulicherweise auf einen aktuellen S
 Neben der ständigen Erweiterung des Entwurfs vom System, erstellten wir außerdem ein Paket- und Komponentendiagramm. Wie auch bei den bereits oben erwähnten Architektursichten, wurden auch die Diagramme immer wieder aktualisiert.
 
 Neben einem guten Start in die Iteration gab es aber auch einige Probleme.  
-Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, sollten wir fast anderthalb Monate darauf warten. So verzögerte sich unsere Arbeitsplanung nach hinten. 
-Schwierigkeiten gab es leider nicht nur beim Versend der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. In der darauffolgenden Iteration wird beschrieben, wie wird dieses Problem klären konnten.
+Obwohl uns der Versand der Hardware bereits im ersten Meeting auf die darauf folgende Woche fest zugesichert wurde, bekahmen wir die Sie zu diesem Zeitpunkt nicht.
+So verzögerte sich unsere Arbeitsplanung etwas nach hinten hinten und musste etwas überarbeitet werden. 
+Schwierigkeiten gab es leider nicht nur beim Versenden der Hardware, sondern auch bei der Kommunikation per Mail mit den Themenstellern. In der darauffolgenden Iteration wird beschrieben, wie wird dieses Problem klären konnten.
 
 Abgesehen von den Kommunikationsproblemen, waren wir in Iteration 5 sehr produktiv und konnten einige Fortschritte vermelden. Wir teilten uns die Arbeit ausgewogen ein und versuchten eine konstante Arbeitsweise für das Semester durchzusetzten.
 
