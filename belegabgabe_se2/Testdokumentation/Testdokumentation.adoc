@@ -119,8 +119,6 @@ Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen
 
 == Testfallbeschreibung & Testergebnisse
 
-* Test der Use-Cases sowie der übergreifenden Vorgänge
-
 include::{docs-test}/test_cases_UC01_Pilot_anmelden.adoc[]
 <<<
 include::{docs-test}/test_cases_UC02_Pilot_abmelden.adoc[]
