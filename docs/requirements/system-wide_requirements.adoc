@@ -120,4 +120,4 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 ** Es ist eine Open-Source Lizenz zu nutzen
 
 == Datenschutz
-Aus Datenschutzgründen wird auf eine gesicherte Verbindung gesetzt. Zudem sind die Protokolldaten und Mitgliederdaten nur nach einem erfolgreichen Login ersichtlich. Außer diesen Bereichen werden vom Themensteller vorerst keine weiteren Anforderungen zum Datenschutz gestellt.
+Aus Datenschutzgründen wird auf einen Login zum Betreten der Website gesetzt. Somit sind die Protokolldaten und Mitgliederdaten nur nach einem erfolgreichen Login ersichtlich. Außer diesen Bereichen werden vom Themensteller vorerst keine weiteren Anforderungen zum Datenschutz gestellt. Eine gesicherte TLS-Verbindung war geplant, konnte jedoch aufgrund von Ressourcen- und Zeitknappheit nicht umgesetzt werden.
