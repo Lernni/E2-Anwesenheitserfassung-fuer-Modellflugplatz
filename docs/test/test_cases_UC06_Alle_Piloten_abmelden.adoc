@@ -1,12 +1,4 @@
-== Test Cases: UC06 - Alle Piloten abmelden
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-=== TestCases
+=== TestCase TC06 - (UC06 Alle Piloten abmelden)
 
 [%header, cols=5*]
 |===
@@ -46,9 +38,9 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -58,13 +50,13 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | / 
-| Kann nicht getestet werden, da nicht implementiert.
-| Ausstehend
-|
+| Nicht erfolgreich
+| Noch nicht umgesetzt
+| /
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -74,13 +66,13 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | /
-| Kann nicht getestet werden, da nicht implementiert.
-| Ausstehend
-|
+| Nicht erfolgreich
+| Noch nicht umgesetzt
+| /
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -90,10 +82,8 @@ a|* _LED_ leuchtet nicht mehr dauerhaft
 |Akzeptanztest
 
 | Betätigen der Schaltfläche _Alle Piloten abmelden_  
-| Kann nicht getestet werden, da nicht implementiert.
-| Ausstehend
-|
+| Nicht erfolgreich
+| Noch nicht umgesetzt
+| /
 
 |===
-
-

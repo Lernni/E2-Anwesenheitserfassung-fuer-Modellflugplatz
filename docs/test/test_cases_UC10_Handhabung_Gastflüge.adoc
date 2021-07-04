@@ -1,13 +1,4 @@
-== Test Cases: UC10 - Handhabung Gastflüge
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC10 - (UC10 Handhabung Gastflüge)
 
 [%header, cols=5*]
 |===
@@ -25,23 +16,23 @@ a|* *Pilot* ist bereits im _System_ angelegt worden
 * das Filtern der `Protokolldaten` über _Flüge nachtragen_ funktioniert und wird korrekt ausgeführt
 a|* Nach dem erfolgreichen _Filtern_ nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt.
 a|* Der hinzugefügte Name des Gastes wird semantisch korrekt in der Datenbank hinterlegt
-* Der Name es Gastes erscheint in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast 
+* Der Name des Gastes erscheint in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast 
 
 |2
-|Negat, manuell
+|Negativ, manuell
 a|* *Pilot* ist bereits im _System_ angelegt worden
 * *Pilot* hat sich erfolgreich angemeldet und ist Begleitperson für ein Gast 
 * die `Protokolldaten` sollten zuvor vom _Terminal_ an den _Webserver_ übertragen worden sein
 * das Filtern der `Protokolldaten` in der _Protokollansicht_ funktioniert & wird korrekt ausgeführt
 a|* Nach dem erfolgreichen _Filtern_ nach dem passenden nach dem passenden `Protokolleintrag`, wird der Name des Gastes hinzugefügt.
 a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich gemacht werden
-* Der Name es Gastes erscheint nicht in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast
+* Der Name des Gastes erscheint nicht in den `Protokolldaten` bei _Flüge nachtragen_ in der Spalte Gast
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -58,7 +49,7 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -74,12 +65,3 @@ a|* Fehlerhafte Eingabe (Ungültiger Name des Gastes) muss dem *Pilot* kenntlich
 
 
 |===
-
-
-
-
-
-
-
-
-

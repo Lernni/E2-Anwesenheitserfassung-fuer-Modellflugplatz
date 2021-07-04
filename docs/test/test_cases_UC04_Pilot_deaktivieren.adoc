@@ -1,5 +1,4 @@
-
-=== TestCases
+=== TestCase TC04 - (UC04 Pilot deaktivieren)
 
 [%header, cols=5*]
 |===
@@ -18,11 +17,10 @@ a| * *Pilot* ist im _System_ angelegt
 a| * Der Pilot ist deaktiviert
 * Die RFID-Kennung ist wieder frei verfügbar (siehe Pilotendaten anlegen oder Pilotendaten modifizieren)
 * Der Pilot kann sich nicht mehr am Terminal an-/abmelden oder sich zum Flugleiter ernennen
-* Der Pilot kann sich nicht mehr auf der Website anmelden
 * Die Protokolldaten sind unverändert verfügbar
 * Der Pilot ist nur unter dem Filter "Deaktivierte Piloten" in der Pilotenübersicht sichtbar
 
-|Spezialfall 1
+|2
 |Negativ, manuell
 a| * *Pilot* ist im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
@@ -31,7 +29,7 @@ a| * *Pilot* ist im _System_ angelegt
 a| * Der Pilot ist kann nicht deaktiviert werden
 * Fehlermeldung erscheint: Pilot ist derzeit aktiv
 
-|Spezialfall 2
+|3
 |Negativ, manuell
 a| * *Pilot* ist im _System_ angelegt
 * Pilot ist nicht am Terminal angemeldet
@@ -43,9 +41,9 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -61,7 +59,7 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 |===
 
-==== Spezialfall 1
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -71,9 +69,9 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 |Akzeptanztest
 
 | Flugsession ist noch nicht mit Webserver Synchronisiert
-| Nicht Erfolgreich, da Synchronisation nicht hinreichend gut implementiert
-| Wird nicht mehr innerhalb dieser Projektphase implementiert
-| X
+| Nicht Erfolgreich
+| Noch nicht umgesetzt
+| /
 
 | Flugsession ist mit Webserver Synchronisiert
 | Erfolgreich
@@ -82,7 +80,7 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 |===
 
-==== Spezialfall 2
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -93,13 +91,7 @@ a| * Der Pilot ist kann deaktiviert werden (siehe Nachbedingungen Test 1)
 
 | Pilot: alexander_heiss
 | Nicht erfolgreich
-| Wird nicht mehr innerhalb dieser Projektphase implementiert
-| X
+| Noch nicht umgesetzt
+| /
 
 |===
-
-
-
-
-
-

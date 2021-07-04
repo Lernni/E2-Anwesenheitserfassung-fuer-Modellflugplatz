@@ -10,7 +10,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 :doctype: book
 :toc:
-:toclevels: 2
+:toclevels: 1
 :toc-title: Inhaltsverzeichnis
 :sectnums:
 :icons: font
@@ -36,23 +36,23 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 === Testobjekte
 
-Die Grundlage unserer Tests bilden die Use-Case-orientierten Testfälle. Das beudetet, dass zu den primären zehn Use-Cases zahlreiche Testfälle aufgelistet und bearbeitet wurden. Ergänzt werden diese durch Use-Case-übergreifende Tests, die beispielsweise die Einstellungen der Website betreffen.
+Die Grundlage unserer Tests bilden die Use-Case-orientierten Testfälle. Das bedeutet, dass zu den primären zehn Use-Cases zahlreiche Testfälle aufgelistet und bearbeitet wurden. Ergänzt werden diese durch UseCase-übergreifende Tests, die beispielsweise die Einstellungen der Website betreffen.
 
 Der Fokus des Testing lag gleichmäßig verteilt auf den Websitekomponenten, den Terminalfunktionalitäten und der Synchronisation zwischen diesen. Eine Auflistung der Komponenten ist in den jeweiligen TestCases zu finden.
 
 === Testmethoden
 
-Als grundlegende Prüftechnik wurde der dynamische Test umgesetzt. Somit wurden die lauffähigen Software-Bestandteile nacheinander getestet. Es fanden sowohl Positiv- als auch Negativtets zur Überprüfung der korrekten Funktionalität statt.
+Als grundlegende Prüftechnik wurde der dynamische Test umgesetzt. Somit wurden die lauffähigen Software-Bestandteile nacheinander getestet. Es fanden sowohl Positiv- als auch Negativtests zur Überprüfung der korrekten Funktionalität statt.
 
 Als Test-Praktik wurde Concurrent Testing verwendet. So wurden bereits Teilergebnisse der Komponenten getestet und den Entwicklern zu einem frühen Zeitpunkt Feedback gegeben.
 
 ==== Modultests
 
-Es wurde sich im Team ausführlich über die Verwendung von Modultests ausgetauscht und nach einiger Überlegung gegen die umfassende Verwendung dieser entschieden. Dies hat als Begründung, dass unser System kaum Komplexität in einem einzelnen Modul selbst besitzt, sondern durch die Konnektivität zu anderen Modulen an dieser gewinnt. Deshalb wurde der Fokus auf die folgenden Testarten gesetzt. Einzelne Modultests, wie zum Beispiel die Überprüfung des Textes in Eingabemasken (Überprüfung innerhalb des Moduls), sowie Responsive-Tests wurden durchgeführt.
+Es wurde sich im Team ausführlich über die Verwendung von Modultests ausgetauscht und nach einiger Überlegung gegen die umfassende Verwendung dieser entschieden. Dies hat als Begründung, dass unser System kaum Komplexität in einem einzelnen Modul selbst besitzt, sondern durch die Verbindung zu anderen Modulen an dieser gewinnt. Einzelne Modultests, wie zum Beispiel die Überprüfung des Textes in Eingabemasken (Überprüfung innerhalb des Moduls), sowie Responsive-Tests wurden durchgeführt.
 
 ==== Integrationstest
 
-In unserem Testvorgang stand insbesondere der Integrationstest im Vordergrund. So wurde Use-Case-orienitiert die Integration vieler Module überprüft und deren Synchronisation kontrolliert. Zahlreiche Integrationstest sind in den nachfolgenden TestCases aufgeführt.
+In unserem Testvorgang stand insbesondere der Integrationstest im Vordergrund. So wurde orientiert an den Use-Cases die Integration vieler Module überprüft und deren Synchronisation kontrolliert. Zahlreiche Integrationstest sind in den nachfolgenden TestCases aufgeführt.
 
 ==== Systemtest
 
@@ -60,17 +60,17 @@ Der Systemtest fand aufgrund der späten Hardware-Lieferung erst wenige Tage vor
 
 === Akzeptanztest
 
-Dem Kunde wurde iterativ die einzelnen Systemteile zur Abnahme vorgestellt und vor dem Deployment das Gesamtsystem vorgestellt. Aufgrund der Hardware-Komponente mussten wir diesen Teil verbal erklären. Die Themensteller konnte ca. zwei Wochen vor dem Deployment selbstständig die Website bedienen und die Funktionen ausprobieren. Das Feedback erhielten wir zügig und konnten das System erfolgreich validieren. Des Weiteren wurden die nicht-funktionalen Anforderungen sowie alle Softwarebestandteile während des Deployments durch die Themensteller abgenommen.
+Dem Kunden wurden iterativ die einzelnen Systemteile zur Abnahme vorgestellt und vor dem Deployment das Gesamtsystem vorgestellt. Aufgrund der Hardware-Komponente mussten wir diesen Teil verbal erklären. Die Themensteller konnte ca. zwei Wochen vor dem Deployment selbstständig die Website bedienen und die Funktionen ausprobieren. Das Feedback erhielten wir zügig und konnten das System erfolgreich validieren. Des Weiteren wurden die nicht-funktionalen Anforderungen sowie alle Softwarebestandteile während des Deployments durch die Themensteller abgenommen.
                           
 === Testdurchführungsplanung 
 
 Zuständig für die Tests ist gemäß Projektplan Alexander Heiß.
 
-Beginnend ab Iteration 3 bis zur Iteration 7 wurden allgemeine TestCases erstellt. Diese waren nicht Use-Case-spezifisch, sondern deckten allgemeine Testfälle des Systems ab. Diese TestCases wurden zu einem späteren Zeitpunkt in die Use-Case-spezifischen TestCases eingebunden.
-
-Die Erstellung der TestCases für die UseCases begann in Iteration 8. Bis zur Iteration 10 wurden diese erstellt, getestet und den Entwicklern Feedback gegeben.
-
 Unterstützt wurde Alexander Heiß bei der Erstellung der allgemeinen TestCases durch Max Haufe, ab Iteration 8 übernahm Jakob Laufer die Mitarbeit.
+
+Beginnend ab Iteration 3 bis zur Iteration 7 wurden allgemeine TestCases erstellt. Diese waren nicht spezifisch an den Use-Cases ausgerichtet, sondern deckten allgemeine Testfälle des Systems ab. Diese TestCases wurden zu einem späteren Zeitpunkt in die UseCase-spezifischen TestCases eingebunden.
+
+Die Erstellung der TestCases für die UseCases begann in Iteration 8. Bis zur Iteration 10 wurden diese erweitert, getestet und den Entwicklern entsprechendes Feedback gegeben.
 
 Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen Kapiteln oben beschrieben.
 
@@ -91,16 +91,16 @@ Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen
 |/
 
 |NFAF-3: Überwachung der Synchronisation (Admin kann einsehen, wann das Flugprotokoll zuletzt synchronisiert wurde)
-|Ja
-|/
+|Nein
+|Noch nicht implementiert
 
 |NFAU-1: Aufgabeneffizienz (Simple und intuitive Kombinationen am Terminal)
 |Ja
 |/
 
 |NFAU-2: Intuitives Bedienen (Bedeutung der Statusmeldungen der LED erkennbar)
-|Ja
-|/
+|Nein
+|Keine LED vorhanden
 
 |NFAU-3: Benutzerfreundlichkeit (Responsive Webdesign)
 |Ja
@@ -112,7 +112,7 @@ Die Durchführung des Systemtests und des Akzeptanztests wurde in den jeweiligen
 |/
 
 |NFAP-2: Durchsatz (Piloten können sich hintereinander (innerhalb von 30 Sekunden) an- und abmelden)
-|JA
+|Ja
 |/
 
 |===
@@ -144,13 +144,10 @@ include::{docs-test}/test_cases_UC10_Handhabung_Gastflüge.adoc[]
 include::{docs-test}/test_cases_UC11_Pilot_reaktivieren.adoc[]
 <<<
 
-
-* Test der Configurations
-
 include::{docs-test}/test_cases_configurations.adoc[]
 <<<
 
 
 === Abnahmetest
 
-Der Abnahmetest ist im Abnahmeprotkoll aufgeführt.
+Der Abnahmetest ist im Abnahmeprotokoll aufgeführt.

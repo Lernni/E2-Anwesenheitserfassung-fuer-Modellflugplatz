@@ -1,13 +1,4 @@
-== Test Cases: UC11 - Pilot reaktivieren
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC11 - (UC11 Pilot reaktivieren)
 
 [%header, cols=5*]
 |===
@@ -23,16 +14,16 @@ a|* *Pilot* ist bereits im _System_ angelegt und deaktiviert worden
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 a|* In der _Pilotenübersicht_ über _Zeige inaktive Piloten_ die `Pilotendaten` aller deaktivierten *Piloten* anzeigen lassen.
 In der Übersicht den  
-deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zu ordenen. 
+deaktivierten Piloten über _Reaktivieren_ reaktivieren und in dem nachfolgendem Formular eine gültige RFID-Kennung zuordnen. 
 Diese mit den `Pilotendaten` durch _Reaktivieren_ bestätigen.
-a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur _Pilotenübersicht_
+a|* Nach der erfolgreichen Bestätigung, gelangt man erneut zur _Pilotenübersicht_
 * der *Pilot* erscheint bei den aktiven Piloten. (über _Zeige aktive Piloten_)
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -47,9 +38,3 @@ a|* Nach der erfolgreichen bestätigung, gelangt man erneut zur _Pilotenübersic
 |Erfolgreich
 
 |===
-
-
-
-
-
-

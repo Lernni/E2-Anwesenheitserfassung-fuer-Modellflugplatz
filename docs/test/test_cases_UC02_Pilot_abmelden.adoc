@@ -1,6 +1,4 @@
-
-
-=== TestCases
+=== TestCase TC02 - (UC02 Pilot abmelden)
 
 [%header, cols=5*]
 |===
@@ -12,35 +10,38 @@
 
 |1
 |Positiv, Manuell
-|Pilot angemeldet, Pilot aktives Mitglied, gültige RFID-Karte
-|Pilot hält RFID-Karte an Terminal
-|Pilot kann sich abmelden, LED-Rückmeldung: Grün blinken
+|*Pilot* angemeldet, *Pilot* aktives Mitglied, gültige ``RFID-Karte``
+|*Pilot* hält ``RFID-Karte`` an _Terminal_
+|*Pilot* kann sich abmelden, LED-Rückmeldung: Grün blinken
 
 |2
 |Negativ, Manuell
-|Pilot abgemeldet
-|Pilot hält RFID-Karte an Terminal und möchte sich abmelden
-|Pilot kann sich nicht erneut abmelden, LED-Rückmeldung: Grün (da Anmeldung), Pilot angemeldet in System
+|*Pilot* abgemeldet
+|*Pilot* hält ``RFID-Karte`` an _Terminal_ und möchte sich abmelden
+|*Pilot* kann sich nicht erneut abmelden, LED-Rückmeldung: Grün (da Anmeldung), *Pilot* angemeldet in System
+
+
+//* Ungültiges Systemverhalten
+//|3
+//|Negativ, Manuell
+//|*Pilot* ist angemeldet
+//|*Pilot* hält mehrfach hintereinander (schnell) die ``RFID-Karte`` an _Terminal_
+//|Das System meldet den *Pilot*en korrekt abwechselnd an und ab, die Sessions werden aber nicht aufgrund der geringen Zeit in die Datenbank eingetragen
+
 
 |3
-|Negativ, Manuell
-|Pilot ist angemeldet
-|Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
-|Das System meldet den Piloten korrekt abwechselnd an und ab, die Sessions werden aber nicht aufgrund der geringen Zeit in die Datenbank eingetragen
-
-|4
 |Positiv, manuell
-|Pilot ist angemeldet, das Terminal hat keinen Internetzugang
-|Pilot meldet sich am Terminal mit der RFID-Karte ab.
-a| * Der Pilot erhält ein positives Feedback über die LED.
-* Die Endzeit der Flugsession wird in der lokalen DB des Terminals gestartet
+|*Pilot* ist angemeldet, das _Terminal_ hat keinen Internetzugang
+|*Pilot* meldet sich am _Terminal_ mit der ``RFID-Karte`` ab.
+a| * Der *Pilot* erhält ein positives Feedback über die LED.
+* Die Endzeit der Flugsession wird in der lokalen DB des _Terminals_ gestartet
 * Bei funktionierendem Internetzugang wird das Ende der Flugsession an die DB auf dem Webserver gesendet
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -50,13 +51,13 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Pilot "Max Mustermann" hat gültigen RFID-Ausweis und eine offene Flugsession
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -66,13 +67,17 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Pilot "Max Mustermann" hat gültigen RFID-Ausweis und keine offene Flugsession
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
 
-==== TID 3
+////
+
+//* Widersrüchliche Aussage
+
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -87,8 +92,9 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 | Erfolgreich
 
 |===
+////
 
-==== TID 4
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -98,10 +104,8 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Internetverbindung des Terminals unterbrochen
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
-
-

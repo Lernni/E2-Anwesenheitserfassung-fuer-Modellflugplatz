@@ -1,13 +1,4 @@
-== Test Cases: UC07 - Flugleiter bestimmen
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC07 - (UC07 Flugleiter bestimmen)
 
 [%header, cols=5*]
 |===
@@ -59,16 +50,16 @@ a|* _LED_ leuchtet nicht auf
 a|* *Pilot* ist bereits angemeldet und Flugleiter
 * *Pilot* ist bereits im _System_ angelegt worden
 * gültige RFID-Karte
-|*Pilot 2* hällt _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
+|*Pilot 2* hält _RFID-Ausweis_ and den _Scanner_ und drückt gleichzeitig den _Taster_
 a|* _LED_ leuchtet nicht auf
 * _System_ erfasst und protokolliert die Rollenabgabe des Flugleiters
 * Bei _Protokoll ansehen_ des Webservers erscheint beim *Piloten 2* in dessen Zeile in der Spalte "Flugleiter" ein "F"
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -78,13 +69,29 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
+| Erfolgreich, bis auf LED-Feedback
+| Es wird erst der Taster gedrückt, dann die RFID-Karte drangehalten
 | Erfolgreich
+
+|===
+
+.TID 2
+
+[%header, cols=4*]
+|===
+|Eingegebene Werte
+|Erfolgreich?
+|Nachgebessert
+|Akzeptanztest
+
+| /
+| Erfolgreich, bis auf LED-Feedback (Nach Abwarten der Toleranzzeit)
 | Es wird erst der Taster gedrückt, dann die RFID-Karte drangehalten
-|
+| Erfolgreich
 
 |===
 
-==== TID 2
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -94,13 +101,13 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-| Erfolgreich (Nach Abwarten der Toleranzzeit)
-| Es wird erst der Taster gedrückt, dann die RFID-Karte drangehalten
-|
+| Nicht erfolgreich
+| Noch nicht umgesetzt
+| /
 
 |===
 
-==== TID 3
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -110,13 +117,13 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-| Nicht erfolgreich, da nicht hinreichend gut implementiert
-|
-|
+| Nicht erfolgreich
+| Noch nicht umgesetzt
+| /
 
 |===
 
-==== TID 4
+.TID 5
 
 [%header, cols=4*]
 |===
@@ -126,28 +133,8 @@ a|* _LED_ leuchtet nicht auf
 |Akzeptanztest
 
 | /
-| Nicht erfolgreich, da nicht hinreichend gut implementiert, Pilot 1 bleibt weiterhin Flugleiter
-|
-|
-
-|===
-
-==== TID 5
-
-[%header, cols=4*]
-|===
-|Eingegebene Werte
-|Erfolgreich?
-|Nachgebessert
-|Akzeptanztest
-
+| Nicht erfolgreich
+| Noch nicht umgesetzt
 | /
-| Nicht erfolgreich, da nicht hinreichend gut implementiert
-|
-|
 
 |===
-
-
-
-

@@ -1,13 +1,4 @@
-== Test Cases: UC09 - Protokolldaten nachträglich einfügen
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC09 - (UC09 Protokolldaten nachträglich einfügen)
 
 [%header, cols=5*]
 |===
@@ -22,8 +13,8 @@ In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebn
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
 a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen.
-a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
-* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein 
+a| * Nach dem erfolgreichen Speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
+* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und kann bearbeitet werden 
 * Die neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt 
 
 |2
@@ -47,24 +38,24 @@ a|* Fehlerhafte Eingabe (Ungültige Zeitangabe) muss dem *Administrator* kenntli
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
 a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen. (inkl. Flugleiter)
-a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
-* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein (inkl. ein F für Flugleiter)
+a| * Nach dem erfolgreichen Speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
+* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und kann bearbeitet werden (inkl. ein F für Flugleiter)
 * Die neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt 
 
 |5
 |Positiv, manuell
 a| * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Der *Administrator* hat Kenntnis über die einzutragenden `Flugdaten` (eine oder mehrere `Flugsessions`).
-a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen. (inkl. Flugleiter)
-a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
-* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und bearbeitbar sein (inkl. der Name des Gastes)
+a|* `Flugsession` über _Flüge nachtragen_ mit plausiblen `Flugdaten` nachtragen. (inkl. Gast)
+a| * Nach dem erfolgreichen Speichern erscheint eine Rückmeldung, dass die `Flugsession` nachgetragen wurde. 
+* Die neu hinzugefügte `Flugsession` wird unter _Flugprotokoll_ angezeigt und kann bearbeitet werden (inkl. der Name des Gastes)
 * Die neu hinzugefügte `Flugsession` wird semantisch korrekt in der Datenbank hinterlegt 
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -80,7 +71,7 @@ a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flu
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -96,7 +87,7 @@ a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flu
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -113,7 +104,7 @@ a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flu
 
 |===
 
-==== TID 4
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -130,7 +121,7 @@ a| * Nach dem erfolgreichen speichern erscheint eine Rückmeldung, dass die `Flu
 
 |===
 
-==== TID 5
+.TID 5
 
 [%header, cols=4*]
 |===

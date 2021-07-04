@@ -1,13 +1,4 @@
-== Test Cases: Einstellungen
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC12: Einstellungen
 
 [%header, cols=5*]
 |===
@@ -45,19 +36,18 @@ a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _W
 
 |5
 |Positiv, manuell
-a|* Ein Pilot besitzt eine konkrete RFID-Karte
-|* Diese RFID-Karte wird vom Piloten entfernt
+a|* Ein *Pilot* besitzt eine konkrete RFID-Karte
+|* Diese RFID-Karte wird vom *Admin* entfernt
 * Diese RFID-Karte wird deaktiviert
 |Die RFID-Karte wurde erfolgreich entfernt
 
-
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-Achtung: Die Einstellungen wurden nicht am Terminal implementiert, es wird bei den entsprechenden TestCases lediglich die Synchronisation zwischen Website - Backend - Terminal überprüft
+NOTE: Hinweis: Die Einstellungen wurden nicht am Terminal implementiert, es wird bei den entsprechenden TestCases lediglich die Synchronisation zwischen Frontend - Backend - Terminal überprüft.
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -76,7 +66,7 @@ a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -92,7 +82,7 @@ a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -108,7 +98,7 @@ a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
 
 |===
 
-==== TID 4
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -124,7 +114,7 @@ a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
 
 |===
 
-==== TID 5
+.TID 5
 
 [%header, cols=4*]
 |===
@@ -133,9 +123,9 @@ a| *Anmeldung: 3 Sek; Taster: Ja; LED: Rot; Blinken Ja
 |Nachgebessert
 |Akzeptanztest
 
-|Nicht implementiert (wurde vom Kunden nicht als relevant eingestuft)
 |/
-|/
+|Nicht erfolgreich
+|Noch nicht umgesetzt
 |/
 
 |===

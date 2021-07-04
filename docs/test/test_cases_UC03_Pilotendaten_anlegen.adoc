@@ -1,12 +1,4 @@
-== Test Cases: UC03 - Pilotendaten anlegen
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-=== TestCases
+=== TestCase TC03 - (UC03 Pilotendaten anlegen)
 
 [%header, cols=5*]
 |===
@@ -35,7 +27,7 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 a|* *Pilot* ist *noch nicht* im _System_ angelegt
 * *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _Webserver_ eingeloggt
 * Kein RFID-Ausweis verfügbar
-|Versuch auf die Piloten Erstellen Seite zu gelangen
+|Versuch auf die Seite "Piloten Erstellen" zu gelangen
 |Es erscheint ein Hinweis, dass zunächst ein RFID-Tag hinzugefügt werden muss, um fortfahren zu können. Das Erstellen des Piloten ist somit nicht möglich.
 
 |4
@@ -77,11 +69,9 @@ a|* *Pilot* ist *noch nicht* im _System_ angelegt
 
 |===
 
+==== Durchführung des TestCases
 
-
-=== TestCases
-
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -94,7 +84,7 @@ a|
 * Alexander Heiß
 * RFID-Kennung: 0xaae0cf
 * Adminrechte: Nein
-|Erfoglreich
+|Erfolgreich
 |/
 |Erfolgreich
 
@@ -102,7 +92,7 @@ a|
 * Alexander Heiß
 * RFID-Kennung: 0xaae0cf
 * Adminrechte: Ja
-|Erfoglreich
+|Erfolgreich
 |/
 |Erfolgreich
 
@@ -112,13 +102,13 @@ a|
 |Erfolgreich
 
 |Alex Alex Heiß
-|Erfoglreich
+|Erfolgreich
 |/
 |Erfolgreich
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -128,17 +118,17 @@ a|
 |Akzeptanztest
 
 | A He
-|Erfoglreich (verhindert)
+|Erfolgreich (verhindert)
 |/
 |Erfolgreich
 
 | Al H
-|Erfoglreich (verhindert)
+|Erfolgreich (verhindert)
 |/
 |Erfolgreich
 
 |Aléx $$$$)
-|Erfoglreich (verhindert)
+|Erfolgreich (verhindert)
 |/
 |Erfolgreich
 
@@ -148,18 +138,18 @@ a|
 |Erfolgreich
 
 |____ A_____
-|Erfoglreich (verhindert)
+|Erfolgreich (verhindert)
 |/
 |Erfolgreich
 
 |(leer)
-|Erfoglreich (verhindert)
+|Erfolgreich (verhindert)
 |/
 |Erfolgreich
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -175,7 +165,7 @@ a| /
 
 |===
 
-==== TID 4
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -194,7 +184,7 @@ a|
 
 |===
 
-==== TID 5
+.TID 5
 
 [%header, cols=4*]
 |===
@@ -219,7 +209,7 @@ a|
 
 |===
 
-==== TID 6
+.TID 6
 
 [%header, cols=4*]
 |===
@@ -237,7 +227,7 @@ a|
 
 |===
 
-==== TID 7
+.TID 7
 
 [%header, cols=4*]
 |===
@@ -256,7 +246,7 @@ a|
 
 |===
 
-==== TID 8
+.TID 8
 
 [%header, cols=4*]
 |===

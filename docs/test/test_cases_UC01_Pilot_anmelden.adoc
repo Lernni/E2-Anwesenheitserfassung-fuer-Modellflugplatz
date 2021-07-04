@@ -1,6 +1,4 @@
-
-
-=== TestCases
+=== TestCase TC01 - (UC01 Pilot anmelden)
 
 [%header, cols=5*]
 |===
@@ -12,42 +10,42 @@
 
 |1
 |Positiv, manuell
-|Pilot abgemeldet, Pilot aktives Mitglied, gültige RFID-Karte
-|Pilot hält RFID-Karte an Terminal
-|Pilot kann sich anmelden, LED-Rückmeldung: Grün
+|*Pilot* abgemeldet, *Pilot* aktives Mitglied, gültige ``RFID-Karte``
+|*Pilot* hält ``RFID-Karte`` an __Terminal__
+|*Pilot* kann sich anmelden, LED-Rückmeldung: Grün
 
 |2
 |Negativ, manuell
-|Pilot kein aktives Mitglied, ungültige RFID-Karte
-|Pilot hält RFID-Karte an Terminal
-|Pilot kann sich nicht anmelden, LED-Rückmeldung: Rot
+|*Pilot* kein aktives Mitglied, ungültige ``RFID-Karte``
+|*Pilot* hält ``RFID-Karte`` an __Terminal__
+|*Pilot* kann sich nicht anmelden, LED-Rückmeldung: Rot
 
 |3
 |Negativ, manuell
-|Pilot angemeldet
-|Pilot hält RFID-Karte an Terminal
-|Pilot kann sich nicht erneut anmelden, LED-Rückmeldung: Grün (da Abmeldung), Pilot abgemeldet in System
+|*Pilot* angemeldet
+|*Pilot* hält ``RFID-Karte`` an __Terminal__
+|*Pilot* kann sich nicht erneut anmelden, LED-Rückmeldung: Grün (da Abmeldung), *Pilot* abgemeldet in System
 
 |4
 |Negativ, manuell
-|Pilot ist abgemeldet
-|Pilot hält mehrfach hintereinander (schnell) die RFID-Karte an Terminal
-|Das System meldet den Piloten korrekt abwechselnd an und ab, speichert die Sessions aber aufgrund der kurzen Dauer nicht ab
+|*Pilot* ist abgemeldet
+|*Pilot* hält mehrfach hintereinander (schnell) die ``RFID-Karte`` an __Terminal__
+|Das System meldet den *Piloten* korrekt abwechselnd an und ab, speichert die Sessions aber aufgrund der kurzen Dauer nicht ab
 
 |5
 |Positiv, manuell
-|Pilot ist angemeldet, das Terminal hat keinen Internetzugang
-|Pilot meldet sich am Terminal mit der RFID-Karte an.
-a| * Der Pilot erhält ein positives Feedback über die LED.
-* Die Flugsession wird in der lokalen DB des Terminals gestartet
+|*Pilot* ist angemeldet, das __Terminal__ hat keinen Internetzugang
+|*Pilot* meldet sich am __Terminal__ mit der ``RFID-Karte`` an.
+a| * Der *Pilot* erhält ein positives Feedback über die LED.
+* Die Flugsession wird in der lokalen DB des __Terminals__ gestartet
 * Bei funktionierendem Internetzugang wird die Flugsession an die DB auf dem Webserver gesendet
 
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -57,13 +55,13 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | RFID Tag C72C483E9D des Piloten "Max Muster" an den RFID Scanner gehalten
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -73,13 +71,13 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Pilot "Max Muster" deaktiviert (RFID ist NULL)
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -89,13 +87,13 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Pilot "Max Muster" hat eine bestehende Flugsession
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
 
-==== TID 4
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -116,7 +114,7 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 
 |===
 
-==== TID 5
+.TID 5
 
 [%header, cols=4*]
 |===
@@ -126,10 +124,8 @@ a| * Der Pilot erhält ein positives Feedback über die LED.
 |Akzeptanztest
 
 | Internetverbindung des Terminals unterbrochen
-| Erfolgreich
+| Erfolgreich, bis auf LED-Feedback
 | /
 | Erfolgreich
 
 |===
-
-

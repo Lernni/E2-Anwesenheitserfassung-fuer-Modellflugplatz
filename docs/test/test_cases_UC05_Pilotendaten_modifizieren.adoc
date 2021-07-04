@@ -1,13 +1,4 @@
-== Test Cases: UC05 - Pilotendaten modifizieren
-// Platzhalter für weitere Dokumenten-Attribute
-
-
-=== Beschreibung
-
-In diesem Dokument werden zahlreiche Testfälle aufgestellt und mit deren Ergebnis dargestellt.
-
-
-=== TestCases
+=== TestCase TC05 - (UC05 Pilotendaten modifizieren)
 
 [%header, cols=5*]
 |===
@@ -23,7 +14,7 @@ a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _W
 * *Pilot* ist bereits im _System_ angelegt worden
 a|* Plausible Veränderung der `Pilotendaten` in der _Pilotenübersicht_ im _Bearbeitungsmodus_. Durch _Speichern_ bestätigt man die Eingabe.
 a|* Der Nutzername passt sich der entsprechenden Veränderung an. 
-* Nach dem erfolgreichen speichern, gelangt man erneut zur Pilotenübersicht
+* Nach dem erfolgreichen Speichern, gelangt man erneut zur Pilotenübersicht
 * Geänderte `Pilotendaten` werden aktuell & semantisch korrekt in der Datenbank hinterlegt & in der Pilotenübersicht angezeigt 
 
 |2
@@ -41,7 +32,7 @@ a|* *Administrator* hat Zugriffsrechte für die _Admin-Seite_ und ist auf dem _W
 * *Pilot* ist noch kein *Admin*
 a|* Einem *Pilot* werden Zugriffsrechte für die _Admin-Seite_ vergeben
 a|* Der jeweilige *Pilot* hat jetzt Zugriff auf die _Admin-Seite_ 
-* In der _User Information_ ändert sich die Rolle in *Admin*
+* In der _User Info_ ändert sich die Rolle in *Admin*
 
 |4
 |Positiv, manuell
@@ -62,9 +53,9 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 
 |===
 
-=== TestCases
+==== Durchführung des TestCases
 
-==== TID 1
+.TID 1
 
 [%header, cols=4*]
 |===
@@ -80,7 +71,7 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 
 |===
 
-==== TID 2
+.TID 2
 
 [%header, cols=4*]
 |===
@@ -96,7 +87,7 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 
 |===
 
-==== TID 3
+.TID 3
 
 [%header, cols=4*]
 |===
@@ -112,7 +103,7 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 
 |===
 
-==== TID 4
+.TID 4
 
 [%header, cols=4*]
 |===
@@ -128,7 +119,7 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 
 |===
 
-==== TID 5
+.TID 5
 
 [%header, cols=4*]
 |===
@@ -143,5 +134,3 @@ a|* Der jeweilige *Pilot* hat jetzt keinen Zugriff mehr auf die _Admin-Seite_
 |Erfolgreich
 
 |===
-
-
