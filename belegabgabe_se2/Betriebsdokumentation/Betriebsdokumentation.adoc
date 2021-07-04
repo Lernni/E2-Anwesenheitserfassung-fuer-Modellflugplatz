@@ -165,6 +165,9 @@ Backend stoppen:
 === Fehlerbehandlung
 
 ==== Fehlercodes bei Requests
+
+Die Fehlercodes erscheinen in der Konsolenausgabe des Backends oder in der Konsole der Entwicklertools des genutzten Browsers.
+
 [%header, cols=2*]
 |===
 
@@ -190,7 +193,7 @@ Backend stoppen:
 
 ==== Fehler bei der Synchronisation.
 
-Beim anlegen eines neuen Piloten, beim eintragen eines RFID-Tags und beim Aktualisieren der settings wird ermittelt, ob das Terminal erreichbar ist.
+Beim Anlegen eines neuen Piloten, beim Eintragen eines RFID-Tags und beim Aktualisieren der Einstellungen wird ermittelt, ob das Terminal erreichbar ist.
 Erscheint folgende Meldung in der Konsole
 
   Post failed
